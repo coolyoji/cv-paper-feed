@@ -1,0 +1,1037 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily CV Paper Feed</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1f2933;
+      --muted: #52606d;
+      --line: #d9e2ec;
+      --accent: #1d4ed8;
+      --bg: #f8fafc;
+      --card: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    h1 { font-size: 32px; margin: 0 0 8px; }
+    h2 { margin-top: 40px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+    h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.4; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .paper {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+    .meta { margin: 6px 0; color: var(--muted); }
+    pre {
+      background: #111827;
+      color: #f9fafb;
+      padding: 14px;
+      border-radius: 8px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+<main>
+<h1>Daily CV Paper Feed</h1>
+<p>Last updated: 2026-06-26 01:27 Asia/Shanghai</p>
+<p>This page tracks new and useful computer-vision papers, with COD/camouflaged object detection kept as the primary reading thread and broader CV methods included for inspiration.</p>
+<h2>今日优先读：近 30 天新文献优先</h2>
+<article class='paper'>
+<h3><strong>CFCamo: A Counterfactual Detect-or-Abstain Framework for Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-28</p>
+<p class='meta'>Authors: Suhang Li, Osamu Yoshie, Yuya Ieiri</p>
+<p class='meta'>Tags: COD, SAM, VLM/MLLM</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.11231v1">paper</a> / <a href="http://arxiv.org/pdf/2606.11231v1">pdf</a></p>
+<p class='meta'>简介：Vision-language reinforcement learning has recently shown strong target-present localization for camouflaged object detection (COD). Yet localization is only one side of the decision: when the agent faces an ordinary image with no camouflaged target, will it...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>A Retinomorphic Optical Spiking Neuron for Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-30</p>
+<p class='meta'>Authors: Srilagna Sahoo, Adwaaiit Pande, Kartikey Thakar, Shubham Sahay, Saurabh Lodha</p>
+<p class='meta'>Tags: COD, boundary/frequency</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.00818v1">paper</a> / <a href="http://arxiv.org/pdf/2606.00818v1">pdf</a></p>
+<p class='meta'>简介：Advanced vision systems require retinomorphic, energy-efficient spike-based preprocessing of dynamic visual scenes. Here, we demonstrate multiple retinal preprocessing functionalities by leveraging a Hodgkin-Huxley-based optical spiking neuron (OSHN) that inc...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>ARTEMIS: Agent-guided Reliability-aware Temporal Mask Evolution for Imperfectly Supervised Video Polyp Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-18</p>
+<p class='meta'>Authors: Tong Wang, Siwen Wang, Yaolei Qi, Jinxing Zhou, Yuting He et al.</p>
+<p class='meta'>Tags: SAM, VLM/MLLM, retrieval/prototype, boundary/frequency, depth/geometry, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.20161v1">paper</a> / <a href="http://arxiv.org/pdf/2606.20161v1">pdf</a></p>
+<p class='meta'>简介：Imperfectly supervised video polyp segmentation (VPS) aims to learn dense, temporally consistent masks from inexpensive supervision, including weak annotations (points, scribbles) and semi-supervision with few densely labeled frames. This setting is clinicall...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Vision-Language Model Reasoning for Contextual Semantic Mapping in Intralogistics</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-23</p>
+<p class='meta'>Authors: Marvin Rüdt, Hao Pang, Constantin Enke, Zäzilia Seibold, Kai Furmans</p>
+<p class='meta'>Tags: open-vocabulary, SAM, VLM/MLLM, reasoning, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24814v1">paper</a> / <a href="http://arxiv.org/pdf/2606.24814v1">pdf</a></p>
+<p class='meta'>简介：Autonomous mobile robots operating in intralogistics environments rely on geometric maps for localization and navigation, but lack semantic understanding of objects and their contextual properties. We present a contextual semantic mapping pipeline that combin...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>ActiveSAM: Image-Conditional Class Pruning for Fast and Accurate Open-Vocabulary Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-15</p>
+<p class='meta'>Authors: Tran Dinh Tien, Zhiqiang Shen</p>
+<p class='meta'>Tags: open-vocabulary, training-free, SAM, diffusion, remote sensing</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.16996v1">paper</a> / <a href="http://arxiv.org/pdf/2606.16996v1">pdf</a></p>
+<p class='meta'>简介：Segment Anything Model 3 (SAM 3) provides a strong frozen backbone for concept-prompted segmentation, but applying it directly to open-vocabulary semantic segmentation (OVSS) is inefficient: full-resolution decoding is typically run over the entire dataset vo...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>Jolia: Concept-Level Vision-Language Alignment for 3D CT Contrastive Learning</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-23</p>
+<p class='meta'>Authors: Julien Khlaut, Charles Corbière, Baptiste Callard, Amaury Prat, Leo Butsanets et al.</p>
+<p class='meta'>Tags: VLM/MLLM, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24570v2">paper</a> / <a href="http://arxiv.org/pdf/2606.24570v2">pdf</a></p>
+<p class='meta'>简介：Vision-language contrastive pretraining has become the dominant recipe for 3D medical foundation models, leveraging the large volumes of paired scans and reports produced in clinical practice. However, medical images usually span dozens of organs, and radiolo...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>UniDrive: A Unified Vision-Language and Grounding Framework for Interpretable Risk Understanding in Autonomous Driving</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-23</p>
+<p class='meta'>Authors: Xiaowei Gao, Pengxiang Li, Yitai Cheng, Ruihan Xu, James Haworth et al.</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24759v1">paper</a> / <a href="http://arxiv.org/pdf/2606.24759v1">pdf</a></p>
+<p class='meta'>简介：Recent multimodal large language models (MLLMs) have shown strong potential for autonomous driving scene understanding, yet existing methods still face a fundamental trade-off between temporal reasoning and spatial precision. Models that rely on single-frame...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>HPP: Hierarchical Programmatic Probing for Long Video Understanding by Decoupling Perception and Reasoning</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-19</p>
+<p class='meta'>Authors: Awais Rauf, Ahmed Hasssan, Greg Slabaugh</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, retrieval/prototype, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.21734v1">paper</a> / <a href="http://arxiv.org/pdf/2606.21734v1">pdf</a></p>
+<p class='meta'>简介：Understanding long videos requires fine-grained perception and multi-step, higher-order reasoning over complex, long-range spatio-temporal dynamics. Vision-language models (VLMs) encode video frames into visual tokens and attempt to perform both perception an...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>EnTrust: Modeling Inter-Modal Conflict for Trustworthy Multimodal Medical Image Analysis</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-19</p>
+<p class='meta'>Authors: Dwarikanath Mahapatra, Abhijit Das, Behzad Bozorgtabar, Zongyuan Ge, Sudipta Roy et al.</p>
+<p class='meta'>Tags: SAM, diffusion</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.21384v1">paper</a> / <a href="http://arxiv.org/pdf/2606.21384v1">pdf</a></p>
+<p class='meta'>简介：Multimodal medical imaging fuses complementary anatomical and functional information, yet modalities frequently disagree in pathologically heterogeneous regions. Current segmentation models handle this in one of two inadequate ways: deterministic fusion that...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Object Tokens as a Bridge Between Segmentation and Visual Question Answering in Robotic Surgery</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-14</p>
+<p class='meta'>Authors: Yiping Li, Ronald de Jong, Romy van Jaarsveld, Franco Badaloni, Gino Kuiper et al.</p>
+<p class='meta'>Tags: SAM, VLM/MLLM, reasoning</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.15861v1">paper</a> / <a href="http://arxiv.org/pdf/2606.15861v1">pdf</a></p>
+<p class='meta'>简介：Visual Question Answering (VQA) in robotic surgery, referred to as surgical VQA, requires high-level understanding of complex surgical scenes and the integration of visual perception with language reasoning, with the potential to support surgical training and...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>High-Fidelity Synthetic Transmission Electron Microscopy Image Generation Using Diffusion Probabilistic Models for Data-Limited Semiconductor Metrology</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-23</p>
+<p class='meta'>Authors: Johannes Boehm, Bappaditya Dey</p>
+<p class='meta'>Tags: SAM, diffusion, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24817v1">paper</a> / <a href="http://arxiv.org/pdf/2606.24817v1">pdf</a></p>
+<p class='meta'>简介：Advanced semiconductor nodes drastically increased demand for Transmission Electron Microscopy (TEM), yet destructive sample preparation, slow imaging and high costs severely limit the availability of diverse datasets needed for downstream machine learning (M...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Prob-BBDM: a Probabilistic Brownian Bridge Diffusion Model for MRI sequence image-to-image translation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-23</p>
+<p class='meta'>Authors: Martin Valls, Pascal Bourdon, Christine Fernandez-Maloigne, Guillaume Herpe, David Helbert</p>
+<p class='meta'>Tags: diffusion, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24313v1">paper</a> / <a href="http://arxiv.org/pdf/2606.24313v1">pdf</a></p>
+<p class='meta'>简介：AI-driven image-to-image synthesis is rapidly advancing, with growing applications in medical imaging. Multi-modal image analysis plays a crucial role in optimizing examination quality, yet acquiring multiple imaging modalities in clinical settings remains re...</p>
+<p class='meta'>为什么值得读：适合补充伪装场景中的边界、纹理、几何先验。</p>
+</article>
+<h2>COD / 伪装目标检测相关</h2>
+<article class='paper'>
+<h3><strong>Open-Vocabulary Camouflaged Object Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2023-11-19</p>
+<p class='meta'>Authors: Youwei Pang, Xiaoqi Zhao, Jiaming Zuo, Lihe Zhang, Huchuan Lu</p>
+<p class='meta'>Tags: COD, open-vocabulary, VLM/MLLM, boundary/frequency, depth/geometry, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2311.11241v3">paper</a> / <a href="http://arxiv.org/pdf/2311.11241v3">pdf</a></p>
+<p class='meta'>简介：Recently, the emergence of the large-scale vision-language model (VLM), such as CLIP, has opened the way towards open-world object perception. Many works have explored the utilization of pre-trained VLM for the challenging open-vocabulary dense prediction tas...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Debate-Enhanced Pseudo Labeling and Frequency-Aware Progressive Debiasing for Weakly-Supervised Camouflaged Object Detection with Scribble Annotations</strong></h3>
+<p class='meta'>Source: arXiv, 2025-12-23</p>
+<p class='meta'>Authors: Jiawei Ge, Jiuxin Cao, Xinyi Li, Xuelin Zhu, Chang Liu et al.</p>
+<p class='meta'>Tags: COD, unsupervised, SAM, boundary/frequency</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2512.20260v5">paper</a> / <a href="http://arxiv.org/pdf/2512.20260v5">pdf</a></p>
+<p class='meta'>简介：Weakly-Supervised Camouflaged Object Detection (WSCOD) aims to locate and segment objects that are visually concealed within their surrounding scenes, relying solely on sparse supervision such as scribble annotations. Despite recent progress, existing WSCOD m...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>UCOD-DPL: Unsupervised Camouflaged Object Detection via Dynamic Pseudo-label Learning</strong></h3>
+<p class='meta'>Source: arXiv, 2025-06-08</p>
+<p class='meta'>Authors: Weiqi Yan, Lvhai Chen, Huaijia Kou, Shengchuan Zhang, Yan Zhang et al.</p>
+<p class='meta'>Tags: COD, unsupervised, boundary/frequency, remote sensing</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2506.07087v1">paper</a> / <a href="http://arxiv.org/pdf/2506.07087v1">pdf</a></p>
+<p class='meta'>简介：Unsupervised Camoflaged Object Detection (UCOD) has gained attention since it doesn&#x27;t need to rely on extensive pixel-level labels. Existing UCOD methods typically generate pseudo-labels using fixed strategies and train 1 x1 convolutional layers as a simple d...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2026-03-12</p>
+<p class='meta'>Authors: Shuo Jiang, Gaojia Zhang, Min Tan, Yufei Yin, Gang Pan</p>
+<p class='meta'>Tags: COD, unsupervised, diffusion, boundary/frequency, depth/geometry, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2603.11521v1">paper</a> / <a href="http://arxiv.org/pdf/2603.11521v1">pdf</a></p>
+<p class='meta'>简介：Unsupervised Camouflaged Object Detection (UCOD) remains a challenging task due to the high intrinsic similarity between target objects and their surroundings, as well as the reliance on noisy pseudo-labels that hinder fine-grained texture learning. While exi...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>SAM3-Adapter: Efficient Adaptation of Segment Anything 3 for Camouflage Object Segmentation, Shadow Detection, and Medical Image Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2025-11-24</p>
+<p class='meta'>Authors: Tianrun Chen, Runlong Cao, Xinda Yu, Lanyun Zhu, Chaotao Ding et al.</p>
+<p class='meta'>Tags: COD, SAM</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2511.19425v1">paper</a> / <a href="http://arxiv.org/pdf/2511.19425v1">pdf</a></p>
+<p class='meta'>简介：The rapid rise of large-scale foundation models has reshaped the landscape of image segmentation, with models such as Segment Anything achieving unprecedented versatility across diverse vision tasks. However, previous generations-including SAM and its success...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>High-Resolution Underwater Camouflaged Object Detection: GBU-UCOD Dataset and Topology-Aware and Frequency-Decoupled Networks</strong></h3>
+<p class='meta'>Source: arXiv, 2026-02-03</p>
+<p class='meta'>Authors: Wenji Wu, Shuo Ye, Yiyu Liu, Jiguang He, Zhuo Wang et al.</p>
+<p class='meta'>Tags: COD, SAM, diffusion, boundary/frequency, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2602.03591v1">paper</a> / <a href="http://arxiv.org/pdf/2602.03591v1">pdf</a></p>
+<p class='meta'>简介：Underwater Camouflaged Object Detection (UCOD) is a challenging task due to the extreme visual similarity between targets and backgrounds across varying marine depths. Existing methods often struggle with topological fragmentation of slender creatures in the...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>ZS-VCOS: Zero-Shot Video Camouflaged Object Segmentation By Optical Flow and Open Vocabulary Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2025-04-10</p>
+<p class='meta'>Authors: Wenqi Guo, Mohamed Shehata, Shan Du</p>
+<p class='meta'>Tags: COD, open-vocabulary, unsupervised, SAM, VLM/MLLM, diffusion, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2505.01431v2">paper</a> / <a href="http://arxiv.org/pdf/2505.01431v2">pdf</a></p>
+<p class='meta'>简介：Camouflaged object segmentation presents unique challenges compared to traditional segmentation tasks, primarily due to the high similarity in patterns and colors between camouflaged objects and their backgrounds. Effective solutions to this problem have sign...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2025-08-21</p>
+<p class='meta'>Authors: Wutao Liu, YiDan Wang, Pan Gao</p>
+<p class='meta'>Tags: COD, training-free, unsupervised, SAM, retrieval/prototype, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2508.15313v2">paper</a> / <a href="http://arxiv.org/pdf/2508.15313v2">pdf</a></p>
+<p class='meta'>简介：Camouflaged object detection (COD) poses a significant challenge in computer vision due to the high similarity between objects and their backgrounds. Existing approaches often rely on heavy training and large computational resources.</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>When SAM2 Meets Video Camouflaged Object Segmentation: A Comprehensive Evaluation and Adaptation</strong></h3>
+<p class='meta'>Source: arXiv, 2024-09-27</p>
+<p class='meta'>Authors: Yuli Zhou, Guolei Sun, Yawei Li, Guo-Sen Xie, Luca Benini et al.</p>
+<p class='meta'>Tags: COD, SAM, VLM/MLLM, diffusion, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2409.18653v2">paper</a> / <a href="http://arxiv.org/pdf/2409.18653v2">pdf</a></p>
+<p class='meta'>简介：This study investigates the application and performance of the Segment Anything Model 2 (SAM2) in the challenging task of video camouflaged object segmentation (VCOS). VCOS involves detecting objects that blend seamlessly in the surroundings for videos, due t...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>COMPrompter: reconceptualized segment anything model with multiprompt network for camouflaged object detection</strong></h3>
+<p class='meta'>Source: arXiv, 2024-11-28</p>
+<p class='meta'>Authors: Xiaoqin Zhang, Zhenni Yu, Li Zhao, Deng-Ping Fan, Guobao Xiao</p>
+<p class='meta'>Tags: COD, SAM, boundary/frequency</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2411.18858v1">paper</a> / <a href="http://arxiv.org/pdf/2411.18858v1">pdf</a></p>
+<p class='meta'>简介：We rethink the segment anything model (SAM) and propose a novel multiprompt network called COMPrompter for camouflaged object detection (COD). SAM has zero-shot generalization ability beyond other models and can provide an ideal framework for COD.</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Exploring Deeper! Segment Anything Model with Depth Perception for Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2024-07-17</p>
+<p class='meta'>Authors: Zhenni Yu, Xiaoqin Zhang, Li Zhao, Yi Bin, Guobao Xiao</p>
+<p class='meta'>Tags: COD, SAM, boundary/frequency, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2407.12339v1">paper</a> / <a href="http://arxiv.org/pdf/2407.12339v1">pdf</a></p>
+<p class='meta'>简介：This paper introduces a new Segment Anything Model with Depth Perception (DSAM) for Camouflaged Object Detection (COD). DSAM exploits the zero-shot capability of SAM to realize precise segmentation in the RGB-D domain.</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>BED-SAM2: Boundary-Enhanced-Depth SAM2 via Monocular Geometric Priors</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-24</p>
+<p class='meta'>Authors: Tyler Rust, Dara McNally, Kyle O&#x27;Donnell, Colin Kelly, Chandra Kambhamettu</p>
+<p class='meta'>Tags: COD, SAM, boundary/frequency, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.24893v1">paper</a> / <a href="http://arxiv.org/pdf/2605.24893v1">pdf</a></p>
+<p class='meta'>简介：Building upon the SAM2 vision foundation model for downstream segmentation, this study introduces Boundary Enhanced Depth (BED)-SAM2. The SAM2 Hiera encoder architecture is modified to directly encode monocular depth information from RGB images, thereby provi...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning</strong></h3>
+<p class='meta'>Source: arXiv, 2026-03-24</p>
+<p class='meta'>Authors: Jingchen Ni, Quan Zhang, Dan Jiang, Keyu Lv, Ke Zhang et al.</p>
+<p class='meta'>Tags: COD, unsupervised, SAM, diffusion, boundary/frequency</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2603.22969v1">paper</a> / <a href="http://arxiv.org/pdf/2603.22969v1">pdf</a></p>
+<p class='meta'>简介：Existing camouflage object detection (COD) methods typically rely on fully-supervised learning guided by mask annotations. However, obtaining mask annotations is time-consuming and labor-intensive.</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Stepwise Decomposition and Dual-stream Focus: A Novel Approach for Training-free Camouflaged Object Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2025-06-07</p>
+<p class='meta'>Authors: Chao Yin, Hao Li, Kequan Yang, Jide Li, Pinpin Zhu et al.</p>
+<p class='meta'>Tags: COD, training-free, SAM, reasoning</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2506.06818v3">paper</a> / <a href="http://arxiv.org/pdf/2506.06818v3">pdf</a></p>
+<p class='meta'>简介：While promptable segmentation (\textit{e.g.}, SAM) has shown promise for various segmentation tasks, it still requires manual visual prompts for each object to be segmented. In contrast, task-generic promptable segmentation aims to reduce the need for such de...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>CamSAM2: Segment Anything Accurately in Camouflaged Videos</strong></h3>
+<p class='meta'>Source: arXiv, 2025-03-25</p>
+<p class='meta'>Authors: Yuli Zhou, Yawei Li, Yuqian Fu, Luca Benini, Ender Konukoglu et al.</p>
+<p class='meta'>Tags: COD, SAM, retrieval/prototype, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2503.19730v3">paper</a> / <a href="http://arxiv.org/pdf/2503.19730v3">pdf</a></p>
+<p class='meta'>简介：Video camouflaged object segmentation (VCOS), aiming at segmenting camouflaged objects that seamlessly blend into their environment, is a fundamental vision task with various real-world applications. With the release of SAM2, video segmentation has witnessed...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>SAM2-UNeXT: An Improved High-Resolution Baseline for Adapting Foundation Models to Downstream Segmentation Tasks</strong></h3>
+<p class='meta'>Source: arXiv, 2025-08-05</p>
+<p class='meta'>Authors: Xinyu Xiong, Zihuang Wu, Lei Zhang, Lei Lu, Ming Li et al.</p>
+<p class='meta'>Tags: COD, SAM, remote sensing</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2508.03566v1">paper</a> / <a href="http://arxiv.org/pdf/2508.03566v1">pdf</a></p>
+<p class='meta'>简介：Recent studies have highlighted the potential of adapting the Segment Anything Model (SAM) for various downstream tasks. However, constructing a more powerful and generalizable encoder to further enhance performance remains an open challenge.</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Depth-guided Texture Diffusion for Image Semantic Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2024-08-17</p>
+<p class='meta'>Authors: Wei Sun, Yuan Li, Qixiang Ye, Jianbin Jiao, Yanzhao Zhou</p>
+<p class='meta'>Tags: COD, diffusion, boundary/frequency, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2408.09097v1">paper</a> / <a href="http://arxiv.org/pdf/2408.09097v1">pdf</a></p>
+<p class='meta'>简介：Depth information provides valuable insights into the 3D structure especially the outline of objects, which can be utilized to improve the semantic segmentation tasks. However, a naive fusion of depth information can disrupt feature and compromise accuracy du...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Weakly Supervised Camouflaged Object Detection Based on the SAM Model and Mask Guidance</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-25</p>
+<p class='meta'>Authors: Xia Li, Xinran Liu, Lin Qi, Junyu Dong</p>
+<p class='meta'>Tags: COD, unsupervised, SAM, boundary/frequency, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.25385v1">paper</a> / <a href="http://arxiv.org/pdf/2605.25385v1">pdf</a></p>
+<p class='meta'>简介：Camouflaged object detection (COD) from a single image is a challenging task due to the high similarity between objects and their surroundings. Existing fully supervised methods require labor-intensive pixel-level annotations, making weakly supervised methods...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>RIDE: Retinex-Informed Decoupling for Exposing Concealed Objects</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-14</p>
+<p class='meta'>Authors: Chunming He, Rihan Zhang, Dingming Zhang, Chengyu Fang, Longxiang Tang et al.</p>
+<p class='meta'>Tags: COD, SAM, boundary/frequency</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.15450v1">paper</a> / <a href="http://arxiv.org/pdf/2605.15450v1">pdf</a></p>
+<p class='meta'>简介：Concealed Object Segmentation (COS) encompasses a family of dense-prediction tasks, including camouflaged object detection, polyp segmentation, transparent object detection, and industrial defect inspection, where targets are visually entangled with their sur...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Exploring Boundary-Aware Spatial-Frequency Fusion for Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2026-04-20</p>
+<p class='meta'>Authors: Song Yu, Yang Hu, Haokang Ding, Zhifang Liao, Yucheng Song</p>
+<p class='meta'>Tags: COD, diffusion, boundary/frequency</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2604.17879v1">paper</a> / <a href="http://arxiv.org/pdf/2604.17879v1">pdf</a></p>
+<p class='meta'>简介：Camouflaged Object Detection is challenging due to the high degree of similarity between camouflaged objects and their surrounding backgrounds. Current COD methods mainly rely on edge extraction in the spatial domain and local pixel-level information, neglect...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>IP-SAM: Prompt-Space Conditioning for Prompt-Absent Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2026-03-28</p>
+<p class='meta'>Authors: Huiyao Zhang, Jin Bai, Rui Guo, JianWen Tan, HongFei Wang et al.</p>
+<p class='meta'>Tags: COD, SAM, diffusion</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2603.27250v1">paper</a> / <a href="http://arxiv.org/pdf/2603.27250v1">pdf</a></p>
+<p class='meta'>简介：Prompt-conditioned foundation segmenters have emerged as a dominant paradigm for image segmentation, where explicit spatial prompts (e.g., points, boxes, masks) guide mask decoding. However, many real-world deployments require fully automatic segmentation, cr...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Language-Guided Structure-Aware Network for Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2026-03-25</p>
+<p class='meta'>Authors: Min Zhang</p>
+<p class='meta'>Tags: COD, boundary/frequency, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2603.24355v1">paper</a> / <a href="http://arxiv.org/pdf/2603.24355v1">pdf</a></p>
+<p class='meta'>简介：Camouflaged Object Detection (COD) aims to segment objects that are highly integrated with the background in terms of color, texture, and structure, making it a highly challenging task in computer vision. Although existing methods introduce multi-scale fusion...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>An Instance-Aware Prompting Framework for Training-free Camouflaged Object Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2025-08-09</p>
+<p class='meta'>Authors: Chao Yin, Jide Li, Hang Yao, Xiaoqiang Li</p>
+<p class='meta'>Tags: COD, training-free, SAM</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2508.06904v3">paper</a> / <a href="http://arxiv.org/pdf/2508.06904v3">pdf</a></p>
+<p class='meta'>简介：Training-free Camouflaged Object Segmentation (COS) seeks to segment camouflaged objects without task-specific training, by automatically generating visual prompts to guide the Segment Anything Model (SAM). However, existing pipelines mostly yield semantic-le...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Open-Vocabulary Camouflaged Object Segmentation with Cascaded Vision Language Models</strong></h3>
+<p class='meta'>Source: arXiv, 2025-06-24</p>
+<p class='meta'>Authors: Kai Zhao, Wubang Yuan, Zheng Wang, Guanyi Li, Xiaoqiang Zhu et al.</p>
+<p class='meta'>Tags: COD, open-vocabulary, SAM</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2506.19300v2">paper</a> / <a href="http://arxiv.org/pdf/2506.19300v2">pdf</a></p>
+<p class='meta'>简介：Open-Vocabulary Camouflaged Object Segmentation (OVCOS) seeks to segment and classify camouflaged objects from arbitrary categories, presenting unique challenges due to visual ambiguity and unseen categories.Recent approaches typically adopt a two-stage parad...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Towards Real Zero-Shot Camouflaged Object Segmentation without Camouflaged Annotations</strong></h3>
+<p class='meta'>Source: arXiv, 2024-10-22</p>
+<p class='meta'>Authors: Cheng Lei, Jie Fan, Xinran Li, Tianzhu Xiang, Ao Li et al.</p>
+<p class='meta'>Tags: COD, VLM/MLLM, diffusion</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2410.16953v2">paper</a> / <a href="http://arxiv.org/pdf/2410.16953v2">pdf</a></p>
+<p class='meta'>简介：Camouflaged Object Segmentation (COS) faces significant challenges due to the scarcity of annotated data, where meticulous pixel-level annotation is both labor-intensive and costly, primarily due to the intricate object-background boundaries. Addressing the c...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2025-10-21</p>
+<p class='meta'>Authors: Ji Du, Xin Wang, Fangwei Hao, Mingyang Yu, Chunyuan Chen et al.</p>
+<p class='meta'>Tags: COD, unsupervised, retrieval/prototype</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2510.18437v1">paper</a> / <a href="http://arxiv.org/pdf/2510.18437v1">pdf</a></p>
+<p class='meta'>简介：At the core of Camouflaged Object Detection (COD) lies segmenting objects from their highly similar surroundings. Previous efforts navigate this challenge primarily through image-level modeling or annotation-based optimization.</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>DGA-Net: Enhancing SAM with Depth Prompting and Graph-Anchor Guidance for Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2026-01-06</p>
+<p class='meta'>Authors: Yuetong Li, Qing Zhang, Yilin Zhao, Gongyang Li, Zeming Liu</p>
+<p class='meta'>Tags: COD, SAM, depth/geometry, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2601.02831v1">paper</a> / <a href="http://arxiv.org/pdf/2601.02831v1">pdf</a></p>
+<p class='meta'>简介：To fully exploit depth cues in Camouflaged Object Detection (COD), we present DGA-Net, a specialized framework that adapts the Segment Anything Model (SAM) via a novel ``depth prompting&quot; paradigm. Distinguished from existing approaches that primarily rely on...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Phantom-Insight: Adaptive Multi-cue Fusion for Video Camouflaged Object Detection with Multimodal LLM</strong></h3>
+<p class='meta'>Source: arXiv, 2025-09-08</p>
+<p class='meta'>Authors: Hua Zhang, Changjiang Luo, Ruoyu Chen</p>
+<p class='meta'>Tags: COD, SAM, VLM/MLLM, diffusion, boundary/frequency, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2509.06422v1">paper</a> / <a href="http://arxiv.org/pdf/2509.06422v1">pdf</a></p>
+<p class='meta'>简介：Video camouflaged object detection (VCOD) is challenging due to dynamic environments. Existing methods face two main issues: (1) SAM-based methods struggle to separate camouflaged object edges due to model freezing, and (2) MLLM-based methods suffer from poor...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Improving SAM for Camouflaged Object Detection via Dual Stream Adapters</strong></h3>
+<p class='meta'>Source: arXiv, 2025-03-08</p>
+<p class='meta'>Authors: Jiaming Liu, Linghe Kong, Guihai Chen</p>
+<p class='meta'>Tags: COD, SAM, diffusion, boundary/frequency, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2503.06042v2">paper</a> / <a href="http://arxiv.org/pdf/2503.06042v2">pdf</a></p>
+<p class='meta'>简介：Segment anything model (SAM) has shown impressive general-purpose segmentation performance on natural images, but its performance on camouflaged object detection (COD) is unsatisfactory. In this paper, we propose SAM-COD that performs camouflaged object detec...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Refining Context-Entangled Content Segmentation via Curriculum Selection and Anti-Curriculum Promotion</strong></h3>
+<p class='meta'>Source: arXiv, 2026-02-01</p>
+<p class='meta'>Authors: Chunming He, Rihan Zhang, Fengyang Xiao, Dingming Zhang, Zhiwen Cao et al.</p>
+<p class='meta'>Tags: COD, SAM, boundary/frequency, video, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2602.01183v2">paper</a> / <a href="http://arxiv.org/pdf/2602.01183v2">pdf</a></p>
+<p class='meta'>简介：Biological learning proceeds from easy to difficult tasks, gradually reinforcing perception and robustness. Inspired by this principle, we address Context-Entangled Content Segmentation (CECS), a challenging setting where objects share intrinsic visual patter...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Assisted Refinement Network Based on Channel Information Interaction for Camouflaged and Salient Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2025-12-12</p>
+<p class='meta'>Authors: Kuan Wang, Yanjun Qin, Mengge Lu, Liejun Wang, Xiaoming Tao</p>
+<p class='meta'>Tags: COD, SAM, diffusion, boundary/frequency, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2512.11369v1">paper</a> / <a href="http://arxiv.org/pdf/2512.11369v1">pdf</a></p>
+<p class='meta'>简介：Camouflaged Object Detection (COD) stands as a significant challenge in computer vision, dedicated to identifying and segmenting objects visually highly integrated with their backgrounds. Current mainstream methods have made progress in cross-layer feature fu...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Exploring Depth Contribution for Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2021-06-24</p>
+<p class='meta'>Authors: Mochu Xiang, Jing Zhang, Yunqiu Lv, Aixuan Li, Yiran Zhong et al.</p>
+<p class='meta'>Tags: COD, diffusion, depth/geometry, remote sensing</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2106.13217v3">paper</a> / <a href="http://arxiv.org/pdf/2106.13217v3">pdf</a></p>
+<p class='meta'>简介：Camouflaged object detection (COD) aims to segment camouflaged objects hiding in the environment, which is challenging due to the similar appearance of camouflaged objects and their surroundings. Research in biology suggests depth can provide useful object lo...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Hierarchical Consistency Learning for Test-time Adaptation in Camouflage Perception</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-25</p>
+<p class='meta'>Authors: Mingfeng Zha, Tianyu Li, Guoqing Wang, Yunqiang Pei, Chaofan Qiao et al.</p>
+<p class='meta'>Tags: COD, diffusion, retrieval/prototype, boundary/frequency</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.25651v2">paper</a> / <a href="http://arxiv.org/pdf/2605.25651v2">pdf</a></p>
+<p class='meta'>简介：Camouflaged object detection (COD) aims to localize targets that exhibit minimal perceptual differences from backgrounds through physical attributes. Existing methods, constrained by the static train-then-freeze paradigm, suffer from domain rigidity and annot...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>When W4A4 Breaks Camouflaged Object Detection: Token-Group Dual-Constraint Activation Quantization</strong></h3>
+<p class='meta'>Source: arXiv, 2026-04-18</p>
+<p class='meta'>Authors: Tianqi Li, Wenyu Fang, Xin He, Xue Geng, Xu Cheng et al.</p>
+<p class='meta'>Tags: COD, boundary/frequency</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2604.16855v1">paper</a> / <a href="http://arxiv.org/pdf/2604.16855v1">pdf</a></p>
+<p class='meta'>简介：Camouflaged object detection (COD) segments objects that intentionally blend with the background, so predictions depend on subtle texture and boundary cues. COD is often needed under tight on-device memory and latency budgets, making low-bit inference highly...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<article class='paper'>
+<h3><strong>Modality-Agnostic Prompt Learning for Multi-Modal Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2026-04-14</p>
+<p class='meta'>Authors: Hao Wang, Jiqing Zhang, Xin Yang, Baocai Yin, Lu Jiang et al.</p>
+<p class='meta'>Tags: COD, SAM, diffusion, boundary/frequency, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2604.12380v1">paper</a> / <a href="http://arxiv.org/pdf/2604.12380v1">pdf</a></p>
+<p class='meta'>简介：Camouflaged Object Detection (COD) aims to segment objects that blend seamlessly into complex backgrounds, with growing interest in exploiting additional visual modalities to enhance robustness through complementary information. However, most existing approac...</p>
+<p class='meta'>为什么值得读：直接关联伪装目标检测/分割，优先看方法和消融。</p>
+</article>
+<h2>泛计算机视觉方法池</h2>
+<article class='paper'>
+<h3><strong>SegRAG: Training-Free Retrieval-Augmented Semantic Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-17</p>
+<p class='meta'>Authors: Abderrahmene Boudiaf, Irfan Hussain, Sajid Javed</p>
+<p class='meta'>Tags: open-vocabulary, training-free, SAM, reasoning, retrieval/prototype</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.17630v2">paper</a> / <a href="http://arxiv.org/pdf/2605.17630v2">pdf</a></p>
+<p class='meta'>简介：Open-vocabulary segmentation models such as SAM3 perform well across broad categories via text prompting, yet degrade when target classes are visually underrepresented in pretraining or depart from canonical depictions-limitations text prompts cannot resolve...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>OVS-DINO: Open-Vocabulary Segmentation via Structure-Aligned SAM-DINO with Language Guidance</strong></h3>
+<p class='meta'>Source: arXiv, 2026-04-09</p>
+<p class='meta'>Authors: Haoxi Zeng, Qiankun Liu, Yi Bin, Haiyue Zhang, Yujuan Ding et al.</p>
+<p class='meta'>Tags: open-vocabulary, unsupervised, SAM, boundary/frequency, remote sensing</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2604.08461v1">paper</a> / <a href="http://arxiv.org/pdf/2604.08461v1">pdf</a></p>
+<p class='meta'>简介：Open-Vocabulary Segmentation (OVS) aims to segment image regions beyond predefined category sets by leveraging semantic descriptions. While CLIP based approaches excel in semantic generalization, they frequently lack the fine-grained spatial awareness require...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>ARTEMIS: Agent-guided Reliability-aware Temporal Mask Evolution for Imperfectly Supervised Video Polyp Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-18</p>
+<p class='meta'>Authors: Tong Wang, Siwen Wang, Yaolei Qi, Jinxing Zhou, Yuting He et al.</p>
+<p class='meta'>Tags: SAM, VLM/MLLM, retrieval/prototype, boundary/frequency, depth/geometry, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.20161v1">paper</a> / <a href="http://arxiv.org/pdf/2606.20161v1">pdf</a></p>
+<p class='meta'>简介：Imperfectly supervised video polyp segmentation (VPS) aims to learn dense, temporally consistent masks from inexpensive supervision, including weak annotations (points, scribbles) and semi-supervision with few densely labeled frames. This setting is clinicall...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>ActiveSAM: Image-Conditional Class Pruning for Fast and Accurate Open-Vocabulary Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-15</p>
+<p class='meta'>Authors: Tran Dinh Tien, Zhiqiang Shen</p>
+<p class='meta'>Tags: open-vocabulary, training-free, SAM, diffusion, remote sensing</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.16996v1">paper</a> / <a href="http://arxiv.org/pdf/2606.16996v1">pdf</a></p>
+<p class='meta'>简介：Segment Anything Model 3 (SAM 3) provides a strong frozen backbone for concept-prompted segmentation, but applying it directly to open-vocabulary semantic segmentation (OVSS) is inefficient: full-resolution decoding is typically run over the entire dataset vo...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>Vision-Language Model Reasoning for Contextual Semantic Mapping in Intralogistics</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-23</p>
+<p class='meta'>Authors: Marvin Rüdt, Hao Pang, Constantin Enke, Zäzilia Seibold, Kai Furmans</p>
+<p class='meta'>Tags: open-vocabulary, SAM, VLM/MLLM, reasoning, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24814v1">paper</a> / <a href="http://arxiv.org/pdf/2606.24814v1">pdf</a></p>
+<p class='meta'>简介：Autonomous mobile robots operating in intralogistics environments rely on geometric maps for localization and navigation, but lack semantic understanding of objects and their contextual properties. We present a contextual semantic mapping pipeline that combin...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>SegEarth-OV: Towards Training-Free Open-Vocabulary Segmentation for Remote Sensing Images</strong></h3>
+<p class='meta'>Source: arXiv, 2024-10-02</p>
+<p class='meta'>Authors: Kaiyu Li, Ruixun Liu, Xiangyong Cao, Xueru Bai, Feng Zhou et al.</p>
+<p class='meta'>Tags: open-vocabulary, training-free, SAM, remote sensing, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2410.01768v2">paper</a> / <a href="http://arxiv.org/pdf/2410.01768v2">pdf</a></p>
+<p class='meta'>简介：Remote sensing image plays an irreplaceable role in fields such as agriculture, water resources, military, and disaster relief. Pixel-level interpretation is a critical aspect of remote sensing image applications; however, a prevalent limitation remains the n...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>T-REN: Learning Text-Aligned Region Tokens Improves Dense Vision-Language Alignment and Scalability</strong></h3>
+<p class='meta'>Source: arXiv, 2026-04-20</p>
+<p class='meta'>Authors: Savya Khosla, Sethuraman T, Aryan Chadha, Alex Schwing, Derek Hoiem</p>
+<p class='meta'>Tags: open-vocabulary, VLM/MLLM, diffusion, retrieval/prototype, depth/geometry, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2604.18573v1">paper</a> / <a href="http://arxiv.org/pdf/2604.18573v1">pdf</a></p>
+<p class='meta'>简介：Despite recent progress, vision-language encoders struggle with two core limitations: (1) weak alignment between language and dense vision features, which hurts tasks like open-vocabulary semantic segmentation; and (2) high token counts for fine-grained visua...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>MM-OVSeg:Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing</strong></h3>
+<p class='meta'>Source: arXiv, 2026-03-18</p>
+<p class='meta'>Authors: Yimin Wei, Aoran Xiao, Hongruixuan Chen, Junshi Xia, Naoto Yokoya</p>
+<p class='meta'>Tags: open-vocabulary, VLM/MLLM, diffusion, remote sensing</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2603.17528v2">paper</a> / <a href="http://arxiv.org/pdf/2603.17528v2">pdf</a></p>
+<p class='meta'>简介：Open-vocabulary segmentation enables pixel-level recognition from an open set of textual categories, allowing generalization beyond fixed classes. Despite great potential in remote sensing, progress in this area remains largely limited to clear-sky optical da...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>Jolia: Concept-Level Vision-Language Alignment for 3D CT Contrastive Learning</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-23</p>
+<p class='meta'>Authors: Julien Khlaut, Charles Corbière, Baptiste Callard, Amaury Prat, Leo Butsanets et al.</p>
+<p class='meta'>Tags: VLM/MLLM, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24570v2">paper</a> / <a href="http://arxiv.org/pdf/2606.24570v2">pdf</a></p>
+<p class='meta'>简介：Vision-language contrastive pretraining has become the dominant recipe for 3D medical foundation models, leveraging the large volumes of paired scans and reports produced in clinical practice. However, medical images usually span dozens of organs, and radiolo...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>HPP: Hierarchical Programmatic Probing for Long Video Understanding by Decoupling Perception and Reasoning</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-19</p>
+<p class='meta'>Authors: Awais Rauf, Ahmed Hasssan, Greg Slabaugh</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, retrieval/prototype, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.21734v1">paper</a> / <a href="http://arxiv.org/pdf/2606.21734v1">pdf</a></p>
+<p class='meta'>简介：Understanding long videos requires fine-grained perception and multi-step, higher-order reasoning over complex, long-range spatio-temporal dynamics. Vision-language models (VLMs) encode video frames into visual tokens and attempt to perform both perception an...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Object Tokens as a Bridge Between Segmentation and Visual Question Answering in Robotic Surgery</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-14</p>
+<p class='meta'>Authors: Yiping Li, Ronald de Jong, Romy van Jaarsveld, Franco Badaloni, Gino Kuiper et al.</p>
+<p class='meta'>Tags: SAM, VLM/MLLM, reasoning</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.15861v1">paper</a> / <a href="http://arxiv.org/pdf/2606.15861v1">pdf</a></p>
+<p class='meta'>简介：Visual Question Answering (VQA) in robotic surgery, referred to as surgical VQA, requires high-level understanding of complex surgical scenes and the integration of visual perception with language reasoning, with the potential to support surgical training and...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>UniDrive: A Unified Vision-Language and Grounding Framework for Interpretable Risk Understanding in Autonomous Driving</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-23</p>
+<p class='meta'>Authors: Xiaowei Gao, Pengxiang Li, Yitai Cheng, Ruihan Xu, James Haworth et al.</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24759v1">paper</a> / <a href="http://arxiv.org/pdf/2606.24759v1">pdf</a></p>
+<p class='meta'>简介：Recent multimodal large language models (MLLMs) have shown strong potential for autonomous driving scene understanding, yet existing methods still face a fundamental trade-off between temporal reasoning and spatial precision. Models that rely on single-frame...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>EnTrust: Modeling Inter-Modal Conflict for Trustworthy Multimodal Medical Image Analysis</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-19</p>
+<p class='meta'>Authors: Dwarikanath Mahapatra, Abhijit Das, Behzad Bozorgtabar, Zongyuan Ge, Sudipta Roy et al.</p>
+<p class='meta'>Tags: SAM, diffusion</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.21384v1">paper</a> / <a href="http://arxiv.org/pdf/2606.21384v1">pdf</a></p>
+<p class='meta'>简介：Multimodal medical imaging fuses complementary anatomical and functional information, yet modalities frequently disagree in pathologically heterogeneous regions. Current segmentation models handle this in one of two inadequate ways: deterministic fusion that...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Annotation-Free Open-Vocabulary Segmentation for Remote-Sensing Images</strong></h3>
+<p class='meta'>Source: arXiv, 2025-08-25</p>
+<p class='meta'>Authors: Kaiyu Li, Xiangyong Cao, Ruixun Liu, Shihong Wang, Zixuan Jiang et al.</p>
+<p class='meta'>Tags: open-vocabulary, SAM, boundary/frequency, remote sensing</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2508.18067v1">paper</a> / <a href="http://arxiv.org/pdf/2508.18067v1">pdf</a></p>
+<p class='meta'>简介：Semantic segmentation of remote sensing (RS) images is pivotal for comprehensive Earth observation, but the demand for interpreting new object categories, coupled with the high expense of manual annotation, poses significant challenges. Although open-vocabula...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>Diffusion Model as a Generalist Segmentation Learner</strong></h3>
+<p class='meta'>Source: arXiv, 2026-04-27</p>
+<p class='meta'>Authors: Haoxiao Wang, Antao Xiang, Haiyang Sun, Peilin Sun, Changhao Pan et al.</p>
+<p class='meta'>Tags: open-vocabulary, diffusion, remote sensing, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2604.24575v1">paper</a> / <a href="http://arxiv.org/pdf/2604.24575v1">pdf</a></p>
+<p class='meta'>简介：Diffusion models are primarily trained for image synthesis, yet their denoising trajectories encode rich, spatially aligned visual priors. In this paper, we demonstrate that these priors can be utilized for text-conditioned semantic and open-vocabulary segmen...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>VesselSim: learning 3D blood vessel segmentation without expert annotations</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-25</p>
+<p class='meta'>Authors: Erin Rainville, Melissa Ananian, Tristan Mirolla, Hassan Rivaz, Yiming Xiao</p>
+<p class='meta'>Tags: boundary/frequency, depth/geometry, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.26277v2">paper</a> / <a href="http://arxiv.org/pdf/2605.26277v2">pdf</a></p>
+<p class='meta'>简介：Blood vessel segmentation is a core task in medical image analysis for the care of vascular diseases and surgical planning, yet the challenges of providing expert vascular annotations pose a major obstacle for the progress of related deep learning techniques....</p>
+<p class='meta'>为什么值得读：适合补充伪装场景中的边界、纹理、几何先验。</p>
+</article>
+<article class='paper'>
+<h3><strong>Binary Tracking for Spatial QA and Navigation with Open Vision-Language Models</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-15</p>
+<p class='meta'>Authors: Dongbin Na, Chanwoo Kim, Soonbin Rho, Giyun Choi, Gangbok Lee et al.</p>
+<p class='meta'>Tags: SAM, VLM/MLLM, reasoning, diffusion, retrieval/prototype, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.16902v1">paper</a> / <a href="http://arxiv.org/pdf/2606.16902v1">pdf</a></p>
+<p class='meta'>简介：This work addresses spatial question answering for service robots traversing long egocentric routes. Given a query such as &quot;where can I find a dry cleaner on the way back home?&quot;, the system returns a metric coordinate that downstream navigation components can...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>3D-PLOT-LLM: Part-Level Object Tokens for 3D Large Language Models</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-18</p>
+<p class='meta'>Authors: Jintang Xue, Xinyu Wang, Yixing Wu, Jingwen Chen, C. -C. Jay Kuo</p>
+<p class='meta'>Tags: VLM/MLLM, diffusion, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.19828v1">paper</a> / <a href="http://arxiv.org/pdf/2606.19828v1">pdf</a></p>
+<p class='meta'>简介：3D multimodal large language models (3D MLLMs) describe a 3D object as a whole but cannot address, name, or reason about its parts. Prior part-aware attempts add segmentation decoders, heavier 3D encoders, or bounding-box grammars at substantial parameter cos...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>High-Fidelity Synthetic Transmission Electron Microscopy Image Generation Using Diffusion Probabilistic Models for Data-Limited Semiconductor Metrology</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-23</p>
+<p class='meta'>Authors: Johannes Boehm, Bappaditya Dey</p>
+<p class='meta'>Tags: SAM, diffusion, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24817v1">paper</a> / <a href="http://arxiv.org/pdf/2606.24817v1">pdf</a></p>
+<p class='meta'>简介：Advanced semiconductor nodes drastically increased demand for Transmission Electron Microscopy (TEM), yet destructive sample preparation, slow imaging and high costs severely limit the availability of diverse datasets needed for downstream machine learning (M...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Prob-BBDM: a Probabilistic Brownian Bridge Diffusion Model for MRI sequence image-to-image translation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-23</p>
+<p class='meta'>Authors: Martin Valls, Pascal Bourdon, Christine Fernandez-Maloigne, Guillaume Herpe, David Helbert</p>
+<p class='meta'>Tags: diffusion, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24313v1">paper</a> / <a href="http://arxiv.org/pdf/2606.24313v1">pdf</a></p>
+<p class='meta'>简介：AI-driven image-to-image synthesis is rapidly advancing, with growing applications in medical imaging. Multi-modal image analysis plays a crucial role in optimizing examination quality, yet acquiring multiple imaging modalities in clinical settings remains re...</p>
+<p class='meta'>为什么值得读：适合补充伪装场景中的边界、纹理、几何先验。</p>
+</article>
+<article class='paper'>
+<h3><strong>IMAGIN-4D: Image-Guided Controllable Interaction Generation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-22</p>
+<p class='meta'>Authors: Sai Kumar Dwivedi, Federica Bogo, Buğra Tekin, Chenhongyi Yang, Nadine Bertsch et al.</p>
+<p class='meta'>Tags: SAM, diffusion, depth/geometry, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.23675v1">paper</a> / <a href="http://arxiv.org/pdf/2606.23675v1">pdf</a></p>
+<p class='meta'>简介：Generating human-object interactions (HOI) is central to character animation, robotics, AR/VR, and embodied AI. Recent HOI generation methods synthesize motion from text, object geometry, and sparse waypoints, controlling action semantics and object trajector...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Prompting Diffusion Models for Zero-Shot Instance Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-21</p>
+<p class='meta'>Authors: Irem Zeynep Alagöz, Nils Morbitzer, Andrea Ramazzina, Nassir Navab, Federico Tombari et al.</p>
+<p class='meta'>Tags: diffusion</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.22660v1">paper</a> / <a href="http://arxiv.org/pdf/2606.22660v1">pdf</a></p>
+<p class='meta'>简介：Several disruptive research directions have recently emerged in computer vision, including foundation models achieving previously unseen zero-shot performance in scene understanding, even interactively, and generative models that synthesize extremely realisti...</p>
+<p class='meta'>为什么值得读：方法上可能可迁移，建议先读摘要和图 1。</p>
+</article>
+<article class='paper'>
+<h3><strong>MMDiff: Extending Diffusion Transformers for Multi-Modal Generation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-15</p>
+<p class='meta'>Authors: Yagmur Akarken, Orest Kupyn, Christian Rupprecht</p>
+<p class='meta'>Tags: diffusion, depth/geometry, video, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.16673v1">paper</a> / <a href="http://arxiv.org/pdf/2606.16673v1">pdf</a></p>
+<p class='meta'>简介：Diffusion transformers have demonstrated remarkable generative capabilities, yet the rich perceptual representations computed across their denoising trajectory are discarded once the content is rendered. We present MMDiff, a framework that transforms a frozen...</p>
+<p class='meta'>为什么值得读：适合补充伪装场景中的边界、纹理、几何先验。</p>
+</article>
+<article class='paper'>
+<h3><strong>AD-DINOv3: Enhancing DINOv3 for Zero-Shot Anomaly Detection with Anomaly-Aware Calibration</strong></h3>
+<p class='meta'>Source: arXiv, 2025-09-17</p>
+<p class='meta'>Authors: Jingyi Yuan, Jianxiong Ye, Wenkang Chen, Chenqiang Gao</p>
+<p class='meta'>Tags: VLM/MLLM, diffusion, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2509.14084v2">paper</a> / <a href="http://arxiv.org/pdf/2509.14084v2">pdf</a></p>
+<p class='meta'>简介：Zero-Shot Anomaly Detection (ZSAD) seeks to identify anomalies from arbitrary novel categories, offering a scalable and annotation-efficient solution. Traditionally, most ZSAD works have been based on the CLIP model, which performs anomaly detection by calcul...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>FiLo++: Zero-/Few-Shot Anomaly Detection by Fused Fine-Grained Descriptions and Deformable Localization</strong></h3>
+<p class='meta'>Source: arXiv, 2025-01-17</p>
+<p class='meta'>Authors: Zhaopeng Gu, Bingke Zhu, Guibo Zhu, Yingying Chen, Ming Tang et al.</p>
+<p class='meta'>Tags: SAM, reasoning, diffusion, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2501.10067v2">paper</a> / <a href="http://arxiv.org/pdf/2501.10067v2">pdf</a></p>
+<p class='meta'>简介：Anomaly detection methods typically require extensive normal samples from the target class for training, limiting their applicability in scenarios that require rapid adaptation, such as cold start. Zero-shot and few-shot anomaly detection do not require label...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Exploring Efficient Open-Vocabulary Segmentation in the Remote Sensing</strong></h3>
+<p class='meta'>Source: arXiv, 2025-09-15</p>
+<p class='meta'>Authors: Bingyu Li, Haocheng Dong, Da Zhang, Zhiyuan Zhao, Junyu Gao et al.</p>
+<p class='meta'>Tags: open-vocabulary, SAM, VLM/MLLM, boundary/frequency, remote sensing</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2509.12040v2">paper</a> / <a href="http://arxiv.org/pdf/2509.12040v2">pdf</a></p>
+<p class='meta'>简介：Open-Vocabulary Remote Sensing Image Segmentation (OVRSIS), an emerging task that adapts Open-Vocabulary Segmentation (OVS) to the remote sensing (RS) domain, remains underexplored due to the absence of a unified evaluation benchmark and the domain gap betwee...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>TravExplorer: Cross-Floor Embodied Exploration via Traversability-Aware 3-D Planning</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-19</p>
+<p class='meta'>Authors: Han Zheng, Zhe Chen, Yudong Huang, Haoran Liu, Jinghao Wang et al.</p>
+<p class='meta'>Tags: open-vocabulary, reasoning, depth/geometry, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.19958v1">paper</a> / <a href="http://arxiv.org/pdf/2605.19958v1">pdf</a></p>
+<p class='meta'>简介：Zero-shot Object Navigation (ZSON) has shown promise for open-vocabulary target search in unseen environments, yet most existing systems remain tied to planar representations and single-floor assumptions. These assumptions become inadequate in real buildings,...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>SparseSAM: Structured Sparsification of Activations in Segment Anything Models</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-17</p>
+<p class='meta'>Authors: Hoai-Chau Tran, Chi H. Nguyen, Duy M. H. Nguyen, Mathias Niepert, Fan Lai et al.</p>
+<p class='meta'>Tags: open-vocabulary, training-free, SAM</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.17633v1">paper</a> / <a href="http://arxiv.org/pdf/2605.17633v1">pdf</a></p>
+<p class='meta'>简介：The Segment Anything Model (SAM) achieves strong open-vocabulary segmentation, but its ViT-based image encoders dominate inference latency and memory. Existing activation compression methods, such as token merging, reduce the token length to process, yet intr...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>Towards Realistic Open-Vocabulary Remote Sensing Segmentation: Benchmark and Baseline</strong></h3>
+<p class='meta'>Source: arXiv, 2026-04-17</p>
+<p class='meta'>Authors: Bingyu Li, Tao Huo, Haocheng Dong, Da Zhang, Zhiyuan Zhao et al.</p>
+<p class='meta'>Tags: open-vocabulary, remote sensing, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2604.15652v1">paper</a> / <a href="http://arxiv.org/pdf/2604.15652v1">pdf</a></p>
+<p class='meta'>简介：Open-vocabulary remote sensing image segmentation (OVRSIS) remains underexplored due to fragmented datasets, limited training diversity, and the lack of evaluation benchmarks that reflect realistic geospatial application demands. Our previous \textit{OVRSISBe...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>OV-Stitcher: A Global Context-Aware Framework for Training-Free Open-Vocabulary Semantic Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-04-09</p>
+<p class='meta'>Authors: Seungjae Moon, Seunghyun Oh, Youngmin Ro</p>
+<p class='meta'>Tags: open-vocabulary, training-free, VLM/MLLM, reasoning, diffusion, boundary/frequency</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2604.08110v2">paper</a> / <a href="http://arxiv.org/pdf/2604.08110v2">pdf</a></p>
+<p class='meta'>简介：Training-free open-vocabulary semantic segmentation(TF-OVSS) has recently attracted attention for its ability to perform dense prediction by leveraging the pretrained knowledge of large vision and vision-language models, without requiring additional training....</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>TRACE: Evidence Grounding-Guided Multi-Video Event Understanding and Claim Generation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-16</p>
+<p class='meta'>Authors: Pengyu Yan, Akhil Gorugantu, Mahesh Bhosale, Abdul Wasi, Vishvesh Trivedi et al.</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.16740v2">paper</a> / <a href="http://arxiv.org/pdf/2605.16740v2">pdf</a></p>
+<p class='meta'>简介：Multi-video event understanding demands models that can locate and attribute query-relevant evidence scattered across long, heterogeneous video corpora. Existing large vision-language models (LVLMs) often underperform in this regime because they quickly exhau...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Segmentation, Detection and Explanation: A Unified Framework for CT Appearance Reasoning</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-15</p>
+<p class='meta'>Authors: Yuyuan Liu, Can Peng, Yingyu Yang, Qianye Yang, Cheng Ouyang et al.</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, diffusion</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.15997v1">paper</a> / <a href="http://arxiv.org/pdf/2605.15997v1">pdf</a></p>
+<p class='meta'>简介：Recent progress in deep learning has significantly advanced CT image analysis, particularly for segmentation tasks. However, these advances are largely confined to image-level pattern recognition, with most methods lacking explicit anatomical or contextual re...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>DeepTumorVQA: A Hierarchical 3D CT Benchmark for Stage-Wise Evaluation of Medical VLMs and Tool-Augmented Agents</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-10</p>
+<p class='meta'>Authors: Yixiong Chen, Wenjie Xiao, Pedro R. A. S. Bassi, Boyan Wang, Liang He et al.</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, diffusion, boundary/frequency, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.09679v1">paper</a> / <a href="http://arxiv.org/pdf/2605.09679v1">pdf</a></p>
+<p class='meta'>简介：Medical vision-language models (VLMs) and AI agents have made significant progress in learning to analyze and reason about clinical images. However, existing medical visual question answering (VQA) benchmarks collapse model capabilities into a single accuracy...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling</strong></h3>
+<p class='meta'>Source: arXiv, 2026-02-26</p>
+<p class='meta'>Authors: Camile Lendering, Erkut Akdag, Egor Bondarev</p>
+<p class='meta'>Tags: training-free, VLM/MLLM, retrieval/prototype, remote sensing, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2602.23013v3">paper</a> / <a href="http://arxiv.org/pdf/2602.23013v3">pdf</a></p>
+<p class='meta'>简介：Detecting visual anomalies in industrial inspection often requires training with only a few normal images per category. Recent few-shot methods achieve strong results employing foundation-model features, but typically rely on memory banks, auxiliary datasets,...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>V-Zero: Answer-Label-Free On-Policy Distillation with Contrastive Evidence Gating for Fine-Grained Visual Reasoning</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-24</p>
+<p class='meta'>Authors: Haoxiang Sun, Zhihang Yi, Langxuan Deng, Yuhao Zhou, Peiqi Jia et al.</p>
+<p class='meta'>Tags: SAM, VLM/MLLM, reasoning</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.25319v1">paper</a> / <a href="http://arxiv.org/pdf/2606.25319v1">pdf</a></p>
+<p class='meta'>简介：Fine-grained visual reasoning requires multimodal large language models (MLLMs) to identify task-relevant visual evidence and ground their reasoning in local image regions. Existing agentic methods typically rely on reinforcement learning with verifiable rewa...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Are We There Yet? Exploring the Capabilities of MLLMs in Assistive AI Applications</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-23</p>
+<p class='meta'>Authors: Shayon Dasgupta, Avijit Dasgupta, C. V. Jawahar</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.25084v1">paper</a> / <a href="http://arxiv.org/pdf/2606.25084v1">pdf</a></p>
+<p class='meta'>简介：Multimodal Large Language Models (MLLMs) have redefined visual understanding by combining vision encoders with large-scale language models. This unified architecture enables strong performance on tasks like image captioning, visual question answering, and mul...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>CineCap: Structured Reasoning with Spatio-Temporal Anchors for Cinematographic Video Captioning</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-23</p>
+<p class='meta'>Authors: Xinyu Mao, Yuhui Zeng, Xiaokun Liu, Wenyu Qin, Meng Wang et al.</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, diffusion, depth/geometry, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24636v1">paper</a> / <a href="http://arxiv.org/pdf/2606.24636v1">pdf</a></p>
+<p class='meta'>简介：Cinematographic captioning aims to describe how a video is filmed using professional film-language concepts such as camera movement, shot size, depth of field, composition, and shooting angle. This capability is important for fine-grained video understanding...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Cross-Modality Structural Guidance in 3D Latent Diffusion for Robust FLAIR Super-Resolution</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-24</p>
+<p class='meta'>Authors: Haoyu Lan, Jiazhen Zhang, John Onofrey, Bino Varghese, Nasim Sheikh-Bahaei et al.</p>
+<p class='meta'>Tags: SAM, diffusion, boundary/frequency, depth/geometry, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.25255v1">paper</a> / <a href="http://arxiv.org/pdf/2606.25255v1">pdf</a></p>
+<p class='meta'>简介：High-resolution (HR) MRI acquisition is often hampered by scan time constraints, resulting in anisotropic or low-resolution scans (e.g., thick-slice FLAIR) that limit diagnostic accuracy. While deep learning-based super-resolution (SR) methods show promise, t...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>NeuroSonic: Conditional Flow Matching for EEG-to-Speech Reconstruction</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-23</p>
+<p class='meta'>Authors: Wenhao Gao, Yifan Wang, Yijia Ma, Carl Yang, Wen Li et al.</p>
+<p class='meta'>Tags: SAM, diffusion, video, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24087v1">paper</a> / <a href="http://arxiv.org/pdf/2606.24087v1">pdf</a></p>
+<p class='meta'>简介：Reconstructing continuous speech from scalp electroencephalography (EEG) remains fundamentally challenging. EEG provides a weak, spatially diffuse, and highly variable measurement of distributed cortical activity, whereas speech is organized as a coherent aco...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>C^2GR: Coupled Comprehensive Generative Replay for a Continually Learnable Universal Segmentation Model</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-22</p>
+<p class='meta'>Authors: Wei Li, Jingyang Zhang, Guoan Wang, Junzhi Ning, Yang Chen et al.</p>
+<p class='meta'>Tags: diffusion, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.23473v1">paper</a> / <a href="http://arxiv.org/pdf/2606.23473v1">pdf</a></p>
+<p class='meta'>简介：Universal segmentation models exhibit significant potential for diverse tasks involving different imaging modalities and segmentation objectives. Task-Incremental Learning provides a privacy-preserving approach to continually evolve a universal model on tasks...</p>
+<p class='meta'>为什么值得读：方法上可能可迁移，建议先读摘要和图 1。</p>
+</article>
+<article class='paper'>
+<h3><strong>BEV-Denoise: Learning Intrinsic Noise for Accurate Bird&#x27;s-Eye-View Semantic Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-22</p>
+<p class='meta'>Authors: Dooseop Choi, Kyounghwan An, Kyoung-Wook Min</p>
+<p class='meta'>Tags: diffusion, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.22931v1">paper</a> / <a href="http://arxiv.org/pdf/2606.22931v1">pdf</a></p>
+<p class='meta'>简介：In this paper, we present a framework dubbed \textbf{BEV-Denoise} that estimates and removes intrinsic noise from learned Bird&#x27;s-Eye-View (BEV) features to achieve accurate BEV semantic segmentation. Inspired by the noise estimation capability of Denoising Di...</p>
+<p class='meta'>为什么值得读：方法上可能可迁移，建议先读摘要和图 1。</p>
+</article>
+<article class='paper'>
+<h3><strong>ELDiff: When Evidential Learning Meets Text-to-Image Diffusion</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-18</p>
+<p class='meta'>Authors: Qingtao Pan, Kai Ye, Zhihao Dou, Bing Ji, Shuo Li</p>
+<p class='meta'>Tags: diffusion, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.20924v1">paper</a> / <a href="http://arxiv.org/pdf/2606.20924v1">pdf</a></p>
+<p class='meta'>简介：In multi-object text-to-image (T2I) diffusion, ensuring semantic consistency between textual prompts and generated visual content is crucial for image synthesis. However, such consistency constraint is often underemphasized in the denoising process of diffusi...</p>
+<p class='meta'>为什么值得读：方法上可能可迁移，建议先读摘要和图 1。</p>
+</article>
+<article class='paper'>
+<h3><strong>Crane: Context-Guided Prompt Learning and Attention Refinement for Zero-Shot Anomaly Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2025-04-15</p>
+<p class='meta'>Authors: Alireza Salehi, Mohammadreza Salehi, Reshad Hosseini, Cees G. M. Snoek, Makoto Yamada et al.</p>
+<p class='meta'>Tags: SAM, diffusion, boundary/frequency, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2504.11055v2">paper</a> / <a href="http://arxiv.org/pdf/2504.11055v2">pdf</a></p>
+<p class='meta'>简介：Anomaly Detection involves identifying deviations from normal data distributions and is critical in fields such as medical diagnostics and industrial defect detection. Traditional AD methods typically require the availability of normal training samples; howev...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Taming SAM3 in the Wild: A Concept Bank for Open-Vocabulary Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-02-06</p>
+<p class='meta'>Authors: Gensheng Pei, Xiruo Jiang, Yazhou Yao, Xiangbo Shu, Fumin Shen et al.</p>
+<p class='meta'>Tags: open-vocabulary, SAM, diffusion, retrieval/prototype</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2602.06333v1">paper</a> / <a href="http://arxiv.org/pdf/2602.06333v1">pdf</a></p>
+<p class='meta'>简介：The recent introduction of \texttt{SAM3} has revolutionized Open-Vocabulary Segmentation (OVS) through \textit{promptable concept segmentation}, which grounds pixel predictions in flexible concept prompts. However, this reliance on pre-defined concepts makes...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>AerOSeg: Harnessing SAM for Open-Vocabulary Segmentation in Remote Sensing Images</strong></h3>
+<p class='meta'>Source: arXiv, 2025-04-12</p>
+<p class='meta'>Authors: Saikat Dutta, Akhil Vasim, Siddhant Gole, Hamid Rezatofighi, Biplab Banerjee</p>
+<p class='meta'>Tags: open-vocabulary, SAM, diffusion, remote sensing</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2504.09203v1">paper</a> / <a href="http://arxiv.org/pdf/2504.09203v1">pdf</a></p>
+<p class='meta'>简介：Image segmentation beyond predefined categories is a key challenge in remote sensing, where novel and unseen classes often emerge during inference. Open-vocabulary image Segmentation addresses these generalization issues in traditional supervised segmentation...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>Decomposed Vision-Language Alignment for Fine-Grained Open-Vocabulary Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-15</p>
+<p class='meta'>Authors: Chenhao Wang, Yingrui Ji, Yu Meng, Yao Zhu</p>
+<p class='meta'>Tags: open-vocabulary, VLM/MLLM</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.15942v1">paper</a> / <a href="http://arxiv.org/pdf/2605.15942v1">pdf</a></p>
+<p class='meta'>简介：Open-vocabulary segmentation models often struggle to generalize to unseen combinations of object categories and attributes, because fine-grained descriptions are typically encoded as holistic sentences that entangle multiple semantic units. We propose a Deco...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>Making Training-Free Diffusion Segmentors Scale with the Generative Power</strong></h3>
+<p class='meta'>Source: arXiv, 2026-03-06</p>
+<p class='meta'>Authors: Benyuan Meng, Qianqian Xu, Zitai Wang, Xiaochun Cao, Longtao Huang et al.</p>
+<p class='meta'>Tags: training-free, diffusion</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2603.06178v3">paper</a> / <a href="http://arxiv.org/pdf/2603.06178v3">pdf</a></p>
+<p class='meta'>简介：As powerful generative models, text-to-image diffusion models have recently been explored for discriminative tasks. A line of research focuses on adapting a pre-trained diffusion model to semantic segmentation without any further training, leading to training...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>R2AoP: Reliable and Robust Angle of Progression Estimation from Intrapartum Ultrasound</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-20</p>
+<p class='meta'>Authors: Yuanhan Wang, Yifei Chen, Beining Wu, Mingxuan Liu, Xiaotian Hu et al.</p>
+<p class='meta'>Tags: diffusion, boundary/frequency, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.21099v1">paper</a> / <a href="http://arxiv.org/pdf/2605.21099v1">pdf</a></p>
+<p class='meta'>简介：Accurate estimation of the Angle of Progression (AoP) from intrapartum transperineal ultrasound is critical for objective assessment of labor progression, yet remains highly sensitive to imaging noise, boundary ambiguities, and the geometric amplification of...</p>
+<p class='meta'>为什么值得读：适合补充伪装场景中的边界、纹理、几何先验。</p>
+</article>
+<article class='paper'>
+<h3><strong>VISTA: Variance-Gated Inter-Sequence Test-Time Adaptation for Multi-Sequence MRI Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-17</p>
+<p class='meta'>Authors: Zhipeng Deng, Jiale Zhou, Wenhan Jiang, Haolin Wang, Xun Lin et al.</p>
+<p class='meta'>Tags: boundary/frequency</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.17433v2">paper</a> / <a href="http://arxiv.org/pdf/2605.17433v2">pdf</a></p>
+<p class='meta'>简介：Deploying multi-sequence magnetic resonance imaging (MRI) segmentation models to new clinical environments is challenging due to variations in scanners and acquisition protocols. Although existing TTA methods handle basic per-modality shifts, they often fail...</p>
+<p class='meta'>为什么值得读：适合补充伪装场景中的边界、纹理、几何先验。</p>
+</article>
+<article class='paper'>
+<h3><strong>The Golden Subspace: Where Efficiency Meets Generalization in Continual Test-Time Adaptation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-03-23</p>
+<p class='meta'>Authors: Guannan Lai, Da-Wei Zhou, Zhenguo Li, Han-Jia Ye</p>
+<p class='meta'>Tags: SAM</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2603.21928v1">paper</a> / <a href="http://arxiv.org/pdf/2603.21928v1">pdf</a></p>
+<p class='meta'>简介：Continual Test-Time Adaptation (CTTA) aims to enable models to adapt online to unlabeled data streams under distribution shift without accessing source data. Existing CTTA methods face an efficiency-generalization trade-off: updating more parameters improves...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Mind the Heads: Topological Representation Alignment for Multimodal LLMs</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-22</p>
+<p class='meta'>Authors: Davide Caffagni, Alberto Compagnoni, Federico Melis, Sara Sarto, Pier Luigi Dovesi et al.</p>
+<p class='meta'>Tags: VLM/MLLM, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.23885v1">paper</a> / <a href="http://arxiv.org/pdf/2606.23885v1">pdf</a></p>
+<p class='meta'>简介：Representation alignment has emerged as an effective approach to improve Multimodal Large Language Models (MLLMs) by regularizing their internal representations toward those of an external vision encoder. However, existing methods typically align a fixed laye...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>MLLMs Get It Right, Then Get It Wrong: Tracing and Correcting Late-Layer Textual Bias</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-16</p>
+<p class='meta'>Authors: Xingming Li, Ao Cheng, Qiyao Sun, Xixiang He, Xuanyu Ji et al.</p>
+<p class='meta'>Tags: training-free, VLM/MLLM, reasoning, boundary/frequency</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.17953v1">paper</a> / <a href="http://arxiv.org/pdf/2606.17953v1">pdf</a></p>
+<p class='meta'>简介：When vision contradicts text, multimodal large language models (MLLMs) consistently favor text, even when images provide clear evidence otherwise. This bias poses risks for applications requiring visual grounding, yet its cause remains unclear.</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>Gen-VCoT: Generative Visual Chain-of-Thought Reasoning via Diffusion-Based RGB Intermediate Representations</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-15</p>
+<p class='meta'>Authors: Zhiqiang Zhou, Junliang Dai, Xu ling</p>
+<p class='meta'>Tags: SAM, VLM/MLLM, reasoning, diffusion, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.16783v1">paper</a> / <a href="http://arxiv.org/pdf/2606.16783v1">pdf</a></p>
+<p class='meta'>简介：Multimodal large language models (MLLMs) excel at visual reasoning but rely on text-based chain-of-thought (CoT), lacking interpretable visual intermediates. Existing methods use opaque tokens or external tools, missing key properties.</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>THREAD: Trajectory Planning for Hybrid Rigid-Soft Manipulators with Environment-Aware Diffusion</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-19</p>
+<p class='meta'>Authors: Shivani Kamtikar, Pranav Asthana, Naveen Kumar Uppalapati, Girish Krishnan, Girish Chowdhary</p>
+<p class='meta'>Tags: diffusion, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.21792v1">paper</a> / <a href="http://arxiv.org/pdf/2606.21792v1">pdf</a></p>
+<p class='meta'>简介：Manipulation in confined environments, such as threading a manipulator through narrow apertures, remains a fundamental challenge, especially for conventional rigid robots. Hybrid rigid-soft manipulators offer promise but face two compounding planning challeng...</p>
+<p class='meta'>为什么值得读：适合补充伪装场景中的边界、纹理、几何先验。</p>
+</article>
+<article class='paper'>
+<h3><strong>Search is All You Need for Few-shot Anomaly Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2025-04-16</p>
+<p class='meta'>Authors: Qishan Wang, Jia Guo, Shuyong Gao, Haofen Wang, Li Xiong et al.</p>
+<p class='meta'>Tags: training-free, SAM, retrieval/prototype, boundary/frequency, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2504.11895v2">paper</a> / <a href="http://arxiv.org/pdf/2504.11895v2">pdf</a></p>
+<p class='meta'>简介：Few-shot anomaly detection (FSAD) has emerged as a crucial yet challenging task in industrial inspection, where normal distribution modeling must be accomplished with only a few normal images. While existing approaches typically employ multi-modal foundation...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>UniVAD: A Training-free Unified Model for Few-shot Visual Anomaly Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2024-12-04</p>
+<p class='meta'>Authors: Zhaopeng Gu, Bingke Zhu, Guibo Zhu, Yingying Chen, Ming Tang et al.</p>
+<p class='meta'>Tags: training-free, SAM, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2412.03342v3">paper</a> / <a href="http://arxiv.org/pdf/2412.03342v3">pdf</a></p>
+<p class='meta'>简介：Visual Anomaly Detection (VAD) aims to identify abnormal samples in images that deviate from normal patterns, covering multiple domains, including industrial, logical, and medical fields. Due to the domain gaps between these fields, existing VAD methods are t...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>HD-TTA: Hypothesis-Driven Test-Time Adaptation for Safer Brain Tumor Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-02-23</p>
+<p class='meta'>Authors: Kartik Jhawar, Lipo Wang</p>
+<p class='meta'>Tags: SAM, diffusion, depth/geometry</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2602.19454v1">paper</a> / <a href="http://arxiv.org/pdf/2602.19454v1">pdf</a></p>
+<p class='meta'>简介：Standard Test-Time Adaptation (TTA) methods typically treat inference as a blind optimization task, applying generic objectives to all or filtered test samples. In safety-critical medical segmentation, this lack of selectivity often causes the tumor mask to s...</p>
+<p class='meta'>为什么值得读：适合借鉴为 prompt 生成、mask 选择或视觉推理模块。</p>
+</article>
+<article class='paper'>
+<h3><strong>Efficient Encoder-Free Fourier-based 3D Large Multimodal Model</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Authors: Guofeng Mei, Wei Lin, Luigi Riz, Yujiao Wu, Yiming Wang et al.</p>
+<p class='meta'>Tags: depth/geometry</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Mei_Efficient_Encoder-Free_Fourier-based_3D_Large_Multimodal_Model_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Mei_Efficient_Encoder-Free_Fourier-based_3D_Large_Multimodal_Model_CVPR_2026_paper.pdf">pdf</a></p>
+<p class='meta'>简介：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>为什么值得读：适合补充伪装场景中的边界、纹理、几何先验。</p>
+</article>
+<article class='paper'>
+<h3><strong>Seg-Agent: Test-Time Multimodal Reasoning for Training-Free Language-Guided Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-13</p>
+<p class='meta'>Authors: Chao Hao, Jun Xu, Ji Du, Shuo Ye, Ziyue Qiao et al.</p>
+<p class='meta'>Tags: training-free, SAM, VLM/MLLM, reasoning, diffusion</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.12953v1">paper</a> / <a href="http://arxiv.org/pdf/2605.12953v1">pdf</a></p>
+<p class='meta'>简介：Language-guided segmentation transcends the scope limitations of traditional semantic segmentation, enabling models to segment arbitrary target regions based on natural language instructions. Existing approaches typically adopt a two-stage framework: employin...</p>
+<p class='meta'>为什么值得读：适合迁移到开放词汇、零样本或无训练 COD。</p>
+</article>
+<article class='paper'>
+<h3><strong>SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-03-12</p>
+<p class='meta'>Authors: Xiaogang Du, Jiawei Zhang, Tongfei Liu, Tao Lei, Yingbo Wang</p>
+<p class='meta'>Tags: boundary/frequency, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2603.11492v1">paper</a> / <a href="http://arxiv.org/pdf/2603.11492v1">pdf</a></p>
+<p class='meta'>简介：In medical image segmentation tasks, the domain gap caused by the difference in data collection between training and testing data seriously hinders the deployment of pre-trained models in clinical practice. Continual Test-Time Adaptation (CTTA) aims to enable...</p>
+<p class='meta'>为什么值得读：适合补充伪装场景中的边界、纹理、几何先验。</p>
+</article>
+<h2>阅读记录模板</h2>
+<pre><code>
+论文：
+任务设定：
+核心假设：
+方法模块：
+对 COD / 我的课题的可迁移点：
+我能改进的地方：
+</code></pre>
+<h2>数据源</h2>
+<p>- arXiv API: recent preprints from COD and broad CV queries.</p>
+<p>- CVF OpenAccess: CVPR 2026, WACV 2026, ICCV 2025 title-level scan.</p>
+</main>
+</body>
+</html>

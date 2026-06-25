@@ -1,0 +1,32 @@
+name: Update literature feed
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 09:10 Asia/Shanghai == 01:10 UTC
+    - cron: "10 1 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate feed
+        run: python scripts/update_papers.py
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update daily literature feed"
+          file_pattern: "docs/index.html docs/literature.md data/latest_papers.json"
+
