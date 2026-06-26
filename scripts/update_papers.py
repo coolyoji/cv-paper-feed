@@ -10,6 +10,7 @@ from __future__ import annotations
 import html
 import json
 import re
+import os
 import sys
 import textwrap
 import time
@@ -25,6 +26,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 DATA = ROOT / "data"
 HISTORY_FILE = DATA / "feed_history.json"
+DEEP_SOURCE_SCAN = os.environ.get("DEEP_SOURCE_SCAN", "").lower() in {"1", "true", "yes"}
 
 UTC8 = timezone(timedelta(hours=8))
 
@@ -33,6 +35,8 @@ ARXIV_QUERIES = [
     # COD / camouflage direct line
     'all:"camouflaged object detection"',
     'all:"camouflaged object segmentation"',
+    'all:"concealed object detection"',
+    'all:"concealed object segmentation"',
     'all:"open-vocabulary camouflaged"',
     'all:"training-free camouflaged"',
     'all:"unsupervised camouflaged object detection"',
@@ -40,23 +44,120 @@ ARXIV_QUERIES = [
     'all:"frequency" AND all:"camouflaged object detection"',
     'all:"boundary" AND all:"camouflaged object detection"',
     'all:"depth" AND all:"camouflaged object detection"',
+    'all:"salient object detection" AND all:"foundation model"',
+    'all:"transparent object detection"',
+    'all:"low contrast object detection"',
     # Broad CV methods likely useful for COD
     'all:"open-vocabulary segmentation"',
     'all:"training-free segmentation"',
     'all:"vision-language" AND all:"segmentation"',
+    'all:"vision foundation model" AND all:"segmentation"',
     'all:"multimodal large language model" AND all:"grounding"',
     'all:"visual reasoning" AND all:"segmentation"',
     'all:"anomaly detection" AND all:"vision foundation model"',
     'all:"diffusion" AND all:"segmentation"',
     'all:"test-time adaptation" AND all:"segmentation"',
+    'all:"weakly supervised segmentation" AND all:"foundation model"',
+    'all:"domain generalization" AND all:"segmentation"',
+    'all:"medical image segmentation" AND all:"foundation model"',
     'all:"remote sensing" AND all:"open-vocabulary segmentation"',
 ]
 
 
 CVF_CONFERENCES = [
     ("CVPR2026", "CVPR 2026", "https://openaccess.thecvf.com/CVPR2026?day=all"),
+    ("CVPR2025", "CVPR 2025", "https://openaccess.thecvf.com/CVPR2025?day=all"),
     ("WACV2026", "WACV 2026", "https://openaccess.thecvf.com/WACV2026?day=all"),
+    ("WACV2025", "WACV 2025", "https://openaccess.thecvf.com/WACV2025?day=all"),
     ("ICCV2025", "ICCV 2025", "https://openaccess.thecvf.com/ICCV2025?day=all"),
+    ("CVPR2024", "CVPR 2024", "https://openaccess.thecvf.com/CVPR2024?day=all"),
+    ("ACCV2024", "ACCV 2024", "https://openaccess.thecvf.com/ACCV2024?day=all"),
+]
+
+
+SEMANTIC_SCHOLAR_QUERIES = [
+    "camouflaged object detection",
+    "concealed object detection segmentation",
+    "open vocabulary segmentation vision language",
+    "training free segmentation foundation model",
+    "weakly supervised semantic segmentation foundation model",
+    "vision language grounding segmentation",
+    "multimodal large language model visual grounding",
+    "segment anything model medical image segmentation",
+    "test time adaptation semantic segmentation",
+    "domain generalization semantic segmentation",
+    "anomaly detection vision foundation model",
+    "diffusion model segmentation",
+    "salient object detection foundation model",
+    "transparent object detection",
+    "remote sensing open vocabulary segmentation",
+    "small object detection dense prediction",
+    "boundary aware segmentation frequency",
+    "depth estimation segmentation geometry",
+]
+
+
+TOP_JOURNALS = [
+    {
+        "name": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "short": "TPAMI",
+        "rank": "CCF-A / 顶刊",
+        "issn": "0162-8828",
+    },
+    {
+        "name": "International Journal of Computer Vision",
+        "short": "IJCV",
+        "rank": "CCF-A / 顶刊",
+        "issn": "0920-5691",
+    },
+    {
+        "name": "IEEE Transactions on Image Processing",
+        "short": "TIP",
+        "rank": "CCF-A / 顶刊",
+        "issn": "1057-7149",
+    },
+    {
+        "name": "IEEE Transactions on Multimedia",
+        "short": "TMM",
+        "rank": "CCF-B / 顶刊",
+        "issn": "1520-9210",
+    },
+    {
+        "name": "IEEE Transactions on Circuits and Systems for Video Technology",
+        "short": "TCSVT",
+        "rank": "CCF-B / 顶刊",
+        "issn": "1051-8215",
+    },
+    {
+        "name": "Pattern Recognition",
+        "short": "PR",
+        "rank": "CCF-B / 顶刊",
+        "issn": "0031-3203",
+    },
+    {
+        "name": "Computer Vision and Image Understanding",
+        "short": "CVIU",
+        "rank": "CCF-B / 视觉期刊",
+        "issn": "1077-3142",
+    },
+    {
+        "name": "IEEE Transactions on Geoscience and Remote Sensing",
+        "short": "TGRS",
+        "rank": "遥感顶刊",
+        "issn": "0196-2892",
+    },
+    {
+        "name": "ISPRS Journal of Photogrammetry and Remote Sensing",
+        "short": "ISPRS JPRS",
+        "rank": "遥感顶刊",
+        "issn": "0924-2716",
+    },
+    {
+        "name": "Medical Image Analysis",
+        "short": "MedIA",
+        "rank": "医学影像顶刊",
+        "issn": "1361-8415",
+    },
 ]
 
 
@@ -73,6 +174,8 @@ COD_KEYWORDS = [
 BROAD_KEYWORDS = [
     "segmentation",
     "segment",
+    "detection",
+    "detect",
     "open-vocabulary",
     "training-free",
     "zero-shot",
@@ -91,6 +194,12 @@ BROAD_KEYWORDS = [
     "prototype",
     "anomaly",
     "ood",
+    "salient",
+    "saliency",
+    "transparent",
+    "low contrast",
+    "small object",
+    "dense prediction",
     "remote sensing",
     "earth observation",
     "sar",
@@ -104,9 +213,36 @@ BROAD_KEYWORDS = [
     "3d",
     "4d",
     "test-time",
+    "domain generalization",
+    "domain adaptation",
+    "medical image",
     "low-light",
     "restoration",
 ]
+
+
+QUALITY_SOURCE_HINTS = {
+    "cvpr": 14,
+    "iccv": 14,
+    "eccv": 14,
+    "neurips": 12,
+    "iclr": 12,
+    "aaai": 10,
+    "ijcai": 10,
+    "acm multimedia": 10,
+    "tpami": 16,
+    "ijcv": 16,
+    "tip": 14,
+    "tmm": 12,
+    "tcsvt": 12,
+    "pattern recognition": 12,
+    "cviu": 9,
+    "tgrs": 10,
+    "isprs": 10,
+    "medical image analysis": 10,
+    "journal": 6,
+    "transactions": 6,
+}
 
 
 STOP_TITLES = {
@@ -157,6 +293,11 @@ def sentence_intro(summary: str, max_chars: int = 260) -> str:
     return intro
 
 
+def strip_markup(text: str) -> str:
+    text = re.sub(r"<[^>]+>", " ", text or "")
+    return clean_text(text)
+
+
 def derive_tags(title: str, summary: str) -> list[str]:
     text = f"{title} {summary}".lower()
     tags = []
@@ -176,15 +317,25 @@ def derive_tags(title: str, summary: str) -> list[str]:
         ("remote sensing", ["remote sensing", "earth observation", "sar", "hyperspectral"]),
         ("anomaly/OOD", ["anomaly", "ood", "out-of-distribution"]),
         ("low-level", ["low-light", "restoration", "enhancement", "denoising"]),
+        ("saliency/transparent", ["salient", "saliency", "transparent", "low contrast"]),
+        ("domain adaptation", ["domain generalization", "domain adaptation", "test-time adaptation"]),
+        ("medical imaging", ["medical image", "mri", "ct", "ultrasound", "histopathology"]),
     ]
     for tag, words in checks:
         if any(w in text for w in words):
             tags.append(tag)
+    if "SAM" in tags and not re.search(r"\b(segment anything|sam)\b", text):
+        tags.remove("SAM")
+    if "medical imaging" in tags and not re.search(
+        r"\b(medical image|mri|ct|ultrasound|histopathology)\b", text
+    ):
+        tags.remove("medical imaging")
     return tags or ["computer vision"]
 
 
 def score_paper(paper: Paper) -> int:
     text = f"{paper.title} {paper.summary}".lower()
+    source = paper.source.lower()
     score = 0
     for kw in COD_KEYWORDS:
         if kw in text:
@@ -192,11 +343,18 @@ def score_paper(paper: Paper) -> int:
     for kw in BROAD_KEYWORDS:
         if kw in text:
             score += 6
-    if "cvpr 2026" in paper.source.lower():
+    for hint, bonus in QUALITY_SOURCE_HINTS.items():
+        if hint in source:
+            score += bonus
+    if "cvpr 2026" in source:
         score += 8
-    if "iccv 2025" in paper.source.lower() or "wacv 2026" in paper.source.lower():
+    if "iccv 2025" in source or "wacv 2026" in source:
         score += 5
-    if "arxiv" in paper.source.lower():
+    if "arxiv" in source:
+        score += 3
+    if "semantic scholar" in source:
+        score += 4
+    if "crossref" in source:
         score += 3
     if paper.published:
         try:
@@ -318,6 +476,167 @@ def fetch_cvf() -> list[Paper]:
     return papers
 
 
+def fetch_semantic_scholar(max_results_per_query: int = 8) -> list[Paper]:
+    papers: list[Paper] = []
+    fields = ",".join(
+        [
+            "title",
+            "abstract",
+            "year",
+            "venue",
+            "authors",
+            "url",
+            "openAccessPdf",
+            "publicationDate",
+            "citationCount",
+        ]
+    )
+    queries = SEMANTIC_SCHOLAR_QUERIES if DEEP_SOURCE_SCAN else SEMANTIC_SCHOLAR_QUERIES[:6]
+    for query in queries:
+        params = {
+            "query": query,
+            "limit": str(max_results_per_query),
+            "year": "2024-",
+            "fields": fields,
+        }
+        url = "https://api.semanticscholar.org/graph/v1/paper/search?" + urllib.parse.urlencode(params)
+        try:
+            data = json.loads(fetch_url(url, timeout=60))
+        except Exception as exc:  # pragma: no cover - network resilience
+            print(f"[warn] Semantic Scholar query failed: {query}: {exc}", file=sys.stderr)
+            time.sleep(1.0)
+            continue
+        for item in data.get("data", []):
+            title = clean_text(item.get("title", ""))
+            if not title:
+                continue
+            summary = clean_text(item.get("abstract") or "")
+            venue = clean_text(item.get("venue") or "")
+            citation_count = item.get("citationCount") or 0
+            published = item.get("publicationDate") or str(item.get("year") or "")
+            authors = [
+                clean_text(author.get("name", ""))
+                for author in item.get("authors", [])
+                if author.get("name")
+            ]
+            oa_pdf = item.get("openAccessPdf") or {}
+            pdf = oa_pdf.get("url") or ""
+            source = "Semantic Scholar"
+            if venue:
+                source += f" / {venue}"
+            if citation_count:
+                source += f" / citations {citation_count}"
+            paper = Paper(
+                title=title,
+                url=item.get("url") or "",
+                pdf=pdf,
+                authors=authors,
+                source=source,
+                published=published[:10],
+                summary=summary or f"Semantic Scholar result for query: {query}.",
+            )
+            paper.tags = derive_tags(title, paper.summary)
+            paper.score = score_paper(paper)
+            if citation_count >= 25:
+                paper.score += 4
+            papers.append(paper)
+        time.sleep(1.0)
+    return papers
+
+
+def crossref_date(item: dict) -> str:
+    for key in ["published-online", "published-print", "issued"]:
+        date_parts = item.get(key, {}).get("date-parts")
+        if not date_parts or not date_parts[0]:
+            continue
+        parts = [str(part) for part in date_parts[0]]
+        if len(parts) == 1:
+            return parts[0]
+        if len(parts) == 2:
+            return f"{int(parts[0]):04d}-{int(parts[1]):02d}"
+        return f"{int(parts[0]):04d}-{int(parts[1]):02d}-{int(parts[2]):02d}"
+    return ""
+
+
+def crossref_authors(item: dict) -> list[str]:
+    authors = []
+    for author in item.get("author", [])[:12]:
+        given = author.get("given", "")
+        family = author.get("family", "")
+        name = clean_text(f"{given} {family}")
+        if name:
+            authors.append(name)
+    return authors
+
+
+def fetch_crossref_journals(rows_per_query: int = 4) -> list[Paper]:
+    papers: list[Paper] = []
+    broad_query = (
+        "camouflaged OR concealed OR segmentation OR detection OR "
+        "vision-language OR foundation model OR anomaly"
+    )
+    deep_queries = [
+        "camouflaged object detection",
+        "concealed object detection",
+        "open vocabulary segmentation",
+        "vision language segmentation",
+        "foundation model segmentation",
+        "anomaly detection vision",
+        "salient object detection",
+        "remote sensing segmentation",
+    ]
+    queries = deep_queries if DEEP_SOURCE_SCAN else [broad_query]
+    from_date = f"{datetime.now(UTC8).year - 1}-01-01"
+    for journal in TOP_JOURNALS:
+        for query in queries:
+            params = {
+                "filter": f"issn:{journal['issn']},from-pub-date:{from_date}",
+                "query": query,
+                "rows": str(rows_per_query),
+                "sort": "published",
+                "order": "desc",
+                "select": "title,author,DOI,URL,published-print,published-online,issued,container-title,abstract",
+            }
+            url = "https://api.crossref.org/works?" + urllib.parse.urlencode(params)
+            try:
+                data = json.loads(fetch_url(url, timeout=60))
+            except Exception as exc:  # pragma: no cover - network resilience
+                print(
+                    f"[warn] Crossref query failed: {journal['short']} / {query}: {exc}",
+                    file=sys.stderr,
+                )
+                time.sleep(0.5)
+                continue
+            for item in data.get("message", {}).get("items", []):
+                titles = item.get("title") or []
+                title = clean_text(titles[0] if titles else "")
+                if not title:
+                    continue
+                summary = strip_markup(item.get("abstract", ""))
+                tag_text = f"{title} {summary}"
+                if not summary and not any(
+                    kw in title.lower() for kw in COD_KEYWORDS + BROAD_KEYWORDS
+                ):
+                    continue
+                container = item.get("container-title") or [journal["name"]]
+                venue = clean_text(container[0] if container else journal["name"])
+                doi = clean_text(item.get("DOI", ""))
+                paper = Paper(
+                    title=title,
+                    url=item.get("URL") or (f"https://doi.org/{doi}" if doi else ""),
+                    pdf="",
+                    authors=crossref_authors(item),
+                    source=f"Crossref / {journal['short']} / {journal['rank']} / {venue}",
+                    published=crossref_date(item),
+                    summary=summary or f"{journal['short']} article matched by title in a top journal; abstract unavailable from Crossref.",
+                )
+                paper.tags = derive_tags(title, tag_text)
+                paper.score = score_paper(paper)
+                papers.append(paper)
+            time.sleep(0.5)
+    return papers
+
+
 def dedupe(papers: list[Paper]) -> list[Paper]:
     seen: dict[str, Paper] = {}
     for paper in papers:
@@ -355,6 +674,127 @@ def why_read(paper: Paper) -> str:
     return "方法上可能可迁移，建议先读摘要和图 1。"
 
 
+def short_summary(paper: Paper) -> str:
+    return sentence_intro(paper.summary, max_chars=210)
+
+
+def task_setting(paper: Paper) -> str:
+    tags = set(paper.tags)
+    if "COD" in tags:
+        return "伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。"
+    if "open-vocabulary" in tags:
+        return "开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。"
+    if "training-free" in tags:
+        return "免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。"
+    if "SAM" in tags or "VLM/MLLM" in tags:
+        return "基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。"
+    if "anomaly/OOD" in tags:
+        return "异常检测或分布外识别，可类比伪装目标的弱异常发现。"
+    if "remote sensing" in tags:
+        return "遥感/大场景密集视觉任务，关注小目标、尺度变化和复杂背景。"
+    if "medical imaging" in tags:
+        return "医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。"
+    if "video" in tags:
+        return "视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。"
+    return "通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。"
+
+
+def method_core(paper: Paper) -> str:
+    text = f"{paper.title} {paper.summary}".lower()
+    cues = [
+        (["counterfactual"], "反事实建模/拒识机制，用来降低误检或判断目标是否存在。"),
+        (["diffusion", "generative"], "扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。"),
+        (["prompt"], "提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。"),
+        (["sam", "segment anything"], "借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。"),
+        (["clip", "vision-language", "multimodal"], "视觉-语言对齐，把语义文本信息引入检测或分割。"),
+        (["llm", "large language", "reasoning"], "多模态大模型推理，可能用于目标描述、区域判断或链式推理。"),
+        (["frequency", "wavelet"], "频域/纹理特征增强，适合处理伪装背景与目标细粒度差异。"),
+        (["boundary", "edge"], "边界感知建模，适合改善伪装目标轮廓不清的问题。"),
+        (["depth", "geometry", "3d"], "几何/深度线索建模，可能补充 RGB 外的结构先验。"),
+        (["test-time", "domain adaptation", "domain generalization"], "测试时适配或域泛化，重点看跨数据集鲁棒性。"),
+        (["anomaly", "ood"], "异常/OOD 建模，把目标从复杂背景中作为低概率区域凸显出来。"),
+    ]
+    for words, description in cues:
+        if any(word in text for word in words):
+            return description
+    return "摘要层面未显示明确模块，建议先看方法图确认 backbone、监督信号和损失设计。"
+
+
+def experiment_takeaway(paper: Paper) -> str:
+    text = paper.summary.lower()
+    if not paper.summary or paper.summary.startswith("CVF OpenAccess paper"):
+        return "当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。"
+    if any(word in text for word in ["state-of-the-art", "sota", "outperform", "superior"]):
+        return "摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。"
+    if any(word in text for word in ["benchmark", "dataset"]):
+        return "可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。"
+    if any(word in text for word in ["ablation", "robust", "generalization"]):
+        return "摘要强调消融、鲁棒性或泛化；适合优先看实验设计和跨域表现。"
+    return "摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。"
+
+
+def relation_to_topic(paper: Paper) -> str:
+    tags = set(paper.tags)
+    if "COD" in tags:
+        return "和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。"
+    if "saliency/transparent" in tags:
+        return "和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。"
+    if "open-vocabulary" in tags or "training-free" in tags:
+        return "适合拓展到开放词汇、零样本或少标注 COD。"
+    if "boundary/frequency" in tags or "depth/geometry" in tags:
+        return "可补充 COD 中纹理、边界、几何先验不足的问题。"
+    if "VLM/MLLM" in tags or "reasoning" in tags:
+        return "可用于伪装目标的语义描述、环境理解和候选区域判断。"
+    if "anomaly/OOD" in tags:
+        return "可把伪装目标看作复杂背景中的弱异常区域来借鉴。"
+    return "不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。"
+
+
+def borrow_points(paper: Paper) -> str:
+    tags = set(paper.tags)
+    points = []
+    if "COD" in tags:
+        points.append("数据集设置、评价指标、失败案例分析")
+    if "open-vocabulary" in tags or "training-free" in tags:
+        points.append("prompt 设计、类别文本构造、免训练迁移流程")
+    if "SAM" in tags or "VLM/MLLM" in tags:
+        points.append("候选 mask 生成、视觉-语言筛选、推理式定位")
+    if "boundary/frequency" in tags:
+        points.append("边界/频域增强模块")
+    if "depth/geometry" in tags:
+        points.append("深度或几何先验融合")
+    if "domain adaptation" in tags or "anomaly/OOD" in tags:
+        points.append("跨域鲁棒性、不确定性或异常分数")
+    if not points:
+        points.append("任务建模、损失函数、消融组织方式")
+    return "；".join(points) + "。"
+
+
+def improvement_ideas(paper: Paper) -> str:
+    tags = set(paper.tags)
+    if "COD" in tags and ("VLM/MLLM" not in tags and "SAM" not in tags):
+        return "可尝试引入基础模型、文本先验或更强的环境上下文建模。"
+    if "open-vocabulary" in tags or "training-free" in tags:
+        return "可改进 prompt 自动生成、负样本约束和 mask 置信度校准。"
+    if "SAM" in tags or "VLM/MLLM" in tags:
+        return "可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。"
+    if "boundary/frequency" in tags:
+        return "可结合多尺度语义上下文，避免只强化纹理导致误检。"
+    if "domain adaptation" in tags:
+        return "可验证在 COD 跨数据集上的泛化，加入目标缺失场景。"
+    return "可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。"
+
+
+def should_deep_read(paper: Paper) -> str:
+    if "COD" in paper.tags and paper.score >= 45:
+        return "值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。"
+    if paper.score >= 55:
+        return "建议精读：高质量来源或方法迁移价值较高。"
+    if paper.score >= 35:
+        return "建议泛读：先看摘要、图 1 和实验表，确认是否能迁移。"
+    return "暂不精读：先收藏标题，需要相关模块时再回看。"
+
+
 def md_paper_item(idx: int, paper: Paper) -> str:
     authors = format_authors(paper.authors)
     tag_text = ", ".join(paper.tags)
@@ -371,8 +811,15 @@ def md_paper_item(idx: int, paper: Paper) -> str:
         [
             f"   - Tags: {tag_text}",
             f"   - Links: {links}",
-            f"   - 简介：{sentence_intro(paper.summary)}",
-            f"   - 为什么值得读：{why_read(paper)}",
+            f"   - 论文：{paper.title}",
+            f"   - 一句话总结：{short_summary(paper)}",
+            f"   - 任务设定：{task_setting(paper)}",
+            f"   - 方法核心：{method_core(paper)}",
+            f"   - 实验结论：{experiment_takeaway(paper)}",
+            f"   - 和我课题的关系：{relation_to_topic(paper)}",
+            f"   - 可借鉴点：{borrow_points(paper)}",
+            f"   - 可改进点：{improvement_ideas(paper)}",
+            f"   - 是否值得精读：{should_deep_read(paper)}",
         ]
     )
     return "\n".join(parts)
@@ -381,9 +828,16 @@ def md_paper_item(idx: int, paper: Paper) -> str:
 def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
     cod = [p for p in papers if "COD" in p.tags]
     broad = [p for p in papers if "COD" not in p.tags]
+    quality = [
+        p
+        for p in papers
+        if any(hint in p.source.lower() for hint in QUALITY_SOURCE_HINTS)
+        or "crossref" in p.source.lower()
+    ]
 
     cod = sorted(cod, key=lambda p: p.score, reverse=True)[:35]
     broad = sorted(broad, key=lambda p: p.score, reverse=True)[:60]
+    quality = sorted(quality, key=lambda p: p.score, reverse=True)[:30]
     recent = [
         p
         for p in papers
@@ -395,6 +849,7 @@ def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
         highlights.extend(sorted(fallback, key=lambda p: p.score, reverse=True)[: 12 - len(highlights)])
     return {
         "highlights": highlights,
+        "quality": quality,
         "cod": cod,
         "broad": broad,
     }
@@ -516,6 +971,7 @@ def snapshot_sections(snapshot: dict) -> dict[str, list[Paper]]:
         sections = {}
     return {
         "highlights": [paper_from_dict(item) for item in sections.get("highlights", [])],
+        "quality": [paper_from_dict(item) for item in sections.get("quality", [])],
         "cod": [paper_from_dict(item) for item in sections.get("cod", [])],
         "broad": [paper_from_dict(item) for item in sections.get("broad", [])],
     }
@@ -530,6 +986,7 @@ def render_markdown(history: list[dict]) -> str:
     }
     sections = snapshot_sections(current)
     highlights = sections["highlights"]
+    quality = sections["quality"]
     cod = sections["cod"]
     broad = sections["broad"]
     history_items = history[1:]
@@ -548,6 +1005,11 @@ def render_markdown(history: list[dict]) -> str:
         "",
     ]
     for i, paper in enumerate(highlights, 1):
+        lines.append(md_paper_item(i, paper))
+        lines.append("")
+
+    lines.extend(["## 高质量来源优先读：CCF-A/B 与顶刊顶会", ""])
+    for i, paper in enumerate(quality, 1):
         lines.append(md_paper_item(i, paper))
         lines.append("")
 
@@ -573,6 +1035,11 @@ def render_markdown(history: list[dict]) -> str:
             lines.append("### 当日优先读")
             lines.append("")
             for i, paper in enumerate(sections["highlights"], 1):
+                lines.append(md_paper_item(i, paper))
+                lines.append("")
+            lines.append("### 当日高质量来源优先读")
+            lines.append("")
+            for i, paper in enumerate(sections["quality"], 1):
                 lines.append(md_paper_item(i, paper))
                 lines.append("")
             lines.append("### 当日 COD / 伪装目标检测相关")
@@ -601,8 +1068,12 @@ def render_markdown(history: list[dict]) -> str:
             "",
             "## 数据源",
             "",
-            "- arXiv API: recent preprints from COD and broad CV queries.",
-            "- CVF OpenAccess: CVPR 2026, WACV 2026, ICCV 2025 title-level scan.",
+            "- arXiv API: recent preprints from COD, weak/salient/transparent objects, VLM, segmentation, diffusion, adaptation, medical and remote-sensing queries.",
+            "- CVF OpenAccess: CVPR/ECCV/ICCV/WACV title-level scan.",
+            "- Semantic Scholar Graph API: broad high-quality venue and topic search when rate limits allow.",
+            "- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, Medical Image Analysis.",
+            "",
+            "说明：自动简介是基于题名、摘要和来源的初筛笔记，不等同于阅读全文后的结论；精读时建议再核对 method、experiment 和 limitation。",
             "",
         ]
     )
@@ -759,6 +1230,14 @@ def main() -> None:
 
     print("[info] fetching CVF")
     papers.extend(fetch_cvf())
+    print(f"[info] total raw papers: {len(papers)}")
+
+    print("[info] fetching Semantic Scholar")
+    papers.extend(fetch_semantic_scholar())
+    print(f"[info] total raw papers: {len(papers)}")
+
+    print("[info] fetching Crossref journals")
+    papers.extend(fetch_crossref_journals())
     print(f"[info] total raw papers: {len(papers)}")
 
     papers = dedupe(papers)
