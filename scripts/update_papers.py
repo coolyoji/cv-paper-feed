@@ -24,6 +24,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 DATA = ROOT / "data"
+HISTORY_FILE = DATA / "feed_history.json"
 
 UTC8 = timezone(timedelta(hours=8))
 
@@ -377,8 +378,7 @@ def md_paper_item(idx: int, paper: Paper) -> str:
     return "\n".join(parts)
 
 
-def render_markdown(papers: list[Paper]) -> str:
-    now = datetime.now(UTC8)
+def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
     cod = [p for p in papers if "COD" in p.tags]
     broad = [p for p in papers if "COD" not in p.tags]
 
@@ -393,13 +393,156 @@ def render_markdown(papers: list[Paper]) -> str:
     if len(highlights) < 8:
         fallback = [p for p in papers if p not in highlights]
         highlights.extend(sorted(fallback, key=lambda p: p.score, reverse=True)[: 12 - len(highlights)])
+    return {
+        "highlights": highlights,
+        "cod": cod,
+        "broad": broad,
+    }
+
+
+def paper_to_dict(paper: Paper) -> dict:
+    return paper.__dict__
+
+
+def paper_from_dict(data: dict) -> Paper:
+    authors = data.get("authors", [])
+    if not isinstance(authors, list):
+        authors = []
+    tags = data.get("tags", [])
+    if not isinstance(tags, list):
+        tags = []
+    paper = Paper(
+        title=data.get("title", ""),
+        url=data.get("url", ""),
+        pdf=data.get("pdf", ""),
+        authors=authors,
+        source=data.get("source", ""),
+        published=data.get("published", ""),
+        summary=data.get("summary", ""),
+        tags=tags,
+        score=int(data.get("score", 0)),
+    )
+    return paper
+
+
+def previous_update_time() -> str:
+    md_path = DOCS / "literature.md"
+    if md_path.exists():
+        try:
+            text = md_path.read_text(encoding="utf-8")
+        except OSError:
+            text = ""
+        match = re.search(r"^Last updated:\s*(.+?)\s+Asia/Shanghai", text, re.MULTILINE)
+        if match:
+            return match.group(1).strip()
+    latest_path = DATA / "latest_papers.json"
+    if latest_path.exists():
+        ts = datetime.fromtimestamp(latest_path.stat().st_mtime, UTC8)
+        return ts.strftime("%Y-%m-%d %H:%M")
+    return datetime.now(UTC8).strftime("%Y-%m-%d %H:%M")
+
+
+def legacy_snapshot_from_latest() -> dict | None:
+    latest_path = DATA / "latest_papers.json"
+    if not latest_path.exists():
+        return None
+    try:
+        data = json.loads(latest_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return None
+    if not isinstance(data, list):
+        return None
+    papers = [paper_from_dict(item) for item in data if isinstance(item, dict)]
+    if not papers:
+        return None
+    generated_at = previous_update_time()
+    try:
+        date_text = datetime.strptime(generated_at[:10], "%Y-%m-%d").strftime("%Y-%m-%d")
+    except ValueError:
+        date_text = datetime.now(UTC8).strftime("%Y-%m-%d")
+    snapshot = make_snapshot(papers, datetime.now(UTC8))
+    snapshot["date"] = date_text
+    snapshot["generated_at"] = generated_at
+    snapshot["legacy"] = True
+    return snapshot
+
+
+def load_history() -> list[dict]:
+    if not HISTORY_FILE.exists():
+        legacy = legacy_snapshot_from_latest()
+        return [legacy] if legacy else []
+    try:
+        data = json.loads(HISTORY_FILE.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return []
+    if not isinstance(data, list):
+        return []
+    return [item for item in data if isinstance(item, dict)]
+
+
+def make_snapshot(papers: list[Paper], now: datetime) -> dict:
+    sections = select_feed_sections(papers)
+    return {
+        "date": now.strftime("%Y-%m-%d"),
+        "generated_at": now.strftime("%Y-%m-%d %H:%M"),
+        "timezone": "Asia/Shanghai",
+        "total_selected": len(papers),
+        "sections": {
+            name: [paper_to_dict(paper) for paper in section_papers]
+            for name, section_papers in sections.items()
+        },
+    }
+
+
+def update_history(papers: list[Paper], now: datetime) -> list[dict]:
+    snapshot = make_snapshot(papers, now)
+    history = [
+        item
+        for item in load_history()
+        if item.get("generated_at") != snapshot["generated_at"]
+    ]
+    history.insert(0, snapshot)
+    HISTORY_FILE.write_text(
+        json.dumps(history, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+        newline="\n",
+    )
+    return history
+
+
+def snapshot_sections(snapshot: dict) -> dict[str, list[Paper]]:
+    sections = snapshot.get("sections", {})
+    if not isinstance(sections, dict):
+        sections = {}
+    return {
+        "highlights": [paper_from_dict(item) for item in sections.get("highlights", [])],
+        "cod": [paper_from_dict(item) for item in sections.get("cod", [])],
+        "broad": [paper_from_dict(item) for item in sections.get("broad", [])],
+    }
+
+
+def render_markdown(history: list[dict]) -> str:
+    now = datetime.now(UTC8)
+    current = history[0] if history else {
+        "generated_at": now.strftime("%Y-%m-%d %H:%M"),
+        "total_selected": 0,
+        "sections": {},
+    }
+    sections = snapshot_sections(current)
+    highlights = sections["highlights"]
+    cod = sections["cod"]
+    broad = sections["broad"]
+    history_items = history[1:]
 
     lines = [
         "# Daily CV Paper Feed",
         "",
-        f"Last updated: {now.strftime('%Y-%m-%d %H:%M')} Asia/Shanghai",
+        f"Last updated: {current.get('generated_at', now.strftime('%Y-%m-%d %H:%M'))} Asia/Shanghai",
+        f"Archive days kept: {len(history)}",
         "",
         "This page tracks new and useful computer-vision papers, with COD/camouflaged object detection kept as the primary reading thread and broader CV methods included for inspiration.",
+        "",
+        "历史更新不会被删除；如果当天没看完，可以继续往下翻到对应日期。",
         "",
         "## 今日优先读：近 30 天新文献优先",
         "",
@@ -417,6 +560,31 @@ def render_markdown(papers: list[Paper]) -> str:
     for i, paper in enumerate(broad, 1):
         lines.append(md_paper_item(i, paper))
         lines.append("")
+
+    if history_items:
+        lines.extend(["## 历史更新归档", ""])
+        for item in history_items:
+            generated_at = item.get("generated_at", item.get("date", ""))
+            sections = snapshot_sections(item)
+            lines.append(f"## {generated_at} 更新")
+            lines.append("")
+            lines.append(f"Selected papers: {item.get('total_selected', 0)}")
+            lines.append("")
+            lines.append("### 当日优先读")
+            lines.append("")
+            for i, paper in enumerate(sections["highlights"], 1):
+                lines.append(md_paper_item(i, paper))
+                lines.append("")
+            lines.append("### 当日 COD / 伪装目标检测相关")
+            lines.append("")
+            for i, paper in enumerate(sections["cod"], 1):
+                lines.append(md_paper_item(i, paper))
+                lines.append("")
+            lines.append("### 当日泛计算机视觉方法池")
+            lines.append("")
+            for i, paper in enumerate(sections["broad"], 1):
+                lines.append(md_paper_item(i, paper))
+                lines.append("")
 
     lines.extend(
         [
@@ -445,6 +613,8 @@ def render_html(markdown_text: str) -> str:
     """Small Markdown subset renderer for this generated report."""
     body: list[str] = []
     in_code = False
+    in_archive = False
+    in_details = False
     for raw in markdown_text.splitlines():
         line = raw.rstrip()
         if line.startswith("```"):
@@ -461,7 +631,21 @@ def render_html(markdown_text: str) -> str:
         if line.startswith("# "):
             body.append(f"<h1>{html.escape(line[2:])}</h1>")
         elif line.startswith("## "):
-            body.append(f"<h2>{html.escape(line[3:])}</h2>")
+            title = line[3:]
+            if in_details:
+                body.append("</details>")
+                in_details = False
+            if title == "历史更新归档":
+                in_archive = True
+                body.append(f"<h2>{html.escape(title)}</h2>")
+            elif in_archive and title.endswith(" 更新"):
+                body.append("<details class='archive-day'>")
+                body.append(f"<summary>{html.escape(title)}</summary>")
+                in_details = True
+            else:
+                body.append(f"<h2>{html.escape(title)}</h2>")
+        elif line.startswith("### "):
+            body.append(f"<h4>{html.escape(line[4:])}</h4>")
         elif re.match(r"^\d+\. \*\*", line):
             content = re.sub(r"^\d+\. ", "", line)
             body.append("<article class='paper'>")
@@ -477,6 +661,8 @@ def render_html(markdown_text: str) -> str:
             body.append(f"<p>{markdown_inline(line)}</p>")
     if in_code:
         body.append("</code></pre>")
+    if in_details:
+        body.append("</details>")
 
     return f"""<!doctype html>
 <html lang="zh-CN">
@@ -509,6 +695,7 @@ def render_html(markdown_text: str) -> str:
     h1 {{ font-size: 32px; margin: 0 0 8px; }}
     h2 {{ margin-top: 40px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }}
     h3 {{ margin: 0 0 10px; font-size: 18px; line-height: 1.4; }}
+    h4 {{ margin: 22px 0 10px; font-size: 16px; }}
     a {{ color: var(--accent); text-decoration: none; }}
     a:hover {{ text-decoration: underline; }}
     .paper {{
@@ -520,6 +707,23 @@ def render_html(markdown_text: str) -> str:
       box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
     }}
     .meta {{ margin: 6px 0; color: var(--muted); }}
+    .archive-day {{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin: 14px 0;
+      padding: 8px 12px;
+    }}
+    .archive-day > summary {{
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--ink);
+      padding: 6px 0;
+    }}
+    .archive-day .paper {{
+      box-shadow: none;
+      background: #fbfdff;
+    }}
     pre {{
       background: #111827;
       color: #f9fafb;
@@ -563,11 +767,13 @@ def main() -> None:
     papers = [p for p in papers if p.score >= 12]
     papers.sort(key=lambda p: p.score, reverse=True)
 
-    md = render_markdown(papers)
+    now = datetime.now(UTC8)
+    history = update_history(papers, now)
+    md = render_markdown(history)
     (DOCS / "literature.md").write_text(md, encoding="utf-8", newline="\n")
     (DOCS / "index.html").write_text(render_html(md), encoding="utf-8", newline="\n")
 
-    serializable = [paper.__dict__ for paper in papers]
+    serializable = [paper_to_dict(paper) for paper in papers]
     (DATA / "latest_papers.json").write_text(
         json.dumps(serializable, ensure_ascii=False, indent=2),
         encoding="utf-8",
