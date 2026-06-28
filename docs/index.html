@@ -70,27 +70,11 @@
 <body>
 <main>
 <h1>Daily CV Paper Feed</h1>
-<p>Last updated: 2026-06-27 13:04 Asia/Shanghai</p>
+<p>Last updated: 2026-06-28 13:44 Asia/Shanghai</p>
 <p>Archive days kept: 4</p>
 <p>This page tracks new and useful computer-vision papers, with COD/camouflaged object detection kept as the primary reading thread and broader CV methods included for inspiration.</p>
 <p>历史更新不会被删除；如果当天没看完，可以继续往下翻到对应日期。</p>
 <h2>今日优先读：近 30 天新文献优先</h2>
-<article class='paper'>
-<h3><strong>CFCamo: A Counterfactual Detect-or-Abstain Framework for Camouflaged Object Detection</strong></h3>
-<p class='meta'>Source: arXiv, 2026-05-28</p>
-<p class='meta'>Authors: Suhang Li, Osamu Yoshie, Yuya Ieiri</p>
-<p class='meta'>Tags: COD, VLM/MLLM</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.11231v1">paper</a> / <a href="http://arxiv.org/pdf/2606.11231v1">pdf</a></p>
-<p class='meta'>论文：CFCamo: A Counterfactual Detect-or-Abstain Framework for Camouflaged Object Detection</p>
-<p class='meta'>一句话总结：Vision-language reinforcement learning has recently shown strong target-present localization for camouflaged object detection (COD). Yet localization is only one side of the decision: when the agent faces an o...</p>
-<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
-<p class='meta'>方法核心：反事实建模/拒识机制，用来降低误检或判断目标是否存在。</p>
-<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
-<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
-</article>
 <article class='paper'>
 <h3><strong>A Retinomorphic Optical Spiking Neuron for Camouflaged Object Detection</strong></h3>
 <p class='meta'>Source: arXiv, 2026-05-30</p>
@@ -265,6 +249,22 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>SWARD: Stochastic Window-Attention-Based Relational Distillation for Cross-Architectural Semantic Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-31</p>
+<p class='meta'>Authors: Aditya Makineni, Qing Tian</p>
+<p class='meta'>Tags: retrieval/prototype, boundary/frequency, medical imaging</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.00999v1">paper</a> / <a href="http://arxiv.org/pdf/2606.00999v1">pdf</a></p>
+<p class='meta'>论文：SWARD: Stochastic Window-Attention-Based Relational Distillation for Cross-Architectural Semantic Segmentation</p>
+<p class='meta'>一句话总结：Large-scale vision foundation models have driven substantial gains on dense prediction tasks such as semantic segmentation, but their size makes deployment impractical in resource-constrained settings, motivat...</p>
+<p class='meta'>任务设定：医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
+<p class='meta'>可借鉴点：边界/频域增强模块。</p>
+<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <h2>高质量来源优先读：CCF-A/B 与顶刊顶会</h2>
