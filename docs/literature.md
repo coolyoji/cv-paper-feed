@@ -1,6 +1,6 @@
 # Daily CV Paper Feed
 
-Last updated: 2026-06-28 13:44 Asia/Shanghai
+Last updated: 2026-06-29 14:06 Asia/Shanghai
 Archive days kept: 4
 
 This page tracks new and useful computer-vision papers, with COD/camouflaged object detection kept as the primary reading thread and broader CV methods included for inspiration.
@@ -39,7 +39,22 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-3. **Anatomy-Guided Residual Motion Diffusion for Controllable 4D Cardiac MRI Synthesis**
+3. **Understanding How MLLMs Describe Artworks Using Token Activation Maps**
+   - Source: arXiv, 2026-06-26
+   - Authors: Nicola Fanelli, Pasquale De Marinis, Raffaele Scaringi, Eva Cetinic, Gennaro Vessio et al.
+   - Tags: open-vocabulary, SAM, VLM/MLLM, reasoning
+   - Links: [paper](http://arxiv.org/abs/2606.27947v1) / [pdf](http://arxiv.org/pdf/2606.27947v1)
+   - 论文：Understanding How MLLMs Describe Artworks Using Token Activation Maps
+   - 一句话总结：Multimodal Large Language Models (MLLMs) describe artworks with remarkable fluency, yet the visual reasoning behind their outputs remains opaque. When an MLLM names a style, identifies a subject, or recognizes...
+   - 任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。
+   - 方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。
+   - 实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。
+   - 和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。
+   - 可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。
+   - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
+   - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
+
+4. **Anatomy-Guided Residual Motion Diffusion for Controllable 4D Cardiac MRI Synthesis**
    - Source: arXiv, 2026-06-25
    - Authors: Yiheng Cao, Gustavo Andrade-Miranda, Jiatian Zhang, Lingxiao Zhao, Xin Gao
    - Tags: unsupervised, diffusion, boundary/frequency, depth/geometry, video, medical imaging
@@ -54,22 +69,22 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-4. **SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models**
-   - Source: arXiv, 2026-05-29
-   - Authors: Olaf Dünkel, Basavaraj Sunagad, Haoran Wang, David T. Hoffmann, Christian Theobalt et al.
-   - Tags: VLM/MLLM, diffusion, depth/geometry, video
-   - Links: [paper](http://arxiv.org/abs/2605.31597v2) / [pdf](http://arxiv.org/pdf/2605.31597v2)
-   - 论文：SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models
-   - 一句话总结：Measuring structured object understanding in vision foundation models remains challenging due to inconsistent evaluation protocols and limited part-level supervision. Semantic correspondence (SC) evaluates thi...
-   - 任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。
-   - 方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。
-   - 实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。
-   - 和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。
-   - 可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。
-   - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
+5. **Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation**
+   - Source: arXiv, 2026-06-26
+   - Authors: Yuheng Qiu, Jingyi Luo, Chenfei Ye, Ting Ma, Jianfeng Cao
+   - Tags: training-free, diffusion, boundary/frequency, medical imaging
+   - Links: [paper](http://arxiv.org/abs/2606.27935v1) / [pdf](http://arxiv.org/pdf/2606.27935v1)
+   - 论文：Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation
+   - 一句话总结：Deep learning has demonstrated remarkable success in high-throughput histopathology image analysis. However, the performance of learning-based models critically depends on the quality and size of annotations b...
+   - 任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。
+   - 方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。
+   - 实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。
+   - 和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。
+   - 可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。
+   - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-5. **MLFFM-SegDiff: A Multi-Level Feature Fusion Diffusion Model for Skin Lesion Segmentation**
+6. **MLFFM-SegDiff: A Multi-Level Feature Fusion Diffusion Model for Skin Lesion Segmentation**
    - Source: arXiv, 2026-06-25
    - Authors: Jingjun Gu, Chaojie Shen, Yifeng Cao, Wei Zhang, Yiliu Li et al.
    - Tags: diffusion, boundary/frequency, low-level, saliency/transparent, medical imaging
@@ -84,7 +99,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-6. **Vision-Language Model Reasoning for Contextual Semantic Mapping in Intralogistics**
+7. **Vision-Language Model Reasoning for Contextual Semantic Mapping in Intralogistics**
    - Source: arXiv, 2026-06-23
    - Authors: Marvin Rüdt, Hao Pang, Constantin Enke, Zäzilia Seibold, Kai Furmans
    - Tags: open-vocabulary, SAM, VLM/MLLM, reasoning, depth/geometry
@@ -99,7 +114,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-7. **Jolia: Concept-Level Vision-Language Alignment for 3D CT Contrastive Learning**
+8. **Jolia: Concept-Level Vision-Language Alignment for 3D CT Contrastive Learning**
    - Source: arXiv, 2026-06-23
    - Authors: Julien Khlaut, Charles Corbière, Baptiste Callard, Amaury Prat, Leo Butsanets et al.
    - Tags: VLM/MLLM, depth/geometry, medical imaging
@@ -114,7 +129,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-8. **Training-free Cross-domain Few-shot Segmentation via Robust Semantic Representation and Matching**
+9. **Training-free Cross-domain Few-shot Segmentation via Robust Semantic Representation and Matching**
    - Source: arXiv, 2026-06-23
    - Authors: Sujun Sun, Mingwu Ren, Haofeng Zhang
    - Tags: training-free, diffusion, retrieval/prototype, boundary/frequency, low-level
@@ -129,7 +144,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-9. **High-Fidelity Synthetic Transmission Electron Microscopy Image Generation Using Diffusion Probabilistic Models for Data-Limited Semiconductor Metrology**
+10. **High-Fidelity Synthetic Transmission Electron Microscopy Image Generation Using Diffusion Probabilistic Models for Data-Limited Semiconductor Metrology**
    - Source: arXiv, 2026-06-23
    - Authors: Johannes Boehm, Bappaditya Dey
    - Tags: diffusion, low-level
@@ -144,7 +159,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-10. **ARTEMIS: Agent-guided Reliability-aware Temporal Mask Evolution for Imperfectly Supervised Video Polyp Segmentation**
+11. **ARTEMIS: Agent-guided Reliability-aware Temporal Mask Evolution for Imperfectly Supervised Video Polyp Segmentation**
    - Source: arXiv, 2026-06-18
    - Authors: Tong Wang, Siwen Wang, Yaolei Qi, Jinxing Zhou, Yuting He et al.
    - Tags: VLM/MLLM, retrieval/prototype, boundary/frequency, depth/geometry, video
@@ -159,7 +174,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-11. **ActiveSAM: Image-Conditional Class Pruning for Fast and Accurate Open-Vocabulary Segmentation**
+12. **ActiveSAM: Image-Conditional Class Pruning for Fast and Accurate Open-Vocabulary Segmentation**
    - Source: arXiv, 2026-06-15
    - Authors: Tran Dinh Tien, Zhiqiang Shen
    - Tags: open-vocabulary, training-free, SAM, diffusion, remote sensing
@@ -172,21 +187,6 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。
    - 可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
-   - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
-
-12. **SWARD: Stochastic Window-Attention-Based Relational Distillation for Cross-Architectural Semantic Segmentation**
-   - Source: arXiv, 2026-05-31
-   - Authors: Aditya Makineni, Qing Tian
-   - Tags: retrieval/prototype, boundary/frequency, medical imaging
-   - Links: [paper](http://arxiv.org/abs/2606.00999v1) / [pdf](http://arxiv.org/pdf/2606.00999v1)
-   - 论文：SWARD: Stochastic Window-Attention-Based Relational Distillation for Cross-Architectural Semantic Segmentation
-   - 一句话总结：Large-scale vision foundation models have driven substantial gains on dense prediction tasks such as semantic segmentation, but their size makes deployment impractical in resource-constrained settings, motivat...
-   - 任务设定：医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。
-   - 方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。
-   - 实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。
-   - 和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。
-   - 可借鉴点：边界/频域增强模块。
-   - 可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
 ## 高质量来源优先读：CCF-A/B 与顶刊顶会
@@ -1245,19 +1245,19 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-6. **SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models**
-   - Source: arXiv, 2026-05-29
-   - Authors: Olaf Dünkel, Basavaraj Sunagad, Haoran Wang, David T. Hoffmann, Christian Theobalt et al.
-   - Tags: VLM/MLLM, diffusion, depth/geometry, video
-   - Links: [paper](http://arxiv.org/abs/2605.31597v2) / [pdf](http://arxiv.org/pdf/2605.31597v2)
-   - 论文：SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models
-   - 一句话总结：Measuring structured object understanding in vision foundation models remains challenging due to inconsistent evaluation protocols and limited part-level supervision. Semantic correspondence (SC) evaluates thi...
-   - 任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。
+6. **Understanding How MLLMs Describe Artworks Using Token Activation Maps**
+   - Source: arXiv, 2026-06-26
+   - Authors: Nicola Fanelli, Pasquale De Marinis, Raffaele Scaringi, Eva Cetinic, Gennaro Vessio et al.
+   - Tags: open-vocabulary, SAM, VLM/MLLM, reasoning
+   - Links: [paper](http://arxiv.org/abs/2606.27947v1) / [pdf](http://arxiv.org/pdf/2606.27947v1)
+   - 论文：Understanding How MLLMs Describe Artworks Using Token Activation Maps
+   - 一句话总结：Multimodal Large Language Models (MLLMs) describe artworks with remarkable fluency, yet the visual reasoning behind their outputs remains opaque. When an MLLM names a style, identifies a subject, or recognizes...
+   - 任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。
    - 方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。
-   - 实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。
-   - 和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。
-   - 可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。
-   - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
+   - 实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。
+   - 和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。
+   - 可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。
+   - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
 7. **Anatomy-Guided Residual Motion Diffusion for Controllable 4D Cardiac MRI Synthesis**
@@ -1290,7 +1290,22 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-9. **VesselSim: learning 3D blood vessel segmentation without expert annotations**
+9. **SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models**
+   - Source: arXiv, 2026-05-29
+   - Authors: Olaf Dünkel, Basavaraj Sunagad, Haoran Wang, David T. Hoffmann, Christian Theobalt et al.
+   - Tags: VLM/MLLM, diffusion, depth/geometry, video
+   - Links: [paper](http://arxiv.org/abs/2605.31597v2) / [pdf](http://arxiv.org/pdf/2605.31597v2)
+   - 论文：SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models
+   - 一句话总结：Measuring structured object understanding in vision foundation models remains challenging due to inconsistent evaluation protocols and limited part-level supervision. Semantic correspondence (SC) evaluates thi...
+   - 任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。
+   - 方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。
+   - 实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。
+   - 和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。
+   - 可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。
+   - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
+   - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
+
+10. **VesselSim: learning 3D blood vessel segmentation without expert annotations**
    - Source: arXiv, 2026-05-25
    - Authors: Erin Rainville, Melissa Ananian, Tristan Mirolla, Hassan Rivaz, Yiming Xiao
    - Tags: boundary/frequency, depth/geometry, anomaly/OOD, domain adaptation, medical imaging
@@ -1305,7 +1320,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-10. **MM-OVSeg:Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing**
+11. **MM-OVSeg:Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing**
    - Source: arXiv, 2026-03-18
    - Authors: Yimin Wei, Aoran Xiao, Hongruixuan Chen, Junshi Xia, Naoto Yokoya
    - Tags: open-vocabulary, VLM/MLLM, diffusion, remote sensing
@@ -1320,7 +1335,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-11. **ActiveSAM: Image-Conditional Class Pruning for Fast and Accurate Open-Vocabulary Segmentation**
+12. **ActiveSAM: Image-Conditional Class Pruning for Fast and Accurate Open-Vocabulary Segmentation**
    - Source: arXiv, 2026-06-15
    - Authors: Tran Dinh Tien, Zhiqiang Shen
    - Tags: open-vocabulary, training-free, SAM, diffusion, remote sensing
@@ -1335,7 +1350,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-12. **Vision-Language Model Reasoning for Contextual Semantic Mapping in Intralogistics**
+13. **Vision-Language Model Reasoning for Contextual Semantic Mapping in Intralogistics**
    - Source: arXiv, 2026-06-23
    - Authors: Marvin Rüdt, Hao Pang, Constantin Enke, Zäzilia Seibold, Kai Furmans
    - Tags: open-vocabulary, SAM, VLM/MLLM, reasoning, depth/geometry
@@ -1350,7 +1365,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-13. **Jolia: Concept-Level Vision-Language Alignment for 3D CT Contrastive Learning**
+14. **Jolia: Concept-Level Vision-Language Alignment for 3D CT Contrastive Learning**
    - Source: arXiv, 2026-06-23
    - Authors: Julien Khlaut, Charles Corbière, Baptiste Callard, Amaury Prat, Leo Butsanets et al.
    - Tags: VLM/MLLM, depth/geometry, medical imaging
@@ -1365,7 +1380,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-14. **ARTEMIS: Agent-guided Reliability-aware Temporal Mask Evolution for Imperfectly Supervised Video Polyp Segmentation**
+15. **ARTEMIS: Agent-guided Reliability-aware Temporal Mask Evolution for Imperfectly Supervised Video Polyp Segmentation**
    - Source: arXiv, 2026-06-18
    - Authors: Tong Wang, Siwen Wang, Yaolei Qi, Jinxing Zhou, Yuting He et al.
    - Tags: VLM/MLLM, retrieval/prototype, boundary/frequency, depth/geometry, video
@@ -1380,7 +1395,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-15. **Training-free Cross-domain Few-shot Segmentation via Robust Semantic Representation and Matching**
+16. **Training-free Cross-domain Few-shot Segmentation via Robust Semantic Representation and Matching**
    - Source: arXiv, 2026-06-23
    - Authors: Sujun Sun, Mingwu Ren, Haofeng Zhang
    - Tags: training-free, diffusion, retrieval/prototype, boundary/frequency, low-level
@@ -1395,7 +1410,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-16. **SWARD: Stochastic Window-Attention-Based Relational Distillation for Cross-Architectural Semantic Segmentation**
+17. **SWARD: Stochastic Window-Attention-Based Relational Distillation for Cross-Architectural Semantic Segmentation**
    - Source: arXiv, 2026-05-31
    - Authors: Aditya Makineni, Qing Tian
    - Tags: retrieval/prototype, boundary/frequency, medical imaging
@@ -1410,7 +1425,22 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-17. **MLFFM-SegDiff: A Multi-Level Feature Fusion Diffusion Model for Skin Lesion Segmentation**
+18. **Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation**
+   - Source: arXiv, 2026-06-26
+   - Authors: Yuheng Qiu, Jingyi Luo, Chenfei Ye, Ting Ma, Jianfeng Cao
+   - Tags: training-free, diffusion, boundary/frequency, medical imaging
+   - Links: [paper](http://arxiv.org/abs/2606.27935v1) / [pdf](http://arxiv.org/pdf/2606.27935v1)
+   - 论文：Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation
+   - 一句话总结：Deep learning has demonstrated remarkable success in high-throughput histopathology image analysis. However, the performance of learning-based models critically depends on the quality and size of annotations b...
+   - 任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。
+   - 方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。
+   - 实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。
+   - 和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。
+   - 可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。
+   - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
+   - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
+
+19. **MLFFM-SegDiff: A Multi-Level Feature Fusion Diffusion Model for Skin Lesion Segmentation**
    - Source: arXiv, 2026-06-25
    - Authors: Jingjun Gu, Chaojie Shen, Yifeng Cao, Wei Zhang, Yiliu Li et al.
    - Tags: diffusion, boundary/frequency, low-level, saliency/transparent, medical imaging
@@ -1425,7 +1455,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-18. **High-Fidelity Synthetic Transmission Electron Microscopy Image Generation Using Diffusion Probabilistic Models for Data-Limited Semiconductor Metrology**
+20. **High-Fidelity Synthetic Transmission Electron Microscopy Image Generation Using Diffusion Probabilistic Models for Data-Limited Semiconductor Metrology**
    - Source: arXiv, 2026-06-23
    - Authors: Johannes Boehm, Bappaditya Dey
    - Tags: diffusion, low-level
@@ -1440,7 +1470,22 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-19. **SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection**
+21. **Harnessing Vision Foundation Models for High-Performance, Training-Free Open Vocabulary Segmentation**
+   - Source: Semantic Scholar / IEEE International Conference on Computer Vision / citations 37, 2024-11-14
+   - Authors: Yuheng Shi, Minjing Dong, Chang Xu
+   - Tags: open-vocabulary, training-free, SAM, VLM/MLLM
+   - Links: [paper](https://www.semanticscholar.org/paper/9dadb571b26ea7bd387b9273b34263fd2c2e981b)
+   - 论文：Harnessing Vision Foundation Models for High-Performance, Training-Free Open Vocabulary Segmentation
+   - 一句话总结：While CLIP has advanced open-vocabulary predictions, its performance on semantic segmentation remains suboptimal. This shortfall primarily stems from its spatialinvariant semantic features and constrained reso...
+   - 任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。
+   - 方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。
+   - 实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。
+   - 和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。
+   - 可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。
+   - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
+   - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
+
+22. **SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection**
    - Source: arXiv, 2025-11-13
    - Authors: Jia Lin, Xiaofei Zhou, Jiyuan Liu, Runmin Cong, Guodao Zhang et al.
    - Tags: SAM, diffusion, retrieval/prototype, depth/geometry, video, saliency/transparent
@@ -1455,7 +1500,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-20. **AD-DINOv3: Enhancing DINOv3 for Zero-Shot Anomaly Detection with Anomaly-Aware Calibration**
+23. **AD-DINOv3: Enhancing DINOv3 for Zero-Shot Anomaly Detection with Anomaly-Aware Calibration**
    - Source: arXiv, 2025-09-17
    - Authors: Jingyi Yuan, Jianxiong Ye, Wenkang Chen, Chenqiang Gao
    - Tags: VLM/MLLM, diffusion, anomaly/OOD
@@ -1470,7 +1515,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-21. **FiLo++: Zero-/Few-Shot Anomaly Detection by Fused Fine-Grained Descriptions and Deformable Localization**
+24. **FiLo++: Zero-/Few-Shot Anomaly Detection by Fused Fine-Grained Descriptions and Deformable Localization**
    - Source: arXiv, 2025-01-17
    - Authors: Zhaopeng Gu, Bingke Zhu, Guibo Zhu, Yingying Chen, Ming Tang et al.
    - Tags: reasoning, diffusion, anomaly/OOD
@@ -1485,7 +1530,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-22. **MAPSeg: Unified Unsupervised Domain Adaptation for Heterogeneous Medical Image Segmentation Based on 3D Masked Autoencoding and Pseudo-Labeling**
+25. **MAPSeg: Unified Unsupervised Domain Adaptation for Heterogeneous Medical Image Segmentation Based on 3D Masked Autoencoding and Pseudo-Labeling**
    - Source: CVPR 2024, 2024
    - Authors: Xuzhe Zhang, Yuhao Wu, Elsa Angelini, Ang Li, Jia Guo et al.
    - Tags: unsupervised, depth/geometry, domain adaptation, medical imaging
@@ -1500,7 +1545,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可验证在 COD 跨数据集上的泛化，加入目标缺失场景。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-23. **T-REN: Learning Text-Aligned Region Tokens Improves Dense Vision-Language Alignment and Scalability**
+26. **T-REN: Learning Text-Aligned Region Tokens Improves Dense Vision-Language Alignment and Scalability**
    - Source: arXiv, 2026-04-20
    - Authors: Savya Khosla, Sethuraman T, Aryan Chadha, Alex Schwing, Derek Hoiem
    - Tags: open-vocabulary, VLM/MLLM, diffusion, retrieval/prototype, depth/geometry, video
@@ -1515,7 +1560,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-24. **Towards Realistic Open-Vocabulary Remote Sensing Segmentation: Benchmark and Baseline**
+27. **Towards Realistic Open-Vocabulary Remote Sensing Segmentation: Benchmark and Baseline**
    - Source: arXiv, 2026-04-17
    - Authors: Bingyu Li, Tao Huo, Haocheng Dong, Da Zhang, Zhiyuan Zhao et al.
    - Tags: open-vocabulary, remote sensing, anomaly/OOD
@@ -1530,7 +1575,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-25. **TRACE: Evidence Grounding-Guided Multi-Video Event Understanding and Claim Generation**
+28. **TRACE: Evidence Grounding-Guided Multi-Video Event Understanding and Claim Generation**
    - Source: arXiv, 2026-05-16
    - Authors: Pengyu Yan, Akhil Gorugantu, Mahesh Bhosale, Abdul Wasi, Vishvesh Trivedi et al.
    - Tags: VLM/MLLM, reasoning, video
@@ -1545,7 +1590,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-26. **Segmentation, Detection and Explanation: A Unified Framework for CT Appearance Reasoning**
+29. **Segmentation, Detection and Explanation: A Unified Framework for CT Appearance Reasoning**
    - Source: arXiv, 2026-05-15
    - Authors: Yuyuan Liu, Can Peng, Yingyu Yang, Qianye Yang, Cheng Ouyang et al.
    - Tags: VLM/MLLM, reasoning, diffusion, medical imaging
@@ -1560,7 +1605,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-27. **ModuSeg: Decoupling Object Discovery and Semantic Retrieval for Training-Free Weakly Supervised Segmentation**
+30. **ModuSeg: Decoupling Object Discovery and Semantic Retrieval for Training-Free Weakly Supervised Segmentation**
    - Source: arXiv, 2026-04-08
    - Authors: Qingze He, Fagui Liu, Dengke Zhang, Qingmao Wei, Quan Tang
    - Tags: training-free, unsupervised, retrieval/prototype, boundary/frequency, depth/geometry
@@ -1575,7 +1620,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-28. **Frequency Adapter with SAM for Generalized Medical Image Segmentation**
+31. **Frequency Adapter with SAM for Generalized Medical Image Segmentation**
    - Source: arXiv, 2026-05-11
    - Authors: Phuoc-Nguyen Bui, Van-Nguyen Pham, Duc-Tai Le, Junghyun Bum, Hyunseung Choo
    - Tags: SAM, diffusion, boundary/frequency, remote sensing, domain adaptation, medical imaging
@@ -1590,7 +1635,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-29. **Flood Mapping from RGB imagery using a Vision Foundation Model**
+32. **Flood Mapping from RGB imagery using a Vision Foundation Model**
    - Source: arXiv, 2026-06-23
    - Authors: Vladyslav Polushko, Tilman Bucher, Ronald Rösch, Thomas März, Markus Rauhut et al.
    - Tags: depth/geometry, remote sensing, anomaly/OOD
@@ -1605,7 +1650,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-30. **UniDrive: A Unified Vision-Language and Grounding Framework for Interpretable Risk Understanding in Autonomous Driving**
+33. **UniDrive: A Unified Vision-Language and Grounding Framework for Interpretable Risk Understanding in Autonomous Driving**
    - Source: arXiv, 2026-06-23
    - Authors: Xiaowei Gao, Pengxiang Li, Yitai Cheng, Ruihan Xu, James Haworth et al.
    - Tags: VLM/MLLM, reasoning, video
@@ -1620,7 +1665,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-31. **Object Tokens as a Bridge Between Segmentation and Visual Question Answering in Robotic Surgery**
+34. **Object Tokens as a Bridge Between Segmentation and Visual Question Answering in Robotic Surgery**
    - Source: arXiv, 2026-06-14
    - Authors: Yiping Li, Ronald de Jong, Romy van Jaarsveld, Franco Badaloni, Gino Kuiper et al.
    - Tags: SAM, VLM/MLLM, reasoning
@@ -1635,7 +1680,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-32. **Prob-BBDM: a Probabilistic Brownian Bridge Diffusion Model for MRI sequence image-to-image translation**
+35. **Prob-BBDM: a Probabilistic Brownian Bridge Diffusion Model for MRI sequence image-to-image translation**
    - Source: arXiv, 2026-06-23
    - Authors: Martin Valls, Pascal Bourdon, Christine Fernandez-Maloigne, Guillaume Herpe, David Helbert
    - Tags: diffusion, depth/geometry, medical imaging
@@ -1650,7 +1695,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-33. **EnTrust: Modeling Inter-Modal Conflict for Trustworthy Multimodal Medical Image Analysis**
+36. **EnTrust: Modeling Inter-Modal Conflict for Trustworthy Multimodal Medical Image Analysis**
    - Source: arXiv, 2026-06-19
    - Authors: Dwarikanath Mahapatra, Abhijit Das, Behzad Bozorgtabar, Zongyuan Ge, Sudipta Roy et al.
    - Tags: diffusion, medical imaging
@@ -1665,7 +1710,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-34. **SegmentAnyTreeV2: Scaling Transformer-Based Tree Instance Segmentation Across Sensors, Platforms, and Forests**
+37. **SegmentAnyTreeV2: Scaling Transformer-Based Tree Instance Segmentation Across Sensors, Platforms, and Forests**
    - Source: arXiv, 2026-06-06
    - Authors: Maciej Wielgosz, Stefano Puliti, Rasmus Astrup
    - Tags: domain adaptation
@@ -1680,7 +1725,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可验证在 COD 跨数据集上的泛化，加入目标缺失场景。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-35. **RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation**
+38. **RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation**
    - Source: CVPR 2026, 2026
    - Authors: Anuvab Sen, Mir Sayeed Mohammad, Saibal Mukhopadhyay
    - Tags: computer vision
@@ -1695,7 +1740,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-36. **Hierarchical Point-Patch Fusion with Adaptive Patch Codebook for 3D Shape Anomaly Detection**
+39. **Hierarchical Point-Patch Fusion with Adaptive Patch Codebook for 3D Shape Anomaly Detection**
    - Source: CVPR 2026, 2026
    - Authors: Xueyang Kang, Zizhao Li, Tian Lan, Dong Gong, Kourosh Khoshelham et al.
    - Tags: depth/geometry, anomaly/OOD
@@ -1710,7 +1755,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-37. **SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling**
+40. **SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling**
    - Source: arXiv, 2026-02-26
    - Authors: Camile Lendering, Erkut Akdag, Egor Bondarev
    - Tags: training-free, VLM/MLLM, retrieval/prototype, remote sensing, anomaly/OOD
@@ -1725,7 +1770,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-38. **Crane: Context-Guided Prompt Learning and Attention Refinement for Zero-Shot Anomaly Detection**
+41. **Crane: Context-Guided Prompt Learning and Attention Refinement for Zero-Shot Anomaly Detection**
    - Source: arXiv, 2025-04-15
    - Authors: Alireza Salehi, Mohammadreza Salehi, Reshad Hosseini, Cees G. M. Snoek, Makoto Yamada et al.
    - Tags: diffusion, boundary/frequency, anomaly/OOD
@@ -1740,7 +1785,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-39. **Exploring Efficient Open-Vocabulary Segmentation in the Remote Sensing**
+42. **Exploring Efficient Open-Vocabulary Segmentation in the Remote Sensing**
    - Source: arXiv, 2025-09-15
    - Authors: Bingyu Li, Haocheng Dong, Da Zhang, Zhiyuan Zhao, Junyu Gao et al.
    - Tags: open-vocabulary, VLM/MLLM, boundary/frequency, remote sensing, domain adaptation
@@ -1755,7 +1800,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-40. **Annotation-Free Open-Vocabulary Segmentation for Remote-Sensing Images**
+43. **Annotation-Free Open-Vocabulary Segmentation for Remote-Sensing Images**
    - Source: arXiv, 2025-08-25
    - Authors: Kaiyu Li, Xiangyong Cao, Ruixun Liu, Shihong Wang, Zixuan Jiang et al.
    - Tags: open-vocabulary, boundary/frequency, remote sensing
@@ -1770,7 +1815,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-41. **Diffusion Model as a Generalist Segmentation Learner**
+44. **Diffusion Model as a Generalist Segmentation Learner**
    - Source: arXiv, 2026-04-27
    - Authors: Haoxiao Wang, Antao Xiang, Haiyang Sun, Peilin Sun, Changhao Pan et al.
    - Tags: open-vocabulary, diffusion, remote sensing, low-level
@@ -1785,37 +1830,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-42. **OV-Stitcher: A Global Context-Aware Framework for Training-Free Open-Vocabulary Semantic Segmentation**
-   - Source: arXiv, 2026-04-09
-   - Authors: Seungjae Moon, Seunghyun Oh, Youngmin Ro
-   - Tags: open-vocabulary, training-free, VLM/MLLM, reasoning, diffusion, boundary/frequency
-   - Links: [paper](http://arxiv.org/abs/2604.08110v2) / [pdf](http://arxiv.org/pdf/2604.08110v2)
-   - 论文：OV-Stitcher: A Global Context-Aware Framework for Training-Free Open-Vocabulary Semantic Segmentation
-   - 一句话总结：Training-free open-vocabulary semantic segmentation(TF-OVSS) has recently attracted attention for its ability to perform dense prediction by leveraging the pretrained knowledge of large vision and vision-langu...
-   - 任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。
-   - 方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。
-   - 实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。
-   - 和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。
-   - 可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块。
-   - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
-   - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
-
-43. **DeepTumorVQA: A Hierarchical 3D CT Benchmark for Stage-Wise Evaluation of Medical VLMs and Tool-Augmented Agents**
-   - Source: arXiv, 2026-05-10
-   - Authors: Yixiong Chen, Wenjie Xiao, Pedro R. A. S. Bassi, Boyan Wang, Liang He et al.
-   - Tags: VLM/MLLM, reasoning, diffusion, boundary/frequency, depth/geometry, medical imaging
-   - Links: [paper](http://arxiv.org/abs/2605.09679v1) / [pdf](http://arxiv.org/pdf/2605.09679v1)
-   - 论文：DeepTumorVQA: A Hierarchical 3D CT Benchmark for Stage-Wise Evaluation of Medical VLMs and Tool-Augmented Agents
-   - 一句话总结：Medical vision-language models (VLMs) and AI agents have made significant progress in learning to analyze and reason about clinical images. However, existing medical visual question answering (VQA) benchmarks...
-   - 任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。
-   - 方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。
-   - 实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。
-   - 和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。
-   - 可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合。
-   - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
-   - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
-
-44. **Cross-Modal-Domain Generalization Through Semantically Aligned Discrete Representations**
+45. **Cross-Modal-Domain Generalization Through Semantically Aligned Discrete Representations**
    - Source: arXiv, 2026-05-12
    - Authors: Souptik Sen, Raneen Younis, Zahra Ahmadi
    - Tags: retrieval/prototype, video, domain adaptation
@@ -1830,7 +1845,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可验证在 COD 跨数据集上的泛化，加入目标缺失场景。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-45. **EDGER: EDge-Guided with HEatmap Refinement for Generalizable Image Forgery Localization**
+46. **EDGER: EDge-Guided with HEatmap Refinement for Generalizable Image Forgery Localization**
    - Source: arXiv, 2026-05-12
    - Authors: Minh-Khoa Le-Phan, Minh-Hoang Le, Minh-Triet Tran, Trong-Le Do
    - Tags: boundary/frequency, domain adaptation
@@ -1845,7 +1860,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-46. **CrossPan: A Comprehensive Benchmark for Cross-Sequence Pancreas MRI Segmentation and Generalization**
+47. **CrossPan: A Comprehensive Benchmark for Cross-Sequence Pancreas MRI Segmentation and Generalization**
    - Source: arXiv, 2026-04-20
    - Authors: Linkai Peng, Cuiling Sun, Zheyuan Zhang, Wanying Dou, Halil Ertugrul Aktas et al.
    - Tags: unsupervised, depth/geometry, domain adaptation, medical imaging
@@ -1860,7 +1875,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可验证在 COD 跨数据集上的泛化，加入目标缺失场景。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-47. **SemiSAM-O1: How far can we push the boundary of annotation-efficient medical image segmentation?**
+48. **SemiSAM-O1: How far can we push the boundary of annotation-efficient medical image segmentation?**
    - Source: arXiv, 2026-04-27
    - Authors: Yichi Zhang, Le Xue, Bichun Xu, Judong Luo, Zhigang Wu et al.
    - Tags: unsupervised, retrieval/prototype, boundary/frequency, medical imaging
@@ -1875,7 +1890,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-48. **Adapting Foundation Models for Annotation-Efficient Adnexal Mass Segmentation in Cine Images**
+49. **Adapting Foundation Models for Annotation-Efficient Adnexal Mass Segmentation in Cine Images**
    - Source: arXiv, 2026-04-09
    - Authors: Francesca Fati, Alberto Rota, Adriana V. Gregory, Anna Catozzo, Maria C. Giuliano et al.
    - Tags: diffusion, boundary/frequency, medical imaging
@@ -1890,7 +1905,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-49. **HyPiDecoder: Hybrid Pixel Decoder for Efficient Segmentation and Detection**
+50. **HyPiDecoder: Hybrid Pixel Decoder for Efficient Segmentation and Detection**
    - Source: ICCV 2025, 2025
    - Authors: Fengzhe Zhou, Humphrey Shi
    - Tags: computer vision
@@ -1905,7 +1920,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-50. **SVHighlights: Towards Extremely Long Sport Video Highlight Detection**
+51. **SVHighlights: Towards Extremely Long Sport Video Highlight Detection**
    - Source: arXiv, 2026-06-05
    - Authors: Donggyu Lee, Youngbin Ki, Jeonghun Kang, Taehwan Kim
    - Tags: training-free, reasoning, boundary/frequency, video, saliency/transparent
@@ -1920,7 +1935,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-51. **HPP: Hierarchical Programmatic Probing for Long Video Understanding by Decoupling Perception and Reasoning**
+52. **HPP: Hierarchical Programmatic Probing for Long Video Understanding by Decoupling Perception and Reasoning**
    - Source: arXiv, 2026-06-19
    - Authors: Awais Rauf, Ahmed Hasssan, Greg Slabaugh
    - Tags: VLM/MLLM, reasoning, retrieval/prototype, video
@@ -1935,7 +1950,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-52. **Binary Tracking for Spatial QA and Navigation with Open Vision-Language Models**
+53. **Binary Tracking for Spatial QA and Navigation with Open Vision-Language Models**
    - Source: arXiv, 2026-06-15
    - Authors: Dongbin Na, Chanwoo Kim, Soonbin Rho, Giyun Choi, Gangbok Lee et al.
    - Tags: VLM/MLLM, reasoning, diffusion, retrieval/prototype, video
@@ -1950,7 +1965,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-53. **ReasonCLIP-58M: Visually Grounded Commonsense Reasoning Supervision for CLIP**
+54. **ReasonCLIP-58M: Visually Grounded Commonsense Reasoning Supervision for CLIP**
    - Source: arXiv, 2026-06-25
    - Authors: Sicheng Zhang, Muzammal Naseer, Binzhu Xie, Naufal Suryanto, Shi Qiu et al.
    - Tags: VLM/MLLM, reasoning, diffusion, retrieval/prototype
@@ -1965,7 +1980,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-54. **IMAGIN-4D: Image-Guided Controllable Interaction Generation**
+55. **IMAGIN-4D: Image-Guided Controllable Interaction Generation**
    - Source: arXiv, 2026-06-22
    - Authors: Sai Kumar Dwivedi, Federica Bogo, Buğra Tekin, Chenhongyi Yang, Nadine Bertsch et al.
    - Tags: diffusion, depth/geometry, video
@@ -1980,37 +1995,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-55. **Prompting Diffusion Models for Zero-Shot Instance Segmentation**
-   - Source: arXiv, 2026-06-21
-   - Authors: Irem Zeynep Alagöz, Nils Morbitzer, Andrea Ramazzina, Nassir Navab, Federico Tombari et al.
-   - Tags: diffusion
-   - Links: [paper](http://arxiv.org/abs/2606.22660v1) / [pdf](http://arxiv.org/pdf/2606.22660v1)
-   - 论文：Prompting Diffusion Models for Zero-Shot Instance Segmentation
-   - 一句话总结：Several disruptive research directions have recently emerged in computer vision, including foundation models achieving previously unseen zero-shot performance in scene understanding, even interactively, and ge...
-   - 任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。
-   - 方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。
-   - 实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。
-   - 和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。
-   - 可借鉴点：任务建模、损失函数、消融组织方式。
-   - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
-   - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
-
-56. **ELDiff: When Evidential Learning Meets Text-to-Image Diffusion**
-   - Source: arXiv, 2026-06-18
-   - Authors: Qingtao Pan, Kai Ye, Zhihao Dou, Bing Ji, Shuo Li
-   - Tags: diffusion, low-level
-   - Links: [paper](http://arxiv.org/abs/2606.20924v1) / [pdf](http://arxiv.org/pdf/2606.20924v1)
-   - 论文：ELDiff: When Evidential Learning Meets Text-to-Image Diffusion
-   - 一句话总结：In multi-object text-to-image (T2I) diffusion, ensuring semantic consistency between textual prompts and generated visual content is crucial for image synthesis. However, such consistency constraint is often u...
-   - 任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。
-   - 方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。
-   - 实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。
-   - 和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。
-   - 可借鉴点：任务建模、损失函数、消融组织方式。
-   - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
-   - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
-
-57. **SARIF: Segment Anything for Robust Image Forensics**
+56. **SARIF: Segment Anything for Robust Image Forensics**
    - Source: arXiv, 2026-06-19
    - Authors: Dong-Hyun Moon, Ju-Hyeon Nam, Sang-Chul Lee
    - Tags: SAM, remote sensing, domain adaptation
@@ -2025,7 +2010,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-58. **SL-S4Wave: Self-Supervised Learning of Physiological Waveforms with Structured State Space Models**
+57. **SL-S4Wave: Self-Supervised Learning of Physiological Waveforms with Structured State Space Models**
    - Source: arXiv, 2026-06-18
    - Authors: Feng Wu, Harsh Deep, Eric Lehman, Sanyam Kapoor, Guoshuai Zhao et al.
    - Tags: diffusion, video, domain adaptation
@@ -2040,7 +2025,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可验证在 COD 跨数据集上的泛化，加入目标缺失场景。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-59. **VTOS: Learning to Orchestrate Vision Tools by Co-Searching Solutions and Observers**
+58. **VTOS: Learning to Orchestrate Vision Tools by Co-Searching Solutions and Observers**
    - Source: arXiv, 2026-06-17
    - Authors: Jinchao Ge, Lingqiao Liu, Shuwen Zhao, Lei Wang
    - Tags: open-vocabulary, SAM, reasoning, diffusion, boundary/frequency, anomaly/OOD, domain adaptation
@@ -2055,7 +2040,7 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
-60. **Efficient Encoder-Free Fourier-based 3D Large Multimodal Model**
+59. **Efficient Encoder-Free Fourier-based 3D Large Multimodal Model**
    - Source: CVPR 2026, 2026
    - Authors: Guofeng Mei, Wei Lin, Luigi Riz, Yujiao Wu, Yiming Wang et al.
    - Tags: depth/geometry
@@ -2068,6 +2053,21 @@ This page tracks new and useful computer-vision papers, with COD/camouflaged obj
    - 和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。
    - 可借鉴点：深度或几何先验融合。
    - 可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。
+   - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
+
+60. **Boosting Salient Object Detection with Knowledge Distillated from Large Foundation Models**
+   - Source: arXiv, 2025-01-08
+   - Authors: Miaoyang He, Shuyong Gao, Tsui Qin Mok, Weifeng Ge, Wengqiang Zhang
+   - Tags: unsupervised, diffusion, boundary/frequency, saliency/transparent
+   - Links: [paper](http://arxiv.org/abs/2501.04582v1) / [pdf](http://arxiv.org/pdf/2501.04582v1)
+   - 论文：Boosting Salient Object Detection with Knowledge Distillated from Large Foundation Models
+   - 一句话总结：Salient Object Detection (SOD) aims to identify and segment prominent regions within a scene. Traditional models rely on manually annotated pseudo labels with precise pixel-level accuracy, which is time-consum...
+   - 任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。
+   - 方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。
+   - 实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。
+   - 和我课题的关系：和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。
+   - 可借鉴点：边界/频域增强模块。
+   - 可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。
    - 是否值得精读：建议精读：高质量来源或方法迁移价值较高。
 
 ## 历史更新归档

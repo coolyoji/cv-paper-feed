@@ -70,7 +70,7 @@
 <body>
 <main>
 <h1>Daily CV Paper Feed</h1>
-<p>Last updated: 2026-06-28 13:44 Asia/Shanghai</p>
+<p>Last updated: 2026-06-29 14:06 Asia/Shanghai</p>
 <p>Archive days kept: 4</p>
 <p>This page tracks new and useful computer-vision papers, with COD/camouflaged object detection kept as the primary reading thread and broader CV methods included for inspiration.</p>
 <p>历史更新不会被删除；如果当天没看完，可以继续往下翻到对应日期。</p>
@@ -108,6 +108,22 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
+<h3><strong>Understanding How MLLMs Describe Artworks Using Token Activation Maps</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-26</p>
+<p class='meta'>Authors: Nicola Fanelli, Pasquale De Marinis, Raffaele Scaringi, Eva Cetinic, Gennaro Vessio et al.</p>
+<p class='meta'>Tags: open-vocabulary, SAM, VLM/MLLM, reasoning</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.27947v1">paper</a> / <a href="http://arxiv.org/pdf/2606.27947v1">pdf</a></p>
+<p class='meta'>论文：Understanding How MLLMs Describe Artworks Using Token Activation Maps</p>
+<p class='meta'>一句话总结：Multimodal Large Language Models (MLLMs) describe artworks with remarkable fluency, yet the visual reasoning behind their outputs remains opaque. When an MLLM names a style, identifies a subject, or recognizes...</p>
+<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
+<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
+<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
 <h3><strong>Anatomy-Guided Residual Motion Diffusion for Controllable 4D Cardiac MRI Synthesis</strong></h3>
 <p class='meta'>Source: arXiv, 2026-06-25</p>
 <p class='meta'>Authors: Yiheng Cao, Gustavo Andrade-Miranda, Jiatian Zhang, Lingxiao Zhao, Xin Gao</p>
@@ -124,19 +140,19 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
-<h3><strong>SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models</strong></h3>
-<p class='meta'>Source: arXiv, 2026-05-29</p>
-<p class='meta'>Authors: Olaf Dünkel, Basavaraj Sunagad, Haoran Wang, David T. Hoffmann, Christian Theobalt et al.</p>
-<p class='meta'>Tags: VLM/MLLM, diffusion, depth/geometry, video</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.31597v2">paper</a> / <a href="http://arxiv.org/pdf/2605.31597v2">pdf</a></p>
-<p class='meta'>论文：SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models</p>
-<p class='meta'>一句话总结：Measuring structured object understanding in vision foundation models remains challenging due to inconsistent evaluation protocols and limited part-level supervision. Semantic correspondence (SC) evaluates thi...</p>
-<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
-<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<h3><strong>Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-26</p>
+<p class='meta'>Authors: Yuheng Qiu, Jingyi Luo, Chenfei Ye, Ting Ma, Jianfeng Cao</p>
+<p class='meta'>Tags: training-free, diffusion, boundary/frequency, medical imaging</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.27935v1">paper</a> / <a href="http://arxiv.org/pdf/2606.27935v1">pdf</a></p>
+<p class='meta'>论文：Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation</p>
+<p class='meta'>一句话总结：Deep learning has demonstrated remarkable success in high-throughput histopathology image analysis. However, the performance of learning-based models critically depends on the quality and size of annotations b...</p>
+<p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
+<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
@@ -249,22 +265,6 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>SWARD: Stochastic Window-Attention-Based Relational Distillation for Cross-Architectural Semantic Segmentation</strong></h3>
-<p class='meta'>Source: arXiv, 2026-05-31</p>
-<p class='meta'>Authors: Aditya Makineni, Qing Tian</p>
-<p class='meta'>Tags: retrieval/prototype, boundary/frequency, medical imaging</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.00999v1">paper</a> / <a href="http://arxiv.org/pdf/2606.00999v1">pdf</a></p>
-<p class='meta'>论文：SWARD: Stochastic Window-Attention-Based Relational Distillation for Cross-Architectural Semantic Segmentation</p>
-<p class='meta'>一句话总结：Large-scale vision foundation models have driven substantial gains on dense prediction tasks such as semantic segmentation, but their size makes deployment impractical in resource-constrained settings, motivat...</p>
-<p class='meta'>任务设定：医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。</p>
-<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
-<p class='meta'>可借鉴点：边界/频域增强模块。</p>
-<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <h2>高质量来源优先读：CCF-A/B 与顶刊顶会</h2>
@@ -1391,19 +1391,19 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
-<h3><strong>SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models</strong></h3>
-<p class='meta'>Source: arXiv, 2026-05-29</p>
-<p class='meta'>Authors: Olaf Dünkel, Basavaraj Sunagad, Haoran Wang, David T. Hoffmann, Christian Theobalt et al.</p>
-<p class='meta'>Tags: VLM/MLLM, diffusion, depth/geometry, video</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.31597v2">paper</a> / <a href="http://arxiv.org/pdf/2605.31597v2">pdf</a></p>
-<p class='meta'>论文：SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models</p>
-<p class='meta'>一句话总结：Measuring structured object understanding in vision foundation models remains challenging due to inconsistent evaluation protocols and limited part-level supervision. Semantic correspondence (SC) evaluates thi...</p>
-<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<h3><strong>Understanding How MLLMs Describe Artworks Using Token Activation Maps</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-26</p>
+<p class='meta'>Authors: Nicola Fanelli, Pasquale De Marinis, Raffaele Scaringi, Eva Cetinic, Gennaro Vessio et al.</p>
+<p class='meta'>Tags: open-vocabulary, SAM, VLM/MLLM, reasoning</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.27947v1">paper</a> / <a href="http://arxiv.org/pdf/2606.27947v1">pdf</a></p>
+<p class='meta'>论文：Understanding How MLLMs Describe Artworks Using Token Activation Maps</p>
+<p class='meta'>一句话总结：Multimodal Large Language Models (MLLMs) describe artworks with remarkable fluency, yet the visual reasoning behind their outputs remains opaque. When an MLLM names a style, identifies a subject, or recognizes...</p>
+<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
 <p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
-<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
+<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
@@ -1435,6 +1435,22 @@
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-29</p>
+<p class='meta'>Authors: Olaf Dünkel, Basavaraj Sunagad, Haoran Wang, David T. Hoffmann, Christian Theobalt et al.</p>
+<p class='meta'>Tags: VLM/MLLM, diffusion, depth/geometry, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.31597v2">paper</a> / <a href="http://arxiv.org/pdf/2605.31597v2">pdf</a></p>
+<p class='meta'>论文：SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models</p>
+<p class='meta'>一句话总结：Measuring structured object understanding in vision foundation models remains challenging due to inconsistent evaluation protocols and limited part-level supervision. Semantic correspondence (SC) evaluates thi...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
@@ -1567,6 +1583,22 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
+<h3><strong>Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-26</p>
+<p class='meta'>Authors: Yuheng Qiu, Jingyi Luo, Chenfei Ye, Ting Ma, Jianfeng Cao</p>
+<p class='meta'>Tags: training-free, diffusion, boundary/frequency, medical imaging</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.27935v1">paper</a> / <a href="http://arxiv.org/pdf/2606.27935v1">pdf</a></p>
+<p class='meta'>论文：Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation</p>
+<p class='meta'>一句话总结：Deep learning has demonstrated remarkable success in high-throughput histopathology image analysis. However, the performance of learning-based models critically depends on the quality and size of annotations b...</p>
+<p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
+<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
 <h3><strong>MLFFM-SegDiff: A Multi-Level Feature Fusion Diffusion Model for Skin Lesion Segmentation</strong></h3>
 <p class='meta'>Source: arXiv, 2026-06-25</p>
 <p class='meta'>Authors: Jingjun Gu, Chaojie Shen, Yifeng Cao, Wei Zhang, Yiliu Li et al.</p>
@@ -1596,6 +1628,22 @@
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>Harnessing Vision Foundation Models for High-Performance, Training-Free Open Vocabulary Segmentation</strong></h3>
+<p class='meta'>Source: Semantic Scholar / IEEE International Conference on Computer Vision / citations 37, 2024-11-14</p>
+<p class='meta'>Authors: Yuheng Shi, Minjing Dong, Chang Xu</p>
+<p class='meta'>Tags: open-vocabulary, training-free, SAM, VLM/MLLM</p>
+<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/9dadb571b26ea7bd387b9273b34263fd2c2e981b">paper</a></p>
+<p class='meta'>论文：Harnessing Vision Foundation Models for High-Performance, Training-Free Open Vocabulary Segmentation</p>
+<p class='meta'>一句话总结：While CLIP has advanced open-vocabulary predictions, its performance on semantic segmentation remains suboptimal. This shortfall primarily stems from its spatialinvariant semantic features and constrained reso...</p>
+<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
+<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
@@ -1967,38 +2015,6 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
-<h3><strong>OV-Stitcher: A Global Context-Aware Framework for Training-Free Open-Vocabulary Semantic Segmentation</strong></h3>
-<p class='meta'>Source: arXiv, 2026-04-09</p>
-<p class='meta'>Authors: Seungjae Moon, Seunghyun Oh, Youngmin Ro</p>
-<p class='meta'>Tags: open-vocabulary, training-free, VLM/MLLM, reasoning, diffusion, boundary/frequency</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2604.08110v2">paper</a> / <a href="http://arxiv.org/pdf/2604.08110v2">pdf</a></p>
-<p class='meta'>论文：OV-Stitcher: A Global Context-Aware Framework for Training-Free Open-Vocabulary Semantic Segmentation</p>
-<p class='meta'>一句话总结：Training-free open-vocabulary semantic segmentation(TF-OVSS) has recently attracted attention for its ability to perform dense prediction by leveraging the pretrained knowledge of large vision and vision-langu...</p>
-<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
-<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
-<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
-<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块。</p>
-<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>DeepTumorVQA: A Hierarchical 3D CT Benchmark for Stage-Wise Evaluation of Medical VLMs and Tool-Augmented Agents</strong></h3>
-<p class='meta'>Source: arXiv, 2026-05-10</p>
-<p class='meta'>Authors: Yixiong Chen, Wenjie Xiao, Pedro R. A. S. Bassi, Boyan Wang, Liang He et al.</p>
-<p class='meta'>Tags: VLM/MLLM, reasoning, diffusion, boundary/frequency, depth/geometry, medical imaging</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.09679v1">paper</a> / <a href="http://arxiv.org/pdf/2605.09679v1">pdf</a></p>
-<p class='meta'>论文：DeepTumorVQA: A Hierarchical 3D CT Benchmark for Stage-Wise Evaluation of Medical VLMs and Tool-Augmented Agents</p>
-<p class='meta'>一句话总结：Medical vision-language models (VLMs) and AI agents have made significant progress in learning to analyze and reason about clinical images. However, existing medical visual question answering (VQA) benchmarks...</p>
-<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
-<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
 <h3><strong>Cross-Modal-Domain Generalization Through Semantically Aligned Discrete Representations</strong></h3>
 <p class='meta'>Source: arXiv, 2026-05-12</p>
 <p class='meta'>Authors: Souptik Sen, Raneen Younis, Zahra Ahmadi</p>
@@ -2175,38 +2191,6 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
-<h3><strong>Prompting Diffusion Models for Zero-Shot Instance Segmentation</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-21</p>
-<p class='meta'>Authors: Irem Zeynep Alagöz, Nils Morbitzer, Andrea Ramazzina, Nassir Navab, Federico Tombari et al.</p>
-<p class='meta'>Tags: diffusion</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.22660v1">paper</a> / <a href="http://arxiv.org/pdf/2606.22660v1">pdf</a></p>
-<p class='meta'>论文：Prompting Diffusion Models for Zero-Shot Instance Segmentation</p>
-<p class='meta'>一句话总结：Several disruptive research directions have recently emerged in computer vision, including foundation models achieving previously unseen zero-shot performance in scene understanding, even interactively, and ge...</p>
-<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
-<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
-<p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
-<p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>ELDiff: When Evidential Learning Meets Text-to-Image Diffusion</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-18</p>
-<p class='meta'>Authors: Qingtao Pan, Kai Ye, Zhihao Dou, Bing Ji, Shuo Li</p>
-<p class='meta'>Tags: diffusion, low-level</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.20924v1">paper</a> / <a href="http://arxiv.org/pdf/2606.20924v1">pdf</a></p>
-<p class='meta'>论文：ELDiff: When Evidential Learning Meets Text-to-Image Diffusion</p>
-<p class='meta'>一句话总结：In multi-object text-to-image (T2I) diffusion, ensuring semantic consistency between textual prompts and generated visual content is crucial for image synthesis. However, such consistency constraint is often u...</p>
-<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
-<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
-<p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
-<p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
 <h3><strong>SARIF: Segment Anything for Robust Image Forensics</strong></h3>
 <p class='meta'>Source: arXiv, 2026-06-19</p>
 <p class='meta'>Authors: Dong-Hyun Moon, Ju-Hyeon Nam, Sang-Chul Lee</p>
@@ -2268,6 +2252,22 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>Boosting Salient Object Detection with Knowledge Distillated from Large Foundation Models</strong></h3>
+<p class='meta'>Source: arXiv, 2025-01-08</p>
+<p class='meta'>Authors: Miaoyang He, Shuyong Gao, Tsui Qin Mok, Weifeng Ge, Wengqiang Zhang</p>
+<p class='meta'>Tags: unsupervised, diffusion, boundary/frequency, saliency/transparent</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2501.04582v1">paper</a> / <a href="http://arxiv.org/pdf/2501.04582v1">pdf</a></p>
+<p class='meta'>论文：Boosting Salient Object Detection with Knowledge Distillated from Large Foundation Models</p>
+<p class='meta'>一句话总结：Salient Object Detection (SOD) aims to identify and segment prominent regions within a scene. Traditional models rely on manually annotated pseudo labels with precise pixel-level accuracy, which is time-consum...</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。</p>
+<p class='meta'>可借鉴点：边界/频域增强模块。</p>
+<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <h2>历史更新归档</h2>
