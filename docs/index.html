@@ -70,7 +70,7 @@
 <body>
 <main>
 <h1>Daily CV Paper Feed</h1>
-<p>Last updated: 2026-07-01 13:55 Asia/Shanghai</p>
+<p>Last updated: 2026-07-02 13:10 Asia/Shanghai</p>
 <p>Archive days kept: 4</p>
 <p>This page tracks new and useful computer-vision papers, with COD/camouflaged object detection kept as the primary reading thread and broader CV methods included for inspiration.</p>
 <p>历史更新不会被删除；如果当天没看完，可以继续往下翻到对应日期。</p>
@@ -90,6 +90,22 @@
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
 <p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+</article>
+<article class='paper'>
+<h3><strong>GenAU: Language-Grounded Industrial Anomaly Understanding with Vision-Language Models</strong></h3>
+<p class='meta'>Source: arXiv, 2026-07-01</p>
+<p class='meta'>Authors: Hongkuan Zhou, Tristan Rehm, Nadeem Nazer, Lavdim Halilaj, Jingcheng Wu et al.</p>
+<p class='meta'>Tags: VLM/MLLM, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2607.01049v1">paper</a> / <a href="http://arxiv.org/pdf/2607.01049v1">pdf</a></p>
+<p class='meta'>论文：GenAU: Language-Grounded Industrial Anomaly Understanding with Vision-Language Models</p>
+<p class='meta'>一句话总结：Industrial inspection requires more than binary anomaly detection: a practical system should determine whether an anomaly exists, localize the defective region, identify the defect type, and provide interpreta...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
 <h3><strong>DLGStream: Dynamic Language-embedded Guassian Splatting for Open-vocabulary Enabled Free-viewpoint Video Streaming</strong></h3>
@@ -153,6 +169,22 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>LeVLJEPA: End-to-End Vision-Language Pretraining Without Negatives</strong></h3>
+<p class='meta'>Source: arXiv, 2026-07-01</p>
+<p class='meta'>Authors: Lukas Kuhn, Giuseppe Serra, Randall Balestriero, Florian Buettner</p>
+<p class='meta'>Tags: VLM/MLLM</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2607.00784v1">paper</a> / <a href="http://arxiv.org/pdf/2607.00784v1">pdf</a></p>
+<p class='meta'>论文：LeVLJEPA: End-to-End Vision-Language Pretraining Without Negatives</p>
+<p class='meta'>一句话总结：Vision-language pretraining remains dominated by contrastive objectives, whereas vision-only self-supervised learning has largely adopted non-contrastive methods. At the same time, the role of vision-language...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
@@ -233,38 +265,6 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>MLFFM-SegDiff: A Multi-Level Feature Fusion Diffusion Model for Skin Lesion Segmentation</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-25</p>
-<p class='meta'>Authors: Jingjun Gu, Chaojie Shen, Yifeng Cao, Wei Zhang, Yiliu Li et al.</p>
-<p class='meta'>Tags: diffusion, boundary/frequency, low-level, saliency/transparent, medical imaging</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.26712v1">paper</a> / <a href="http://arxiv.org/pdf/2606.26712v1">pdf</a></p>
-<p class='meta'>论文：MLFFM-SegDiff: A Multi-Level Feature Fusion Diffusion Model for Skin Lesion Segmentation</p>
-<p class='meta'>一句话总结：Skin lesion segmentation is a key task in computer-aided dermatological diagnosis, where accuracy directly impacts downstream analysis and disease classification. However, dermoscopic images are challenging du...</p>
-<p class='meta'>任务设定：医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。</p>
-<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。</p>
-<p class='meta'>可借鉴点：边界/频域增强模块。</p>
-<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>ARTEMIS: Agent-guided Reliability-aware Temporal Mask Evolution for Imperfectly Supervised Video Polyp Segmentation</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-18</p>
-<p class='meta'>Authors: Tong Wang, Siwen Wang, Yaolei Qi, Jinxing Zhou, Yuting He et al.</p>
-<p class='meta'>Tags: VLM/MLLM, retrieval/prototype, boundary/frequency, depth/geometry, video</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.20161v1">paper</a> / <a href="http://arxiv.org/pdf/2606.20161v1">pdf</a></p>
-<p class='meta'>论文：ARTEMIS: Agent-guided Reliability-aware Temporal Mask Evolution for Imperfectly Supervised Video Polyp Segmentation</p>
-<p class='meta'>一句话总结：Imperfectly supervised video polyp segmentation (VPS) aims to learn dense, temporally consistent masks from inexpensive supervision, including weak annotations (points, scribbles) and semi-supervision with few...</p>
-<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <h2>高质量来源优先读：CCF-A/B 与顶刊顶会</h2>
@@ -557,6 +557,22 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
+<h3><strong>Grounding DINO-US-SAM: Text-Prompted Multiorgan Segmentation in Ultrasound With LoRA-Tuned Vision–Language Models</strong></h3>
+<p class='meta'>Source: Semantic Scholar / IEEE Transactions on Ultrasonics, Ferroelectrics and Frequency Control / citations 6, 2025-06-30</p>
+<p class='meta'>Authors: Hamza Rasaee, Taha Koleilat, Hassan Rivaz</p>
+<p class='meta'>Tags: SAM, reasoning, diffusion, medical imaging</p>
+<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/49480afa8452e13d377ab62f25fe380ba3210bd2">paper</a></p>
+<p class='meta'>论文：Grounding DINO-US-SAM: Text-Prompted Multiorgan Segmentation in Ultrasound With LoRA-Tuned Vision–Language Models</p>
+<p class='meta'>一句话总结：Accurate and generalizable object segmentation in ultrasound imaging remains a significant challenge due to anatomical variability, diverse imaging protocols, and limited annotated data. In this study, we prop...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
 <h3><strong>Combining Projected Uncertainty for Self-Supervised Visual Odometry: From Two-Frame to Multi-Frame</strong></h3>
 <p class='meta'>Source: Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision, 2026-06-30</p>
 <p class='meta'>Authors: Jingchao Xie, Oussema Dhaouadi, Weirong Chen, Johannes Meier, Zuria Bauer et al.</p>
@@ -731,22 +747,6 @@
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
 <p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
-</article>
-<article class='paper'>
-<h3><strong>FE-CLIP: Frequency Enhanced CLIP Model for Zero-Shot Anomaly Detection and Segmentation</strong></h3>
-<p class='meta'>Source: ICCV 2025, 2025</p>
-<p class='meta'>Authors: Tao Gong, Qi Chu, Bin Liu, Wei Zhou, Nenghai Yu</p>
-<p class='meta'>Tags: boundary/frequency, anomaly/OOD</p>
-<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Gong_FE-CLIP_Frequency_Enhanced_CLIP_Model_for_Zero-Shot_Anomaly_Detection_and_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Gong_FE-CLIP_Frequency_Enhanced_CLIP_Model_for_Zero-Shot_Anomaly_Detection_and_ICCV_2025_paper.pdf">pdf</a></p>
-<p class='meta'>论文：FE-CLIP: Frequency Enhanced CLIP Model for Zero-Shot Anomaly Detection and Segmentation</p>
-<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
-<p class='meta'>任务设定：异常检测或分布外识别，可类比伪装目标的弱异常发现。</p>
-<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
-<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
-<p class='meta'>可借鉴点：边界/频域增强模块；跨域鲁棒性、不确定性或异常分数。</p>
-<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <h2>COD / 伪装目标检测相关</h2>
 <article class='paper'>
@@ -1042,7 +1042,7 @@
 <p class='meta'>Source: arXiv, 2026-03-24</p>
 <p class='meta'>Authors: Jingchen Ni, Quan Zhang, Dan Jiang, Keyu Lv, Ke Zhang et al.</p>
 <p class='meta'>Tags: COD, unsupervised, SAM, diffusion, boundary/frequency</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2603.22969v1">paper</a> / <a href="http://arxiv.org/pdf/2603.22969v1">pdf</a></p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2603.22969v2">paper</a> / <a href="http://arxiv.org/pdf/2603.22969v2">pdf</a></p>
 <p class='meta'>论文：FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning</p>
 <p class='meta'>一句话总结：Existing camouflage object detection (COD) methods typically rely on fully-supervised learning guided by mask annotations. However, obtaining mask annotations is time-consuming and labor-intensive.</p>
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
@@ -1343,6 +1343,22 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
+<h3><strong>GenAU: Language-Grounded Industrial Anomaly Understanding with Vision-Language Models</strong></h3>
+<p class='meta'>Source: arXiv, 2026-07-01</p>
+<p class='meta'>Authors: Hongkuan Zhou, Tristan Rehm, Nadeem Nazer, Lavdim Halilaj, Jingcheng Wu et al.</p>
+<p class='meta'>Tags: VLM/MLLM, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2607.01049v1">paper</a> / <a href="http://arxiv.org/pdf/2607.01049v1">pdf</a></p>
+<p class='meta'>论文：GenAU: Language-Grounded Industrial Anomaly Understanding with Vision-Language Models</p>
+<p class='meta'>一句话总结：Industrial inspection requires more than binary anomaly detection: a practical system should determine whether an anomaly exists, localize the defective region, identify the defect type, and provide interpreta...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
 <h3><strong>SegEarth-OV: Towards Training-Free Open-Vocabulary Segmentation for Remote Sensing Images</strong></h3>
 <p class='meta'>Source: arXiv, 2024-10-02</p>
 <p class='meta'>Authors: Kaiyu Li, Ruixun Liu, Xiangyong Cao, Xueru Bai, Feng Zhou et al.</p>
@@ -1443,7 +1459,7 @@
 <p class='meta'>Source: arXiv, 2026-05-29</p>
 <p class='meta'>Authors: Olaf Dünkel, Basavaraj Sunagad, Haoran Wang, David T. Hoffmann, Christian Theobalt et al.</p>
 <p class='meta'>Tags: VLM/MLLM, diffusion, depth/geometry, video</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.31597v2">paper</a> / <a href="http://arxiv.org/pdf/2605.31597v2">pdf</a></p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.31597v3">paper</a> / <a href="http://arxiv.org/pdf/2605.31597v3">pdf</a></p>
 <p class='meta'>论文：SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models</p>
 <p class='meta'>一句话总结：Measuring structured object understanding in vision foundation models remains challenging due to inconsistent evaluation protocols and limited part-level supervision. Semantic correspondence (SC) evaluates thi...</p>
 <p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
@@ -1487,6 +1503,22 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
+<h3><strong>Reasoning3D - Grounding and Reasoning in 3D: Fine-Grained Zero-Shot Open-Vocabulary 3D Reasoning Part Segmentation via Large Vision-Language Models</strong></h3>
+<p class='meta'>Source: Semantic Scholar / arXiv.org / citations 14, 2024-05-29</p>
+<p class='meta'>Authors: Tianrun Chen, Chunan Yu, Jing Li, Jianqi Zhang, Lanyun Zhu et al.</p>
+<p class='meta'>Tags: open-vocabulary, training-free, SAM, VLM/MLLM, reasoning, boundary/frequency, depth/geometry</p>
+<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/47d3bac0f044e1f0fc26d6b5aed9b77ccd0cdb1c">paper</a></p>
+<p class='meta'>论文：Reasoning3D - Grounding and Reasoning in 3D: Fine-Grained Zero-Shot Open-Vocabulary 3D Reasoning Part Segmentation via Large Vision-Language Models</p>
+<p class='meta'>一句话总结：In this paper, we introduce a new task: Zero-Shot 3D Reasoning Segmentation for parts searching and localization for objects, which is a new paradigm to 3D segmentation that transcends limitations for previous...</p>
+<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
 <h3><strong>ActiveSAM: Image-Conditional Class Pruning for Fast and Accurate Open-Vocabulary Segmentation</strong></h3>
 <p class='meta'>Source: arXiv, 2026-06-15</p>
 <p class='meta'>Authors: Tran Dinh Tien, Zhiqiang Shen</p>
@@ -1500,6 +1532,22 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>LeVLJEPA: End-to-End Vision-Language Pretraining Without Negatives</strong></h3>
+<p class='meta'>Source: arXiv, 2026-07-01</p>
+<p class='meta'>Authors: Lukas Kuhn, Giuseppe Serra, Randall Balestriero, Florian Buettner</p>
+<p class='meta'>Tags: VLM/MLLM</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2607.00784v1">paper</a> / <a href="http://arxiv.org/pdf/2607.00784v1">pdf</a></p>
+<p class='meta'>论文：LeVLJEPA: End-to-End Vision-Language Pretraining Without Negatives</p>
+<p class='meta'>一句话总结：Vision-language pretraining remains dominated by contrastive objectives, whereas vision-only self-supervised learning has largely adopted non-contrastive methods. At the same time, the role of vision-language...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
@@ -1535,18 +1583,18 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
-<h3><strong>ARTEMIS: Agent-guided Reliability-aware Temporal Mask Evolution for Imperfectly Supervised Video Polyp Segmentation</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-18</p>
-<p class='meta'>Authors: Tong Wang, Siwen Wang, Yaolei Qi, Jinxing Zhou, Yuting He et al.</p>
-<p class='meta'>Tags: VLM/MLLM, retrieval/prototype, boundary/frequency, depth/geometry, video</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.20161v1">paper</a> / <a href="http://arxiv.org/pdf/2606.20161v1">pdf</a></p>
-<p class='meta'>论文：ARTEMIS: Agent-guided Reliability-aware Temporal Mask Evolution for Imperfectly Supervised Video Polyp Segmentation</p>
-<p class='meta'>一句话总结：Imperfectly supervised video polyp segmentation (VPS) aims to learn dense, temporally consistent masks from inexpensive supervision, including weak annotations (points, scribbles) and semi-supervision with few...</p>
+<h3><strong>Concept Alignment Contrast and Long-Short Prompt Memory for Test-Time Adaptation of SAM3 in Medical Image Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-22</p>
+<p class='meta'>Authors: Yubo Zhou, Jianghao Wu, Ping Ye, Shaoting Zhang, Guotai Wang</p>
+<p class='meta'>Tags: SAM, VLM/MLLM, remote sensing, domain adaptation, medical imaging</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.22963v2">paper</a> / <a href="http://arxiv.org/pdf/2606.22963v2">pdf</a></p>
+<p class='meta'>论文：Concept Alignment Contrast and Long-Short Prompt Memory for Test-Time Adaptation of SAM3 in Medical Image Segmentation</p>
+<p class='meta'>一句话总结：Concept segmentation models like Segment Anything Model 3 (SAM3) show strong generalization on natural images, yet their performance degrades in medical imaging due to the domain gap caused by different imagin...</p>
 <p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合。</p>
+<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
@@ -1855,6 +1903,22 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
+<h3><strong>Synergistic Perception-Reasoning Governance: Grounding Medical MLLMs with Verifiable Anatomical Evidence</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-30</p>
+<p class='meta'>Authors: Rui Hao, Qiankun Li, Junyuan Mao, Linghao Meng, Dirui Xie et al.</p>
+<p class='meta'>Tags: training-free, VLM/MLLM, reasoning, diffusion, retrieval/prototype, boundary/frequency</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2607.00060v1">paper</a> / <a href="http://arxiv.org/pdf/2607.00060v1">pdf</a></p>
+<p class='meta'>论文：Synergistic Perception-Reasoning Governance: Grounding Medical MLLMs with Verifiable Anatomical Evidence</p>
+<p class='meta'>一句话总结：Multimodal large language models (MLLMs) show strong promise for clinical VQA and radiology report generation, yet inference-time hallucinations still undermine trustworthy use: models can produce fluent concl...</p>
+<p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
 <h3><strong>Object Tokens as a Bridge Between Segmentation and Visual Question Answering in Robotic Surgery</strong></h3>
 <p class='meta'>Source: arXiv, 2026-06-14</p>
 <p class='meta'>Authors: Yiping Li, Ronald de Jong, Romy van Jaarsveld, Franco Badaloni, Gino Kuiper et al.</p>
@@ -1879,6 +1943,22 @@
 <p class='meta'>论文：Preserve the Hard, Regenerate the Rest: Uncertainty-Guided Synthetic Training Data Augmentation with Diffusion Models</p>
 <p class='meta'>一句话总结：Semantic segmentation models struggle with data sparsity and rare or visually diverse regions, e.g., dense regions or small objects in aerial or autonomous mobility data. While synthetic augmentation is an app...</p>
 <p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
+<p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
+<p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>Joint Medical Image Enhancement and Segmentation with Diffusion-based Symbiotic Information Interaction</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-30</p>
+<p class='meta'>Authors: Ying Chen, Jinyue Li, Qiankun Li</p>
+<p class='meta'>Tags: diffusion, low-level, medical imaging</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2607.00058v1">paper</a> / <a href="http://arxiv.org/pdf/2607.00058v1">pdf</a></p>
+<p class='meta'>论文：Joint Medical Image Enhancement and Segmentation with Diffusion-based Symbiotic Information Interaction</p>
+<p class='meta'>一句话总结：Image quality is critical for accurate medical diagnosis. However, MRI, CT, and ultrasound images are often of low resolution and quality due to cost constraints, complicating the visualization of key anatomic...</p>
+<p class='meta'>任务设定：医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。</p>
 <p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
 <p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
@@ -1967,6 +2047,22 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
+<h3><strong>Grounding DINO-US-SAM: Text-Prompted Multiorgan Segmentation in Ultrasound With LoRA-Tuned Vision–Language Models</strong></h3>
+<p class='meta'>Source: Semantic Scholar / IEEE Transactions on Ultrasonics, Ferroelectrics and Frequency Control / citations 6, 2025-06-30</p>
+<p class='meta'>Authors: Hamza Rasaee, Taha Koleilat, Hassan Rivaz</p>
+<p class='meta'>Tags: SAM, reasoning, diffusion, medical imaging</p>
+<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/49480afa8452e13d377ab62f25fe380ba3210bd2">paper</a></p>
+<p class='meta'>论文：Grounding DINO-US-SAM: Text-Prompted Multiorgan Segmentation in Ultrasound With LoRA-Tuned Vision–Language Models</p>
+<p class='meta'>一句话总结：Accurate and generalizable object segmentation in ultrasound imaging remains a significant challenge due to anatomical variability, diverse imaging protocols, and limited annotated data. In this study, we prop...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
 <h3><strong>SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling</strong></h3>
 <p class='meta'>Source: arXiv, 2026-02-26</p>
 <p class='meta'>Authors: Camile Lendering, Erkut Akdag, Egor Bondarev</p>
@@ -2044,6 +2140,22 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>Qwen3-VL-Seg: Unlocking Open-World Referring Segmentation with Vision-Language Grounding</strong></h3>
+<p class='meta'>Source: Semantic Scholar, 2026-05-08</p>
+<p class='meta'>Authors: Yuanzhi Yao, Qiushi Yang, Humen Zhong, Jiangning Wei, Yifang Men et al.</p>
+<p class='meta'>Tags: SAM, VLM/MLLM, reasoning, anomaly/OOD</p>
+<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/a333846a36aee89e93586cfc045eeb25784d1a41">paper</a></p>
+<p class='meta'>论文：Qwen3-VL-Seg: Unlocking Open-World Referring Segmentation with Vision-Language Grounding</p>
+<p class='meta'>一句话总结：Open-world referring segmentation requires grounding unconstrained language expressions to precise pixel-level regions. Existing multimodal large language models (MLLMs) exhibit strong open-world visual ground...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
@@ -2156,118 +2268,6 @@
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>SVHighlights: Towards Extremely Long Sport Video Highlight Detection</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-05</p>
-<p class='meta'>Authors: Donggyu Lee, Youngbin Ki, Jeonghun Kang, Taehwan Kim</p>
-<p class='meta'>Tags: training-free, reasoning, boundary/frequency, video, saliency/transparent</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.06926v2">paper</a> / <a href="http://arxiv.org/pdf/2606.06926v2">pdf</a></p>
-<p class='meta'>论文：SVHighlights: Towards Extremely Long Sport Video Highlight Detection</p>
-<p class='meta'>一句话总结：While highlight detection for long-form videos is of great practical importance, most existing methods remain limited to short-form content, largely due to the absence of a suitable benchmark. To bridge this g...</p>
-<p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
-<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。</p>
-<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。</p>
-<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>HPP: Hierarchical Programmatic Probing for Long Video Understanding by Decoupling Perception and Reasoning</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-19</p>
-<p class='meta'>Authors: Awais Rauf, Ahmed Hasssan, Greg Slabaugh</p>
-<p class='meta'>Tags: VLM/MLLM, reasoning, retrieval/prototype, video</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.21734v1">paper</a> / <a href="http://arxiv.org/pdf/2606.21734v1">pdf</a></p>
-<p class='meta'>论文：HPP: Hierarchical Programmatic Probing for Long Video Understanding by Decoupling Perception and Reasoning</p>
-<p class='meta'>一句话总结：Understanding long videos requires fine-grained perception and multi-step, higher-order reasoning over complex, long-range spatio-temporal dynamics. Vision-language models (VLMs) encode video frames into visua...</p>
-<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
-<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>Flood Mapping from RGB imagery using a Vision Foundation Model</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-23</p>
-<p class='meta'>Authors: Vladyslav Polushko, Tilman Bucher, Ronald Rösch, Thomas März, Markus Rauhut et al.</p>
-<p class='meta'>Tags: depth/geometry, remote sensing, anomaly/OOD</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24120v1">paper</a> / <a href="http://arxiv.org/pdf/2606.24120v1">pdf</a></p>
-<p class='meta'>论文：Flood Mapping from RGB imagery using a Vision Foundation Model</p>
-<p class='meta'>一句话总结：Timely, high-resolution maps of flood extent around settlements are essential for emergency response and damage assessment. We consider airborne RGB imagery for flood mapping as it can be collected rapidly at...</p>
-<p class='meta'>任务设定：异常检测或分布外识别，可类比伪装目标的弱异常发现。</p>
-<p class='meta'>方法核心：几何/深度线索建模，可能补充 RGB 外的结构先验。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
-<p class='meta'>可借鉴点：深度或几何先验融合；跨域鲁棒性、不确定性或异常分数。</p>
-<p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>ExACT: Exemplar-Driven Calibrated Refinement for Training-Free Visual Grounding in Remote Sensing Images</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-27</p>
-<p class='meta'>Authors: Zixiao Zhang, Lingling Li, Pei He, Xu Liu, Licheng Jiao</p>
-<p class='meta'>Tags: open-vocabulary, training-free, unsupervised, SAM, VLM/MLLM, reasoning, depth/geometry, remote sensing</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.28920v1">paper</a> / <a href="http://arxiv.org/pdf/2606.28920v1">pdf</a></p>
-<p class='meta'>论文：ExACT: Exemplar-Driven Calibrated Refinement for Training-Free Visual Grounding in Remote Sensing Images</p>
-<p class='meta'>一句话总结：Remote sensing visual grounding (RSVG) aims to locate specific objects in high-resolution RS imagery using free-form natural language descriptions. While recent advances in multimodal large language models (ML...</p>
-<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
-<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
-<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。</p>
-<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>ReasonCLIP-58M: Visually Grounded Commonsense Reasoning Supervision for CLIP</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-25</p>
-<p class='meta'>Authors: Sicheng Zhang, Muzammal Naseer, Binzhu Xie, Naufal Suryanto, Shi Qiu et al.</p>
-<p class='meta'>Tags: VLM/MLLM, reasoning, diffusion, retrieval/prototype</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.26794v1">paper</a> / <a href="http://arxiv.org/pdf/2606.26794v1">pdf</a></p>
-<p class='meta'>论文：ReasonCLIP-58M: Visually Grounded Commonsense Reasoning Supervision for CLIP</p>
-<p class='meta'>一句话总结：CLIP and its variants are widely adopted visual backbones in multimodal systems, but their pretraining remains dominated by descriptive image-text alignment. As downstream applications increasingly demand visu...</p>
-<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
-<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>Prob-BBDM: a Probabilistic Brownian Bridge Diffusion Model for MRI sequence image-to-image translation</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-23</p>
-<p class='meta'>Authors: Martin Valls, Pascal Bourdon, Christine Fernandez-Maloigne, Guillaume Herpe, David Helbert</p>
-<p class='meta'>Tags: diffusion, depth/geometry, medical imaging</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.24313v1">paper</a> / <a href="http://arxiv.org/pdf/2606.24313v1">pdf</a></p>
-<p class='meta'>论文：Prob-BBDM: a Probabilistic Brownian Bridge Diffusion Model for MRI sequence image-to-image translation</p>
-<p class='meta'>一句话总结：AI-driven image-to-image synthesis is rapidly advancing, with growing applications in medical imaging. Multi-modal image analysis plays a crucial role in optimizing examination quality, yet acquiring multiple...</p>
-<p class='meta'>任务设定：医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。</p>
-<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
-<p class='meta'>可借鉴点：深度或几何先验融合。</p>
-<p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>SARIF: Segment Anything for Robust Image Forensics</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-19</p>
-<p class='meta'>Authors: Dong-Hyun Moon, Ju-Hyeon Nam, Sang-Chul Lee</p>
-<p class='meta'>Tags: SAM, remote sensing, domain adaptation</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.21108v1">paper</a> / <a href="http://arxiv.org/pdf/2606.21108v1">pdf</a></p>
-<p class='meta'>论文：SARIF: Segment Anything for Robust Image Forensics</p>
-<p class='meta'>一句话总结：Image forgery localization remains challenging due to diverse manipulation techniques and distribution shifts. Existing forgery localization models achieve high accuracy on benchmarks but often struggle with c...</p>
-<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
-<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <h2>历史更新归档</h2>
