@@ -2277,29 +2277,6 @@
     "score": 91
   },
   {
-    "title": "Understanding How MLLMs Describe Artworks Using Token Activation Maps",
-    "url": "http://arxiv.org/abs/2606.27947v1",
-    "pdf": "http://arxiv.org/pdf/2606.27947v1",
-    "authors": [
-      "Nicola Fanelli",
-      "Pasquale De Marinis",
-      "Raffaele Scaringi",
-      "Eva Cetinic",
-      "Gennaro Vessio",
-      "Giovanna Castellano"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-26",
-    "summary": "Multimodal Large Language Models (MLLMs) describe artworks with remarkable fluency, yet the visual reasoning behind their outputs remains opaque. When an MLLM names a style, identifies a subject, or recognizes an iconographic symbol, does it ground each claim in the relevant region of the canvas, draw on an undifferentiated visual signal, or rely primarily on textual priors? We study this using the Token Activation Map (TAM), which produces, for each generated token, a heatmap isolating the visual evidence specific to that token from prior-context interference. Applying TAM to a curated set of paintings spanning multiple periods and genres, we analyze grounding patterns across five semantically distinct token categories: common visual objects, style descriptors, metadata, iconographic tokens, and affective expressions. We find that visual grounding varies substantially with token semantics. We further show that MLLMs attempt to identify artworks and artists, achieving higher accuracy in artist attribution than in title prediction, where hallucinations are more frequent. Finally, we compare TAM with SAM~3 open-vocabulary segmentation. To ensure reproducibility, we release our code, experimental configurations, prompts, and qualitative results on the project page at https://nicolafan.github.io/tamart/.",
-    "tags": [
-      "open-vocabulary",
-      "SAM",
-      "VLM/MLLM",
-      "reasoning"
-    ],
-    "score": 89
-  },
-  {
     "title": "SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis",
     "url": "http://arxiv.org/abs/2606.29586v1",
     "pdf": "http://arxiv.org/pdf/2606.29586v1",
@@ -2548,6 +2525,29 @@
     "score": 85
   },
   {
+    "title": "Understanding How MLLMs Describe Artworks Using Token Activation Maps",
+    "url": "http://arxiv.org/abs/2606.27947v1",
+    "pdf": "http://arxiv.org/pdf/2606.27947v1",
+    "authors": [
+      "Nicola Fanelli",
+      "Pasquale De Marinis",
+      "Raffaele Scaringi",
+      "Eva Cetinic",
+      "Gennaro Vessio",
+      "Giovanna Castellano"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-26",
+    "summary": "Multimodal Large Language Models (MLLMs) describe artworks with remarkable fluency, yet the visual reasoning behind their outputs remains opaque. When an MLLM names a style, identifies a subject, or recognizes an iconographic symbol, does it ground each claim in the relevant region of the canvas, draw on an undifferentiated visual signal, or rely primarily on textual priors? We study this using the Token Activation Map (TAM), which produces, for each generated token, a heatmap isolating the visual evidence specific to that token from prior-context interference. Applying TAM to a curated set of paintings spanning multiple periods and genres, we analyze grounding patterns across five semantically distinct token categories: common visual objects, style descriptors, metadata, iconographic tokens, and affective expressions. We find that visual grounding varies substantially with token semantics. We further show that MLLMs attempt to identify artworks and artists, achieving higher accuracy in artist attribution than in title prediction, where hallucinations are more frequent. Finally, we compare TAM with SAM~3 open-vocabulary segmentation. To ensure reproducibility, we release our code, experimental configurations, prompts, and qualitative results on the project page at https://nicolafan.github.io/tamart/.",
+    "tags": [
+      "open-vocabulary",
+      "SAM",
+      "VLM/MLLM",
+      "reasoning"
+    ],
+    "score": 83
+  },
+  {
     "title": "ActiveSAM: Image-Conditional Class Pruning for Fast and Accurate Open-Vocabulary Segmentation",
     "url": "http://arxiv.org/abs/2606.16996v1",
     "pdf": "http://arxiv.org/pdf/2606.16996v1",
@@ -2706,28 +2706,6 @@
     "score": 83
   },
   {
-    "title": "Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation",
-    "url": "http://arxiv.org/abs/2606.27935v2",
-    "pdf": "http://arxiv.org/pdf/2606.27935v2",
-    "authors": [
-      "Yuheng Qiu",
-      "Jingyi Luo",
-      "Chenfei Ye",
-      "Ting Ma",
-      "Jianfeng Cao"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-26",
-    "summary": "Deep learning has demonstrated remarkable success in high-throughput histopathology image analysis. However, the performance of learning-based models critically depends on the quality and size of annotations by expert pathologists, which is a resource-intensive and time-consuming process. To address the limitations of data scarcity and annotation burden, several methods have been proposed to synthesize paired histopathology data. Nevertheless, these frameworks typically still require annotation data, albeit in reduced quantities, to impose structural constraints during training. In this work, we present CHIS, a plug-in framework that guides the sampling trajectory of a pretrained diffusion model through two key stages: structural initialization at the start and textural modulation during generation. The initial noise state is refined by fusing the phase information from a prior mask with the amplitude of Gaussian noise in the frequency domain, yielding a structurally informed starting point. During the reverse diffusion process, we adaptively modulate both coarse-grained and fine-grained textures at different wavelet decomposition levels. This enables a diffusion model pretrained solely on unlabeled images to generate outputs that align with prior structural masks while preserving the reference tissue style. We conducted extensive experiments demonstrating the superiority of CHIS in generation fidelity and its substantial benefits for downstream segmentation tasks. Code is available at https://github.com/IBIL-Code/CHIS.",
-    "tags": [
-      "training-free",
-      "diffusion",
-      "boundary/frequency",
-      "medical imaging"
-    ],
-    "score": 83
-  },
-  {
     "title": "Anatomy-Guided Residual Motion Diffusion for Controllable 4D Cardiac MRI Synthesis",
     "url": "http://arxiv.org/abs/2606.26764v1",
     "pdf": "http://arxiv.org/pdf/2606.26764v1",
@@ -2860,6 +2838,27 @@
       "reasoning",
       "diffusion",
       "anomaly/OOD"
+    ],
+    "score": 81
+  },
+  {
+    "title": "End-to-End LiDAR-Camera Calibration via Multi-Modal Correspondences Estimation and Explicit BEV Alignment",
+    "url": "https://doi.org/10.1007/s11263-026-02921-0",
+    "pdf": "",
+    "authors": [
+      "Lorenzo Cipelli",
+      "Filippo D’Addeo",
+      "Emanuele Ghelfi",
+      "Marcello Ceresini",
+      "Andrea Bertogalli",
+      "Federico Pirazzoli",
+      "Massimo Bertozzi"
+    ],
+    "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
+    "published": "2026-07-03",
+    "summary": "Abstract In this work, we present a Bird’s Eye View (BEV) Alignment approach for the LiDAR-Camera calibration task. Building upon previous BEV-based work, we extract sensor-wise BEV features from each input modality using domain-specific architectures. Then, we employ a CNN-based encoder to align the two BEVs and estimate the calibration matrix. However, corresponding 2D and 3D features may be spatially distant in BEV space, and as a consequence the encoder alone might struggle to learn the height dimension and estimate the correct registration matrix. To address this, we introduce an implicit alignment step to cross-attend the downsampled 3D features with those from RGB for computing point-to-pixel correspondences and estimating a coarse calibration matrix. To improve the implicit alignment, we also enforce the prediction of correct point-to-pixel correspondences by direct supervision of the similarity matrix computed into the cross attention module. Then, the coarsely aligned 3D features and the RGB features are fed to the BEV Alignment step, in which the CNN-based encoder refines the coarse estimate into a final, more accurate calibration matrix. Notably, both the steps are optimized in an end-to-end fashion. Our method significantly outperforms previous point-to-pixel matching methods, achieving state-of-the-art calibration accuracy. On the KITTI and nuScenes benchmarks, our method reduces the Relative Rotation Error (RRE) by 74% and 79%, and the Relative Translation Error (RTE) by 90% and 95%, respectively, compared to previous methods.",
+    "tags": [
+      "depth/geometry"
     ],
     "score": 81
   },
@@ -3295,6 +3294,28 @@
     "score": 77
   },
   {
+    "title": "Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation",
+    "url": "http://arxiv.org/abs/2606.27935v2",
+    "pdf": "http://arxiv.org/pdf/2606.27935v2",
+    "authors": [
+      "Yuheng Qiu",
+      "Jingyi Luo",
+      "Chenfei Ye",
+      "Ting Ma",
+      "Jianfeng Cao"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-26",
+    "summary": "Deep learning has demonstrated remarkable success in high-throughput histopathology image analysis. However, the performance of learning-based models critically depends on the quality and size of annotations by expert pathologists, which is a resource-intensive and time-consuming process. To address the limitations of data scarcity and annotation burden, several methods have been proposed to synthesize paired histopathology data. Nevertheless, these frameworks typically still require annotation data, albeit in reduced quantities, to impose structural constraints during training. In this work, we present CHIS, a plug-in framework that guides the sampling trajectory of a pretrained diffusion model through two key stages: structural initialization at the start and textural modulation during generation. The initial noise state is refined by fusing the phase information from a prior mask with the amplitude of Gaussian noise in the frequency domain, yielding a structurally informed starting point. During the reverse diffusion process, we adaptively modulate both coarse-grained and fine-grained textures at different wavelet decomposition levels. This enables a diffusion model pretrained solely on unlabeled images to generate outputs that align with prior structural masks while preserving the reference tissue style. We conducted extensive experiments demonstrating the superiority of CHIS in generation fidelity and its substantial benefits for downstream segmentation tasks. Code is available at https://github.com/IBIL-Code/CHIS.",
+    "tags": [
+      "training-free",
+      "diffusion",
+      "boundary/frequency",
+      "medical imaging"
+    ],
+    "score": 77
+  },
+  {
     "title": "MLFFM-SegDiff: A Multi-Level Feature Fusion Diffusion Model for Skin Lesion Segmentation",
     "url": "http://arxiv.org/abs/2606.26712v1",
     "pdf": "http://arxiv.org/pdf/2606.26712v1",
@@ -3525,28 +3546,6 @@
       "open-vocabulary",
       "boundary/frequency",
       "remote sensing"
-    ],
-    "score": 75
-  },
-  {
-    "title": "Combining Projected Uncertainty for Self-Supervised Visual Odometry: From Two-Frame to Multi-Frame",
-    "url": "https://doi.org/10.1007/s11263-026-02915-y",
-    "pdf": "",
-    "authors": [
-      "Jingchao Xie",
-      "Oussema Dhaouadi",
-      "Weirong Chen",
-      "Johannes Meier",
-      "Zuria Bauer",
-      "Marc Pollefeys",
-      "Daniel Cremers"
-    ],
-    "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
-    "published": "2026-06-30",
-    "summary": "Abstract Visual odometry (VO) is fundamental to autonomous navigation, robotics, and augmented reality. While self-supervised learning has eliminated the need for expensive ground-truth labels in monocular VO, dynamic objects and occlusions that violate the static scene assumption lead to erroneous pose estimates. Existing uncertainty-based methods filter unreliable regions but rely solely on single-frame information, neglecting temporal consistency across consecutive frames. We present Combined Projected Uncertainty (CoProU), a principled probabilistic formulation that propagates and fuses uncertainties across temporal frames. Our key insight is that robust uncertainty estimation requires combining target frame uncertainty with projected uncertainty from reference frames, enabling effective identification of dynamic regions and temporal inconsistencies. We demonstrate CoProU’s versatility through two complementary frameworks. CoProU-VO-2F employs a decoupled architecture with CNN-based pose encoder and vision transformer-based depth encoder for two-frame visual odometry. CoProU-VO-MF extends our approach to multi-frame scenarios using a unified transformer architecture with coupled encoders that produce shared representations for ego-motion and geometry estimation. This demonstrates that CoProU, though originally formulated for frame pairs, generalizes naturally to multi-frame settings through pairwise application. Comprehensive experiments validate our contributions. CoProU-VO-2F achieves substantial improvements over state-of-the-art two-frame methods, reducing ATE by up to 63% on KITTI and 33% on nuScenes. CoProU-VO-MF achieves 45% lower average ATE across KITTI, nuScenes, and Waymo compared to the large-scale pretrained VGGT baseline. Extensive ablation studies confirm the effectiveness of temporal uncertainty propagation and CoProU’s adaptability across different architectural paradigms. Please check out our Project Page .",
-    "tags": [
-      "depth/geometry",
-      "video"
     ],
     "score": 75
   },
@@ -4475,32 +4474,6 @@
     "score": 65
   },
   {
-    "title": "Learning Topology-Aware Representations via Test-Time Adaptation for Anomaly Segmentation",
-    "url": "http://arxiv.org/abs/2606.28268v1",
-    "pdf": "http://arxiv.org/pdf/2606.28268v1",
-    "authors": [
-      "Ali Zia",
-      "Usman Ali",
-      "Abdul Rehman",
-      "Umer Ramzan",
-      "Kang Han",
-      "Muhammad Faheem",
-      "Shahnawaz Qureshi",
-      "Wei Xiang"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-26",
-    "summary": "Test-time adaptation (TTA) has emerged as a promising paradigm for mitigating distribution shifts in deep models. However, existing TTA approaches for anomaly segmentation remain limited by their reliance on pixel-level heuristics, such as confidence thresholding or entropy minimisation, which fail to preserve structural consistency under noise and texture variation. Moreover, they typically treat anomaly maps as flat intensity fields, ignoring the higher-order spatial relationships that characterise complex defect geometries. We introduce TopoTTA (Topological Test-Time Adaptation), a novel framework that integrates persistent homology, a tool from topological data analysis, into the TTA pipeline to enforce geometric and structural coherence during adaptation. By applying multi-level cubical complex filtration to anomaly score maps, TopoTTA derives robust topological pseudo-labels that guide a lightweight test-time classifier, enhancing segmentation quality without retraining the backbone model. The approach avoids reliance on method-specific raw-score thresholding for mask binarisation, preserves connectivity, and generalises across both 2D and 3D modalities. Extensive experiments across six standard benchmarks (MVTec AD, VisA, Real-IAD, MVTec 3D-AD, AnomalyShapeNet, and MVTec LOCO) demonstrate an average 15% F1 improvement over state-of-the-art unsupervised anomaly detection and segmentation methods, with the largest gains on anomalies exhibiting complex geometric or structural variations. These findings suggest that integrating topological reasoning into test-time adaptation provides a principled route to structure-aware generalisation, bridging the gap between geometric learning and robust adaptation.",
-    "tags": [
-      "unsupervised",
-      "reasoning",
-      "depth/geometry",
-      "anomaly/OOD",
-      "domain adaptation"
-    ],
-    "score": 65
-  },
-  {
     "title": "BamiBERT: A New BERT-based Language Model for Vietnamese",
     "url": "http://arxiv.org/abs/2607.02259v1",
     "pdf": "http://arxiv.org/pdf/2607.02259v1",
@@ -4515,25 +4488,6 @@
     "summary": "In this paper, we introduce BamiBERT, a new BERT-based pre-trained language model for Vietnamese that addresses key limitations of PhoBERT -- the current de facto Vietnamese text encoder. Trained from scratch on a 129GB corpus of general-domain Vietnamese text for 20 epochs, BamiBERT supports an extended context length of up to 2048 tokens and operates directly on raw input, eliminating the need for external word segmentation. Across 8 Vietnamese benchmarks, it achieves the best score on 11 of 15 metrics and the second-best on 3 others, setting a new state of the art among \"base\"-sized Vietnamese encoders and demonstrating strong cross-domain generalization. We release BamiBERT at: https://huggingface.co/Qualcomm-AI-Research/BamiBERT",
     "tags": [
       "domain adaptation"
-    ],
-    "score": 65
-  },
-  {
-    "title": "Enhancing MedSAM with a Lightweight Box Predictor for Medical Image Segmentation",
-    "url": "http://arxiv.org/abs/2606.04705v1",
-    "pdf": "http://arxiv.org/pdf/2606.04705v1",
-    "authors": [
-      "Amirhossein Movahedisefat",
-      "Amirreza Fateh",
-      "Mohammad Reza Mohammadi"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-03",
-    "summary": "Semantic segmentation in medical imaging is a critical yet challenging task due to data scarcity and high variability across modalities. While foundation models like the Segment Anything Model (SAM) show promise, they often struggle with medical images without specific adaptation. Moreover, point prompts, despite being the most natural form of user interaction, provide insufficient spatial context for reliable segmentation, particularly when target structures are irregular or poorly contrasted. In this paper, we propose an enhanced segmentation framework that integrates a lightweight Box Predictor module into the MedSAM architecture. The Box Predictor estimates an approximate bounding box from a single user click using localized image embedding features, providing spatial guidance that reduces the ambiguity of point prompts, while introducing only 1.6M additional parameters and negligible inference overhead. We introduce a two-stage training pipeline where the Box Predictor is trained independently before being integrated into MedSAM. To validate the generalization capability of our method, we conduct extensive evaluations on four diverse datasets (FLARE22, BRISC, BUSI, LungSegDB) spanning distinct imaging modalities, including CT, MRI, and Ultrasound. Our method improves segmentation accuracy and robustness across varied anatomical structures and imaging domains, achieving Dice scores of 0.89 (BUSI), 0.93 (FLARE22), 0.88 (BRISC), and 0.98 (LungSegDB). Code is available at https://github.com/Amirhosseinmovahedi/MedSAM-BoxPredictor",
-    "tags": [
-      "SAM",
-      "diffusion",
-      "medical imaging"
     ],
     "score": 65
   },
@@ -5357,6 +5311,25 @@
     "score": 61
   },
   {
+    "title": "Enhancing MedSAM with a Lightweight Box Predictor for Medical Image Segmentation",
+    "url": "http://arxiv.org/abs/2606.04705v1",
+    "pdf": "http://arxiv.org/pdf/2606.04705v1",
+    "authors": [
+      "Amirhossein Movahedisefat",
+      "Amirreza Fateh",
+      "Mohammad Reza Mohammadi"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-03",
+    "summary": "Semantic segmentation in medical imaging is a critical yet challenging task due to data scarcity and high variability across modalities. While foundation models like the Segment Anything Model (SAM) show promise, they often struggle with medical images without specific adaptation. Moreover, point prompts, despite being the most natural form of user interaction, provide insufficient spatial context for reliable segmentation, particularly when target structures are irregular or poorly contrasted. In this paper, we propose an enhanced segmentation framework that integrates a lightweight Box Predictor module into the MedSAM architecture. The Box Predictor estimates an approximate bounding box from a single user click using localized image embedding features, providing spatial guidance that reduces the ambiguity of point prompts, while introducing only 1.6M additional parameters and negligible inference overhead. We introduce a two-stage training pipeline where the Box Predictor is trained independently before being integrated into MedSAM. To validate the generalization capability of our method, we conduct extensive evaluations on four diverse datasets (FLARE22, BRISC, BUSI, LungSegDB) spanning distinct imaging modalities, including CT, MRI, and Ultrasound. Our method improves segmentation accuracy and robustness across varied anatomical structures and imaging domains, achieving Dice scores of 0.89 (BUSI), 0.93 (FLARE22), 0.88 (BRISC), and 0.98 (LungSegDB). Code is available at https://github.com/Amirhosseinmovahedi/MedSAM-BoxPredictor",
+    "tags": [
+      "SAM",
+      "diffusion",
+      "medical imaging"
+    ],
+    "score": 61
+  },
+  {
     "title": "Delving Aleatoric Uncertainty in Medical Image Segmentation via Vision Foundation Models",
     "url": "http://arxiv.org/abs/2604.10963v1",
     "pdf": "http://arxiv.org/pdf/2604.10963v1",
@@ -5763,6 +5736,32 @@
       "depth/geometry",
       "low-level",
       "medical imaging"
+    ],
+    "score": 59
+  },
+  {
+    "title": "Learning Topology-Aware Representations via Test-Time Adaptation for Anomaly Segmentation",
+    "url": "http://arxiv.org/abs/2606.28268v1",
+    "pdf": "http://arxiv.org/pdf/2606.28268v1",
+    "authors": [
+      "Ali Zia",
+      "Usman Ali",
+      "Abdul Rehman",
+      "Umer Ramzan",
+      "Kang Han",
+      "Muhammad Faheem",
+      "Shahnawaz Qureshi",
+      "Wei Xiang"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-26",
+    "summary": "Test-time adaptation (TTA) has emerged as a promising paradigm for mitigating distribution shifts in deep models. However, existing TTA approaches for anomaly segmentation remain limited by their reliance on pixel-level heuristics, such as confidence thresholding or entropy minimisation, which fail to preserve structural consistency under noise and texture variation. Moreover, they typically treat anomaly maps as flat intensity fields, ignoring the higher-order spatial relationships that characterise complex defect geometries. We introduce TopoTTA (Topological Test-Time Adaptation), a novel framework that integrates persistent homology, a tool from topological data analysis, into the TTA pipeline to enforce geometric and structural coherence during adaptation. By applying multi-level cubical complex filtration to anomaly score maps, TopoTTA derives robust topological pseudo-labels that guide a lightweight test-time classifier, enhancing segmentation quality without retraining the backbone model. The approach avoids reliance on method-specific raw-score thresholding for mask binarisation, preserves connectivity, and generalises across both 2D and 3D modalities. Extensive experiments across six standard benchmarks (MVTec AD, VisA, Real-IAD, MVTec 3D-AD, AnomalyShapeNet, and MVTec LOCO) demonstrate an average 15% F1 improvement over state-of-the-art unsupervised anomaly detection and segmentation methods, with the largest gains on anomalies exhibiting complex geometric or structural variations. These findings suggest that integrating topological reasoning into test-time adaptation provides a principled route to structure-aware generalisation, bridging the gap between geometric learning and robust adaptation.",
+    "tags": [
+      "unsupervised",
+      "reasoning",
+      "depth/geometry",
+      "anomaly/OOD",
+      "domain adaptation"
     ],
     "score": 59
   },
@@ -6883,6 +6882,25 @@
     "score": 57
   },
   {
+    "title": "ImageBind Guided Progressive Transformation Network for Alignment-free RGBT Video Object Detection",
+    "url": "https://doi.org/10.1007/s11263-026-02935-8",
+    "pdf": "",
+    "authors": [
+      "Zhengzheng Tu",
+      "Chuanwang Guo",
+      "Qishun Wang",
+      "Chenglong Li",
+      "Jin Tang"
+    ],
+    "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
+    "published": "2026-07-04",
+    "summary": "IJCV article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "video"
+    ],
+    "score": 57
+  },
+  {
     "title": "DiGIT: Multi-Dilated Gated Encoder and Central-Adjacent Region Integrated Decoder for Temporal Action Detection Transformer",
     "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Kim_DiGIT_Multi-Dilated_Gated_Encoder_and_Central-Adjacent_Region_Integrated_Decoder_for_CVPR_2025_paper.html",
     "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_DiGIT_Multi-Dilated_Gated_Encoder_and_Central-Adjacent_Region_Integrated_Decoder_for_CVPR_2025_paper.pdf",
@@ -7875,26 +7893,6 @@
     "tags": [
       "reasoning",
       "depth/geometry"
-    ],
-    "score": 53
-  },
-  {
-    "title": "Panoramic Scene Analysis: A Survey from Distortion-Aware Engineering to Sphere-Native Foundation Modeling",
-    "url": "http://arxiv.org/abs/2606.27745v1",
-    "pdf": "http://arxiv.org/pdf/2606.27745v1",
-    "authors": [
-      "Qinfeng Zhu",
-      "Lei Fan"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-26",
-    "summary": "Panoramic images capture the complete visual sphere in a single frame, providing spatial context unattainable by conventional cameras. Yet this completeness comes at a geometric cost: the 2-sphere cannot be faithfully mapped to the plane, and every planar representation introduces distortions that violate the assumptions underlying standard vision architectures. This survey traces the evolution of panoramic scene analysis along a methodological trajectory, from projection-based adaptation, through distortion-aware engineering, to sphere-native modeling and geometry-aware tokenization for foundation models, and argues that this evolution reflects a progressive deepening of geometric commitment rather than a simple accumulation of techniques. We organize the literature along two orthogonal dimensions: architectural design (how operators interact with spherical geometry) and training paradigm (how knowledge is transferred across domains). Covering dense prediction (semantic segmentation, depth estimation, and room layout estimation), unified multi-task understanding, open-world perception, vision-language reasoning, and dynamic video analysis, we identify a central unresolved tension: among the methods surveyed, none simultaneously delivers strict spherical equivariance and full reuse of perspective-pretrained foundation-model weights, and we argue that this is a structural rather than incidental gap. We further expose five systematic gaps in current evaluation protocols, namely the absence of spherical-area-weighted metrics, seam-consistency testing, polar-robustness stratification, cross-projection generalization, and open-world protocol standardization, and propose a six-point research roadmap toward general-purpose panoramic intelligence. The corresponding repository is publicly available at: https://github.com/zhuqinfeng1999/Awesome-Panoramic-Scene-Analysis.",
-    "tags": [
-      "VLM/MLLM",
-      "reasoning",
-      "boundary/frequency",
-      "depth/geometry",
-      "video"
     ],
     "score": 53
   },
@@ -11716,6 +11714,26 @@
       "low-level"
     ],
     "score": 48
+  },
+  {
+    "title": "Panoramic Scene Analysis: A Survey from Distortion-Aware Engineering to Sphere-Native Foundation Modeling",
+    "url": "http://arxiv.org/abs/2606.27745v1",
+    "pdf": "http://arxiv.org/pdf/2606.27745v1",
+    "authors": [
+      "Qinfeng Zhu",
+      "Lei Fan"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-26",
+    "summary": "Panoramic images capture the complete visual sphere in a single frame, providing spatial context unattainable by conventional cameras. Yet this completeness comes at a geometric cost: the 2-sphere cannot be faithfully mapped to the plane, and every planar representation introduces distortions that violate the assumptions underlying standard vision architectures. This survey traces the evolution of panoramic scene analysis along a methodological trajectory, from projection-based adaptation, through distortion-aware engineering, to sphere-native modeling and geometry-aware tokenization for foundation models, and argues that this evolution reflects a progressive deepening of geometric commitment rather than a simple accumulation of techniques. We organize the literature along two orthogonal dimensions: architectural design (how operators interact with spherical geometry) and training paradigm (how knowledge is transferred across domains). Covering dense prediction (semantic segmentation, depth estimation, and room layout estimation), unified multi-task understanding, open-world perception, vision-language reasoning, and dynamic video analysis, we identify a central unresolved tension: among the methods surveyed, none simultaneously delivers strict spherical equivariance and full reuse of perspective-pretrained foundation-model weights, and we argue that this is a structural rather than incidental gap. We further expose five systematic gaps in current evaluation protocols, namely the absence of spherical-area-weighted metrics, seam-consistency testing, polar-robustness stratification, cross-projection generalization, and open-world protocol standardization, and propose a six-point research roadmap toward general-purpose panoramic intelligence. The corresponding repository is publicly available at: https://github.com/zhuqinfeng1999/Awesome-Panoramic-Scene-Analysis.",
+    "tags": [
+      "VLM/MLLM",
+      "reasoning",
+      "boundary/frequency",
+      "depth/geometry",
+      "video"
+    ],
+    "score": 47
   },
   {
     "title": "Open-Vocabulary BEV Segmentation with 3D-Aware Geometric Constraints",
@@ -21894,28 +21912,6 @@
     "score": 39
   },
   {
-    "title": "Diverse Sign Language Translation",
-    "url": "https://doi.org/10.1007/s11263-026-02900-5",
-    "pdf": "",
-    "authors": [
-      "Xin Shen",
-      "Lei Shen",
-      "Shaozu Yuan",
-      "Heming Du",
-      "Haiyang Sun",
-      "Xin Yu"
-    ],
-    "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
-    "published": "2026-06-25",
-    "summary": "Abstract Like spoken languages, a single sign language expression could correspond to multiple valid textual interpretations. Hence, learning a rigid one-to-one mapping for sign language translation (SLT) models might be inadequate, particularly in the case of limited data. In this work, we introduce a Diverse Sign Language Translation (DivSLT) task, aiming to generate diverse yet accurate translations for sign language videos. Firstly, we employ large language models (LLM) to generate multiple references for the widely-used CSL-Daily and PHOENIX14T SLT datasets. Here, native speakers are only invited to touch up inaccurate references, thus significantly improving the annotation efficiency. Secondly, we provide a benchmark model to spur research in this task. Specifically, we investigate multi-reference training strategies enabling our DivSLT model to achieve diverse translations. Then, to enhance translation accuracy, we employ the max-reward-driven reinforcement learning objective that maximizes the reward of the translated result. Additionally, we utilize multiple metrics to assess the accuracy, diversity, and semantic precision of the DivSLT task. Experimental results on the enriched datasets demonstrate that our DivSLT method achieves not only better translation performance but also diverse translation results.",
-    "tags": [
-      "VLM/MLLM",
-      "diffusion",
-      "video"
-    ],
-    "score": 39
-  },
-  {
     "title": "CLIP-Based Class Incremental Semantic Segmentation Framework With Generalization-Preserving Knowledge Distillation",
     "url": "https://doi.org/10.1109/tcsvt.2026.3661920",
     "pdf": "",
@@ -27982,32 +27978,6 @@
       "training-free",
       "VLM/MLLM",
       "diffusion"
-    ],
-    "score": 35
-  },
-  {
-    "title": "AirGroundBench: Probing Spatial Intelligence in Multimodal Large Models under Heterogeneous Multi-View Embodied Collaboration",
-    "url": "http://arxiv.org/abs/2606.28049v1",
-    "pdf": "http://arxiv.org/pdf/2606.28049v1",
-    "authors": [
-      "Haotian Li",
-      "Yida Wang",
-      "Leyuan Wang",
-      "Jinshan Lai",
-      "Keyang Wang",
-      "Zonghao Guo",
-      "Qiang Ma",
-      "Liuyu Xiang",
-      "Jianwei Hu",
-      "Zhaofeng He"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-26",
-    "summary": "In recent years, multimodal large language models (MLLMs) have shown strong potential for embodied intelligence, yet their ability to maintain geometrically consistent spatial understanding across heterogeneous views remains under-evaluated. Existing benchmarks largely focus on single-agent, single-view perception, leaving a gap in the systematic assessment of collaborative air-ground settings, where multi-scale observations are complementary but introduce scale mismatch, asymmetric occlusion, and reference-frame inconsistencies. We present AirGroundBench, a diagnostic benchmark for evaluating multi-view spatial intelligence in heterogeneous UAV-UGV collaboration. AirGroundBench is built from 11 high-fidelity simulated environments with 1,021 synchronized air-ground observation pairs, yielding approximately 62,000 dual-view, four-option single-choice visual question answering instances and 115 closed-loop vision-language navigation episodes. It covers 10 task types organized into four progressively demanding capability dimensions: spatial perception, cross-view alignment, spatial transformation and reasoning, and embodied decision-making. To support geometry-grounded evaluation and analysis, we provide structured spatial annotations, including cross-view object identities and metric 2D and 3D bounding boxes. Evaluations of 13 representative MLLMs under UAV-only, UGV-only, and dual-view input settings reveal consistent bottlenecks: models perform relatively well on spatial perception but struggle with cross-view alignment and transformation-intensive reasoning, and these deficits propagate to sequential decision-making in vision-language navigation. Although dual-view inputs provide measurable gains over single-view variants, a persistent gap from human performance remains, highlighting geometric consistency as a key limitation of current embodied MLLMs.",
-    "tags": [
-      "VLM/MLLM",
-      "reasoning",
-      "depth/geometry"
     ],
     "score": 35
   },
@@ -46935,25 +46905,6 @@
     "score": 31
   },
   {
-    "title": "Exploiting Intermediate Reconstructions in Optical Coherence Tomography for Test-Time Adaption of Medical Image Segmentation",
-    "url": "http://arxiv.org/abs/2603.05041v1",
-    "pdf": "http://arxiv.org/pdf/2603.05041v1",
-    "authors": [
-      "Thomas Pinetz",
-      "Veit Hucke",
-      "Hrvoje Bogunovic"
-    ],
-    "source": "arXiv",
-    "published": "2026-03-05",
-    "summary": "Primary health care frequently relies on low-cost imaging devices, which are commonly used for screening purposes. To ensure accurate diagnosis, these systems depend on advanced reconstruction algorithms designed to approximate the performance of high-quality counterparts. Such algorithms typically employ iterative reconstruction methods that incorporate domain-specific prior knowledge. However, downstream task performance is generally assessed using only the final reconstructed image, thereby disregarding the informative intermediate representations generated throughout the reconstruction process. In this work, we propose IRTTA to exploit these intermediate representations at test-time by adapting the normalization-layer parameters of a frozen downstream network via a modulator network that conditions on the current reconstruction timescale. The modulator network is learned during test-time using an averaged entropy loss across all individual timesteps. Variation among the timestep-wise segmentations additionally provides uncertainty estimates at no extra cost. This approach enhances segmentation performance and enables semantically meaningful uncertainty estimation, all without modifying either the reconstruction process or the downstream model.",
-    "tags": [
-      "diffusion",
-      "boundary/frequency",
-      "medical imaging"
-    ],
-    "score": 31
-  },
-  {
     "title": "Weakly Supervised Segmentation as Semantic-Based Regularization",
     "url": "http://arxiv.org/abs/2605.13674v2",
     "pdf": "http://arxiv.org/pdf/2605.13674v2",
@@ -56321,6 +56272,32 @@
       "VLM/MLLM",
       "reasoning",
       "diffusion"
+    ],
+    "score": 29
+  },
+  {
+    "title": "AirGroundBench: Probing Spatial Intelligence in Multimodal Large Models under Heterogeneous Multi-View Embodied Collaboration",
+    "url": "http://arxiv.org/abs/2606.28049v1",
+    "pdf": "http://arxiv.org/pdf/2606.28049v1",
+    "authors": [
+      "Haotian Li",
+      "Yida Wang",
+      "Leyuan Wang",
+      "Jinshan Lai",
+      "Keyang Wang",
+      "Zonghao Guo",
+      "Qiang Ma",
+      "Liuyu Xiang",
+      "Jianwei Hu",
+      "Zhaofeng He"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-26",
+    "summary": "In recent years, multimodal large language models (MLLMs) have shown strong potential for embodied intelligence, yet their ability to maintain geometrically consistent spatial understanding across heterogeneous views remains under-evaluated. Existing benchmarks largely focus on single-agent, single-view perception, leaving a gap in the systematic assessment of collaborative air-ground settings, where multi-scale observations are complementary but introduce scale mismatch, asymmetric occlusion, and reference-frame inconsistencies. We present AirGroundBench, a diagnostic benchmark for evaluating multi-view spatial intelligence in heterogeneous UAV-UGV collaboration. AirGroundBench is built from 11 high-fidelity simulated environments with 1,021 synchronized air-ground observation pairs, yielding approximately 62,000 dual-view, four-option single-choice visual question answering instances and 115 closed-loop vision-language navigation episodes. It covers 10 task types organized into four progressively demanding capability dimensions: spatial perception, cross-view alignment, spatial transformation and reasoning, and embodied decision-making. To support geometry-grounded evaluation and analysis, we provide structured spatial annotations, including cross-view object identities and metric 2D and 3D bounding boxes. Evaluations of 13 representative MLLMs under UAV-only, UGV-only, and dual-view input settings reveal consistent bottlenecks: models perform relatively well on spatial perception but struggle with cross-view alignment and transformation-intensive reasoning, and these deficits propagate to sequential decision-making in vision-language navigation. Although dual-view inputs provide measurable gains over single-view variants, a persistent gap from human performance remains, highlighting geometric consistency as a key limitation of current embodied MLLMs.",
+    "tags": [
+      "VLM/MLLM",
+      "reasoning",
+      "depth/geometry"
     ],
     "score": 29
   },
@@ -87428,6 +87405,25 @@
     "summary": "We investigate a framework for train-free MRI segmentation based on Topological Data Analysis. The pipeline proceeds in three steps, first identifying the whole object to segment via automatic thresholding, then detecting a distinctive subset whose topology is known in advance, and finally deducing the various components of the segmentation. A key ingredient is the extraction of approximate representative cycles from persistence diagrams, which provides an interpretable link between persistent features and anatomical components. To clarify the method's scope, we make the underlying topological and intensity assumptions explicit, quantify when they hold on real data, and analyze typical failure modes. We evaluate the approach on glioblastoma and on fetal cortical plate segmentation, with comparisons to unsupervised and deep-learning references. By operating without large annotated datasets, the method is well suited to scarce-data settings and provides an interpretable baseline and practical initialization for expert refinement or learning-based pipelines.",
     "tags": [
       "unsupervised",
+      "medical imaging"
+    ],
+    "score": 27
+  },
+  {
+    "title": "Exploiting Intermediate Reconstructions in Optical Coherence Tomography for Test-Time Adaption of Medical Image Segmentation",
+    "url": "http://arxiv.org/abs/2603.05041v1",
+    "pdf": "http://arxiv.org/pdf/2603.05041v1",
+    "authors": [
+      "Thomas Pinetz",
+      "Veit Hucke",
+      "Hrvoje Bogunovic"
+    ],
+    "source": "arXiv",
+    "published": "2026-03-05",
+    "summary": "Primary health care frequently relies on low-cost imaging devices, which are commonly used for screening purposes. To ensure accurate diagnosis, these systems depend on advanced reconstruction algorithms designed to approximate the performance of high-quality counterparts. Such algorithms typically employ iterative reconstruction methods that incorporate domain-specific prior knowledge. However, downstream task performance is generally assessed using only the final reconstructed image, thereby disregarding the informative intermediate representations generated throughout the reconstruction process. In this work, we propose IRTTA to exploit these intermediate representations at test-time by adapting the normalization-layer parameters of a frozen downstream network via a modulator network that conditions on the current reconstruction timescale. The modulator network is learned during test-time using an averaged entropy loss across all individual timesteps. Variation among the timestep-wise segmentations additionally provides uncertainty estimates at no extra cost. This approach enhances segmentation performance and enables semantically meaningful uncertainty estimation, all without modifying either the reconstruction process or the downstream model.",
+    "tags": [
+      "diffusion",
+      "boundary/frequency",
       "medical imaging"
     ],
     "score": 27
@@ -126020,28 +126016,6 @@
     "summary": "PR article matched by title in a top journal; abstract unavailable from Crossref.",
     "tags": [
       "depth/geometry"
-    ],
-    "score": 21
-  },
-  {
-    "title": "A Segment Anything Model adaptation framework for battery visual inspection under complex radiographic imaging conditions",
-    "url": "https://doi.org/10.1016/j.patcog.2026.114087",
-    "pdf": "",
-    "authors": [
-      "Chun Cao",
-      "Tianyu Wang",
-      "Shiyu Lu",
-      "Mian Li",
-      "Yunlong Huang",
-      "Xi Vincent Wang",
-      "Lihui Wang"
-    ],
-    "source": "Crossref / PR / CCF-B / 顶刊 / Pattern Recognition",
-    "published": "2026-12",
-    "summary": "PR article matched by title in a top journal; abstract unavailable from Crossref.",
-    "tags": [
-      "SAM",
-      "diffusion"
     ],
     "score": 21
   },

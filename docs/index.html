@@ -70,7 +70,7 @@
 <body>
 <main>
 <h1>Daily CV Paper Feed</h1>
-<p>Last updated: 2026-07-03 12:56 Asia/Shanghai</p>
+<p>Last updated: 2026-07-04 12:49 Asia/Shanghai</p>
 <p>Archive days kept: 4</p>
 <p>This page tracks new and useful computer-vision papers, with COD/camouflaged object detection kept as the primary reading thread and broader CV methods included for inspiration.</p>
 <p>历史更新不会被删除；如果当天没看完，可以继续往下翻到对应日期。</p>
@@ -156,22 +156,6 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
-<h3><strong>Understanding How MLLMs Describe Artworks Using Token Activation Maps</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-26</p>
-<p class='meta'>Authors: Nicola Fanelli, Pasquale De Marinis, Raffaele Scaringi, Eva Cetinic, Gennaro Vessio et al.</p>
-<p class='meta'>Tags: open-vocabulary, SAM, VLM/MLLM, reasoning</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.27947v1">paper</a> / <a href="http://arxiv.org/pdf/2606.27947v1">pdf</a></p>
-<p class='meta'>论文：Understanding How MLLMs Describe Artworks Using Token Activation Maps</p>
-<p class='meta'>一句话总结：Multimodal Large Language Models (MLLMs) describe artworks with remarkable fluency, yet the visual reasoning behind their outputs remains opaque. When an MLLM names a style, identifies a subject, or recognizes...</p>
-<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
-<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
-<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
-<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
-<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
-<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
 <h3><strong>LeVLJEPA: End-to-End Vision-Language Pretraining Without Negatives</strong></h3>
 <p class='meta'>Source: arXiv, 2026-07-01</p>
 <p class='meta'>Authors: Lukas Kuhn, Giuseppe Serra, Randall Balestriero, Florian Buettner</p>
@@ -252,19 +236,35 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
-<h3><strong>Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation</strong></h3>
+<h3><strong>Understanding How MLLMs Describe Artworks Using Token Activation Maps</strong></h3>
 <p class='meta'>Source: arXiv, 2026-06-26</p>
-<p class='meta'>Authors: Yuheng Qiu, Jingyi Luo, Chenfei Ye, Ting Ma, Jianfeng Cao</p>
-<p class='meta'>Tags: training-free, diffusion, boundary/frequency, medical imaging</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.27935v2">paper</a> / <a href="http://arxiv.org/pdf/2606.27935v2">pdf</a></p>
-<p class='meta'>论文：Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation</p>
-<p class='meta'>一句话总结：Deep learning has demonstrated remarkable success in high-throughput histopathology image analysis. However, the performance of learning-based models critically depends on the quality and size of annotations b...</p>
-<p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
-<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>Authors: Nicola Fanelli, Pasquale De Marinis, Raffaele Scaringi, Eva Cetinic, Gennaro Vessio et al.</p>
+<p class='meta'>Tags: open-vocabulary, SAM, VLM/MLLM, reasoning</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.27947v1">paper</a> / <a href="http://arxiv.org/pdf/2606.27947v1">pdf</a></p>
+<p class='meta'>论文：Understanding How MLLMs Describe Artworks Using Token Activation Maps</p>
+<p class='meta'>一句话总结：Multimodal Large Language Models (MLLMs) describe artworks with remarkable fluency, yet the visual reasoning behind their outputs remains opaque. When an MLLM names a style, identifies a subject, or recognizes...</p>
+<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
+<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
-<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>Anatomy-Guided Residual Motion Diffusion for Controllable 4D Cardiac MRI Synthesis</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-25</p>
+<p class='meta'>Authors: Yiheng Cao, Gustavo Andrade-Miranda, Jiatian Zhang, Lingxiao Zhao, Xin Gao</p>
+<p class='meta'>Tags: unsupervised, diffusion, boundary/frequency, depth/geometry, video, medical imaging</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.26764v1">paper</a> / <a href="http://arxiv.org/pdf/2606.26764v1">pdf</a></p>
+<p class='meta'>论文：Anatomy-Guided Residual Motion Diffusion for Controllable 4D Cardiac MRI Synthesis</p>
+<p class='meta'>一句话总结：Developing robust artificial intelligence models for 4D (3D + time) medical imaging is constrained by limited annotated data, inter-device domain shifts, and privacy restrictions. To address this, we propose a...</p>
+<p class='meta'>任务设定：医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。</p>
+<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
+<p class='meta'>可借鉴点：边界/频域增强模块；深度或几何先验融合。</p>
+<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <h2>高质量来源优先读：CCF-A/B 与顶刊顶会</h2>
@@ -509,6 +509,22 @@
 <p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
 </article>
 <article class='paper'>
+<h3><strong>End-to-End LiDAR-Camera Calibration via Multi-Modal Correspondences Estimation and Explicit BEV Alignment</strong></h3>
+<p class='meta'>Source: Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision, 2026-07-03</p>
+<p class='meta'>Authors: Lorenzo Cipelli, Filippo D’Addeo, Emanuele Ghelfi, Marcello Ceresini, Andrea Bertogalli et al.</p>
+<p class='meta'>Tags: depth/geometry</p>
+<p class='meta'>Links: <a href="https://doi.org/10.1007/s11263-026-02921-0">paper</a></p>
+<p class='meta'>论文：End-to-End LiDAR-Camera Calibration via Multi-Modal Correspondences Estimation and Explicit BEV Alignment</p>
+<p class='meta'>一句话总结：Abstract In this work, we present a Bird’s Eye View (BEV) Alignment approach for the LiDAR-Camera calibration task. Building upon previous BEV-based work, we extract sensor-wise BEV features from each input mo...</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
+<p class='meta'>可借鉴点：深度或几何先验融合。</p>
+<p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
 <h3><strong>MAPSeg: Unified Unsupervised Domain Adaptation for Heterogeneous Medical Image Segmentation Based on 3D Masked Autoencoding and Pseudo-Labeling</strong></h3>
 <p class='meta'>Source: CVPR 2024, 2024</p>
 <p class='meta'>Authors: Xuzhe Zhang, Yuhao Wu, Elsa Angelini, Ang Li, Jia Guo et al.</p>
@@ -553,22 +569,6 @@
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合；跨域鲁棒性、不确定性或异常分数。</p>
-<p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>Combining Projected Uncertainty for Self-Supervised Visual Odometry: From Two-Frame to Multi-Frame</strong></h3>
-<p class='meta'>Source: Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision, 2026-06-30</p>
-<p class='meta'>Authors: Jingchao Xie, Oussema Dhaouadi, Weirong Chen, Johannes Meier, Zuria Bauer et al.</p>
-<p class='meta'>Tags: depth/geometry, video</p>
-<p class='meta'>Links: <a href="https://doi.org/10.1007/s11263-026-02915-y">paper</a></p>
-<p class='meta'>论文：Combining Projected Uncertainty for Self-Supervised Visual Odometry: From Two-Frame to Multi-Frame</p>
-<p class='meta'>一句话总结：Abstract Visual odometry (VO) is fundamental to autonomous navigation, robotics, and augmented reality. While self-supervised learning has eliminated the need for expensive ground-truth labels in monocular VO,...</p>
-<p class='meta'>任务设定：视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。</p>
-<p class='meta'>方法核心：几何/深度线索建模，可能补充 RGB 外的结构先验。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
-<p class='meta'>可借鉴点：深度或几何先验融合。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
@@ -1391,22 +1391,6 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
-<h3><strong>Understanding How MLLMs Describe Artworks Using Token Activation Maps</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-26</p>
-<p class='meta'>Authors: Nicola Fanelli, Pasquale De Marinis, Raffaele Scaringi, Eva Cetinic, Gennaro Vessio et al.</p>
-<p class='meta'>Tags: open-vocabulary, SAM, VLM/MLLM, reasoning</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.27947v1">paper</a> / <a href="http://arxiv.org/pdf/2606.27947v1">pdf</a></p>
-<p class='meta'>论文：Understanding How MLLMs Describe Artworks Using Token Activation Maps</p>
-<p class='meta'>一句话总结：Multimodal Large Language Models (MLLMs) describe artworks with remarkable fluency, yet the visual reasoning behind their outputs remains opaque. When an MLLM names a style, identifies a subject, or recognizes...</p>
-<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
-<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
-<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
-<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
-<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
-<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
 <h3><strong>SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis</strong></h3>
 <p class='meta'>Source: arXiv, 2026-06-28</p>
 <p class='meta'>Authors: Hang Su, Chao Sun, Zhaofan Li, Wei Hu, Juhua Liu et al.</p>
@@ -1481,6 +1465,22 @@
 <p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
 <p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>Understanding How MLLMs Describe Artworks Using Token Activation Maps</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-26</p>
+<p class='meta'>Authors: Nicola Fanelli, Pasquale De Marinis, Raffaele Scaringi, Eva Cetinic, Gennaro Vessio et al.</p>
+<p class='meta'>Tags: open-vocabulary, SAM, VLM/MLLM, reasoning</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.27947v1">paper</a> / <a href="http://arxiv.org/pdf/2606.27947v1">pdf</a></p>
+<p class='meta'>论文：Understanding How MLLMs Describe Artworks Using Token Activation Maps</p>
+<p class='meta'>一句话总结：Multimodal Large Language Models (MLLMs) describe artworks with remarkable fluency, yet the visual reasoning behind their outputs remains opaque. When an MLLM names a style, identifies a subject, or recognizes...</p>
+<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
+<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
@@ -1599,22 +1599,6 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
-<h3><strong>Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-26</p>
-<p class='meta'>Authors: Yuheng Qiu, Jingyi Luo, Chenfei Ye, Ting Ma, Jianfeng Cao</p>
-<p class='meta'>Tags: training-free, diffusion, boundary/frequency, medical imaging</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.27935v2">paper</a> / <a href="http://arxiv.org/pdf/2606.27935v2">pdf</a></p>
-<p class='meta'>论文：Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation</p>
-<p class='meta'>一句话总结：Deep learning has demonstrated remarkable success in high-throughput histopathology image analysis. However, the performance of learning-based models critically depends on the quality and size of annotations b...</p>
-<p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
-<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
-<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。</p>
-<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
 <h3><strong>Anatomy-Guided Residual Motion Diffusion for Controllable 4D Cardiac MRI Synthesis</strong></h3>
 <p class='meta'>Source: arXiv, 2026-06-25</p>
 <p class='meta'>Authors: Yiheng Cao, Gustavo Andrade-Miranda, Jiatian Zhang, Lingxiao Zhao, Xin Gao</p>
@@ -1675,6 +1659,22 @@
 <p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
 <p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
 <p class='meta'>可借鉴点：跨域鲁棒性、不确定性或异常分数。</p>
+<p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>End-to-End LiDAR-Camera Calibration via Multi-Modal Correspondences Estimation and Explicit BEV Alignment</strong></h3>
+<p class='meta'>Source: Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision, 2026-07-03</p>
+<p class='meta'>Authors: Lorenzo Cipelli, Filippo D’Addeo, Emanuele Ghelfi, Marcello Ceresini, Andrea Bertogalli et al.</p>
+<p class='meta'>Tags: depth/geometry</p>
+<p class='meta'>Links: <a href="https://doi.org/10.1007/s11263-026-02921-0">paper</a></p>
+<p class='meta'>论文：End-to-End LiDAR-Camera Calibration via Multi-Modal Correspondences Estimation and Explicit BEV Alignment</p>
+<p class='meta'>一句话总结：Abstract In this work, we present a Bird’s Eye View (BEV) Alignment approach for the LiDAR-Camera calibration task. Building upon previous BEV-based work, we extract sensor-wise BEV features from each input mo...</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
+<p class='meta'>可借鉴点：深度或几何先验融合。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
@@ -1967,6 +1967,22 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
+<h3><strong>Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-26</p>
+<p class='meta'>Authors: Yuheng Qiu, Jingyi Luo, Chenfei Ye, Ting Ma, Jianfeng Cao</p>
+<p class='meta'>Tags: training-free, diffusion, boundary/frequency, medical imaging</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.27935v2">paper</a> / <a href="http://arxiv.org/pdf/2606.27935v2">pdf</a></p>
+<p class='meta'>论文：Controllable Histopathology Image Synthesis with Training-free Structural Initialization and Textural Modulation</p>
+<p class='meta'>一句话总结：Deep learning has demonstrated remarkable success in high-throughput histopathology image analysis. However, the performance of learning-based models critically depends on the quality and size of annotations b...</p>
+<p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
+<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
 <h3><strong>MLFFM-SegDiff: A Multi-Level Feature Fusion Diffusion Model for Skin Lesion Segmentation</strong></h3>
 <p class='meta'>Source: arXiv, 2026-06-25</p>
 <p class='meta'>Authors: Jingjun Gu, Chaojie Shen, Yifeng Cao, Wei Zhang, Yiliu Li et al.</p>
@@ -2124,22 +2140,6 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>Combining Projected Uncertainty for Self-Supervised Visual Odometry: From Two-Frame to Multi-Frame</strong></h3>
-<p class='meta'>Source: Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision, 2026-06-30</p>
-<p class='meta'>Authors: Jingchao Xie, Oussema Dhaouadi, Weirong Chen, Johannes Meier, Zuria Bauer et al.</p>
-<p class='meta'>Tags: depth/geometry, video</p>
-<p class='meta'>Links: <a href="https://doi.org/10.1007/s11263-026-02915-y">paper</a></p>
-<p class='meta'>论文：Combining Projected Uncertainty for Self-Supervised Visual Odometry: From Two-Frame to Multi-Frame</p>
-<p class='meta'>一句话总结：Abstract Visual odometry (VO) is fundamental to autonomous navigation, robotics, and augmented reality. While self-supervised learning has eliminated the need for expensive ground-truth labels in monocular VO,...</p>
-<p class='meta'>任务设定：视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。</p>
-<p class='meta'>方法核心：几何/深度线索建模，可能补充 RGB 外的结构先验。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
-<p class='meta'>可借鉴点：深度或几何先验融合。</p>
-<p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
