@@ -2019,27 +2019,6 @@
     "score": 96
   },
   {
-    "title": "DLGStream: Dynamic Language-embedded Guassian Splatting for Open-vocabulary Enabled Free-viewpoint Video Streaming",
-    "url": "http://arxiv.org/abs/2606.28840v1",
-    "pdf": "http://arxiv.org/pdf/2606.28840v1",
-    "authors": [
-      "Zhihui Ke",
-      "Yuyang Liu",
-      "Xiaobo Zhou",
-      "Tie Qiu"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-27",
-    "summary": "3D Gaussian Splatting~(3DGS) has emerged as a promising paradigm for reconstructing streamable free-viewpoint video~(FVV) from multi-view videos. However, 3DGS-based FVVs typically lack user interaction and editing capabilities, which diminishes the immersive experience. Recent research has integrated language features from CLIP into 3DGS via distillation, enabling open-vocabulary queries and supporting many downstream applications. Nevertheless, the stringent requirements of FVV, low frame size and high FPS, make current language Gaussian representations unsuitable for language-embedded FVV. In this paper, we propose DLGStream, a novel language-embedded FVV representation that streams time-varying language features alongside Gaussian attributes to support 4D environment interaction, scene editing, and spatial intelligence. Specifically, we propose a dual-opacity dynamic language Gaussian representation, which maintains two opacity attributes for color and language features to deal with performance degradation that occurs when colors and features are jointly optimized. Furthermore, we introduce an interpolation-based deformation field to reduce temporal redundancy. This deformation field can also be used for 4D frame interpolation, boosting FVV sequences from low to high FPS. Experimental results demonstrate that DLGStream achieves superior performance in both on open-vocabulary segmentation and reconstruction quality with an average frame size of merely 43 KB. The code is available on \\href{https://github.com/kkkzh/DLGStream}{https://github.com/kkkzh/DLGStream}.",
-    "tags": [
-      "open-vocabulary",
-      "diffusion",
-      "depth/geometry",
-      "video"
-    ],
-    "score": 95
-  },
-  {
     "title": "GenAU: Language-Grounded Industrial Anomaly Understanding with Vision-Language Models",
     "url": "http://arxiv.org/abs/2607.01049v1",
     "pdf": "http://arxiv.org/pdf/2607.01049v1",
@@ -2275,6 +2254,27 @@
       "SAM"
     ],
     "score": 91
+  },
+  {
+    "title": "DLGStream: Dynamic Language-embedded Guassian Splatting for Open-vocabulary Enabled Free-viewpoint Video Streaming",
+    "url": "http://arxiv.org/abs/2606.28840v1",
+    "pdf": "http://arxiv.org/pdf/2606.28840v1",
+    "authors": [
+      "Zhihui Ke",
+      "Yuyang Liu",
+      "Xiaobo Zhou",
+      "Tie Qiu"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-27",
+    "summary": "3D Gaussian Splatting~(3DGS) has emerged as a promising paradigm for reconstructing streamable free-viewpoint video~(FVV) from multi-view videos. However, 3DGS-based FVVs typically lack user interaction and editing capabilities, which diminishes the immersive experience. Recent research has integrated language features from CLIP into 3DGS via distillation, enabling open-vocabulary queries and supporting many downstream applications. Nevertheless, the stringent requirements of FVV, low frame size and high FPS, make current language Gaussian representations unsuitable for language-embedded FVV. In this paper, we propose DLGStream, a novel language-embedded FVV representation that streams time-varying language features alongside Gaussian attributes to support 4D environment interaction, scene editing, and spatial intelligence. Specifically, we propose a dual-opacity dynamic language Gaussian representation, which maintains two opacity attributes for color and language features to deal with performance degradation that occurs when colors and features are jointly optimized. Furthermore, we introduce an interpolation-based deformation field to reduce temporal redundancy. This deformation field can also be used for 4D frame interpolation, boosting FVV sequences from low to high FPS. Experimental results demonstrate that DLGStream achieves superior performance in both on open-vocabulary segmentation and reconstruction quality with an average frame size of merely 43 KB. The code is available on \\href{https://github.com/kkkzh/DLGStream}{https://github.com/kkkzh/DLGStream}.",
+    "tags": [
+      "open-vocabulary",
+      "diffusion",
+      "depth/geometry",
+      "video"
+    ],
+    "score": 89
   },
   {
     "title": "SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis",
@@ -2601,38 +2601,6 @@
       "diffusion",
       "boundary/frequency",
       "depth/geometry"
-    ],
-    "score": 83
-  },
-  {
-    "title": "Evidence-Based Text-Conditioned 3D CT Synthesis for Ovarian Cancer",
-    "url": "http://arxiv.org/abs/2606.28980v1",
-    "pdf": "http://arxiv.org/pdf/2606.28980v1",
-    "authors": [
-      "Francesca Pia Panaccione",
-      "Eugenio Lomurno",
-      "Francesca Fati",
-      "Carlotta Pecchiari",
-      "Marina Rosanu",
-      "Luigi De Vitis",
-      "Lucia Ribero",
-      "Gabriella Schivardi",
-      "Giovanni Damiano Aletti",
-      "Nicoletta Colombo",
-      "Maria Francesca Spadea",
-      "Francesco Multinu",
-      "Matteo Matteucci",
-      "Elena De Momi"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-27",
-    "summary": "Ovarian cancer is frequently diagnosed at an advanced stage, making preoperative contrast-enhanced computed tomography (CT) central to staging and surgical planning; yet the scarcity of annotated imaging data, compounded by privacy regulations, limits the development of generalizable computational models in this domain. Text-conditioned 3D CT synthesis has shown promise, but existing pipelines depend on paired radiology reports and have been evaluated only on chest CT. We propose OvESyn (Ovarian Evidence-based Synthesis), a framework that constructs standardized Findings and Impression sections directly from CT-derived imaging descriptors and routine clinical metadata, without any original radiology report, and uses them to condition a latent diffusion model adapted to 493 high-grade serous ovarian carcinoma patients. This is the first text-conditioned 3D CT synthesis framework adapted to an abdomino-pelvic oncologic setting. A systematic ablation over two adaptation axes, vision-language encoder alignment and generator fine-tuning, identifies generator domain adaptation as the operative mechanism for crossing the domain gap and establishing the target anatomy: without it, synthesis remains anchored to the thoracic pretraining domain, with Precision and Recall collapsing to zero and FID2.5D exceeding 140, regardless of encoder alignment. Encoder alignment instead refines intensity and fine detail. The full OvESyn attains the best distributional and intensity fidelity (FID2.5D 29.35, Precision 0.671, Wasserstein-1 0.044), while the generator-only variant maximizes coverage (Recall 0.645), reflecting a fidelity/coverage trade-off governed by encoder adaptation. Requiring only automatic segmentations and routine preoperative metadata, OvESyn supports transferability to report-scarce settings and provides a foundation for synthetic cohort generation in abdomino-pelvic oncologic imaging.",
-    "tags": [
-      "VLM/MLLM",
-      "diffusion",
-      "depth/geometry",
-      "domain adaptation",
-      "medical imaging"
     ],
     "score": 83
   },
@@ -3107,6 +3075,38 @@
       "open-vocabulary",
       "reasoning",
       "depth/geometry"
+    ],
+    "score": 77
+  },
+  {
+    "title": "Evidence-Based Text-Conditioned 3D CT Synthesis for Ovarian Cancer",
+    "url": "http://arxiv.org/abs/2606.28980v1",
+    "pdf": "http://arxiv.org/pdf/2606.28980v1",
+    "authors": [
+      "Francesca Pia Panaccione",
+      "Eugenio Lomurno",
+      "Francesca Fati",
+      "Carlotta Pecchiari",
+      "Marina Rosanu",
+      "Luigi De Vitis",
+      "Lucia Ribero",
+      "Gabriella Schivardi",
+      "Giovanni Damiano Aletti",
+      "Nicoletta Colombo",
+      "Maria Francesca Spadea",
+      "Francesco Multinu",
+      "Matteo Matteucci",
+      "Elena De Momi"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-27",
+    "summary": "Ovarian cancer is frequently diagnosed at an advanced stage, making preoperative contrast-enhanced computed tomography (CT) central to staging and surgical planning; yet the scarcity of annotated imaging data, compounded by privacy regulations, limits the development of generalizable computational models in this domain. Text-conditioned 3D CT synthesis has shown promise, but existing pipelines depend on paired radiology reports and have been evaluated only on chest CT. We propose OvESyn (Ovarian Evidence-based Synthesis), a framework that constructs standardized Findings and Impression sections directly from CT-derived imaging descriptors and routine clinical metadata, without any original radiology report, and uses them to condition a latent diffusion model adapted to 493 high-grade serous ovarian carcinoma patients. This is the first text-conditioned 3D CT synthesis framework adapted to an abdomino-pelvic oncologic setting. A systematic ablation over two adaptation axes, vision-language encoder alignment and generator fine-tuning, identifies generator domain adaptation as the operative mechanism for crossing the domain gap and establishing the target anatomy: without it, synthesis remains anchored to the thoracic pretraining domain, with Precision and Recall collapsing to zero and FID2.5D exceeding 140, regardless of encoder alignment. Encoder alignment instead refines intensity and fine detail. The full OvESyn attains the best distributional and intensity fidelity (FID2.5D 29.35, Precision 0.671, Wasserstein-1 0.044), while the generator-only variant maximizes coverage (Recall 0.645), reflecting a fidelity/coverage trade-off governed by encoder adaptation. Requiring only automatic segmentations and routine preoperative metadata, OvESyn supports transferability to report-scarce settings and provides a foundation for synthetic cohort generation in abdomino-pelvic oncologic imaging.",
+    "tags": [
+      "VLM/MLLM",
+      "diffusion",
+      "depth/geometry",
+      "domain adaptation",
+      "medical imaging"
     ],
     "score": 77
   },
@@ -3743,32 +3743,6 @@
       "depth/geometry",
       "remote sensing",
       "anomaly/OOD"
-    ],
-    "score": 71
-  },
-  {
-    "title": "ExACT: Exemplar-Driven Calibrated Refinement for Training-Free Visual Grounding in Remote Sensing Images",
-    "url": "http://arxiv.org/abs/2606.28920v1",
-    "pdf": "http://arxiv.org/pdf/2606.28920v1",
-    "authors": [
-      "Zixiao Zhang",
-      "Lingling Li",
-      "Pei He",
-      "Xu Liu",
-      "Licheng Jiao"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-27",
-    "summary": "Remote sensing visual grounding (RSVG) aims to locate specific objects in high-resolution RS imagery using free-form natural language descriptions. While recent advances in multimodal large language models (MLLMs) show great potential for such open-vocabulary RSVG, their training-free adaptation is hindered by the modality gap between abstract linguistic semantics and fine-grained visual cues. In cluttered RS scenes, this gap inevitably causes severe localization drift. To bridge this gap, we propose Exemplar-driven Calibrated Refinement (ExACT), a novel training-free framework driven by a one-shot visual prompting mechanism to explicitly provide discriminative structural guidance for precise pixel-level localization. Specifically, we propose a Vision Exemplar-based Calibrator (VEC) that extracts fine-grained visual correspondences from the given exemplar to rectify the rough cross-modal priors from frozen MLLMs, effectively suppressing background artifacts and accurately outlining target boundaries. Subsequently, a Structure-Aware Refiner (SAR) employs an iterative merge-and-select clustering strategy to consolidate the calibrated priors into high-quality positive and negative geometric prompts. These prompts then guide the Segment Anything Model (SAM) to achieve precise pixel-level predictions. Extensive experiments confirm the superiority of ExACT over existing training-free and weakly-supervised methods.",
-    "tags": [
-      "open-vocabulary",
-      "training-free",
-      "unsupervised",
-      "SAM",
-      "VLM/MLLM",
-      "reasoning",
-      "depth/geometry",
-      "remote sensing"
     ],
     "score": 71
   },
@@ -4427,6 +4401,32 @@
       "VLM/MLLM",
       "reasoning",
       "diffusion"
+    ],
+    "score": 65
+  },
+  {
+    "title": "ExACT: Exemplar-Driven Calibrated Refinement for Training-Free Visual Grounding in Remote Sensing Images",
+    "url": "http://arxiv.org/abs/2606.28920v1",
+    "pdf": "http://arxiv.org/pdf/2606.28920v1",
+    "authors": [
+      "Zixiao Zhang",
+      "Lingling Li",
+      "Pei He",
+      "Xu Liu",
+      "Licheng Jiao"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-27",
+    "summary": "Remote sensing visual grounding (RSVG) aims to locate specific objects in high-resolution RS imagery using free-form natural language descriptions. While recent advances in multimodal large language models (MLLMs) show great potential for such open-vocabulary RSVG, their training-free adaptation is hindered by the modality gap between abstract linguistic semantics and fine-grained visual cues. In cluttered RS scenes, this gap inevitably causes severe localization drift. To bridge this gap, we propose Exemplar-driven Calibrated Refinement (ExACT), a novel training-free framework driven by a one-shot visual prompting mechanism to explicitly provide discriminative structural guidance for precise pixel-level localization. Specifically, we propose a Vision Exemplar-based Calibrator (VEC) that extracts fine-grained visual correspondences from the given exemplar to rectify the rough cross-modal priors from frozen MLLMs, effectively suppressing background artifacts and accurately outlining target boundaries. Subsequently, a Structure-Aware Refiner (SAR) employs an iterative merge-and-select clustering strategy to consolidate the calibrated priors into high-quality positive and negative geometric prompts. These prompts then guide the Segment Anything Model (SAM) to achieve precise pixel-level predictions. Extensive experiments confirm the superiority of ExACT over existing training-free and weakly-supervised methods.",
+    "tags": [
+      "open-vocabulary",
+      "training-free",
+      "unsupervised",
+      "SAM",
+      "VLM/MLLM",
+      "reasoning",
+      "depth/geometry",
+      "remote sensing"
     ],
     "score": 65
   },
@@ -5199,27 +5199,6 @@
     "score": 61
   },
   {
-    "title": "Making Training-Free Diffusion Segmentors Scale with the Generative Power",
-    "url": "http://arxiv.org/abs/2603.06178v3",
-    "pdf": "http://arxiv.org/pdf/2603.06178v3",
-    "authors": [
-      "Benyuan Meng",
-      "Qianqian Xu",
-      "Zitai Wang",
-      "Xiaochun Cao",
-      "Longtao Huang",
-      "Qingming Huang"
-    ],
-    "source": "arXiv",
-    "published": "2026-03-06",
-    "summary": "As powerful generative models, text-to-image diffusion models have recently been explored for discriminative tasks. A line of research focuses on adapting a pre-trained diffusion model to semantic segmentation without any further training, leading to training-free diffusion segmentors. These methods typically rely on cross-attention maps from the model's attention layers, which are assumed to capture semantic relationships between image pixels and text tokens. Ideally, such approaches should benefit from more powerful diffusion models, i.e., stronger generative capability should lead to better segmentation. However, we observe that existing methods often fail to scale accordingly. To understand this issue, we identify two underlying gaps: (i) cross-attention is computed across multiple heads and layers, but there exists a discrepancy between these individual attention maps and a unified global representation. (ii) Even when a global map is available, it does not directly translate to accurate semantic correlation for segmentation, due to score imbalances among different text tokens. To bridge these gaps, we propose two techniques: auto aggregation and per-pixel rescaling, which together enable training-free segmentation to better leverage generative capability. We evaluate our approach on standard semantic segmentation benchmarks and further integrate it into a generative technique, demonstrating both improved performance broad applicability. Codes are at https://github.com/Darkbblue/goca.",
-    "tags": [
-      "training-free",
-      "diffusion"
-    ],
-    "score": 61
-  },
-  {
     "title": "R2AoP: Reliable and Robust Angle of Progression Estimation from Intrapartum Ultrasound",
     "url": "http://arxiv.org/abs/2605.21099v1",
     "pdf": "http://arxiv.org/pdf/2605.21099v1",
@@ -5671,29 +5650,6 @@
     "score": 59
   },
   {
-    "title": "CCRC: A Change-Aware Captioning and Reasoning Chain for Image Change Captioning and Segmentation",
-    "url": "http://arxiv.org/abs/2606.28724v1",
-    "pdf": "http://arxiv.org/pdf/2606.28724v1",
-    "authors": [
-      "Jinhong Hu",
-      "Xiaoping Wang",
-      "Shuyin Huang",
-      "Guojin Zhong",
-      "Kaitai Liu",
-      "Kai Lu"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-27",
-    "summary": "Understanding and localizing subtle changes between paired images is critical for tasks such as surveillance and image editing. However, traditional Image Change Captioning (ICC) methods lack spatial grounding, limiting their precision. We introduce Image Change Captioning and Segmentation (ICCS), a new multimodal task that jointly requires structured change description and pixel-level localization. To address ICCS, we propose the Change-aware Captioning and Reasoning Chain (CCRC), a dual-chain framework that decouples semantic reasoning from spatial segmentation. The first chain, Chain-of-Change-Captioning (CCC), enhances fine-grained change perception via a visual fusion module based on Multi-Head Change-aware Attention inserted between the visual and language components of a Multimodal Large Language Model (MLLM). CCC also determines whether a change is segmentable. If not, it alone generates the caption. Otherwise, the second chain, Chain-of-Change-Segmenting (CCS), is activated, leveraging spatial priors from CCC and refining masks with a Change-aware Token Refiner for accurate boundary localization. We evaluate CCRC on both synthetic and real-world change detection benchmarks with pixel-level supervision. Experiments show CCRC achieves state-of-the-art performance.",
-    "tags": [
-      "VLM/MLLM",
-      "reasoning",
-      "diffusion",
-      "boundary/frequency"
-    ],
-    "score": 59
-  },
-  {
     "title": "Gen-VCoT: Generative Visual Chain-of-Thought Reasoning via Diffusion-Based RGB Intermediate Representations",
     "url": "http://arxiv.org/abs/2606.16783v1",
     "pdf": "http://arxiv.org/pdf/2606.16783v1",
@@ -5761,24 +5717,6 @@
       "reasoning",
       "depth/geometry",
       "anomaly/OOD",
-      "domain adaptation"
-    ],
-    "score": 59
-  },
-  {
-    "title": "Underwater Source Detection and Classification for Signal-based Surveillance: Audio Dataset Curation and Cross-Domain Evaluation",
-    "url": "http://arxiv.org/abs/2606.28988v1",
-    "pdf": "http://arxiv.org/pdf/2606.28988v1",
-    "authors": [
-      "Quoc Thinh Vo",
-      "David K. Han"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-27",
-    "summary": "Machine learning for underwater acoustics is constrained by the scarcity of publicly available labeled datasets. In contrast to air-acoustic domains, where large benchmarks enable rapid model development, underwater datasets are typically small and limited in acoustic diversity, restricting robust model training and cross-domain generalization. To help address this gap, we introduce a curated underwater audio dataset derived from an open-source maritime sound archive. The dataset contains over one thousand labeled audio segments across eight biologically and mechanically relevant acoustic classes, providing an additional resource for training models in data-limited underwater environments. Additionally, we establish a lightweight Convolutional Neural Network (CNN) baseline and propose a margin-enhanced loss with feature alignment to mitigate class confusion arising from data imbalance, acoustic similarity, and cross-domain mismatch. While the baseline achieves 96.35% in-domain accuracy, evaluation on ShipsEar reveals substantial domain shift; the proposed feature alignment improve zero-shot ship detection by 42.60%, demonstrating stronger robustness under distribution mismatch. We further release a transparent curation pipeline and reproducible benchmark to support future research on imbalance mitigation, domain adaptation, and data-efficient underwater acoustic classification.",
-    "tags": [
-      "diffusion",
-      "saliency/transparent",
       "domain adaptation"
     ],
     "score": 59
@@ -6882,6 +6820,27 @@
     "score": 57
   },
   {
+    "title": "Making Training-Free Diffusion Segmentors Scale with the Generative Power",
+    "url": "http://arxiv.org/abs/2603.06178v3",
+    "pdf": "http://arxiv.org/pdf/2603.06178v3",
+    "authors": [
+      "Benyuan Meng",
+      "Qianqian Xu",
+      "Zitai Wang",
+      "Xiaochun Cao",
+      "Longtao Huang",
+      "Qingming Huang"
+    ],
+    "source": "arXiv",
+    "published": "2026-03-06",
+    "summary": "As powerful generative models, text-to-image diffusion models have recently been explored for discriminative tasks. A line of research focuses on adapting a pre-trained diffusion model to semantic segmentation without any further training, leading to training-free diffusion segmentors. These methods typically rely on cross-attention maps from the model's attention layers, which are assumed to capture semantic relationships between image pixels and text tokens. Ideally, such approaches should benefit from more powerful diffusion models, i.e., stronger generative capability should lead to better segmentation. However, we observe that existing methods often fail to scale accordingly. To understand this issue, we identify two underlying gaps: (i) cross-attention is computed across multiple heads and layers, but there exists a discrepancy between these individual attention maps and a unified global representation. (ii) Even when a global map is available, it does not directly translate to accurate semantic correlation for segmentation, due to score imbalances among different text tokens. To bridge these gaps, we propose two techniques: auto aggregation and per-pixel rescaling, which together enable training-free segmentation to better leverage generative capability. We evaluate our approach on standard semantic segmentation benchmarks and further integrate it into a generative technique, demonstrating both improved performance broad applicability. Codes are at https://github.com/Darkbblue/goca.",
+    "tags": [
+      "training-free",
+      "diffusion"
+    ],
+    "score": 57
+  },
+  {
     "title": "ImageBind Guided Progressive Transformation Network for Alignment-free RGBT Video Object Detection",
     "url": "https://doi.org/10.1007/s11263-026-02935-8",
     "pdf": "",
@@ -7972,6 +7931,29 @@
     "score": 53
   },
   {
+    "title": "CCRC: A Change-Aware Captioning and Reasoning Chain for Image Change Captioning and Segmentation",
+    "url": "http://arxiv.org/abs/2606.28724v1",
+    "pdf": "http://arxiv.org/pdf/2606.28724v1",
+    "authors": [
+      "Jinhong Hu",
+      "Xiaoping Wang",
+      "Shuyin Huang",
+      "Guojin Zhong",
+      "Kaitai Liu",
+      "Kai Lu"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-27",
+    "summary": "Understanding and localizing subtle changes between paired images is critical for tasks such as surveillance and image editing. However, traditional Image Change Captioning (ICC) methods lack spatial grounding, limiting their precision. We introduce Image Change Captioning and Segmentation (ICCS), a new multimodal task that jointly requires structured change description and pixel-level localization. To address ICCS, we propose the Change-aware Captioning and Reasoning Chain (CCRC), a dual-chain framework that decouples semantic reasoning from spatial segmentation. The first chain, Chain-of-Change-Captioning (CCC), enhances fine-grained change perception via a visual fusion module based on Multi-Head Change-aware Attention inserted between the visual and language components of a Multimodal Large Language Model (MLLM). CCC also determines whether a change is segmentable. If not, it alone generates the caption. Otherwise, the second chain, Chain-of-Change-Segmenting (CCS), is activated, leveraging spatial priors from CCC and refining masks with a Change-aware Token Refiner for accurate boundary localization. We evaluate CCRC on both synthetic and real-world change detection benchmarks with pixel-level supervision. Experiments show CCRC achieves state-of-the-art performance.",
+    "tags": [
+      "VLM/MLLM",
+      "reasoning",
+      "diffusion",
+      "boundary/frequency"
+    ],
+    "score": 53
+  },
+  {
     "title": "SkelEM: Training-Signal Decoupling of Skeleton and Diffusion for Self-supervised Axial Super-Resolution in Volume Microscopy",
     "url": "http://arxiv.org/abs/2606.30012v1",
     "pdf": "http://arxiv.org/pdf/2606.30012v1",
@@ -8057,6 +8039,24 @@
     "tags": [
       "diffusion",
       "low-level",
+      "domain adaptation"
+    ],
+    "score": 53
+  },
+  {
+    "title": "Underwater Source Detection and Classification for Signal-based Surveillance: Audio Dataset Curation and Cross-Domain Evaluation",
+    "url": "http://arxiv.org/abs/2606.28988v1",
+    "pdf": "http://arxiv.org/pdf/2606.28988v1",
+    "authors": [
+      "Quoc Thinh Vo",
+      "David K. Han"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-27",
+    "summary": "Machine learning for underwater acoustics is constrained by the scarcity of publicly available labeled datasets. In contrast to air-acoustic domains, where large benchmarks enable rapid model development, underwater datasets are typically small and limited in acoustic diversity, restricting robust model training and cross-domain generalization. To help address this gap, we introduce a curated underwater audio dataset derived from an open-source maritime sound archive. The dataset contains over one thousand labeled audio segments across eight biologically and mechanically relevant acoustic classes, providing an additional resource for training models in data-limited underwater environments. Additionally, we establish a lightweight Convolutional Neural Network (CNN) baseline and propose a margin-enhanced loss with feature alignment to mitigate class confusion arising from data imbalance, acoustic similarity, and cross-domain mismatch. While the baseline achieves 96.35% in-domain accuracy, evaluation on ShipsEar reveals substantial domain shift; the proposed feature alignment improve zero-shot ship detection by 42.60%, demonstrating stronger robustness under distribution mismatch. We further release a transparent curation pipeline and reproducible benchmark to support future research on imbalance mitigation, domain adaptation, and data-efficient underwater acoustic classification.",
+    "tags": [
+      "diffusion",
+      "saliency/transparent",
       "domain adaptation"
     ],
     "score": 53
@@ -9856,24 +9856,23 @@
     "score": 51
   },
   {
-    "title": "Sample-Aware Knowledge Association and Enhancement for Open-Vocabulary Continual Learning",
-    "url": "https://doi.org/10.1007/s11263-026-02907-y",
+    "title": "Personal-3D: A Comprehensive Benchmark for Personalized Embodied AI Agents",
+    "url": "https://doi.org/10.1007/s11263-026-02922-z",
     "pdf": "",
     "authors": [
-      "Zhilin Zhu",
-      "Zhiheng Ma",
-      "Yabin Wang",
-      "Yaguang Song",
-      "Yaowei Wang",
-      "Xiaopeng Hong"
+      "Filippo Ziliotto",
+      "Jelin Raphael Akkara",
+      "Alessandro Daniele",
+      "Lamberto Ballan",
+      "Luciano Serafini",
+      "Tommaso Campari"
     ],
     "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
-    "published": "2026-07-02",
-    "summary": "IJCV article matched by title in a top journal; abstract unavailable from Crossref.",
+    "published": "2026-07-04",
+    "summary": "Abstract Despite significant progress in Embodied AI, current agents largely operate under generic task specifications and struggle to reason about user-specific semantics that naturally arise in human-centered environments. In domestic settings, objects are often associated with particular individuals, requiring agents to interpret personalized instructions such as ownership and preference when navigating and acting in 3D spaces. We introduce PersONAL-3D ( PERS onalized O bject N avigation A nd L ocalization), a benchmark designed to study personalized spatial reasoning in embodied environments. PersONAL-3D focuses on domestic scenarios in which an agent must navigate to target objects associated with specific individuals, given natural-language instructions such as “find Lily’s backpack” . The benchmark includes 2,000+ curated evaluation episodes across 30+ photorealistic HM3D homes. Each episode pairs a natural-language scene description that specifies object ownership with a user-specific query, requiring models to ground personalized semantics in 3D space. PersONAL-3D supports two evaluation settings: (1) Personalized Active Navigation in previously unseen environments, and (2) Personalized Object Grounding in pre-explored scenes or directly on 3D point clouds. Experiments with state-of-the-art baselines reveal a substantial gap to human performance, with the best navigation model underperforming humans by about 45 percentage points in Success Rate and 25 percentage points in Path Efficiency, indicating that current methods struggle to perceive, act, and reason over personalized information in embodied contexts. This work highlights personalization as a critical and largely unsolved challenge for embodied AI systems operating in real-world assistive scenarios.",
     "tags": [
-      "open-vocabulary",
-      "boundary/frequency",
-      "low-level"
+      "reasoning",
+      "depth/geometry"
     ],
     "score": 51
   },
@@ -15921,27 +15920,6 @@
     "score": 43
   },
   {
-    "title": "Prompt Group-Aware Training for Robust Text-Guided Nuclei Segmentation",
-    "url": "http://arxiv.org/abs/2603.06384v1",
-    "pdf": "http://arxiv.org/pdf/2603.06384v1",
-    "authors": [
-      "Yonghuang Wu",
-      "Zhenyang Liang",
-      "Wenwen Zeng",
-      "Xuan Xie",
-      "Jinhua Yu"
-    ],
-    "source": "arXiv",
-    "published": "2026-03-06",
-    "summary": "Foundation models such as Segment Anything Model 3 (SAM3) enable flexible text-guided medical image segmentation, yet their predictions remain highly sensitive to prompt formulation. Even semantically equivalent descriptions can yield inconsistent masks, limiting reliability in clinical and pathology workflows. We reformulate prompt sensitivity as a group-wise consistency problem. Semantically related prompts are organized into \\emph{prompt groups} sharing the same ground-truth mask, and a prompt group-aware training framework is introduced for robust text-guided nuclei segmentation. The approach combines (i) a quality-guided group regularization that leverages segmentation loss as an implicit ranking signal, and (ii) a logit-level consistency constraint with a stop-gradient strategy to align predictions within each group. The method requires no architectural modification and leaves inference unchanged. Extensive experiments on multi-dataset nuclei benchmarks show consistent gains under textual prompting and markedly reduced performance variance across prompt quality levels. On six zero-shot cross-dataset tasks, our method improves Dice by an average of 2.16 points. These results demonstrate improved robustness and generalization for vision-language segmentation in computational pathology.",
-    "tags": [
-      "SAM",
-      "VLM/MLLM",
-      "medical imaging"
-    ],
-    "score": 43
-  },
-  {
     "title": "Feature Purification Matters: Suppressing Outlier Propagation for Training-Free Open-Vocabulary Semantic Segmentation",
     "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jin_Feature_Purification_Matters_Suppressing_Outlier_Propagation_for_Training-Free_Open-Vocabulary_Semantic_ICCV_2025_paper.html",
     "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jin_Feature_Purification_Matters_Suppressing_Outlier_Propagation_for_Training-Free_Open-Vocabulary_Semantic_ICCV_2025_paper.pdf",
@@ -21912,6 +21890,27 @@
     "score": 39
   },
   {
+    "title": "Prompt Group-Aware Training for Robust Text-Guided Nuclei Segmentation",
+    "url": "http://arxiv.org/abs/2603.06384v1",
+    "pdf": "http://arxiv.org/pdf/2603.06384v1",
+    "authors": [
+      "Yonghuang Wu",
+      "Zhenyang Liang",
+      "Wenwen Zeng",
+      "Xuan Xie",
+      "Jinhua Yu"
+    ],
+    "source": "arXiv",
+    "published": "2026-03-06",
+    "summary": "Foundation models such as Segment Anything Model 3 (SAM3) enable flexible text-guided medical image segmentation, yet their predictions remain highly sensitive to prompt formulation. Even semantically equivalent descriptions can yield inconsistent masks, limiting reliability in clinical and pathology workflows. We reformulate prompt sensitivity as a group-wise consistency problem. Semantically related prompts are organized into \\emph{prompt groups} sharing the same ground-truth mask, and a prompt group-aware training framework is introduced for robust text-guided nuclei segmentation. The approach combines (i) a quality-guided group regularization that leverages segmentation loss as an implicit ranking signal, and (ii) a logit-level consistency constraint with a stop-gradient strategy to align predictions within each group. The method requires no architectural modification and leaves inference unchanged. Extensive experiments on multi-dataset nuclei benchmarks show consistent gains under textual prompting and markedly reduced performance variance across prompt quality levels. On six zero-shot cross-dataset tasks, our method improves Dice by an average of 2.16 points. These results demonstrate improved robustness and generalization for vision-language segmentation in computational pathology.",
+    "tags": [
+      "SAM",
+      "VLM/MLLM",
+      "medical imaging"
+    ],
+    "score": 39
+  },
+  {
     "title": "CLIP-Based Class Incremental Semantic Segmentation Framework With Generalization-Preserving Knowledge Distillation",
     "url": "https://doi.org/10.1109/tcsvt.2026.3661920",
     "pdf": "",
@@ -21926,24 +21925,6 @@
     "summary": "TCSVT article matched by title in a top journal; abstract unavailable from Crossref.",
     "tags": [
       "boundary/frequency"
-    ],
-    "score": 39
-  },
-  {
-    "title": "SAM-LLaVA: A segmentation-aware vision-language framework for industrial defect diagnosis",
-    "url": "https://doi.org/10.1016/j.patcog.2026.114242",
-    "pdf": "",
-    "authors": [
-      "Shengwang An",
-      "Chengjia Wang",
-      "Xinghui Dong"
-    ],
-    "source": "Crossref / PR / CCF-B / 顶刊 / Pattern Recognition",
-    "published": "2026-12",
-    "summary": "PR article matched by title in a top journal; abstract unavailable from Crossref.",
-    "tags": [
-      "SAM",
-      "VLM/MLLM"
     ],
     "score": 39
   },
@@ -27736,23 +27717,6 @@
     "score": 37
   },
   {
-    "title": "LandslideSegFormer: A non-local context-aware dual-branch network for accurate small-scale landslide segmentation from remote sensing imagery",
-    "url": "https://doi.org/10.1016/j.isprsjprs.2026.05.047",
-    "pdf": "",
-    "authors": [
-      "Xuemei Lee",
-      "Lin Bai",
-      "Dinghong Li"
-    ],
-    "source": "Crossref / ISPRS JPRS / 遥感顶刊 / ISPRS Journal of Photogrammetry and Remote Sensing",
-    "published": "2026-09",
-    "summary": "ISPRS JPRS article matched by title in a top journal; abstract unavailable from Crossref.",
-    "tags": [
-      "remote sensing"
-    ],
-    "score": 37
-  },
-  {
     "title": "DiffQRCoder: Diffusion-Based Aesthetic QR Code Generation with Scanning Robustness Guided Iterative Refinement",
     "url": "https://openaccess.thecvf.com/content/WACV2025/html/Liao_DiffQRCoder_Diffusion-Based_Aesthetic_QR_Code_Generation_with_Scanning_Robustness_Guided_WACV_2025_paper.html",
     "pdf": "https://openaccess.thecvf.com/content/WACV2025/papers/Liao_DiffQRCoder_Diffusion-Based_Aesthetic_QR_Code_Generation_with_Scanning_Robustness_Guided_WACV_2025_paper.pdf",
@@ -27958,26 +27922,6 @@
     "tags": [
       "VLM/MLLM",
       "reasoning"
-    ],
-    "score": 35
-  },
-  {
-    "title": "Low-cost concept-based localized explanations: How far can we get with training-free approaches?",
-    "url": "http://arxiv.org/abs/2606.29069v1",
-    "pdf": "http://arxiv.org/pdf/2606.29069v1",
-    "authors": [
-      "Darian Fernández-Gutiérrez",
-      "Rafael Bello",
-      "Marilyn Bello",
-      "Natalia Díaz-Rodríguez"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-27",
-    "summary": "Concept-based Explainable AI (C-XAI) seeks human-understandable explanations grounded in semantic concepts, yet validation is limited by the scarcity of fine-grained concept annotations. We evaluate whether mid-scale Multimodal Large Language Models (MLLMs) can perform localized concept naming under strict zero-shot conditions by assigning labels to bounding-box regions at both object and part levels. We propose a reproducible zero-shot evaluation protocol for Concept Naming (CoNa) with (i) closed-set, category-constrained prompting for moderate vocabularies and (ii) Open-CoNa, an embedding-similarity-based strategy for large label spaces. Experiments with four MLLMs (7B-32B) show consistent performance trends across datasets, reaching 62%-88% object-level exact-match accuracy, highlighting the potential of training-free concept annotation from localized regions. We discuss limitations and failure modes and release a reproducible framework to support future low-cost C-XAI research.",
-    "tags": [
-      "training-free",
-      "VLM/MLLM",
-      "diffusion"
     ],
     "score": 35
   },
@@ -46880,31 +46824,6 @@
     "score": 31
   },
   {
-    "title": "Shifting Adaptation from Weight Space to Memory Space: A Memory-Augmented Agent for Medical Image Segmentation",
-    "url": "http://arxiv.org/abs/2603.05873v1",
-    "pdf": "http://arxiv.org/pdf/2603.05873v1",
-    "authors": [
-      "Bowen Chen",
-      "Qiaohui Gao",
-      "Shaowen Wan",
-      "Shanhui Sun",
-      "Wei Liu",
-      "Xiang Li",
-      "Tianming Liu",
-      "Lin Zhao"
-    ],
-    "source": "arXiv",
-    "published": "2026-03-06",
-    "summary": "Medical image segmentation is fundamental to clinical workflows, yet models trained on a single dataset often fail to generalize across institutions, scanners, or patient populations. While vision foundation models have shown great promise in addressing this challenge, their deployment typically requires task-specific fine-tuning, which introduces substantial communication overhead in federated learning and prevents continuous knowledge evolution during deployment. In this work, we propose a memory-augmented segmentation agent (MemSeg-Agent) that shifts adaptation from weight space to memory space, enabling few-shot learning, federated supervised learning, and test-time adaptation within a unified architecture. MemSeg-Agent conditions a fixed backbone with lightweight static, few-shot, and test-time working memories, which are dynamically composed by an agentic controller. In federated settings, we update compact memory units instead of model parameters, substantially reducing communication overhead. Experiments on four public datasets demonstrate strong performance and robustness to domain shift: Static memory alone matches or surpasses strong supervised baselines with high parameter efficiency, and test-time working memory further improves in-domain and cross-domain performance without fine-tuning. Overall, MemSeg-Agent introduces a new paradigm for scalable and adaptive medical image segmentation in the era of agentic AI.",
-    "tags": [
-      "diffusion",
-      "boundary/frequency",
-      "domain adaptation",
-      "medical imaging"
-    ],
-    "score": 31
-  },
-  {
     "title": "Weakly Supervised Segmentation as Semantic-Based Regularization",
     "url": "http://arxiv.org/abs/2605.13674v2",
     "pdf": "http://arxiv.org/pdf/2605.13674v2",
@@ -56271,6 +56190,26 @@
     "tags": [
       "VLM/MLLM",
       "reasoning",
+      "diffusion"
+    ],
+    "score": 29
+  },
+  {
+    "title": "Low-cost concept-based localized explanations: How far can we get with training-free approaches?",
+    "url": "http://arxiv.org/abs/2606.29069v1",
+    "pdf": "http://arxiv.org/pdf/2606.29069v1",
+    "authors": [
+      "Darian Fernández-Gutiérrez",
+      "Rafael Bello",
+      "Marilyn Bello",
+      "Natalia Díaz-Rodríguez"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-27",
+    "summary": "Concept-based Explainable AI (C-XAI) seeks human-understandable explanations grounded in semantic concepts, yet validation is limited by the scarcity of fine-grained concept annotations. We evaluate whether mid-scale Multimodal Large Language Models (MLLMs) can perform localized concept naming under strict zero-shot conditions by assigning labels to bounding-box regions at both object and part levels. We propose a reproducible zero-shot evaluation protocol for Concept Naming (CoNa) with (i) closed-set, category-constrained prompting for moderate vocabularies and (ii) Open-CoNa, an embedding-similarity-based strategy for large label spaces. Experiments with four MLLMs (7B-32B) show consistent performance trends across datasets, reaching 62%-88% object-level exact-match accuracy, highlighting the potential of training-free concept annotation from localized regions. We discuss limitations and failure modes and release a reproducible framework to support future low-cost C-XAI research.",
+    "tags": [
+      "training-free",
+      "VLM/MLLM",
       "diffusion"
     ],
     "score": 29
@@ -87405,6 +87344,31 @@
     "summary": "We investigate a framework for train-free MRI segmentation based on Topological Data Analysis. The pipeline proceeds in three steps, first identifying the whole object to segment via automatic thresholding, then detecting a distinctive subset whose topology is known in advance, and finally deducing the various components of the segmentation. A key ingredient is the extraction of approximate representative cycles from persistence diagrams, which provides an interpretable link between persistent features and anatomical components. To clarify the method's scope, we make the underlying topological and intensity assumptions explicit, quantify when they hold on real data, and analyze typical failure modes. We evaluate the approach on glioblastoma and on fetal cortical plate segmentation, with comparisons to unsupervised and deep-learning references. By operating without large annotated datasets, the method is well suited to scarce-data settings and provides an interpretable baseline and practical initialization for expert refinement or learning-based pipelines.",
     "tags": [
       "unsupervised",
+      "medical imaging"
+    ],
+    "score": 27
+  },
+  {
+    "title": "Shifting Adaptation from Weight Space to Memory Space: A Memory-Augmented Agent for Medical Image Segmentation",
+    "url": "http://arxiv.org/abs/2603.05873v1",
+    "pdf": "http://arxiv.org/pdf/2603.05873v1",
+    "authors": [
+      "Bowen Chen",
+      "Qiaohui Gao",
+      "Shaowen Wan",
+      "Shanhui Sun",
+      "Wei Liu",
+      "Xiang Li",
+      "Tianming Liu",
+      "Lin Zhao"
+    ],
+    "source": "arXiv",
+    "published": "2026-03-06",
+    "summary": "Medical image segmentation is fundamental to clinical workflows, yet models trained on a single dataset often fail to generalize across institutions, scanners, or patient populations. While vision foundation models have shown great promise in addressing this challenge, their deployment typically requires task-specific fine-tuning, which introduces substantial communication overhead in federated learning and prevents continuous knowledge evolution during deployment. In this work, we propose a memory-augmented segmentation agent (MemSeg-Agent) that shifts adaptation from weight space to memory space, enabling few-shot learning, federated supervised learning, and test-time adaptation within a unified architecture. MemSeg-Agent conditions a fixed backbone with lightweight static, few-shot, and test-time working memories, which are dynamically composed by an agentic controller. In federated settings, we update compact memory units instead of model parameters, substantially reducing communication overhead. Experiments on four public datasets demonstrate strong performance and robustness to domain shift: Static memory alone matches or surpasses strong supervised baselines with high parameter efficiency, and test-time working memory further improves in-domain and cross-domain performance without fine-tuning. Overall, MemSeg-Agent introduces a new paradigm for scalable and adaptive medical image segmentation in the era of agentic AI.",
+    "tags": [
+      "diffusion",
+      "boundary/frequency",
+      "domain adaptation",
       "medical imaging"
     ],
     "score": 27
@@ -126002,20 +125966,24 @@
     "score": 21
   },
   {
-    "title": "Eye-Conscious Augmentation driven Multi-Granularity Regression for 3D gaze estimation",
-    "url": "https://doi.org/10.1016/j.patcog.2026.114110",
+    "title": "A Segment Anything Model adaptation framework for battery visual inspection under complex radiographic imaging conditions",
+    "url": "https://doi.org/10.1016/j.patcog.2026.114087",
     "pdf": "",
     "authors": [
-      "Shuting Ning",
-      "Xuetao Tian",
-      "Meng Zhou",
-      "Rui Li"
+      "Chun Cao",
+      "Tianyu Wang",
+      "Shiyu Lu",
+      "Mian Li",
+      "Yunlong Huang",
+      "Xi Vincent Wang",
+      "Lihui Wang"
     ],
     "source": "Crossref / PR / CCF-B / 顶刊 / Pattern Recognition",
     "published": "2026-12",
     "summary": "PR article matched by title in a top journal; abstract unavailable from Crossref.",
     "tags": [
-      "depth/geometry"
+      "SAM",
+      "diffusion"
     ],
     "score": 21
   },
