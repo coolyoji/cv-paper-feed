@@ -25,8 +25,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 DATA = ROOT / "data"
+DAILY = DOCS / "daily"
 HISTORY_FILE = DATA / "feed_history.json"
 DEEP_SOURCE_SCAN = os.environ.get("DEEP_SOURCE_SCAN", "").lower() in {"1", "true", "yes"}
+
+HIGHLIGHT_LIMIT = 5
+QUALITY_LIMIT = 10
+COD_LIMIT = 12
+BROAD_LIMIT = 12
 
 UTC8 = timezone(timedelta(hours=8))
 
@@ -430,7 +436,7 @@ def fetch_arxiv(max_results_per_query: int = 18) -> list[Paper]:
 
 def parse_cvf_listing(conf_id: str, conf_name: str, url: str) -> list[Paper]:
     try:
-        text = fetch_url(url, timeout=90)
+        text = fetch_url(url, timeout=25)
     except Exception as exc:  # pragma: no cover - network resilience
         print(f"[warn] CVF fetch failed: {conf_name}: {exc}", file=sys.stderr)
         return []
@@ -501,7 +507,7 @@ def fetch_semantic_scholar(max_results_per_query: int = 8) -> list[Paper]:
         }
         url = "https://api.semanticscholar.org/graph/v1/paper/search?" + urllib.parse.urlencode(params)
         try:
-            data = json.loads(fetch_url(url, timeout=60))
+            data = json.loads(fetch_url(url, timeout=25))
         except Exception as exc:  # pragma: no cover - network resilience
             print(f"[warn] Semantic Scholar query failed: {query}: {exc}", file=sys.stderr)
             time.sleep(1.0)
@@ -599,7 +605,7 @@ def fetch_crossref_journals(rows_per_query: int = 4) -> list[Paper]:
             }
             url = "https://api.crossref.org/works?" + urllib.parse.urlencode(params)
             try:
-                data = json.loads(fetch_url(url, timeout=60))
+                data = json.loads(fetch_url(url, timeout=25))
             except Exception as exc:  # pragma: no cover - network resilience
                 print(
                     f"[warn] Crossref query failed: {journal['short']} / {query}: {exc}",
@@ -701,12 +707,15 @@ def task_setting(paper: Paper) -> str:
 
 def method_core(paper: Paper) -> str:
     text = f"{paper.title} {paper.summary}".lower()
+    if "neural architecture search" in text or re.search(r"\bnas\b", text):
+        return "神经架构搜索/结构自动设计，重点看搜索空间、效率约束和是否适合 COD 解码器。"
+    if re.search(r"\b(segment anything|sam)\b", text):
+        return "借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。"
     cues = [
         (["counterfactual"], "反事实建模/拒识机制，用来降低误检或判断目标是否存在。"),
         (["diffusion", "generative"], "扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。"),
         (["prompt"], "提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。"),
-        (["sam", "segment anything"], "借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。"),
-        (["clip", "vision-language", "multimodal"], "视觉-语言对齐，把语义文本信息引入检测或分割。"),
+        (["clip", "vision-language", "language-grounded"], "视觉-语言对齐，把语义文本信息引入检测或分割。"),
         (["llm", "large language", "reasoning"], "多模态大模型推理，可能用于目标描述、区域判断或链式推理。"),
         (["frequency", "wavelet"], "频域/纹理特征增强，适合处理伪装背景与目标细粒度差异。"),
         (["boundary", "edge"], "边界感知建模，适合改善伪装目标轮廓不清的问题。"),
@@ -835,18 +844,22 @@ def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
         or "crossref" in p.source.lower()
     ]
 
-    cod = sorted(cod, key=lambda p: p.score, reverse=True)[:35]
-    broad = sorted(broad, key=lambda p: p.score, reverse=True)[:60]
-    quality = sorted(quality, key=lambda p: p.score, reverse=True)[:30]
+    cod = sorted(cod, key=lambda p: p.score, reverse=True)[:COD_LIMIT]
+    broad = sorted(broad, key=lambda p: p.score, reverse=True)[:BROAD_LIMIT]
+    quality = sorted(quality, key=lambda p: p.score, reverse=True)[:QUALITY_LIMIT]
     recent = [
         p
         for p in papers
         if (paper_age_days(p) is not None and paper_age_days(p) <= 30)
     ]
-    highlights = sorted(recent, key=lambda p: (p.score, p.published), reverse=True)[:12]
-    if len(highlights) < 8:
+    highlights = sorted(recent, key=lambda p: (p.score, p.published), reverse=True)[:HIGHLIGHT_LIMIT]
+    if len(highlights) < HIGHLIGHT_LIMIT:
         fallback = [p for p in papers if p not in highlights]
-        highlights.extend(sorted(fallback, key=lambda p: p.score, reverse=True)[: 12 - len(highlights)])
+        highlights.extend(
+            sorted(fallback, key=lambda p: p.score, reverse=True)[
+                : HIGHLIGHT_LIMIT - len(highlights)
+            ]
+        )
     return {
         "highlights": highlights,
         "quality": quality,
@@ -949,14 +962,28 @@ def make_snapshot(papers: list[Paper], now: datetime) -> dict:
     }
 
 
+def snapshot_sort_key(snapshot: dict) -> str:
+    return snapshot.get("generated_at") or snapshot.get("date") or ""
+
+
+def collapse_history_by_date(history: list[dict]) -> list[dict]:
+    collapsed: list[dict] = []
+    seen_dates: set[str] = set()
+    for item in sorted(history, key=snapshot_sort_key, reverse=True):
+        date_text = item.get("date") or str(item.get("generated_at", ""))[:10]
+        if not date_text or date_text in seen_dates:
+            continue
+        item["date"] = date_text
+        seen_dates.add(date_text)
+        collapsed.append(item)
+    return collapsed
+
+
 def update_history(papers: list[Paper], now: datetime) -> list[dict]:
     snapshot = make_snapshot(papers, now)
-    history = [
-        item
-        for item in load_history()
-        if item.get("generated_at") != snapshot["generated_at"]
-    ]
+    history = [item for item in load_history() if item.get("date") != snapshot["date"]]
     history.insert(0, snapshot)
+    history = collapse_history_by_date(history)
     HISTORY_FILE.write_text(
         json.dumps(history, ensure_ascii=False, indent=2),
         encoding="utf-8",
@@ -977,9 +1004,10 @@ def snapshot_sections(snapshot: dict) -> dict[str, list[Paper]]:
     }
 
 
-def render_markdown(history: list[dict]) -> str:
+def render_snapshot_markdown(snapshot: dict) -> str:
     now = datetime.now(UTC8)
-    current = history[0] if history else {
+    current = snapshot or {
+        "date": now.strftime("%Y-%m-%d"),
         "generated_at": now.strftime("%Y-%m-%d %H:%M"),
         "total_selected": 0,
         "sections": {},
@@ -989,19 +1017,19 @@ def render_markdown(history: list[dict]) -> str:
     quality = sections["quality"]
     cod = sections["cod"]
     broad = sections["broad"]
-    history_items = history[1:]
+    date_text = current.get("date", now.strftime("%Y-%m-%d"))
 
     lines = [
-        "# Daily CV Paper Feed",
+        f"# {date_text} CV Paper Feed",
+        "",
+        "[返回首页](../index.html)",
         "",
         f"Last updated: {current.get('generated_at', now.strftime('%Y-%m-%d %H:%M'))} Asia/Shanghai",
-        f"Archive days kept: {len(history)}",
+        f"Candidate pool: {current.get('total_selected', 0)} papers",
         "",
-        "This page tracks new and useful computer-vision papers, with COD/camouflaged object detection kept as the primary reading thread and broader CV methods included for inspiration.",
+        f"慢读模式：本页只展示 {HIGHLIGHT_LIMIT} 篇当日精读、{QUALITY_LIMIT} 篇高质量来源、{COD_LIMIT} 篇 COD 相关、{BROAD_LIMIT} 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。",
         "",
-        "历史更新不会被删除；如果当天没看完，可以继续往下翻到对应日期。",
-        "",
-        "## 今日优先读：近 30 天新文献优先",
+        "## 当日精读队列",
         "",
     ]
     for i, paper in enumerate(highlights, 1):
@@ -1022,36 +1050,6 @@ def render_markdown(history: list[dict]) -> str:
     for i, paper in enumerate(broad, 1):
         lines.append(md_paper_item(i, paper))
         lines.append("")
-
-    if history_items:
-        lines.extend(["## 历史更新归档", ""])
-        for item in history_items:
-            generated_at = item.get("generated_at", item.get("date", ""))
-            sections = snapshot_sections(item)
-            lines.append(f"## {generated_at} 更新")
-            lines.append("")
-            lines.append(f"Selected papers: {item.get('total_selected', 0)}")
-            lines.append("")
-            lines.append("### 当日优先读")
-            lines.append("")
-            for i, paper in enumerate(sections["highlights"], 1):
-                lines.append(md_paper_item(i, paper))
-                lines.append("")
-            lines.append("### 当日高质量来源优先读")
-            lines.append("")
-            for i, paper in enumerate(sections["quality"], 1):
-                lines.append(md_paper_item(i, paper))
-                lines.append("")
-            lines.append("### 当日 COD / 伪装目标检测相关")
-            lines.append("")
-            for i, paper in enumerate(sections["cod"], 1):
-                lines.append(md_paper_item(i, paper))
-                lines.append("")
-            lines.append("### 当日泛计算机视觉方法池")
-            lines.append("")
-            for i, paper in enumerate(sections["broad"], 1):
-                lines.append(md_paper_item(i, paper))
-                lines.append("")
 
     lines.extend(
         [
@@ -1074,6 +1072,57 @@ def render_markdown(history: list[dict]) -> str:
             "- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, Medical Image Analysis.",
             "",
             "说明：自动简介是基于题名、摘要和来源的初筛笔记，不等同于阅读全文后的结论；精读时建议再核对 method、experiment 和 limitation。",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def render_markdown(history: list[dict]) -> str:
+    history = collapse_history_by_date(history)
+    now = datetime.now(UTC8)
+    current = history[0] if history else {
+        "date": now.strftime("%Y-%m-%d"),
+        "generated_at": now.strftime("%Y-%m-%d %H:%M"),
+        "total_selected": 0,
+    }
+    lines = [
+        "# Daily CV Paper Feed",
+        "",
+        f"Last updated: {current.get('generated_at', now.strftime('%Y-%m-%d %H:%M'))} Asia/Shanghai",
+        f"Archive days kept: {len(history)}",
+        "",
+        "这是文献日报目录页。每天更新会生成一个独立文件，文件名就是日期；想看哪一天，直接点对应日期即可。",
+        "",
+        "## 最新日报",
+        "",
+        f"- [{current.get('date', now.strftime('%Y-%m-%d'))} HTML](daily/{current.get('date', now.strftime('%Y-%m-%d'))}.html) / [Markdown](daily/{current.get('date', now.strftime('%Y-%m-%d'))}.md)",
+        "",
+        "## 每日文件",
+        "",
+    ]
+    for item in history:
+        date_text = item.get("date", str(item.get("generated_at", ""))[:10])
+        generated_at = item.get("generated_at", date_text)
+        total = item.get("total_selected", 0)
+        lines.append(
+            f"- [{date_text}](daily/{date_text}.html) / [md](daily/{date_text}.md) - {generated_at}，候选池 {total} 篇"
+        )
+    lines.extend(
+        [
+            "",
+            "## 阅读节奏",
+            "",
+            f"- 每日页面默认只展示少量精选：{HIGHLIGHT_LIMIT} 篇精读、{QUALITY_LIMIT} 篇高质量来源、{COD_LIMIT} 篇 COD、{BROAD_LIMIT} 篇泛视觉。",
+            "- 旧日报不会被覆盖；同一天重复更新只刷新当天文件。",
+            "- 后台仍保留完整候选池，方便以后需要时再扩展检索。",
+            "",
+            "## 数据源",
+            "",
+            "- arXiv API",
+            "- CVF OpenAccess",
+            "- Semantic Scholar Graph API",
+            "- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, Medical Image Analysis",
             "",
         ]
     )
@@ -1213,6 +1262,21 @@ def render_html(markdown_text: str) -> str:
 """
 
 
+def write_daily_files(history: list[dict]) -> None:
+    DAILY.mkdir(exist_ok=True)
+    for snapshot in collapse_history_by_date(history):
+        date_text = snapshot.get("date", str(snapshot.get("generated_at", ""))[:10])
+        if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_text):
+            continue
+        md = render_snapshot_markdown(snapshot)
+        (DAILY / f"{date_text}.md").write_text(md, encoding="utf-8", newline="\n")
+        (DAILY / f"{date_text}.html").write_text(
+            render_html(md),
+            encoding="utf-8",
+            newline="\n",
+        )
+
+
 def markdown_inline(text: str) -> str:
     text = html.escape(text)
     text = re.sub(r"\*\*(.*?)\*\*", r"<strong>\1</strong>", text)
@@ -1223,6 +1287,7 @@ def markdown_inline(text: str) -> str:
 def main() -> None:
     DATA.mkdir(exist_ok=True)
     DOCS.mkdir(exist_ok=True)
+    DAILY.mkdir(exist_ok=True)
 
     print("[info] fetching arXiv")
     papers = fetch_arxiv()
@@ -1251,6 +1316,7 @@ def main() -> None:
     md = render_markdown(history)
     (DOCS / "literature.md").write_text(md, encoding="utf-8", newline="\n")
     (DOCS / "index.html").write_text(render_html(md), encoding="utf-8", newline="\n")
+    write_daily_files(history)
 
     serializable = [paper_to_dict(paper) for paper in papers]
     (DATA / "latest_papers.json").write_text(
@@ -1260,6 +1326,7 @@ def main() -> None:
     )
     print(f"[info] selected papers: {len(papers)}")
     print(f"[info] wrote {(DOCS / 'index.html')}")
+    print(f"[info] wrote daily files under {DAILY}")
 
 
 if __name__ == "__main__":
