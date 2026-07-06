@@ -25,7 +25,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 DATA = ROOT / "data"
-DAILY = DOCS / "daily"
+DAILY_MD = DOCS / "md"
+DAILY_HTML = DOCS / "html"
 HISTORY_FILE = DATA / "feed_history.json"
 DEEP_SOURCE_SCAN = os.environ.get("DEEP_SOURCE_SCAN", "").lower() in {"1", "true", "yes"}
 
@@ -1092,13 +1093,13 @@ def render_markdown(history: list[dict]) -> str:
         f"Last updated: {current.get('generated_at', now.strftime('%Y-%m-%d %H:%M'))} Asia/Shanghai",
         f"Archive days kept: {len(history)}",
         "",
-        "这是文献日报目录页。每天更新会生成一个独立文件，文件名就是日期；想看哪一天，直接点对应日期即可。",
+        "这是文献日报目录页。每天更新会生成一个独立 Markdown 文件，文件名就是日期；想看哪一天，直接点对应日期即可。HTML 文件单独放在 html/ 目录，仅作为网页预览备用。",
         "",
         "## 最新日报",
         "",
-        f"- [{current.get('date', now.strftime('%Y-%m-%d'))} HTML](daily/{current.get('date', now.strftime('%Y-%m-%d'))}.html) / [Markdown](daily/{current.get('date', now.strftime('%Y-%m-%d'))}.md)",
+        f"- [{current.get('date', now.strftime('%Y-%m-%d'))} Markdown](md/{current.get('date', now.strftime('%Y-%m-%d'))}.md) / [HTML 预览](html/{current.get('date', now.strftime('%Y-%m-%d'))}.html)",
         "",
-        "## 每日文件",
+        "## 每日 Markdown 文件",
         "",
     ]
     for item in history:
@@ -1106,7 +1107,7 @@ def render_markdown(history: list[dict]) -> str:
         generated_at = item.get("generated_at", date_text)
         total = item.get("total_selected", 0)
         lines.append(
-            f"- [{date_text}](daily/{date_text}.html) / [md](daily/{date_text}.md) - {generated_at}，候选池 {total} 篇"
+            f"- [{date_text}](md/{date_text}.md) / [html](html/{date_text}.html) - {generated_at}，候选池 {total} 篇"
         )
     lines.extend(
         [
@@ -1114,7 +1115,7 @@ def render_markdown(history: list[dict]) -> str:
             "## 阅读节奏",
             "",
             f"- 每日页面默认只展示少量精选：{HIGHLIGHT_LIMIT} 篇精读、{QUALITY_LIMIT} 篇高质量来源、{COD_LIMIT} 篇 COD、{BROAD_LIMIT} 篇泛视觉。",
-            "- 旧日报不会被覆盖；同一天重复更新只刷新当天文件。",
+            "- 旧 Markdown 日报不会被覆盖；同一天重复更新只刷新当天文件。",
             "- 后台仍保留完整候选池，方便以后需要时再扩展检索。",
             "",
             "## 数据源",
@@ -1263,14 +1264,15 @@ def render_html(markdown_text: str) -> str:
 
 
 def write_daily_files(history: list[dict]) -> None:
-    DAILY.mkdir(exist_ok=True)
+    DAILY_MD.mkdir(exist_ok=True)
+    DAILY_HTML.mkdir(exist_ok=True)
     for snapshot in collapse_history_by_date(history):
         date_text = snapshot.get("date", str(snapshot.get("generated_at", ""))[:10])
         if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_text):
             continue
         md = render_snapshot_markdown(snapshot)
-        (DAILY / f"{date_text}.md").write_text(md, encoding="utf-8", newline="\n")
-        (DAILY / f"{date_text}.html").write_text(
+        (DAILY_MD / f"{date_text}.md").write_text(md, encoding="utf-8", newline="\n")
+        (DAILY_HTML / f"{date_text}.html").write_text(
             render_html(md),
             encoding="utf-8",
             newline="\n",
@@ -1287,7 +1289,8 @@ def markdown_inline(text: str) -> str:
 def main() -> None:
     DATA.mkdir(exist_ok=True)
     DOCS.mkdir(exist_ok=True)
-    DAILY.mkdir(exist_ok=True)
+    DAILY_MD.mkdir(exist_ok=True)
+    DAILY_HTML.mkdir(exist_ok=True)
 
     print("[info] fetching arXiv")
     papers = fetch_arxiv()
@@ -1326,7 +1329,8 @@ def main() -> None:
     )
     print(f"[info] selected papers: {len(papers)}")
     print(f"[info] wrote {(DOCS / 'index.html')}")
-    print(f"[info] wrote daily files under {DAILY}")
+    print(f"[info] wrote Markdown files under {DAILY_MD}")
+    print(f"[info] wrote HTML previews under {DAILY_HTML}")
 
 
 if __name__ == "__main__":

@@ -28,4 +28,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update daily literature feed"
-          file_pattern: "docs/index.html docs/literature.md docs/daily/*.html docs/daily/*.md data/latest_papers.json data/feed_history.json"
+          file_pattern: "docs/index.html docs/literature.md docs/md/*.md docs/html/*.html data/latest_papers.json data/feed_history.json"
