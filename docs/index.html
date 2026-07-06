@@ -70,7 +70,7 @@
 <body>
 <main>
 <h1>Daily CV Paper Feed</h1>
-<p>Last updated: 2026-07-05 13:08 Asia/Shanghai</p>
+<p>Last updated: 2026-07-06 13:23 Asia/Shanghai</p>
 <p>Archive days kept: 4</p>
 <p>This page tracks new and useful computer-vision papers, with COD/camouflaged object detection kept as the primary reading thread and broader CV methods included for inspiration.</p>
 <p>历史更新不会被删除；如果当天没看完，可以继续往下翻到对应日期。</p>
@@ -120,22 +120,6 @@
 <p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
 <p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-28</p>
-<p class='meta'>Authors: Hang Su, Chao Sun, Zhaofan Li, Wei Hu, Juhua Liu et al.</p>
-<p class='meta'>Tags: VLM/MLLM, medical imaging</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.29586v1">paper</a> / <a href="http://arxiv.org/pdf/2606.29586v1">pdf</a></p>
-<p class='meta'>论文：SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis</p>
-<p class='meta'>一句话总结：Vision-language foundation models have shown strong potential in medical image analysis. Although foundation models for ultrasound imaging have recently emerged, the domain remains particularly challenging due...</p>
-<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
@@ -217,6 +201,22 @@
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-28</p>
+<p class='meta'>Authors: Hang Su, Chao Sun, Zhaofan Li, Wei Hu, Juhua Liu et al.</p>
+<p class='meta'>Tags: VLM/MLLM, medical imaging</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.29586v1">paper</a> / <a href="http://arxiv.org/pdf/2606.29586v1">pdf</a></p>
+<p class='meta'>论文：SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis</p>
+<p class='meta'>一句话总结：Vision-language foundation models have shown strong potential in medical image analysis. Although foundation models for ultrasound imaging have recently emerged, the domain remains particularly challenging due...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
@@ -605,6 +605,22 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
+<h3><strong>From Gaze to Insight: Bridging Human Visual Attention and Vision Language Model Explanation for Weakly-Supervised Medical Image Segmentation</strong></h3>
+<p class='meta'>Source: Semantic Scholar / IEEE Transactions on Medical Imaging / citations 16, 2025-04-15</p>
+<p class='meta'>Authors: Jingkun Chen, Haoran Duan, Xiao Zhang, Boyang Gao, Vicente Grau et al.</p>
+<p class='meta'>Tags: unsupervised, VLM/MLLM, medical imaging</p>
+<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/1a82752a5b9c39f41f6b275cebee1dce882348be">paper</a></p>
+<p class='meta'>论文：From Gaze to Insight: Bridging Human Visual Attention and Vision Language Model Explanation for Weakly-Supervised Medical Image Segmentation</p>
+<p class='meta'>一句话总结：Medical image segmentation remains challenging due to the high cost of pixel-level annotations for training. In the context of weak supervision, clinician gaze data captures regions of diagnostic interest; how...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
 <h3><strong>Rethinking Decoder Design: Improving Biomarker Segmentation Using Depth-to-Space Restoration and Residual Linear Attention</strong></h3>
 <p class='meta'>Source: CVPR 2025, 2025</p>
 <p class='meta'>Authors: Saad Wazir, Daeyoung Kim</p>
@@ -731,22 +747,6 @@
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
 <p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
-</article>
-<article class='paper'>
-<h3><strong>FE-CLIP: Frequency Enhanced CLIP Model for Zero-Shot Anomaly Detection and Segmentation</strong></h3>
-<p class='meta'>Source: ICCV 2025, 2025</p>
-<p class='meta'>Authors: Tao Gong, Qi Chu, Bin Liu, Wei Zhou, Nenghai Yu</p>
-<p class='meta'>Tags: boundary/frequency, anomaly/OOD</p>
-<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Gong_FE-CLIP_Frequency_Enhanced_CLIP_Model_for_Zero-Shot_Anomaly_Detection_and_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Gong_FE-CLIP_Frequency_Enhanced_CLIP_Model_for_Zero-Shot_Anomaly_Detection_and_ICCV_2025_paper.pdf">pdf</a></p>
-<p class='meta'>论文：FE-CLIP: Frequency Enhanced CLIP Model for Zero-Shot Anomaly Detection and Segmentation</p>
-<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
-<p class='meta'>任务设定：异常检测或分布外识别，可类比伪装目标的弱异常发现。</p>
-<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
-<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
-<p class='meta'>可借鉴点：边界/频域增强模块；跨域鲁棒性、不确定性或异常分数。</p>
-<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <h2>COD / 伪装目标检测相关</h2>
 <article class='paper'>
@@ -1391,22 +1391,6 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
-<h3><strong>SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-28</p>
-<p class='meta'>Authors: Hang Su, Chao Sun, Zhaofan Li, Wei Hu, Juhua Liu et al.</p>
-<p class='meta'>Tags: VLM/MLLM, medical imaging</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.29586v1">paper</a> / <a href="http://arxiv.org/pdf/2606.29586v1">pdf</a></p>
-<p class='meta'>论文：SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis</p>
-<p class='meta'>一句话总结：Vision-language foundation models have shown strong potential in medical image analysis. Although foundation models for ultrasound imaging have recently emerged, the domain remains particularly challenging due...</p>
-<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
 <h3><strong>M$^4$-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection</strong></h3>
 <p class='meta'>Source: arXiv, 2026-05-12</p>
 <p class='meta'>Authors: Jiyuan Liu, Jia Lin, Xiaofei Zhou, Runmin Cong, Deyang Liu et al.</p>
@@ -1532,6 +1516,22 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-28</p>
+<p class='meta'>Authors: Hang Su, Chao Sun, Zhaofan Li, Wei Hu, Juhua Liu et al.</p>
+<p class='meta'>Tags: VLM/MLLM, medical imaging</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.29586v1">paper</a> / <a href="http://arxiv.org/pdf/2606.29586v1">pdf</a></p>
+<p class='meta'>论文：SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis</p>
+<p class='meta'>一句话总结：Vision-language foundation models have shown strong potential in medical image analysis. Although foundation models for ultrasound imaging have recently emerged, the domain remains particularly challenging due...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
@@ -2079,6 +2079,22 @@
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>
+<h3><strong>Unifying Foundation Model and Segment Anything Model for Remote Sensing Weakly Supervised Semantic Segmentation</strong></h3>
+<p class='meta'>Source: Semantic Scholar / IEEE International Conference on Systems, Man and Cybernetics, 2025-10-05</p>
+<p class='meta'>Authors: Jinfeng Cui, Ming-Tai Wu, Zhi Li, Liang Yao, Yijun Wang et al.</p>
+<p class='meta'>Tags: unsupervised, SAM, boundary/frequency, remote sensing</p>
+<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/223e6d44e3152b647214e46d0ff681eba86e86d8">paper</a></p>
+<p class='meta'>论文：Unifying Foundation Model and Segment Anything Model for Remote Sensing Weakly Supervised Semantic Segmentation</p>
+<p class='meta'>一句话总结：Due to its reliance on fewer precise annotations, weakly supervised semantic segmentation (WSSS) techniques are in high demand in the field of remote sensing (RS) image processing. Despite mainstream WSSS appr...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
 <h3><strong>SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling</strong></h3>
 <p class='meta'>Source: arXiv, 2026-02-26</p>
 <p class='meta'>Authors: Camile Lendering, Erkut Akdag, Egor Bondarev</p>
@@ -2236,22 +2252,6 @@
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
-</article>
-<article class='paper'>
-<h3><strong>SVHighlights: Towards Extremely Long Sport Video Highlight Detection</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-05</p>
-<p class='meta'>Authors: Donggyu Lee, Youngbin Ki, Jeonghun Kang, Taehwan Kim</p>
-<p class='meta'>Tags: training-free, reasoning, boundary/frequency, video, saliency/transparent</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.06926v2">paper</a> / <a href="http://arxiv.org/pdf/2606.06926v2">pdf</a></p>
-<p class='meta'>论文：SVHighlights: Towards Extremely Long Sport Video Highlight Detection</p>
-<p class='meta'>一句话总结：While highlight detection for long-form videos is of great practical importance, most existing methods remain limited to short-form content, largely due to the absence of a suitable benchmark. To bridge this g...</p>
-<p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
-<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。</p>
-<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。</p>
-<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
 <p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
 </article>
 <article class='paper'>

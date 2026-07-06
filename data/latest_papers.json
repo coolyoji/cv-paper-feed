@@ -2277,27 +2277,6 @@
     "score": 89
   },
   {
-    "title": "SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis",
-    "url": "http://arxiv.org/abs/2606.29586v1",
-    "pdf": "http://arxiv.org/pdf/2606.29586v1",
-    "authors": [
-      "Hang Su",
-      "Chao Sun",
-      "Zhaofan Li",
-      "Wei Hu",
-      "Juhua Liu",
-      "Bo Du"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-28",
-    "summary": "Vision-language foundation models have shown strong potential in medical image analysis. Although foundation models for ultrasound imaging have recently emerged, the domain remains particularly challenging due to severe speckle noise, acquisition variability, and subtle anatomical boundaries, leading to high inter-observer variability. Existing CLIP-based models rely primarily on global image-text alignment, limiting their sensitivity to clinically decisive local structures. We propose SonoCLIP, the first million-scale region-controllable fetal ultrasound vision-language foundation model that integrates segmentation masks as mask-channel visual prompts within the vision encoder, enabling joint global-local contrastive representation learning. To support scalable region-text alignment, we introduce a sigmoid-based pairwise contrastive loss that improves stability under large-scale supervision. We further curate a 1.44M-image multimodal fetal ultrasound dataset spanning 24 standard planes for large-scale pretraining. Extensive cross-center evaluations demonstrate that SonoCLIP achieves superior zero-shot transfer performance under both global and mask-guided inference, establishing a controllable and clinically oriented foundation model for fetal ultrasound analysis. Our code and data are available at https://github.com/Harrison-one/SonoCLIP.",
-    "tags": [
-      "VLM/MLLM",
-      "medical imaging"
-    ],
-    "score": 89
-  },
-  {
     "title": "Concealed Object Detection",
     "url": "http://arxiv.org/abs/2102.10274v2",
     "pdf": "http://arxiv.org/pdf/2102.10274v2",
@@ -2601,6 +2580,27 @@
       "diffusion",
       "boundary/frequency",
       "depth/geometry"
+    ],
+    "score": 83
+  },
+  {
+    "title": "SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis",
+    "url": "http://arxiv.org/abs/2606.29586v1",
+    "pdf": "http://arxiv.org/pdf/2606.29586v1",
+    "authors": [
+      "Hang Su",
+      "Chao Sun",
+      "Zhaofan Li",
+      "Wei Hu",
+      "Juhua Liu",
+      "Bo Du"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-28",
+    "summary": "Vision-language foundation models have shown strong potential in medical image analysis. Although foundation models for ultrasound imaging have recently emerged, the domain remains particularly challenging due to severe speckle noise, acquisition variability, and subtle anatomical boundaries, leading to high inter-observer variability. Existing CLIP-based models rely primarily on global image-text alignment, limiting their sensitivity to clinically decisive local structures. We propose SonoCLIP, the first million-scale region-controllable fetal ultrasound vision-language foundation model that integrates segmentation masks as mask-channel visual prompts within the vision encoder, enabling joint global-local contrastive representation learning. To support scalable region-text alignment, we introduce a sigmoid-based pairwise contrastive loss that improves stability under large-scale supervision. We further curate a 1.44M-image multimodal fetal ultrasound dataset spanning 24 standard planes for large-scale pretraining. Extensive cross-center evaluations demonstrate that SonoCLIP achieves superior zero-shot transfer performance under both global and mask-guided inference, establishing a controllable and clinically oriented foundation model for fetal ultrasound analysis. Our code and data are available at https://github.com/Harrison-one/SonoCLIP.",
+    "tags": [
+      "VLM/MLLM",
+      "medical imaging"
     ],
     "score": 83
   },
@@ -3436,6 +3436,30 @@
     "score": 76
   },
   {
+    "title": "Unifying Foundation Model and Segment Anything Model for Remote Sensing Weakly Supervised Semantic Segmentation",
+    "url": "https://www.semanticscholar.org/paper/223e6d44e3152b647214e46d0ff681eba86e86d8",
+    "pdf": "",
+    "authors": [
+      "Jinfeng Cui",
+      "Ming-Tai Wu",
+      "Zhi Li",
+      "Liang Yao",
+      "Yijun Wang",
+      "Guoyan Xu",
+      "Fan Liu"
+    ],
+    "source": "Semantic Scholar / IEEE International Conference on Systems, Man and Cybernetics",
+    "published": "2025-10-05",
+    "summary": "Due to its reliance on fewer precise annotations, weakly supervised semantic segmentation (WSSS) techniques are in high demand in the field of remote sensing (RS) image processing. Despite mainstream WSSS approaches achieve remarkable dense prediction accuracies, they still face challenges such as insufficient pre-trained and ambiguous segment predictions. To this end, we propose to improve the accuracy of weakly supervised semantic segmentation by unifying the vision language foundation model and the Segment Anything Model (SAM). Specifically, we leverage a remote sensing vision language foundational model, RemoteCLIP, to provide sufficient pre-trained knowledge. Subsequently, we employ a decoder to transform the high-level feature representations extracted by RemoteCLIP into the segmentation predictions. Then, we introduce a multi-prompt fusion (MPF) approach via the Segment Anything Model (SAM) to obtain high-quality segment results with well-defined boundaries. To the best of our knowledge, this is the first study to apply a unified framework of foundation model and Segment Anything Model for RS WSSS. Experimental results demonstrate that our method achieves remarkable performance across three remote sensing datasets.",
+    "tags": [
+      "unsupervised",
+      "SAM",
+      "boundary/frequency",
+      "remote sensing"
+    ],
+    "score": 76
+  },
+  {
     "title": "RUN: Reversible Unfolding Network for Concealed Object Segmentation",
     "url": "http://arxiv.org/abs/2501.18783v2",
     "pdf": "http://arxiv.org/pdf/2501.18783v2",
@@ -3703,28 +3727,6 @@
     "score": 72
   },
   {
-    "title": "SVHighlights: Towards Extremely Long Sport Video Highlight Detection",
-    "url": "http://arxiv.org/abs/2606.06926v2",
-    "pdf": "http://arxiv.org/pdf/2606.06926v2",
-    "authors": [
-      "Donggyu Lee",
-      "Youngbin Ki",
-      "Jeonghun Kang",
-      "Taehwan Kim"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-05",
-    "summary": "While highlight detection for long-form videos is of great practical importance, most existing methods remain limited to short-form content, largely due to the absence of a suitable benchmark. To bridge this gap, we introduce SVHighlights, to the best of our knowledge, the first benchmark for highlight detection in extremely long sports videos, each exceeding one hour in duration, across multiple sports categories. SVHighlights is constructed from pairs of full-length sports videos and their corresponding official highlight videos using a dataset generation pipeline, enabling scalable label generation without conventional per-clip saliency annotation. The benchmark comprises 320 videos with an average duration of 2.00 hours and a total of 640.18 hours, substantially exceeding previous datasets. Existing methods also face fundamental challenges on long videos: models trained on short clips fail to generalize to hour-long content, and their clip-level scoring lacks the broader context needed to identify highlights. To address this and provide a strong baseline, we present TF-SELECTOR, a training-free segment-based approach that divides each video into context-aware segments by merging adjacent shots sharing the same semantic content, and predicts segment-level saliency scores using a large language model with multimodal inputs including visual captions, transcripts, and audio volume. Experiments demonstrate that TF-SELECTOR achieves superior performance across most metrics compared to Video Temporal Grounding (VTG)-tuned baselines, with improvements of +2.50 in HIT@1, +4.04 in HIT@K, and +2.95 in IoU. These results establish SVHighlights as a challenging testbed for long-form highlight detection and demonstrate that a simple segment-based strategy can effectively scale to hour-long videos.",
-    "tags": [
-      "training-free",
-      "reasoning",
-      "boundary/frequency",
-      "video",
-      "saliency/transparent"
-    ],
-    "score": 71
-  },
-  {
     "title": "Flood Mapping from RGB imagery using a Vision Foundation Model",
     "url": "http://arxiv.org/abs/2606.24120v1",
     "pdf": "http://arxiv.org/pdf/2606.24120v1",
@@ -3860,6 +3862,28 @@
     "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
     "tags": [
       "depth/geometry"
+    ],
+    "score": 70
+  },
+  {
+    "title": "From Gaze to Insight: Bridging Human Visual Attention and Vision Language Model Explanation for Weakly-Supervised Medical Image Segmentation",
+    "url": "https://www.semanticscholar.org/paper/1a82752a5b9c39f41f6b275cebee1dce882348be",
+    "pdf": "",
+    "authors": [
+      "Jingkun Chen",
+      "Haoran Duan",
+      "Xiao Zhang",
+      "Boyang Gao",
+      "Vicente Grau",
+      "Jungong Han"
+    ],
+    "source": "Semantic Scholar / IEEE Transactions on Medical Imaging / citations 16",
+    "published": "2025-04-15",
+    "summary": "Medical image segmentation remains challenging due to the high cost of pixel-level annotations for training. In the context of weak supervision, clinician gaze data captures regions of diagnostic interest; however, its sparsity limits its use for segmentation. In contrast, vision-language models (VLMs) provide semantic context through textual descriptions but lack the explanation precision required. Recognizing that neither source alone suffices, we propose a teacher-student framework that integrates both gaze and language supervision, leveraging their complementary strengths. Our key insight is that gaze data indicates “where” clinicians focus during diagnosis, while VLMs explain “why” those regions are significant. To implement this, the teacher model first learns from gaze points enhanced by VLM-generated descriptions of lesion morphology, establishing a foundation for guiding the student model. The teacher then directs the student through three strategies: 1) Multi-scale feature alignment to fuse visual cues with textual semantics; 2) Confidence-weighted consistency constraints to focus on reliable predictions; 3) Adaptive masking to limit error propagation in uncertain areas. Experiments on the Kvasir-SEG, NCI-ISBI, and ISIC datasets show that our method achieves Dice scores of 80.78%, 80.53%, and 84.22%, respectively—improving 3–5% over gaze baselines without increasing the annotation burden. By preserving correlations among predictions, gaze data, and lesion descriptions, our framework also maintains clinical interpretability. This work illustrates how integrating human visual attention with AI-generated semantic context can effectively overcome the limitations of individual weak supervision signals, thereby advancing the development of deployable, annotation-efficient medical AI systems. Code is available at: https://github.com/jingkunchen/FGI",
+    "tags": [
+      "unsupervised",
+      "VLM/MLLM",
+      "medical imaging"
     ],
     "score": 70
   },
@@ -4088,6 +4112,28 @@
       "open-vocabulary",
       "training-free",
       "SAM"
+    ],
+    "score": 67
+  },
+  {
+    "title": "SVHighlights: Towards Extremely Long Sport Video Highlight Detection",
+    "url": "http://arxiv.org/abs/2606.06926v2",
+    "pdf": "http://arxiv.org/pdf/2606.06926v2",
+    "authors": [
+      "Donggyu Lee",
+      "Youngbin Ki",
+      "Jeonghun Kang",
+      "Taehwan Kim"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-05",
+    "summary": "While highlight detection for long-form videos is of great practical importance, most existing methods remain limited to short-form content, largely due to the absence of a suitable benchmark. To bridge this gap, we introduce SVHighlights, to the best of our knowledge, the first benchmark for highlight detection in extremely long sports videos, each exceeding one hour in duration, across multiple sports categories. SVHighlights is constructed from pairs of full-length sports videos and their corresponding official highlight videos using a dataset generation pipeline, enabling scalable label generation without conventional per-clip saliency annotation. The benchmark comprises 320 videos with an average duration of 2.00 hours and a total of 640.18 hours, substantially exceeding previous datasets. Existing methods also face fundamental challenges on long videos: models trained on short clips fail to generalize to hour-long content, and their clip-level scoring lacks the broader context needed to identify highlights. To address this and provide a strong baseline, we present TF-SELECTOR, a training-free segment-based approach that divides each video into context-aware segments by merging adjacent shots sharing the same semantic content, and predicts segment-level saliency scores using a large language model with multimodal inputs including visual captions, transcripts, and audio volume. Experiments demonstrate that TF-SELECTOR achieves superior performance across most metrics compared to Video Temporal Grounding (VTG)-tuned baselines, with improvements of +2.50 in HIT@1, +4.04 in HIT@K, and +2.95 in IoU. These results establish SVHighlights as a challenging testbed for long-form highlight detection and demonstrate that a simple segment-based strategy can effectively scale to hour-long videos.",
+    "tags": [
+      "training-free",
+      "reasoning",
+      "boundary/frequency",
+      "video",
+      "saliency/transparent"
     ],
     "score": 67
   },
@@ -5623,29 +5669,6 @@
     "summary": "Visual-to-Code generation, which transforms scientific plots, vector graphics, and webpages into executable scripts, demands a level of pixel-precise alignment that standard Multimodal Large Language Models (MLLMs) fail to achieve through Supervised Fine-Tuning (SFT) alone. While Reinforcement Learning (RL) offers a theoretical pathway to bridge this gap, its application is hindered by two fundamental obstacles: (1) \\textit{Reward Coarseness}, where semantic metrics like CLIP scores fail to penalize fine-grained element deviations, and (2) \\textit{Exploration Stagnation}, where the sparse, heterogeneous code search space prevents the policy from bootstrapping valid trajectories. To overcome these limitations, we introduce UniCoder, a unified RL framework that integrates two novel mechanisms. First, we propose \\textbf{Symbolic Attribute Alignment}, which employs a lightweight auxiliary LLM to parse generated code into discrete visual attributes (e.g., hex colors, coordinate limits), enabling dense, element-wise reward computation. Second, to escape local optima, we devise \\textbf{Reference-Guided Code Optimization}, a strategy that dynamically injects ground-truth trajectories into low-performing rollout groups, transforming blind exploration into guided policy improvement. Extensive experiments on ChartMimic, UniSVG, Design2Code and ScreenBench benchmarks demonstrate that our 8B-parameter model not only surpasses all open-source baselines but also achieves state-of-the-art performance comparable to proprietary models, establishing a new paradigm for generalized visual-to-code synthesis.",
     "tags": [
       "VLM/MLLM"
-    ],
-    "score": 59
-  },
-  {
-    "title": "Enhancing Part-Level Point Grounding for Any Open-Source MLLMs",
-    "url": "http://arxiv.org/abs/2606.29267v1",
-    "pdf": "http://arxiv.org/pdf/2606.29267v1",
-    "authors": [
-      "Jin-Cheng Jhang",
-      "Fu-En Wang",
-      "Xin Yang",
-      "Nan Qiao",
-      "Lu Xia",
-      "Min Sun",
-      "Cheng-Hao Kuo"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-28",
-    "summary": "Visual grounding aims to associate free-form textual queries with specific regions in an image. While recent Multimodal Large Language Models (MLLMs) have demonstrated promising capabilities in this domain, they primarily excel at object-level grounding and often struggle with part-level grounding-an essential requirement for fine-grained tasks such as robotic manipulation. In this work, we introduce a general approach that equips any open-source MLLMs with accurate 2D part-level point grounding, offering a more direct alternative to conventional grounding representations. Our method leverages the attention mechanisms inherently present in MLLMs. By synthesizing text-conditioned, grounding-aware queries within intermediate layers via the proposed Q-Synth Module, we capture target-relevant attention patterns and refine them with a lightweight Attention-to-Point Decoder, which converts these patterns into a point-centric heatmap for final prediction. Notably, all original MLLM parameters are frozen, ensuring full preservation of their pre-trained capabilities. Experiments show that our design consistently improves part-level grounding accuracy across datasets and can be seamlessly integrated into any open-source MLLMs.",
-    "tags": [
-      "VLM/MLLM",
-      "reasoning",
-      "diffusion"
     ],
     "score": 59
   },
@@ -7931,6 +7954,29 @@
     "score": 53
   },
   {
+    "title": "Enhancing Part-Level Point Grounding for Any Open-Source MLLMs",
+    "url": "http://arxiv.org/abs/2606.29267v1",
+    "pdf": "http://arxiv.org/pdf/2606.29267v1",
+    "authors": [
+      "Jin-Cheng Jhang",
+      "Fu-En Wang",
+      "Xin Yang",
+      "Nan Qiao",
+      "Lu Xia",
+      "Min Sun",
+      "Cheng-Hao Kuo"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-28",
+    "summary": "Visual grounding aims to associate free-form textual queries with specific regions in an image. While recent Multimodal Large Language Models (MLLMs) have demonstrated promising capabilities in this domain, they primarily excel at object-level grounding and often struggle with part-level grounding-an essential requirement for fine-grained tasks such as robotic manipulation. In this work, we introduce a general approach that equips any open-source MLLMs with accurate 2D part-level point grounding, offering a more direct alternative to conventional grounding representations. Our method leverages the attention mechanisms inherently present in MLLMs. By synthesizing text-conditioned, grounding-aware queries within intermediate layers via the proposed Q-Synth Module, we capture target-relevant attention patterns and refine them with a lightweight Attention-to-Point Decoder, which converts these patterns into a point-centric heatmap for final prediction. Notably, all original MLLM parameters are frozen, ensuring full preservation of their pre-trained capabilities. Experiments show that our design consistently improves part-level grounding accuracy across datasets and can be seamlessly integrated into any open-source MLLMs.",
+    "tags": [
+      "VLM/MLLM",
+      "reasoning",
+      "diffusion"
+    ],
+    "score": 53
+  },
+  {
     "title": "CCRC: A Change-Aware Captioning and Reasoning Chain for Image Change Captioning and Segmentation",
     "url": "http://arxiv.org/abs/2606.28724v1",
     "pdf": "http://arxiv.org/pdf/2606.28724v1",
@@ -7972,27 +8018,6 @@
       "diffusion",
       "boundary/frequency",
       "low-level"
-    ],
-    "score": 53
-  },
-  {
-    "title": "Occlusion-Robust Multi-Object Decoupling for Physics-Based Robotic Interaction",
-    "url": "http://arxiv.org/abs/2606.29303v2",
-    "pdf": "http://arxiv.org/pdf/2606.29303v2",
-    "authors": [
-      "Xin Dong",
-      "Lihan Zhang",
-      "Tianru Dai",
-      "Wenfeng Deng",
-      "Yansong Tang"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-28",
-    "summary": "We propose a mask-free method for lossless multi-object 3D reconstruction from sparse and occluded real-world views, enabling physically plausible robotic interaction via Material Point Method (MPM) simulation. Our key insight is that object coupling stems from occlusion and limited viewpoints, which we address by formulating multi-object decoupling as a sparse-view reconstruction problem. Using 3D Gaussian Splatting as base representation, we first obtain coarse instance partitions with a SAM2-trained segmentation field. Rather than relying on masks, we reconstruct fragmented geometries by leveraging a joint Score Distillation Sampling (SDS) process, which integrates reference-view supervision with novel-view synthesis guided by 2D and 3D diffusion priors to enforce both texture fidelity and 3D consistency. Furthermore, we incorporate geometry-aware priors such as intra-object and inter-object similarity to regularize geometric reasoning. Experimental results demonstrate that our method produces complete, simulation-ready 3D objects without requiring manual masks, enabling realistic dynamic interactions on both synthetic, robotic and real-world datasets.",
-    "tags": [
-      "reasoning",
-      "diffusion",
-      "depth/geometry"
     ],
     "score": 53
   },
@@ -11696,6 +11721,27 @@
     "score": 49
   },
   {
+    "title": "Enhancing Weakly Supervised Semantic Segmentation with Multi-modal Foundation Models: An End-to-End Approach",
+    "url": "https://www.semanticscholar.org/paper/b0419383df3c5d3b6e6d5ea6e81a0b7a71811525",
+    "pdf": "",
+    "authors": [
+      "Elham Ravanbakhsh",
+      "Chen Niu",
+      "Yongqing Liang",
+      "J. Ramanujam",
+      "Xin Li"
+    ],
+    "source": "Semantic Scholar / arXiv.org / citations 1",
+    "published": "2024-05-10",
+    "summary": "Semantic segmentation is a core computer vision problem, but the high costs of data annotation have hindered its wide application. Weakly-Supervised Semantic Segmentation (WSSS) offers a cost-efficient workaround to extensive labeling in comparison to fully-supervised methods by using partial or incomplete labels. Existing WSSS methods have difficulties in learning the boundaries of objects leading to poor segmentation results. We propose a novel and effective framework that addresses these issues by leveraging visual foundation models inside the bounding box. Adopting a two-stage WSSS framework, our proposed network consists of a pseudo-label generation module and a segmentation module. The first stage leverages Segment Anything Model (SAM) to generate high-quality pseudo-labels. To alleviate the problem of delineating precise boundaries, we adopt SAM inside the bounding box with the help of another pre-trained foundation model (e.g., Grounding-DINO). Furthermore, we eliminate the necessity of using the supervision of image labels, by employing CLIP in classification. Then in the second stage, the generated high-quality pseudo-labels are used to train an off-the-shelf segmenter that achieves the state-of-the-art performance on PASCAL VOC 2012 and MS COCO 2014.",
+    "tags": [
+      "unsupervised",
+      "SAM",
+      "reasoning"
+    ],
+    "score": 49
+  },
+  {
     "title": "Reversing the Damage: A QP-Aware Transformer-Diffusion Approach for 8K Video Restoration under Codec Compression",
     "url": "https://openaccess.thecvf.com/content/WACV2025/html/Dehaghi_Reversing_the_Damage_A_QP-Aware_Transformer-Diffusion_Approach_for_8K_Video_WACV_2025_paper.html",
     "pdf": "https://openaccess.thecvf.com/content/WACV2025/papers/Dehaghi_Reversing_the_Damage_A_QP-Aware_Transformer-Diffusion_Approach_for_8K_Video_WACV_2025_paper.pdf",
@@ -11821,6 +11867,27 @@
     "tags": [
       "training-free",
       "diffusion"
+    ],
+    "score": 47
+  },
+  {
+    "title": "Occlusion-Robust Multi-Object Decoupling for Physics-Based Robotic Interaction",
+    "url": "http://arxiv.org/abs/2606.29303v2",
+    "pdf": "http://arxiv.org/pdf/2606.29303v2",
+    "authors": [
+      "Xin Dong",
+      "Lihan Zhang",
+      "Tianru Dai",
+      "Wenfeng Deng",
+      "Yansong Tang"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-28",
+    "summary": "We propose a mask-free method for lossless multi-object 3D reconstruction from sparse and occluded real-world views, enabling physically plausible robotic interaction via Material Point Method (MPM) simulation. Our key insight is that object coupling stems from occlusion and limited viewpoints, which we address by formulating multi-object decoupling as a sparse-view reconstruction problem. Using 3D Gaussian Splatting as base representation, we first obtain coarse instance partitions with a SAM2-trained segmentation field. Rather than relying on masks, we reconstruct fragmented geometries by leveraging a joint Score Distillation Sampling (SDS) process, which integrates reference-view supervision with novel-view synthesis guided by 2D and 3D diffusion priors to enforce both texture fidelity and 3D consistency. Furthermore, we incorporate geometry-aware priors such as intra-object and inter-object similarity to regularize geometric reasoning. Experimental results demonstrate that our method produces complete, simulation-ready 3D objects without requiring manual masks, enabling realistic dynamic interactions on both synthetic, robotic and real-world datasets.",
+    "tags": [
+      "reasoning",
+      "diffusion",
+      "depth/geometry"
     ],
     "score": 47
   },
@@ -21828,6 +21895,23 @@
     "score": 40
   },
   {
+    "title": "From SAM to CAMs: Exploring Segment Anything Model for Weakly Supervised Semantic Segmentation",
+    "url": "https://www.semanticscholar.org/paper/ea26db335f0b4edce32166e709b14a420b7ece4e",
+    "pdf": "",
+    "authors": [
+      "H. Kweon",
+      "Kuk-Jin Yoon"
+    ],
+    "source": "Semantic Scholar / Computer Vision and Pattern Recognition / citations 76",
+    "published": "2024-06-16",
+    "summary": "Semantic Scholar result for query: weakly supervised semantic segmentation foundation model.",
+    "tags": [
+      "unsupervised",
+      "SAM"
+    ],
+    "score": 40
+  },
+  {
     "title": "Adaptive Low Rank Adaptation of Segment Anything to Salient Object Detection",
     "url": "http://arxiv.org/abs/2308.05426v1",
     "pdf": "http://arxiv.org/pdf/2308.05426v1",
@@ -24100,23 +24184,6 @@
     "tags": [
       "open-vocabulary",
       "retrieval/prototype"
-    ],
-    "score": 38
-  },
-  {
-    "title": "From SAM to CAMs: Exploring Segment Anything Model for Weakly Supervised Semantic Segmentation",
-    "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Kweon_From_SAM_to_CAMs_Exploring_Segment_Anything_Model_for_Weakly_CVPR_2024_paper.html",
-    "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Kweon_From_SAM_to_CAMs_Exploring_Segment_Anything_Model_for_Weakly_CVPR_2024_paper.pdf",
-    "authors": [
-      "Hyeokjun Kweon",
-      "Kuk-Jin Yoon"
-    ],
-    "source": "CVPR 2024",
-    "published": "2024",
-    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
-    "tags": [
-      "unsupervised",
-      "SAM"
     ],
     "score": 38
   },
@@ -40076,6 +40143,42 @@
     "tags": [
       "diffusion",
       "retrieval/prototype"
+    ],
+    "score": 34
+  },
+  {
+    "title": "Enhanced Pseudo-Labels for End-to-End Weakly Supervised Semantic Segmentation with Foundation Models",
+    "url": "https://www.semanticscholar.org/paper/15e1bd0f7c5ba630a6218a2fd4b2f2aeb82c1f5a",
+    "pdf": "https://www.mdpi.com/2076-3417/15/18/10013/pdf?version=1758017966",
+    "authors": [
+      "Xuesheng Zhou",
+      "Zhenzhou Tang"
+    ],
+    "source": "Semantic Scholar / Applied Sciences",
+    "published": "2025-09-12",
+    "summary": "Weakly supervised semantic segmentation (WSSS) aims to learn pixel-level semantic concepts from image-level class labels. Due to the simplicity and efficiency of the training pipeline, end-to-end WSSS has received significant attention from the research community. However, the coarse nature of pseudo-label regions remains one of the primary bottlenecks limiting the performance of such methods. To address this issue, we propose class-guided enhanced pseudo-labeling (CEP), a method designed to generate high-quality pseudo-labels for end-to-end WSSS frameworks. Our approach leverages pretrained foundation models, such as contrastive language-image pre-training (CLIP) and segment anything model (SAM), to enhance pseudo-label quality. Specifically, following the pseudo-label generation pipeline, we introduce two key components: a Skip-CAM module and a pseudo-label refinement module. The Skip-CAM module enriches feature representations by introducing skip connections from multiple blocks of CLIP, thereby improving the quality of localization maps. The refinement module then utilizes SAM to refine and correct the pseudo-labels based on the initial class-specific regions derived from the localization maps. Experimental results demonstrate that our method surpasses the state-of-the-art end-to-end approaches as well as many multi-stage competitors.",
+    "tags": [
+      "unsupervised",
+      "SAM"
+    ],
+    "score": 34
+  },
+  {
+    "title": "From Discriminative Regions to Complete Masks: CAM-SAM Fusion for Weakly Supervised Semantic Segmentation",
+    "url": "https://www.semanticscholar.org/paper/5e929a187ed6bc520731caa27af4c8164e7c7cd1",
+    "pdf": "",
+    "authors": [
+      "Yen Nhi Huynh",
+      "Trang Nguyen",
+      "Tien-Dung Mai"
+    ],
+    "source": "Semantic Scholar / Conference on Research, Innovation and Vision for the Future in Computing & Communication Technologies",
+    "published": "2025-12-18",
+    "summary": "Semantic segmentation requires costly pixel-level annotations, limiting the scalability of fully supervised models. Weakly Supervised Semantic Segmentation (WSSS) reduces this burden using image-level labels, but existing methods based on Class Activation Maps (CAM) often capture only small discriminative object regions, yielding incomplete pseudo masks. We introduce a CAM-SAM fusion framework that combines the semantic cues of CAM with the strong boundary localization capabilities of the Segment Anything Model (SAM). Specifically, we propose Semantic-Aware Prompting (SAP), where highresponse CAM peaks to guide SAM in generating detailed masks, and a Mask Fusion Algorithm that intelligently integrates CAM and SAM outputs to produce reliable pseudo labels. Evaluations on PASCAL VOC 2012 and MS COCO 2014 show that our method produces sharper and more complete masks, leading to significant improvements in segmentation accuracy over CAM-only baselines. These results highlight the effectiveness of integrating foundation models into WSSS for high-quality segmentation with minimal supervision.",
+    "tags": [
+      "unsupervised",
+      "SAM",
+      "boundary/frequency"
     ],
     "score": 34
   },
@@ -56065,6 +56168,23 @@
     "score": 30
   },
   {
+    "title": "Lightweight anomaly detection framework for driving environments",
+    "url": "https://doi.org/10.1016/j.cviu.2026.104863",
+    "pdf": "",
+    "authors": [
+      "Carlos David Ardon Munoz",
+      "Yoshio Iwai",
+      "Kota Aoki"
+    ],
+    "source": "Crossref / CVIU / CCF-B / 视觉期刊 / Computer Vision and Image Understanding",
+    "published": "2026-09",
+    "summary": "CVIU article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "anomaly/OOD"
+    ],
+    "score": 30
+  },
+  {
     "title": "Prompt-guided dual-path UNet with Mamba for medical image segmentation",
     "url": "https://doi.org/10.1016/j.cviu.2026.104858",
     "pdf": "",
@@ -56079,27 +56199,6 @@
     "summary": "CVIU article matched by title in a top journal; abstract unavailable from Crossref.",
     "tags": [
       "medical imaging"
-    ],
-    "score": 30
-  },
-  {
-    "title": "Redundancy-aware memory update for improved video object segmentation",
-    "url": "https://doi.org/10.1016/j.cviu.2026.104857",
-    "pdf": "",
-    "authors": [
-      "Nian Shi",
-      "Yubing Luo",
-      "Fengbin Yang",
-      "Jianchao Zeng",
-      "Pinle Qin",
-      "Wenyu Chen",
-      "Pengcheng Zhao"
-    ],
-    "source": "Crossref / CVIU / CCF-B / 视觉期刊 / Computer Vision and Image Understanding",
-    "published": "2026-08",
-    "summary": "CVIU article matched by title in a top journal; abstract unavailable from Crossref.",
-    "tags": [
-      "video"
     ],
     "score": 30
   },
@@ -87291,6 +87390,26 @@
     "score": 28
   },
   {
+    "title": "Learning Robust Correlation with Foundation Model for Weakly-Supervised Few-Shot Segmentation",
+    "url": "https://www.semanticscholar.org/paper/863a878461835521315be623b4dd14d1c761e0ce",
+    "pdf": "https://arxiv.org/pdf/2405.19638",
+    "authors": [
+      "Xinyang Huang",
+      "Chuanglu Zhu",
+      "Kebin Liu",
+      "Ruiying Ren",
+      "Shengjie Liu"
+    ],
+    "source": "Semantic Scholar / Knowledge-Based Systems / citations 7",
+    "published": "2024-05-01",
+    "summary": "Existing few-shot segmentation (FSS) only considers learning support-query correlation and segmenting unseen categories under the precise pixel masks. However, the cost of a large number of pixel masks during training is expensive. This paper considers a more challenging scenario, weakly-supervised few-shot segmentation (WS-FSS), which only provides category ($i.e.$ image-level) labels. It requires the model to learn robust support-query information when the generated mask is inaccurate. In this work, we design a Correlation Enhancement Network (CORENet) with foundation model, which utilizes multi-information guidance to learn robust correlation. Specifically, correlation-guided transformer (CGT) utilizes self-supervised ViT tokens to learn robust correlation from both local and global perspectives. From the perspective of semantic categories, the class-guided module (CGM) guides the model to locate valuable correlations through the pre-trained CLIP. Finally, the embedding-guided module (EGM) implicitly guides the model to supplement the inevitable information loss during the correlation learning by the original appearance embedding and finally generates the query mask. Extensive experiments on PASCAL-5$^i$ and COCO-20$^i$ have shown that CORENet exhibits excellent performance compared to existing methods.",
+    "tags": [
+      "unsupervised",
+      "low-level"
+    ],
+    "score": 28
+  },
+  {
     "title": "Reframe Anything: LLM Agent for Open World Video Reframing",
     "url": "http://arxiv.org/abs/2403.06070v1",
     "pdf": "http://arxiv.org/pdf/2403.06070v1",
@@ -105380,30 +105499,6 @@
     "summary": "The rapid proliferation of AI-generated images (AIGI) presents a significant challenge to digital information integrity. While human observers and existing detection models struggle to keep pace with the increasing sophistication of generative models, the need for robust, real-time detection systems has become critical. This paper introduces SPECTRA-Net, a scalable pipeline for explainable, cross-domain tensor representations for AIGI detection. Our approach leverages a multi-view representation of images, combining global semantic features from a Vision Foundation Model (VFM), spectral analysis, local patch-based anomaly detection, and statistical descriptors. By fusing these complementary data streams, SPECTRA-Net achieves state-of-the-art performance in both in-domain and cross-domain settings, demonstrating high accuracy and generalization capabilities across a wide range of challenging datasets, including WildFake, Chameleon, and RRDataset. The proposed pipeline not only provides a robust solution for AIGI detection but also offers explainability through artifact localization, paving the way for more trustworthy and reliable content verification in real-world applications.",
     "tags": [
       "diffusion",
-      "anomaly/OOD"
-    ],
-    "score": 25
-  },
-  {
-    "title": "Foundational World Models Accurately Detect Bimanual Manipulator Failures",
-    "url": "http://arxiv.org/abs/2603.06987v1",
-    "pdf": "http://arxiv.org/pdf/2603.06987v1",
-    "authors": [
-      "Isaac R. Ward",
-      "Michelle Ho",
-      "Houjun Liu",
-      "Aaron Feldman",
-      "Joseph Vincent",
-      "Liam Kruse",
-      "Sean Cheong",
-      "Duncan Eddy",
-      "Mykel J. Kochenderfer",
-      "Mac Schwager"
-    ],
-    "source": "arXiv",
-    "published": "2026-03-07",
-    "summary": "Deploying visuomotor robots at scale is challenging due to the potential for anomalous failures to degrade performance, cause damage, or endanger human life. Bimanual manipulators are no exception; these robots have vast state spaces comprised of high-dimensional images and proprioceptive signals. Explicitly defining failure modes within such state spaces is infeasible. In this work, we overcome these challenges by training a probabilistic, history informed, world model within the compressed latent space of a pretrained vision foundation model (NVIDIA's Cosmos Tokenizer). The model outputs uncertainty estimates alongside its predictions that serve as non-conformity scores within a conformal prediction framework. We use these scores to develop a runtime monitor, correlating periods of high uncertainty with anomalous failures. To test these methods, we use the simulated Push-T environment and the Bimanual Cable Manipulation dataset, the latter of which we introduce in this work. This new dataset features trajectories with multiple synchronized camera views, proprioceptive signals, and annotated failures from a challenging data center maintenance task. We benchmark our methods against baselines from the anomaly detection and out-of-distribution detection literature, and show that our approach considerably outperforms statistical techniques. Furthermore, we show that our approach requires approximately one twentieth of the trainable parameters as the next-best learning-based approach, yet outperforms it by 3.8% in terms of failure detection rate, paving the way toward safely deploying manipulator robots in real-world environments where reliability is non-negotiable.",
-    "tags": [
       "anomaly/OOD"
     ],
     "score": 25
@@ -125947,6 +126042,46 @@
       "anomaly/OOD"
     ],
     "score": 23
+  },
+  {
+    "title": "Advancing weakly supervised semantic segmentation using class activation map augmented with graph attention module",
+    "url": "https://www.semanticscholar.org/paper/7ee1b803a22dad76cb9caeb8bd963e34a5cd02e1",
+    "pdf": "",
+    "authors": [
+      "Xin Lin"
+    ],
+    "source": "Semantic Scholar / 3rd International Conference on High Performance Computing and Communication Engineering (HPCCE 2023) / citations 1",
+    "published": "2024-02-09",
+    "summary": "In the field of computer vision, Weakly Supervised Semantic Segmentation (WSSS) at the image level poses a significant research challenge. Existing WSSS methods primarily rely on class activation maps (CAM). Due to the disparity between fully-supervised and weakly-supervised approaches, CAM often yields imprecise and coarse semantic information in generating target masks. To address the issues of semantic coarseness and detail loss in image-level WSSS, this paper introduces a novel approach that utilizes pixel-level relationships to optimize and refine the features extracted by the network. Maintaining the foundation of image-level class label weak supervision for semantic segmentation, this study forgoes extensive modifications to the model structure in favor of incorporating a Graph Attention Module (GAM). This module, by constructing a weighted undirected graph with pixels as vertices and pixel affinity as edges, simulates the interactions among neighboring pixels in graph representation learning. Such an arrangement allows for the effective propagation and integration of relational information between pixels, thereby enhancing the overall representational quality of the image. By employing graph constraints to facilitate semantic dissemination, our method optimizes the network’s localization map, resulting in more precise CAMs and more accurate pseudo-labels for subsequent semantic segmentation network training. To evaluate our approach, we conducted quantity and quality experiments on the PASCAL VOC 2012 and MS COCO 2014 datasets. Compared to existing advanced weakly-supervised semantic segmentation methods, our approach shows notable improvements in performance.",
+    "tags": [
+      "unsupervised",
+      "boundary/frequency"
+    ],
+    "score": 22
+  },
+  {
+    "title": "Foundational World Models Accurately Detect Bimanual Manipulator Failures",
+    "url": "http://arxiv.org/abs/2603.06987v1",
+    "pdf": "http://arxiv.org/pdf/2603.06987v1",
+    "authors": [
+      "Isaac R. Ward",
+      "Michelle Ho",
+      "Houjun Liu",
+      "Aaron Feldman",
+      "Joseph Vincent",
+      "Liam Kruse",
+      "Sean Cheong",
+      "Duncan Eddy",
+      "Mykel J. Kochenderfer",
+      "Mac Schwager"
+    ],
+    "source": "arXiv",
+    "published": "2026-03-07",
+    "summary": "Deploying visuomotor robots at scale is challenging due to the potential for anomalous failures to degrade performance, cause damage, or endanger human life. Bimanual manipulators are no exception; these robots have vast state spaces comprised of high-dimensional images and proprioceptive signals. Explicitly defining failure modes within such state spaces is infeasible. In this work, we overcome these challenges by training a probabilistic, history informed, world model within the compressed latent space of a pretrained vision foundation model (NVIDIA's Cosmos Tokenizer). The model outputs uncertainty estimates alongside its predictions that serve as non-conformity scores within a conformal prediction framework. We use these scores to develop a runtime monitor, correlating periods of high uncertainty with anomalous failures. To test these methods, we use the simulated Push-T environment and the Bimanual Cable Manipulation dataset, the latter of which we introduce in this work. This new dataset features trajectories with multiple synchronized camera views, proprioceptive signals, and annotated failures from a challenging data center maintenance task. We benchmark our methods against baselines from the anomaly detection and out-of-distribution detection literature, and show that our approach considerably outperforms statistical techniques. Furthermore, we show that our approach requires approximately one twentieth of the trainable parameters as the next-best learning-based approach, yet outperforms it by 3.8% in terms of failure detection rate, paving the way toward safely deploying manipulator robots in real-world environments where reliability is non-negotiable.",
+    "tags": [
+      "anomaly/OOD"
+    ],
+    "score": 21
   },
   {
     "title": "Autonomous Monitoring of Pharmaceutical R&D Laboratories with 6 Axis Arm Equipped Quadruped Robot and Generative AI: A Preliminary Study",
