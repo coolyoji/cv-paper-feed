@@ -1,5 +1,885 @@
 [
   {
+    "date": "2026-07-07",
+    "generated_at": "2026-07-07 13:07",
+    "timezone": "Asia/Shanghai",
+    "total_selected": 8488,
+    "sections": {
+      "highlights": [
+        {
+          "title": "CamoNAS: Neural Architecture Search for Enhanced Camouflaged Object Detection",
+          "url": "http://arxiv.org/abs/2607.01870v1",
+          "pdf": "http://arxiv.org/pdf/2607.01870v1",
+          "authors": [
+            "Dawei Ren",
+            "Yan Zhang",
+            "Hongying Tang",
+            "Qiaoling Zhou",
+            "Jianpo Liu"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-02",
+          "summary": "Camouflaged Object Detection (COD) aims to locate and segment objects that blend into their surroundings, presenting challenges due to weak edge cues and ill-defined boundaries. Traditional COD models rely on hand-designed architectures and multi-scale feature fusion, which are often guided by intuition rather than systematic search. This paper introduces CamoNAS, a frequency-aware multi-resolution Neural Architecture Search (NAS) framework for COD. CamoNAS automatically searches both cell-level operations and network-level downsampling paths, forming a hierarchical search space tailored to detect camouflaged objects. Additionally, it adopts an RGB frequency dual-stream architecture, where a learnable wavelet transform complements the RGB spatial stream. CamoNAS achieves state-of-the-art performance on four COD benchmarks (CAMO, COD10K, NC4K, CHAMELEON), highlighting the effectiveness of NAS for COD. Our code is available at https://github.com/rendaweiSIMIT/CamoNAS.",
+          "tags": [
+            "COD",
+            "diffusion",
+            "boundary/frequency"
+          ],
+          "score": 137
+        },
+        {
+          "title": "HVPNet: A Bio-Inspired Network for General Salient and Camouflaged Object Detection",
+          "url": "http://arxiv.org/abs/2606.31496v1",
+          "pdf": "http://arxiv.org/pdf/2606.31496v1",
+          "authors": [
+            "Jiawei Xu",
+            "Qiangqiang Zhou",
+            "Zhouping Li",
+            "Yanjiao Shi",
+            "Yugen Yi",
+            "Jiacong Yu"
+          ],
+          "source": "arXiv",
+          "published": "2026-06-30",
+          "summary": "In recent years, most research on multimodal salient object detection (SOD) and camouflaged object detection (COD) typically aims to improve performance through complex cross-modal feature fusion and decoding structures. However, this approach leads to an excessively large model parameter scale and often fails to deliver satisfactory detection performance due to structural redundancy. In contrast, the human visual process is able to efficiently perform salient and camouflaged object identification without such complex structures. This contrast raises an important question: Can we draw conceptual inspiration from the human visual process to achieve a simpler modeling strategy, and still realize accurate and efficient object detection? To answer this question, we propose HVPNet, a simple yet general bio-inspired computational architecture. Drawing on the multi-layered information integration of the retina as a conceptual metaphor, we designed a Retinal Integration Module (RIM), which effectively integrates multimodal features through a level-specific multi-stage integration strategy. To fully exploit these features, we further design a cortical decoder (CD) that breaks down the decoding process into low- and high-level visual stages, abstracting the hierarchical processing in the human visual cortex. Benefiting from these designs, HVPNet can readily extend to seven tasks across four modalities. Without bells and whistles, it establishes an excellent accuracy-efficiency trade-off across 22 datasets spanning these seven tasks. Our code is available at https://github.com/jiaweiXu1029/HVPNet.",
+          "tags": [
+            "COD",
+            "saliency/transparent"
+          ],
+          "score": 131
+        },
+        {
+          "title": "When Does Resolution Help a Frozen Backbone? Global Attention at Resolution Predicts Scalable Adaptation for Camouflaged and Marine Animal Segmentation",
+          "url": "http://arxiv.org/abs/2607.02708v1",
+          "pdf": "http://arxiv.org/pdf/2607.02708v1",
+          "authors": [
+            "Tyler Rust",
+            "Chandra Kambhamettu"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-02",
+          "summary": "Adapting frozen vision foundation models to fine-grained segmentation now largely depends on backbone selection. Whether the backbone applies global attention to a high-resolution token set predicts whether a low-rank adapter turns resolution into accuracy. Isotropic ViTs attend globally over the full grid and keep improving with resolution; hierarchical backbones confine early attention to local windows and pool the grid before their global stages, plateauing at lower resolutions. A controlled six-backbone study establishes the pattern, and editing the backbone points to the cause: pooling keeps the benefit, removing global attention does not. The effect is specific to low-rank adaptation. Under one fixed pipeline, SALT (Side-stem, Attention-gated U-Net, Low-rank Tuning), one RGB-only pass on a strong isotropic backbone wins the best S-measure on the four data-matched camouflaged sets, and leads every marine and salient set. It reaches a new state of the art on both marine-animal benchmarks (MAS3K mIoU 0.878).",
+          "tags": [
+            "COD",
+            "diffusion",
+            "saliency/transparent"
+          ],
+          "score": 95
+        },
+        {
+          "title": "GenAU: Language-Grounded Industrial Anomaly Understanding with Vision-Language Models",
+          "url": "http://arxiv.org/abs/2607.01049v1",
+          "pdf": "http://arxiv.org/pdf/2607.01049v1",
+          "authors": [
+            "Hongkuan Zhou",
+            "Tristan Rehm",
+            "Nadeem Nazer",
+            "Lavdim Halilaj",
+            "Jingcheng Wu",
+            "Steffen Staab"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-01",
+          "summary": "Industrial inspection requires more than binary anomaly detection: a practical system should determine whether an anomaly exists, localize the defective region, identify the defect type, and provide interpretable visual evidence. Existing CLIP-based methods detect and localize anomalies well but offer limited language-level defect understanding, while instruction-tuned vision-language models can describe defects but do not natively produce pixel-level masks. We introduce GenAU, a Generalist vision-language framework for industrial Anomaly Understanding that unifies image-level detection, pixel-level segmentation, multi-type anomaly detection, and defect analysis in a single instruction-following model. GenAU augments a vision-language model with two segmentation tokens, [SEG_defect] and [SEG_normal], whose hidden states act as language-grounded queries over multi-scale visual features for pixel-level localization; the image-level score fuses this map with the decoder's textual normal/defect decision, while the language decoder produces structured defect-aware responses. Trained with a joint language-modeling and segmentation objective, GenAU covers all four tasks within one architecture and recipe, adding zero-shot multi-type detection and language-grounded defect analysis at a quantified cost to detection and segmentation. Across cross-dataset benchmarks, GenAU attains the strongest image-level detection among CLIP-based zero-shot methods on VisA and Real-IAD, with segmentation approaching but not surpassing specialized CLIP baselines.",
+          "tags": [
+            "VLM/MLLM",
+            "anomaly/OOD"
+          ],
+          "score": 95
+        },
+        {
+          "title": "GeoSelect: Spatial-Program Execution for Training-Free Referring Remote Sensing Image Segmentation",
+          "url": "http://arxiv.org/abs/2607.03869v1",
+          "pdf": "http://arxiv.org/pdf/2607.03869v1",
+          "authors": [
+            "Yuhang Jiang",
+            "Guohui Deng",
+            "Miaozhong Xu",
+            "Chao Ruan",
+            "Jinling Zhao",
+            "Linsheng Huang"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-04",
+          "summary": "Referring remote sensing image segmentation isolates the object named by a natural-language expression in an aerial image. Existing training-free methods resolve the expression through implicit vision-language activations or region-text similarity, which gives weak control over the spatial, comparative, and ordinal relations that dominate aerial referring: they cannot represent constructions such as the largest ship or the second court from the left. We propose GeoSelect, a training-free pipeline that reframes referring as the execution of a typed spatial program. A frozen, text-only language model synthesises the expression into a small domain-specific language, a well-formedness checker accepts the program, and a deterministic executor runs it. The central abstraction is a single scored candidate set type under which every operator composes: continuous geometric fields realise position and proximity as dense pixel-level maps, while discrete set and order operators add the extremum, ordinal, counted-union, and relational constructions that fields alone cannot express. Because execution is explicit, every intermediate program, field, and ranking is inspectable, and a reliability ladder degrades any failing program to a field-only special case, so every expression returns an answer. GeoSelect attains 58.86 mIoU on RRSIS-D test and 55.27 mIoU on RISBench test, more than twice the best prior training-free method on RRSIS-D, with no referring supervision and on a single GPU. A controlled comparison with candidates and segmenter fixed attributes the gain to explicit execution, not the backbone; an oracle decomposition localises the residual gap to detection recall on RRSIS-D and selection on RISBench, and an exposure audit confirms robustness to pretraining leakage. Code will be released upon acceptance at the project page https://avalon-s.github.io/GeoSelect/.",
+          "tags": [
+            "training-free",
+            "VLM/MLLM",
+            "diffusion",
+            "depth/geometry",
+            "remote sensing"
+          ],
+          "score": 89
+        }
+      ],
+      "quality": [
+        {
+          "title": "VSCode: General Visual Salient and Camouflaged Object Detection with 2D Prompt Learning",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Luo_VSCode_General_Visual_Salient_and_Camouflaged_Object_Detection_with_2D_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Luo_VSCode_General_Visual_Salient_and_Camouflaged_Object_Detection_with_2D_CVPR_2024_paper.pdf",
+          "authors": [
+            "Ziyang Luo",
+            "Nian Liu",
+            "Wangbo Zhao",
+            "Xuguang Yang",
+            "Dingwen Zhang",
+            "Deng-Ping Fan",
+            "Fahad Khan",
+            "Junwei Han"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "saliency/transparent"
+          ],
+          "score": 122
+        },
+        {
+          "title": "Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ren_Training-Free_Open-Vocabulary_Camouflaged_Object_Segmentation_via_Fine-Grained_Object_Binding_and_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ren_Training-Free_Open-Vocabulary_Camouflaged_Object_Segmentation_via_Fine-Grained_Object_Binding_and_CVPR_2026_paper.pdf",
+          "authors": [
+            "Peng Ren",
+            "Cheng Jiang",
+            "Chuande Yang",
+            "Fuming Sun",
+            "Tian Bai"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "open-vocabulary",
+            "training-free"
+          ],
+          "score": 106
+        },
+        {
+          "title": "Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.pdf",
+          "authors": [
+            "Yilong Yang",
+            "Jianxin Tian",
+            "Shengchuan Zhang",
+            "Liujuan Cao"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD"
+          ],
+          "score": 100
+        },
+        {
+          "title": "Seeing Both Sides: Towards Bidirectional Semantic Alignment for Open-Vocabulary Camouflaged Object Segmentation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Seeing_Both_Sides_Towards_Bidirectional_Semantic_Alignment_for_Open-Vocabulary_Camouflaged_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Seeing_Both_Sides_Towards_Bidirectional_Semantic_Alignment_for_Open-Vocabulary_Camouflaged_CVPR_2026_paper.pdf",
+          "authors": [
+            "Guohui Zhang",
+            "Fuming Sun",
+            "Yu Zhao",
+            "Yuqiu Kong",
+            "Jing Sun",
+            "Fasheng Wang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "open-vocabulary"
+          ],
+          "score": 100
+        },
+        {
+          "title": "Beyond Weak Supervision: MLLMs-Guided Graded Knowledge Distillation for Unsupervised Camouflaged Object Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_Beyond_Weak_Supervision_MLLMs-Guided_Graded_Knowledge_Distillation_for_Unsupervised_Camouflaged_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_Beyond_Weak_Supervision_MLLMs-Guided_Graded_Knowledge_Distillation_for_Unsupervised_Camouflaged_CVPR_2026_paper.pdf",
+          "authors": [
+            "Huafeng Chen",
+            "Chenguang Zhu",
+            "Yueming Lyu",
+            "Caifeng Shan"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "unsupervised",
+            "VLM/MLLM",
+            "boundary/frequency"
+          ],
+          "score": 100
+        },
+        {
+          "title": "Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Hui_Endow_SAM_with_Keen_Eyes_Temporal-spatial_Prompt_Learning_for_Video_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Hui_Endow_SAM_with_Keen_Eyes_Temporal-spatial_Prompt_Learning_for_Video_CVPR_2024_paper.pdf",
+          "authors": [
+            "Wenjun Hui",
+            "Zhenfeng Zhu",
+            "Shuai Zheng",
+            "Yao Zhao"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "SAM",
+            "video"
+          ],
+          "score": 98
+        },
+        {
+          "title": "Seeing the Unseen: A Semantic Alignment and Context-Aware Prompt Framework for Open-Vocabulary Camouflaged Object Segmentation",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Ren_Seeing_the_Unseen_A_Semantic_Alignment_and_Context-Aware_Prompt_Framework_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ren_Seeing_the_Unseen_A_Semantic_Alignment_and_Context-Aware_Prompt_Framework_ICCV_2025_paper.pdf",
+          "authors": [
+            "Peng Ren",
+            "Tian Bai",
+            "Jing Sun",
+            "Fuming Sun"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "open-vocabulary"
+          ],
+          "score": 97
+        },
+        {
+          "title": "Beyond Appearance: Camouflaged Object Detection via Geometric Structure",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Han_Beyond_Appearance_Camouflaged_Object_Detection_via_Geometric_Structure_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Han_Beyond_Appearance_Camouflaged_Object_Detection_via_Geometric_Structure_CVPR_2026_paper.pdf",
+          "authors": [
+            "Jinyu Han",
+            "Changguang Wu",
+            "Fuming Sun",
+            "Jinhui Tang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "depth/geometry"
+          ],
+          "score": 94
+        },
+        {
+          "title": "Shift the Lens: Environment-Aware Unsupervised Camouflaged Object Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Du_Shift_the_Lens_Environment-Aware_Unsupervised_Camouflaged_Object_Detection_CVPR_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Du_Shift_the_Lens_Environment-Aware_Unsupervised_Camouflaged_Object_Detection_CVPR_2025_paper.pdf",
+          "authors": [
+            "Ji Du",
+            "Fangwei Hao",
+            "Mingyang Yu",
+            "Desheng Kong",
+            "Jiesheng Wu",
+            "Bin Wang",
+            "Jing Xu",
+            "Ping Li"
+          ],
+          "source": "CVPR 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "unsupervised"
+          ],
+          "score": 92
+        },
+        {
+          "title": "Rethinking Detecting Salient and Camouflaged Objects in Unconstrained Scenes",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhou_Rethinking_Detecting_Salient_and_Camouflaged_Objects_in_Unconstrained_Scenes_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhou_Rethinking_Detecting_Salient_and_Camouflaged_Objects_in_Unconstrained_Scenes_ICCV_2025_paper.pdf",
+          "authors": [
+            "Zhangjun Zhou",
+            "Yiping Li",
+            "Chunlin Zhong",
+            "Jianuo Huang",
+            "Jialun Pei",
+            "Hua Li",
+            "He Tang"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "saliency/transparent"
+          ],
+          "score": 91
+        }
+      ],
+      "cod": [
+        {
+          "title": "Open-Vocabulary Camouflaged Object Segmentation",
+          "url": "http://arxiv.org/abs/2311.11241v3",
+          "pdf": "http://arxiv.org/pdf/2311.11241v3",
+          "authors": [
+            "Youwei Pang",
+            "Xiaoqi Zhao",
+            "Jiaming Zuo",
+            "Lihe Zhang",
+            "Huchuan Lu"
+          ],
+          "source": "arXiv",
+          "published": "2023-11-19",
+          "summary": "Recently, the emergence of the large-scale vision-language model (VLM), such as CLIP, has opened the way towards open-world object perception. Many works have explored the utilization of pre-trained VLM for the challenging open-vocabulary dense prediction task that requires perceiving diverse objects with novel classes at inference time. Existing methods construct experiments based on the public datasets of related tasks, which are not tailored for open vocabulary and rarely involve imperceptible objects camouflaged in complex scenes due to data collection bias and annotation costs. To fill in the gaps, we introduce a new task, open-vocabulary camouflaged object segmentation (OVCOS), and construct a large-scale complex scene dataset (\\textbf{OVCamo}) containing 11,483 hand-selected images with fine annotations and corresponding object classes. Further, we build a strong single-stage open-vocabulary \\underline{c}amouflaged \\underline{o}bject \\underline{s}egmentation transform\\underline{er} baseline \\textbf{OVCoser} attached to the parameter-fixed CLIP with iterative semantic guidance and structure enhancement. By integrating the guidance of class semantic knowledge and the supplement of visual structure cues from the edge and depth information, the proposed method can efficiently capture camouflaged objects. Moreover, this effective framework also surpasses previous state-of-the-arts of open-vocabulary semantic image segmentation by a large margin on our OVCamo dataset. With the proposed dataset and baseline, we hope that this new task with more practical value can further expand the research on open-vocabulary dense prediction tasks. Our code and data can be found in the \\href{https://github.com/lartpang/OVCamo}{link}.",
+          "tags": [
+            "COD",
+            "open-vocabulary",
+            "VLM/MLLM",
+            "boundary/frequency",
+            "depth/geometry",
+            "low-level"
+          ],
+          "score": 165
+        },
+        {
+          "title": "Debate-Enhanced Pseudo Labeling and Frequency-Aware Progressive Debiasing for Weakly-Supervised Camouflaged Object Detection with Scribble Annotations",
+          "url": "http://arxiv.org/abs/2512.20260v5",
+          "pdf": "http://arxiv.org/pdf/2512.20260v5",
+          "authors": [
+            "Jiawei Ge",
+            "Jiuxin Cao",
+            "Xinyi Li",
+            "Xuelin Zhu",
+            "Chang Liu",
+            "Bo Liu",
+            "Chen Feng",
+            "Ioannis Patras"
+          ],
+          "source": "arXiv",
+          "published": "2025-12-23",
+          "summary": "Weakly-Supervised Camouflaged Object Detection (WSCOD) aims to locate and segment objects that are visually concealed within their surrounding scenes, relying solely on sparse supervision such as scribble annotations. Despite recent progress, existing WSCOD methods still lag far behind fully supervised ones due to two major limitations: (1) the pseudo masks generated by general-purpose segmentation models (e.g., SAM) and filtered via rules are often unreliable, as these models lack the task-specific semantic understanding required for effective pseudo labeling in COD; and (2) the neglect of inherent annotation bias in scribbles, which hinders the model from capturing the global structure of camouflaged objects. To overcome these challenges, we propose ${D}^{3}$ETOR, a two-stage WSCOD framework consisting of Debate-Enhanced Pseudo Labeling and Frequency-Aware Progressive Debiasing. In the first stage, we introduce an adaptive entropy-driven point sampling method and a multi-agent debate mechanism to enhance the capability of SAM for COD, improving the interpretability and precision of pseudo masks. In the second stage, we design FADeNet, which progressively fuses multi-level frequency-aware features to balance global semantic understanding with local detail modeling, while dynamically reweighting supervision strength across regions to alleviate scribble bias. By jointly exploiting the supervision signals from both the pseudo masks and scribble semantics, ${D}^{3}$ETOR significantly narrows the gap between weakly and fully supervised COD, achieving state-of-the-art performance on multiple benchmarks.",
+          "tags": [
+            "COD",
+            "unsupervised",
+            "SAM",
+            "boundary/frequency"
+          ],
+          "score": 165
+        },
+        {
+          "title": "SAM3-Adapter: Efficient Adaptation of Segment Anything 3 for Camouflage Object Segmentation, Shadow Detection, and Medical Image Segmentation",
+          "url": "http://arxiv.org/abs/2511.19425v1",
+          "pdf": "http://arxiv.org/pdf/2511.19425v1",
+          "authors": [
+            "Tianrun Chen",
+            "Runlong Cao",
+            "Xinda Yu",
+            "Lanyun Zhu",
+            "Chaotao Ding",
+            "Deyi Ji",
+            "Cheng Chen",
+            "Qi Zhu",
+            "Chunyan Xu",
+            "Papa Mao",
+            "Ying Zang"
+          ],
+          "source": "arXiv",
+          "published": "2025-11-24",
+          "summary": "The rapid rise of large-scale foundation models has reshaped the landscape of image segmentation, with models such as Segment Anything achieving unprecedented versatility across diverse vision tasks. However, previous generations-including SAM and its successor-still struggle with fine-grained, low-level segmentation challenges such as camouflaged object detection, medical image segmentation, cell image segmentation, and shadow detection. To address these limitations, we originally proposed SAM-Adapter in 2023, demonstrating substantial gains on these difficult scenarios. With the emergence of Segment Anything 3 (SAM3)-a more efficient and higher-performing evolution with a redesigned architecture and improved training pipeline-we revisit these long-standing challenges. In this work, we present SAM3-Adapter, the first adapter framework tailored for SAM3 that unlocks its full segmentation capability. SAM3-Adapter not only reduces computational overhead but also consistently surpasses both SAM and SAM2-based solutions, establishing new state-of-the-art results across multiple downstream tasks, including medical imaging, camouflaged (concealed) object segmentation, and shadow detection. Built upon the modular and composable design philosophy of the original SAM-Adapter, SAM3-Adapter provides stronger generalizability, richer task adaptability, and significantly improved segmentation precision. Extensive experiments confirm that integrating SAM3 with our adapter yields superior accuracy, robustness, and efficiency compared to all prior SAM-based adaptations. We hope SAM3-Adapter can serve as a foundation for future research and practical segmentation applications. Code, pre-trained models, and data processing pipelines are available.",
+          "tags": [
+            "COD",
+            "SAM",
+            "medical imaging"
+          ],
+          "score": 159
+        },
+        {
+          "title": "SAM2-Adapter: Evaluating & Adapting Segment Anything 2 in Downstream Tasks: Camouflage, Shadow, Medical Image Segmentation, and More",
+          "url": "http://arxiv.org/abs/2408.04579v2",
+          "pdf": "http://arxiv.org/pdf/2408.04579v2",
+          "authors": [
+            "Tianrun Chen",
+            "Ankang Lu",
+            "Lanyun Zhu",
+            "Chaotao Ding",
+            "Chunan Yu",
+            "Deyi Ji",
+            "Zejian Li",
+            "Lingyun Sun",
+            "Papa Mao",
+            "Ying Zang"
+          ],
+          "source": "arXiv",
+          "published": "2024-08-08",
+          "summary": "The advent of large models, also known as foundation models, has significantly transformed the AI research landscape, with models like Segment Anything (SAM) achieving notable success in diverse image segmentation scenarios. Despite its advancements, SAM encountered limitations in handling some complex low-level segmentation tasks like camouflaged object and medical imaging. In response, in 2023, we introduced SAM-Adapter, which demonstrated improved performance on these challenging tasks. Now, with the release of Segment Anything 2 (SAM2), a successor with enhanced architecture and a larger training corpus, we reassess these challenges. This paper introduces SAM2-Adapter, the first adapter designed to overcome the persistent limitations observed in SAM2 and achieve new state-of-the-art (SOTA) results in specific downstream tasks including medical image segmentation, camouflaged (concealed) object detection, and shadow detection. SAM2-Adapter builds on the SAM-Adapter's strengths, offering enhanced generalizability and composability for diverse applications. We present extensive experimental results demonstrating SAM2-Adapter's effectiveness. We show the potential and encourage the research community to leverage the SAM2 model with our SAM2-Adapter for achieving superior segmentation outcomes. Code, pre-trained models, and data processing protocols are available at http://tianrun-chen.github.io/SAM-Adaptor/",
+          "tags": [
+            "COD",
+            "SAM",
+            "medical imaging"
+          ],
+          "score": 159
+        },
+        {
+          "title": "UCOD-DPL: Unsupervised Camouflaged Object Detection via Dynamic Pseudo-label Learning",
+          "url": "http://arxiv.org/abs/2506.07087v1",
+          "pdf": "http://arxiv.org/pdf/2506.07087v1",
+          "authors": [
+            "Weiqi Yan",
+            "Lvhai Chen",
+            "Huaijia Kou",
+            "Shengchuan Zhang",
+            "Yan Zhang",
+            "Liujuan Cao"
+          ],
+          "source": "arXiv",
+          "published": "2025-06-08",
+          "summary": "Unsupervised Camoflaged Object Detection (UCOD) has gained attention since it doesn't need to rely on extensive pixel-level labels. Existing UCOD methods typically generate pseudo-labels using fixed strategies and train 1 x1 convolutional layers as a simple decoder, leading to low performance compared to fully-supervised methods. We emphasize two drawbacks in these approaches: 1). The model is prone to fitting incorrect knowledge due to the pseudo-label containing substantial noise. 2). The simple decoder fails to capture and learn the semantic features of camouflaged objects, especially for small-sized objects, due to the low-resolution pseudo-labels and severe confusion between foreground and background pixels. To this end, we propose a UCOD method with a teacher-student framework via Dynamic Pseudo-label Learning called UCOD-DPL, which contains an Adaptive Pseudo-label Module (APM), a Dual-Branch Adversarial (DBA) decoder, and a Look-Twice mechanism. The APM module adaptively combines pseudo-labels generated by fixed strategies and the teacher model to prevent the model from overfitting incorrect knowledge while preserving the ability for self-correction; the DBA decoder takes adversarial learning of different segmentation objectives, guides the model to overcome the foreground-background confusion of camouflaged objects, and the Look-Twice mechanism mimics the human tendency to zoom in on camouflaged objects and performs secondary refinement on small-sized objects. Extensive experiments show that our method demonstrates outstanding performance, even surpassing some existing fully supervised methods. The code is available now.",
+          "tags": [
+            "COD",
+            "unsupervised",
+            "boundary/frequency",
+            "remote sensing"
+          ],
+          "score": 159
+        },
+        {
+          "title": "High-Resolution Underwater Camouflaged Object Detection: GBU-UCOD Dataset and Topology-Aware and Frequency-Decoupled Networks",
+          "url": "http://arxiv.org/abs/2602.03591v1",
+          "pdf": "http://arxiv.org/pdf/2602.03591v1",
+          "authors": [
+            "Wenji Wu",
+            "Shuo Ye",
+            "Yiyu Liu",
+            "Jiguang He",
+            "Zhuo Wang",
+            "Zitong Yu"
+          ],
+          "source": "arXiv",
+          "published": "2026-02-03",
+          "summary": "Underwater Camouflaged Object Detection (UCOD) is a challenging task due to the extreme visual similarity between targets and backgrounds across varying marine depths. Existing methods often struggle with topological fragmentation of slender creatures in the deep sea and the subtle feature extraction of transparent organisms. In this paper, we propose DeepTopo-Net, a novel framework that integrates topology-aware modeling with frequency-decoupled perception. To address physical degradation, we design the Water-Conditioned Adaptive Perceptor (WCAP), which employs Riemannian metric tensors to dynamically deform convolutional sampling fields. Furthermore, the Abyssal-Topology Refinement Module (ATRM) is developed to maintain the structural connectivity of spindly targets through skeletal priors. Specifically, we first introduce GBU-UCOD, the first high-resolution (2K) benchmark tailored for marine vertical zonation, filling the data gap for hadal and abyssal zones. Extensive experiments on MAS3K, RMAS, and our proposed GBU-UCOD datasets demonstrate that DeepTopo-Net achieves state-of-the-art performance, particularly in preserving the morphological integrity of complex underwater patterns. The datasets and codes will be released at https://github.com/Wuwenji18/GBU-UCOD.",
+          "tags": [
+            "COD",
+            "diffusion",
+            "boundary/frequency",
+            "depth/geometry",
+            "saliency/transparent"
+          ],
+          "score": 159
+        },
+        {
+          "title": "EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection",
+          "url": "http://arxiv.org/abs/2603.11521v1",
+          "pdf": "http://arxiv.org/pdf/2603.11521v1",
+          "authors": [
+            "Shuo Jiang",
+            "Gaojia Zhang",
+            "Min Tan",
+            "Yufei Yin",
+            "Gang Pan"
+          ],
+          "source": "arXiv",
+          "published": "2026-03-12",
+          "summary": "Unsupervised Camouflaged Object Detection (UCOD) remains a challenging task due to the high intrinsic similarity between target objects and their surroundings, as well as the reliance on noisy pseudo-labels that hinder fine-grained texture learning. While existing refinement strategies aim to alleviate label noise, they often overlook intrinsic perceptual cues, leading to boundary overflow and structural ambiguity. In contrast, learning without pseudo-label guidance yields coarse features with significant detail loss. To address these issues, we propose a unified UCOD framework that enhances both the reliability of pseudo-labels and the fidelity of features. Our approach introduces the Multi-Cue Native Perception module, which extracts intrinsic visual priors by integrating low-level texture cues with mid-level semantics, enabling precise alignment between masks and native object information. Additionally, Pseudo-Label Evolution Fusion intelligently refines labels through teacher-student interaction and utilizes depthwise separable convolution for efficient semantic denoising. It also incorporates Spectral Tensor Attention Fusion to effectively balance semantic and structural information through compact spectral aggregation across multi-layer attention maps. Finally, Local Pseudo-Label Refinement plays a pivotal role in local detail optimization by leveraging attention diversity to restore fine textures and enhance boundary fidelity. Extensive experiments on multiple UCOD datasets demonstrate that our method achieves state-of-the-art performance, characterized by superior detail perception, robust boundary alignment, and strong generalization under complex camouflage scenarios.",
+          "tags": [
+            "COD",
+            "unsupervised",
+            "diffusion",
+            "boundary/frequency",
+            "depth/geometry",
+            "low-level"
+          ],
+          "score": 157
+        },
+        {
+          "title": "A Survey of Camouflaged Object Detection and Beyond",
+          "url": "http://arxiv.org/abs/2408.14562v1",
+          "pdf": "http://arxiv.org/pdf/2408.14562v1",
+          "authors": [
+            "Fengyang Xiao",
+            "Sujie Hu",
+            "Yuqi Shen",
+            "Chengyu Fang",
+            "Jinfa Huang",
+            "Chunming He",
+            "Longxiang Tang",
+            "Ziyun Yang",
+            "Xiu Li"
+          ],
+          "source": "arXiv",
+          "published": "2024-08-26",
+          "summary": "Camouflaged Object Detection (COD) refers to the task of identifying and segmenting objects that blend seamlessly into their surroundings, posing a significant challenge for computer vision systems. In recent years, COD has garnered widespread attention due to its potential applications in surveillance, wildlife conservation, autonomous systems, and more. While several surveys on COD exist, they often have limitations in terms of the number and scope of papers covered, particularly regarding the rapid advancements made in the field since mid-2023. To address this void, we present the most comprehensive review of COD to date, encompassing both theoretical frameworks and practical contributions to the field. This paper explores various COD methods across four domains, including both image-level and video-level solutions, from the perspectives of traditional and deep learning approaches. We thoroughly investigate the correlations between COD and other camouflaged scenario methods, thereby laying the theoretical foundation for subsequent analyses. Beyond object-level detection, we also summarize extended methods for instance-level tasks, including camouflaged instance segmentation, counting, and ranking. Additionally, we provide an overview of commonly used benchmarks and evaluation metrics in COD tasks, conducting a comprehensive evaluation of deep learning-based techniques in both image and video domains, considering both qualitative and quantitative performance. Finally, we discuss the limitations of current COD models and propose 9 promising directions for future research, focusing on addressing inherent challenges and exploring novel, meaningful technologies. For those interested, a curated list of COD-related techniques, datasets, and additional resources can be found at https://github.com/ChunmingHe/awesome-concealed-object-segmentation",
+          "tags": [
+            "COD",
+            "diffusion",
+            "video"
+          ],
+          "score": 153
+        },
+        {
+          "title": "Concealed Object Segmentation with Hierarchical Coherence Modeling",
+          "url": "http://arxiv.org/abs/2401.11767v1",
+          "pdf": "http://arxiv.org/pdf/2401.11767v1",
+          "authors": [
+            "Fengyang Xiao",
+            "Pan Zhang",
+            "Chunming He",
+            "Runze Hu",
+            "Yutao Liu"
+          ],
+          "source": "arXiv",
+          "published": "2024-01-22",
+          "summary": "Concealed object segmentation (COS) is a challenging task that involves localizing and segmenting those concealed objects that are visually blended with their surrounding environments. Despite achieving remarkable success, existing COS segmenters still struggle to achieve complete segmentation results in extremely concealed scenarios. In this paper, we propose a Hierarchical Coherence Modeling (HCM) segmenter for COS, aiming to address this incomplete segmentation limitation. In specific, HCM promotes feature coherence by leveraging the intra-stage coherence and cross-stage coherence modules, exploring feature correlations at both the single-stage and contextual levels. Additionally, we introduce the reversible re-calibration decoder to detect previously undetected parts in low-confidence regions, resulting in further enhancing segmentation performance. Extensive experiments conducted on three COS tasks, including camouflaged object detection, polyp image segmentation, and transparent object detection, demonstrate the promising results achieved by the proposed HCM segmenter.",
+          "tags": [
+            "COD",
+            "diffusion",
+            "saliency/transparent"
+          ],
+          "score": 153
+        },
+        {
+          "title": "First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection",
+          "url": "http://arxiv.org/abs/2508.15313v2",
+          "pdf": "http://arxiv.org/pdf/2508.15313v2",
+          "authors": [
+            "Wutao Liu",
+            "YiDan Wang",
+            "Pan Gao"
+          ],
+          "source": "arXiv",
+          "published": "2025-08-21",
+          "summary": "Camouflaged object detection (COD) poses a significant challenge in computer vision due to the high similarity between objects and their backgrounds. Existing approaches often rely on heavy training and large computational resources. While foundation models such as the Segment Anything Model (SAM) offer strong generalization, they still struggle to handle COD tasks without fine-tuning and require high-quality prompts to yield good performance. However, generating such prompts manually is costly and inefficient. To address these challenges, we propose \\textbf{First RAG, Second SEG (RAG-SEG)}, a training-free paradigm that decouples COD into two stages: Retrieval-Augmented Generation (RAG) for generating coarse masks as prompts, followed by SAM-based segmentation (SEG) for refinement. RAG-SEG constructs a compact retrieval database via unsupervised clustering, enabling fast and effective feature retrieval. During inference, the retrieved features produce pseudo-labels that guide precise mask generation using SAM2. Our method eliminates the need for conventional training while maintaining competitive performance. Extensive experiments on benchmark COD datasets demonstrate that RAG-SEG performs on par with or surpasses state-of-the-art methods. Notably, all experiments are conducted on a \\textbf{personal laptop}, highlighting the computational efficiency and practicality of our approach. We present further analysis in the Appendix, covering limitations, salient object detection extension, and possible improvements. \\textcolor{blue} {Code: https://github.com/Lwt-diamond/RAG-SEG.}",
+          "tags": [
+            "COD",
+            "training-free",
+            "unsupervised",
+            "SAM",
+            "retrieval/prototype",
+            "anomaly/OOD",
+            "saliency/transparent"
+          ],
+          "score": 153
+        },
+        {
+          "title": "ZS-VCOS: Zero-Shot Video Camouflaged Object Segmentation By Optical Flow and Open Vocabulary Object Detection",
+          "url": "http://arxiv.org/abs/2505.01431v2",
+          "pdf": "http://arxiv.org/pdf/2505.01431v2",
+          "authors": [
+            "Wenqi Guo",
+            "Mohamed Shehata",
+            "Shan Du"
+          ],
+          "source": "arXiv",
+          "published": "2025-04-10",
+          "summary": "Camouflaged object segmentation presents unique challenges compared to traditional segmentation tasks, primarily due to the high similarity in patterns and colors between camouflaged objects and their backgrounds. Effective solutions to this problem have significant implications in critical areas such as pest control, defect detection, and lesion segmentation in medical imaging. Prior research has predominantly emphasized supervised or unsupervised pre-training methods, leaving zero-shot approaches significantly underdeveloped. Existing zero-shot techniques commonly utilize the Segment Anything Model (SAM) in automatic mode or rely on vision-language models to generate cues for segmentation; however, their performances remain unsatisfactory, due to the similarity of the camouflaged object and the background. This work studies how to avoid training by integrating large pre-trained models like SAM-2 and Owl-v2 with temporal information into a modular pipeline. Evaluated on the MoCA-Mask dataset, our approach achieves outstanding performance improvements, significantly outperforming existing zero-shot methods by raising the F-measure ($F_β^w$) from 0.296 to 0.628. Our approach also surpasses supervised methods, increasing the F-measure from 0.476 to 0.628. Additionally, evaluation on the MoCA-Filter dataset demonstrates an increase in the success rate from 0.628 to 0.697 when compared with FlowSAM, a supervised transfer method. A thorough ablation study further validates the individual contributions of each component. Besides our main contributions, we also highlight inconsistencies in previous work regarding metrics and settings. Code can be found in https://github.com/weathon/vcos.",
+          "tags": [
+            "COD",
+            "open-vocabulary",
+            "unsupervised",
+            "SAM",
+            "VLM/MLLM",
+            "diffusion",
+            "video"
+          ],
+          "score": 147
+        },
+        {
+          "title": "BED-SAM2: Boundary-Enhanced-Depth SAM2 via Monocular Geometric Priors",
+          "url": "http://arxiv.org/abs/2605.24893v1",
+          "pdf": "http://arxiv.org/pdf/2605.24893v1",
+          "authors": [
+            "Tyler Rust",
+            "Dara McNally",
+            "Kyle O'Donnell",
+            "Colin Kelly",
+            "Chandra Kambhamettu"
+          ],
+          "source": "arXiv",
+          "published": "2026-05-24",
+          "summary": "Building upon the SAM2 vision foundation model for downstream segmentation, this study introduces Boundary Enhanced Depth (BED)-SAM2. The SAM2 Hiera encoder architecture is modified to directly encode monocular depth information from RGB images, thereby providing geometric cues that enhance object boundary delineation and facilitate the extraction of camouflaged object shapes. BED-SAM2 demonstrates competitive state-of-the-art performance across multiple salient and camouflaged object detection tasks with as few as five training epochs.",
+          "tags": [
+            "COD",
+            "boundary/frequency",
+            "depth/geometry",
+            "saliency/transparent"
+          ],
+          "score": 145
+        }
+      ],
+      "broad": [
+        {
+          "title": "SegRAG: Training-Free Retrieval-Augmented Semantic Segmentation",
+          "url": "http://arxiv.org/abs/2605.17630v2",
+          "pdf": "http://arxiv.org/pdf/2605.17630v2",
+          "authors": [
+            "Abderrahmene Boudiaf",
+            "Irfan Hussain",
+            "Sajid Javed"
+          ],
+          "source": "arXiv",
+          "published": "2026-05-17",
+          "summary": "Open-vocabulary segmentation models such as SAM3 perform well across broad categories via text prompting, yet degrade when target classes are visually underrepresented in pretraining or depart from canonical depictions-limitations text prompts cannot resolve spatially. We present SegRAG, a training-free retrieval-augmented segmentation framework that grounds SAM3 with class-specific point prompts derived from a curated DINOv3 feature bank. Offline, dense patch-level descriptors are extracted from annotated references and filtered by Intra-Class Cohesion Distillation (ICCD), retaining only prototypes that reliably retrieve within-class foreground. At inference, Topographic Similarity Grounding (TSG) computes a cosine-similarity landscape against retrieved prototypes, identifies coherent high-confidence regions via connected-component analysis, and extracts peak locations through non-maximum suppression. The resulting point prompts are delivered jointly with class-name text in a single SAM3 forward pass. On four standard benchmarks, SegRAG consistently outperforms the text-only baseline, gaining up to +3.92 mIoU on LVIS. On AgML agricultural benchmarks under zero-shot domain transfer, it raises mean IoU from 25.27 to 59.24 (+33.97) and recovers individual classes from zero to over 95 mIoU. Ablations confirm that ICCD, TSG, and joint prompting each contribute independently and compound when combined. Code is available at (https://github.com/boudiafA/SegRAG).",
+          "tags": [
+            "open-vocabulary",
+            "training-free",
+            "reasoning",
+            "retrieval/prototype"
+          ],
+          "score": 97
+        },
+        {
+          "title": "GenAU: Language-Grounded Industrial Anomaly Understanding with Vision-Language Models",
+          "url": "http://arxiv.org/abs/2607.01049v1",
+          "pdf": "http://arxiv.org/pdf/2607.01049v1",
+          "authors": [
+            "Hongkuan Zhou",
+            "Tristan Rehm",
+            "Nadeem Nazer",
+            "Lavdim Halilaj",
+            "Jingcheng Wu",
+            "Steffen Staab"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-01",
+          "summary": "Industrial inspection requires more than binary anomaly detection: a practical system should determine whether an anomaly exists, localize the defective region, identify the defect type, and provide interpretable visual evidence. Existing CLIP-based methods detect and localize anomalies well but offer limited language-level defect understanding, while instruction-tuned vision-language models can describe defects but do not natively produce pixel-level masks. We introduce GenAU, a Generalist vision-language framework for industrial Anomaly Understanding that unifies image-level detection, pixel-level segmentation, multi-type anomaly detection, and defect analysis in a single instruction-following model. GenAU augments a vision-language model with two segmentation tokens, [SEG_defect] and [SEG_normal], whose hidden states act as language-grounded queries over multi-scale visual features for pixel-level localization; the image-level score fuses this map with the decoder's textual normal/defect decision, while the language decoder produces structured defect-aware responses. Trained with a joint language-modeling and segmentation objective, GenAU covers all four tasks within one architecture and recipe, adding zero-shot multi-type detection and language-grounded defect analysis at a quantified cost to detection and segmentation. Across cross-dataset benchmarks, GenAU attains the strongest image-level detection among CLIP-based zero-shot methods on VisA and Real-IAD, with segmentation approaching but not surpassing specialized CLIP baselines.",
+          "tags": [
+            "VLM/MLLM",
+            "anomaly/OOD"
+          ],
+          "score": 95
+        },
+        {
+          "title": "SegEarth-OV: Towards Training-Free Open-Vocabulary Segmentation for Remote Sensing Images",
+          "url": "http://arxiv.org/abs/2410.01768v2",
+          "pdf": "http://arxiv.org/pdf/2410.01768v2",
+          "authors": [
+            "Kaiyu Li",
+            "Ruixun Liu",
+            "Xiangyong Cao",
+            "Xueru Bai",
+            "Feng Zhou",
+            "Deyu Meng",
+            "Zhi Wang"
+          ],
+          "source": "arXiv",
+          "published": "2024-10-02",
+          "summary": "Remote sensing image plays an irreplaceable role in fields such as agriculture, water resources, military, and disaster relief. Pixel-level interpretation is a critical aspect of remote sensing image applications; however, a prevalent limitation remains the need for extensive manual annotation. For this, we try to introduce open-vocabulary semantic segmentation (OVSS) into the remote sensing context. However, due to the sensitivity of remote sensing images to low-resolution features, distorted target shapes and ill-fitting boundaries are exhibited in the prediction mask. To tackle this issue, we propose a simple and general upsampler, SimFeatUp, to restore lost spatial information in deep features in a training-free style. Further, based on the observation of the abnormal response of local patch tokens to [CLS] token in CLIP, we propose to execute a straightforward subtraction operation to alleviate the global bias in patch tokens. Extensive experiments are conducted on 17 remote sensing datasets spanning semantic segmentation, building extraction, road detection, and flood detection tasks. Our method achieves an average of 5.8%, 8.2%, 4.0%, and 15.3% improvement over state-of-the-art methods on 4 tasks. All codes are released. \\url{https://earth-insights.github.io/SegEarth-OV}",
+          "tags": [
+            "open-vocabulary",
+            "training-free",
+            "remote sensing",
+            "anomaly/OOD"
+          ],
+          "score": 93
+        },
+        {
+          "title": "TF-SSD: A Strong Pipeline via Synergic Mask Filter for Training-free Co-salient Object Detection",
+          "url": "http://arxiv.org/abs/2604.00549v1",
+          "pdf": "http://arxiv.org/pdf/2604.00549v1",
+          "authors": [
+            "Zhijin He",
+            "Shuo Jin",
+            "Siyue Yu",
+            "Shuwei Wu",
+            "Bingfeng Zhang",
+            "Li Yu",
+            "Jimin Xiao"
+          ],
+          "source": "arXiv",
+          "published": "2026-04-01",
+          "summary": "Co-salient Object Detection (CoSOD) aims to segment salient objects that consistently appear across a group of related images. Despite the notable progress achieved by recent training-based approaches, they still remain constrained by the closed-set datasets and exhibit limited generalization. However, few studies explore the potential of Vision Foundation Models (VFMs) to address CoSOD, which demonstrate a strong generalized ability and robust saliency understanding. In this paper, we investigate and leverage VFMs for CoSOD, and further propose a novel training-free method, TF-SSD, through the synergy between SAM and DINO. Specifically, we first utilize SAM to generate comprehensive raw proposals, which serve as a candidate mask pool. Then, we introduce a quality mask generator to filter out redundant masks, thereby acquiring a refined mask set. Since this generator is built upon SAM, it inherently lacks semantic understanding of saliency. To this end, we adopt an intra-image saliency filter that employs DINO's attention maps to identify visually salient masks within individual images. Moreover, to extend saliency understanding across group images, we propose an inter-image prototype selector, which computes similarity scores among cross-image prototypes to select masks with the highest score. These selected masks serve as final predictions for CoSOD. Extensive experiments show that our TF-SSD outperforms existing methods (e.g., 13.7\\% gains over the recent training-free method). Codes are available at https://github.com/hzz-yy/TF-SSD.",
+          "tags": [
+            "training-free",
+            "SAM",
+            "retrieval/prototype",
+            "saliency/transparent"
+          ],
+          "score": 91
+        },
+        {
+          "title": "DLGStream: Dynamic Language-embedded Guassian Splatting for Open-vocabulary Enabled Free-viewpoint Video Streaming",
+          "url": "http://arxiv.org/abs/2606.28840v1",
+          "pdf": "http://arxiv.org/pdf/2606.28840v1",
+          "authors": [
+            "Zhihui Ke",
+            "Yuyang Liu",
+            "Xiaobo Zhou",
+            "Tie Qiu"
+          ],
+          "source": "arXiv",
+          "published": "2026-06-27",
+          "summary": "3D Gaussian Splatting~(3DGS) has emerged as a promising paradigm for reconstructing streamable free-viewpoint video~(FVV) from multi-view videos. However, 3DGS-based FVVs typically lack user interaction and editing capabilities, which diminishes the immersive experience. Recent research has integrated language features from CLIP into 3DGS via distillation, enabling open-vocabulary queries and supporting many downstream applications. Nevertheless, the stringent requirements of FVV, low frame size and high FPS, make current language Gaussian representations unsuitable for language-embedded FVV. In this paper, we propose DLGStream, a novel language-embedded FVV representation that streams time-varying language features alongside Gaussian attributes to support 4D environment interaction, scene editing, and spatial intelligence. Specifically, we propose a dual-opacity dynamic language Gaussian representation, which maintains two opacity attributes for color and language features to deal with performance degradation that occurs when colors and features are jointly optimized. Furthermore, we introduce an interpolation-based deformation field to reduce temporal redundancy. This deformation field can also be used for 4D frame interpolation, boosting FVV sequences from low to high FPS. Experimental results demonstrate that DLGStream achieves superior performance in both on open-vocabulary segmentation and reconstruction quality with an average frame size of merely 43 KB. The code is available on \\href{https://github.com/kkkzh/DLGStream}{https://github.com/kkkzh/DLGStream}.",
+          "tags": [
+            "open-vocabulary",
+            "diffusion",
+            "depth/geometry",
+            "video"
+          ],
+          "score": 89
+        },
+        {
+          "title": "GeoSelect: Spatial-Program Execution for Training-Free Referring Remote Sensing Image Segmentation",
+          "url": "http://arxiv.org/abs/2607.03869v1",
+          "pdf": "http://arxiv.org/pdf/2607.03869v1",
+          "authors": [
+            "Yuhang Jiang",
+            "Guohui Deng",
+            "Miaozhong Xu",
+            "Chao Ruan",
+            "Jinling Zhao",
+            "Linsheng Huang"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-04",
+          "summary": "Referring remote sensing image segmentation isolates the object named by a natural-language expression in an aerial image. Existing training-free methods resolve the expression through implicit vision-language activations or region-text similarity, which gives weak control over the spatial, comparative, and ordinal relations that dominate aerial referring: they cannot represent constructions such as the largest ship or the second court from the left. We propose GeoSelect, a training-free pipeline that reframes referring as the execution of a typed spatial program. A frozen, text-only language model synthesises the expression into a small domain-specific language, a well-formedness checker accepts the program, and a deterministic executor runs it. The central abstraction is a single scored candidate set type under which every operator composes: continuous geometric fields realise position and proximity as dense pixel-level maps, while discrete set and order operators add the extremum, ordinal, counted-union, and relational constructions that fields alone cannot express. Because execution is explicit, every intermediate program, field, and ranking is inspectable, and a reliability ladder degrades any failing program to a field-only special case, so every expression returns an answer. GeoSelect attains 58.86 mIoU on RRSIS-D test and 55.27 mIoU on RISBench test, more than twice the best prior training-free method on RRSIS-D, with no referring supervision and on a single GPU. A controlled comparison with candidates and segmenter fixed attributes the gain to explicit execution, not the backbone; an oracle decomposition localises the residual gap to detection recall on RRSIS-D and selection on RISBench, and an exposure audit confirms robustness to pretraining leakage. Code will be released upon acceptance at the project page https://avalon-s.github.io/GeoSelect/.",
+          "tags": [
+            "training-free",
+            "VLM/MLLM",
+            "diffusion",
+            "depth/geometry",
+            "remote sensing"
+          ],
+          "score": 89
+        },
+        {
+          "title": "TestMate: Test-Time Domain Adaptation Aided by Lightweight Vision Foundation Model",
+          "url": "http://arxiv.org/abs/2607.03810v1",
+          "pdf": "http://arxiv.org/pdf/2607.03810v1",
+          "authors": [
+            "Dimitrios Fotiou",
+            "Vasileios Mygdalis",
+            "Ioannis Pitas"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-04",
+          "summary": "Test-Time Domain Adaptation (TTDA) aims to adapt Deep Neural Networks to distribution shifts using only streaming, unlabeled test data in real time. Current methods for semantic segmentation tasks suffer from critical limitations. Entropy minimization techniques require costly backpropagation, risking catastrophic forgetting and producing noisy segmentation boundaries. Memory-bank methods, while backpropagation-free, exhibit slow adaptation, requiring numerous samples to converge and struggle to handle continuous domain shifts. We introduce TestMate, a novel, real-time, and backpropagation-free TTDA framework that overcomes these issues. TestMate leverages generalization capability of a lightweight Visual Foundation Model to guide the adaptation. We use a zero-shot instance segmentation YOLOv8-seg based model to generate unlabeled mask proposals for objects and their parts at multiple scales in real time. These proposals are fused with the primary model via a heuristic, size-ordered competitive scheme, where small, high-confidence regions dominate and refine predictions in surrounding larger, less certain areas. This paremeter-free mechanism enables immediate adaptation from the first frame, inherently avoids catastrophic forgetting and effectively preserves fine object details and boundaries, even for small objects. TestMate can be used as a standalone, efficient refinement module or seamlessly integrated into existing TTDA methods to significantly boost their performance. We demonstrate state-of-the-art results across two benchmark datasets, proving TestMate's effectiveness in three distinct adaptation tasks: TTDA, Source-Free Domain Adaptation (SFDA), and online-TTDA. Code is available.",
+          "tags": [
+            "domain adaptation"
+          ],
+          "score": 89
+        },
+        {
+          "title": "M$^4$-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection",
+          "url": "http://arxiv.org/abs/2605.11760v1",
+          "pdf": "http://arxiv.org/pdf/2605.11760v1",
+          "authors": [
+            "Jiyuan Liu",
+            "Jia Lin",
+            "Xiaofei Zhou",
+            "Runmin Cong",
+            "Deyang Liu",
+            "Zhi Liu"
+          ],
+          "source": "arXiv",
+          "published": "2026-05-12",
+          "summary": "The Segment Anything Model 2 (SAM2) has emerged as a foundation model for universal segmentation. Owing to its generalizable visual representations, SAM2 has been successfully applied to various downstream tasks. However, extending SAM2 to the RGB-D video salient object detection (RGB-D VSOD) task encounters three challenges including limited spatial modeling of linear LoRA, insufficient employment of SAM's multi-scale features, and dependence of initialization on explicit prompts. To address the issues, we present Multi-Modal Mixture-of-Experts with Memory-Augmented SAM (M$^4$-SAM), which equips SAM2 with modality-related PEFT, hierarchical feature fusion, and prompt-free memory initialization. Firstly, we inject Modality-Aware MoE-LORA, which employs convolutional experts to encode local spatial priors and introduces a modality dispatcher for efficient multi-modal fine-tuning, into SAM2's encoder. Secondly, we deploy Gated Multi-Level Feature Fusion, which hierarchically aggregates multi-scale encoder features with an adaptive gating mechanism, to balance spatial details and semantic context. Finally, to conduct zero-shot VSOD without manual prompts, we utilize a Pseudo-Guided Initialization, where a coarse mask is regarded as a pseudo prior and used to bootstrap the memory bank. Extensive experiments demonstrate that M$^4$-SAM achieves the state-of-the-art performance across all evaluation metrics on three public RGB-D VSOD datasets.",
+          "tags": [
+            "SAM",
+            "retrieval/prototype",
+            "video",
+            "saliency/transparent"
+          ],
+          "score": 85
+        },
+        {
+          "title": "SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models",
+          "url": "http://arxiv.org/abs/2605.31597v3",
+          "pdf": "http://arxiv.org/pdf/2605.31597v3",
+          "authors": [
+            "Olaf Dünkel",
+            "Basavaraj Sunagad",
+            "Haoran Wang",
+            "David T. Hoffmann",
+            "Christian Theobalt",
+            "Adam Kortylewski"
+          ],
+          "source": "arXiv",
+          "published": "2026-05-29",
+          "summary": "Measuring structured object understanding in vision foundation models remains challenging due to inconsistent evaluation protocols and limited part-level supervision. Semantic correspondence (SC) evaluates this capability by testing whether object parts can be matched across instances and categories under large variations in appearance, viewpoint, and geometry. To enable a systematic SC evaluation, we introduce SOCO, a new benchmark for Semantic Object Correspondence that introduces a taxonomy of correspondence types and provides consistent, functionally meaningful keypoint annotations across 100 categories and over 1M correspondence pairs. In addition, SOCO includes keypoint language descriptions, enabling the evaluation of large vision-language models (LVLMs) and their fine-grained part-level understanding. Comprehensive experiments reveal that (i) vision foundation backbones encode strong semantic structure but transfer correspondences poorly across related categories and only partially capture object-part position, (ii) LVLMs are stronger at text-prompted part localization than at visual-reference cross-image matching, exposing a gap between language-grounded localization and fine-grained visual correspondence, and (iii) correspondence performance predicts performance on dense downstream tasks, including segmentation, tracking, 3D pose estimation, and 3D detection, more strongly than ImageNet classification. Together, these findings position SOCO as a benchmark for structured, part-level representation quality in vision and multimodal foundation models.",
+          "tags": [
+            "VLM/MLLM",
+            "diffusion",
+            "depth/geometry",
+            "video"
+          ],
+          "score": 85
+        },
+        {
+          "title": "VesselSim: learning 3D blood vessel segmentation without expert annotations",
+          "url": "http://arxiv.org/abs/2605.26277v2",
+          "pdf": "http://arxiv.org/pdf/2605.26277v2",
+          "authors": [
+            "Erin Rainville",
+            "Melissa Ananian",
+            "Tristan Mirolla",
+            "Hassan Rivaz",
+            "Yiming Xiao"
+          ],
+          "source": "arXiv",
+          "published": "2026-05-25",
+          "summary": "Blood vessel segmentation is a core task in medical image analysis for the care of vascular diseases and surgical planning, yet the challenges of providing expert vascular annotations pose a major obstacle for the progress of related deep learning techniques. To address this, we propose VesselSim, a two-stage framework for universal 3D blood vessel segmentation that eliminates the need for real annotated data during training. First, we introduce a stochastic, geometry-driven vascular simulation framework that models recursive branching, curvature-controlled growth, and collision-aware topology, followed by domain-randomized intensity synthesis to generate 16,500 anatomically plausible 3D angiographic volumes. Second, a 3D U-Net is trained solely on this synthetic data. To bridge the domain gap from synthetic to real images at inference time, we introduce a test-time adaptation strategy via a self-supervised mask reconstruction decoder, enabling adaptation to unseen clinical scans without prior domain knowledge. We evaluate VesselSim in a zero-shot setting on multiple real-world datasets spanning MR and CT across several anatomical regions, including the brain and kidneys. Despite being trained exclusively on synthetic data, VesselSim achieves performance competitive with state-of-the-art vascular segmentation foundation models. These findings suggest that learning vessel geometry from synthetic tubular structures is effective for robust cross-domain generalization, substantially reducing the reliance on acquired medical imaging data and more importantly, expert annotations.",
+          "tags": [
+            "boundary/frequency",
+            "depth/geometry",
+            "anomaly/OOD",
+            "domain adaptation",
+            "medical imaging"
+          ],
+          "score": 85
+        },
+        {
+          "title": "MM-OVSeg:Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing",
+          "url": "http://arxiv.org/abs/2603.17528v2",
+          "pdf": "http://arxiv.org/pdf/2603.17528v2",
+          "authors": [
+            "Yimin Wei",
+            "Aoran Xiao",
+            "Hongruixuan Chen",
+            "Junshi Xia",
+            "Naoto Yokoya"
+          ],
+          "source": "arXiv",
+          "published": "2026-03-18",
+          "summary": "Open-vocabulary segmentation enables pixel-level recognition from an open set of textual categories, allowing generalization beyond fixed classes. Despite great potential in remote sensing, progress in this area remains largely limited to clear-sky optical data and struggles under cloudy or haze-contaminated conditions. We present MM-OVSeg, a multimodal Optical-SAR fusion framework for resilient open-vocabulary segmentation under adverse weather conditions. MM-OVSeg leverages the complementary strengths of the two modalities--optical imagery provides rich spectral semantics, while synthetic aperture radar (SAR) offers cloud-penetrating structural cues. To address the cross-modal domain gap and the limited dense prediction capability of current vision-language models, we propose two key designs: a cross-modal unification process for multi-sensor representation alignment, and a dual-encoder fusion module that integrates hierarchical features from multiple vision foundation models for text-aligned multimodal segmentation. Extensive experiments demonstrate that MM-OVSeg achieves superior robustness and generalization across diverse cloud conditions. The source dataset and code are available at https://github.com/Jimmyxichen/MM-OVSeg.",
+          "tags": [
+            "open-vocabulary",
+            "VLM/MLLM",
+            "diffusion",
+            "remote sensing"
+          ],
+          "score": 85
+        },
+        {
+          "title": "Dual-Adaptive SAM3: Hierarchical Routing over Low-Rank Expert Layers for Parameter-Efficient Medical Image Segmentation",
+          "url": "http://arxiv.org/abs/2607.02571v1",
+          "pdf": "http://arxiv.org/pdf/2607.02571v1",
+          "authors": [
+            "Ying Chen",
+            "Jinyue Li",
+            "Kun Wang",
+            "Qiankun Li",
+            "Yang Liu"
+          ],
+          "source": "arXiv",
+          "published": "2026-06-30",
+          "summary": "The Segment Anything Model with Concepts (SAM3) heralds a new paradigm for open-vocabulary segmentation through natural language interaction, offering significant potential for medical image analysis. However, effectively adapting such a powerful vision-language model to the diverse and nuanced domain of medical imaging remains a key challenge. Naive fine-tuning is parameter-inefficient, while standard Mixture-of-Experts (MoE) methods introduce prohibitive computational overhead, limiting their clinical applicability. To address this, we propose Dual-Adaptive SAM3 (DA-SAM3), a novel framework that achieves both high segmentation accuracy and extreme parameter efficiency via a dual-adaptive specialization mechanism. Our first adaptation is task-aware: a Dynamic Expert Router (DER) that sparsely activates the most relevant experts by jointly reasoning about the visual input and the textual concept prompt, mimicking a clinical consultation process. Our second adaptation is parameter-aware: a Decomposed Parameterized Experts (DPE) design that represents each expert as a shared frozen base (inherited from the pretrained SAM3) and a lightweight trainable low-rank delta, reducing MoE parameter overhead by over 80\\%. Extensive experiments on multiple public medical segmentation benchmarks demonstrate that Dual-Adaptive SAM3 not only matches or exceeds the accuracy of fully fine-tuned SAM3 and standard MoE baselines, but also achieves a notable 5\\% gain over current state-of-the-art methods, with interpretable results validating its effectiveness. The code is available at: https://github.com/Reconsider80/DA-SAM3.",
+          "tags": [
+            "open-vocabulary",
+            "SAM",
+            "VLM/MLLM",
+            "reasoning",
+            "medical imaging"
+          ],
+          "score": 83
+        }
+      ]
+    }
+  },
+  {
     "date": "2026-07-06",
     "generated_at": "2026-07-06 15:08",
     "timezone": "Asia/Shanghai",
