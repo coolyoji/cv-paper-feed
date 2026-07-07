@@ -8,6 +8,7 @@ reliably on GitHub Actions without dependency installation.
 from __future__ import annotations
 
 import html
+import hashlib
 import json
 import re
 import os
@@ -34,6 +35,11 @@ HIGHLIGHT_LIMIT = 5
 QUALITY_LIMIT = 10
 COD_LIMIT = 12
 BROAD_LIMIT = 12
+DOWNLOAD_LIMIT = 5
+DOWNLOAD_ROOT = Path(
+    os.environ.get("PAPER_DOWNLOAD_ROOT", r"F:\文献整理\每日精读论文")
+)
+DOWNLOAD_INDEX_NAME = "_downloaded_papers.json"
 
 UTC8 = timezone(timedelta(hours=8))
 
@@ -281,6 +287,18 @@ def fetch_url(url: str, timeout: int = 45) -> str:
     )
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return resp.read().decode("utf-8", errors="ignore")
+
+
+def fetch_bytes(url: str, timeout: int = 90) -> tuple[bytes, str]:
+    req = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": "cv-paper-feed/1.0 (daily literature monitor; contact: none)"
+        },
+    )
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        content_type = resp.headers.get("content-type", "")
+        return resp.read(), content_type
 
 
 def clean_text(text: str) -> str:
@@ -894,6 +912,181 @@ def paper_from_dict(data: dict) -> Paper:
     return paper
 
 
+def download_root_available() -> bool:
+    if os.name != "nt" and "PAPER_DOWNLOAD_ROOT" not in os.environ:
+        return False
+    drive = DOWNLOAD_ROOT.drive
+    if drive and not Path(drive + "\\").exists():
+        return False
+    return True
+
+
+def download_index_path() -> Path:
+    return DOWNLOAD_ROOT / DOWNLOAD_INDEX_NAME
+
+
+def load_download_index() -> dict:
+    path = download_index_path()
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def save_download_index(index: dict) -> None:
+    DOWNLOAD_ROOT.mkdir(parents=True, exist_ok=True)
+    download_index_path().write_text(
+        json.dumps(index, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+        newline="\n",
+    )
+
+
+def paper_key(paper: Paper) -> str:
+    title_key = re.sub(r"\W+", "", paper.title.lower())
+    if title_key:
+        return "title:" + hashlib.sha1(title_key.encode("utf-8")).hexdigest()
+    url = paper.url or paper.pdf
+    arxiv = re.search(r"arxiv\.org/(?:abs|pdf)/([^/?#]+)", url)
+    if arxiv:
+        arxiv_id = re.sub(r"v\d+$", "", arxiv.group(1))
+        return "arxiv:" + arxiv_id.lower()
+    return "url:" + hashlib.sha1(url.encode("utf-8")).hexdigest()
+
+
+def safe_filename(text: str, max_chars: int = 120) -> str:
+    text = clean_text(text)
+    text = re.sub(r'[<>:"/\\|?*\x00-\x1f]', " ", text)
+    text = re.sub(r"\s+", " ", text).strip(" .")
+    if not text:
+        text = "paper"
+    if len(text) > max_chars:
+        text = text[:max_chars].rstrip(" .")
+    return text
+
+
+def daily_download_dir(date_text: str) -> Path:
+    year, month, day = date_text.split("-")
+    return DOWNLOAD_ROOT / year / month / day
+
+
+def download_candidates(snapshot: dict) -> list[Paper]:
+    sections = snapshot_sections(snapshot)
+    candidates: list[Paper] = []
+    for section_name in ["highlights", "quality", "cod", "broad"]:
+        for paper in sections[section_name]:
+            if not paper.pdf:
+                continue
+            key = paper_key(paper)
+            if any(paper_key(existing) == key for existing in candidates):
+                continue
+            candidates.append(paper)
+    return candidates
+
+
+def write_download_readme(folder: Path, snapshot: dict, downloaded: list[dict], skipped: list[dict]) -> None:
+    lines = [
+        f"# {snapshot.get('date', '')} 每日精读论文 PDF",
+        "",
+        f"Generated at: {snapshot.get('generated_at', '')} Asia/Shanghai",
+        f"Target: {DOWNLOAD_LIMIT} new PDFs",
+        "",
+        "## 已下载",
+        "",
+    ]
+    if downloaded:
+        for item in downloaded:
+            lines.extend(
+                [
+                    f"- **{item['title']}**",
+                    f"  - File: {item['file']}",
+                    f"  - Source: {item.get('source', '')}",
+                    f"  - URL: {item.get('url', '')}",
+                    "",
+                ]
+            )
+    else:
+        lines.append("- 本次没有下载新的 PDF。")
+        lines.append("")
+    if skipped:
+        lines.extend(["## 跳过", ""])
+        for item in skipped:
+            lines.append(f"- {item['title']}：{item['reason']}")
+        lines.append("")
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / "README.md").write_text("\n".join(lines), encoding="utf-8", newline="\n")
+
+
+def download_daily_pdfs(snapshot: dict) -> None:
+    if not download_root_available():
+        print(f"[warn] download root is unavailable, skipping PDF download: {DOWNLOAD_ROOT}", file=sys.stderr)
+        return
+    date_text = snapshot.get("date") or str(snapshot.get("generated_at", ""))[:10]
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_text):
+        print(f"[warn] invalid snapshot date, skipping PDF download: {date_text}", file=sys.stderr)
+        return
+
+    index = load_download_index()
+    folder = daily_download_dir(date_text)
+    folder.mkdir(parents=True, exist_ok=True)
+    existing_today = [
+        record
+        for record in index.values()
+        if isinstance(record, dict) and record.get("date") == date_text
+    ]
+    downloaded: list[dict] = []
+    skipped: list[dict] = []
+
+    if len(existing_today) >= DOWNLOAD_LIMIT:
+        write_download_readme(folder, snapshot, existing_today[:DOWNLOAD_LIMIT], skipped)
+        print(f"[info] daily PDF quota already satisfied: {folder}")
+        return
+
+    for paper in download_candidates(snapshot):
+        if len(existing_today) + len(downloaded) >= DOWNLOAD_LIMIT:
+            break
+        key = paper_key(paper)
+        previous = index.get(key)
+        if previous:
+            skipped.append(
+                {
+                    "title": paper.title,
+                    "reason": f"已在 {previous.get('date', 'previous day')} 下载过",
+                }
+            )
+            continue
+        try:
+            content, content_type = fetch_bytes(paper.pdf, timeout=90)
+        except Exception as exc:  # pragma: no cover - network resilience
+            skipped.append({"title": paper.title, "reason": f"下载失败：{exc}"})
+            continue
+        if not content.startswith(b"%PDF") and "pdf" not in content_type.lower():
+            skipped.append({"title": paper.title, "reason": "链接返回的不是 PDF"})
+            continue
+        sequence = len(existing_today) + len(downloaded) + 1
+        filename = f"{sequence:02d} - {safe_filename(paper.title)}.pdf"
+        path = folder / filename
+        path.write_bytes(content)
+        record = {
+            "date": date_text,
+            "title": paper.title,
+            "source": paper.source,
+            "url": paper.url,
+            "pdf": paper.pdf,
+            "file": str(path),
+        }
+        index[key] = record
+        downloaded.append(record)
+        print(f"[info] downloaded PDF: {path}")
+
+    save_download_index(index)
+    write_download_readme(folder, snapshot, downloaded, skipped)
+    print(f"[info] downloaded {len(downloaded)} new PDFs to {folder}")
+
+
 def previous_update_time() -> str:
     md_path = DOCS / "literature.md"
     if md_path.exists():
@@ -1316,6 +1509,8 @@ def main() -> None:
 
     now = datetime.now(UTC8)
     history = update_history(papers, now)
+    if history:
+        download_daily_pdfs(history[0])
     md = render_markdown(history)
     (DOCS / "literature.md").write_text(md, encoding="utf-8", newline="\n")
     (DOCS / "index.html").write_text(render_html(md), encoding="utf-8", newline="\n")
