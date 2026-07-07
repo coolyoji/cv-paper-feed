@@ -257,6 +257,24 @@ QUALITY_SOURCE_HINTS = {
     "transactions": 6,
 }
 
+RECENT_PUBLISHED_YEAR_WINDOW = 2
+ARXIV_HIGHLIGHT_MAX_AGE_DAYS = 180
+ARXIV_HIGHLIGHT_MIN_SCORE = 45
+PUBLISHED_SOURCE_BONUS = 10
+ARXIV_SOURCE_PENALTY = 5
+STRONG_ARXIV_TAGS = {
+    "COD",
+    "open-vocabulary",
+    "training-free",
+    "SAM",
+    "VLM/MLLM",
+    "reasoning",
+    "diffusion",
+    "domain adaptation",
+    "remote sensing",
+    "saliency/transparent",
+}
+
 
 STOP_TITLES = {
     # Titles that match broad keywords but are usually far from the user's goal.
@@ -371,12 +389,16 @@ def score_paper(paper: Paper) -> int:
     for hint, bonus in QUALITY_SOURCE_HINTS.items():
         if hint in source:
             score += bonus
+    if "arxiv" not in source and (
+        any(hint in source for hint in QUALITY_SOURCE_HINTS) or "crossref" in source
+    ):
+        score += PUBLISHED_SOURCE_BONUS
     if "cvpr 2026" in source:
         score += 8
     if "iccv 2025" in source or "wacv 2026" in source:
         score += 5
     if "arxiv" in source:
-        score += 3
+        score -= ARXIV_SOURCE_PENALTY
     if "semantic scholar" in source:
         score += 4
     if "crossref" in source:
@@ -406,6 +428,69 @@ def paper_age_days(paper: Paper) -> int | None:
     except ValueError:
         return None
     return (datetime.now(timezone.utc) - pub).days
+
+
+def publication_year(paper: Paper) -> int | None:
+    text = f"{paper.published} {paper.source}"
+    match = re.search(r"\b(20\d{2})\b", text)
+    if not match:
+        return None
+    return int(match.group(1))
+
+
+def is_arxiv(paper: Paper) -> bool:
+    return "arxiv" in paper.source.lower()
+
+
+def has_quality_published_source(paper: Paper) -> bool:
+    source = paper.source.lower()
+    if is_arxiv(paper):
+        return False
+    return "crossref" in source or any(hint in source for hint in QUALITY_SOURCE_HINTS)
+
+
+def is_recent_published_source(paper: Paper) -> bool:
+    year = publication_year(paper)
+    if year is None:
+        return False
+    current_year = datetime.now(UTC8).year
+    return (
+        has_quality_published_source(paper)
+        and year >= current_year - RECENT_PUBLISHED_YEAR_WINDOW
+    )
+
+
+def is_high_quality_arxiv(paper: Paper) -> bool:
+    if not is_arxiv(paper):
+        return False
+    age = paper_age_days(paper)
+    if age is None or age > ARXIV_HIGHLIGHT_MAX_AGE_DAYS:
+        return False
+    strong_tags = set(paper.tags) & STRONG_ARXIV_TAGS
+    if "COD" in strong_tags and paper.score >= ARXIV_HIGHLIGHT_MIN_SCORE - 3:
+        return True
+    return paper.score >= ARXIV_HIGHLIGHT_MIN_SCORE and len(strong_tags) >= 2
+
+
+def highlight_tier(paper: Paper) -> int:
+    if is_recent_published_source(paper):
+        return 4
+    if has_quality_published_source(paper):
+        return 3
+    if is_high_quality_arxiv(paper):
+        return 2
+    if "COD" in paper.tags and paper.score >= ARXIV_HIGHLIGHT_MIN_SCORE:
+        return 1
+    return 0
+
+
+def highlight_rank(paper: Paper) -> tuple[int, int, int, str]:
+    return (
+        highlight_tier(paper),
+        paper.score,
+        publication_year(paper) or 0,
+        paper.published,
+    )
 
 
 def fetch_arxiv(max_results_per_query: int = 18) -> list[Paper]:
@@ -866,16 +951,12 @@ def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
     cod = sorted(cod, key=lambda p: p.score, reverse=True)[:COD_LIMIT]
     broad = sorted(broad, key=lambda p: p.score, reverse=True)[:BROAD_LIMIT]
     quality = sorted(quality, key=lambda p: p.score, reverse=True)[:QUALITY_LIMIT]
-    recent = [
-        p
-        for p in papers
-        if (paper_age_days(p) is not None and paper_age_days(p) <= 30)
-    ]
-    highlights = sorted(recent, key=lambda p: (p.score, p.published), reverse=True)[:HIGHLIGHT_LIMIT]
+    highlight_pool = [p for p in papers if highlight_tier(p) > 0]
+    highlights = sorted(highlight_pool, key=highlight_rank, reverse=True)[:HIGHLIGHT_LIMIT]
     if len(highlights) < HIGHLIGHT_LIMIT:
         fallback = [p for p in papers if p not in highlights]
         highlights.extend(
-            sorted(fallback, key=lambda p: p.score, reverse=True)[
+            sorted(fallback, key=highlight_rank, reverse=True)[
                 : HIGHLIGHT_LIMIT - len(highlights)
             ]
         )
@@ -984,7 +1065,15 @@ def download_candidates(snapshot: dict) -> list[Paper]:
             if any(paper_key(existing) == key for existing in candidates):
                 continue
             candidates.append(paper)
-    return candidates
+    preferred = [
+        paper
+        for paper in candidates
+        if highlight_tier(paper) >= 2 or (has_quality_published_source(paper) and paper.score >= 35)
+    ]
+    fallback = [paper for paper in candidates if paper not in preferred]
+    return sorted(preferred, key=highlight_rank, reverse=True) + sorted(
+        fallback, key=highlight_rank, reverse=True
+    )
 
 
 def write_download_readme(folder: Path, snapshot: dict, downloaded: list[dict], skipped: list[dict]) -> None:
@@ -1264,6 +1353,7 @@ def render_snapshot_markdown(snapshot: dict) -> str:
             "- CVF OpenAccess: CVPR/ECCV/ICCV/WACV title-level scan.",
             "- Semantic Scholar Graph API: broad high-quality venue and topic search when rate limits allow.",
             "- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, Medical Image Analysis.",
+            "- Selection policy: the daily deep-reading queue prioritizes recent published papers from top conferences/journals; arXiv papers enter the top five only when they are recent and have strong topic/method signals.",
             "",
             "说明：自动简介是基于题名、摘要和来源的初筛笔记，不等同于阅读全文后的结论；精读时建议再核对 method、experiment 和 limitation。",
             "",
@@ -1317,6 +1407,7 @@ def render_markdown(history: list[dict]) -> str:
             "- CVF OpenAccess",
             "- Semantic Scholar Graph API",
             "- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, Medical Image Analysis",
+            "- Deep-reading priority: recent published top-conference/top-journal papers first; only high-signal recent arXiv papers enter the top five.",
             "",
         ]
     )
