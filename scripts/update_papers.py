@@ -51,7 +51,8 @@ UTC8 = timezone(timedelta(hours=8))
 
 
 ARXIV_QUERIES = [
-    # COD / camouflage direct line
+    # COD / camouflage direct line. These are kept as anchors, but the daily
+    # deep-read queue is intentionally biased toward transferable methods below.
     'all:"camouflaged object detection"',
     'all:"camouflaged object segmentation"',
     'all:"concealed object detection"',
@@ -80,6 +81,26 @@ ARXIV_QUERIES = [
     'all:"domain generalization" AND all:"segmentation"',
     'all:"medical image segmentation" AND all:"foundation model"',
     'all:"remote sensing" AND all:"open-vocabulary segmentation"',
+    # Cross-domain method papers that may open new COD research directions
+    'all:"object discovery" AND all:"foundation model"',
+    'all:"open-world segmentation"',
+    'all:"referring image segmentation" AND all:"reasoning"',
+    'all:"visual prompt" AND all:"segmentation"',
+    'all:"negative prompt" AND all:"segmentation"',
+    'all:"uncertainty" AND all:"segmentation"',
+    'all:"calibration" AND all:"segmentation"',
+    'all:"out-of-distribution" AND all:"segmentation"',
+    'all:"counterfactual" AND all:"vision"',
+    'all:"causal" AND all:"segmentation"',
+    'all:"self-supervised" AND all:"dense prediction"',
+    'all:"representation learning" AND all:"dense prediction"',
+    'all:"object-centric" AND all:"vision"',
+    'all:"compositional" AND all:"segmentation"',
+    'all:"interactive segmentation" AND all:"foundation model"',
+    'all:"active learning" AND all:"segmentation"',
+    'all:"continual learning" AND all:"segmentation"',
+    'all:"world model" AND all:"vision"',
+    'all:"concept bottleneck" AND all:"vision"',
 ]
 
 
@@ -113,6 +134,19 @@ SEMANTIC_SCHOLAR_QUERIES = [
     "small object detection dense prediction",
     "boundary aware segmentation frequency",
     "depth estimation segmentation geometry",
+    "object discovery foundation model vision",
+    "open world segmentation",
+    "referring image segmentation visual reasoning",
+    "uncertainty calibration semantic segmentation",
+    "out of distribution segmentation dense prediction",
+    "counterfactual causal vision segmentation",
+    "self supervised dense prediction representation learning",
+    "object centric learning computer vision",
+    "compositional visual reasoning segmentation",
+    "interactive segmentation foundation model",
+    "active learning semantic segmentation",
+    "continual learning dense prediction",
+    "visual concept bottleneck model",
 ]
 
 
@@ -237,7 +271,87 @@ BROAD_KEYWORDS = [
     "medical image",
     "low-light",
     "restoration",
+    "object discovery",
+    "object-centric",
+    "open-world",
+    "open set",
+    "uncertainty",
+    "calibration",
+    "counterfactual",
+    "causal",
+    "invariant",
+    "self-supervised",
+    "masked image modeling",
+    "dense feature",
+    "representation learning",
+    "interactive",
+    "active learning",
+    "continual learning",
+    "compositional",
+    "concept bottleneck",
+    "world model",
 ]
+
+
+DIRECT_COD_SCORE = 18
+DIRECT_COD_HIGHLIGHT_LIMIT = 1
+MIN_IDEA_TRANSFER_SCORE = 18
+NON_COD_IDEA_BONUS = 8
+
+IDEA_TRANSFER_KEYWORD_WEIGHTS = {
+    "counterfactual": 12,
+    "causal": 10,
+    "invariant": 8,
+    "uncertainty": 10,
+    "calibration": 8,
+    "open-world": 10,
+    "open world": 10,
+    "open set": 8,
+    "out-of-distribution": 10,
+    "object discovery": 12,
+    "object-centric": 10,
+    "compositional": 9,
+    "concept bottleneck": 9,
+    "self-supervised": 9,
+    "masked image modeling": 8,
+    "representation learning": 8,
+    "dense feature": 8,
+    "interactive segmentation": 8,
+    "active learning": 7,
+    "continual learning": 7,
+    "world model": 8,
+    "reasoning": 8,
+    "negative prompt": 7,
+    "referring image segmentation": 7,
+}
+
+TRANSFER_TAG_WEIGHTS = {
+    "causal/counterfactual": 14,
+    "uncertainty/calibration": 12,
+    "open-world": 12,
+    "object discovery": 12,
+    "object-centric": 10,
+    "self-supervised": 10,
+    "representation learning": 10,
+    "compositionality": 9,
+    "active/interactive": 8,
+    "continual learning": 8,
+    "reasoning": 8,
+    "VLM/MLLM": 8,
+    "SAM": 7,
+    "open-vocabulary": 7,
+    "training-free": 7,
+    "anomaly/OOD": 7,
+    "domain adaptation": 7,
+    "diffusion": 6,
+    "boundary/frequency": 6,
+    "depth/geometry": 6,
+    "remote sensing": 5,
+    "medical imaging": 5,
+    "video": 5,
+}
+
+TRANSFER_TAGS = set(TRANSFER_TAG_WEIGHTS)
 
 
 QUALITY_SOURCE_HINTS = {
@@ -279,7 +393,7 @@ STRONG_ARXIV_TAGS = {
     "domain adaptation",
     "remote sensing",
     "saliency/transparent",
-}
+} | TRANSFER_TAGS
 
 
 STOP_TITLES = {
@@ -365,6 +479,16 @@ def derive_tags(title: str, summary: str) -> list[str]:
         ("video", ["video", "temporal", "tracking", "motion"]),
         ("remote sensing", ["remote sensing", "earth observation", "sar", "hyperspectral"]),
         ("anomaly/OOD", ["anomaly", "ood", "out-of-distribution"]),
+        ("causal/counterfactual", ["causal", "causality", "counterfactual"]),
+        ("uncertainty/calibration", ["uncertainty", "calibration", "confidence"]),
+        ("open-world", ["open-world", "open world", "open-set", "open set"]),
+        ("object discovery", ["object discovery", "class-agnostic discovery"]),
+        ("object-centric", ["object-centric", "object centric"]),
+        ("self-supervised", ["self-supervised", "self supervised", "masked image modeling"]),
+        ("representation learning", ["representation learning", "dense feature", "dense representation"]),
+        ("compositionality", ["compositional", "composition"]),
+        ("active/interactive", ["interactive segmentation", "active learning"]),
+        ("continual learning", ["continual learning", "lifelong learning"]),
         ("low-level", ["low-light", "restoration", "enhancement", "denoising"]),
         ("saliency/transparent", ["salient", "saliency", "transparent", "low contrast"]),
         ("domain adaptation", ["domain generalization", "domain adaptation", "test-time adaptation"]),
@@ -382,16 +506,30 @@ def derive_tags(title: str, summary: str) -> list[str]:
     return tags or ["computer vision"]
 
 
+def direct_cod_signal(text: str) -> bool:
+    return any(kw in text for kw in COD_KEYWORDS)
+
+
+def idea_keyword_score(text: str) -> int:
+    return sum(
+        bonus for keyword, bonus in IDEA_TRANSFER_KEYWORD_WEIGHTS.items() if keyword in text
+    )
+
+
 def score_paper(paper: Paper) -> int:
     text = f"{paper.title} {paper.summary}".lower()
     source = paper.source.lower()
     score = 0
-    for kw in COD_KEYWORDS:
-        if kw in text:
-            score += 30
+    is_direct_cod = direct_cod_signal(text)
+    if is_direct_cod:
+        score += DIRECT_COD_SCORE
     for kw in BROAD_KEYWORDS:
         if kw in text:
             score += 6
+    idea_score = idea_keyword_score(text)
+    score += idea_score
+    if not is_direct_cod and idea_score >= 8:
+        score += NON_COD_IDEA_BONUS
     for hint, bonus in QUALITY_SOURCE_HINTS.items():
         if hint in source:
             score += bonus
@@ -455,6 +593,24 @@ def has_quality_published_source(paper: Paper) -> bool:
     return "crossref" in source or any(hint in source for hint in QUALITY_SOURCE_HINTS)
 
 
+def transfer_potential(paper: Paper) -> int:
+    tags = set(paper.tags)
+    text = f"{paper.title} {paper.summary}".lower()
+    score = sum(TRANSFER_TAG_WEIGHTS[tag] for tag in tags if tag in TRANSFER_TAG_WEIGHTS)
+    score += min(24, idea_keyword_score(text))
+    if "COD" not in tags and score > 0:
+        score += NON_COD_IDEA_BONUS
+    if has_quality_published_source(paper):
+        score += 6
+    if is_arxiv(paper):
+        age = paper_age_days(paper)
+        if age is not None and age <= ARXIV_HIGHLIGHT_MAX_AGE_DAYS:
+            score += 3
+    if "COD" in tags and not (tags & TRANSFER_TAGS):
+        score -= 6
+    return score
+
+
 def is_recent_published_source(paper: Paper) -> bool:
     year = publication_year(paper)
     if year is None:
@@ -473,13 +629,20 @@ def is_high_quality_arxiv(paper: Paper) -> bool:
     if age is None or age > ARXIV_HIGHLIGHT_MAX_AGE_DAYS:
         return False
     strong_tags = set(paper.tags) & STRONG_ARXIV_TAGS
+    if transfer_potential(paper) >= MIN_IDEA_TRANSFER_SCORE and paper.score >= 35:
+        return True
     if "COD" in strong_tags and paper.score >= ARXIV_HIGHLIGHT_MIN_SCORE - 3:
         return True
     return paper.score >= ARXIV_HIGHLIGHT_MIN_SCORE and len(strong_tags) >= 2
 
 
 def highlight_tier(paper: Paper) -> int:
+    potential = transfer_potential(paper)
+    if is_recent_published_source(paper) and potential >= MIN_IDEA_TRANSFER_SCORE:
+        return 5
     if is_recent_published_source(paper):
+        return 4
+    if has_quality_published_source(paper) and potential >= MIN_IDEA_TRANSFER_SCORE:
         return 4
     if has_quality_published_source(paper):
         return 3
@@ -490,13 +653,54 @@ def highlight_tier(paper: Paper) -> int:
     return 0
 
 
-def highlight_rank(paper: Paper) -> tuple[int, int, int, str]:
+def highlight_rank(paper: Paper) -> tuple[int, int, int, int, int, str]:
     return (
         highlight_tier(paper),
+        transfer_potential(paper),
+        int("COD" not in paper.tags),
         paper.score,
         publication_year(paper) or 0,
         paper.published,
     )
+
+
+def is_pure_cod_anchor(paper: Paper) -> bool:
+    return "COD" in paper.tags and transfer_potential(paper) < MIN_IDEA_TRANSFER_SCORE
+
+
+def select_highlights(papers: list[Paper]) -> list[Paper]:
+    highlight_pool = [
+        paper
+        for paper in papers
+        if highlight_tier(paper) > 0 or transfer_potential(paper) >= MIN_IDEA_TRANSFER_SCORE
+    ]
+    ranked = sorted(highlight_pool, key=highlight_rank, reverse=True)
+    highlights: list[Paper] = []
+    pure_cod_count = 0
+    for paper in ranked:
+        if paper in highlights:
+            continue
+        if is_pure_cod_anchor(paper):
+            if pure_cod_count >= DIRECT_COD_HIGHLIGHT_LIMIT:
+                continue
+            pure_cod_count += 1
+        highlights.append(paper)
+        if len(highlights) >= HIGHLIGHT_LIMIT:
+            break
+
+    if len(highlights) < HIGHLIGHT_LIMIT:
+        fallback = [paper for paper in papers if paper not in highlights]
+        for paper in sorted(fallback, key=highlight_rank, reverse=True):
+            if paper in highlights:
+                continue
+            if is_pure_cod_anchor(paper):
+                if pure_cod_count >= DIRECT_COD_HIGHLIGHT_LIMIT:
+                    continue
+                pure_cod_count += 1
+            highlights.append(paper)
+            if len(highlights) >= HIGHLIGHT_LIMIT:
+                break
+    return highlights
 
 
 def fetch_arxiv(max_results_per_query: int = 18) -> list[Paper]:
@@ -775,8 +979,19 @@ def format_authors(authors: list[str], limit: int = 5) -> str:
 
 def why_read(paper: Paper) -> str:
     tags = set(paper.tags)
+    if tags & {
+        "causal/counterfactual",
+        "uncertainty/calibration",
+        "open-world",
+        "object discovery",
+        "object-centric",
+        "self-supervised",
+        "representation learning",
+        "compositionality",
+    }:
+        return "不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。"
     if "COD" in tags:
-        return "直接关联伪装目标检测/分割，优先看方法和消融。"
+        return "直接关联伪装目标检测/分割，主要作为背景、对照和失败案例参考。"
     if "open-vocabulary" in tags or "training-free" in tags:
         return "适合迁移到开放词汇、零样本或无训练 COD。"
     if "SAM" in tags or "VLM/MLLM" in tags:
@@ -822,6 +1037,14 @@ def method_core(paper: Paper) -> str:
     if re.search(r"\b(segment anything|sam)\b", text):
         return "借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。"
     cues = [
+        (["uncertainty", "calibration", "confidence"], "不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。"),
+        (["open-world", "open world", "open-set", "open set"], "开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。"),
+        (["object discovery"], "类别无关目标发现，适合把 COD 从固定类别分割改写成复杂背景中的潜在目标发现问题。"),
+        (["object-centric", "object centric"], "对象中心表征学习，适合把目标从背景纹理中解耦出来，形成更强的候选对象假设。"),
+        (["self-supervised", "masked image modeling", "representation learning", "dense feature"], "自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。"),
+        (["compositional", "concept bottleneck"], "组合式或概念瓶颈建模，可把 COD 拆成颜色、纹理、边界、环境关系等可解释概念。"),
+        (["interactive segmentation", "active learning"], "交互式/主动学习设定，适合思考少量提示或少量标注下如何快速适配 COD。"),
+        (["continual learning", "lifelong"], "持续学习设定，适合思考 COD 在新场景、新物种、新背景下的增量适配。"),
         (["counterfactual"], "反事实建模/拒识机制，用来降低误检或判断目标是否存在。"),
         (["diffusion", "generative"], "扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。"),
         (["prompt"], "提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。"),
@@ -854,8 +1077,20 @@ def experiment_takeaway(paper: Paper) -> str:
 
 def relation_to_topic(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "COD" in tags and (tags & TRANSFER_TAGS):
+        return "它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。"
     if "COD" in tags:
-        return "和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。"
+        return "和伪装目标检测高度相关，可作为背景、baseline 或问题定义参考；精读时重点看它还缺少哪些外部方法视角。"
+    if "causal/counterfactual" in tags:
+        return "可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。"
+    if "uncertainty/calibration" in tags:
+        return "可迁移到 COD 的误检拒识、mask 置信度校准和目标缺失判断，适合做更可信的检测系统。"
+    if "open-world" in tags or "object discovery" in tags:
+        return "可帮助 COD 跳出固定类别监督，转向未知目标发现、开放世界分割和类别无关候选生成。"
+    if "object-centric" in tags or "compositionality" in tags:
+        return "可把 COD 重新建模为对象-背景解耦或概念组合问题，而不只是做边界更清晰的分割。"
+    if "self-supervised" in tags or "representation learning" in tags:
+        return "可用于少标注/无标注 COD，重点借鉴稠密表征如何保留弱边界和局部结构。"
     if "saliency/transparent" in tags:
         return "和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。"
     if "open-vocabulary" in tags or "training-free" in tags:
@@ -884,6 +1119,18 @@ def borrow_points(paper: Paper) -> str:
         points.append("深度或几何先验融合")
     if "domain adaptation" in tags or "anomaly/OOD" in tags:
         points.append("跨域鲁棒性、不确定性或异常分数")
+    if "causal/counterfactual" in tags:
+        points.append("反事实验证、目标存在性判断、误检拒识")
+    if "uncertainty/calibration" in tags:
+        points.append("mask 置信度校准、不确定性图、低置信样本处理")
+    if "open-world" in tags or "object discovery" in tags:
+        points.append("类别无关候选发现、未知目标设定、目标缺失场景")
+    if "object-centric" in tags or "compositionality" in tags:
+        points.append("对象-背景解耦、概念分解、可解释中间变量")
+    if "self-supervised" in tags or "representation learning" in tags:
+        points.append("无标注稠密表征、预训练特征选择、局部结构保持")
+    if "active/interactive" in tags or "continual learning" in tags:
+        points.append("少量提示适配、增量场景学习、人工反馈闭环")
     if not points:
         points.append("任务建模、损失函数、消融组织方式")
     return "；".join(points) + "。"
@@ -901,12 +1148,22 @@ def improvement_ideas(paper: Paper) -> str:
         return "可结合多尺度语义上下文，避免只强化纹理导致误检。"
     if "domain adaptation" in tags:
         return "可验证在 COD 跨数据集上的泛化，加入目标缺失场景。"
+    if "causal/counterfactual" in tags:
+        return "可把反事实干预落到 COD：替换背景、扰动纹理、隐藏候选区域，验证模型是否真正依赖目标而非环境偏差。"
+    if "uncertainty/calibration" in tags:
+        return "可进一步做 COD mask 置信度校准，让模型在看不准时拒识或触发二阶段推理。"
+    if "open-world" in tags or "object discovery" in tags:
+        return "可设计开放世界 COD：图像中可能没有伪装目标，或目标类别未知，模型需要先发现再判别。"
+    if "self-supervised" in tags or "representation learning" in tags:
+        return "可尝试用无标注自然图像预训练稠密表征，再用少量 COD 标注验证跨数据集泛化。"
     return "可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。"
 
 
 def should_deep_read(paper: Paper) -> str:
+    if transfer_potential(paper) >= MIN_IDEA_TRANSFER_SCORE:
+        return "建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。"
     if "COD" in paper.tags and paper.score >= 45:
-        return "值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。"
+        return "可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。"
     if paper.score >= 55:
         return "建议精读：高质量来源或方法迁移价值较高。"
     if paper.score >= 35:
@@ -957,15 +1214,7 @@ def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
     cod = sorted(cod, key=lambda p: p.score, reverse=True)[:COD_LIMIT]
     broad = sorted(broad, key=lambda p: p.score, reverse=True)[:BROAD_LIMIT]
     quality = sorted(quality, key=lambda p: p.score, reverse=True)[:QUALITY_LIMIT]
-    highlight_pool = [p for p in papers if highlight_tier(p) > 0]
-    highlights = sorted(highlight_pool, key=highlight_rank, reverse=True)[:HIGHLIGHT_LIMIT]
-    if len(highlights) < HIGHLIGHT_LIMIT:
-        fallback = [p for p in papers if p not in highlights]
-        highlights.extend(
-            sorted(fallback, key=highlight_rank, reverse=True)[
-                : HIGHLIGHT_LIMIT - len(highlights)
-            ]
-        )
+    highlights = select_highlights(papers)
     return {
         "highlights": highlights,
         "quality": quality,
@@ -1063,23 +1312,43 @@ def daily_download_dir(date_text: str) -> Path:
 def download_candidates(snapshot: dict) -> list[Paper]:
     sections = snapshot_sections(snapshot)
     candidates: list[Paper] = []
-    for section_name in ["highlights", "quality", "cod", "broad"]:
+
+    def add_unique(paper: Paper) -> None:
+        if not paper.pdf:
+            return
+        key = paper_key(paper)
+        if any(paper_key(existing) == key for existing in candidates):
+            return
+        candidates.append(paper)
+
+    for paper in sections["highlights"]:
+        add_unique(paper)
+    for section_name in ["quality", "broad", "cod"]:
         for paper in sections[section_name]:
-            if not paper.pdf:
-                continue
-            key = paper_key(paper)
-            if any(paper_key(existing) == key for existing in candidates):
-                continue
-            candidates.append(paper)
+            add_unique(paper)
     preferred = [
         paper
         for paper in candidates
-        if highlight_tier(paper) >= 2 or (has_quality_published_source(paper) and paper.score >= 35)
+        if (
+            paper in sections["highlights"]
+            or transfer_potential(paper) >= MIN_IDEA_TRANSFER_SCORE
+            or highlight_tier(paper) >= 2
+            or (has_quality_published_source(paper) and paper.score >= 35)
+        )
     ]
     fallback = [paper for paper in candidates if paper not in preferred]
-    return sorted(preferred, key=highlight_rank, reverse=True) + sorted(
+    ordered = sorted(preferred, key=highlight_rank, reverse=True) + sorted(
         fallback, key=highlight_rank, reverse=True
     )
+    filtered: list[Paper] = []
+    pure_cod_count = 0
+    for paper in ordered:
+        if is_pure_cod_anchor(paper):
+            if pure_cod_count >= DIRECT_COD_HIGHLIGHT_LIMIT:
+                continue
+            pure_cod_count += 1
+        filtered.append(paper)
+    return filtered
 
 
 def write_download_readme(folder: Path, snapshot: dict, downloaded: list[dict], skipped: list[dict]) -> None:
@@ -1350,6 +1619,7 @@ def render_snapshot_markdown(snapshot: dict) -> str:
         f"Candidate pool: {current.get('total_selected', 0)} papers",
         "",
         f"慢读模式：本页只展示 {HIGHLIGHT_LIMIT} 篇当日精读、{QUALITY_LIMIT} 篇高质量来源、{COD_LIMIT} 篇 COD 相关、{BROAD_LIMIT} 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。",
+        "精读队列优先选择能给 COD 带来新问题设定或新方法范式的论文，例如开放世界、目标发现、反事实/因果、不确定性、自监督稠密表征、对象中心建模和视觉推理；纯 COD 直系论文主要作为背景和对照。",
         "",
         "## 当日精读队列",
         "",
@@ -1388,11 +1658,11 @@ def render_snapshot_markdown(snapshot: dict) -> str:
             "",
             "## 数据源",
             "",
-            "- arXiv API: recent preprints from COD, weak/salient/transparent objects, VLM, segmentation, diffusion, adaptation, medical and remote-sensing queries.",
+            "- arXiv API: recent preprints from COD, weak/salient/transparent objects, VLM, segmentation, diffusion, adaptation, medical and remote-sensing queries, plus transferable-method queries such as object discovery, open-world segmentation, uncertainty, counterfactual/causal vision, self-supervised dense prediction, object-centric learning, compositional reasoning, interactive segmentation, continual learning, world models, and concept bottlenecks.",
             "- CVF OpenAccess: CVPR/ECCV/ICCV/WACV title-level scan.",
             "- Semantic Scholar Graph API: broad high-quality venue and topic search when rate limits allow.",
             "- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, Medical Image Analysis.",
-            "- Selection policy: the daily deep-reading queue prioritizes recent published papers from top conferences/journals; arXiv papers enter the top five only when they are recent and have strong topic/method signals.",
+            "- Selection policy: the daily deep-reading queue prioritizes idea transfer into COD, not direct COD similarity. Recent top-conference/top-journal papers are preferred; arXiv papers enter the top five only when they are recent and have strong transferable-method signals.",
             "",
             "说明：自动简介是基于题名、摘要和来源的初筛笔记，不等同于阅读全文后的结论；精读时建议再核对 method、experiment 和 limitation。",
             "",
@@ -1416,6 +1686,7 @@ def render_markdown(history: list[dict]) -> str:
         f"Archive days kept: {len(history)}",
         "",
         "这是文献日报目录页。每天更新会生成一个独立 Markdown 文件，文件名就是日期；想看哪一天，直接点对应日期即可。HTML 文件单独放在 html/ 目录，仅作为网页预览备用。",
+        "从 2026-07-09 开始，精读队列不再只追 COD 直系论文，而是优先寻找 COD 尚未充分使用、但可能迁移出新 idea 的计算机视觉方法。",
         "",
         "## 最新日报",
         "",
@@ -1437,6 +1708,7 @@ def render_markdown(history: list[dict]) -> str:
             "## 阅读节奏",
             "",
             f"- 每日页面默认只展示少量精选：{HIGHLIGHT_LIMIT} 篇精读、{QUALITY_LIMIT} 篇高质量来源、{COD_LIMIT} 篇 COD、{BROAD_LIMIT} 篇泛视觉。",
+            "- 精读优先级看“能不能启发新的 COD 论文问题”，不是只看标题里有没有 camouflaged object detection。",
             "- 旧 Markdown 日报不会被覆盖；同一天重复更新只刷新当天文件。",
             "- 后台仍保留完整候选池，方便以后需要时再扩展检索。",
             "",
@@ -1446,7 +1718,7 @@ def render_markdown(history: list[dict]) -> str:
             "- CVF OpenAccess",
             "- Semantic Scholar Graph API",
             "- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, Medical Image Analysis",
-            "- Deep-reading priority: recent published top-conference/top-journal papers first; only high-signal recent arXiv papers enter the top five.",
+            "- Deep-reading priority: transferable methods for COD first, including open-world, object discovery, uncertainty/calibration, causal/counterfactual vision, self-supervised dense representation, object-centric/compositional reasoning, and interactive/continual adaptation.",
             "",
         ]
     )
