@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Move already downloaded daily PDFs into Zotero via the local importer plugin."""
+"""Move already downloaded daily PDFs into Zotero storage."""
 
 from __future__ import annotations
 
@@ -44,7 +44,7 @@ def main() -> None:
         mod.save_download_index(index)
         print("Imported existing PDFs into Zotero.")
     else:
-        print("No pending PDFs were imported. Is Zotero running with the importer plugin loaded?")
+        print("No pending PDFs were imported. Check whether the PDFs still exist or Zotero could be closed.")
 
 
 if __name__ == "__main__":

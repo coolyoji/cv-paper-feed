@@ -40,9 +40,6 @@ DOWNLOAD_ROOT = Path(
     os.environ.get("PAPER_DOWNLOAD_ROOT", r"F:\文献整理\每日精读论文")
 )
 DOWNLOAD_INDEX_NAME = "_downloaded_papers.json"
-ZOTERO_IMPORT_URL = os.environ.get(
-    "ZOTERO_IMPORT_URL", "http://127.0.0.1:23119/cv-paper-feed/import"
-)
 ZOTERO_IMPORT_DISABLED = os.environ.get("ZOTERO_IMPORT_DISABLED", "").lower() in {
     "1",
     "true",
@@ -1119,78 +1116,26 @@ def write_download_readme(folder: Path, snapshot: dict, downloaded: list[dict], 
     (folder / "README.md").write_text("\n".join(lines), encoding="utf-8", newline="\n")
 
 
-def record_to_zotero_paper(record: dict) -> dict:
-    return {
-        "title": record.get("title", ""),
-        "url": record.get("url", ""),
-        "pdf": record.get("pdf", ""),
-        "localPath": record.get("file", ""),
-        "authors": record.get("authors", []),
-        "source": record.get("source", ""),
-        "published": record.get("published", ""),
-        "summary": record.get("summary", ""),
-        "tags": record.get("tags", []),
-        "score": record.get("score", 0),
-    }
-
-
 def import_daily_pdfs_to_zotero(date_text: str, records: list[dict]) -> bool:
     if ZOTERO_IMPORT_DISABLED:
         return False
-    pending = []
-    for record in records:
-        path_text = record.get("file", "")
-        if record.get("zotero_imported"):
-            continue
-        if not path_text or not Path(path_text).exists():
-            continue
-        pending.append(record)
-    if not pending:
-        return False
-
-    payload = {
-        "date": date_text,
-        "rootCollection": ZOTERO_ROOT_COLLECTION,
-        "papers": [record_to_zotero_paper(record) for record in pending],
-    }
-    body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-    request = urllib.request.Request(
-        ZOTERO_IMPORT_URL,
-        data=body,
-        headers={
-            "Content-Type": "application/json; charset=utf-8",
-            "User-Agent": "cv-paper-feed/1.0 (zotero importer)",
-        },
-        method="POST",
-    )
     try:
-        with urllib.request.urlopen(request, timeout=120) as response:
-            result = json.loads(response.read().decode("utf-8", errors="ignore"))
-    except Exception as exc:  # pragma: no cover - local Zotero availability
+        script_dir = str(Path(__file__).resolve().parent)
+        if script_dir not in sys.path:
+            sys.path.insert(0, script_dir)
+        from zotero_db_importer import import_records_to_zotero
+    except ImportError as exc:  # pragma: no cover - local installation guard
         print(
-            f"[warn] Zotero import skipped; helper endpoint unavailable: {exc}",
+            f"[warn] Zotero import skipped; local importer unavailable: {exc}",
             file=sys.stderr,
         )
         return False
-
-    imported = result.get("imported", [])
-    by_title = {
-        re.sub(r"\W+", "", item.get("title", "").lower()): item for item in imported
-    }
-    for record in pending:
-        key = re.sub(r"\W+", "", record.get("title", "").lower())
-        item = by_title.get(key)
-        if not item:
-            continue
-        record["zotero_imported"] = True
-        record["zotero_item_id"] = item.get("itemID")
-        record["zotero_item_key"] = item.get("itemKey")
-        record["zotero_collection_path"] = result.get("collectionPath", "")
-        record["zotero_imported_at"] = datetime.now(UTC8).strftime("%Y-%m-%d %H:%M")
-        if item.get("moved") and record.get("file") and not Path(record["file"]).exists():
-            record["local_pdf_moved_to_zotero"] = True
-    print(f"[info] imported {len(imported)} PDFs into Zotero collection {result.get('collectionPath', '')}")
-    return bool(imported)
+    return import_records_to_zotero(
+        date_text,
+        records,
+        root_collection=ZOTERO_ROOT_COLLECTION,
+        close_running=True,
+    )
 
 
 def download_daily_pdfs(snapshot: dict) -> None:
