@@ -22,8 +22,43 @@ from pathlib import Path
 
 LIBRARY_ID = 1
 KEY_CHARS = "23456789ABCDEFGHIJKLMNPQRSTUVWXYZ"
-ZOTERO_DIR = Path(os.environ.get("ZOTERO_DATA_DIR", str(Path.home() / "Zotero")))
 ZOTERO_EXE = Path(os.environ.get("ZOTERO_EXE", r"C:\Program Files\Zotero\zotero.exe"))
+
+
+def detect_zotero_dir() -> Path:
+    override = os.environ.get("ZOTERO_DATA_DIR")
+    if override:
+        return Path(override)
+
+    if os.name == "nt":
+        profile_root = (
+            Path(os.environ.get("APPDATA", ""))
+            / "Zotero"
+            / "Zotero"
+            / "Profiles"
+        )
+        if profile_root.exists():
+            for prefs_path in sorted(profile_root.glob("*/prefs.js")):
+                text = prefs_path.read_text(encoding="utf-8", errors="ignore")
+                if '"extensions.zotero.useDataDir", true' not in text:
+                    continue
+                match = re.search(
+                    r'user_pref\("extensions\.zotero\.dataDir",\s*"((?:\\.|[^"])*)"\);',
+                    text,
+                )
+                if not match:
+                    continue
+                try:
+                    data_dir = Path(json.loads(f'"{match.group(1)}"'))
+                except json.JSONDecodeError:
+                    continue
+                if data_dir.exists():
+                    return data_dir
+
+    return Path.home() / "Zotero"
+
+
+ZOTERO_DIR = detect_zotero_dir()
 
 
 def norm_title(text: str) -> str:
