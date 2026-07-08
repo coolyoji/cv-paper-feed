@@ -1,16 +1,17 @@
 # Daily CV Paper Feed
 
-Last updated: 2026-07-07 13:07 Asia/Shanghai
-Archive days kept: 3
+Last updated: 2026-07-08 12:30 Asia/Shanghai
+Archive days kept: 4
 
 这是文献日报目录页。每天更新会生成一个独立 Markdown 文件，文件名就是日期；想看哪一天，直接点对应日期即可。HTML 文件单独放在 html/ 目录，仅作为网页预览备用。
 
 ## 最新日报
 
-- [2026-07-07 Markdown](md/2026-07-07.md) / [HTML 预览](html/2026-07-07.html)
+- [2026-07-08 Markdown](md/2026-07-08.md) / [HTML 预览](html/2026-07-08.html)
 
 ## 每日 Markdown 文件
 
+- [2026-07-08](md/2026-07-08.md) / [html](html/2026-07-08.html) - 2026-07-08 12:30，候选池 8488 篇
 - [2026-07-07](md/2026-07-07.md) / [html](html/2026-07-07.html) - 2026-07-07 13:07，候选池 8488 篇
 - [2026-07-06](md/2026-07-06.md) / [html](html/2026-07-06.html) - 2026-07-06 15:08，候选池 329 篇
 - [2026-06-26](md/2026-06-26.md) / [html](html/2026-06-26.html) - 2026-06-26 23:47，候选池 8487 篇
@@ -27,3 +28,4 @@ Archive days kept: 3
 - CVF OpenAccess
 - Semantic Scholar Graph API
 - Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, Medical Image Analysis
+- Deep-reading priority: recent published top-conference/top-journal papers first; only high-signal recent arXiv papers enter the top five.
