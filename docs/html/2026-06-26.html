@@ -74,6 +74,7 @@
 <p>Last updated: 2026-06-26 23:47 Asia/Shanghai</p>
 <p>Candidate pool: 8487 papers</p>
 <p>慢读模式：本页只展示 5 篇当日精读、10 篇高质量来源、12 篇 COD 相关、12 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。</p>
+<p>精读队列优先选择能给 COD 带来新问题设定或新方法范式的论文，例如开放世界、目标发现、反事实/因果、不确定性、自监督稠密表征、对象中心建模和视觉推理；纯 COD 直系论文主要作为背景和对照。</p>
 <h2>当日精读队列</h2>
 <article class='paper'>
 <h3><strong>CFCamo: A Counterfactual Detect-or-Abstain Framework for Camouflaged Object Detection</strong></h3>
@@ -86,10 +87,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：反事实建模/拒识机制，用来降低误检或判断目标是否存在。</p>
 <p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>A Retinomorphic Optical Spiking Neuron for Camouflaged Object Detection</strong></h3>
@@ -102,10 +103,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Video Object Segmentation-Aware Audio Generation</strong></h3>
@@ -121,7 +122,7 @@
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Anatomy-Guided Residual Motion Diffusion for Controllable 4D Cardiac MRI Synthesis</strong></h3>
@@ -137,7 +138,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models</strong></h3>
@@ -153,7 +154,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>MLFFM-SegDiff: A Multi-Level Feature Fusion Diffusion Model for Skin Lesion Segmentation</strong></h3>
@@ -169,7 +170,7 @@
 <p class='meta'>和我课题的关系：和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块。</p>
 <p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Vision-Language Model Reasoning for Contextual Semantic Mapping in Intralogistics</strong></h3>
@@ -185,7 +186,7 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Jolia: Concept-Level Vision-Language Alignment for 3D CT Contrastive Learning</strong></h3>
@@ -201,7 +202,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Training-free Cross-domain Few-shot Segmentation via Robust Semantic Representation and Matching</strong></h3>
@@ -212,12 +213,12 @@
 <p class='meta'>论文：Training-free Cross-domain Few-shot Segmentation via Robust Semantic Representation and Matching</p>
 <p class='meta'>一句话总结：Cross-domain Few-shot Segmentation (CD-FSS) aims to transfer knowledge learned from source domain to distinct target domains, segmenting unseen target classes with only a few annotated samples. Although existi...</p>
 <p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
-<p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
+<p class='meta'>方法核心：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>High-Fidelity Synthetic Transmission Electron Microscopy Image Generation Using Diffusion Probabilistic Models for Data-Limited Semiconductor Metrology</strong></h3>
@@ -244,12 +245,12 @@
 <p class='meta'>论文：EnTrust: Modeling Inter-Modal Conflict for Trustworthy Multimodal Medical Image Analysis</p>
 <p class='meta'>一句话总结：Multimodal medical imaging fuses complementary anatomical and functional information, yet modalities frequently disagree in pathologically heterogeneous regions. Current segmentation models handle this in one...</p>
 <p class='meta'>任务设定：医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。</p>
-<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>ARTEMIS: Agent-guided Reliability-aware Temporal Mask Evolution for Imperfectly Supervised Video Polyp Segmentation</strong></h3>
@@ -265,7 +266,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <h2>高质量来源优先读：CCF-A/B 与顶刊顶会</h2>
 <article class='paper'>
@@ -279,10 +280,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可作为背景、baseline 或问题定义参考；精读时重点看它还缺少哪些外部方法视角。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt</strong></h3>
@@ -295,10 +296,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Video Object Segmentation-Aware Audio Generation</strong></h3>
@@ -314,7 +315,7 @@
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation</strong></h3>
@@ -327,10 +328,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：摘要层面未显示明确模块，建议先看方法图确认 backbone、监督信号和损失设计。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可作为背景、baseline 或问题定义参考；精读时重点看它还缺少哪些外部方法视角。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Seeing Both Sides: Towards Bidirectional Semantic Alignment for Open-Vocabulary Camouflaged Object Segmentation</strong></h3>
@@ -343,10 +344,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：摘要层面未显示明确模块，建议先看方法图确认 backbone、监督信号和损失设计。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Beyond Weak Supervision: MLLMs-Guided Graded Knowledge Distillation for Unsupervised Camouflaged Object Detection</strong></h3>
@@ -359,10 +360,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：多模态大模型推理，可能用于目标描述、区域判断或链式推理。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection</strong></h3>
@@ -375,10 +376,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Seeing the Unseen: A Semantic Alignment and Context-Aware Prompt Framework for Open-Vocabulary Camouflaged Object Segmentation</strong></h3>
@@ -391,10 +392,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Beyond Appearance: Camouflaged Object Detection via Geometric Structure</strong></h3>
@@ -407,10 +408,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：摘要层面未显示明确模块，建议先看方法图确认 backbone、监督信号和损失设计。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Shift the Lens: Environment-Aware Unsupervised Camouflaged Object Detection</strong></h3>
@@ -423,10 +424,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：摘要层面未显示明确模块，建议先看方法图确认 backbone、监督信号和损失设计。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可作为背景、baseline 或问题定义参考；精读时重点看它还缺少哪些外部方法视角。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Rethinking Detecting Salient and Camouflaged Objects in Unconstrained Scenes</strong></h3>
@@ -439,10 +440,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：摘要层面未显示明确模块，建议先看方法图确认 backbone、监督信号和损失设计。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可作为背景、baseline 或问题定义参考；精读时重点看它还缺少哪些外部方法视角。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>ESCNet:Edge-Semantic Collaborative Network for Camouflaged Object Detection</strong></h3>
@@ -455,10 +456,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Enhancing Prompt Generation with Adaptive Refinement for Camouflaged Object Detection</strong></h3>
@@ -471,10 +472,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可作为背景、baseline 或问题定义参考；精读时重点看它还缺少哪些外部方法视角。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Multi-modal Segment Anything Model for Camouflaged Scene Segmentation</strong></h3>
@@ -487,10 +488,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>LAKE-RED: Camouflaged Images Generation by Latent Background Knowledge Retrieval-Augmented Diffusion</strong></h3>
@@ -503,10 +504,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Scoring, Remember, and Reference: Catching Camouflaged Objects in Videos</strong></h3>
@@ -519,10 +520,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：摘要层面未显示明确模块，建议先看方法图确认 backbone、监督信号和损失设计。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>MAPSeg: Unified Unsupervised Domain Adaptation for Heterogeneous Medical Image Segmentation Based on 3D Masked Autoencoding and Pseudo-Labeling</strong></h3>
@@ -538,7 +539,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可验证在 COD 跨数据集上的泛化，加入目标缺失场景。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation</strong></h3>
@@ -570,7 +571,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>HyPiDecoder: Hybrid Pixel Decoder for Efficient Segmentation and Detection</strong></h3>
@@ -602,7 +603,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Rethinking Decoder Design: Improving Biomarker Segmentation Using Depth-to-Space Restoration and Residual Linear Attention</strong></h3>
@@ -618,7 +619,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>EffiDec3D: An Optimized Decoder for High-Performance and Efficient 3D Medical Image Segmentation</strong></h3>
@@ -634,7 +635,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Noise-Resistant Video Anomaly Detection via RGB Error-Guided Multiscale Predictive Coding and Dynamic Memory</strong></h3>
@@ -650,7 +651,7 @@
 <p class='meta'>和我课题的关系：可把伪装目标看作复杂背景中的弱异常区域来借鉴。</p>
 <p class='meta'>可借鉴点：跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>AEROBLADE: Training-Free Detection of Latent Diffusion Images Using Autoencoder Reconstruction Error</strong></h3>
@@ -666,7 +667,7 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Describe, Adapt and Combine: Empowering CLIP Encoders for Open-set 3D Object Retrieval</strong></h3>
@@ -677,12 +678,12 @@
 <p class='meta'>论文：Describe, Adapt and Combine: Empowering CLIP Encoders for Open-set 3D Object Retrieval</p>
 <p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
 <p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
-<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
+<p class='meta'>方法核心：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>GeoFormer: Geometry Point Encoder for 3D Object Detection with Graph-based Transformer</strong></h3>
@@ -698,7 +699,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation</strong></h3>
@@ -711,10 +712,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：几何/深度线索建模，可能补充 RGB 外的结构先验。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Gradient-Reweighted Adversarial Camouflage for Physical Object Detection Evasion</strong></h3>
@@ -727,10 +728,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：摘要层面未显示明确模块，建议先看方法图确认 backbone、监督信号和损失设计。</p>
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>FE-CLIP: Frequency Enhanced CLIP Model for Zero-Shot Anomaly Detection and Segmentation</strong></h3>
@@ -746,7 +747,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <h2>COD / 伪装目标检测相关</h2>
 <article class='paper'>
@@ -758,12 +759,12 @@
 <p class='meta'>论文：Open-Vocabulary Camouflaged Object Segmentation</p>
 <p class='meta'>一句话总结：Recently, the emergence of the large-scale vision-language model (VLM), such as CLIP, has opened the way towards open-world object perception. Many works have explored the utilization of pre-trained VLM for th...</p>
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
-<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
+<p class='meta'>方法核心：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Debate-Enhanced Pseudo Labeling and Frequency-Aware Progressive Debiasing for Weakly-Supervised Camouflaged Object Detection with Scribble Annotations</strong></h3>
@@ -776,10 +777,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>SAM3-Adapter: Efficient Adaptation of Segment Anything 3 for Camouflage Object Segmentation, Shadow Detection, and Medical Image Segmentation</strong></h3>
@@ -792,10 +793,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>SAM2-Adapter: Evaluating &amp; Adapting Segment Anything 2 in Downstream Tasks: Camouflage, Shadow, Medical Image Segmentation, and More</strong></h3>
@@ -808,10 +809,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>UCOD-DPL: Unsupervised Camouflaged Object Detection via Dynamic Pseudo-label Learning</strong></h3>
@@ -824,10 +825,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
 <p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>High-Resolution Underwater Camouflaged Object Detection: GBU-UCOD Dataset and Topology-Aware and Frequency-Decoupled Networks</strong></h3>
@@ -840,10 +841,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：频域/纹理特征增强，适合处理伪装背景与目标细粒度差异。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection</strong></h3>
@@ -856,10 +857,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>A Survey of Camouflaged Object Detection and Beyond</strong></h3>
@@ -872,10 +873,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：摘要层面未显示明确模块，建议先看方法图确认 backbone、监督信号和损失设计。</p>
 <p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Concealed Object Segmentation with Hierarchical Coherence Modeling</strong></h3>
@@ -886,12 +887,12 @@
 <p class='meta'>论文：Concealed Object Segmentation with Hierarchical Coherence Modeling</p>
 <p class='meta'>一句话总结：Concealed object segmentation (COS) is a challenging task that involves localizing and segmenting those concealed objects that are visually blended with their surrounding environments. Despite achieving remark...</p>
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
-<p class='meta'>方法核心：摘要层面未显示明确模块，建议先看方法图确认 backbone、监督信号和损失设计。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
 <p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection</strong></h3>
@@ -904,10 +905,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>ZS-VCOS: Zero-Shot Video Camouflaged Object Segmentation By Optical Flow and Open Vocabulary Object Detection</strong></h3>
@@ -920,10 +921,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>BED-SAM2: Boundary-Enhanced-Depth SAM2 via Monocular Geometric Priors</strong></h3>
@@ -936,10 +937,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>SAM2-UNeXT: An Improved High-Resolution Baseline for Adapting Foundation Models to Downstream Segmentation Tasks</strong></h3>
@@ -952,10 +953,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>COMPrompter: reconceptualized segment anything model with multiprompt network for camouflaged object detection</strong></h3>
@@ -968,10 +969,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Assisted Refinement Network Based on Channel Information Interaction for Camouflaged and Salient Object Detection</strong></h3>
@@ -984,10 +985,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Depth-guided Texture Diffusion for Image Semantic Segmentation</strong></h3>
@@ -1000,10 +1001,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Exploring Deeper! Segment Anything Model with Depth Perception for Camouflaged Object Detection</strong></h3>
@@ -1016,10 +1017,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>RIDE: Retinex-Informed Decoupling for Exposing Concealed Objects</strong></h3>
@@ -1032,10 +1033,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：频域/纹理特征增强，适合处理伪装背景与目标细粒度差异。</p>
 <p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning</strong></h3>
@@ -1048,10 +1049,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>When SAM2 Meets Video Camouflaged Object Segmentation: A Comprehensive Evaluation and Adaptation</strong></h3>
@@ -1064,10 +1065,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>SAM Fails to Segment Anything? -- SAM-Adapter: Adapting SAM in Underperformed Scenes: Camouflage, Shadow, Medical Image Segmentation, and More</strong></h3>
@@ -1080,10 +1081,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>C3Net: Context-Contrast Network for Camouflaged Object Detection</strong></h3>
@@ -1096,10 +1097,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>SAM2-UNet: Segment Anything 2 Makes Strong Encoder for Natural and Medical Image Segmentation</strong></h3>
@@ -1112,10 +1113,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Weakly Supervised Camouflaged Object Detection Based on the SAM Model and Mask Guidance</strong></h3>
@@ -1128,10 +1129,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Exploring Boundary-Aware Spatial-Frequency Fusion for Camouflaged Object Detection</strong></h3>
@@ -1144,10 +1145,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：频域/纹理特征增强，适合处理伪装背景与目标细粒度差异。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>IP-SAM: Prompt-Space Conditioning for Prompt-Absent Camouflaged Object Detection</strong></h3>
@@ -1160,10 +1161,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Language-Guided Structure-Aware Network for Camouflaged Object Detection</strong></h3>
@@ -1176,10 +1177,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
 <p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection</strong></h3>
@@ -1190,12 +1191,12 @@
 <p class='meta'>论文：Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection</p>
 <p class='meta'>一句话总结：At the core of Camouflaged Object Detection (COD) lies segmenting objects from their highly similar surroundings. Previous efforts navigate this challenge primarily through image-level modeling or annotation-b...</p>
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
-<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可作为背景、baseline 或问题定义参考；精读时重点看它还缺少哪些外部方法视角。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>HyperCOD: The First Challenging Benchmark and Baseline for Hyperspectral Camouflaged Object Detection</strong></h3>
@@ -1208,10 +1209,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>DGA-Net: Enhancing SAM with Depth Prompting and Graph-Anchor Guidance for Camouflaged Object Detection</strong></h3>
@@ -1224,10 +1225,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Phantom-Insight: Adaptive Multi-cue Fusion for Video Camouflaged Object Detection with Multimodal LLM</strong></h3>
@@ -1240,10 +1241,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Improving SAM for Camouflaged Object Detection via Dual Stream Adapters</strong></h3>
@@ -1256,10 +1257,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Refining Context-Entangled Content Segmentation via Curriculum Selection and Anti-Curriculum Promotion</strong></h3>
@@ -1272,10 +1273,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：频域/纹理特征增强，适合处理伪装背景与目标细粒度差异。</p>
 <p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
 <h3><strong>Exploring Depth Contribution for Camouflaged Object Detection</strong></h3>
@@ -1286,12 +1287,12 @@
 <p class='meta'>论文：Exploring Depth Contribution for Camouflaged Object Detection</p>
 <p class='meta'>一句话总结：Camouflaged object detection (COD) aims to segment camouflaged objects hiding in the environment, which is challenging due to the similar appearance of camouflaged objects and their surroundings. Research in b...</p>
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
-<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
 <p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>FakeMix Augmentation Improves Transparent Object Detection</strong></h3>
@@ -1304,10 +1305,10 @@
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可直接作为方法、实验或 baseline 参考。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：值得精读：和课题高度相关，优先看摘要、方法图、消融和失败案例。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <h2>泛计算机视觉方法池</h2>
 <article class='paper'>
@@ -1324,7 +1325,7 @@
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>SegRAG: Training-Free Retrieval-Augmented Semantic Segmentation</strong></h3>
@@ -1335,12 +1336,12 @@
 <p class='meta'>论文：SegRAG: Training-Free Retrieval-Augmented Semantic Segmentation</p>
 <p class='meta'>一句话总结：Open-vocabulary segmentation models such as SAM3 perform well across broad categories via text prompting, yet degrade when target classes are visually underrepresented in pretraining or depart from canonical d...</p>
 <p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
-<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>OVS-DINO: Open-Vocabulary Segmentation via Structure-Aligned SAM-DINO with Language Guidance</strong></h3>
@@ -1356,7 +1357,7 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>SegEarth-OV: Towards Training-Free Open-Vocabulary Segmentation for Remote Sensing Images</strong></h3>
@@ -1372,7 +1373,7 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>TF-SSD: A Strong Pipeline via Synergic Mask Filter for Training-free Co-salient Object Detection</strong></h3>
@@ -1388,7 +1389,7 @@
 <p class='meta'>和我课题的关系：和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models</strong></h3>
@@ -1404,7 +1405,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Anatomy-Guided Residual Motion Diffusion for Controllable 4D Cardiac MRI Synthesis</strong></h3>
@@ -1420,7 +1421,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>M$^4$-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection</strong></h3>
@@ -1436,7 +1437,7 @@
 <p class='meta'>和我课题的关系：和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>VesselSim: learning 3D blood vessel segmentation without expert annotations</strong></h3>
@@ -1447,12 +1448,12 @@
 <p class='meta'>论文：VesselSim: learning 3D blood vessel segmentation without expert annotations</p>
 <p class='meta'>一句话总结：Blood vessel segmentation is a core task in medical image analysis for the care of vascular diseases and surgical planning, yet the challenges of providing expert vascular annotations pose a major obstacle for...</p>
 <p class='meta'>任务设定：异常检测或分布外识别，可类比伪装目标的弱异常发现。</p>
-<p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
+<p class='meta'>方法核心：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块；深度或几何先验融合；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>MM-OVSeg:Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing</strong></h3>
@@ -1463,12 +1464,12 @@
 <p class='meta'>论文：MM-OVSeg:Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing</p>
 <p class='meta'>一句话总结：Open-vocabulary segmentation enables pixel-level recognition from an open set of textual categories, allowing generalization beyond fixed classes. Despite great potential in remote sensing, progress in this ar...</p>
 <p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
-<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
+<p class='meta'>方法核心：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>ActiveSAM: Image-Conditional Class Pruning for Fast and Accurate Open-Vocabulary Segmentation</strong></h3>
@@ -1484,7 +1485,7 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Vision-Language Model Reasoning for Contextual Semantic Mapping in Intralogistics</strong></h3>
@@ -1500,7 +1501,7 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Jolia: Concept-Level Vision-Language Alignment for 3D CT Contrastive Learning</strong></h3>
@@ -1516,7 +1517,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>ARTEMIS: Agent-guided Reliability-aware Temporal Mask Evolution for Imperfectly Supervised Video Polyp Segmentation</strong></h3>
@@ -1532,7 +1533,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Training-free Cross-domain Few-shot Segmentation via Robust Semantic Representation and Matching</strong></h3>
@@ -1543,12 +1544,12 @@
 <p class='meta'>论文：Training-free Cross-domain Few-shot Segmentation via Robust Semantic Representation and Matching</p>
 <p class='meta'>一句话总结：Cross-domain Few-shot Segmentation (CD-FSS) aims to transfer knowledge learned from source domain to distinct target domains, segmenting unseen target classes with only a few annotated samples. Although existi...</p>
 <p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
-<p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
+<p class='meta'>方法核心：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>SWARD: Stochastic Window-Attention-Based Relational Distillation for Cross-Architectural Semantic Segmentation</strong></h3>
@@ -1564,7 +1565,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块。</p>
 <p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>MLFFM-SegDiff: A Multi-Level Feature Fusion Diffusion Model for Skin Lesion Segmentation</strong></h3>
@@ -1580,7 +1581,7 @@
 <p class='meta'>和我课题的关系：和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块。</p>
 <p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>High-Fidelity Synthetic Transmission Electron Microscopy Image Generation Using Diffusion Probabilistic Models for Data-Limited Semiconductor Metrology</strong></h3>
@@ -1607,12 +1608,12 @@
 <p class='meta'>论文：EnTrust: Modeling Inter-Modal Conflict for Trustworthy Multimodal Medical Image Analysis</p>
 <p class='meta'>一句话总结：Multimodal medical imaging fuses complementary anatomical and functional information, yet modalities frequently disagree in pathologically heterogeneous regions. Current segmentation models handle this in one...</p>
 <p class='meta'>任务设定：医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。</p>
-<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection</strong></h3>
@@ -1628,7 +1629,7 @@
 <p class='meta'>和我课题的关系：和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>AD-DINOv3: Enhancing DINOv3 for Zero-Shot Anomaly Detection with Anomaly-Aware Calibration</strong></h3>
@@ -1639,12 +1640,12 @@
 <p class='meta'>论文：AD-DINOv3: Enhancing DINOv3 for Zero-Shot Anomaly Detection with Anomaly-Aware Calibration</p>
 <p class='meta'>一句话总结：Zero-Shot Anomaly Detection (ZSAD) seeks to identify anomalies from arbitrary novel categories, offering a scalable and annotation-efficient solution. Traditionally, most ZSAD works have been based on the CLIP...</p>
 <p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>FiLo++: Zero-/Few-Shot Anomaly Detection by Fused Fine-Grained Descriptions and Deformable Localization</strong></h3>
@@ -1660,7 +1661,7 @@
 <p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
 <p class='meta'>可借鉴点：跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>MAPSeg: Unified Unsupervised Domain Adaptation for Heterogeneous Medical Image Segmentation Based on 3D Masked Autoencoding and Pseudo-Labeling</strong></h3>
@@ -1676,7 +1677,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可验证在 COD 跨数据集上的泛化，加入目标缺失场景。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>T-REN: Learning Text-Aligned Region Tokens Improves Dense Vision-Language Alignment and Scalability</strong></h3>
@@ -1692,7 +1693,7 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Towards Realistic Open-Vocabulary Remote Sensing Segmentation: Benchmark and Baseline</strong></h3>
@@ -1703,12 +1704,12 @@
 <p class='meta'>论文：Towards Realistic Open-Vocabulary Remote Sensing Segmentation: Benchmark and Baseline</p>
 <p class='meta'>一句话总结：Open-vocabulary remote sensing image segmentation (OVRSIS) remains underexplored due to fragmented datasets, limited training diversity, and the lack of evaluation benchmarks that reflect realistic geospatial...</p>
 <p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
-<p class='meta'>方法核心：异常/OOD 建模，把目标从复杂背景中作为低概率区域凸显出来。</p>
+<p class='meta'>方法核心：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
 <p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>TRACE: Evidence Grounding-Guided Multi-Video Event Understanding and Claim Generation</strong></h3>
@@ -1724,7 +1725,7 @@
 <p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Segmentation, Detection and Explanation: A Unified Framework for CT Appearance Reasoning</strong></h3>
@@ -1740,7 +1741,7 @@
 <p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling</strong></h3>
@@ -1756,7 +1757,7 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>ModuSeg: Decoupling Object Discovery and Semantic Retrieval for Training-Free Weakly Supervised Segmentation</strong></h3>
@@ -1767,12 +1768,12 @@
 <p class='meta'>论文：ModuSeg: Decoupling Object Discovery and Semantic Retrieval for Training-Free Weakly Supervised Segmentation</p>
 <p class='meta'>一句话总结：Weakly supervised semantic segmentation aims to achieve pixel-level predictions using image-level labels. Existing methods typically entangle semantic recognition and object localization, which often leads mod...</p>
 <p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
-<p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
+<p class='meta'>方法核心：类别无关目标发现，适合把 COD 从固定类别分割改写成复杂背景中的潜在目标发现问题。</p>
 <p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Frequency Adapter with SAM for Generalized Medical Image Segmentation</strong></h3>
@@ -1788,7 +1789,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>HPP: Hierarchical Programmatic Probing for Long Video Understanding by Decoupling Perception and Reasoning</strong></h3>
@@ -1804,7 +1805,7 @@
 <p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Flood Mapping from RGB imagery using a Vision Foundation Model</strong></h3>
@@ -1820,7 +1821,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>UniDrive: A Unified Vision-Language and Grounding Framework for Interpretable Risk Understanding in Autonomous Driving</strong></h3>
@@ -1836,7 +1837,7 @@
 <p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Object Tokens as a Bridge Between Segmentation and Visual Question Answering in Robotic Surgery</strong></h3>
@@ -1852,7 +1853,7 @@
 <p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Prob-BBDM: a Probabilistic Brownian Bridge Diffusion Model for MRI sequence image-to-image translation</strong></h3>
@@ -1868,7 +1869,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>SARIF: Segment Anything for Robust Image Forensics</strong></h3>
@@ -1884,7 +1885,7 @@
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>SegmentAnyTreeV2: Scaling Transformer-Based Tree Instance Segmentation Across Sensors, Platforms, and Forests</strong></h3>
@@ -1900,7 +1901,7 @@
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可验证在 COD 跨数据集上的泛化，加入目标缺失场景。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation</strong></h3>
@@ -1932,7 +1933,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Crane: Context-Guided Prompt Learning and Attention Refinement for Zero-Shot Anomaly Detection</strong></h3>
@@ -1948,7 +1949,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Exploring Efficient Open-Vocabulary Segmentation in the Remote Sensing</strong></h3>
@@ -1964,7 +1965,7 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Annotation-Free Open-Vocabulary Segmentation for Remote-Sensing Images</strong></h3>
@@ -1975,12 +1976,12 @@
 <p class='meta'>论文：Annotation-Free Open-Vocabulary Segmentation for Remote-Sensing Images</p>
 <p class='meta'>一句话总结：Semantic segmentation of remote sensing (RS) images is pivotal for comprehensive Earth observation, but the demand for interpreting new object categories, coupled with the high expense of manual annotation, po...</p>
 <p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
-<p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
+<p class='meta'>方法核心：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Diffusion Model as a Generalist Segmentation Learner</strong></h3>
@@ -1996,7 +1997,7 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>OV-Stitcher: A Global Context-Aware Framework for Training-Free Open-Vocabulary Semantic Segmentation</strong></h3>
@@ -2012,7 +2013,7 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>DeepTumorVQA: A Hierarchical 3D CT Benchmark for Stage-Wise Evaluation of Medical VLMs and Tool-Augmented Agents</strong></h3>
@@ -2028,7 +2029,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Cross-Modal-Domain Generalization Through Semantically Aligned Discrete Representations</strong></h3>
@@ -2039,12 +2040,12 @@
 <p class='meta'>论文：Cross-Modal-Domain Generalization Through Semantically Aligned Discrete Representations</p>
 <p class='meta'>一句话总结：Multimodal learning seeks to integrate information across diverse sensory sources, yet current approaches struggle to balance cross-modal generalizability with modality-specific structure. Continuous (implicit...</p>
 <p class='meta'>任务设定：视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。</p>
-<p class='meta'>方法核心：测试时适配或域泛化，重点看跨数据集鲁棒性。</p>
+<p class='meta'>方法核心：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可验证在 COD 跨数据集上的泛化，加入目标缺失场景。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>EDGER: EDge-Guided with HEatmap Refinement for Generalizable Image Forgery Localization</strong></h3>
@@ -2060,7 +2061,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>CrossPan: A Comprehensive Benchmark for Cross-Sequence Pancreas MRI Segmentation and Generalization</strong></h3>
@@ -2076,7 +2077,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可验证在 COD 跨数据集上的泛化，加入目标缺失场景。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>SemiSAM-O1: How far can we push the boundary of annotation-efficient medical image segmentation?</strong></h3>
@@ -2087,12 +2088,12 @@
 <p class='meta'>论文：SemiSAM-O1: How far can we push the boundary of annotation-efficient medical image segmentation?</p>
 <p class='meta'>一句话总结：Semi-supervised learning (SSL) has become a promising solution to alleviate the annotation burden of deep learning-based medical image segmentation models. While recent advances in foundation model-driven SSL...</p>
 <p class='meta'>任务设定：医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。</p>
-<p class='meta'>方法核心：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
 <p class='meta'>实验结论：摘要强调消融、鲁棒性或泛化；适合优先看实验设计和跨域表现。</p>
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块。</p>
 <p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Adapting Foundation Models for Annotation-Efficient Adnexal Mass Segmentation in Cine Images</strong></h3>
@@ -2103,12 +2104,12 @@
 <p class='meta'>论文：Adapting Foundation Models for Annotation-Efficient Adnexal Mass Segmentation in Cine Images</p>
 <p class='meta'>一句话总结：Adnexal mass evaluation via ultrasound is a challenging clinical task, often hindered by subjective interpretation and significant inter-observer variability. While automated segmentation is a foundational ste...</p>
 <p class='meta'>任务设定：医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。</p>
-<p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
+<p class='meta'>方法核心：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块。</p>
 <p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>HyPiDecoder: Hybrid Pixel Decoder for Efficient Segmentation and Detection</strong></h3>
@@ -2140,7 +2141,7 @@
 <p class='meta'>和我课题的关系：和 COD 同属低显著/弱边界目标发现，可迁移目标-背景分离思想。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；边界/频域增强模块。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Binary Tracking for Spatial QA and Navigation with Open Vision-Language Models</strong></h3>
@@ -2156,7 +2157,7 @@
 <p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>ReasonCLIP-58M: Visually Grounded Commonsense Reasoning Supervision for CLIP</strong></h3>
@@ -2167,12 +2168,12 @@
 <p class='meta'>论文：ReasonCLIP-58M: Visually Grounded Commonsense Reasoning Supervision for CLIP</p>
 <p class='meta'>一句话总结：CLIP and its variants are widely adopted visual backbones in multimodal systems, but their pretraining remains dominated by descriptive image-text alignment. As downstream applications increasingly demand visu...</p>
 <p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
+<p class='meta'>方法核心：组合式或概念瓶颈建模，可把 COD 拆成颜色、纹理、边界、环境关系等可解释概念。</p>
 <p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
 <p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
 <p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>IMAGIN-4D: Image-Guided Controllable Interaction Generation</strong></h3>
@@ -2188,7 +2189,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Prompting Diffusion Models for Zero-Shot Instance Segmentation</strong></h3>
@@ -2199,12 +2200,12 @@
 <p class='meta'>论文：Prompting Diffusion Models for Zero-Shot Instance Segmentation</p>
 <p class='meta'>一句话总结：Several disruptive research directions have recently emerged in computer vision, including foundation models achieving previously unseen zero-shot performance in scene understanding, even interactively, and ge...</p>
 <p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
-<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>ELDiff: When Evidential Learning Meets Text-to-Image Diffusion</strong></h3>
@@ -2215,12 +2216,12 @@
 <p class='meta'>论文：ELDiff: When Evidential Learning Meets Text-to-Image Diffusion</p>
 <p class='meta'>一句话总结：In multi-object text-to-image (T2I) diffusion, ensuring semantic consistency between textual prompts and generated visual content is crucial for image synthesis. However, such consistency constraint is often u...</p>
 <p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
-<p class='meta'>方法核心：扩散/生成式建模，可能用于数据合成、先验建模或掩码优化。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：任务建模、损失函数、消融组织方式。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>SL-S4Wave: Self-Supervised Learning of Physiological Waveforms with Structured State Space Models</strong></h3>
@@ -2231,12 +2232,12 @@
 <p class='meta'>论文：SL-S4Wave: Self-Supervised Learning of Physiological Waveforms with Structured State Space Models</p>
 <p class='meta'>一句话总结：Modeling long-sequence medical time series data, such as electrocardiograms (ECG), poses significant challenges due to high sampling rates, multichannel signal complexity, inherent noise, and limited labeled d...</p>
 <p class='meta'>任务设定：视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。</p>
-<p class='meta'>方法核心：测试时适配或域泛化，重点看跨数据集鲁棒性。</p>
+<p class='meta'>方法核心：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：不是 COD 直系论文，但可能提供可迁移的视觉表征、训练策略或评测思路。</p>
 <p class='meta'>可借鉴点：跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可验证在 COD 跨数据集上的泛化，加入目标缺失场景。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>VTOS: Learning to Orchestrate Vision Tools by Co-Searching Solutions and Observers</strong></h3>
@@ -2252,7 +2253,7 @@
 <p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
 <h3><strong>Efficient Encoder-Free Fourier-based 3D Large Multimodal Model</strong></h3>
@@ -2268,7 +2269,7 @@
 <p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
 <p class='meta'>可借鉴点：深度或几何先验融合。</p>
 <p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <h2>阅读记录模板</h2>
 <pre><code>
@@ -2280,11 +2281,11 @@
 我能改进的地方：
 </code></pre>
 <h2>数据源</h2>
-<p>- arXiv API: recent preprints from COD, weak/salient/transparent objects, VLM, segmentation, diffusion, adaptation, medical and remote-sensing queries.</p>
+<p>- arXiv API: recent preprints from COD, weak/salient/transparent objects, VLM, segmentation, diffusion, adaptation, medical and remote-sensing queries, plus transferable-method queries such as object discovery, open-world segmentation, uncertainty, counterfactual/causal vision, self-supervised dense prediction, object-centric learning, compositional reasoning, interactive segmentation, continual learning, world models, and concept bottlenecks.</p>
 <p>- CVF OpenAccess: CVPR/ECCV/ICCV/WACV title-level scan.</p>
 <p>- Semantic Scholar Graph API: broad high-quality venue and topic search when rate limits allow.</p>
 <p>- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, Medical Image Analysis.</p>
-<p>- Selection policy: the daily deep-reading queue prioritizes recent published papers from top conferences/journals; arXiv papers enter the top five only when they are recent and have strong topic/method signals.</p>
+<p>- Selection policy: the daily deep-reading queue prioritizes idea transfer into COD, not direct COD similarity. Recent top-conference/top-journal papers are preferred; arXiv papers enter the top five only when they are recent and have strong transferable-method signals.</p>
 <p>说明：自动简介是基于题名、摘要和来源的初筛笔记，不等同于阅读全文后的结论；精读时建议再核对 method、experiment 和 limitation。</p>
 </main>
 </body>
