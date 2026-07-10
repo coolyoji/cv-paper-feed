@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily CV Paper Feed</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1f2933;
+      --muted: #52606d;
+      --line: #d9e2ec;
+      --accent: #1d4ed8;
+      --bg: #f8fafc;
+      --card: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    h1 { font-size: 32px; margin: 0 0 8px; }
+    h2 { margin-top: 40px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+    h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.4; }
+    h4 { margin: 22px 0 10px; font-size: 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .paper {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+    .meta { margin: 6px 0; color: var(--muted); }
+    .archive-day {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin: 14px 0;
+      padding: 8px 12px;
+    }
+    .archive-day > summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--ink);
+      padding: 6px 0;
+    }
+    .archive-day .paper {
+      box-shadow: none;
+      background: #fbfdff;
+    }
+    pre {
+      background: #111827;
+      color: #f9fafb;
+      padding: 14px;
+      border-radius: 8px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+<main>
+<h1>2026-07-10 CV Paper Feed</h1>
+<p><a href="../index.html">返回首页</a></p>
+<p>Last updated: 2026-07-10 13:10 Asia/Shanghai</p>
+<p>Candidate pool: 2468 papers</p>
+<p>慢读模式：本页只展示 5 篇当日精读、10 篇高质量来源、12 篇 COD 相关、12 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。</p>
+<p>精读队列优先选择能给 COD 带来新问题设定或新方法范式的论文，例如开放世界、目标发现、反事实/因果、不确定性、自监督稠密表征、对象中心建模和视觉推理；纯 COD 直系论文主要作为背景和对照。</p>
+<h2>当日精读队列</h2>
+<article class='paper'>
+<h3><strong>A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Zexi Jia, Chuanwei Huang, Hongyan Fei, Yeshuang Zhu, Zhiqiang Yuan et al.</p>
+<p class='meta'>Tags: reasoning, causal/counterfactual, compositionality</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：组合式或概念瓶颈建模，可把 COD 拆成颜色、纹理、边界、环境关系等可解释概念。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：反事实验证、目标存在性判断、误检拒识；对象-背景解耦、概念分解、可解释中间变量。</p>
+<p class='meta'>可改进点：可把反事实干预落到 COD：替换背景、扰动纹理、隐藏候选区域，验证模型是否真正依赖目标而非环境偏差。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Learning Counterfactually Decoupled Attention for Open-World Model Attribution</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Yu Zheng, Boyang Gong, Fanye Kong, Yueqi Duan, Bingyao Yu et al.</p>
+<p class='meta'>Tags: causal/counterfactual, open-world</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Zheng_Learning_Counterfactually_Decoupled_Attention_for_Open-World_Model_Attribution_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Zheng_Learning_Counterfactually_Decoupled_Attention_for_Open-World_Model_Attribution_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Learning Counterfactually Decoupled Attention for Open-World Model Attribution</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：反事实验证、目标存在性判断、误检拒识；类别无关候选发现、未知目标设定、目标缺失场景。</p>
+<p class='meta'>可改进点：可把反事实干预落到 COD：替换背景、扰动纹理、隐藏候选区域，验证模型是否真正依赖目标而非环境偏差。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>What Changed and What Could Have Changed? State-Change Counterfactuals for Procedure-Aware Video Representation Learning</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Chi-Hsi Kung, Frangil Ramirez, Juhyung Ha, Yi-Ting Chen, David Crandall et al.</p>
+<p class='meta'>Tags: video, causal/counterfactual, representation learning</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Kung_What_Changed_and_What_Could_Have_Changed_State-Change_Counterfactuals_for_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Kung_What_Changed_and_What_Could_Have_Changed_State-Change_Counterfactuals_for_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：What Changed and What Could Have Changed? State-Change Counterfactuals for Procedure-Aware Video Representation Learning</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。</p>
+<p class='meta'>方法核心：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：反事实验证、目标存在性判断、误检拒识；无标注稠密表征、预训练特征选择、局部结构保持。</p>
+<p class='meta'>可改进点：可把反事实干预落到 COD：替换背景、扰动纹理、隐藏候选区域，验证模型是否真正依赖目标而非环境偏差。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>TrackVerse: A Large-Scale Object-Centric Video Dataset for Image-Level Representation Learning</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Yibing Wei, Samuel Church, Victor Suciu, Jinhong Lin, Cheng-En Wu et al.</p>
+<p class='meta'>Tags: video, object-centric, representation learning</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Wei_TrackVerse_A_Large-Scale_Object-Centric_Video_Dataset_for_Image-Level_Representation_Learning_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Wei_TrackVerse_A_Large-Scale_Object-Centric_Video_Dataset_for_Image-Level_Representation_Learning_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：TrackVerse: A Large-Scale Object-Centric Video Dataset for Image-Level Representation Learning</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。</p>
+<p class='meta'>方法核心：对象中心表征学习，适合把目标从背景纹理中解耦出来，形成更强的候选对象假设。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可把 COD 重新建模为对象-背景解耦或概念组合问题，而不只是做边界更清晰的分割。</p>
+<p class='meta'>可借鉴点：对象-背景解耦、概念分解、可解释中间变量；无标注稠密表征、预训练特征选择、局部结构保持。</p>
+<p class='meta'>可改进点：可尝试用无标注自然图像预训练稠密表征，再用少量 COD 标注验证跨数据集泛化。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>StruMamba3D: Exploring Structural Mamba for Self-supervised Point Cloud Representation Learning</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Chuxin Wang, Yixin Zha, Wenfei Yang, Tianzhu Zhang</p>
+<p class='meta'>Tags: depth/geometry, self-supervised, representation learning</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Wang_StruMamba3D_Exploring_Structural_Mamba_for_Self-supervised_Point_Cloud_Representation_Learning_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Wang_StruMamba3D_Exploring_Structural_Mamba_for_Self-supervised_Point_Cloud_Representation_Learning_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：StruMamba3D: Exploring Structural Mamba for Self-supervised Point Cloud Representation Learning</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可用于少标注/无标注 COD，重点借鉴稠密表征如何保留弱边界和局部结构。</p>
+<p class='meta'>可借鉴点：深度或几何先验融合；无标注稠密表征、预训练特征选择、局部结构保持。</p>
+<p class='meta'>可改进点：可尝试用无标注自然图像预训练稠密表征，再用少量 COD 标注验证跨数据集泛化。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<h2>高质量来源优先读：CCF-A/B 与顶刊顶会</h2>
+<article class='paper'>
+<h3><strong>BTKD++: Beyond Teachers by Critically Distilling Knowledge from Teacher’s Bias</strong></h3>
+<p class='meta'>Source: Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision, 2026-07-08</p>
+<p class='meta'>Authors: Jianhua Zhang, Yi Gao, Yu He, Shuo Chen, Xu Cheng et al.</p>
+<p class='meta'>Tags: boundary/frequency</p>
+<p class='meta'>Links: <a href="https://doi.org/10.1007/s11263-026-02924-x">paper</a></p>
+<p class='meta'>论文：BTKD++: Beyond Teachers by Critically Distilling Knowledge from Teacher’s Bias</p>
+<p class='meta'>一句话总结：Abstract Existing knowledge distillation methods indiscriminately transfer knowledge from teacher networks, including output-level decisional biases, i.e., incorrect final predictions that can mislead student...</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
+<p class='meta'>可借鉴点：边界/频域增强模块。</p>
+<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Learning Counterfactually Decoupled Attention for Open-World Model Attribution</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Yu Zheng, Boyang Gong, Fanye Kong, Yueqi Duan, Bingyao Yu et al.</p>
+<p class='meta'>Tags: causal/counterfactual, open-world</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Zheng_Learning_Counterfactually_Decoupled_Attention_for_Open-World_Model_Attribution_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Zheng_Learning_Counterfactually_Decoupled_Attention_for_Open-World_Model_Attribution_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Learning Counterfactually Decoupled Attention for Open-World Model Attribution</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：反事实验证、目标存在性判断、误检拒识；类别无关候选发现、未知目标设定、目标缺失场景。</p>
+<p class='meta'>可改进点：可把反事实干预落到 COD：替换背景、扰动纹理、隐藏候选区域，验证模型是否真正依赖目标而非环境偏差。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Zexi Jia, Chuanwei Huang, Hongyan Fei, Yeshuang Zhu, Zhiqiang Yuan et al.</p>
+<p class='meta'>Tags: reasoning, causal/counterfactual, compositionality</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：组合式或概念瓶颈建模，可把 COD 拆成颜色、纹理、边界、环境关系等可解释概念。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：反事实验证、目标存在性判断、误检拒识；对象-背景解耦、概念分解、可解释中间变量。</p>
+<p class='meta'>可改进点：可把反事实干预落到 COD：替换背景、扰动纹理、隐藏候选区域，验证模型是否真正依赖目标而非环境偏差。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>OV-SCAN: Semantically Consistent Alignment for Novel Object Discovery in Open-Vocabulary 3D Object Detection</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Adrian Chow, Evelien Riddell, Yimu Wang, Sean Sedwards, Krzysztof Czarnecki</p>
+<p class='meta'>Tags: open-vocabulary, depth/geometry, object discovery</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Chow_OV-SCAN_Semantically_Consistent_Alignment_for_Novel_Object_Discovery_in_Open-Vocabulary_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Chow_OV-SCAN_Semantically_Consistent_Alignment_for_Novel_Object_Discovery_in_Open-Vocabulary_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：OV-SCAN: Semantically Consistent Alignment for Novel Object Discovery in Open-Vocabulary 3D Object Detection</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
+<p class='meta'>方法核心：类别无关目标发现，适合把 COD 从固定类别分割改写成复杂背景中的潜在目标发现问题。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可帮助 COD 跳出固定类别监督，转向未知目标发现、开放世界分割和类别无关候选生成。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；深度或几何先验融合；类别无关候选发现、未知目标设定、目标缺失场景。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Zixuan Hu, Dongxiao Li, Xinzhu Ma, Shixiang Tang, Xiaotong Li et al.</p>
+<p class='meta'>Tags: depth/geometry, uncertainty/calibration</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Hu_Adaptive_Dual_Uncertainty_Optimization_Boosting_Monocular_3D_Object_Detection_under_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Hu_Adaptive_Dual_Uncertainty_Optimization_Boosting_Monocular_3D_Object_Detection_under_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可迁移到 COD 的误检拒识、mask 置信度校准和目标缺失判断，适合做更可信的检测系统。</p>
+<p class='meta'>可借鉴点：深度或几何先验融合；mask 置信度校准、不确定性图、低置信样本处理。</p>
+<p class='meta'>可改进点：可进一步做 COD mask 置信度校准，让模型在看不准时拒识或触发二阶段推理。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>FE-CLIP: Frequency Enhanced CLIP Model for Zero-Shot Anomaly Detection and Segmentation</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Tao Gong, Qi Chu, Bin Liu, Wei Zhou, Nenghai Yu</p>
+<p class='meta'>Tags: boundary/frequency, anomaly/OOD</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Gong_FE-CLIP_Frequency_Enhanced_CLIP_Model_for_Zero-Shot_Anomaly_Detection_and_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Gong_FE-CLIP_Frequency_Enhanced_CLIP_Model_for_Zero-Shot_Anomaly_Detection_and_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：FE-CLIP: Frequency Enhanced CLIP Model for Zero-Shot Anomaly Detection and Segmentation</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：异常检测或分布外识别，可类比伪装目标的弱异常发现。</p>
+<p class='meta'>方法核心：视觉-语言对齐，把语义文本信息引入检测或分割。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
+<p class='meta'>可借鉴点：边界/频域增强模块；跨域鲁棒性、不确定性或异常分数。</p>
+<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Synthesizing Near-Boundary OOD Samples for Out-of-Distribution Detection</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Jinglun Li, Kaixun Jiang, Zhaoyu Chen, Bo Lin, Yao Tang et al.</p>
+<p class='meta'>Tags: boundary/frequency, anomaly/OOD</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Li_Synthesizing_Near-Boundary_OOD_Samples_for_Out-of-Distribution_Detection_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Li_Synthesizing_Near-Boundary_OOD_Samples_for_Out-of-Distribution_Detection_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Synthesizing Near-Boundary OOD Samples for Out-of-Distribution Detection</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：异常检测或分布外识别，可类比伪装目标的弱异常发现。</p>
+<p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
+<p class='meta'>可借鉴点：边界/频域增强模块；跨域鲁棒性、不确定性或异常分数。</p>
+<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Harnessing Uncertainty-aware Bounding Boxes for Unsupervised 3D Object Detection</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Ruiyang Zhang, Hu Zhang, Zhedong Zheng</p>
+<p class='meta'>Tags: unsupervised, depth/geometry, uncertainty/calibration</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_Harnessing_Uncertainty-aware_Bounding_Boxes_for_Unsupervised_3D_Object_Detection_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_Harnessing_Uncertainty-aware_Bounding_Boxes_for_Unsupervised_3D_Object_Detection_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Harnessing Uncertainty-aware Bounding Boxes for Unsupervised 3D Object Detection</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可迁移到 COD 的误检拒识、mask 置信度校准和目标缺失判断，适合做更可信的检测系统。</p>
+<p class='meta'>可借鉴点：深度或几何先验融合；mask 置信度校准、不确定性图、低置信样本处理。</p>
+<p class='meta'>可改进点：可进一步做 COD mask 置信度校准，让模型在看不准时拒识或触发二阶段推理。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Talking to DINO: Bridging Self-Supervised Vision Backbones with Language for Open-Vocabulary Segmentation</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Luca Barsellotti, Lorenzo Bianchi, Nicola Messina, Fabio Carrara, Marcella Cornia et al.</p>
+<p class='meta'>Tags: open-vocabulary, self-supervised</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Barsellotti_Talking_to_DINO_Bridging_Self-Supervised_Vision_Backbones_with_Language_for_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Barsellotti_Talking_to_DINO_Bridging_Self-Supervised_Vision_Backbones_with_Language_for_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Talking to DINO: Bridging Self-Supervised Vision Backbones with Language for Open-Vocabulary Segmentation</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
+<p class='meta'>方法核心：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可用于少标注/无标注 COD，重点借鉴稠密表征如何保留弱边界和局部结构。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；无标注稠密表征、预训练特征选择、局部结构保持。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>What Changed and What Could Have Changed? State-Change Counterfactuals for Procedure-Aware Video Representation Learning</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Chi-Hsi Kung, Frangil Ramirez, Juhyung Ha, Yi-Ting Chen, David Crandall et al.</p>
+<p class='meta'>Tags: video, causal/counterfactual, representation learning</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Kung_What_Changed_and_What_Could_Have_Changed_State-Change_Counterfactuals_for_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Kung_What_Changed_and_What_Could_Have_Changed_State-Change_Counterfactuals_for_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：What Changed and What Could Have Changed? State-Change Counterfactuals for Procedure-Aware Video Representation Learning</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。</p>
+<p class='meta'>方法核心：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：反事实验证、目标存在性判断、误检拒识；无标注稠密表征、预训练特征选择、局部结构保持。</p>
+<p class='meta'>可改进点：可把反事实干预落到 COD：替换背景、扰动纹理、隐藏候选区域，验证模型是否真正依赖目标而非环境偏差。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<h2>COD / 伪装目标检测相关</h2>
+<article class='paper'>
+<h3><strong>Source-free Depth for Object Pop-out</strong></h3>
+<p class='meta'>Source: arXiv, 2022-12-10</p>
+<p class='meta'>Authors: Zongwei Wu, Danda Pani Paudel, Deng-Ping Fan, Jingjing Wang, Shuo Wang et al.</p>
+<p class='meta'>Tags: COD, reasoning, boundary/frequency, depth/geometry, compositionality, saliency/transparent</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2212.05370v3">paper</a> / <a href="http://arxiv.org/pdf/2212.05370v3">pdf</a></p>
+<p class='meta'>论文：Source-free Depth for Object Pop-out</p>
+<p class='meta'>一句话总结：Depth cues are known to be useful for visual perception. However, direct measurement of depth is often impracticable.</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>方法核心：组合式或概念瓶颈建模，可把 COD 拆成颜色、纹理、边界、环境关系等可解释概念。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块；深度或几何先验融合；对象-背景解耦、概念分解、可解释中间变量。</p>
+<p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning</strong></h3>
+<p class='meta'>Source: arXiv, 2026-03-24</p>
+<p class='meta'>Authors: Jingchen Ni, Quan Zhang, Dan Jiang, Keyu Lv, Ke Zhang et al.</p>
+<p class='meta'>Tags: COD, unsupervised, SAM, diffusion, boundary/frequency, representation learning</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2603.22969v2">paper</a> / <a href="http://arxiv.org/pdf/2603.22969v2">pdf</a></p>
+<p class='meta'>论文：FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning</p>
+<p class='meta'>一句话总结：Existing camouflage object detection (COD) methods typically rely on fully-supervised learning guided by mask annotations. However, obtaining mask annotations is time-consuming and labor-intensive.</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；无标注稠密表征、预训练特征选择、局部结构保持。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2025-08-21</p>
+<p class='meta'>Authors: Wutao Liu, YiDan Wang, Pan Gao</p>
+<p class='meta'>Tags: COD, training-free, unsupervised, SAM, retrieval/prototype, anomaly/OOD, saliency/transparent</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2508.15313v2">paper</a> / <a href="http://arxiv.org/pdf/2508.15313v2">pdf</a></p>
+<p class='meta'>论文：First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection</p>
+<p class='meta'>一句话总结：Camouflaged object detection (COD) poses a significant challenge in computer vision due to the high similarity between objects and their backgrounds. Existing approaches often rely on heavy training and large...</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Open-Vocabulary Camouflaged Object Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2023-11-19</p>
+<p class='meta'>Authors: Youwei Pang, Xiaoqi Zhao, Jiaming Zuo, Lihe Zhang, Huchuan Lu</p>
+<p class='meta'>Tags: COD, open-vocabulary, VLM/MLLM, boundary/frequency, depth/geometry, open-world, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2311.11241v3">paper</a> / <a href="http://arxiv.org/pdf/2311.11241v3">pdf</a></p>
+<p class='meta'>论文：Open-Vocabulary Camouflaged Object Segmentation</p>
+<p class='meta'>一句话总结：Recently, the emergence of the large-scale vision-language model (VLM), such as CLIP, has opened the way towards open-world object perception. Many works have explored the utilization of pre-trained VLM for th...</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>方法核心：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合；类别无关候选发现、未知目标设定、目标缺失场景。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Ji Du, Xin Wang, Fangwei Hao, Mingyang Yu, Chunyuan Chen et al.</p>
+<p class='meta'>Tags: COD, unsupervised, retrieval/prototype</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Du_Beyond_Single_Images_Retrieval_Self-Augmented_Unsupervised_Camouflaged_Object_Detection_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Du_Beyond_Single_Images_Retrieval_Self-Augmented_Unsupervised_Camouflaged_Object_Detection_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>方法核心：摘要层面未显示明确模块，建议先看方法图确认 backbone、监督信号和损失设计。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可作为背景、baseline 或问题定义参考；精读时重点看它还缺少哪些外部方法视角。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
+<p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
+</article>
+<article class='paper'>
+<h3><strong>Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-02-23</p>
+<p class='meta'>Authors: Yilong Yang, Jianxin Tian, Shengchuan Zhang, Liujuan Cao</p>
+<p class='meta'>Tags: COD, SAM, VLM/MLLM, object discovery</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2602.19944v1">paper</a> / <a href="http://arxiv.org/pdf/2602.19944v1">pdf</a></p>
+<p class='meta'>论文：Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation</p>
+<p class='meta'>一句话总结：Current zero-shot Camouflaged Object Segmentation methods typically employ a two-stage pipeline (discover-then-segment): using MLLMs to obtain visual prompts, followed by SAM segmentation. However, relying sol...</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；类别无关候选发现、未知目标设定、目标缺失场景。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>ZS-VCOS: Zero-Shot Video Camouflaged Object Segmentation By Optical Flow and Open Vocabulary Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2025-04-10</p>
+<p class='meta'>Authors: Wenqi Guo, Mohamed Shehata, Shan Du</p>
+<p class='meta'>Tags: COD, open-vocabulary, unsupervised, SAM, VLM/MLLM, diffusion, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2505.01431v2">paper</a> / <a href="http://arxiv.org/pdf/2505.01431v2">pdf</a></p>
+<p class='meta'>论文：ZS-VCOS: Zero-Shot Video Camouflaged Object Segmentation By Optical Flow and Open Vocabulary Object Detection</p>
+<p class='meta'>一句话总结：Camouflaged object segmentation presents unique challenges compared to traditional segmentation tasks, primarily due to the high similarity in patterns and colors between camouflaged objects and their backgrou...</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Exploring Depth Contribution for Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2021-06-24</p>
+<p class='meta'>Authors: Mochu Xiang, Jing Zhang, Yunqiu Lv, Aixuan Li, Yiran Zhong et al.</p>
+<p class='meta'>Tags: COD, diffusion, depth/geometry, remote sensing, uncertainty/calibration, object discovery</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2106.13217v3">paper</a> / <a href="http://arxiv.org/pdf/2106.13217v3">pdf</a></p>
+<p class='meta'>论文：Exploring Depth Contribution for Camouflaged Object Detection</p>
+<p class='meta'>一句话总结：Camouflaged object detection (COD) aims to segment camouflaged objects hiding in the environment, which is challenging due to the similar appearance of camouflaged objects and their surroundings. Research in b...</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；深度或几何先验融合；mask 置信度校准、不确定性图、低置信样本处理；类别无关候选发现、未知目标设定、目标缺失场景。</p>
+<p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>BED-SAM2: Boundary-Enhanced-Depth SAM2 via Monocular Geometric Priors</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-24</p>
+<p class='meta'>Authors: Tyler Rust, Dara McNally, Kyle O&#x27;Donnell, Colin Kelly, Chandra Kambhamettu</p>
+<p class='meta'>Tags: COD, boundary/frequency, depth/geometry, saliency/transparent</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.24893v1">paper</a> / <a href="http://arxiv.org/pdf/2605.24893v1">pdf</a></p>
+<p class='meta'>论文：BED-SAM2: Boundary-Enhanced-Depth SAM2 via Monocular Geometric Priors</p>
+<p class='meta'>一句话总结：Building upon the SAM2 vision foundation model for downstream segmentation, this study introduces Boundary Enhanced Depth (BED)-SAM2. The SAM2 Hiera encoder architecture is modified to directly encode monocula...</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>方法核心：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块；深度或几何先验融合。</p>
+<p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
+</article>
+<article class='paper'>
+<h3><strong>Improving SAM for Camouflaged Object Detection via Dual Stream Adapters</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Jiaming Liu, Linghe Kong, Guihai Chen</p>
+<p class='meta'>Tags: COD, SAM</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Liu_Improving_SAM_for_Camouflaged_Object_Detection_via_Dual_Stream_Adapters_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Improving_SAM_for_Camouflaged_Object_Detection_via_Dual_Stream_Adapters_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Improving SAM for Camouflaged Object Detection via Dual Stream Adapters</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
+</article>
+<article class='paper'>
+<h3><strong>Inspiring the Next Generation of Segment Anything Models: Comprehensively Evaluate SAM and SAM 2 with Diverse Prompts Towards Context-Dependent Concepts under Different Scenes</strong></h3>
+<p class='meta'>Source: arXiv, 2024-12-02</p>
+<p class='meta'>Authors: Xiaoqi Zhao, Youwei Pang, Shijie Chang, Yuan Zhao, Lihe Zhang et al.</p>
+<p class='meta'>Tags: COD, SAM, depth/geometry, video, open-world, saliency/transparent</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2412.01240v3">paper</a> / <a href="http://arxiv.org/pdf/2412.01240v3">pdf</a></p>
+<p class='meta'>论文：Inspiring the Next Generation of Segment Anything Models: Comprehensively Evaluate SAM and SAM 2 with Diverse Prompts Towards Context-Dependent Concepts under Different Scenes</p>
+<p class='meta'>一句话总结：As large-scale foundation models trained on billions of image--mask pairs covering a vast diversity of scenes, objects, and contexts, SAM and its upgraded version, SAM~2, have significantly influenced multiple...</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>方法核心：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>实验结论：摘要强调消融、鲁棒性或泛化；适合优先看实验设计和跨域表现。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合；类别无关候选发现、未知目标设定、目标缺失场景。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Tianrui Lou, Xiaojun Jia, Siyuan Liang, Jiawei Liang, Ming Zhang et al.</p>
+<p class='meta'>Tags: COD, depth/geometry, remote sensing</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Lou_3D_Gaussian_Splatting_Driven_Multi-View_Robust_Physical_Adversarial_Camouflage_Generation_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Lou_3D_Gaussian_Splatting_Driven_Multi-View_Robust_Physical_Adversarial_Camouflage_Generation_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>方法核心：几何/深度线索建模，可能补充 RGB 外的结构先验。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；深度或几何先验融合。</p>
+<p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
+</article>
+<h2>泛计算机视觉方法池</h2>
+<article class='paper'>
+<h3><strong>Breaking Spurious Correlations via Generative Randomization and Cross-Variant Self-Supervised Learning</strong></h3>
+<p class='meta'>Source: arXiv, 2026-07-07</p>
+<p class='meta'>Authors: Suraj Yadav, Anjaneya Sharma, Siddharth Yadav</p>
+<p class='meta'>Tags: diffusion, causal/counterfactual, object-centric, self-supervised</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2607.05850v1">paper</a> / <a href="http://arxiv.org/pdf/2607.05850v1">pdf</a></p>
+<p class='meta'>论文：Breaking Spurious Correlations via Generative Randomization and Cross-Variant Self-Supervised Learning</p>
+<p class='meta'>一句话总结：Deep neural networks trained with Empirical Risk Minimization (ERM) often fail under distribution shifts because they exploit spurious correlations between object labels and background context. Recent generati...</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：对象中心表征学习，适合把目标从背景纹理中解耦出来，形成更强的候选对象假设。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：反事实验证、目标存在性判断、误检拒识；对象-背景解耦、概念分解、可解释中间变量；无标注稠密表征、预训练特征选择、局部结构保持。</p>
+<p class='meta'>可改进点：可把反事实干预落到 COD：替换背景、扰动纹理、隐藏候选区域，验证模型是否真正依赖目标而非环境偏差。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>MagicSeg: Open-World Segmentation Pretraining via Counterfactural Diffusion-Based Auto-Generation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-03-20</p>
+<p class='meta'>Authors: Kaixin Cai, Pengzhen Ren, Jianhua Han, Yi Zhu, Hang Xu et al.</p>
+<p class='meta'>Tags: open-vocabulary, diffusion, causal/counterfactual, open-world, self-supervised, active/interactive</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2603.19575v1">paper</a> / <a href="http://arxiv.org/pdf/2603.19575v1">pdf</a></p>
+<p class='meta'>论文：MagicSeg: Open-World Segmentation Pretraining via Counterfactural Diffusion-Based Auto-Generation</p>
+<p class='meta'>一句话总结：Open-world semantic segmentation presently relies significantly on extensive image-text pair datasets, which often suffer from a lack of fine-grained pixel annotations on sufficient categories. The acquisition...</p>
+<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
+<p class='meta'>方法核心：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；反事实验证、目标存在性判断、误检拒识；类别无关候选发现、未知目标设定、目标缺失场景；无标注稠密表征、预训练特征选择、局部结构保持；少量提示适配、增量场景学习、人工反馈闭环。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Excite, Attend and Segment (EASe): Domain-Agnostic Fine-Grained Mask Discovery with Feature Calibration and Self-Supervised Upsampling</strong></h3>
+<p class='meta'>Source: arXiv, 2026-03-31</p>
+<p class='meta'>Authors: Deepank Singh, Anurag Nihal, Vedhus Hoskere</p>
+<p class='meta'>Tags: training-free, unsupervised, uncertainty/calibration, object discovery, self-supervised, saliency/transparent</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2604.00276v1">paper</a> / <a href="http://arxiv.org/pdf/2604.00276v1">pdf</a></p>
+<p class='meta'>论文：Excite, Attend and Segment (EASe): Domain-Agnostic Fine-Grained Mask Discovery with Feature Calibration and Self-Supervised Upsampling</p>
+<p class='meta'>一句话总结：Unsupervised segmentation approaches have increasingly leveraged foundation models (FM) to improve salient object discovery. However, these methods often falter in scenes with complex, multi-component morpholo...</p>
+<p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可迁移到 COD 的误检拒识、mask 置信度校准和目标缺失判断，适合做更可信的检测系统。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；mask 置信度校准、不确定性图、低置信样本处理；类别无关候选发现、未知目标设定、目标缺失场景；无标注稠密表征、预训练特征选择、局部结构保持。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Are We Done with Object-Centric Learning?</strong></h3>
+<p class='meta'>Source: arXiv, 2025-04-09</p>
+<p class='meta'>Authors: Alexander Rubinstein, Ameya Prabhu, Matthias Bethge, Seong Joon Oh</p>
+<p class='meta'>Tags: training-free, unsupervised, anomaly/OOD, object discovery, object-centric, compositionality</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2504.07092v2">paper</a> / <a href="http://arxiv.org/pdf/2504.07092v2">pdf</a></p>
+<p class='meta'>论文：Are We Done with Object-Centric Learning?</p>
+<p class='meta'>一句话总结：Object-centric learning (OCL) seeks to learn representations that only encode an object, isolated from other objects or background cues in a scene. This approach underpins various aims, including out-of-distri...</p>
+<p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
+<p class='meta'>方法核心：类别无关目标发现，适合把 COD 从固定类别分割改写成复杂背景中的潜在目标发现问题。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可帮助 COD 跳出固定类别监督，转向未知目标发现、开放世界分割和类别无关候选生成。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；跨域鲁棒性、不确定性或异常分数；类别无关候选发现、未知目标设定、目标缺失场景；对象-背景解耦、概念分解、可解释中间变量。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>C2RM-Seg: Causal Counterfactual Reasoning with Structural-Semantic Priors for Weakly Supervised Histopathological Tissue Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-24</p>
+<p class='meta'>Authors: Hualong Zhang, Siyang Feng, Zihan Huan, Yi Qian, Zhenbing Liu et al.</p>
+<p class='meta'>Tags: unsupervised, reasoning, boundary/frequency, causal/counterfactual, uncertainty/calibration, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.25508v1">paper</a> / <a href="http://arxiv.org/pdf/2606.25508v1">pdf</a></p>
+<p class='meta'>论文：C2RM-Seg: Causal Counterfactual Reasoning with Structural-Semantic Priors for Weakly Supervised Histopathological Tissue Segmentation</p>
+<p class='meta'>一句话总结：Histopathological tissue segmentation is essential for computer-aided diagnosis, yet weakly supervised methods often suffer from noisy pseudo-labels generated by Class Activation Mapping (CAM). Existing CAM ap...</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：边界/频域增强模块；反事实验证、目标存在性判断、误检拒识；mask 置信度校准、不确定性图、低置信样本处理。</p>
+<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>G2VD: Generalizable AI-Generated Video Detection via Counterfactual Intervention and Causal Disentanglement</strong></h3>
+<p class='meta'>Source: arXiv, 2026-07-06</p>
+<p class='meta'>Authors: Meng Du, Hongchang Chen, Ran Li, Junjie Zhang, Qi Ouyang et al.</p>
+<p class='meta'>Tags: boundary/frequency, video, causal/counterfactual, domain adaptation</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2607.04607v1">paper</a> / <a href="http://arxiv.org/pdf/2607.04607v1">pdf</a></p>
+<p class='meta'>论文：G2VD: Generalizable AI-Generated Video Detection via Counterfactual Intervention and Causal Disentanglement</p>
+<p class='meta'>一句话总结：The rapid advancement of AI-generated videos poses increasing security risks and calls for robust detectors with strong cross-domain generalization. Although existing methods achieve promising results under in...</p>
+<p class='meta'>任务设定：视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。</p>
+<p class='meta'>方法核心：反事实建模/拒识机制，用来降低误检或判断目标是否存在。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：边界/频域增强模块；跨域鲁棒性、不确定性或异常分数；反事实验证、目标存在性判断、误检拒识。</p>
+<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Zero-Shot Object-Centric Representation Learning</strong></h3>
+<p class='meta'>Source: arXiv, 2024-08-17</p>
+<p class='meta'>Authors: Aniket Didolkar, Andrii Zadaianchuk, Anirudh Goyal, Mike Mozer, Yoshua Bengio et al.</p>
+<p class='meta'>Tags: unsupervised, object discovery, object-centric, self-supervised, representation learning</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2408.09162v1">paper</a> / <a href="http://arxiv.org/pdf/2408.09162v1">pdf</a></p>
+<p class='meta'>论文：Zero-Shot Object-Centric Representation Learning</p>
+<p class='meta'>一句话总结：The goal of object-centric representation learning is to decompose visual scenes into a structured representation that isolates the entities. Recent successes have shown that object-centric representation lear...</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>方法核心：类别无关目标发现，适合把 COD 从固定类别分割改写成复杂背景中的潜在目标发现问题。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可帮助 COD 跳出固定类别监督，转向未知目标发现、开放世界分割和类别无关候选生成。</p>
+<p class='meta'>可借鉴点：类别无关候选发现、未知目标设定、目标缺失场景；对象-背景解耦、概念分解、可解释中间变量；无标注稠密表征、预训练特征选择、局部结构保持。</p>
+<p class='meta'>可改进点：可设计开放世界 COD：图像中可能没有伪装目标，或目标类别未知，模型需要先发现再判别。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Do Vision-Language-Action Models Mean What They Say? On the Role of Faithfulness in Embodied Reasoning</strong></h3>
+<p class='meta'>Source: arXiv, 2026-07-06</p>
+<p class='meta'>Authors: Matthew Foutter, Matteo Cercola, Lena Wild, Yunshan Wang, Michelle Li et al.</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, remote sensing, anomaly/OOD, causal/counterfactual</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2607.04681v1">paper</a> / <a href="http://arxiv.org/pdf/2607.04681v1">pdf</a></p>
+<p class='meta'>论文：Do Vision-Language-Action Models Mean What They Say? On the Role of Faithfulness in Embodied Reasoning</p>
+<p class='meta'>一句话总结：Embodied Chain-of-Thought has emerged as a promising mechanism to enhance robot decision-making and interpretability in black-box Vision-Language Action (VLA) models. However, whether this verbalized Chain-of-...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：反事实建模/拒识机制，用来降低误检或判断目标是否存在。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数；反事实验证、目标存在性判断、误检拒识。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>From 3D Perception to Safety Reasoning: A Graph-Based Framework for Real-Time Underground Mine Monitoring</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-02</p>
+<p class='meta'>Authors: Pasindu Ranasinghe, Simit Raval, Dibyayan Patra, Bikram Banerjee, Ismet Canbulat</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, boundary/frequency, depth/geometry, video, anomaly/OOD, uncertainty/calibration, self-supervised</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.03460v1">paper</a> / <a href="http://arxiv.org/pdf/2606.03460v1">pdf</a></p>
+<p class='meta'>论文：From 3D Perception to Safety Reasoning: A Graph-Based Framework for Real-Time Underground Mine Monitoring</p>
+<p class='meta'>一句话总结：Underground coal mining requires personnel and heavy equipment to operate within shared, confined, and poorly illuminated spaces where hazards such as equipment proximity violations, structural instabilities,...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
+<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
+<p class='meta'>和我课题的关系：可迁移到 COD 的误检拒识、mask 置信度校准和目标缺失判断，适合做更可信的检测系统。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合；跨域鲁棒性、不确定性或异常分数；mask 置信度校准、不确定性图、低置信样本处理；无标注稠密表征、预训练特征选择、局部结构保持。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Masked and Predictive Self-Supervised Foundation Models for 3D Brain MRI</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-11</p>
+<p class='meta'>Authors: Esra Ergün, Hersh Chandarana, Dan Sodickson, Gözde Ünal</p>
+<p class='meta'>Tags: diffusion, boundary/frequency, depth/geometry, self-supervised, representation learning, medical imaging</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.13315v1">paper</a> / <a href="http://arxiv.org/pdf/2606.13315v1">pdf</a></p>
+<p class='meta'>论文：Masked and Predictive Self-Supervised Foundation Models for 3D Brain MRI</p>
+<p class='meta'>一句话总结：Self-supervised foundation models have shown strong promise in medical imaging. However, existing MRI foundation-model studies have primarily emphasized segmentation and dense prediction tasks, while systemati...</p>
+<p class='meta'>任务设定：医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。</p>
+<p class='meta'>方法核心：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可用于少标注/无标注 COD，重点借鉴稠密表征如何保留弱边界和局部结构。</p>
+<p class='meta'>可借鉴点：边界/频域增强模块；深度或几何先验融合；无标注稠密表征、预训练特征选择、局部结构保持。</p>
+<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Falcon: Functional Assembly and Language for Compositional Reasoning in X-ray</strong></h3>
+<p class='meta'>Source: arXiv, 2026-06-24</p>
+<p class='meta'>Authors: Yonathan Michael, Mohamad Alansari, Natnael Takele, Andreas Henschel, Naoufel Werghi</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, object-centric, compositionality</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.25701v2">paper</a> / <a href="http://arxiv.org/pdf/2606.25701v2">pdf</a></p>
+<p class='meta'>论文：Falcon: Functional Assembly and Language for Compositional Reasoning in X-ray</p>
+<p class='meta'>一句话总结：Conventional vision-language models are largely object-centric, focusing on detecting and describing individual entities. In safety-critical X-ray baggage screening, however, threat often emerges not from a si...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>方法核心：对象中心表征学习，适合把目标从背景纹理中解耦出来，形成更强的候选对象假设。</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：可把 COD 重新建模为对象-背景解耦或概念组合问题，而不只是做边界更清晰的分割。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；对象-背景解耦、概念分解、可解释中间变量。</p>
+<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Road-Aware Anomaly Segmentation with Query-Guided Polygons and CLIP in Autonomous Driving</strong></h3>
+<p class='meta'>Source: arXiv, 2026-07-05</p>
+<p class='meta'>Authors: Zhiran Yan, Gordon Elger</p>
+<p class='meta'>Tags: training-free, diffusion, anomaly/OOD, uncertainty/calibration, open-world</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2607.04304v1">paper</a> / <a href="http://arxiv.org/pdf/2607.04304v1">pdf</a></p>
+<p class='meta'>论文：Road-Aware Anomaly Segmentation with Query-Guided Polygons and CLIP in Autonomous Driving</p>
+<p class='meta'>一句话总结：Traditional semantic segmentation models operate under a closed-set assumption and struggle to recognize unknown or unexpected objects-an essential capability for autonomous driving. As a result, such models o...</p>
+<p class='meta'>任务设定：免训练或少训练迁移设定，重点看 prompt、特征选择和后处理。</p>
+<p class='meta'>方法核心：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可迁移到 COD 的误检拒识、mask 置信度校准和目标缺失判断，适合做更可信的检测系统。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；跨域鲁棒性、不确定性或异常分数；mask 置信度校准、不确定性图、低置信样本处理；类别无关候选发现、未知目标设定、目标缺失场景。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<h2>阅读记录模板</h2>
+<pre><code>
+论文：
+任务设定：
+核心假设：
+方法模块：
+对 COD / 我的课题的可迁移点：
+我能改进的地方：
+</code></pre>
+<h2>数据源</h2>
+<p>- arXiv API: recent preprints from COD, weak/salient/transparent objects, VLM, segmentation, diffusion, adaptation, medical and remote-sensing queries, plus transferable-method queries such as object discovery, open-world segmentation, uncertainty, counterfactual/causal vision, self-supervised dense prediction, object-centric learning, compositional reasoning, interactive segmentation, continual learning, world models, and concept bottlenecks.</p>
+<p>- CVF OpenAccess: CVPR/ECCV/ICCV/WACV title-level scan.</p>
+<p>- Semantic Scholar Graph API: broad high-quality venue and topic search when rate limits allow.</p>
+<p>- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, Medical Image Analysis.</p>
+<p>- Selection policy: the daily deep-reading queue prioritizes idea transfer into COD, not direct COD similarity. Recent top-conference/top-journal papers are preferred; arXiv papers enter the top five only when they are recent and have strong transferable-method signals.</p>
+<p>说明：自动简介是基于题名、摘要和来源的初筛笔记，不等同于阅读全文后的结论；精读时建议再核对 method、experiment 和 limitation。</p>
+</main>
+</body>
+</html>
