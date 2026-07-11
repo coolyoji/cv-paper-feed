@@ -29,11 +29,13 @@ DATA = ROOT / "data"
 DAILY_MD = DOCS / "md"
 DAILY_HTML = DOCS / "html"
 HISTORY_FILE = DATA / "feed_history.json"
+ABSTRACT_DETAILS_FILE = DATA / "abstract_details.json"
 DEEP_SOURCE_SCAN = os.environ.get("DEEP_SOURCE_SCAN", "").lower() in {"1", "true", "yes"}
 
 HIGHLIGHT_LIMIT = 5
 QUALITY_LIMIT = 10
 COD_LIMIT = 12
+UAV_LIMIT = 10
 BROAD_LIMIT = 12
 DOWNLOAD_LIMIT = 5
 DOWNLOAD_ROOT = Path(
@@ -101,6 +103,15 @@ ARXIV_QUERIES = [
     'all:"continual learning" AND all:"segmentation"',
     'all:"world model" AND all:"vision"',
     'all:"concept bottleneck" AND all:"vision"',
+    # UAV / aerial tiny-object perception
+    'all:"UAV small object detection"',
+    'all:"drone small object detection"',
+    'all:"aerial tiny object detection"',
+    'all:"small target detection" AND all:"UAV"',
+    'all:"UAV object tracking" AND all:"small object"',
+    'all:"aerial image" AND all:"small object segmentation"',
+    'all:"UAV" AND all:"foundation model" AND all:"detection"',
+    'all:"drone" AND all:"vision-language" AND all:"detection"',
 ]
 
 
@@ -147,6 +158,13 @@ SEMANTIC_SCHOLAR_QUERIES = [
     "active learning semantic segmentation",
     "continual learning dense prediction",
     "visual concept bottleneck model",
+    "UAV small object detection",
+    "drone tiny object detection",
+    "aerial image small target detection",
+    "UAV small object tracking",
+    "aerial dense object detection occlusion",
+    "UAV foundation model object detection",
+    "drone vision language object grounding",
 ]
 
 
@@ -290,6 +308,12 @@ BROAD_KEYWORDS = [
     "compositional",
     "concept bottleneck",
     "world model",
+    "uav",
+    "drone",
+    "aerial",
+    "tiny object",
+    "small target",
+    "low altitude",
 ]
 
 
@@ -323,6 +347,11 @@ IDEA_TRANSFER_KEYWORD_WEIGHTS = {
     "reasoning": 8,
     "negative prompt": 7,
     "referring image segmentation": 7,
+    "uav": 9,
+    "drone": 9,
+    "aerial": 8,
+    "tiny object": 10,
+    "small target": 10,
 }
 
 TRANSFER_TAG_WEIGHTS = {
@@ -349,6 +378,7 @@ TRANSFER_TAG_WEIGHTS = {
     "remote sensing": 5,
     "medical imaging": 5,
     "video": 5,
+    "UAV/small-object": 10,
 }
 
 TRANSFER_TAGS = set(TRANSFER_TAG_WEIGHTS)
@@ -478,6 +508,19 @@ def derive_tags(title: str, summary: str) -> list[str]:
         ("depth/geometry", ["depth", "geometric", "geometry", "3d", "4d"]),
         ("video", ["video", "temporal", "tracking", "motion"]),
         ("remote sensing", ["remote sensing", "earth observation", "sar", "hyperspectral"]),
+        (
+            "UAV/small-object",
+            [
+                "uav",
+                "drone",
+                "aerial image",
+                "aerial imagery",
+                "tiny object",
+                "small target",
+                "small object detection",
+                "low-altitude",
+            ],
+        ),
         ("anomaly/OOD", ["anomaly", "ood", "out-of-distribution"]),
         ("causal/counterfactual", ["causal", "causality", "counterfactual"]),
         ("uncertainty/calibration", ["uncertainty", "calibration", "confidence"]),
@@ -562,6 +605,46 @@ def score_paper(paper: Paper) -> int:
     if any(stop in text for stop in STOP_TITLES):
         score -= 40
     return score
+
+
+def has_real_abstract(paper: Paper) -> bool:
+    summary = clean_text(paper.summary)
+    if len(summary) < 120:
+        return False
+    placeholders = [
+        "CVF OpenAccess paper.",
+        "Semantic Scholar result for query:",
+        "abstract unavailable from Crossref",
+    ]
+    return not any(marker.lower() in summary.lower() for marker in placeholders)
+
+
+def fetch_cvf_abstract(paper: Paper) -> str:
+    if "openaccess.thecvf.com" not in paper.url:
+        return ""
+    page = fetch_url(paper.url, timeout=35)
+    match = re.search(r'<div id="abstract"[^>]*>(.*?)</div>', page, re.S | re.I)
+    if not match:
+        return ""
+    abstract = strip_markup(match.group(1))
+    return abstract if len(abstract) >= 120 else ""
+
+
+def enrich_paper_abstracts(papers: list[Paper]) -> None:
+    for paper in papers:
+        if has_real_abstract(paper):
+            continue
+        try:
+            abstract = fetch_cvf_abstract(paper)
+        except Exception as exc:  # pragma: no cover - network resilience
+            print(f"[warn] abstract fetch failed: {paper.title}: {exc}", file=sys.stderr)
+            continue
+        if not abstract:
+            continue
+        paper.summary = abstract
+        paper.tags = derive_tags(paper.title, abstract)
+        paper.score = score_paper(paper)
+        time.sleep(0.2)
 
 
 def paper_age_days(paper: Paper) -> int | None:
@@ -1000,6 +1083,8 @@ def why_read(paper: Paper) -> str:
         return "适合补充伪装场景中的边界、纹理、几何先验。"
     if "anomaly/OOD" in tags:
         return "可把伪装目标看作弱异常/低显著目标，借鉴不确定性与负样本思想。"
+    if "UAV/small-object" in tags:
+        return "无人机小目标与 COD 都需要在复杂背景中保留微弱目标证据，可重点借鉴多尺度特征、密集检测和高效推理。"
     if "remote sensing" in tags or "video" in tags:
         return "适合迁移多模态、时序或大场景密集推理方法。"
     return "方法上可能可迁移，建议先读摘要和图 1。"
@@ -1021,6 +1106,8 @@ def task_setting(paper: Paper) -> str:
         return "基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。"
     if "anomaly/OOD" in tags:
         return "异常检测或分布外识别，可类比伪装目标的弱异常发现。"
+    if "UAV/small-object" in tags:
+        return "无人机/航拍小目标检测、分割或跟踪，重点处理目标像素少、尺度变化大、密集遮挡、运动模糊和边缘部署限制。"
     if "remote sensing" in tags:
         return "遥感/大场景密集视觉任务，关注小目标、尺度变化和复杂背景。"
     if "medical imaging" in tags:
@@ -1062,6 +1149,98 @@ def method_core(paper: Paper) -> str:
     return "摘要层面未显示明确模块，建议先看方法图确认 backbone、监督信号和损失设计。"
 
 
+def load_abstract_details() -> dict[str, str]:
+    if not ABSTRACT_DETAILS_FILE.exists():
+        return {}
+    try:
+        data = json.loads(ABSTRACT_DETAILS_FILE.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    if not isinstance(data, dict):
+        return {}
+    return {
+        str(title): clean_text(str(detail))
+        for title, detail in data.items()
+        if detail
+    }
+
+
+def abstract_sentences(summary: str) -> list[str]:
+    summary = clean_text(summary)
+    return [
+        sentence.strip()
+        for sentence in re.split(r"(?<=[.!?])\s+", summary)
+        if sentence.strip()
+    ]
+
+
+def join_limited(sentences: list[str], max_chars: int = 650) -> str:
+    result: list[str] = []
+    length = 0
+    for sentence in sentences:
+        if result and length + len(sentence) > max_chars:
+            break
+        result.append(sentence)
+        length += len(sentence)
+    return " ".join(result)
+
+
+def generated_abstract_explanation(paper: Paper) -> str:
+    if not has_real_abstract(paper):
+        return "当前来源尚未取得可靠摘要，不能仅凭标题推断方法；需要先打开论文页或 PDF 补齐摘要后再详解。"
+
+    sentences = abstract_sentences(paper.summary)
+    if not sentences:
+        return "摘要文本为空，暂时无法生成可靠详解。"
+    problem = join_limited(sentences[:2], max_chars=420)
+    method_markers = [
+        "we propose",
+        "we present",
+        "we introduce",
+        "our method",
+        "our framework",
+        "specifically",
+        "first",
+        "then",
+        "further",
+    ]
+    result_markers = [
+        "experiment",
+        "results",
+        "outperform",
+        "achieve",
+        "demonstrate",
+        "show that",
+        "state-of-the-art",
+    ]
+    method_sentences = [
+        sentence
+        for sentence in sentences[1:]
+        if any(marker in sentence.lower() for marker in method_markers)
+    ][:4]
+    if not method_sentences:
+        method_sentences = sentences[2:5] or sentences[1:3]
+    result_sentences = [
+        sentence
+        for sentence in sentences
+        if any(marker in sentence.lower() for marker in result_markers)
+    ][:2]
+    method_text = join_limited(method_sentences, max_chars=760)
+    result_text = join_limited(result_sentences, max_chars=420)
+    if not result_text:
+        result_text = "摘要未给出具体数值，需要到实验部分核对数据集、指标和对比结果。"
+    return (
+        f"研究问题：{problem} "
+        f"方法与流程：{method_core(paper)} 摘要中的具体做法包括：{method_text} "
+        f"摘要结论：{result_text}"
+    )
+
+
+def abstract_explanation(paper: Paper) -> str:
+    curated = load_abstract_details().get(paper.title)
+    return curated or generated_abstract_explanation(paper)
+
+
 def experiment_takeaway(paper: Paper) -> str:
     text = paper.summary.lower()
     if not paper.summary or paper.summary.startswith("CVF OpenAccess paper"):
@@ -1081,6 +1260,8 @@ def relation_to_topic(paper: Paper) -> str:
         return "它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。"
     if "COD" in tags:
         return "和伪装目标检测高度相关，可作为背景、baseline 或问题定义参考；精读时重点看它还缺少哪些外部方法视角。"
+    if "UAV/small-object" in tags:
+        return "与 COD 的交叉点是弱目标证据：无人机目标通常尺寸极小，COD 目标通常与背景相似；二者都需要避免下采样丢失细节，并抑制复杂背景误检。"
     if "causal/counterfactual" in tags:
         return "可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。"
     if "uncertainty/calibration" in tags:
@@ -1131,6 +1312,8 @@ def borrow_points(paper: Paper) -> str:
         points.append("无标注稠密表征、预训练特征选择、局部结构保持")
     if "active/interactive" in tags or "continual learning" in tags:
         points.append("少量提示适配、增量场景学习、人工反馈闭环")
+    if "UAV/small-object" in tags:
+        points.append("小目标特征保真、多尺度融合、密集遮挡处理、轻量化实时推理")
     if not points:
         points.append("任务建模、损失函数、消融组织方式")
     return "；".join(points) + "。"
@@ -1138,6 +1321,8 @@ def borrow_points(paper: Paper) -> str:
 
 def improvement_ideas(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "UAV/small-object" in tags:
+        return "可把无人机小目标的高分辨率分支、多尺度候选和轻量检测头迁移到 COD，并验证其是否改善小型伪装目标、远景目标和复杂背景误检。"
     if "COD" in tags and ("VLM/MLLM" not in tags and "SAM" not in tags):
         return "可尝试引入基础模型、文本先验或更强的环境上下文建模。"
     if "open-vocabulary" in tags or "training-free" in tags:
@@ -1190,7 +1375,7 @@ def md_paper_item(idx: int, paper: Paper) -> str:
             f"   - 论文：{paper.title}",
             f"   - 一句话总结：{short_summary(paper)}",
             f"   - 任务设定：{task_setting(paper)}",
-            f"   - 方法核心：{method_core(paper)}",
+            f"   - 摘要详解：{abstract_explanation(paper)}",
             f"   - 实验结论：{experiment_takeaway(paper)}",
             f"   - 和我课题的关系：{relation_to_topic(paper)}",
             f"   - 可借鉴点：{borrow_points(paper)}",
@@ -1203,6 +1388,7 @@ def md_paper_item(idx: int, paper: Paper) -> str:
 
 def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
     cod = [p for p in papers if "COD" in p.tags]
+    uav = [p for p in papers if "UAV/small-object" in p.tags]
     broad = [p for p in papers if "COD" not in p.tags]
     quality = [
         p
@@ -1212,6 +1398,7 @@ def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
     ]
 
     cod = sorted(cod, key=lambda p: p.score, reverse=True)[:COD_LIMIT]
+    uav = sorted(uav, key=highlight_rank, reverse=True)[:UAV_LIMIT]
     broad = sorted(broad, key=lambda p: p.score, reverse=True)[:BROAD_LIMIT]
     quality = sorted(quality, key=lambda p: p.score, reverse=True)[:QUALITY_LIMIT]
     highlights = select_highlights(papers)
@@ -1219,6 +1406,7 @@ def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
         "highlights": highlights,
         "quality": quality,
         "cod": cod,
+        "uav": uav,
         "broad": broad,
     }
 
@@ -1323,7 +1511,7 @@ def download_candidates(snapshot: dict) -> list[Paper]:
 
     for paper in sections["highlights"]:
         add_unique(paper)
-    for section_name in ["quality", "broad", "cod"]:
+    for section_name in ["quality", "uav", "broad", "cod"]:
         for paper in sections[section_name]:
             add_unique(paper)
     preferred = [
@@ -1519,7 +1707,7 @@ def legacy_snapshot_from_latest() -> dict | None:
         date_text = datetime.strptime(generated_at[:10], "%Y-%m-%d").strftime("%Y-%m-%d")
     except ValueError:
         date_text = datetime.now(UTC8).strftime("%Y-%m-%d")
-    snapshot = make_snapshot(papers, datetime.now(UTC8))
+    snapshot = make_snapshot(papers, datetime.now(UTC8), enrich_abstracts=False)
     snapshot["date"] = date_text
     snapshot["generated_at"] = generated_at
     snapshot["legacy"] = True
@@ -1539,8 +1727,30 @@ def load_history() -> list[dict]:
     return [item for item in data if isinstance(item, dict)]
 
 
-def make_snapshot(papers: list[Paper], now: datetime) -> dict:
+def enrich_selected_sections(sections: dict[str, list[Paper]]) -> None:
+    highlights = sections.get("highlights", [])
+    enrich_paper_abstracts(highlights)
+    enriched = {
+        re.sub(r"\W+", "", paper.title.lower()): paper
+        for paper in highlights
+        if paper.title
+    }
+    for section_papers in sections.values():
+        for paper in section_papers:
+            source = enriched.get(re.sub(r"\W+", "", paper.title.lower()))
+            if source is None:
+                continue
+            paper.summary = source.summary
+            paper.tags = list(source.tags)
+            paper.score = source.score
+
+
+def make_snapshot(
+    papers: list[Paper], now: datetime, enrich_abstracts: bool = True
+) -> dict:
     sections = select_feed_sections(papers)
+    if enrich_abstracts:
+        enrich_selected_sections(sections)
     return {
         "date": now.strftime("%Y-%m-%d"),
         "generated_at": now.strftime("%Y-%m-%d %H:%M"),
@@ -1591,6 +1801,7 @@ def snapshot_sections(snapshot: dict) -> dict[str, list[Paper]]:
         "highlights": [paper_from_dict(item) for item in sections.get("highlights", [])],
         "quality": [paper_from_dict(item) for item in sections.get("quality", [])],
         "cod": [paper_from_dict(item) for item in sections.get("cod", [])],
+        "uav": [paper_from_dict(item) for item in sections.get("uav", [])],
         "broad": [paper_from_dict(item) for item in sections.get("broad", [])],
     }
 
@@ -1607,6 +1818,7 @@ def render_snapshot_markdown(snapshot: dict) -> str:
     highlights = sections["highlights"]
     quality = sections["quality"]
     cod = sections["cod"]
+    uav = sections["uav"]
     broad = sections["broad"]
     date_text = current.get("date", now.strftime("%Y-%m-%d"))
 
@@ -1618,7 +1830,7 @@ def render_snapshot_markdown(snapshot: dict) -> str:
         f"Last updated: {current.get('generated_at', now.strftime('%Y-%m-%d %H:%M'))} Asia/Shanghai",
         f"Candidate pool: {current.get('total_selected', 0)} papers",
         "",
-        f"慢读模式：本页只展示 {HIGHLIGHT_LIMIT} 篇当日精读、{QUALITY_LIMIT} 篇高质量来源、{COD_LIMIT} 篇 COD 相关、{BROAD_LIMIT} 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。",
+        f"慢读模式：本页只展示 {HIGHLIGHT_LIMIT} 篇当日精读、{QUALITY_LIMIT} 篇高质量来源、{COD_LIMIT} 篇 COD 相关、{UAV_LIMIT} 篇无人机小目标、{BROAD_LIMIT} 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。",
         "精读队列优先选择能给 COD 带来新问题设定或新方法范式的论文，例如开放世界、目标发现、反事实/因果、不确定性、自监督稠密表征、对象中心建模和视觉推理；纯 COD 直系论文主要作为背景和对照。",
         "",
         "## 当日精读队列",
@@ -1635,6 +1847,11 @@ def render_snapshot_markdown(snapshot: dict) -> str:
 
     lines.extend(["## COD / 伪装目标检测相关", ""])
     for i, paper in enumerate(cod, 1):
+        lines.append(md_paper_item(i, paper))
+        lines.append("")
+
+    lines.extend(["## 无人机 / 航拍小目标", ""])
+    for i, paper in enumerate(uav, 1):
         lines.append(md_paper_item(i, paper))
         lines.append("")
 
@@ -1707,7 +1924,7 @@ def render_markdown(history: list[dict]) -> str:
             "",
             "## 阅读节奏",
             "",
-            f"- 每日页面默认只展示少量精选：{HIGHLIGHT_LIMIT} 篇精读、{QUALITY_LIMIT} 篇高质量来源、{COD_LIMIT} 篇 COD、{BROAD_LIMIT} 篇泛视觉。",
+            f"- 每日页面默认只展示少量精选：{HIGHLIGHT_LIMIT} 篇精读、{QUALITY_LIMIT} 篇高质量来源、{COD_LIMIT} 篇 COD、{UAV_LIMIT} 篇无人机小目标、{BROAD_LIMIT} 篇泛视觉。",
             "- 精读优先级看“能不能启发新的 COD 论文问题”，不是只看标题里有没有 camouflaged object detection。",
             "- 旧 Markdown 日报不会被覆盖；同一天重复更新只刷新当天文件。",
             "- 后台仍保留完整候选池，方便以后需要时再扩展检索。",
@@ -1862,16 +2079,80 @@ def write_daily_files(history: list[dict]) -> None:
     DAILY_MD.mkdir(exist_ok=True)
     DAILY_HTML.mkdir(exist_ok=True)
     for snapshot in collapse_history_by_date(history):
-        date_text = snapshot.get("date", str(snapshot.get("generated_at", ""))[:10])
-        if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_text):
-            continue
-        md = render_snapshot_markdown(snapshot)
-        (DAILY_MD / f"{date_text}.md").write_text(md, encoding="utf-8", newline="\n")
-        (DAILY_HTML / f"{date_text}.html").write_text(
-            render_html(md),
+        write_snapshot_files(snapshot)
+
+
+def write_snapshot_files(snapshot: dict) -> None:
+    date_text = snapshot.get("date", str(snapshot.get("generated_at", ""))[:10])
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_text):
+        return
+    md = render_snapshot_markdown(snapshot)
+    (DAILY_MD / f"{date_text}.md").write_text(md, encoding="utf-8", newline="\n")
+    (DAILY_HTML / f"{date_text}.html").write_text(
+        render_html(md),
+        encoding="utf-8",
+        newline="\n",
+    )
+
+
+def render_existing_history(history: list[dict] | None = None, latest_only: bool = False) -> None:
+    DATA.mkdir(exist_ok=True)
+    DOCS.mkdir(exist_ok=True)
+    DAILY_MD.mkdir(exist_ok=True)
+    DAILY_HTML.mkdir(exist_ok=True)
+    history = collapse_history_by_date(history if history is not None else load_history())
+    md = render_markdown(history)
+    (DOCS / "literature.md").write_text(md, encoding="utf-8", newline="\n")
+    (DOCS / "index.html").write_text(render_html(md), encoding="utf-8", newline="\n")
+    if latest_only and history:
+        write_snapshot_files(history[0])
+    else:
+        write_daily_files(history)
+
+
+def refresh_current_abstracts() -> None:
+    history = collapse_history_by_date(load_history())
+    if not history:
+        print("[warn] no feed history to refresh", file=sys.stderr)
+        return
+    current = history[0]
+    sections = snapshot_sections(current)
+    enrich_selected_sections(sections)
+    current["sections"] = {
+        name: [paper_to_dict(paper) for paper in section_papers]
+        for name, section_papers in sections.items()
+    }
+    HISTORY_FILE.write_text(
+        json.dumps(history, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+        newline="\n",
+    )
+
+    latest_path = DATA / "latest_papers.json"
+    if latest_path.exists():
+        try:
+            latest = json.loads(latest_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            latest = []
+        enriched = {
+            re.sub(r"\W+", "", paper.title.lower()): paper
+            for paper in sections["highlights"]
+        }
+        for item in (latest if isinstance(latest, list) else []):
+            key = re.sub(r"\W+", "", str(item.get("title", "")).lower())
+            source = enriched.get(key)
+            if source is None:
+                continue
+            item["summary"] = source.summary
+            item["tags"] = source.tags
+            item["score"] = source.score
+        latest_path.write_text(
+            json.dumps(latest, ensure_ascii=False, indent=2),
             encoding="utf-8",
             newline="\n",
         )
+    render_existing_history(history, latest_only=True)
+    print(f"[info] refreshed abstracts for {current.get('date', 'current day')}")
 
 
 def markdown_inline(text: str) -> str:
@@ -1913,10 +2194,7 @@ def main() -> None:
     history = update_history(papers, now)
     if history:
         download_daily_pdfs(history[0])
-    md = render_markdown(history)
-    (DOCS / "literature.md").write_text(md, encoding="utf-8", newline="\n")
-    (DOCS / "index.html").write_text(render_html(md), encoding="utf-8", newline="\n")
-    write_daily_files(history)
+    render_existing_history(history, latest_only=True)
 
     serializable = [paper_to_dict(paper) for paper in papers]
     (DATA / "latest_papers.json").write_text(
@@ -1931,4 +2209,9 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    if "--refresh-current-abstracts" in sys.argv:
+        refresh_current_abstracts()
+    elif "--render-only" in sys.argv:
+        render_existing_history(latest_only=True)
+    else:
+        main()
