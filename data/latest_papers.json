@@ -389,7 +389,7 @@
     ],
     "source": "CVPR 2026",
     "published": "2026",
-    "summary": "Unsupervised domain adaptation (UDA) for videos and 1D time-series data faces significant challenges due to domain shifts in terms of both temporal dynamics and feature distributions. Existing UDA approaches for time-series data often address temporal alignment and uncertainty mitigation as separate objectives, leading to unstable training, noisy pseudo-labels, and incomplete feature transfer. This disjoint treatment fails to capture inter-channel causal dependencies and also overlooks the impact of prediction uncertainty on adaptation quality. This limits the transferability of learned representations and results in suboptimal adaptation. To address the aforementioned limitations, we propose a novel UDA framework, named Causally-Regularized Optimal Transport (in short Causal-OT), that preserves domain-invariant causal mechanisms by embedding causal graph regularization into robust OT alignment process. First we estimate inter-channel causal graphs in both source and target domains and learn a transport plan that not only aligns feature distributions but also improves interpretability and minimizes the discrepancy between causal structures of the Granger graphs. However, pseudo-labeling may still prone to error propagation allowing incorrect target predictions during self-training, degrading the model stability and transfer quality across domains. To mitigate this, we further introduce a causality-aware pseudo-labeling strategy that selects high-confidence target samples based on both entropy and structural consistency with the causal graph of the source domain. This enhances robustness against pseudo-label noise.Extensive experiments on six time-series benchmarks achieving 4.5% gain in accuracy and a 3.8% improvement in F1-score. We conduct experiments on four benchmark video datasets that achieve a 2.5% gain in accuracy.",
+    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
     "tags": [
       "unsupervised",
       "video",
@@ -397,7 +397,7 @@
       "uncertainty/calibration",
       "domain adaptation"
     ],
-    "score": 110
+    "score": 90
   },
   {
     "title": "GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning",
@@ -527,14 +527,13 @@
     ],
     "source": "CVPR 2025",
     "published": "2025",
-    "summary": "Out-of-distribution (OOD) detection is crucial for machine learning models deployed in open-world environments. However, existing methods often struggle with model over-confidence or rely heavily on empirical energy value estimation, limiting their scalability and generalizability. This paper introduces DEBO (Dual Energy-Based Model for Out-of-distribution Detection), a novel approach that addresses these limitations through an innovative dual classifier architecture and a unified energy-based objective function. DEBO enhances the standard classification framework by integrating a dual-purpose output space within a single classifier. The primary component classifies in-distribution (ID) data conventionally, while the secondary component captures open-world information and estimates uncertainty. Our method overcomes the dependence of traditional energy model-based OOD detection methods on empirical energy estimation while maintaining theoretical guarantees. Theoretical analysis demonstrates that DEBO promotes low energy and high confidence for ID data, while simultaneously inducing higher energy and decreased confidence for OOD samples. Extensive experiments conducted on benchmark datasets reveal that DEBO achieves state-of-the-art OOD detection performance while maintaining comparable classification accuracy on ID data.",
+    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
     "tags": [
-      "diffusion",
       "anomaly/OOD",
       "uncertainty/calibration",
       "open-world"
     ],
-    "score": 98
+    "score": 86
   },
   {
     "title": "MarkIt: Training-Free Visual Markers for Precise Video Temporal Grounding",
@@ -694,15 +693,13 @@
     ],
     "source": "ICCV 2025",
     "published": "2025",
-    "summary": "Vision-language models (VLMs) often struggle with compositional reasoning due to insufficient high-quality image-text data. To tackle this challenge, we propose a novel block-based diffusion approach that automatically generates counterfactual datasets without manual annotation. Our method utilizes large language models to identify entities and their spatial relationships. It then independently generates image blocks as \"puzzle pieces\" coherently arranged according to specified compositional rules. This process creates diverse, high-fidelity counterfactual image-text pairs with precisely controlled variations. In addition, we introduce a specialized loss function that differentiates inter-set from intra-set samples, enhancing training efficiency and reducing the need for negative samples. Experiments demonstrate that fine-tuning VLMs with our counterfactual datasets significantly improves visual reasoning performance. Our approach achieves state-of-the-art results across multiple benchmarks while using substantially less training data than existing methods.",
+    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
     "tags": [
-      "VLM/MLLM",
       "reasoning",
-      "diffusion",
       "causal/counterfactual",
       "compositionality"
     ],
-    "score": 108
+    "score": 84
   },
   {
     "title": "SemiSAM-O1: How far can we push the boundary of annotation-efficient medical image segmentation?",
@@ -768,7 +765,7 @@
     ],
     "source": "CVPR 2026",
     "published": "2026",
-    "summary": "Bridging the gap between complex human instructions and precise 3D object grounding remains a significant challenge in vision and robotics. Existing 3D segmentation methods often struggle to interpret ambiguous, reasoning-based instructions, while 2D vision-language models that excel at such reasoning lack intrinsic 3D spatial understanding. In this paper, we introduce REALM, an innovative MLLM-agent framework that enables open-world reasoning-based segmentation without requiring extensive 3D-specific post-training. We perform segmentation directly on 3D Gaussian Splatting representations, capitalizing on their ability to render photorealistic novel views that are highly suitable for MLLM comprehension. As directly feeding one or more rendered views to the MLLM can lead to high sensitivity to viewpoint selection, we propose a novel Global-to-Local Spatial Grounding strategy. Specifically, multiple global views are first fed into the MLLM agent in parallel for coarse-level localization, aggregating responses to robustly identify the target object. Then, several close-up novel views of the object are synthesized to perform fine-grained local segmentation, yielding accurate and consistent 3D masks. Extensive experiments show that REALM achieves remarkable performance in interpreting both explicit and implicit instructions across LERF, 3D-OVS, and our newly introduced REALM3D benchmarks. Furthermore, our agent framework seamlessly supports a range of 3D interaction tasks, including object removal, replacement, and style transfer, demonstrating its practical utility and versatility.",
+    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
     "tags": [
       "VLM/MLLM",
       "reasoning",
@@ -776,7 +773,7 @@
       "depth/geometry",
       "open-world"
     ],
-    "score": 110
+    "score": 82
   },
   {
     "title": "STAC: Selective Spatiotemporal Aggregation and Compression for Video Reasoning Segmentation",
@@ -1288,13 +1285,13 @@
     ],
     "source": "CVPR 2026",
     "published": "2026",
-    "summary": "Causal graphs play a crucial role in AI research as they reveal the data generation processes underlying real-world machine learning and computer vision tasks. Recent studies have leveraged causal graphs to develop more robust and interpretable models. However, limited or biased data often lead to inaccurate causal graph estimation, reducing a model's transferability to unseen domains. To address this challenge, we propose a novel framework that performs Bayesian inference over causal graphs to capture potential underlying causal relations and identify invariant causal features for DG prediction. The key advantage of our framework lies in its ability to quantify causal graph uncertainty in the context of prediction tasks and incorporate it into the prediction process. Our proposed uncertainty provides valuable insights into (i) the reliability of our method on specific datasets, (ii) the alignment between learned causal graphs and unseen test domains, and (iii) the confidence of our predictions. In particular, we go beyond merely quantifying uncertainty and leverage it as weighting factors in a weighted Bayesian inference scheme. Empirical results on multiple benchmark distribution-shift datasets show that our algorithm, **C**ausal **G**raph **U**ncertainty-guided **Bayes**ian Inference (CGU-Bayes), outperforms existing DG methods on challenging datasets and achieves state-of-the-art performance overall.",
+    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
     "tags": [
       "causal/counterfactual",
       "uncertainty/calibration",
       "domain adaptation"
     ],
-    "score": 92
+    "score": 78
   },
   {
     "title": "Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning",
@@ -38968,25 +38965,6 @@
     "score": 49
   },
   {
-    "title": "MPCF: Multi-Phase Consolidated Fusion for Multi-Modal 3D Object Detection With Pseudo Point Cloud",
-    "url": "https://doi.org/10.1109/tcsvt.2026.3665922",
-    "pdf": "",
-    "authors": [
-      "Pan Gao",
-      "Yuling Fan",
-      "Shuai Ren",
-      "Xiwen Ren",
-      "Ping Zhang"
-    ],
-    "source": "Crossref / TCSVT / CCF-B / 顶刊 / IEEE Transactions on Circuits and Systems for Video Technology",
-    "published": "2026-07",
-    "summary": "TCSVT article matched by title in a top journal; abstract unavailable from Crossref.",
-    "tags": [
-      "depth/geometry"
-    ],
-    "score": 49
-  },
-  {
     "title": "Cross-source medical anomaly detection via prompt-guided diffusion representations",
     "url": "https://doi.org/10.1016/j.patcog.2026.113985",
     "pdf": "",
@@ -61860,28 +61838,6 @@
     "score": 43
   },
   {
-    "title": "Open-Set Deepfake Detection: A Parameter-Efficient Adaptation Method With Forgery Style Mixture",
-    "url": "https://doi.org/10.1109/tcsvt.2026.3669190",
-    "pdf": "",
-    "authors": [
-      "Chenqi Kong",
-      "Anwei Luo",
-      "Peijun Bao",
-      "Haoliang Li",
-      "Renjie Wan",
-      "Zengwei Zheng",
-      "Anderson Rocha",
-      "Alex C. Kot"
-    ],
-    "source": "Crossref / TCSVT / CCF-B / 顶刊 / IEEE Transactions on Circuits and Systems for Video Technology",
-    "published": "2026-07",
-    "summary": "TCSVT article matched by title in a top journal; abstract unavailable from Crossref.",
-    "tags": [
-      "open-world"
-    ],
-    "score": 43
-  },
-  {
     "title": "Morphology-Guided Muscle Cell Detection and Counting Based on Transfer Learning, FFD Augmentation, and Density-Aware Loss Optimization",
     "url": "https://doi.org/10.1109/tcsvt.2026.3670914",
     "pdf": "",
@@ -61889,6 +61845,26 @@
       "Hongbing Qian",
       "Meiyun Zuo",
       "Lixi Zhao"
+    ],
+    "source": "Crossref / TCSVT / CCF-B / 顶刊 / IEEE Transactions on Circuits and Systems for Video Technology",
+    "published": "2026-07",
+    "summary": "TCSVT article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "computer vision"
+    ],
+    "score": 43
+  },
+  {
+    "title": "DiffPixelFormer: Differential Pixel-Aware Transformer for RGB-D Indoor Scene Segmentation",
+    "url": "https://doi.org/10.1109/tcsvt.2026.3677060",
+    "pdf": "",
+    "authors": [
+      "Yan Gong",
+      "Jianli Lu",
+      "Yongsheng Gao",
+      "Jie Zhao",
+      "Xiaojuan Zhang",
+      "Susanto Rahardja"
     ],
     "source": "Crossref / TCSVT / CCF-B / 顶刊 / IEEE Transactions on Circuits and Systems for Video Technology",
     "published": "2026-07",
