@@ -1509,34 +1509,11 @@ def download_candidates(snapshot: dict) -> list[Paper]:
             return
         candidates.append(paper)
 
+    # The download cache and Zotero collection must mirror the rendered
+    # deep-reading queue exactly; re-ranking other sections can displace it.
     for paper in sections["highlights"]:
         add_unique(paper)
-    for section_name in ["quality", "uav", "broad", "cod"]:
-        for paper in sections[section_name]:
-            add_unique(paper)
-    preferred = [
-        paper
-        for paper in candidates
-        if (
-            paper in sections["highlights"]
-            or transfer_potential(paper) >= MIN_IDEA_TRANSFER_SCORE
-            or highlight_tier(paper) >= 2
-            or (has_quality_published_source(paper) and paper.score >= 35)
-        )
-    ]
-    fallback = [paper for paper in candidates if paper not in preferred]
-    ordered = sorted(preferred, key=highlight_rank, reverse=True) + sorted(
-        fallback, key=highlight_rank, reverse=True
-    )
-    filtered: list[Paper] = []
-    pure_cod_count = 0
-    for paper in ordered:
-        if is_pure_cod_anchor(paper):
-            if pure_cod_count >= DIRECT_COD_HIGHLIGHT_LIMIT:
-                continue
-            pure_cod_count += 1
-        filtered.append(paper)
-    return filtered
+    return candidates[:DOWNLOAD_LIMIT]
 
 
 def write_download_readme(folder: Path, snapshot: dict, downloaded: list[dict], skipped: list[dict]) -> None:
