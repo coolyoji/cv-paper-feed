@@ -71,8 +71,8 @@
 <main>
 <h1>2026-07-12 CV Paper Feed</h1>
 <p><a href="../index.html">返回首页</a></p>
-<p>Last updated: 2026-07-12 10:24 Asia/Shanghai</p>
-<p>Candidate pool: 9220 papers</p>
+<p>Last updated: 2026-07-12 12:37 Asia/Shanghai</p>
+<p>Candidate pool: 9386 papers</p>
 <p>慢读模式：本页只展示 5 篇当日精读、10 篇高质量来源、12 篇 COD 相关、10 篇无人机小目标、12 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。</p>
 <p>精读队列优先选择能给 COD 带来新问题设定或新方法范式的论文，例如开放世界、目标发现、反事实/因果、不确定性、自监督稠密表征、对象中心建模和视觉推理；纯 COD 直系论文主要作为背景和对照。</p>
 <h2>当日精读队列</h2>
@@ -319,6 +319,22 @@
 </article>
 <h2>COD / 伪装目标检测相关</h2>
 <article class='paper'>
+<h3><strong>Source-free Depth for Object Pop-out</strong></h3>
+<p class='meta'>Source: arXiv, 2022-12-10</p>
+<p class='meta'>Authors: Zongwei Wu, Danda Pani Paudel, Deng-Ping Fan, Jingjing Wang, Shuo Wang et al.</p>
+<p class='meta'>Tags: COD, reasoning, boundary/frequency, depth/geometry, compositionality, saliency/transparent</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2212.05370v3">paper</a> / <a href="http://arxiv.org/pdf/2212.05370v3">pdf</a></p>
+<p class='meta'>论文：Source-free Depth for Object Pop-out</p>
+<p class='meta'>一句话总结：Depth cues are known to be useful for visual perception. However, direct measurement of depth is often impracticable.</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>摘要详解：研究问题：Depth cues are known to be useful for visual perception. However, direct measurement of depth is often impracticable. 方法与流程：组合式或概念瓶颈建模，可把 COD 拆成颜色、纹理、边界、环境关系等可解释概念。 摘要中的具体做法包括：More specifically, we adapt the inferred depth maps such that objects can be localized using only 3D information. Our experiments on eight datasets of two challenging tasks, namely camouflaged object detection and salient object detection, consistently demonstrate the benefit of our method in terms of both performance and generalizability. 摘要结论：Our experiments on eight datasets of two challenging tasks, namely camouflaged object detection and salient object detection, consistently demonstrate the benefit of our method in terms of both performance and generalizability.</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块；深度或几何先验融合；对象-背景解耦、概念分解、可解释中间变量。</p>
+<p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
 <h3><strong>Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt</strong></h3>
 <p class='meta'>Source: CVPR 2026, 2026</p>
 <p class='meta'>Authors: Peng Ren, Cheng Jiang, Chuande Yang, Fuming Sun, Tian Bai</p>
@@ -351,6 +367,38 @@
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
+<h3><strong>First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2025-08-21</p>
+<p class='meta'>Authors: Wutao Liu, YiDan Wang, Pan Gao</p>
+<p class='meta'>Tags: COD, training-free, unsupervised, SAM, retrieval/prototype, anomaly/OOD, saliency/transparent</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2508.15313v2">paper</a> / <a href="http://arxiv.org/pdf/2508.15313v2">pdf</a></p>
+<p class='meta'>论文：First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection</p>
+<p class='meta'>一句话总结：Camouflaged object detection (COD) poses a significant challenge in computer vision due to the high similarity between objects and their backgrounds. Existing approaches often rely on heavy training and large...</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>摘要详解：研究问题：Camouflaged object detection (COD) poses a significant challenge in computer vision due to the high similarity between objects and their backgrounds. Existing approaches often rely on heavy training and large computational resources. 方法与流程：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。 摘要中的具体做法包括：To address these challenges, we propose \textbf{First RAG, Second SEG (RAG-SEG)}, a training-free paradigm that decouples COD into two stages: Retrieval-Augmented Generation (RAG) for generating coarse masks as prompts, followed by SAM-based segmentation (SEG) for refinement. Our method eliminates the need for conventional training while maintaining competitive performance. We present further analysis in the Appendix, covering limitations, salient object detection extension, and possible improvements. 摘要结论：Extensive experiments on benchmark COD datasets demonstrate that RAG-SEG performs on par with or surpasses state-of-the-art methods. Notably, all experiments are conducted on a \textbf{personal laptop}, highlighting the computational efficiency and practicality of our approach.</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Open-Vocabulary Camouflaged Object Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2023-11-19</p>
+<p class='meta'>Authors: Youwei Pang, Xiaoqi Zhao, Jiaming Zuo, Lihe Zhang, Huchuan Lu</p>
+<p class='meta'>Tags: COD, open-vocabulary, VLM/MLLM, boundary/frequency, depth/geometry, open-world, low-level</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2311.11241v3">paper</a> / <a href="http://arxiv.org/pdf/2311.11241v3">pdf</a></p>
+<p class='meta'>论文：Open-Vocabulary Camouflaged Object Segmentation</p>
+<p class='meta'>一句话总结：Recently, the emergence of the large-scale vision-language model (VLM), such as CLIP, has opened the way towards open-world object perception. Many works have explored the utilization of pre-trained VLM for th...</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>摘要详解：研究问题：Recently, the emergence of the large-scale vision-language model (VLM), such as CLIP, has opened the way towards open-world object perception. Many works have explored the utilization of pre-trained VLM for the challenging open-vocabulary dense prediction task that requires perceiving diverse objects with novel classes at inference time. 方法与流程：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。 摘要中的具体做法包括：To fill in the gaps, we introduce a new task, open-vocabulary camouflaged object segmentation (OVCOS), and construct a large-scale complex scene dataset (\textbf{OVCamo}) containing 11,483 hand-selected images with fine annotations and corresponding object classes. Further, we build a strong single-stage open-vocabulary \underline{c}amouflaged \underline{o}bject \underline{s}egmentation transform\underline{er} baseline \textbf{OVCoser} attached to the parameter-fixed CLIP with iterative semantic guidance and structure enhancement. With the proposed dataset and baseline, we hope that this new task with more practical value can further expand the research on open-vocabulary dense prediction tasks. 摘要结论：Existing methods construct experiments based on the public datasets of related tasks, which are not tailored for open vocabulary and rarely involve imperceptible objects camouflaged in complex scenes due to data collection bias and annotation costs. Moreover, this effective framework also surpasses previous state-of-the-arts of open-vocabulary semantic image segmentation by a large margin on our OVCamo dataset.</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；深度或几何先验融合；类别无关候选发现、未知目标设定、目标缺失场景。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
 <h3><strong>Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection</strong></h3>
 <p class='meta'>Source: ICCV 2025, 2025</p>
 <p class='meta'>Authors: Ji Du, Xin Wang, Fangwei Hao, Mingyang Yu, Chunyuan Chen et al.</p>
@@ -367,12 +415,12 @@
 <p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
-<h3><strong>EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection</strong></h3>
+<h3><strong>Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation</strong></h3>
 <p class='meta'>Source: CVPR 2026, 2026</p>
-<p class='meta'>Authors: Shuo Jiang, Gaojia Zhang, Min Tan, Yufei Yin, Gang Pan</p>
-<p class='meta'>Tags: COD, unsupervised</p>
-<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.pdf">pdf</a></p>
-<p class='meta'>论文：EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection</p>
+<p class='meta'>Authors: Yilong Yang, Jianxin Tian, Shengchuan Zhang, Liujuan Cao</p>
+<p class='meta'>Tags: COD</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation</p>
 <p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
 <p class='meta'>摘要详解：当前来源尚未取得可靠摘要，不能仅凭标题推断方法；需要先打开论文页或 PDF 补齐摘要后再详解。</p>
@@ -399,6 +447,22 @@
 <p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <article class='paper'>
+<h3><strong>EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Authors: Shuo Jiang, Gaojia Zhang, Min Tan, Yufei Yin, Gang Pan</p>
+<p class='meta'>Tags: COD, unsupervised</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.pdf">pdf</a></p>
+<p class='meta'>论文：EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection</p>
+<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>摘要详解：当前来源尚未取得可靠摘要，不能仅凭标题推断方法；需要先打开论文页或 PDF 补齐摘要后再详解。</p>
+<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
+<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可作为背景、baseline 或问题定义参考；精读时重点看它还缺少哪些外部方法视角。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
+<p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
+<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
+</article>
+<article class='paper'>
 <h3><strong>Seeing Both Sides: Towards Bidirectional Semantic Alignment for Open-Vocabulary Camouflaged Object Segmentation</strong></h3>
 <p class='meta'>Source: CVPR 2026, 2026</p>
 <p class='meta'>Authors: Guohui Zhang, Fuming Sun, Yu Zhao, Yuqiu Kong, Jing Sun et al.</p>
@@ -411,22 +475,6 @@
 <p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
 <p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程。</p>
-<p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
-</article>
-<article class='paper'>
-<h3><strong>Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation</strong></h3>
-<p class='meta'>Source: CVPR 2026, 2026</p>
-<p class='meta'>Authors: Yilong Yang, Jianxin Tian, Shengchuan Zhang, Liujuan Cao</p>
-<p class='meta'>Tags: COD</p>
-<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.pdf">pdf</a></p>
-<p class='meta'>论文：Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation</p>
-<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
-<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
-<p class='meta'>摘要详解：当前来源尚未取得可靠摘要，不能仅凭标题推断方法；需要先打开论文页或 PDF 补齐摘要后再详解。</p>
-<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可作为背景、baseline 或问题定义参考；精读时重点看它还缺少哪些外部方法视角。</p>
-<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
 <p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
 <p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
@@ -447,67 +495,19 @@
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
-<h3><strong>LSP-ST: Ladder Shape-Biased Side-Tuning for Robust Infrared Small Target Detection</strong></h3>
-<p class='meta'>Source: arXiv, 2025-04-20</p>
-<p class='meta'>Authors: Guoyi Zhang, Siyang Chen, Guangsheng Xu, Han Wang, Donghe Wang et al.</p>
-<p class='meta'>Tags: COD, SAM, reasoning, boundary/frequency, UAV/small-object, saliency/transparent</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2504.14481v2">paper</a> / <a href="http://arxiv.org/pdf/2504.14481v2">pdf</a></p>
-<p class='meta'>论文：LSP-ST: Ladder Shape-Biased Side-Tuning for Robust Infrared Small Target Detection</p>
-<p class='meta'>一句话总结：Fine-tuning the Segment Anything Model (SAM) for infrared small target detection poses significant challenges due to severe domain shifts. Existing adaptation methods often incorporate handcrafted priors to br...</p>
+<h3><strong>ZS-VCOS: Zero-Shot Video Camouflaged Object Segmentation By Optical Flow and Open Vocabulary Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2025-04-10</p>
+<p class='meta'>Authors: Wenqi Guo, Mohamed Shehata, Shan Du</p>
+<p class='meta'>Tags: COD, open-vocabulary, unsupervised, SAM, VLM/MLLM, diffusion, video</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2505.01431v2">paper</a> / <a href="http://arxiv.org/pdf/2505.01431v2">pdf</a></p>
+<p class='meta'>论文：ZS-VCOS: Zero-Shot Video Camouflaged Object Segmentation By Optical Flow and Open Vocabulary Object Detection</p>
+<p class='meta'>一句话总结：Camouflaged object segmentation presents unique challenges compared to traditional segmentation tasks, primarily due to the high similarity in patterns and colors between camouflaged objects and their backgrou...</p>
 <p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
-<p class='meta'>摘要详解：研究问题：Fine-tuning the Segment Anything Model (SAM) for infrared small target detection poses significant challenges due to severe domain shifts. Existing adaptation methods often incorporate handcrafted priors to bridge this gap, yet such designs limit generalization and scalability. 方法与流程：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。 摘要中的具体做法包括：To address this, we propose Ladder Shape-Biased Side-Tuning (LSP-ST), a novel approach that introduces a shape-aware inductive bias to facilitate effective adaptation beyond texture cues. Furthermore, its strong generalization is validated across tasks such as mirror detection, shadow detection, and camouflaged object detection, while maintaining stable performance on texture-driven tasks like salient object detection, demonstrating that the introduced shape bias complements rather than competes with texture-based reasoning. 摘要结论：With only 4.72M learnable parameters, LSP-ST achieves state-of-the-art performance on multiple infrared small target detection benchmarks.</p>
+<p class='meta'>摘要详解：研究问题：Camouflaged object segmentation presents unique challenges compared to traditional segmentation tasks, primarily due to the high similarity in patterns and colors between camouflaged objects and their backgrounds. Effective solutions to this problem have significant implications in critical areas such as pest control, defect detection, and lesion segmentation in medical imaging. 方法与流程：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。 摘要中的具体做法包括：A thorough ablation study further validates the individual contributions of each component. 摘要结论：Evaluated on the MoCA-Mask dataset, our approach achieves outstanding performance improvements, significantly outperforming existing zero-shot methods by raising the F-measure ($F_β^w$) from 0.296 to 0.628. Additionally, evaluation on the MoCA-Filter dataset demonstrates an increase in the success rate from 0.628 to 0.697 when compared with FlowSAM, a supervised transfer method.</p>
 <p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
-<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；小目标特征保真、多尺度融合、密集遮挡处理、轻量化实时推理。</p>
-<p class='meta'>可改进点：可把无人机小目标的高分辨率分支、多尺度候选和轻量检测头迁移到 COD，并验证其是否改善小型伪装目标、远景目标和复杂背景误检。</p>
-<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
-</article>
-<article class='paper'>
-<h3><strong>Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection</strong></h3>
-<p class='meta'>Source: CVPR 2024, 2024</p>
-<p class='meta'>Authors: Wenjun Hui, Zhenfeng Zhu, Shuai Zheng, Yao Zhao</p>
-<p class='meta'>Tags: COD, SAM, video</p>
-<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Hui_Endow_SAM_with_Keen_Eyes_Temporal-spatial_Prompt_Learning_for_Video_CVPR_2024_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Hui_Endow_SAM_with_Keen_Eyes_Temporal-spatial_Prompt_Learning_for_Video_CVPR_2024_paper.pdf">pdf</a></p>
-<p class='meta'>论文：Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection</p>
-<p class='meta'>一句话总结：CVF OpenAccess paper. Open the paper page for full abstract and method details.</p>
-<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
-<p class='meta'>摘要详解：当前来源尚未取得可靠摘要，不能仅凭标题推断方法；需要先打开论文页或 PDF 补齐摘要后再详解。</p>
-<p class='meta'>实验结论：当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。</p>
-<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
-<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
-</article>
-<article class='paper'>
-<h3><strong>BED-SAM2: Boundary-Enhanced-Depth SAM2 via Monocular Geometric Priors</strong></h3>
-<p class='meta'>Source: arXiv, 2026-05-24</p>
-<p class='meta'>Authors: Tyler Rust, Dara McNally, Kyle O&#x27;Donnell, Colin Kelly, Chandra Kambhamettu</p>
-<p class='meta'>Tags: COD, boundary/frequency, depth/geometry, saliency/transparent</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.24893v1">paper</a> / <a href="http://arxiv.org/pdf/2605.24893v1">pdf</a></p>
-<p class='meta'>论文：BED-SAM2: Boundary-Enhanced-Depth SAM2 via Monocular Geometric Priors</p>
-<p class='meta'>一句话总结：Building upon the SAM2 vision foundation model for downstream segmentation, this study introduces Boundary Enhanced Depth (BED)-SAM2. The SAM2 Hiera encoder architecture is modified to directly encode monocula...</p>
-<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
-<p class='meta'>摘要详解：研究问题：Building upon the SAM2 vision foundation model for downstream segmentation, this study introduces Boundary Enhanced Depth (BED)-SAM2. The SAM2 Hiera encoder architecture is modified to directly encode monocular depth information from RGB images, thereby providing geometric cues that enhance object boundary delineation and facilitate the extraction of camouflaged object shapes. 方法与流程：边界感知建模，适合改善伪装目标轮廓不清的问题。 摘要中的具体做法包括：BED-SAM2 demonstrates competitive state-of-the-art performance across multiple salient and camouflaged object detection tasks with as few as five training epochs. 摘要结论：BED-SAM2 demonstrates competitive state-of-the-art performance across multiple salient and camouflaged object detection tasks with as few as five training epochs.</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
-<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；边界/频域增强模块；深度或几何先验融合。</p>
-<p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
-</article>
-<article class='paper'>
-<h3><strong>Inspiring the Next Generation of Segment Anything Models: Comprehensively Evaluate SAM and SAM 2 with Diverse Prompts Towards Context-Dependent Concepts under Different Scenes</strong></h3>
-<p class='meta'>Source: arXiv, 2024-12-02</p>
-<p class='meta'>Authors: Xiaoqi Zhao, Youwei Pang, Shijie Chang, Yuan Zhao, Lihe Zhang et al.</p>
-<p class='meta'>Tags: COD, SAM, depth/geometry, video, open-world, saliency/transparent</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2412.01240v3">paper</a> / <a href="http://arxiv.org/pdf/2412.01240v3">pdf</a></p>
-<p class='meta'>论文：Inspiring the Next Generation of Segment Anything Models: Comprehensively Evaluate SAM and SAM 2 with Diverse Prompts Towards Context-Dependent Concepts under Different Scenes</p>
-<p class='meta'>一句话总结：As large-scale foundation models trained on billions of image--mask pairs covering a vast diversity of scenes, objects, and contexts, SAM and its upgraded version, SAM~2, have significantly influenced multiple...</p>
-<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
-<p class='meta'>摘要详解：研究问题：As large-scale foundation models trained on billions of image--mask pairs covering a vast diversity of scenes, objects, and contexts, SAM and its upgraded version, SAM~2, have significantly influenced multiple fields within computer vision. 方法与流程：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。 摘要中的具体做法包括：Leveraging such unprecedented data diversity, they exhibit strong open-world segmentation capabilities, with SAM~2 further enhancing these capabilities to support high-quality video segmentation. We further explore the potential of SAM~2 for in-context learning and introduce prompt robustness testing to simulate real-world imperfect prompts. 摘要结论：While SAMs (SAM and SAM~2) have demonstrated excellent performance in segmenting context-independent concepts like people, cars, and roads, they overlook more challenging context-dependent (CD) concepts, such as visual saliency, camouflage, industrial defects, and medical lesions.</p>
-<p class='meta'>实验结论：摘要强调消融、鲁棒性或泛化；适合优先看实验设计和跨域表现。</p>
-<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
-<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合；类别无关候选发现、未知目标设定、目标缺失场景。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <h2>无人机 / 航拍小目标</h2>

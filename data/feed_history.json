@@ -1,9 +1,9 @@
 [
   {
     "date": "2026-07-12",
-    "generated_at": "2026-07-12 10:24",
+    "generated_at": "2026-07-12 12:37",
     "timezone": "Asia/Shanghai",
-    "total_selected": 9220,
+    "total_selected": 9386,
     "sections": {
       "highlights": [
         {
@@ -347,6 +347,33 @@
       ],
       "cod": [
         {
+          "title": "Source-free Depth for Object Pop-out",
+          "url": "http://arxiv.org/abs/2212.05370v3",
+          "pdf": "http://arxiv.org/pdf/2212.05370v3",
+          "authors": [
+            "Zongwei Wu",
+            "Danda Pani Paudel",
+            "Deng-Ping Fan",
+            "Jingjing Wang",
+            "Shuo Wang",
+            "Cédric Demonceaux",
+            "Radu Timofte",
+            "Luc Van Gool"
+          ],
+          "source": "arXiv",
+          "published": "2022-12-10",
+          "summary": "Depth cues are known to be useful for visual perception. However, direct measurement of depth is often impracticable. Fortunately, though, modern learning-based methods offer promising depth maps by inference in the wild. In this work, we adapt such depth inference models for object segmentation using the objects' \"pop-out\" prior in 3D. The \"pop-out\" is a simple composition prior that assumes objects reside on the background surface. Such compositional prior allows us to reason about objects in the 3D space. More specifically, we adapt the inferred depth maps such that objects can be localized using only 3D information. Such separation, however, requires knowledge about contact surface which we learn using the weak supervision of the segmentation mask. Our intermediate representation of contact surface, and thereby reasoning about objects purely in 3D, allows us to better transfer the depth knowledge into semantics. The proposed adaptation method uses only the depth model without needing the source data used for training, making the learning process efficient and practical. Our experiments on eight datasets of two challenging tasks, namely camouflaged object detection and salient object detection, consistently demonstrate the benefit of our method in terms of both performance and generalizability.",
+          "tags": [
+            "COD",
+            "reasoning",
+            "boundary/frequency",
+            "depth/geometry",
+            "compositionality",
+            "saliency/transparent"
+          ],
+          "score": 78
+        },
+        {
           "title": "Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt",
           "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ren_Training-Free_Open-Vocabulary_Camouflaged_Object_Segmentation_via_Fine-Grained_Object_Binding_and_CVPR_2026_paper.html",
           "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ren_Training-Free_Open-Vocabulary_Camouflaged_Object_Segmentation_via_Fine-Grained_Object_Binding_and_CVPR_2026_paper.pdf",
@@ -393,6 +420,54 @@
           "score": 73
         },
         {
+          "title": "First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection",
+          "url": "http://arxiv.org/abs/2508.15313v2",
+          "pdf": "http://arxiv.org/pdf/2508.15313v2",
+          "authors": [
+            "Wutao Liu",
+            "YiDan Wang",
+            "Pan Gao"
+          ],
+          "source": "arXiv",
+          "published": "2025-08-21",
+          "summary": "Camouflaged object detection (COD) poses a significant challenge in computer vision due to the high similarity between objects and their backgrounds. Existing approaches often rely on heavy training and large computational resources. While foundation models such as the Segment Anything Model (SAM) offer strong generalization, they still struggle to handle COD tasks without fine-tuning and require high-quality prompts to yield good performance. However, generating such prompts manually is costly and inefficient. To address these challenges, we propose \\textbf{First RAG, Second SEG (RAG-SEG)}, a training-free paradigm that decouples COD into two stages: Retrieval-Augmented Generation (RAG) for generating coarse masks as prompts, followed by SAM-based segmentation (SEG) for refinement. RAG-SEG constructs a compact retrieval database via unsupervised clustering, enabling fast and effective feature retrieval. During inference, the retrieved features produce pseudo-labels that guide precise mask generation using SAM2. Our method eliminates the need for conventional training while maintaining competitive performance. Extensive experiments on benchmark COD datasets demonstrate that RAG-SEG performs on par with or surpasses state-of-the-art methods. Notably, all experiments are conducted on a \\textbf{personal laptop}, highlighting the computational efficiency and practicality of our approach. We present further analysis in the Appendix, covering limitations, salient object detection extension, and possible improvements. \\textcolor{blue} {Code: https://github.com/Lwt-diamond/RAG-SEG.}",
+          "tags": [
+            "COD",
+            "training-free",
+            "unsupervised",
+            "SAM",
+            "retrieval/prototype",
+            "anomaly/OOD",
+            "saliency/transparent"
+          ],
+          "score": 73
+        },
+        {
+          "title": "Open-Vocabulary Camouflaged Object Segmentation",
+          "url": "http://arxiv.org/abs/2311.11241v3",
+          "pdf": "http://arxiv.org/pdf/2311.11241v3",
+          "authors": [
+            "Youwei Pang",
+            "Xiaoqi Zhao",
+            "Jiaming Zuo",
+            "Lihe Zhang",
+            "Huchuan Lu"
+          ],
+          "source": "arXiv",
+          "published": "2023-11-19",
+          "summary": "Recently, the emergence of the large-scale vision-language model (VLM), such as CLIP, has opened the way towards open-world object perception. Many works have explored the utilization of pre-trained VLM for the challenging open-vocabulary dense prediction task that requires perceiving diverse objects with novel classes at inference time. Existing methods construct experiments based on the public datasets of related tasks, which are not tailored for open vocabulary and rarely involve imperceptible objects camouflaged in complex scenes due to data collection bias and annotation costs. To fill in the gaps, we introduce a new task, open-vocabulary camouflaged object segmentation (OVCOS), and construct a large-scale complex scene dataset (\\textbf{OVCamo}) containing 11,483 hand-selected images with fine annotations and corresponding object classes. Further, we build a strong single-stage open-vocabulary \\underline{c}amouflaged \\underline{o}bject \\underline{s}egmentation transform\\underline{er} baseline \\textbf{OVCoser} attached to the parameter-fixed CLIP with iterative semantic guidance and structure enhancement. By integrating the guidance of class semantic knowledge and the supplement of visual structure cues from the edge and depth information, the proposed method can efficiently capture camouflaged objects. Moreover, this effective framework also surpasses previous state-of-the-arts of open-vocabulary semantic image segmentation by a large margin on our OVCamo dataset. With the proposed dataset and baseline, we hope that this new task with more practical value can further expand the research on open-vocabulary dense prediction tasks. Our code and data can be found in the \\href{https://github.com/lartpang/OVCamo}{link}.",
+          "tags": [
+            "COD",
+            "open-vocabulary",
+            "VLM/MLLM",
+            "boundary/frequency",
+            "depth/geometry",
+            "open-world",
+            "low-level"
+          ],
+          "score": 71
+        },
+        {
           "title": "Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection",
           "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Du_Beyond_Single_Images_Retrieval_Self-Augmented_Unsupervised_Camouflaged_Object_Detection_ICCV_2025_paper.html",
           "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Du_Beyond_Single_Images_Retrieval_Self-Augmented_Unsupervised_Camouflaged_Object_Detection_ICCV_2025_paper.pdf",
@@ -418,22 +493,20 @@
           "score": 71
         },
         {
-          "title": "EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection",
-          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.pdf",
+          "title": "Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.pdf",
           "authors": [
-            "Shuo Jiang",
-            "Gaojia Zhang",
-            "Min Tan",
-            "Yufei Yin",
-            "Gang Pan"
+            "Yilong Yang",
+            "Jianxin Tian",
+            "Shengchuan Zhang",
+            "Liujuan Cao"
           ],
           "source": "CVPR 2026",
           "published": "2026",
           "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
           "tags": [
-            "COD",
-            "unsupervised"
+            "COD"
           ],
           "score": 68
         },
@@ -462,6 +535,26 @@
           "score": 68
         },
         {
+          "title": "EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.pdf",
+          "authors": [
+            "Shuo Jiang",
+            "Gaojia Zhang",
+            "Min Tan",
+            "Yufei Yin",
+            "Gang Pan"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "unsupervised"
+          ],
+          "score": 68
+        },
+        {
           "title": "Seeing Both Sides: Towards Bidirectional Semantic Alignment for Open-Vocabulary Camouflaged Object Segmentation",
           "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Seeing_Both_Sides_Towards_Bidirectional_Semantic_Alignment_for_Open-Vocabulary_Camouflaged_CVPR_2026_paper.html",
           "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Seeing_Both_Sides_Towards_Bidirectional_Semantic_Alignment_for_Open-Vocabulary_Camouflaged_CVPR_2026_paper.pdf",
@@ -479,24 +572,6 @@
           "tags": [
             "COD",
             "open-vocabulary"
-          ],
-          "score": 68
-        },
-        {
-          "title": "Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation",
-          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.pdf",
-          "authors": [
-            "Yilong Yang",
-            "Jianxin Tian",
-            "Shengchuan Zhang",
-            "Liujuan Cao"
-          ],
-          "source": "CVPR 2026",
-          "published": "2026",
-          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
-          "tags": [
-            "COD"
           ],
           "score": 68
         },
@@ -522,103 +597,27 @@
           "score": 68
         },
         {
-          "title": "LSP-ST: Ladder Shape-Biased Side-Tuning for Robust Infrared Small Target Detection",
-          "url": "http://arxiv.org/abs/2504.14481v2",
-          "pdf": "http://arxiv.org/pdf/2504.14481v2",
+          "title": "ZS-VCOS: Zero-Shot Video Camouflaged Object Segmentation By Optical Flow and Open Vocabulary Object Detection",
+          "url": "http://arxiv.org/abs/2505.01431v2",
+          "pdf": "http://arxiv.org/pdf/2505.01431v2",
           "authors": [
-            "Guoyi Zhang",
-            "Siyang Chen",
-            "Guangsheng Xu",
-            "Han Wang",
-            "Donghe Wang",
-            "Xiaohu Zhang"
+            "Wenqi Guo",
+            "Mohamed Shehata",
+            "Shan Du"
           ],
           "source": "arXiv",
-          "published": "2025-04-20",
-          "summary": "Fine-tuning the Segment Anything Model (SAM) for infrared small target detection poses significant challenges due to severe domain shifts. Existing adaptation methods often incorporate handcrafted priors to bridge this gap, yet such designs limit generalization and scalability. We identify a fundamental texture bias in foundation models, which overly depend on local texture cues for target localization. To address this, we propose Ladder Shape-Biased Side-Tuning (LSP-ST), a novel approach that introduces a shape-aware inductive bias to facilitate effective adaptation beyond texture cues. In contrast to prior work that injects explicit edge or contour features, LSP-ST models shape as a global structural prior, integrating both boundaries and internal layouts. We design a Shape-Enhanced Large-Kernel Attention Module to hierarchically and implicitly capture structural information in a fully differentiable manner, without task-specific handcrafted guidance. A theoretical analysis grounded in matched filtering and backpropagation reveals the mechanism by which the proposed attention improves structure-aware learning. With only 4.72M learnable parameters, LSP-ST achieves state-of-the-art performance on multiple infrared small target detection benchmarks. Furthermore, its strong generalization is validated across tasks such as mirror detection, shadow detection, and camouflaged object detection, while maintaining stable performance on texture-driven tasks like salient object detection, demonstrating that the introduced shape bias complements rather than competes with texture-based reasoning.",
+          "published": "2025-04-10",
+          "summary": "Camouflaged object segmentation presents unique challenges compared to traditional segmentation tasks, primarily due to the high similarity in patterns and colors between camouflaged objects and their backgrounds. Effective solutions to this problem have significant implications in critical areas such as pest control, defect detection, and lesion segmentation in medical imaging. Prior research has predominantly emphasized supervised or unsupervised pre-training methods, leaving zero-shot approaches significantly underdeveloped. Existing zero-shot techniques commonly utilize the Segment Anything Model (SAM) in automatic mode or rely on vision-language models to generate cues for segmentation; however, their performances remain unsatisfactory, due to the similarity of the camouflaged object and the background. This work studies how to avoid training by integrating large pre-trained models like SAM-2 and Owl-v2 with temporal information into a modular pipeline. Evaluated on the MoCA-Mask dataset, our approach achieves outstanding performance improvements, significantly outperforming existing zero-shot methods by raising the F-measure ($F_β^w$) from 0.296 to 0.628. Our approach also surpasses supervised methods, increasing the F-measure from 0.476 to 0.628. Additionally, evaluation on the MoCA-Filter dataset demonstrates an increase in the success rate from 0.628 to 0.697 when compared with FlowSAM, a supervised transfer method. A thorough ablation study further validates the individual contributions of each component. Besides our main contributions, we also highlight inconsistencies in previous work regarding metrics and settings. Code can be found in https://github.com/weathon/vcos.",
           "tags": [
             "COD",
+            "open-vocabulary",
+            "unsupervised",
             "SAM",
-            "reasoning",
-            "boundary/frequency",
-            "UAV/small-object",
-            "saliency/transparent"
-          ],
-          "score": 67
-        },
-        {
-          "title": "Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection",
-          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Hui_Endow_SAM_with_Keen_Eyes_Temporal-spatial_Prompt_Learning_for_Video_CVPR_2024_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Hui_Endow_SAM_with_Keen_Eyes_Temporal-spatial_Prompt_Learning_for_Video_CVPR_2024_paper.pdf",
-          "authors": [
-            "Wenjun Hui",
-            "Zhenfeng Zhu",
-            "Shuai Zheng",
-            "Yao Zhao"
-          ],
-          "source": "CVPR 2024",
-          "published": "2024",
-          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
-          "tags": [
-            "COD",
-            "SAM",
+            "VLM/MLLM",
+            "diffusion",
             "video"
           ],
-          "score": 66
-        },
-        {
-          "title": "BED-SAM2: Boundary-Enhanced-Depth SAM2 via Monocular Geometric Priors",
-          "url": "http://arxiv.org/abs/2605.24893v1",
-          "pdf": "http://arxiv.org/pdf/2605.24893v1",
-          "authors": [
-            "Tyler Rust",
-            "Dara McNally",
-            "Kyle O'Donnell",
-            "Colin Kelly",
-            "Chandra Kambhamettu"
-          ],
-          "source": "arXiv",
-          "published": "2026-05-24",
-          "summary": "Building upon the SAM2 vision foundation model for downstream segmentation, this study introduces Boundary Enhanced Depth (BED)-SAM2. The SAM2 Hiera encoder architecture is modified to directly encode monocular depth information from RGB images, thereby providing geometric cues that enhance object boundary delineation and facilitate the extraction of camouflaged object shapes. BED-SAM2 demonstrates competitive state-of-the-art performance across multiple salient and camouflaged object detection tasks with as few as five training epochs.",
-          "tags": [
-            "COD",
-            "boundary/frequency",
-            "depth/geometry",
-            "saliency/transparent"
-          ],
-          "score": 65
-        },
-        {
-          "title": "Inspiring the Next Generation of Segment Anything Models: Comprehensively Evaluate SAM and SAM 2 with Diverse Prompts Towards Context-Dependent Concepts under Different Scenes",
-          "url": "http://arxiv.org/abs/2412.01240v3",
-          "pdf": "http://arxiv.org/pdf/2412.01240v3",
-          "authors": [
-            "Xiaoqi Zhao",
-            "Youwei Pang",
-            "Shijie Chang",
-            "Yuan Zhao",
-            "Lihe Zhang",
-            "Chenyang Yu",
-            "Hanqi Liu",
-            "Jiaming Zuo",
-            "Jinsong Ouyang",
-            "Weisi Lin",
-            "Georges El Fakhri",
-            "Huchuan Lu",
-            "Xiaofeng Liu"
-          ],
-          "source": "arXiv",
-          "published": "2024-12-02",
-          "summary": "As large-scale foundation models trained on billions of image--mask pairs covering a vast diversity of scenes, objects, and contexts, SAM and its upgraded version, SAM~2, have significantly influenced multiple fields within computer vision. Leveraging such unprecedented data diversity, they exhibit strong open-world segmentation capabilities, with SAM~2 further enhancing these capabilities to support high-quality video segmentation. While SAMs (SAM and SAM~2) have demonstrated excellent performance in segmenting context-independent concepts like people, cars, and roads, they overlook more challenging context-dependent (CD) concepts, such as visual saliency, camouflage, industrial defects, and medical lesions. CD concepts rely heavily on global and local contextual information, making them susceptible to shifts in different contexts, which requires strong discriminative capabilities from the model. The lack of comprehensive evaluation of SAMs limits understanding of their performance boundaries, which may hinder the design of future models. In this paper, we conduct a thorough evaluation of SAMs on 11 CD concepts across 2D and 3D images and videos in various visual modalities within natural, medical, and industrial scenes. We develop a unified evaluation framework for SAM and SAM~2 that supports manual, automatic, and intermediate self-prompting, aided by our specific prompt generation and interaction strategies. We further explore the potential of SAM~2 for in-context learning and introduce prompt robustness testing to simulate real-world imperfect prompts. Finally, we analyze the benefits and limitations of SAMs in understanding CD concepts and discuss their future development in segmentation tasks.",
-          "tags": [
-            "COD",
-            "SAM",
-            "depth/geometry",
-            "video",
-            "open-world",
-            "saliency/transparent"
-          ],
-          "score": 65
+          "score": 67
         }
       ],
       "uav": [
