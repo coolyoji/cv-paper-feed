@@ -19,7 +19,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 
@@ -36,6 +36,8 @@ HIGHLIGHT_LIMIT = 5
 QUALITY_LIMIT = 10
 COD_LIMIT = 12
 UAV_LIMIT = 10
+FIRE_MULTISPECTRAL_LIMIT = 10
+FIRE_FOUNDATION_LIMIT = 10
 BROAD_LIMIT = 12
 DOWNLOAD_LIMIT = 5
 DOWNLOAD_ROOT = Path(
@@ -50,6 +52,19 @@ ZOTERO_IMPORT_DISABLED = os.environ.get("ZOTERO_IMPORT_DISABLED", "").lower() in
 ZOTERO_ROOT_COLLECTION = os.environ.get("ZOTERO_ROOT_COLLECTION", "每日精读论文")
 
 UTC8 = timezone(timedelta(hours=8))
+FIRE_TOPIC_START_DATE = date(2026, 7, 14)
+
+
+def fire_topic_enabled(at: date | datetime | str | None = None) -> bool:
+    if at is None:
+        current_date = datetime.now(UTC8).date()
+    elif isinstance(at, datetime):
+        current_date = at.astimezone(UTC8).date() if at.tzinfo else at.date()
+    elif isinstance(at, str):
+        current_date = date.fromisoformat(at[:10])
+    else:
+        current_date = at
+    return current_date >= FIRE_TOPIC_START_DATE
 
 
 ARXIV_QUERIES = [
@@ -115,6 +130,23 @@ ARXIV_QUERIES = [
 ]
 
 
+FIRE_ARXIV_QUERIES = [
+    # Multispectral fire detection
+    'all:"multispectral fire detection"',
+    'all:"multispectral wildfire detection"',
+    'all:"visible infrared" AND all:"fire detection"',
+    'all:"thermal infrared" AND all:"wildfire detection"',
+    'all:"hyperspectral" AND all:"fire detection"',
+    'all:"VIIRS" AND all:"active fire"',
+    'all:"Sentinel-2" AND all:"wildfire detection"',
+    # Foundation models and large multimodal models for fire monitoring
+    'all:"wildfire monitoring" AND all:"foundation model"',
+    'all:"wildfire detection" AND all:"vision-language"',
+    'all:"fire monitoring" AND all:"multimodal large language model"',
+    'all:"wildfire" AND all:"segment anything"',
+]
+
+
 CVF_CONFERENCES = [
     ("CVPR2026", "CVPR 2026", "https://openaccess.thecvf.com/CVPR2026?day=all"),
     ("CVPR2025", "CVPR 2025", "https://openaccess.thecvf.com/CVPR2025?day=all"),
@@ -165,6 +197,18 @@ SEMANTIC_SCHOLAR_QUERIES = [
     "aerial dense object detection occlusion",
     "UAV foundation model object detection",
     "drone vision language object grounding",
+]
+
+
+FIRE_SEMANTIC_SCHOLAR_QUERIES = [
+    "multispectral wildfire fire detection",
+    "visible thermal infrared fire smoke detection",
+    "hyperspectral wildfire active fire detection",
+    "Sentinel-2 VIIRS multispectral active fire detection",
+    "wildfire monitoring foundation model remote sensing",
+    "fire smoke detection vision language model",
+    "wildfire multimodal large language model",
+    "wildfire segment anything foundation model",
 ]
 
 
@@ -224,6 +268,18 @@ TOP_JOURNALS = [
         "issn": "0924-2716",
     },
     {
+        "name": "Remote Sensing of Environment",
+        "short": "RSE",
+        "rank": "遥感顶刊",
+        "issn": "0034-4257",
+    },
+    {
+        "name": "International Journal of Applied Earth Observation and Geoinformation",
+        "short": "JAG",
+        "rank": "遥感高水平期刊",
+        "issn": "1569-8432",
+    },
+    {
         "name": "Medical Image Analysis",
         "short": "MedIA",
         "rank": "医学影像顶刊",
@@ -239,6 +295,65 @@ COD_KEYWORDS = [
     "cod",
     "ovcos",
     "ucod",
+]
+
+
+FIRE_CONTEXT_KEYWORDS = [
+    "wildfire",
+    "wildland fire",
+    "forest fire",
+    "fire detection",
+    "fire monitoring",
+    "fire segmentation",
+    "flame detection",
+    "smoke detection",
+    "fire smoke",
+    "active fire",
+    "burned area",
+    "burnt area",
+]
+
+
+MULTISPECTRAL_FIRE_MODALITY_KEYWORDS = [
+    "multispectral",
+    "multi-spectral",
+    "hyperspectral",
+    "thermal infrared",
+    "thermal-infrared",
+    "visible infrared",
+    "visible-infrared",
+    "visible thermal",
+    "visible-thermal",
+    "infrared-visible",
+    "rgb-t",
+    "rgbt",
+    "rgb-ir",
+    "infrared",
+    "thermal",
+    "multi-band",
+    "multiband",
+    "spectral band",
+    "sentinel-2",
+    "landsat",
+    "modis",
+    "viirs",
+    "multi-sensor",
+    "multisensor",
+]
+
+
+FIRE_FOUNDATION_MODEL_KEYWORDS = [
+    "foundation model",
+    "vision foundation model",
+    "remote sensing foundation model",
+    "vision-language model",
+    "vision language model",
+    "large vision-language model",
+    "large vision language model",
+    "multimodal large language model",
+    "large multimodal model",
+    "large language model",
+    "segment anything",
 ]
 
 
@@ -314,10 +429,13 @@ BROAD_KEYWORDS = [
     "tiny object",
     "small target",
     "low altitude",
+    "foundation model",
 ]
 
 
 DIRECT_COD_SCORE = 18
+MULTISPECTRAL_FIRE_SCORE = 18
+FIRE_FOUNDATION_MODEL_SCORE = 20
 DIRECT_COD_HIGHLIGHT_LIMIT = 1
 MIN_IDEA_TRANSFER_SCORE = 18
 NON_COD_IDEA_BONUS = 8
@@ -379,6 +497,8 @@ TRANSFER_TAG_WEIGHTS = {
     "medical imaging": 5,
     "video": 5,
     "UAV/small-object": 10,
+    "multispectral fire": 12,
+    "fire foundation model": 12,
 }
 
 TRANSFER_TAGS = set(TRANSFER_TAG_WEIGHTS)
@@ -402,6 +522,9 @@ QUALITY_SOURCE_HINTS = {
     "cviu": 9,
     "tgrs": 10,
     "isprs": 10,
+    "remote sensing of environment": 14,
+    "applied earth observation": 11,
+    "igarss": 10,
     "medical image analysis": 10,
     "journal": 6,
     "transactions": 6,
@@ -423,6 +546,8 @@ STRONG_ARXIV_TAGS = {
     "domain adaptation",
     "remote sensing",
     "saliency/transparent",
+    "multispectral fire",
+    "fire foundation model",
 } | TRANSFER_TAGS
 
 
@@ -491,9 +616,40 @@ def strip_markup(text: str) -> str:
     return clean_text(text)
 
 
-def derive_tags(title: str, summary: str) -> list[str]:
+def fire_context_signal(text: str) -> bool:
+    text = text.lower()
+    return any(keyword in text for keyword in FIRE_CONTEXT_KEYWORDS)
+
+
+def multispectral_fire_signal(text: str) -> bool:
+    text = text.lower()
+    return fire_context_signal(text) and any(
+        keyword in text for keyword in MULTISPECTRAL_FIRE_MODALITY_KEYWORDS
+    )
+
+
+def fire_foundation_model_signal(text: str) -> bool:
+    text = text.lower()
+    return fire_context_signal(text) and any(
+        keyword in text for keyword in FIRE_FOUNDATION_MODEL_KEYWORDS
+    )
+
+
+def derive_tags(
+    title: str,
+    summary: str,
+    *,
+    include_fire: bool | None = None,
+) -> list[str]:
     text = f"{title} {summary}".lower()
     tags = []
+    if include_fire is None:
+        include_fire = fire_topic_enabled()
+    if include_fire:
+        if multispectral_fire_signal(text):
+            tags.append("multispectral fire")
+        if fire_foundation_model_signal(text):
+            tags.append("fire foundation model")
     checks = [
         ("COD", ["camouflage", "camouflaged", "concealed"]),
         ("open-vocabulary", ["open-vocabulary", "open vocabulary"]),
@@ -566,6 +722,11 @@ def score_paper(paper: Paper) -> int:
     is_direct_cod = direct_cod_signal(text)
     if is_direct_cod:
         score += DIRECT_COD_SCORE
+    if fire_topic_enabled():
+        if multispectral_fire_signal(text):
+            score += MULTISPECTRAL_FIRE_SCORE
+        if fire_foundation_model_signal(text):
+            score += FIRE_FOUNDATION_MODEL_SCORE
     for kw in BROAD_KEYWORDS:
         if kw in text:
             score += 6
@@ -747,6 +908,21 @@ def highlight_rank(paper: Paper) -> tuple[int, int, int, int, int, str]:
     )
 
 
+def topic_rank(paper: Paper) -> tuple[int, int, int, int, str]:
+    source = paper.source.lower()
+    source_quality = max(
+        (bonus for hint, bonus in QUALITY_SOURCE_HINTS.items() if hint in source),
+        default=0,
+    )
+    return (
+        int(has_quality_published_source(paper)),
+        source_quality,
+        paper.score,
+        publication_year(paper) or 0,
+        paper.published,
+    )
+
+
 def is_pure_cod_anchor(paper: Paper) -> bool:
     return "COD" in paper.tags and transfer_potential(paper) < MIN_IDEA_TRANSFER_SCORE
 
@@ -789,7 +965,10 @@ def select_highlights(papers: list[Paper]) -> list[Paper]:
 def fetch_arxiv(max_results_per_query: int = 18) -> list[Paper]:
     ns = {"a": "http://www.w3.org/2005/Atom"}
     papers: list[Paper] = []
-    for query in ARXIV_QUERIES:
+    queries = list(ARXIV_QUERIES)
+    if fire_topic_enabled():
+        queries.extend(FIRE_ARXIV_QUERIES)
+    for query in queries:
         params = {
             "search_query": query,
             "start": "0",
@@ -894,7 +1073,13 @@ def fetch_semantic_scholar(max_results_per_query: int = 8) -> list[Paper]:
             "citationCount",
         ]
     )
-    queries = SEMANTIC_SCHOLAR_QUERIES if DEEP_SOURCE_SCAN else SEMANTIC_SCHOLAR_QUERIES[:6]
+    queries = (
+        list(SEMANTIC_SCHOLAR_QUERIES)
+        if DEEP_SOURCE_SCAN
+        else list(SEMANTIC_SCHOLAR_QUERIES[:6])
+    )
+    if fire_topic_enabled():
+        queries.extend(FIRE_SEMANTIC_SCHOLAR_QUERIES)
     for query in queries:
         params = {
             "query": query,
@@ -988,7 +1173,16 @@ def fetch_crossref_journals(rows_per_query: int = 4) -> list[Paper]:
         "salient object detection",
         "remote sensing segmentation",
     ]
-    queries = deep_queries if DEEP_SOURCE_SCAN else [broad_query]
+    fire_queries = [
+        "multispectral wildfire detection",
+        "thermal infrared fire smoke detection",
+        "wildfire monitoring foundation model vision language",
+    ]
+    queries = list(deep_queries) if DEEP_SOURCE_SCAN else [broad_query]
+    if fire_topic_enabled():
+        if not DEEP_SOURCE_SCAN:
+            queries[0] += " OR wildfire OR fire monitoring"
+        queries.extend(fire_queries)
     from_date = f"{datetime.now(UTC8).year - 1}-01-01"
     for journal in TOP_JOURNALS:
         for query in queries:
@@ -1062,6 +1256,12 @@ def format_authors(authors: list[str], limit: int = 5) -> str:
 
 def why_read(paper: Paper) -> str:
     tags = set(paper.tags)
+    if {"multispectral fire", "fire foundation model"} <= tags:
+        return "同时覆盖多光谱感知和大模型推理，可重点看跨模态对齐、时空监测与告警可靠性。"
+    if "multispectral fire" in tags:
+        return "直接覆盖多光谱火灾探测，可重点看可见光、红外/热红外与遥感波段如何互补。"
+    if "fire foundation model" in tags:
+        return "直接覆盖火灾监测大模型，可重点看基础模型适配、开放场景泛化和可解释告警。"
     if tags & {
         "causal/counterfactual",
         "uncertainty/calibration",
@@ -1096,6 +1296,12 @@ def short_summary(paper: Paper) -> str:
 
 def task_setting(paper: Paper) -> str:
     tags = set(paper.tags)
+    if {"multispectral fire", "fire foundation model"} <= tags:
+        return "多光谱火灾感知与基础模型联合监测，关注跨模态融合、早期发现、时空推理、误报控制和跨区域泛化。"
+    if "multispectral fire" in tags:
+        return "可见光、红外/热红外、高光谱或多传感器火灾探测，关注早期火焰/烟雾发现、复杂环境误报和全天候监测。"
+    if "fire foundation model" in tags:
+        return "基础模型或视觉语言大模型驱动的火灾监测，关注开放场景识别、时空理解、告警解释和少样本迁移。"
     if "COD" in tags:
         return "伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。"
     if "open-vocabulary" in tags:
@@ -1119,6 +1325,13 @@ def task_setting(paper: Paper) -> str:
 
 def method_core(paper: Paper) -> str:
     text = f"{paper.title} {paper.summary}".lower()
+    tags = set(paper.tags)
+    if {"multispectral fire", "fire foundation model"} <= tags:
+        return "融合多光谱/多传感器观测与基础模型语义推理，用于火情定位、演化理解和可靠告警。"
+    if "multispectral fire" in tags:
+        return "融合可见光、红外/热红外、高光谱或卫星多波段信息，增强微弱火焰、烟雾和热点的可分辨性。"
+    if "fire foundation model" in tags:
+        return "利用视觉基础模型、视觉语言模型或多模态大模型进行火情识别、区域定位、时序理解或告警解释。"
     if "neural architecture search" in text or re.search(r"\bnas\b", text):
         return "神经架构搜索/结构自动设计，重点看搜索空间、效率约束和是否适合 COD 解码器。"
     if re.search(r"\b(segment anything|sam)\b", text):
@@ -1256,6 +1469,12 @@ def experiment_takeaway(paper: Paper) -> str:
 
 def relation_to_topic(paper: Paper) -> str:
     tags = set(paper.tags)
+    if {"multispectral fire", "fire foundation model"} <= tags:
+        return "同时命中两个新增方向，可作为多源感知与大模型监测协同设计的核心候选。"
+    if "multispectral fire" in tags:
+        return "直接对应多光谱火灾探测，重点关注不同谱段在烟雾、火焰、热点和夜间场景中的互补性。"
+    if "fire foundation model" in tags:
+        return "直接对应火灾监测大模型，重点关注基础模型在新区域、新传感器和少标注火情上的泛化。"
     if "COD" in tags and (tags & TRANSFER_TAGS):
         return "它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。"
     if "COD" in tags:
@@ -1288,6 +1507,10 @@ def relation_to_topic(paper: Paper) -> str:
 def borrow_points(paper: Paper) -> str:
     tags = set(paper.tags)
     points = []
+    if "multispectral fire" in tags:
+        points.append("可见光-红外/热红外对齐、谱段融合、早期烟火特征与全天候监测")
+    if "fire foundation model" in tags:
+        points.append("基础模型适配、视觉语言告警、时空推理、少样本迁移与可解释输出")
     if "COD" in tags:
         points.append("数据集设置、评价指标、失败案例分析")
     if "open-vocabulary" in tags or "training-free" in tags:
@@ -1321,6 +1544,12 @@ def borrow_points(paper: Paper) -> str:
 
 def improvement_ideas(paper: Paper) -> str:
     tags = set(paper.tags)
+    if {"multispectral fire", "fire foundation model"} <= tags:
+        return "可进一步研究缺失模态与传感器噪声下的稳健融合，并让大模型输出可校准的火情位置、置信度、证据和告警等级。"
+    if "multispectral fire" in tags:
+        return "可重点验证跨传感器配准误差、昼夜变化、云雾遮挡、热点干扰和缺失谱段，并报告跨区域泛化与误报率。"
+    if "fire foundation model" in tags:
+        return "可重点验证开放世界火情、跨区域/跨传感器迁移、幻觉抑制、时序一致性和边缘端推理成本。"
     if "UAV/small-object" in tags:
         return "可把无人机小目标的高分辨率分支、多尺度候选和轻量检测头迁移到 COD，并验证其是否改善小型伪装目标、远景目标和复杂背景误检。"
     if "COD" in tags and ("VLM/MLLM" not in tags and "SAM" not in tags):
@@ -1345,6 +1574,11 @@ def improvement_ideas(paper: Paper) -> str:
 
 
 def should_deep_read(paper: Paper) -> str:
+    fire_tags = {"multispectral fire", "fire foundation model"} & set(paper.tags)
+    if fire_tags and has_quality_published_source(paper):
+        return "建议精读：直接命中新增火灾方向，且来自正式发表的高质量来源。"
+    if fire_tags and paper.score >= 35:
+        return "建议泛读：主题高度相关；若为预印本，需再核验正式发表状态与实验可靠性。"
     if transfer_potential(paper) >= MIN_IDEA_TRANSFER_SCORE:
         return "建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。"
     if "COD" in paper.tags and paper.score >= 45:
@@ -1377,7 +1611,7 @@ def md_paper_item(idx: int, paper: Paper) -> str:
             f"   - 任务设定：{task_setting(paper)}",
             f"   - 摘要详解：{abstract_explanation(paper)}",
             f"   - 实验结论：{experiment_takeaway(paper)}",
-            f"   - 和我课题的关系：{relation_to_topic(paper)}",
+            f"   - 和关注方向的关系：{relation_to_topic(paper)}",
             f"   - 可借鉴点：{borrow_points(paper)}",
             f"   - 可改进点：{improvement_ideas(paper)}",
             f"   - 是否值得精读：{should_deep_read(paper)}",
@@ -1389,7 +1623,14 @@ def md_paper_item(idx: int, paper: Paper) -> str:
 def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
     cod = [p for p in papers if "COD" in p.tags]
     uav = [p for p in papers if "UAV/small-object" in p.tags]
-    broad = [p for p in papers if "COD" not in p.tags]
+    fire_multispectral = [p for p in papers if "multispectral fire" in p.tags]
+    fire_foundation = [p for p in papers if "fire foundation model" in p.tags]
+    fire_tags = {"multispectral fire", "fire foundation model"}
+    broad = [
+        p
+        for p in papers
+        if "COD" not in p.tags and not (set(p.tags) & fire_tags)
+    ]
     quality = [
         p
         for p in papers
@@ -1399,6 +1640,12 @@ def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
 
     cod = sorted(cod, key=lambda p: p.score, reverse=True)[:COD_LIMIT]
     uav = sorted(uav, key=highlight_rank, reverse=True)[:UAV_LIMIT]
+    fire_multispectral = sorted(
+        fire_multispectral, key=topic_rank, reverse=True
+    )[:FIRE_MULTISPECTRAL_LIMIT]
+    fire_foundation = sorted(
+        fire_foundation, key=topic_rank, reverse=True
+    )[:FIRE_FOUNDATION_LIMIT]
     broad = sorted(broad, key=lambda p: p.score, reverse=True)[:BROAD_LIMIT]
     quality = sorted(quality, key=lambda p: p.score, reverse=True)[:QUALITY_LIMIT]
     highlights = select_highlights(papers)
@@ -1407,6 +1654,8 @@ def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
         "quality": quality,
         "cod": cod,
         "uav": uav,
+        "fire_multispectral": fire_multispectral,
+        "fire_foundation": fire_foundation,
         "broad": broad,
     }
 
@@ -1779,6 +2028,12 @@ def snapshot_sections(snapshot: dict) -> dict[str, list[Paper]]:
         "quality": [paper_from_dict(item) for item in sections.get("quality", [])],
         "cod": [paper_from_dict(item) for item in sections.get("cod", [])],
         "uav": [paper_from_dict(item) for item in sections.get("uav", [])],
+        "fire_multispectral": [
+            paper_from_dict(item) for item in sections.get("fire_multispectral", [])
+        ],
+        "fire_foundation": [
+            paper_from_dict(item) for item in sections.get("fire_foundation", [])
+        ],
         "broad": [paper_from_dict(item) for item in sections.get("broad", [])],
     }
 
@@ -1796,8 +2051,56 @@ def render_snapshot_markdown(snapshot: dict) -> str:
     quality = sections["quality"]
     cod = sections["cod"]
     uav = sections["uav"]
+    fire_multispectral = sections["fire_multispectral"]
+    fire_foundation = sections["fire_foundation"]
     broad = sections["broad"]
     date_text = current.get("date", now.strftime("%Y-%m-%d"))
+    show_fire_topics = fire_topic_enabled(str(date_text))
+    limits = [
+        f"{HIGHLIGHT_LIMIT} 篇当日精读",
+        f"{QUALITY_LIMIT} 篇高质量来源",
+        f"{COD_LIMIT} 篇 COD 相关",
+        f"{UAV_LIMIT} 篇无人机小目标",
+    ]
+    if show_fire_topics:
+        limits.extend(
+            [
+                f"{FIRE_MULTISPECTRAL_LIMIT} 篇多光谱火灾探测",
+                f"{FIRE_FOUNDATION_LIMIT} 篇火灾监测大模型",
+            ]
+        )
+    limits.append(f"{BROAD_LIMIT} 篇泛视觉候选")
+    arxiv_source = (
+        "- arXiv API: recent preprints from COD, UAV small objects, VLM, "
+        "segmentation, diffusion, adaptation, medical and remote-sensing queries, "
+        "plus transferable-method queries such as object discovery, open-world "
+        "segmentation, uncertainty, counterfactual/causal vision, self-supervised "
+        "dense prediction, object-centric learning, compositional reasoning, "
+        "interactive segmentation, continual learning, world models, and concept "
+        "bottlenecks."
+    )
+    selection_policy = (
+        "- Selection policy: the daily deep-reading queue prioritizes idea transfer "
+        "into COD, not direct COD similarity. Recent top-conference/top-journal "
+        "papers are preferred."
+    )
+    if show_fire_topics:
+        arxiv_source = (
+            "- arXiv API: recent preprints from COD, UAV small objects, multispectral "
+            "fire detection, fire-monitoring foundation models, VLM, segmentation, "
+            "diffusion, adaptation, medical and remote-sensing queries, plus "
+            "transferable-method queries such as object discovery, open-world "
+            "segmentation, uncertainty, counterfactual/causal vision, self-supervised "
+            "dense prediction, object-centric learning, compositional reasoning, "
+            "interactive segmentation, continual learning, world models, and concept "
+            "bottlenecks."
+        )
+        selection_policy = (
+            "- Selection policy: the daily deep-reading queue prioritizes idea "
+            "transfer into COD, not direct COD similarity. The two fire sections "
+            "rank formally published top-conference/top-journal results before "
+            "preprints, then use relevance and recency."
+        )
 
     lines = [
         f"# {date_text} CV Paper Feed",
@@ -1807,7 +2110,7 @@ def render_snapshot_markdown(snapshot: dict) -> str:
         f"Last updated: {current.get('generated_at', now.strftime('%Y-%m-%d %H:%M'))} Asia/Shanghai",
         f"Candidate pool: {current.get('total_selected', 0)} papers",
         "",
-        f"慢读模式：本页只展示 {HIGHLIGHT_LIMIT} 篇当日精读、{QUALITY_LIMIT} 篇高质量来源、{COD_LIMIT} 篇 COD 相关、{UAV_LIMIT} 篇无人机小目标、{BROAD_LIMIT} 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。",
+        f"慢读模式：本页只展示 {'、'.join(limits)}。完整候选池保存在 data/latest_papers.json。",
         "精读队列优先选择能给 COD 带来新问题设定或新方法范式的论文，例如开放世界、目标发现、反事实/因果、不确定性、自监督稠密表征、对象中心建模和视觉推理；纯 COD 直系论文主要作为背景和对照。",
         "",
         "## 当日精读队列",
@@ -1832,6 +2135,17 @@ def render_snapshot_markdown(snapshot: dict) -> str:
         lines.append(md_paper_item(i, paper))
         lines.append("")
 
+    if show_fire_topics:
+        lines.extend(["## 多光谱火灾探测", ""])
+        for i, paper in enumerate(fire_multispectral, 1):
+            lines.append(md_paper_item(i, paper))
+            lines.append("")
+
+        lines.extend(["## 火灾监测大模型", ""])
+        for i, paper in enumerate(fire_foundation, 1):
+            lines.append(md_paper_item(i, paper))
+            lines.append("")
+
     lines.extend(["## 泛计算机视觉方法池", ""])
     for i, paper in enumerate(broad, 1):
         lines.append(md_paper_item(i, paper))
@@ -1852,11 +2166,11 @@ def render_snapshot_markdown(snapshot: dict) -> str:
             "",
             "## 数据源",
             "",
-            "- arXiv API: recent preprints from COD, weak/salient/transparent objects, VLM, segmentation, diffusion, adaptation, medical and remote-sensing queries, plus transferable-method queries such as object discovery, open-world segmentation, uncertainty, counterfactual/causal vision, self-supervised dense prediction, object-centric learning, compositional reasoning, interactive segmentation, continual learning, world models, and concept bottlenecks.",
+            arxiv_source,
             "- CVF OpenAccess: CVPR/ECCV/ICCV/WACV title-level scan.",
             "- Semantic Scholar Graph API: broad high-quality venue and topic search when rate limits allow.",
-            "- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, Medical Image Analysis.",
-            "- Selection policy: the daily deep-reading queue prioritizes idea transfer into COD, not direct COD similarity. Recent top-conference/top-journal papers are preferred; arXiv papers enter the top five only when they are recent and have strong transferable-method signals.",
+            "- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, RSE, JAG, Medical Image Analysis.",
+            selection_policy,
             "",
             "说明：自动简介是基于题名、摘要和来源的初筛笔记，不等同于阅读全文后的结论；精读时建议再核对 method、experiment 和 limitation。",
             "",
@@ -1873,6 +2187,22 @@ def render_markdown(history: list[dict]) -> str:
         "generated_at": now.strftime("%Y-%m-%d %H:%M"),
         "total_selected": 0,
     }
+    current_date = current.get("date", now.strftime("%Y-%m-%d"))
+    show_fire_topics = fire_topic_enabled(str(current_date))
+    daily_limits = [
+        f"{HIGHLIGHT_LIMIT} 篇精读",
+        f"{QUALITY_LIMIT} 篇高质量来源",
+        f"{COD_LIMIT} 篇 COD",
+        f"{UAV_LIMIT} 篇无人机小目标",
+    ]
+    if show_fire_topics:
+        daily_limits.extend(
+            [
+                f"{FIRE_MULTISPECTRAL_LIMIT} 篇多光谱火灾探测",
+                f"{FIRE_FOUNDATION_LIMIT} 篇火灾监测大模型",
+            ]
+        )
+    daily_limits.append(f"{BROAD_LIMIT} 篇泛视觉")
     lines = [
         "# Daily CV Paper Feed",
         "",
@@ -1881,6 +2211,7 @@ def render_markdown(history: list[dict]) -> str:
         "",
         "这是文献日报目录页。每天更新会生成一个独立 Markdown 文件，文件名就是日期；想看哪一天，直接点对应日期即可。HTML 文件单独放在 html/ 目录，仅作为网页预览备用。",
         "从 2026-07-09 开始，精读队列不再只追 COD 直系论文，而是优先寻找 COD 尚未充分使用、但可能迁移出新 idea 的计算机视觉方法。",
+        "从 2026-07-14 开始，新增多光谱火灾探测与火灾监测大模型两个独立栏目，优先展示正式发表的顶会顶刊与领域高水平期刊论文。",
         "",
         "## 最新日报",
         "",
@@ -1901,7 +2232,7 @@ def render_markdown(history: list[dict]) -> str:
             "",
             "## 阅读节奏",
             "",
-            f"- 每日页面默认只展示少量精选：{HIGHLIGHT_LIMIT} 篇精读、{QUALITY_LIMIT} 篇高质量来源、{COD_LIMIT} 篇 COD、{UAV_LIMIT} 篇无人机小目标、{BROAD_LIMIT} 篇泛视觉。",
+            f"- 每日页面默认只展示少量精选：{'、'.join(daily_limits)}。",
             "- 精读优先级看“能不能启发新的 COD 论文问题”，不是只看标题里有没有 camouflaged object detection。",
             "- 旧 Markdown 日报不会被覆盖；同一天重复更新只刷新当天文件。",
             "- 后台仍保留完整候选池，方便以后需要时再扩展检索。",
@@ -1911,7 +2242,7 @@ def render_markdown(history: list[dict]) -> str:
             "- arXiv API",
             "- CVF OpenAccess",
             "- Semantic Scholar Graph API",
-            "- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, Medical Image Analysis",
+            "- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, RSE, JAG, Medical Image Analysis",
             "- Deep-reading priority: transferable methods for COD first, including open-world, object discovery, uncertainty/calibration, causal/counterfactual vision, self-supervised dense representation, object-centric/compositional reasoning, and interactive/continual adaptation.",
             "",
         ]
