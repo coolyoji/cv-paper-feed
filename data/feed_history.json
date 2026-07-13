@@ -1,125 +1,138 @@
 [
   {
     "date": "2026-07-13",
-    "generated_at": "2026-07-13 12:43",
+    "generated_at": "2026-07-13 20:10",
     "timezone": "Asia/Shanghai",
     "total_selected": 9452,
     "sections": {
       "highlights": [
         {
-          "title": "Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport",
-          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.pdf",
+          "title": "Beyond Perceptual Shortcuts: Causal-Inspired Debiasing Optimization for Generalizable Video Reasoning in Lightweight MLLMs",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wu_Beyond_Perceptual_Shortcuts_Causal-Inspired_Debiasing_Optimization_for_Generalizable_Video_Reasoning_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wu_Beyond_Perceptual_Shortcuts_Causal-Inspired_Debiasing_Optimization_for_Generalizable_Video_Reasoning_CVPR_2026_paper.pdf",
           "authors": [
-            "Khushboo Mishra",
-            "Varun Trivedi",
-            "Tanima Dutta"
+            "Jingze Wu",
+            "Quan Zhang",
+            "Hongfei Suo",
+            "Zeqiang Cai",
+            "Hongbo Chen"
           ],
           "source": "CVPR 2026",
           "published": "2026",
-          "summary": "Unsupervised domain adaptation (UDA) for videos and 1D time-series data faces significant challenges due to domain shifts in terms of both temporal dynamics and feature distributions. Existing UDA approaches for time-series data often address temporal alignment and uncertainty mitigation as separate objectives, leading to unstable training, noisy pseudo-labels, and incomplete feature transfer. This disjoint treatment fails to capture inter-channel causal dependencies and also overlooks the impact of prediction uncertainty on adaptation quality. This limits the transferability of learned representations and results in suboptimal adaptation. To address the aforementioned limitations, we propose a novel UDA framework, named Causally-Regularized Optimal Transport (in short Causal-OT), that preserves domain-invariant causal mechanisms by embedding causal graph regularization into robust OT alignment process. First we estimate inter-channel causal graphs in both source and target domains and learn a transport plan that not only aligns feature distributions but also improves interpretability and minimizes the discrepancy between causal structures of the Granger graphs. However, pseudo-labeling may still prone to error propagation allowing incorrect target predictions during self-training, degrading the model stability and transfer quality across domains. To mitigate this, we further introduce a causality-aware pseudo-labeling strategy that selects high-confidence target samples based on both entropy and structural consistency with the causal graph of the source domain. This enhances robustness against pseudo-label noise.Extensive experiments on six time-series benchmarks achieving 4.5% gain in accuracy and a 3.8% improvement in F1-score. We conduct experiments on four benchmark video datasets that achieve a 2.5% gain in accuracy.",
-          "tags": [
-            "unsupervised",
-            "video",
-            "causal/counterfactual",
-            "uncertainty/calibration",
-            "domain adaptation"
-          ],
-          "score": 110
-        },
-        {
-          "title": "REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting",
-          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shi_REALM_An_MLLM-Agent_Framework_for_Open_World_3D_Reasoning_Segmentation_CVPR_2026_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Shi_REALM_An_MLLM-Agent_Framework_for_Open_World_3D_Reasoning_Segmentation_CVPR_2026_paper.pdf",
-          "authors": [
-            "Changyue Shi",
-            "Minghao Chen",
-            "Yiping Mao",
-            "Chuxiao Yang",
-            "Xinyuan Hu",
-            "Jiajun Ding",
-            "Zhou Yu"
-          ],
-          "source": "CVPR 2026",
-          "published": "2026",
-          "summary": "Bridging the gap between complex human instructions and precise 3D object grounding remains a significant challenge in vision and robotics. Existing 3D segmentation methods often struggle to interpret ambiguous, reasoning-based instructions, while 2D vision-language models that excel at such reasoning lack intrinsic 3D spatial understanding. In this paper, we introduce REALM, an innovative MLLM-agent framework that enables open-world reasoning-based segmentation without requiring extensive 3D-specific post-training. We perform segmentation directly on 3D Gaussian Splatting representations, capitalizing on their ability to render photorealistic novel views that are highly suitable for MLLM comprehension. As directly feeding one or more rendered views to the MLLM can lead to high sensitivity to viewpoint selection, we propose a novel Global-to-Local Spatial Grounding strategy. Specifically, multiple global views are first fed into the MLLM agent in parallel for coarse-level localization, aggregating responses to robustly identify the target object. Then, several close-up novel views of the object are synthesized to perform fine-grained local segmentation, yielding accurate and consistent 3D masks. Extensive experiments show that REALM achieves remarkable performance in interpreting both explicit and implicit instructions across LERF, 3D-OVS, and our newly introduced REALM3D benchmarks. Furthermore, our agent framework seamlessly supports a range of 3D interaction tasks, including object removal, replacement, and style transfer, demonstrating its practical utility and versatility.",
+          "summary": "Although reinforcement learning (RL) has significantly advanced reasoning capabilities in large multimodal language models (MLLMs), its efficacy remains limited for lightweight models essential for edge deployments. To address this issue, we leverage causal analysis and experiment to reveal the underlying phenomenon of perceptual bias, demonstrating that RL-based fine-tuning compels lightweight models to preferentially adopt perceptual shortcuts induced by data biases, rather than developing genuine reasoning abilities. Motivated by this insight, we propose VideoThinker, a causal-inspired framework that cultivates robust reasoning in lightweight models through a two-stage debiasing process. First, the Bias Aware Training stage forges a dedicated \"bias model\" to embody these shortcut behaviors. Then, the Causal Debiasing Policy Optimization (CDPO) algorithm fine-tunes the primary model, employing an innovative repulsive objective to actively push it away from the bias model's flawed logic while simultaneously pulling it toward correct, generalizable solutions. Our model, VideoThinker-R1, establishes a new state-of-the-art in video reasoning efficiency. For same-scale comparison, requiring no Supervised Fine-Tuning (SFT) and using only 1% of the training data for RL, it surpasses VideoRFT-3B with a 3.2% average gain on widely-used benchmarks and a 7% lead on VideoMME. For cross-scale comparison, it outperforms the larger Video-UTR-7B model on multiple benchmarks, including a 2.1% gain on MVBench and a 3.8% gain on TempCompass. Code is available at https://github.com/falonss703/VideoThinker.",
           "tags": [
             "VLM/MLLM",
             "reasoning",
-            "diffusion",
-            "depth/geometry",
-            "open-world"
-          ],
-          "score": 110
-        },
-        {
-          "title": "Dual Energy-Based Model with Open-World Uncertainty Estimation for Out-of-distribution Detection",
-          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Dual_Energy-Based_Model_with_Open-World_Uncertainty_Estimation_for_Out-of-distribution_Detection_CVPR_2025_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Dual_Energy-Based_Model_with_Open-World_Uncertainty_Estimation_for_Out-of-distribution_Detection_CVPR_2025_paper.pdf",
-          "authors": [
-            "Qi Chen",
-            "Hu Ding"
-          ],
-          "source": "CVPR 2025",
-          "published": "2025",
-          "summary": "Out-of-distribution (OOD) detection is crucial for machine learning models deployed in open-world environments. However, existing methods often struggle with model over-confidence or rely heavily on empirical energy value estimation, limiting their scalability and generalizability. This paper introduces DEBO (Dual Energy-Based Model for Out-of-distribution Detection), a novel approach that addresses these limitations through an innovative dual classifier architecture and a unified energy-based objective function. DEBO enhances the standard classification framework by integrating a dual-purpose output space within a single classifier. The primary component classifies in-distribution (ID) data conventionally, while the secondary component captures open-world information and estimates uncertainty. Our method overcomes the dependence of traditional energy model-based OOD detection methods on empirical energy estimation while maintaining theoretical guarantees. Theoretical analysis demonstrates that DEBO promotes low energy and high confidence for ID data, while simultaneously inducing higher energy and decreased confidence for OOD samples. Extensive experiments conducted on benchmark datasets reveal that DEBO achieves state-of-the-art OOD detection performance while maintaining comparable classification accuracy on ID data.",
-          "tags": [
-            "diffusion",
-            "anomaly/OOD",
-            "uncertainty/calibration",
-            "open-world"
+            "boundary/frequency",
+            "video",
+            "causal/counterfactual"
           ],
           "score": 98
         },
         {
-          "title": "A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets",
-          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.pdf",
+          "title": "UST-Hand: An Uncertainty-aware Spatiotemporal Point Cloud Interaction Network for 3D Self-supervised Hand Pose Estimation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Han_UST-Hand_An_Uncertainty-aware_Spatiotemporal_Point_Cloud_Interaction_Network_for_3D_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Han_UST-Hand_An_Uncertainty-aware_Spatiotemporal_Point_Cloud_Interaction_Network_for_3D_CVPR_2026_paper.pdf",
           "authors": [
-            "Zexi Jia",
-            "Chuanwei Huang",
-            "Hongyan Fei",
-            "Yeshuang Zhu",
-            "Zhiqiang Yuan",
-            "Ying Deng",
-            "Jiapei Zhang",
-            "Jinchao Zhang",
-            "Jie Zhou"
+            "Tianhao Han",
+            "Haoyang Zhang",
+            "Liang Xie",
+            "Haochen Chang",
+            "Kun Gao",
+            "Yuan Cheng",
+            "Pengfei Ren",
+            "Erwei Yin"
           ],
-          "source": "ICCV 2025",
-          "published": "2025",
-          "summary": "Vision-language models (VLMs) often struggle with compositional reasoning due to insufficient high-quality image-text data. To tackle this challenge, we propose a novel block-based diffusion approach that automatically generates counterfactual datasets without manual annotation. Our method utilizes large language models to identify entities and their spatial relationships. It then independently generates image blocks as \"puzzle pieces\" coherently arranged according to specified compositional rules. This process creates diverse, high-fidelity counterfactual image-text pairs with precisely controlled variations. In addition, we introduce a specialized loss function that differentiates inter-set from intra-set samples, enhancing training efficiency and reducing the need for negative samples. Experiments demonstrate that fine-tuning VLMs with our counterfactual datasets significantly improves visual reasoning performance. Our approach achieves state-of-the-art results across multiple benchmarks while using substantially less training data than existing methods.",
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Manually annotating accurate 3D hand poses is extremely time-consuming and labor-intensive. Existing self-supervised hand pose estimation methods leverage the discrepancy between input images and rendered outputs, or multi-view consistency constraints, as the driving force to optimize networks and progressively refine pose accuracy. However, these methods are highly susceptible to noisy pseudo-labels and overlook the importance of fully exploiting fine-grained spatial correlations, which undermines the stability of model training. To address these issues, we propose UST-Hand, a self-supervised learning framework that estimates uncertainty distribution of hand pose and constructs a probabilistic point cloud feature space, which enables the complex spatiotemporal relationship modeling. UST-Hand employs a conditional normalizing flow model to capture hand pose distributions and samples diverse hypotheses, facilitating robust learning under noisy pseudo-labels supervision with enhanced stability. These multi-hypothesis are mapped to a unified probabilistic 3D point cloud space for multi-view and temporal feature interaction, comprehensively exploring hand motion patterns and fine-grained spatial correlations. Extensive experiments on three challenging datasets demonstrate that UST-Hand achieves state-of-the-art performance, outperforming existing self-supervised methods by up to 37.8% in Mean Per Vertex Position Error (MPVPE).",
+          "tags": [
+            "diffusion",
+            "depth/geometry",
+            "video",
+            "uncertainty/calibration",
+            "self-supervised"
+          ],
+          "score": 83
+        },
+        {
+          "title": "CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.pdf",
+          "authors": [
+            "Weiwei Duan",
+            "Luping Ji",
+            "Shipeng Lei",
+            "Sicheng Zhu",
+            "Jianghong Huang",
+            "Mao Ye"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Infrared small target detection is one highly special category of object detection, faced with tiny target imaging size and cluttered backgrounds. Currently, almost all existing methods are target-centered, directly learning the target features from backgrounds. However, due to weak target signals, they are often difficult in effectively capturing stable features. Sometimes, they cannot even distinguish real targets from background confounders. To overcome these problems, from an opposite perspective, we propose the first Causal-guided Hierarchical Anomaly-aware Learning (CHAL) framework. Breaking through target-centered paradigm, it focuses on background learning, while the targets are handled as the anomalies in backgrounds. In detail, to fulfill the goal, a spatio-temporal neural field is designed to model the background evolution patterns from generative perspective. Meanwhile, a hierarchical anomaly-aware learning is proposed to decompose anomaly discovery. Furthermore, to block the spurious correlations often caused by background confounders, and enhance true target causality, a causal-guiding mechanism is designed. The experiments on three infrared datasets verify the effectiveness and superiority of our CHAL. Even in visible-light scenarios, it still possesses obvious adaptivity. Source code will be open.",
+          "tags": [
+            "diffusion",
+            "video",
+            "UAV/small-object",
+            "anomaly/OOD",
+            "causal/counterfactual"
+          ],
+          "score": 100
+        },
+        {
+          "title": "Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Peng_Counterfactual_VLA_Self-Reflective_Vision-Language-Action_Model_with_Adaptive_Reasoning_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Peng_Counterfactual_VLA_Self-Reflective_Vision-Language-Action_Model_with_Adaptive_Reasoning_CVPR_2026_paper.pdf",
+          "authors": [
+            "Zhenghao Peng",
+            "Wenhao Ding",
+            "Yurong You",
+            "Yuxiao Chen",
+            "Wenjie Luo",
+            "Thomas Tian",
+            "Yulong Cao",
+            "Apoorva Sharma",
+            "Danfei Xu",
+            "Boris Ivanovic",
+            "Boyi Li",
+            "Yan Wang",
+            "Marco Pavone"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Recent reasoning-augmented Vision-Language-Action (VLA) models have improved the interpretability of end-to-end autonomous driving by generating intermediate reasoning traces. Yet these models primarily describe what they perceive and intend to do, rarely questioning whether their planned actions are safe or appropriate. This work introduces Counterfactual VLA (CF-VLA), a self-reflective VLA framework that enables the model to reason about and revise its planned actions before execution. CF-VLA first generates time-segmented meta-actions that summarize driving intent, and then performs counterfactual reasoning conditioned on both the meta-actions and the visual context. This step simulates potential outcomes, identifies unsafe behaviors, and outputs corrected meta-actions that guide the final trajectory generation. To efficiently obtain such self-reflective capabilities, we propose a rollout-filter-label pipeline that mines high-value scenes from a base (non-counterfactual) VLA's rollouts and labels counterfactual reasoning traces for subsequent training rounds. Experiments on large-scale driving datasets show that CF-VLA improves trajectory accuracy by up to 17.6%, enhances safety metrics by 20.5%, and exhibits adaptive thinking: it only enables counterfactual reasoning in challenging scenarios. By transforming reasoning traces from one-shot descriptions to causal self-correction signals, CF-VLA takes a step toward self-reflective autonomous driving agents that learn to think before they act.",
           "tags": [
             "VLM/MLLM",
             "reasoning",
             "diffusion",
-            "causal/counterfactual",
-            "compositionality"
+            "causal/counterfactual"
           ],
-          "score": 108
+          "score": 94
         },
         {
-          "title": "CGU-Bayes: Causal Graph Uncertainty-Guided Bayesian Inference for Domain Generalization",
-          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yin_CGU-Bayes_Causal_Graph_Uncertainty-Guided_Bayesian_Inference_for_Domain_Generalization_CVPR_2026_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yin_CGU-Bayes_Causal_Graph_Uncertainty-Guided_Bayesian_Inference_for_Domain_Generalization_CVPR_2026_paper.pdf",
+          "title": "Text-Driven Fashion Image Editing with Compositional Concept Learning and Counterfactual Abduction",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Huang_Text-Driven_Fashion_Image_Editing_with_Compositional_Concept_Learning_and_Counterfactual_CVPR_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Huang_Text-Driven_Fashion_Image_Editing_with_Compositional_Concept_Learning_and_Counterfactual_CVPR_2025_paper.pdf",
           "authors": [
-            "Naiyu Yin",
-            "Hanjing Wang",
-            "Yue Yu",
-            "Tian Gao",
-            "Amit Dhurandhar",
-            "Chung-Hao Lee",
-            "Qiang Ji"
+            "Shanshan Huang",
+            "Haoxuan Li",
+            "Chunyuan Zheng",
+            "Mingyuan Ge",
+            "Wei Gao",
+            "Lei Wang",
+            "Li Liu"
           ],
-          "source": "CVPR 2026",
-          "published": "2026",
-          "summary": "Causal graphs play a crucial role in AI research as they reveal the data generation processes underlying real-world machine learning and computer vision tasks. Recent studies have leveraged causal graphs to develop more robust and interpretable models. However, limited or biased data often lead to inaccurate causal graph estimation, reducing a model's transferability to unseen domains. To address this challenge, we propose a novel framework that performs Bayesian inference over causal graphs to capture potential underlying causal relations and identify invariant causal features for DG prediction. The key advantage of our framework lies in its ability to quantify causal graph uncertainty in the context of prediction tasks and incorporate it into the prediction process. Our proposed uncertainty provides valuable insights into (i) the reliability of our method on specific datasets, (ii) the alignment between learned causal graphs and unseen test domains, and (iii) the confidence of our predictions. In particular, we go beyond merely quantifying uncertainty and leverage it as weighting factors in a weighted Bayesian inference scheme. Empirical results on multiple benchmark distribution-shift datasets show that our algorithm, **C**ausal **G**raph **U**ncertainty-guided **Bayes**ian Inference (CGU-Bayes), outperforms existing DG methods on challenging datasets and achieves state-of-the-art performance overall.",
+          "source": "CVPR 2025",
+          "published": "2025",
+          "summary": "Fashion image editing is a valuable tool for designers to convey their creative ideas by visualizing design concepts. With the recent advances in text editing methods, significant progress has been made in fashion image editing. However, they face two key challenges: spurious correlations in training data often induce changes in other areas when editing an area representing the intended editing concept, and these models typically lack the ability to edit multiple concepts simultaneously. To address the above challenges, we propose a novel \\underline T ext-driven \\underline F ashion \\underline I mage edi\\underline T ing framework called T-FIT to mitigate the impact of spurious correlation by integrating counterfactual reasoning with compositional concept learning to precisely ensure compositional multi-concept fashion image editing relying solely on text descriptions. Specifically, T-FIT includes three key components. (i) Counterfactual abduction module, which learns an exogenous variable of the source image by a denoising U-Net model. (ii) Concept learning module, which identifies concepts in fashion image editing--such as clothing types and colors and projects a target concept into the space spanned from a series of textual prompts. (iii) Concept composition module, which enables simultaneous adjustments of multiple concepts by aggregating each concept's direction vector obtained from the concept learning module. Extensive experiments show that our method can achieve state-of-the-art performance on various fashion image editing tasks, including single-concept editing (e.g., sleeve length, clothing type) and multi-concept editing (e.g., color & sleeve length).",
           "tags": [
+            "reasoning",
+            "diffusion",
             "causal/counterfactual",
-            "uncertainty/calibration",
-            "domain adaptation"
+            "compositionality",
+            "low-level"
           ],
-          "score": 92
+          "score": 73
         }
       ],
       "quality": [
@@ -227,13 +240,15 @@
           ],
           "source": "CVPR 2026",
           "published": "2026",
-          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "summary": "Infrared small target detection is one highly special category of object detection, faced with tiny target imaging size and cluttered backgrounds. Currently, almost all existing methods are target-centered, directly learning the target features from backgrounds. However, due to weak target signals, they are often difficult in effectively capturing stable features. Sometimes, they cannot even distinguish real targets from background confounders. To overcome these problems, from an opposite perspective, we propose the first Causal-guided Hierarchical Anomaly-aware Learning (CHAL) framework. Breaking through target-centered paradigm, it focuses on background learning, while the targets are handled as the anomalies in backgrounds. In detail, to fulfill the goal, a spatio-temporal neural field is designed to model the background evolution patterns from generative perspective. Meanwhile, a hierarchical anomaly-aware learning is proposed to decompose anomaly discovery. Furthermore, to block the spurious correlations often caused by background confounders, and enhance true target causality, a causal-guiding mechanism is designed. The experiments on three infrared datasets verify the effectiveness and superiority of our CHAL. Even in visible-light scenarios, it still possesses obvious adaptivity. Source code will be open.",
           "tags": [
+            "diffusion",
+            "video",
             "UAV/small-object",
             "anomaly/OOD",
             "causal/counterfactual"
           ],
-          "score": 90
+          "score": 100
         },
         {
           "title": "Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift",
@@ -649,13 +664,15 @@
           ],
           "source": "CVPR 2026",
           "published": "2026",
-          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "summary": "Infrared small target detection is one highly special category of object detection, faced with tiny target imaging size and cluttered backgrounds. Currently, almost all existing methods are target-centered, directly learning the target features from backgrounds. However, due to weak target signals, they are often difficult in effectively capturing stable features. Sometimes, they cannot even distinguish real targets from background confounders. To overcome these problems, from an opposite perspective, we propose the first Causal-guided Hierarchical Anomaly-aware Learning (CHAL) framework. Breaking through target-centered paradigm, it focuses on background learning, while the targets are handled as the anomalies in backgrounds. In detail, to fulfill the goal, a spatio-temporal neural field is designed to model the background evolution patterns from generative perspective. Meanwhile, a hierarchical anomaly-aware learning is proposed to decompose anomaly discovery. Furthermore, to block the spurious correlations often caused by background confounders, and enhance true target causality, a causal-guiding mechanism is designed. The experiments on three infrared datasets verify the effectiveness and superiority of our CHAL. Even in visible-light scenarios, it still possesses obvious adaptivity. Source code will be open.",
           "tags": [
+            "diffusion",
+            "video",
             "UAV/small-object",
             "anomaly/OOD",
             "causal/counterfactual"
           ],
-          "score": 90
+          "score": 100
         },
         {
           "title": "MMGeo: Multimodal Compositional Geo-Localization for UAVs",
