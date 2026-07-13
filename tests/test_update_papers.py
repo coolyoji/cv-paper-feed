@@ -1,8 +1,11 @@
 import importlib.util
+import json
 import sys
+import tempfile
 import unittest
 from datetime import date, datetime
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -129,6 +132,225 @@ class FireTopicTests(unittest.TestCase):
         self.assertIn("fire monitoring", arxiv_queries)
         self.assertIn("multispectral", semantic_queries)
         self.assertIn("foundation model", semantic_queries)
+
+
+class HighlightHistoryTests(unittest.TestCase):
+    @staticmethod
+    def make_paper(title: str, score: int, url_suffix: str) -> object:
+        return update_papers.Paper(
+            title=title,
+            url=f"https://example.com/{url_suffix}",
+            source="CVPR 2026",
+            published="2026",
+            summary="An open-world uncertainty method for visual reasoning.",
+            tags=["open-world", "uncertainty/calibration", "reasoning"],
+            score=score,
+        )
+
+    def test_highlights_exclude_history_by_normalized_title(self):
+        previous = self.make_paper("A Great Paper: Test!", 999, "previous")
+        candidates = [
+            self.make_paper("a great paper test", 999, "new-source"),
+            *[
+                self.make_paper(f"Fresh Paper {index}", 100 - index, f"fresh-{index}")
+                for index in range(1, 6)
+            ],
+        ]
+
+        selected = update_papers.select_highlights(
+            candidates,
+            update_papers.paper_identity_keys(previous),
+        )
+
+        self.assertEqual(len(selected), update_papers.HIGHLIGHT_LIMIT)
+        self.assertNotIn("a great paper test", [paper.title for paper in selected])
+        self.assertEqual(len({paper.title for paper in selected}), len(selected))
+
+    def test_old_style_arxiv_ids_do_not_collide(self):
+        first = update_papers.Paper(
+            title="",
+            url="https://arxiv.org/abs/cs/0601001",
+        )
+        second = update_papers.Paper(
+            title="",
+            url="https://arxiv.org/pdf/cs/0601002.pdf",
+        )
+
+        first_keys = update_papers.paper_identity_keys(first)
+        second_keys = update_papers.paper_identity_keys(second)
+
+        self.assertIn("arxiv:cs/0601001", first_keys)
+        self.assertIn("arxiv:cs/0601002", second_keys)
+        self.assertTrue(first_keys.isdisjoint(second_keys))
+
+    def test_fallback_never_refills_with_historical_papers(self):
+        previous = self.make_paper("Previously Read", 100, "previous")
+        candidates = [
+            previous,
+            self.make_paper("Fresh One", 2, "fresh-one"),
+            self.make_paper("Fresh Two", 1, "fresh-two"),
+        ]
+        for paper in candidates:
+            paper.source = "Other"
+            paper.published = ""
+            paper.summary = ""
+            paper.tags = []
+
+        selected = update_papers.select_highlights(
+            candidates,
+            update_papers.paper_identity_keys(previous),
+        )
+
+        self.assertEqual([paper.title for paper in selected], ["Fresh One", "Fresh Two"])
+
+    def test_same_day_fill_respects_pure_cod_limit(self):
+        preserved = self.make_paper("Preserved COD", 100, "preserved-cod")
+        preserved.tags = ["COD"]
+        preserved.summary = ""
+        second_cod = self.make_paper("Second COD", 99, "second-cod")
+        second_cod.tags = ["COD"]
+        second_cod.summary = ""
+        fresh = self.make_paper("Fresh General Paper", 1, "fresh-general")
+        fresh.source = "Other"
+        fresh.published = ""
+        fresh.tags = []
+        fresh.summary = ""
+
+        sections = update_papers.select_feed_sections(
+            [second_cod, fresh],
+            preserved_highlights=[preserved],
+        )
+        titles = [paper.title for paper in sections["highlights"]]
+
+        self.assertIn(preserved.title, titles)
+        self.assertNotIn(second_cod.title, titles)
+        self.assertIn(fresh.title, titles)
+
+    def test_update_history_excludes_prior_days(self):
+        previous = self.make_paper("Previously Read", 999, "previous")
+        candidates = [
+            previous,
+            *[
+                self.make_paper(f"Fresh Paper {index}", 100 - index, f"fresh-{index}")
+                for index in range(1, 6)
+            ],
+        ]
+        old_snapshot = update_papers.make_snapshot(
+            [previous],
+            datetime(2026, 7, 12, 9, 10, tzinfo=update_papers.UTC8),
+            enrich_abstracts=False,
+        )
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            history_file = Path(temp_dir) / "feed_history.json"
+            history_file.write_text(
+                json.dumps([old_snapshot], ensure_ascii=False),
+                encoding="utf-8",
+            )
+            with (
+                patch.object(update_papers, "HISTORY_FILE", history_file),
+                patch.object(update_papers, "enrich_selected_sections"),
+            ):
+                history = update_papers.update_history(
+                    candidates,
+                    datetime(2026, 7, 13, 9, 10, tzinfo=update_papers.UTC8),
+                )
+
+        selected_titles = [
+            item["title"] for item in history[0]["sections"]["highlights"]
+        ]
+        self.assertNotIn(previous.title, selected_titles)
+        self.assertEqual(len(selected_titles), update_papers.HIGHLIGHT_LIMIT)
+        self.assertEqual(history[1]["date"], "2026-07-12")
+
+    def test_same_day_refresh_keeps_current_day_eligible(self):
+        morning_candidates = [
+            self.make_paper("Current Day Top Paper", 999, "top"),
+            *[
+                self.make_paper(f"Morning Paper {index}", 100 - index, f"morning-{index}")
+                for index in range(1, 5)
+            ],
+        ]
+        current_snapshot = update_papers.make_snapshot(
+            morning_candidates,
+            datetime(2026, 7, 13, 9, 10, tzinfo=update_papers.UTC8),
+            enrich_abstracts=False,
+        )
+        rerun_candidates = [
+            self.make_paper(f"Afternoon Paper {index}", 200 - index, f"afternoon-{index}")
+            for index in range(1, 7)
+        ]
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            history_file = Path(temp_dir) / "feed_history.json"
+            history_file.write_text(
+                json.dumps([current_snapshot], ensure_ascii=False),
+                encoding="utf-8",
+            )
+            with (
+                patch.object(update_papers, "HISTORY_FILE", history_file),
+                patch.object(update_papers, "enrich_selected_sections"),
+            ):
+                history = update_papers.update_history(
+                    rerun_candidates,
+                    datetime(2026, 7, 13, 12, 30, tzinfo=update_papers.UTC8),
+                )
+
+        selected_titles = [
+            item["title"] for item in history[0]["sections"]["highlights"]
+        ]
+        morning_titles = [
+            item["title"]
+            for item in current_snapshot["sections"]["highlights"]
+        ]
+        self.assertEqual(selected_titles, morning_titles)
+        self.assertEqual(len(history), 1)
+
+    def test_same_day_highlights_can_be_explicitly_reselected(self):
+        morning_candidates = [
+            self.make_paper(f"Morning Paper {index}", 100 - index, f"morning-{index}")
+            for index in range(1, 6)
+        ]
+        current_snapshot = update_papers.make_snapshot(
+            morning_candidates,
+            datetime(2026, 7, 13, 9, 10, tzinfo=update_papers.UTC8),
+            enrich_abstracts=False,
+        )
+        afternoon_candidates = [
+            self.make_paper(
+                f"Afternoon Paper {index}",
+                200 - index,
+                f"afternoon-{index}",
+            )
+            for index in range(1, 6)
+        ]
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            history_file = Path(temp_dir) / "feed_history.json"
+            history_file.write_text(
+                json.dumps([current_snapshot], ensure_ascii=False),
+                encoding="utf-8",
+            )
+            with (
+                patch.object(update_papers, "HISTORY_FILE", history_file),
+                patch.object(update_papers, "enrich_selected_sections"),
+            ):
+                history = update_papers.update_history(
+                    afternoon_candidates,
+                    datetime(2026, 7, 13, 12, 30, tzinfo=update_papers.UTC8),
+                    preserve_same_day_highlights=False,
+                )
+
+        selected_titles = [
+            item["title"] for item in history[0]["sections"]["highlights"]
+        ]
+        self.assertEqual(
+            selected_titles,
+            [paper.title for paper in afternoon_candidates],
+        )
+
+    def test_history_key_reader_accepts_missing_sections(self):
+        self.assertEqual(update_papers.history_highlight_keys([{"date": "2026-07-01"}]), set())
 
 
 if __name__ == "__main__":

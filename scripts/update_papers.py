@@ -927,7 +927,41 @@ def is_pure_cod_anchor(paper: Paper) -> bool:
     return "COD" in paper.tags and transfer_potential(paper) < MIN_IDEA_TRANSFER_SCORE
 
 
-def select_highlights(papers: list[Paper]) -> list[Paper]:
+def paper_identity_keys(paper: Paper) -> set[str]:
+    keys: set[str] = set()
+    normalized_title = re.sub(r"\W+", "", paper.title.casefold())
+    if normalized_title:
+        digest = hashlib.sha1(normalized_title.encode("utf-8")).hexdigest()
+        keys.add("title:" + digest)
+
+    for raw_url in (paper.url, paper.pdf):
+        if not raw_url:
+            continue
+        url = urllib.parse.unquote(raw_url.strip())
+        arxiv = re.search(r"arxiv\.org/(?:abs|pdf)/([^?#]+)", url, re.I)
+        if arxiv:
+            arxiv_id = arxiv.group(1).removesuffix(".pdf")
+            arxiv_id = re.sub(r"v\d+$", "", arxiv_id, flags=re.I)
+            keys.add("arxiv:" + arxiv_id.casefold())
+
+        doi = re.search(r"(?:doi\.org/)?(10\.\d{4,9}/[^?#\s]+)", url, re.I)
+        if doi:
+            keys.add("doi:" + doi.group(1).rstrip("/.").casefold())
+
+        parsed = urllib.parse.urlsplit(url)
+        host = parsed.netloc.casefold().removeprefix("www.")
+        path = parsed.path.rstrip("/").casefold()
+        if host and path:
+            digest = hashlib.sha1(f"{host}{path}".encode("utf-8")).hexdigest()
+            keys.add("url:" + digest)
+    return keys
+
+
+def select_highlights(
+    papers: list[Paper],
+    excluded_keys: set[str] | None = None,
+    initial_pure_cod_count: int = 0,
+) -> list[Paper]:
     highlight_pool = [
         paper
         for paper in papers
@@ -935,28 +969,32 @@ def select_highlights(papers: list[Paper]) -> list[Paper]:
     ]
     ranked = sorted(highlight_pool, key=highlight_rank, reverse=True)
     highlights: list[Paper] = []
-    pure_cod_count = 0
+    selected_keys = set(excluded_keys or ())
+    pure_cod_count = initial_pure_cod_count
     for paper in ranked:
-        if paper in highlights:
+        identity_keys = paper_identity_keys(paper)
+        if not identity_keys or not selected_keys.isdisjoint(identity_keys):
             continue
         if is_pure_cod_anchor(paper):
             if pure_cod_count >= DIRECT_COD_HIGHLIGHT_LIMIT:
                 continue
             pure_cod_count += 1
         highlights.append(paper)
+        selected_keys.update(identity_keys)
         if len(highlights) >= HIGHLIGHT_LIMIT:
             break
 
     if len(highlights) < HIGHLIGHT_LIMIT:
-        fallback = [paper for paper in papers if paper not in highlights]
-        for paper in sorted(fallback, key=highlight_rank, reverse=True):
-            if paper in highlights:
+        for paper in sorted(papers, key=highlight_rank, reverse=True):
+            identity_keys = paper_identity_keys(paper)
+            if not identity_keys or not selected_keys.isdisjoint(identity_keys):
                 continue
             if is_pure_cod_anchor(paper):
                 if pure_cod_count >= DIRECT_COD_HIGHLIGHT_LIMIT:
                     continue
                 pure_cod_count += 1
             highlights.append(paper)
+            selected_keys.update(identity_keys)
             if len(highlights) >= HIGHLIGHT_LIMIT:
                 break
     return highlights
@@ -1620,7 +1658,11 @@ def md_paper_item(idx: int, paper: Paper) -> str:
     return "\n".join(parts)
 
 
-def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
+def select_feed_sections(
+    papers: list[Paper],
+    excluded_highlight_keys: set[str] | None = None,
+    preserved_highlights: list[Paper] | None = None,
+) -> dict[str, list[Paper]]:
     cod = [p for p in papers if "COD" in p.tags]
     uav = [p for p in papers if "UAV/small-object" in p.tags]
     fire_multispectral = [p for p in papers if "multispectral fire" in p.tags]
@@ -1648,7 +1690,30 @@ def select_feed_sections(papers: list[Paper]) -> dict[str, list[Paper]]:
     )[:FIRE_FOUNDATION_LIMIT]
     broad = sorted(broad, key=lambda p: p.score, reverse=True)[:BROAD_LIMIT]
     quality = sorted(quality, key=lambda p: p.score, reverse=True)[:QUALITY_LIMIT]
-    highlights = select_highlights(papers)
+    highlights: list[Paper] = []
+    preserved_keys: set[str] = set()
+    for paper in preserved_highlights or []:
+        identity_keys = paper_identity_keys(paper)
+        if not identity_keys or not preserved_keys.isdisjoint(identity_keys):
+            continue
+        highlights.append(paper)
+        preserved_keys.update(identity_keys)
+        if len(highlights) >= HIGHLIGHT_LIMIT:
+            break
+
+    remaining = HIGHLIGHT_LIMIT - len(highlights)
+    if remaining > 0:
+        excluded_keys = set(excluded_highlight_keys or ()) | preserved_keys
+        preserved_pure_cod_count = sum(
+            int(is_pure_cod_anchor(paper)) for paper in highlights
+        )
+        highlights.extend(
+            select_highlights(
+                papers,
+                excluded_keys,
+                initial_pure_cod_count=preserved_pure_cod_count,
+            )[:remaining]
+        )
     return {
         "highlights": highlights,
         "quality": quality,
@@ -1972,9 +2037,17 @@ def enrich_selected_sections(sections: dict[str, list[Paper]]) -> None:
 
 
 def make_snapshot(
-    papers: list[Paper], now: datetime, enrich_abstracts: bool = True
+    papers: list[Paper],
+    now: datetime,
+    enrich_abstracts: bool = True,
+    excluded_highlight_keys: set[str] | None = None,
+    preserved_highlights: list[Paper] | None = None,
 ) -> dict:
-    sections = select_feed_sections(papers)
+    sections = select_feed_sections(
+        papers,
+        excluded_highlight_keys,
+        preserved_highlights,
+    )
     if enrich_abstracts:
         enrich_selected_sections(sections)
     return {
@@ -2006,9 +2079,52 @@ def collapse_history_by_date(history: list[dict]) -> list[dict]:
     return collapsed
 
 
-def update_history(papers: list[Paper], now: datetime) -> list[dict]:
-    snapshot = make_snapshot(papers, now)
-    history = [item for item in load_history() if item.get("date") != snapshot["date"]]
+def snapshot_date_text(snapshot: dict) -> str:
+    return snapshot.get("date") or str(snapshot.get("generated_at", ""))[:10]
+
+
+def snapshot_highlights(snapshot: dict) -> list[Paper]:
+    sections = snapshot.get("sections", {})
+    if not isinstance(sections, dict):
+        return []
+    highlights = sections.get("highlights", [])
+    if not isinstance(highlights, list):
+        return []
+    return [paper_from_dict(item) for item in highlights if isinstance(item, dict)]
+
+
+def history_highlight_keys(history: list[dict]) -> set[str]:
+    keys: set[str] = set()
+    for snapshot in history:
+        for paper in snapshot_highlights(snapshot):
+            keys.update(paper_identity_keys(paper))
+    return keys
+
+
+def update_history(
+    papers: list[Paper],
+    now: datetime,
+    preserve_same_day_highlights: bool = True,
+) -> list[dict]:
+    date_text = now.strftime("%Y-%m-%d")
+    loaded_history = load_history()
+    same_day = [
+        item for item in loaded_history if snapshot_date_text(item) == date_text
+    ]
+    current_snapshot = max(same_day, key=snapshot_sort_key, default=None)
+    history = [
+        item for item in loaded_history if snapshot_date_text(item) != date_text
+    ]
+    snapshot = make_snapshot(
+        papers,
+        now,
+        excluded_highlight_keys=history_highlight_keys(history),
+        preserved_highlights=(
+            snapshot_highlights(current_snapshot)
+            if current_snapshot and preserve_same_day_highlights
+            else None
+        ),
+    )
     history.insert(0, snapshot)
     history = collapse_history_by_date(history)
     HISTORY_FILE.write_text(
