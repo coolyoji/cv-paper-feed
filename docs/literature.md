@@ -1,17 +1,19 @@
 # Daily CV Paper Feed
 
-Last updated: 2026-07-12 12:37 Asia/Shanghai
-Archive days kept: 8
+Last updated: 2026-07-13 12:43 Asia/Shanghai
+Archive days kept: 9
 
 这是文献日报目录页。每天更新会生成一个独立 Markdown 文件，文件名就是日期；想看哪一天，直接点对应日期即可。HTML 文件单独放在 html/ 目录，仅作为网页预览备用。
 从 2026-07-09 开始，精读队列不再只追 COD 直系论文，而是优先寻找 COD 尚未充分使用、但可能迁移出新 idea 的计算机视觉方法。
+从 2026-07-14 开始，新增多光谱火灾探测与火灾监测大模型两个独立栏目，优先展示正式发表的顶会顶刊与领域高水平期刊论文。
 
 ## 最新日报
 
-- [2026-07-12 Markdown](md/2026-07-12.md) / [HTML 预览](html/2026-07-12.html)
+- [2026-07-13 Markdown](md/2026-07-13.md) / [HTML 预览](html/2026-07-13.html)
 
 ## 每日 Markdown 文件
 
+- [2026-07-13](md/2026-07-13.md) / [html](html/2026-07-13.html) - 2026-07-13 12:43，候选池 9452 篇
 - [2026-07-12](md/2026-07-12.md) / [html](html/2026-07-12.html) - 2026-07-12 12:37，候选池 9386 篇
 - [2026-07-11](md/2026-07-11.md) / [html](html/2026-07-11.html) - 2026-07-11 12:26，候选池 9311 篇
 - [2026-07-10](md/2026-07-10.md) / [html](html/2026-07-10.html) - 2026-07-10 13:10，候选池 2468 篇
@@ -33,5 +35,5 @@ Archive days kept: 8
 - arXiv API
 - CVF OpenAccess
 - Semantic Scholar Graph API
-- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, Medical Image Analysis
+- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, RSE, JAG, Medical Image Analysis
 - Deep-reading priority: transferable methods for COD first, including open-world, object discovery, uncertainty/calibration, causal/counterfactual vision, self-supervised dense representation, object-centric/compositional reasoning, and interactive/continual adaptation.

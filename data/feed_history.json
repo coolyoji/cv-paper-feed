@@ -1,5 +1,1156 @@
 [
   {
+    "date": "2026-07-13",
+    "generated_at": "2026-07-13 12:43",
+    "timezone": "Asia/Shanghai",
+    "total_selected": 9452,
+    "sections": {
+      "highlights": [
+        {
+          "title": "Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.pdf",
+          "authors": [
+            "Khushboo Mishra",
+            "Varun Trivedi",
+            "Tanima Dutta"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Unsupervised domain adaptation (UDA) for videos and 1D time-series data faces significant challenges due to domain shifts in terms of both temporal dynamics and feature distributions. Existing UDA approaches for time-series data often address temporal alignment and uncertainty mitigation as separate objectives, leading to unstable training, noisy pseudo-labels, and incomplete feature transfer. This disjoint treatment fails to capture inter-channel causal dependencies and also overlooks the impact of prediction uncertainty on adaptation quality. This limits the transferability of learned representations and results in suboptimal adaptation. To address the aforementioned limitations, we propose a novel UDA framework, named Causally-Regularized Optimal Transport (in short Causal-OT), that preserves domain-invariant causal mechanisms by embedding causal graph regularization into robust OT alignment process. First we estimate inter-channel causal graphs in both source and target domains and learn a transport plan that not only aligns feature distributions but also improves interpretability and minimizes the discrepancy between causal structures of the Granger graphs. However, pseudo-labeling may still prone to error propagation allowing incorrect target predictions during self-training, degrading the model stability and transfer quality across domains. To mitigate this, we further introduce a causality-aware pseudo-labeling strategy that selects high-confidence target samples based on both entropy and structural consistency with the causal graph of the source domain. This enhances robustness against pseudo-label noise.Extensive experiments on six time-series benchmarks achieving 4.5% gain in accuracy and a 3.8% improvement in F1-score. We conduct experiments on four benchmark video datasets that achieve a 2.5% gain in accuracy.",
+          "tags": [
+            "unsupervised",
+            "video",
+            "causal/counterfactual",
+            "uncertainty/calibration",
+            "domain adaptation"
+          ],
+          "score": 110
+        },
+        {
+          "title": "REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shi_REALM_An_MLLM-Agent_Framework_for_Open_World_3D_Reasoning_Segmentation_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Shi_REALM_An_MLLM-Agent_Framework_for_Open_World_3D_Reasoning_Segmentation_CVPR_2026_paper.pdf",
+          "authors": [
+            "Changyue Shi",
+            "Minghao Chen",
+            "Yiping Mao",
+            "Chuxiao Yang",
+            "Xinyuan Hu",
+            "Jiajun Ding",
+            "Zhou Yu"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Bridging the gap between complex human instructions and precise 3D object grounding remains a significant challenge in vision and robotics. Existing 3D segmentation methods often struggle to interpret ambiguous, reasoning-based instructions, while 2D vision-language models that excel at such reasoning lack intrinsic 3D spatial understanding. In this paper, we introduce REALM, an innovative MLLM-agent framework that enables open-world reasoning-based segmentation without requiring extensive 3D-specific post-training. We perform segmentation directly on 3D Gaussian Splatting representations, capitalizing on their ability to render photorealistic novel views that are highly suitable for MLLM comprehension. As directly feeding one or more rendered views to the MLLM can lead to high sensitivity to viewpoint selection, we propose a novel Global-to-Local Spatial Grounding strategy. Specifically, multiple global views are first fed into the MLLM agent in parallel for coarse-level localization, aggregating responses to robustly identify the target object. Then, several close-up novel views of the object are synthesized to perform fine-grained local segmentation, yielding accurate and consistent 3D masks. Extensive experiments show that REALM achieves remarkable performance in interpreting both explicit and implicit instructions across LERF, 3D-OVS, and our newly introduced REALM3D benchmarks. Furthermore, our agent framework seamlessly supports a range of 3D interaction tasks, including object removal, replacement, and style transfer, demonstrating its practical utility and versatility.",
+          "tags": [
+            "VLM/MLLM",
+            "reasoning",
+            "diffusion",
+            "depth/geometry",
+            "open-world"
+          ],
+          "score": 110
+        },
+        {
+          "title": "Dual Energy-Based Model with Open-World Uncertainty Estimation for Out-of-distribution Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Dual_Energy-Based_Model_with_Open-World_Uncertainty_Estimation_for_Out-of-distribution_Detection_CVPR_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Dual_Energy-Based_Model_with_Open-World_Uncertainty_Estimation_for_Out-of-distribution_Detection_CVPR_2025_paper.pdf",
+          "authors": [
+            "Qi Chen",
+            "Hu Ding"
+          ],
+          "source": "CVPR 2025",
+          "published": "2025",
+          "summary": "Out-of-distribution (OOD) detection is crucial for machine learning models deployed in open-world environments. However, existing methods often struggle with model over-confidence or rely heavily on empirical energy value estimation, limiting their scalability and generalizability. This paper introduces DEBO (Dual Energy-Based Model for Out-of-distribution Detection), a novel approach that addresses these limitations through an innovative dual classifier architecture and a unified energy-based objective function. DEBO enhances the standard classification framework by integrating a dual-purpose output space within a single classifier. The primary component classifies in-distribution (ID) data conventionally, while the secondary component captures open-world information and estimates uncertainty. Our method overcomes the dependence of traditional energy model-based OOD detection methods on empirical energy estimation while maintaining theoretical guarantees. Theoretical analysis demonstrates that DEBO promotes low energy and high confidence for ID data, while simultaneously inducing higher energy and decreased confidence for OOD samples. Extensive experiments conducted on benchmark datasets reveal that DEBO achieves state-of-the-art OOD detection performance while maintaining comparable classification accuracy on ID data.",
+          "tags": [
+            "diffusion",
+            "anomaly/OOD",
+            "uncertainty/calibration",
+            "open-world"
+          ],
+          "score": 98
+        },
+        {
+          "title": "A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.pdf",
+          "authors": [
+            "Zexi Jia",
+            "Chuanwei Huang",
+            "Hongyan Fei",
+            "Yeshuang Zhu",
+            "Zhiqiang Yuan",
+            "Ying Deng",
+            "Jiapei Zhang",
+            "Jinchao Zhang",
+            "Jie Zhou"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "Vision-language models (VLMs) often struggle with compositional reasoning due to insufficient high-quality image-text data. To tackle this challenge, we propose a novel block-based diffusion approach that automatically generates counterfactual datasets without manual annotation. Our method utilizes large language models to identify entities and their spatial relationships. It then independently generates image blocks as \"puzzle pieces\" coherently arranged according to specified compositional rules. This process creates diverse, high-fidelity counterfactual image-text pairs with precisely controlled variations. In addition, we introduce a specialized loss function that differentiates inter-set from intra-set samples, enhancing training efficiency and reducing the need for negative samples. Experiments demonstrate that fine-tuning VLMs with our counterfactual datasets significantly improves visual reasoning performance. Our approach achieves state-of-the-art results across multiple benchmarks while using substantially less training data than existing methods.",
+          "tags": [
+            "VLM/MLLM",
+            "reasoning",
+            "diffusion",
+            "causal/counterfactual",
+            "compositionality"
+          ],
+          "score": 108
+        },
+        {
+          "title": "CGU-Bayes: Causal Graph Uncertainty-Guided Bayesian Inference for Domain Generalization",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yin_CGU-Bayes_Causal_Graph_Uncertainty-Guided_Bayesian_Inference_for_Domain_Generalization_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yin_CGU-Bayes_Causal_Graph_Uncertainty-Guided_Bayesian_Inference_for_Domain_Generalization_CVPR_2026_paper.pdf",
+          "authors": [
+            "Naiyu Yin",
+            "Hanjing Wang",
+            "Yue Yu",
+            "Tian Gao",
+            "Amit Dhurandhar",
+            "Chung-Hao Lee",
+            "Qiang Ji"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Causal graphs play a crucial role in AI research as they reveal the data generation processes underlying real-world machine learning and computer vision tasks. Recent studies have leveraged causal graphs to develop more robust and interpretable models. However, limited or biased data often lead to inaccurate causal graph estimation, reducing a model's transferability to unseen domains. To address this challenge, we propose a novel framework that performs Bayesian inference over causal graphs to capture potential underlying causal relations and identify invariant causal features for DG prediction. The key advantage of our framework lies in its ability to quantify causal graph uncertainty in the context of prediction tasks and incorporate it into the prediction process. Our proposed uncertainty provides valuable insights into (i) the reliability of our method on specific datasets, (ii) the alignment between learned causal graphs and unseen test domains, and (iii) the confidence of our predictions. In particular, we go beyond merely quantifying uncertainty and leverage it as weighting factors in a weighted Bayesian inference scheme. Empirical results on multiple benchmark distribution-shift datasets show that our algorithm, **C**ausal **G**raph **U**ncertainty-guided **Bayes**ian Inference (CGU-Bayes), outperforms existing DG methods on challenging datasets and achieves state-of-the-art performance overall.",
+          "tags": [
+            "causal/counterfactual",
+            "uncertainty/calibration",
+            "domain adaptation"
+          ],
+          "score": 92
+        }
+      ],
+      "quality": [
+        {
+          "title": "Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liang_Multimodal_Causality-Driven_Representation_Learning_for_Generalizable_Medical_Image_Segmentation_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liang_Multimodal_Causality-Driven_Representation_Learning_for_Generalizable_Medical_Image_Segmentation_CVPR_2026_paper.pdf",
+          "authors": [
+            "Xusheng Liang",
+            "Lihua Zhou",
+            "Nianxin Li",
+            "Miao Xu",
+            "Ziyang Song",
+            "Dong Yi",
+            "Jinlin Wu",
+            "Jiawei Ma",
+            "Hongbin Liu",
+            "Zhen Lei",
+            "Jiebo Luo"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "causal/counterfactual",
+            "representation learning",
+            "medical imaging"
+          ],
+          "score": 94
+        },
+        {
+          "title": "BTKD++: Beyond Teachers by Critically Distilling Knowledge from Teacher’s Bias",
+          "url": "https://doi.org/10.1007/s11263-026-02924-x",
+          "pdf": "",
+          "authors": [
+            "Jianhua Zhang",
+            "Yi Gao",
+            "Yu He",
+            "Shuo Chen",
+            "Xu Cheng",
+            "Xiufeng Liu",
+            "Shengyong Chen",
+            "Houxiang Zhang",
+            "Ruyu Liu"
+          ],
+          "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
+          "published": "2026-07-08",
+          "summary": "Abstract Existing knowledge distillation methods indiscriminately transfer knowledge from teacher networks, including output-level decisional biases, i.e., incorrect final predictions that can mislead student learning and limit student performance. We challenge this paradigm by proposing BTKD++, a framework that systematically filters and rectifies teacher’s output-level biased knowledge into corrective signals. Our approach partitions training data into Easy Tasks (correct teacher predictions) and Hard Tasks (incorrect predictions), then applies bias elimination and rectification modules orchestrated by dynamic learning curriculum. We provide an interpretive information-theoretic abstraction to explain the observed competence-threshold phenomenon, under which bias rectification becomes more effective when teacher errors contain sufficiently structured corrective information. BTKD++ demonstrates broad applicability across classification, detection, and segmentation tasks when task outputs are equipped with suitable probabilistic interfaces, and shows consistent effectiveness across CNNs, Transformers, and State-Space Models. Extensive experiments show consistent student-teacher transcendence, establishing new state-of-the-art results. This work redefines knowledge distillation from blind mimicry to critical learning, proving that students can surpass teachers through principled bias correction. The source code is available at https://github.com/smartyige/BTKD .",
+          "tags": [
+            "boundary/frequency"
+          ],
+          "score": 91
+        },
+        {
+          "title": "Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.pdf",
+          "authors": [
+            "Khushboo Mishra",
+            "Varun Trivedi",
+            "Tanima Dutta"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Unsupervised domain adaptation (UDA) for videos and 1D time-series data faces significant challenges due to domain shifts in terms of both temporal dynamics and feature distributions. Existing UDA approaches for time-series data often address temporal alignment and uncertainty mitigation as separate objectives, leading to unstable training, noisy pseudo-labels, and incomplete feature transfer. This disjoint treatment fails to capture inter-channel causal dependencies and also overlooks the impact of prediction uncertainty on adaptation quality. This limits the transferability of learned representations and results in suboptimal adaptation. To address the aforementioned limitations, we propose a novel UDA framework, named Causally-Regularized Optimal Transport (in short Causal-OT), that preserves domain-invariant causal mechanisms by embedding causal graph regularization into robust OT alignment process. First we estimate inter-channel causal graphs in both source and target domains and learn a transport plan that not only aligns feature distributions but also improves interpretability and minimizes the discrepancy between causal structures of the Granger graphs. However, pseudo-labeling may still prone to error propagation allowing incorrect target predictions during self-training, degrading the model stability and transfer quality across domains. To mitigate this, we further introduce a causality-aware pseudo-labeling strategy that selects high-confidence target samples based on both entropy and structural consistency with the causal graph of the source domain. This enhances robustness against pseudo-label noise.Extensive experiments on six time-series benchmarks achieving 4.5% gain in accuracy and a 3.8% improvement in F1-score. We conduct experiments on four benchmark video datasets that achieve a 2.5% gain in accuracy.",
+          "tags": [
+            "unsupervised",
+            "video",
+            "causal/counterfactual",
+            "uncertainty/calibration",
+            "domain adaptation"
+          ],
+          "score": 110
+        },
+        {
+          "title": "GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Deng_GS-CLIP_Zero-shot_3D_Anomaly_Detection_by_Geometry-Aware_Prompt_and_Synergistic_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Deng_GS-CLIP_Zero-shot_3D_Anomaly_Detection_by_Geometry-Aware_Prompt_and_Synergistic_CVPR_2026_paper.pdf",
+          "authors": [
+            "Zehao Deng",
+            "An Liu",
+            "Yan Wang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "depth/geometry",
+            "anomaly/OOD",
+            "representation learning"
+          ],
+          "score": 90
+        },
+        {
+          "title": "CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.pdf",
+          "authors": [
+            "Weiwei Duan",
+            "Luping Ji",
+            "Shipeng Lei",
+            "Sicheng Zhu",
+            "Jianghong Huang",
+            "Mao Ye"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object",
+            "anomaly/OOD",
+            "causal/counterfactual"
+          ],
+          "score": 90
+        },
+        {
+          "title": "Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Beemelmanns_Query2Uncertainty_Robust_Uncertainty_Quantification_and_Calibration_for_3D_Object_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Beemelmanns_Query2Uncertainty_Robust_Uncertainty_Quantification_and_Calibration_for_3D_Object_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Till Beemelmanns",
+            "Alexey Nekrasov",
+            "Stefan Vilceanu",
+            "Jonas Steinhaus",
+            "Timo Woopen",
+            "Bastian Leibe",
+            "Lutz Eckstein"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "depth/geometry",
+            "uncertainty/calibration"
+          ],
+          "score": 88
+        },
+        {
+          "title": "Dual Energy-Based Model with Open-World Uncertainty Estimation for Out-of-distribution Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Dual_Energy-Based_Model_with_Open-World_Uncertainty_Estimation_for_Out-of-distribution_Detection_CVPR_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Dual_Energy-Based_Model_with_Open-World_Uncertainty_Estimation_for_Out-of-distribution_Detection_CVPR_2025_paper.pdf",
+          "authors": [
+            "Qi Chen",
+            "Hu Ding"
+          ],
+          "source": "CVPR 2025",
+          "published": "2025",
+          "summary": "Out-of-distribution (OOD) detection is crucial for machine learning models deployed in open-world environments. However, existing methods often struggle with model over-confidence or rely heavily on empirical energy value estimation, limiting their scalability and generalizability. This paper introduces DEBO (Dual Energy-Based Model for Out-of-distribution Detection), a novel approach that addresses these limitations through an innovative dual classifier architecture and a unified energy-based objective function. DEBO enhances the standard classification framework by integrating a dual-purpose output space within a single classifier. The primary component classifies in-distribution (ID) data conventionally, while the secondary component captures open-world information and estimates uncertainty. Our method overcomes the dependence of traditional energy model-based OOD detection methods on empirical energy estimation while maintaining theoretical guarantees. Theoretical analysis demonstrates that DEBO promotes low energy and high confidence for ID data, while simultaneously inducing higher energy and decreased confidence for OOD samples. Extensive experiments conducted on benchmark datasets reveal that DEBO achieves state-of-the-art OOD detection performance while maintaining comparable classification accuracy on ID data.",
+          "tags": [
+            "diffusion",
+            "anomaly/OOD",
+            "uncertainty/calibration",
+            "open-world"
+          ],
+          "score": 98
+        },
+        {
+          "title": "Learning Counterfactually Decoupled Attention for Open-World Model Attribution",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zheng_Learning_Counterfactually_Decoupled_Attention_for_Open-World_Model_Attribution_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zheng_Learning_Counterfactually_Decoupled_Attention_for_Open-World_Model_Attribution_ICCV_2025_paper.pdf",
+          "authors": [
+            "Yu Zheng",
+            "Boyang Gong",
+            "Fanye Kong",
+            "Yueqi Duan",
+            "Bingyao Yu",
+            "Wenzhao Zheng",
+            "Lei Chen",
+            "Jiwen Lu",
+            "Jie Zhou"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "causal/counterfactual",
+            "open-world"
+          ],
+          "score": 85
+        },
+        {
+          "title": "Breaking Spurious Correlations: Uncertainty-Driven Causal Transformers for AU Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Breaking_Spurious_Correlations_Uncertainty-Driven_Causal_Transformers_for_AU_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_Breaking_Spurious_Correlations_Uncertainty-Driven_Causal_Transformers_for_AU_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Yuru Wang",
+            "Yue Zhou"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "causal/counterfactual",
+            "uncertainty/calibration"
+          ],
+          "score": 84
+        },
+        {
+          "title": "A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.pdf",
+          "authors": [
+            "Zexi Jia",
+            "Chuanwei Huang",
+            "Hongyan Fei",
+            "Yeshuang Zhu",
+            "Zhiqiang Yuan",
+            "Ying Deng",
+            "Jiapei Zhang",
+            "Jinchao Zhang",
+            "Jie Zhou"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "Vision-language models (VLMs) often struggle with compositional reasoning due to insufficient high-quality image-text data. To tackle this challenge, we propose a novel block-based diffusion approach that automatically generates counterfactual datasets without manual annotation. Our method utilizes large language models to identify entities and their spatial relationships. It then independently generates image blocks as \"puzzle pieces\" coherently arranged according to specified compositional rules. This process creates diverse, high-fidelity counterfactual image-text pairs with precisely controlled variations. In addition, we introduce a specialized loss function that differentiates inter-set from intra-set samples, enhancing training efficiency and reducing the need for negative samples. Experiments demonstrate that fine-tuning VLMs with our counterfactual datasets significantly improves visual reasoning performance. Our approach achieves state-of-the-art results across multiple benchmarks while using substantially less training data than existing methods.",
+          "tags": [
+            "VLM/MLLM",
+            "reasoning",
+            "diffusion",
+            "causal/counterfactual",
+            "compositionality"
+          ],
+          "score": 108
+        }
+      ],
+      "cod": [
+        {
+          "title": "First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection",
+          "url": "http://arxiv.org/abs/2508.15313v2",
+          "pdf": "http://arxiv.org/pdf/2508.15313v2",
+          "authors": [
+            "Wutao Liu",
+            "YiDan Wang",
+            "Pan Gao"
+          ],
+          "source": "arXiv",
+          "published": "2025-08-21",
+          "summary": "Camouflaged object detection (COD) poses a significant challenge in computer vision due to the high similarity between objects and their backgrounds. Existing approaches often rely on heavy training and large computational resources. While foundation models such as the Segment Anything Model (SAM) offer strong generalization, they still struggle to handle COD tasks without fine-tuning and require high-quality prompts to yield good performance. However, generating such prompts manually is costly and inefficient. To address these challenges, we propose \\textbf{First RAG, Second SEG (RAG-SEG)}, a training-free paradigm that decouples COD into two stages: Retrieval-Augmented Generation (RAG) for generating coarse masks as prompts, followed by SAM-based segmentation (SEG) for refinement. RAG-SEG constructs a compact retrieval database via unsupervised clustering, enabling fast and effective feature retrieval. During inference, the retrieved features produce pseudo-labels that guide precise mask generation using SAM2. Our method eliminates the need for conventional training while maintaining competitive performance. Extensive experiments on benchmark COD datasets demonstrate that RAG-SEG performs on par with or surpasses state-of-the-art methods. Notably, all experiments are conducted on a \\textbf{personal laptop}, highlighting the computational efficiency and practicality of our approach. We present further analysis in the Appendix, covering limitations, salient object detection extension, and possible improvements. \\textcolor{blue} {Code: https://github.com/Lwt-diamond/RAG-SEG.}",
+          "tags": [
+            "COD",
+            "training-free",
+            "unsupervised",
+            "SAM",
+            "retrieval/prototype",
+            "anomaly/OOD",
+            "saliency/transparent"
+          ],
+          "score": 79
+        },
+        {
+          "title": "Source-free Depth for Object Pop-out",
+          "url": "http://arxiv.org/abs/2212.05370v3",
+          "pdf": "http://arxiv.org/pdf/2212.05370v3",
+          "authors": [
+            "Zongwei Wu",
+            "Danda Pani Paudel",
+            "Deng-Ping Fan",
+            "Jingjing Wang",
+            "Shuo Wang",
+            "Cédric Demonceaux",
+            "Radu Timofte",
+            "Luc Van Gool"
+          ],
+          "source": "arXiv",
+          "published": "2022-12-10",
+          "summary": "Depth cues are known to be useful for visual perception. However, direct measurement of depth is often impracticable. Fortunately, though, modern learning-based methods offer promising depth maps by inference in the wild. In this work, we adapt such depth inference models for object segmentation using the objects' \"pop-out\" prior in 3D. The \"pop-out\" is a simple composition prior that assumes objects reside on the background surface. Such compositional prior allows us to reason about objects in the 3D space. More specifically, we adapt the inferred depth maps such that objects can be localized using only 3D information. Such separation, however, requires knowledge about contact surface which we learn using the weak supervision of the segmentation mask. Our intermediate representation of contact surface, and thereby reasoning about objects purely in 3D, allows us to better transfer the depth knowledge into semantics. The proposed adaptation method uses only the depth model without needing the source data used for training, making the learning process efficient and practical. Our experiments on eight datasets of two challenging tasks, namely camouflaged object detection and salient object detection, consistently demonstrate the benefit of our method in terms of both performance and generalizability.",
+          "tags": [
+            "COD",
+            "reasoning",
+            "boundary/frequency",
+            "depth/geometry",
+            "compositionality",
+            "saliency/transparent"
+          ],
+          "score": 78
+        },
+        {
+          "title": "Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ren_Training-Free_Open-Vocabulary_Camouflaged_Object_Segmentation_via_Fine-Grained_Object_Binding_and_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ren_Training-Free_Open-Vocabulary_Camouflaged_Object_Segmentation_via_Fine-Grained_Object_Binding_and_CVPR_2026_paper.pdf",
+          "authors": [
+            "Peng Ren",
+            "Cheng Jiang",
+            "Chuande Yang",
+            "Fuming Sun",
+            "Tian Bai"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "open-vocabulary",
+            "training-free"
+          ],
+          "score": 74
+        },
+        {
+          "title": "FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning",
+          "url": "http://arxiv.org/abs/2603.22969v2",
+          "pdf": "http://arxiv.org/pdf/2603.22969v2",
+          "authors": [
+            "Jingchen Ni",
+            "Quan Zhang",
+            "Dan Jiang",
+            "Keyu Lv",
+            "Ke Zhang",
+            "Chun Yuan"
+          ],
+          "source": "arXiv",
+          "published": "2026-03-24",
+          "summary": "Existing camouflage object detection (COD) methods typically rely on fully-supervised learning guided by mask annotations. However, obtaining mask annotations is time-consuming and labor-intensive. Compared to fully-supervised methods, existing weakly-supervised COD methods exhibit significantly poorer performance. Even for the Segment Anything Model (SAM), there are still challenges in handling weakly-supervised camouflage object detection (WSCOD), such as: a. non-camouflage target responses, b. local responses, c. extreme responses, and d. lack of refined boundary awareness, which leads to unsatisfactory results in camouflage scenes. To alleviate these issues, we propose a frequency-aware and contrastive learning-based WSCOD framework in this paper, named FCL-COD. To mitigate the problem of non-camouflaged object responses, we propose the Frequency-aware Low-rank Adaptation (FoRA) method, which incorporates frequency-aware camouflage scene knowledge into SAM. To overcome the challenges of local and extreme responses, we introduce a gradient-aware contrastive learning approach that effectively delineates precise foreground-background boundaries. Additionally, to address the lack of refined boundary perception, we present a multi-scale frequency-aware representation learning strategy that facilitates the modeling of more refined boundaries. We validate the effectiveness of our approach through extensive empirical experiments on three widely recognized COD benchmarks. The results confirm that our method surpasses both state-of-the-art weakly supervised and even fully supervised techniques.",
+          "tags": [
+            "COD",
+            "unsupervised",
+            "SAM",
+            "diffusion",
+            "boundary/frequency",
+            "representation learning"
+          ],
+          "score": 73
+        },
+        {
+          "title": "LSP-ST: Ladder Shape-Biased Side-Tuning for Robust Infrared Small Target Detection",
+          "url": "http://arxiv.org/abs/2504.14481v2",
+          "pdf": "http://arxiv.org/pdf/2504.14481v2",
+          "authors": [
+            "Guoyi Zhang",
+            "Siyang Chen",
+            "Guangsheng Xu",
+            "Han Wang",
+            "Donghe Wang",
+            "Xiaohu Zhang"
+          ],
+          "source": "arXiv",
+          "published": "2025-04-20",
+          "summary": "Fine-tuning the Segment Anything Model (SAM) for infrared small target detection poses significant challenges due to severe domain shifts. Existing adaptation methods often incorporate handcrafted priors to bridge this gap, yet such designs limit generalization and scalability. We identify a fundamental texture bias in foundation models, which overly depend on local texture cues for target localization. To address this, we propose Ladder Shape-Biased Side-Tuning (LSP-ST), a novel approach that introduces a shape-aware inductive bias to facilitate effective adaptation beyond texture cues. In contrast to prior work that injects explicit edge or contour features, LSP-ST models shape as a global structural prior, integrating both boundaries and internal layouts. We design a Shape-Enhanced Large-Kernel Attention Module to hierarchically and implicitly capture structural information in a fully differentiable manner, without task-specific handcrafted guidance. A theoretical analysis grounded in matched filtering and backpropagation reveals the mechanism by which the proposed attention improves structure-aware learning. With only 4.72M learnable parameters, LSP-ST achieves state-of-the-art performance on multiple infrared small target detection benchmarks. Furthermore, its strong generalization is validated across tasks such as mirror detection, shadow detection, and camouflaged object detection, while maintaining stable performance on texture-driven tasks like salient object detection, demonstrating that the introduced shape bias complements rather than competes with texture-based reasoning.",
+          "tags": [
+            "COD",
+            "SAM",
+            "reasoning",
+            "boundary/frequency",
+            "UAV/small-object",
+            "saliency/transparent"
+          ],
+          "score": 73
+        },
+        {
+          "title": "BED-SAM2: Boundary-Enhanced-Depth SAM2 via Monocular Geometric Priors",
+          "url": "http://arxiv.org/abs/2605.24893v1",
+          "pdf": "http://arxiv.org/pdf/2605.24893v1",
+          "authors": [
+            "Tyler Rust",
+            "Dara McNally",
+            "Kyle O'Donnell",
+            "Colin Kelly",
+            "Chandra Kambhamettu"
+          ],
+          "source": "arXiv",
+          "published": "2026-05-24",
+          "summary": "Building upon the SAM2 vision foundation model for downstream segmentation, this study introduces Boundary Enhanced Depth (BED)-SAM2. The SAM2 Hiera encoder architecture is modified to directly encode monocular depth information from RGB images, thereby providing geometric cues that enhance object boundary delineation and facilitate the extraction of camouflaged object shapes. BED-SAM2 demonstrates competitive state-of-the-art performance across multiple salient and camouflaged object detection tasks with as few as five training epochs.",
+          "tags": [
+            "COD",
+            "boundary/frequency",
+            "depth/geometry",
+            "saliency/transparent"
+          ],
+          "score": 71
+        },
+        {
+          "title": "Open-Vocabulary Camouflaged Object Segmentation",
+          "url": "http://arxiv.org/abs/2311.11241v3",
+          "pdf": "http://arxiv.org/pdf/2311.11241v3",
+          "authors": [
+            "Youwei Pang",
+            "Xiaoqi Zhao",
+            "Jiaming Zuo",
+            "Lihe Zhang",
+            "Huchuan Lu"
+          ],
+          "source": "arXiv",
+          "published": "2023-11-19",
+          "summary": "Recently, the emergence of the large-scale vision-language model (VLM), such as CLIP, has opened the way towards open-world object perception. Many works have explored the utilization of pre-trained VLM for the challenging open-vocabulary dense prediction task that requires perceiving diverse objects with novel classes at inference time. Existing methods construct experiments based on the public datasets of related tasks, which are not tailored for open vocabulary and rarely involve imperceptible objects camouflaged in complex scenes due to data collection bias and annotation costs. To fill in the gaps, we introduce a new task, open-vocabulary camouflaged object segmentation (OVCOS), and construct a large-scale complex scene dataset (\\textbf{OVCamo}) containing 11,483 hand-selected images with fine annotations and corresponding object classes. Further, we build a strong single-stage open-vocabulary \\underline{c}amouflaged \\underline{o}bject \\underline{s}egmentation transform\\underline{er} baseline \\textbf{OVCoser} attached to the parameter-fixed CLIP with iterative semantic guidance and structure enhancement. By integrating the guidance of class semantic knowledge and the supplement of visual structure cues from the edge and depth information, the proposed method can efficiently capture camouflaged objects. Moreover, this effective framework also surpasses previous state-of-the-arts of open-vocabulary semantic image segmentation by a large margin on our OVCamo dataset. With the proposed dataset and baseline, we hope that this new task with more practical value can further expand the research on open-vocabulary dense prediction tasks. Our code and data can be found in the \\href{https://github.com/lartpang/OVCamo}{link}.",
+          "tags": [
+            "COD",
+            "open-vocabulary",
+            "VLM/MLLM",
+            "boundary/frequency",
+            "depth/geometry",
+            "open-world",
+            "low-level"
+          ],
+          "score": 71
+        },
+        {
+          "title": "Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Du_Beyond_Single_Images_Retrieval_Self-Augmented_Unsupervised_Camouflaged_Object_Detection_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Du_Beyond_Single_Images_Retrieval_Self-Augmented_Unsupervised_Camouflaged_Object_Detection_ICCV_2025_paper.pdf",
+          "authors": [
+            "Ji Du",
+            "Xin Wang",
+            "Fangwei Hao",
+            "Mingyang Yu",
+            "Chunyuan Chen",
+            "Jiesheng Wu",
+            "Bin Wang",
+            "Jing Xu",
+            "Ping Li"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "unsupervised",
+            "retrieval/prototype"
+          ],
+          "score": 71
+        },
+        {
+          "title": "Inspiring the Next Generation of Segment Anything Models: Comprehensively Evaluate SAM and SAM 2 with Diverse Prompts Towards Context-Dependent Concepts under Different Scenes",
+          "url": "http://arxiv.org/abs/2412.01240v3",
+          "pdf": "http://arxiv.org/pdf/2412.01240v3",
+          "authors": [
+            "Xiaoqi Zhao",
+            "Youwei Pang",
+            "Shijie Chang",
+            "Yuan Zhao",
+            "Lihe Zhang",
+            "Chenyang Yu",
+            "Hanqi Liu",
+            "Jiaming Zuo",
+            "Jinsong Ouyang",
+            "Weisi Lin",
+            "Georges El Fakhri",
+            "Huchuan Lu",
+            "Xiaofeng Liu"
+          ],
+          "source": "arXiv",
+          "published": "2024-12-02",
+          "summary": "As large-scale foundation models trained on billions of image--mask pairs covering a vast diversity of scenes, objects, and contexts, SAM and its upgraded version, SAM~2, have significantly influenced multiple fields within computer vision. Leveraging such unprecedented data diversity, they exhibit strong open-world segmentation capabilities, with SAM~2 further enhancing these capabilities to support high-quality video segmentation. While SAMs (SAM and SAM~2) have demonstrated excellent performance in segmenting context-independent concepts like people, cars, and roads, they overlook more challenging context-dependent (CD) concepts, such as visual saliency, camouflage, industrial defects, and medical lesions. CD concepts rely heavily on global and local contextual information, making them susceptible to shifts in different contexts, which requires strong discriminative capabilities from the model. The lack of comprehensive evaluation of SAMs limits understanding of their performance boundaries, which may hinder the design of future models. In this paper, we conduct a thorough evaluation of SAMs on 11 CD concepts across 2D and 3D images and videos in various visual modalities within natural, medical, and industrial scenes. We develop a unified evaluation framework for SAM and SAM~2 that supports manual, automatic, and intermediate self-prompting, aided by our specific prompt generation and interaction strategies. We further explore the potential of SAM~2 for in-context learning and introduce prompt robustness testing to simulate real-world imperfect prompts. Finally, we analyze the benefits and limitations of SAMs in understanding CD concepts and discuss their future development in segmentation tasks.",
+          "tags": [
+            "COD",
+            "SAM",
+            "depth/geometry",
+            "video",
+            "open-world",
+            "saliency/transparent"
+          ],
+          "score": 71
+        },
+        {
+          "title": "Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.pdf",
+          "authors": [
+            "Yilong Yang",
+            "Jianxin Tian",
+            "Shengchuan Zhang",
+            "Liujuan Cao"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD"
+          ],
+          "score": 68
+        },
+        {
+          "title": "SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liang_SDDF_Specificity-Driven_Dynamic_Focusing_for_Open-Vocabulary_Camouflaged_Object_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liang_SDDF_Specificity-Driven_Dynamic_Focusing_for_Open-Vocabulary_Camouflaged_Object_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Jiaming Liang",
+            "Yifeng Zhan",
+            "Chunlin Liu",
+            "Weihua Zheng",
+            "Bingye Peng",
+            "Qiwei Liang",
+            "Boyang Cai",
+            "Xiaochun Mai",
+            "Qiang Nie"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "open-vocabulary"
+          ],
+          "score": 68
+        },
+        {
+          "title": "EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.pdf",
+          "authors": [
+            "Shuo Jiang",
+            "Gaojia Zhang",
+            "Min Tan",
+            "Yufei Yin",
+            "Gang Pan"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "unsupervised"
+          ],
+          "score": 68
+        }
+      ],
+      "uav": [
+        {
+          "title": "CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.pdf",
+          "authors": [
+            "Weiwei Duan",
+            "Luping Ji",
+            "Shipeng Lei",
+            "Sicheng Zhu",
+            "Jianghong Huang",
+            "Mao Ye"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object",
+            "anomaly/OOD",
+            "causal/counterfactual"
+          ],
+          "score": 90
+        },
+        {
+          "title": "MMGeo: Multimodal Compositional Geo-Localization for UAVs",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Ji_MMGeo_Multimodal_Compositional_Geo-Localization_for_UAVs_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ji_MMGeo_Multimodal_Compositional_Geo-Localization_for_UAVs_ICCV_2025_paper.pdf",
+          "authors": [
+            "Yuxiang Ji",
+            "Boyong He",
+            "Zhuoyue Tan",
+            "Liaoni Wu"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object",
+            "compositionality"
+          ],
+          "score": 73
+        },
+        {
+          "title": "PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ke_PixDLM_A_Dual-Path_Multimodal_Language_Model_for_UAV_Reasoning_Segmentation_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ke_PixDLM_A_Dual-Path_Multimodal_Language_Model_for_UAV_Reasoning_Segmentation_CVPR_2026_paper.pdf",
+          "authors": [
+            "Shuyan Ke",
+            "Yifan Mei",
+            "Changli Wu",
+            "Yonghan Zheng",
+            "Jiayi Ji",
+            "Liujuan Cao",
+            "Rongrong Ji"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "reasoning",
+            "UAV/small-object"
+          ],
+          "score": 81
+        },
+        {
+          "title": "From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Yu_From_Easy_to_Hard_Progressive_Active_Learning_Framework_for_Infrared_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Yu_From_Easy_to_Hard_Progressive_Active_Learning_Framework_for_Infrared_ICCV_2025_paper.pdf",
+          "authors": [
+            "Chuang Yu",
+            "Jinmiao Zhao",
+            "Yunpeng Liu",
+            "Sicheng Zhao",
+            "Yimian Dai",
+            "Xiangyu Yue"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object",
+            "active/interactive"
+          ],
+          "score": 78
+        },
+        {
+          "title": "UAVLight: A Benchmark for Illumination-Robust 3D Reconstruction in Unmanned Aerial Vehicle (UAV) Scenes",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Du_UAVLight_A_Benchmark_for_Illumination-Robust_3D_Reconstruction_in_Unmanned_Aerial_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Du_UAVLight_A_Benchmark_for_Illumination-Robust_3D_Reconstruction_in_Unmanned_Aerial_CVPR_2026_paper.pdf",
+          "authors": [
+            "Kang Du",
+            "Xue Liao",
+            "Junpeng Xia",
+            "Chaozheng Guo",
+            "Yi Gu",
+            "Yirui Guan",
+            "Duotun Wang",
+            "Sheng Huang",
+            "Zeyu Wang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "depth/geometry",
+            "UAV/small-object"
+          ],
+          "score": 75
+        },
+        {
+          "title": "Uncertainty-Aware Gradient Stabilization for Small Object Detection",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Sun_Uncertainty-Aware_Gradient_Stabilization_for_Small_Object_Detection_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Sun_Uncertainty-Aware_Gradient_Stabilization_for_Small_Object_Detection_ICCV_2025_paper.pdf",
+          "authors": [
+            "Huixin Sun",
+            "Yanjing Li",
+            "Linlin Yang",
+            "Xianbin Cao",
+            "Baochang Zhang"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object",
+            "uncertainty/calibration"
+          ],
+          "score": 71
+        },
+        {
+          "title": "JTD-UAV: MLLM-Enhanced Joint Tracking and Description Framework for Anti-UAV Systems",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_JTD-UAV_MLLM-Enhanced_Joint_Tracking_and_Description_Framework_for_Anti-UAV_Systems_CVPR_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_JTD-UAV_MLLM-Enhanced_Joint_Tracking_and_Description_Framework_for_Anti-UAV_Systems_CVPR_2025_paper.pdf",
+          "authors": [
+            "Yifan Wang",
+            "Jian Zhao",
+            "Zhaoxin Fan",
+            "Xin Zhang",
+            "Xuecheng Wu",
+            "Yudian Zhang",
+            "Lei Jin",
+            "Xinyue Li",
+            "Gang Wang",
+            "Mengxi Jia",
+            "Ping Hu",
+            "Zheng Zhu",
+            "Xuelong Li"
+          ],
+          "source": "CVPR 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "VLM/MLLM",
+            "video",
+            "UAV/small-object"
+          ],
+          "score": 53
+        },
+        {
+          "title": "Breaking Smooth-Motion Assumptions: A UAV Benchmark for Multi-Object Tracking in Complex and Adverse Conditions",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ye_Breaking_Smooth-Motion_Assumptions_A_UAV_Benchmark_for_Multi-Object_Tracking_in_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ye_Breaking_Smooth-Motion_Assumptions_A_UAV_Benchmark_for_Multi-Object_Tracking_in_CVPR_2026_paper.pdf",
+          "authors": [
+            "Jingtao Ye",
+            "Kexin Zhang",
+            "Xunchi Ma",
+            "Yuechan Li",
+            "Guangming Zhu",
+            "Peiyi Shen",
+            "Linhua Jiang",
+            "Xiangdong Zhang",
+            "Liang Zhang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "diffusion",
+            "video",
+            "UAV/small-object"
+          ],
+          "score": 61
+        },
+        {
+          "title": "Beyond Matching to Tiles: Bridging Unaligned Aerial and Satellite Views for Vision-Only UAV Navigation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liu_Beyond_Matching_to_Tiles_Bridging_Unaligned_Aerial_and_Satellite_Views_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liu_Beyond_Matching_to_Tiles_Bridging_Unaligned_Aerial_and_Satellite_Views_CVPR_2026_paper.pdf",
+          "authors": [
+            "Kejia Liu",
+            "Haoyang Zhou",
+            "Ruoyu Xu",
+            "Peicheng Wang",
+            "Mingli Song",
+            "Haofei Zhang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object"
+          ],
+          "score": 69
+        },
+        {
+          "title": "MANTA: A Large-Scale Multi-View and Visual-Text Anomaly Detection Dataset for Tiny Objects",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Fan_MANTA_A_Large-Scale_Multi-View_and_Visual-Text_Anomaly_Detection_Dataset_for_CVPR_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Fan_MANTA_A_Large-Scale_Multi-View_and_Visual-Text_Anomaly_Detection_Dataset_for_CVPR_2025_paper.pdf",
+          "authors": [
+            "Lei Fan",
+            "Dongdong Fan",
+            "Zhiguang Hu",
+            "Yiwen Ding",
+            "Donglin Di",
+            "Kai Yi",
+            "Maurice Pagnucco",
+            "Yang Song"
+          ],
+          "source": "CVPR 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object",
+            "anomaly/OOD"
+          ],
+          "score": 66
+        }
+      ],
+      "fire_multispectral": [],
+      "fire_foundation": [],
+      "broad": [
+        {
+          "title": "Breaking Spurious Correlations via Generative Randomization and Cross-Variant Self-Supervised Learning",
+          "url": "http://arxiv.org/abs/2607.05850v1",
+          "pdf": "http://arxiv.org/pdf/2607.05850v1",
+          "authors": [
+            "Suraj Yadav",
+            "Anjaneya Sharma",
+            "Siddharth Yadav"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-07",
+          "summary": "Deep neural networks trained with Empirical Risk Minimization (ERM) often fail under distribution shifts because they exploit spurious correlations between object labels and background context. Recent generative approaches address this issue by creating counterfactual images with altered contexts, but typically use these samples as standard data augmentation, leaving the model free to retain background-sensitive representations. We propose a two-stage framework that uses generative intervention to explicitly learn background-invariant visual representations. First, we isolate the foreground object using zero-shot segmentation and generate context-shifted variants with a structure-preserving diffusion model, preserving object identity while varying the surrounding environment. We then introduce Cross-Variant Self-Supervised Learning, where variants of the same object under different backgrounds form positive pairs in a contrastive objective. This encourages the encoder to align object-centric representations while suppressing background-specific cues. Then, we fine-tune the pretrained encoder using an ERM warm-up followed by GroupDRO with layer-wise learning rates. Experiments on distribution-shift benchmarks demonstrate best worst-group performance, achieving 92.5% on Waterbirds, 81.7% on MetaShift, and 87.4% on NICO++. Code: https://github.com/surajyadav-research/GRSSL",
+          "tags": [
+            "diffusion",
+            "causal/counterfactual",
+            "object-centric",
+            "self-supervised"
+          ],
+          "score": 120
+        },
+        {
+          "title": "MagicSeg: Open-World Segmentation Pretraining via Counterfactural Diffusion-Based Auto-Generation",
+          "url": "http://arxiv.org/abs/2603.19575v1",
+          "pdf": "http://arxiv.org/pdf/2603.19575v1",
+          "authors": [
+            "Kaixin Cai",
+            "Pengzhen Ren",
+            "Jianhua Han",
+            "Yi Zhu",
+            "Hang Xu",
+            "Jianzhuang Liu",
+            "Xiaodan Liang"
+          ],
+          "source": "arXiv",
+          "published": "2026-03-20",
+          "summary": "Open-world semantic segmentation presently relies significantly on extensive image-text pair datasets, which often suffer from a lack of fine-grained pixel annotations on sufficient categories. The acquisition of such data is rendered economically prohibitive due to the substantial investments of both human labor and time. In light of the formidable image generation capabilities of diffusion models, we introduce a novel diffusion model-driven pipeline for automatically generating datasets tailored to the needs of open-world semantic segmentation, named \"MagicSeg\". Our MagicSeg initiates from class labels and proceeds to generate high-fidelity textual descriptions, which in turn serve as guidance for the diffusion model to generate images. Rather than only generating positive samples for each label, our process encompasses the simultaneous generation of corresponding negative images, designed to serve as paired counterfactual samples for contrastive training. Then, to provide a self-supervised signal for open-world segmentation pretraining, our MagicSeg integrates an open-vocabulary detection model and an interactive segmentation model to extract object masks as precise segmentation labels from images based on the provided category labels. By applying our dataset to the contrastive language-image pretraining model with the pseudo mask supervision and the auxiliary counterfactual contrastive training, the downstream model obtains strong performance on open-world semantic segmentation. We evaluate our model on PASCAL VOC, PASCAL Context, and COCO, achieving SOTA with performance of 62.9%, 26.7%, and 40.2%, respectively, demonstrating our dataset's effectiveness in enhancing open-world semantic segmentation capabilities. Project website: https://github.com/ckxhp/magicseg.",
+          "tags": [
+            "open-vocabulary",
+            "diffusion",
+            "causal/counterfactual",
+            "open-world",
+            "self-supervised",
+            "active/interactive"
+          ],
+          "score": 112
+        },
+        {
+          "title": "Promptable Concept Segmentation from Above: Evaluating SAM 3's Zero-Shot and One-Shot Capabilities in Remote Sensing",
+          "url": "http://arxiv.org/abs/2607.09583v1",
+          "pdf": "http://arxiv.org/pdf/2607.09583v1",
+          "authors": [
+            "Mohammad Dabaja",
+            "Turgay Celik"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-10",
+          "summary": "The deployment of large-scale foundation models, such as the Segment Anything Model 3 (SAM 3), promises a transition toward open-vocabulary, training-free computer vision. However, their capacity to generalize out-of-distribution to the complex, top-down geometric structures of Earth Observation imagery remains largely unquantified. Driven by SAM 3's performance disparities in highly specialized domains, we present a comprehensive, multi-task empirical evaluation across remote sensing scene classification, object detection, and instance segmentation under strict zero-shot and one-shot constraints. To achieve this, we introduce a structural adaptation of SAM 3 by repurposing its decoupled binary presence head into a standalone zero-shot classifier. Furthermore, by systematically isolating textual and visual prompt modalities across five configurations, we explicitly diagnose the alignment mechanics within the model's multimodal decoder. Our findings reveal severe cross-modal interference: while visual prompts successfully align the decoder to complex remote sensing geometry, textual prompts inject misaligned, ground-level semantic bias, actively degrading coordinate regression. To benchmark these capabilities without resource-intensive training, we formulate a novel training-free proxy evaluation protocol for Generalized Zero-Shot tasks (scene classification and instance segmentation). Ultimately, our results demonstrate that SAM 3 avoids the overfitting commonly seen in legacy domain-adapted models, achieving high Harmonic Mean scores in segmentation tasks. However, it remains fundamentally constrained by sub-pixel resolution limits and overhead semantic blind spots, charting a definitive mandate for parameter-efficient geospatial fine-tuning of its multimodal decoder.",
+          "tags": [
+            "open-vocabulary",
+            "training-free",
+            "SAM",
+            "depth/geometry",
+            "remote sensing",
+            "anomaly/OOD"
+          ],
+          "score": 109
+        },
+        {
+          "title": "Excite, Attend and Segment (EASe): Domain-Agnostic Fine-Grained Mask Discovery with Feature Calibration and Self-Supervised Upsampling",
+          "url": "http://arxiv.org/abs/2604.00276v1",
+          "pdf": "http://arxiv.org/pdf/2604.00276v1",
+          "authors": [
+            "Deepank Singh",
+            "Anurag Nihal",
+            "Vedhus Hoskere"
+          ],
+          "source": "arXiv",
+          "published": "2026-03-31",
+          "summary": "Unsupervised segmentation approaches have increasingly leveraged foundation models (FM) to improve salient object discovery. However, these methods often falter in scenes with complex, multi-component morphologies, where fine-grained structural detail is indispensable. Many state-of-the-art unsupervised segmentation pipelines rely on mask discovery approaches that utilize coarse, patch-level representations. These coarse representations inherently suppress the fine-grained detail required to resolve such complex morphologies. To overcome this limitation, we propose Excite, Attend and Segment (EASe), an unsupervised domain-agnostic semantic segmentation framework for easy fine-grained mask discovery across challenging real-world scenes. EASe utilizes novel Semantic-Aware Upsampling with Channel Excitation (SAUCE) to excite low-resolution FM feature channels for selective calibration and attends across spatially-encoded image and FM features to recover full-resolution semantic representations. Finally, EASe segments the aggregated features into multi-granularity masks using a novel training-free Cue-Attentive Feature Aggregator (CAFE) which leverages SAUCE attention scores as a semantic grouping signal. EASe, together with SAUCE and CAFE, operate directly at pixel-level feature representations to enable accurate fine-grained dense semantic mask discovery. Our evaluation demonstrates superior performance of EASe over previous state-of-the-arts (SOTAs) across major standard benchmarks and diverse datasets with complex morphologies. Code is available at https://ease-project.github.io",
+          "tags": [
+            "training-free",
+            "unsupervised",
+            "uncertainty/calibration",
+            "object discovery",
+            "self-supervised",
+            "saliency/transparent"
+          ],
+          "score": 106
+        },
+        {
+          "title": "Are We Done with Object-Centric Learning?",
+          "url": "http://arxiv.org/abs/2504.07092v2",
+          "pdf": "http://arxiv.org/pdf/2504.07092v2",
+          "authors": [
+            "Alexander Rubinstein",
+            "Ameya Prabhu",
+            "Matthias Bethge",
+            "Seong Joon Oh"
+          ],
+          "source": "arXiv",
+          "published": "2025-04-09",
+          "summary": "Object-centric learning (OCL) seeks to learn representations that only encode an object, isolated from other objects or background cues in a scene. This approach underpins various aims, including out-of-distribution (OOD) generalization, sample-efficient composition, and modeling of structured environments. Most research has focused on developing unsupervised mechanisms that separate objects into discrete slots in the representation space, evaluated using unsupervised object discovery. However, with recent sample-efficient segmentation models, we can separate objects in the pixel space and encode them independently. This achieves remarkable zero-shot performance on OOD object discovery benchmarks, is scalable to foundation models, and can handle a variable number of slots out-of-the-box. Hence, the goal of OCL methods to obtain object-centric representations has been largely achieved. Despite this progress, a key question remains: How does the ability to separate objects within a scene contribute to broader OCL objectives, such as OOD generalization? We address this by investigating the OOD generalization challenge caused by spurious background cues through the lens of OCL. We propose a novel, training-free probe called Object-Centric Classification with Applied Masks (OCCAM), demonstrating that segmentation-based encoding of individual objects significantly outperforms slot-based OCL methods. However, challenges in real-world applications remain. We provide the toolbox for the OCL community to use scalable object-centric representations, and focus on practical applications and fundamental questions, such as understanding object perception in human cognition. Our code is available here: https://github.com/AlexanderRubinstein/OCCAM.",
+          "tags": [
+            "training-free",
+            "unsupervised",
+            "anomaly/OOD",
+            "object discovery",
+            "object-centric",
+            "compositionality"
+          ],
+          "score": 105
+        },
+        {
+          "title": "C2RM-Seg: Causal Counterfactual Reasoning with Structural-Semantic Priors for Weakly Supervised Histopathological Tissue Segmentation",
+          "url": "http://arxiv.org/abs/2606.25508v1",
+          "pdf": "http://arxiv.org/pdf/2606.25508v1",
+          "authors": [
+            "Hualong Zhang",
+            "Siyang Feng",
+            "Zihan Huan",
+            "Yi Qian",
+            "Zhenbing Liu",
+            "Rushi Lan",
+            "Xipeng Pan"
+          ],
+          "source": "arXiv",
+          "published": "2026-06-24",
+          "summary": "Histopathological tissue segmentation is essential for computer-aided diagnosis, yet weakly supervised methods often suffer from noisy pseudo-labels generated by Class Activation Mapping (CAM). Existing CAM approaches tend to focus on staining-driven appearance cues rather than true causal tissue morphology, resulting in spurious localization and poor structural consistency. To address this issue, we propose C$^2$RM-Seg, a two-stage framework that integrates causal pseudo-label refinement with structure-aware semantic enhancement. For classification, we introduce a Causal Counterfactual Reasoning Module (C$^2$RM) that decomposes features into latent factors and performs counterfactual intervention via a learned causal structure matrix, suppressing confounding context and producing morphology-aligned CAMs. For segmentation, we design a Dual-Path Structural-Semantic Architecture that combines fine-grained structural features from ResNeSt with global semantic priors from a frozen DINOV3 foundation model. A cross-path gating mechanism adaptively regulates semantic injection using local structural cues to preserve boundary fidelity. To further mitigate residual pseudo-label noise, we propose an Uncertainty-Gated Margin (UGM) loss, which dynamically balances margin enforcement and confidence learning based on prediction uncertainty. Extensive experiments on two public histopathological tissue datasets show that C$^2$RM-Seg achieves state-of-the-art performance.",
+          "tags": [
+            "unsupervised",
+            "reasoning",
+            "boundary/frequency",
+            "causal/counterfactual",
+            "uncertainty/calibration",
+            "low-level"
+          ],
+          "score": 105
+        },
+        {
+          "title": "Edge-Optimized Multimodal Learning for UAV Video Understanding via BLIP-2",
+          "url": "http://arxiv.org/abs/2601.08408v1",
+          "pdf": "http://arxiv.org/pdf/2601.08408v1",
+          "authors": [
+            "Yizhan Feng",
+            "Hichem Snoussi",
+            "Jing Teng",
+            "Jian Liu",
+            "Yuyang Wang",
+            "Abel Cherouat",
+            "Tian Wang"
+          ],
+          "source": "arXiv",
+          "published": "2026-01-13",
+          "summary": "The demand for real-time visual understanding and interaction in complex scenarios is increasingly critical for unmanned aerial vehicles. However, a significant challenge arises from the contradiction between the high computational cost of large Vision language models and the limited computing resources available on UAV edge devices. To address this challenge, this paper proposes a lightweight multimodal task platform based on BLIP-2, integrated with YOLO-World and YOLOv8-Seg models. This integration extends the multi-task capabilities of BLIP-2 for UAV applications with minimal adaptation and without requiring task-specific fine-tuning on drone data. Firstly, the deep integration of BLIP-2 with YOLO models enables it to leverage the precise perceptual results of YOLO for fundamental tasks like object detection and instance segmentation, thereby facilitating deeper visual-attention understanding and reasoning. Secondly, a content-aware key frame sampling mechanism based on K-Means clustering is designed, which incorporates intelligent frame selection and temporal feature concatenation. This equips the lightweight BLIP-2 architecture with the capability to handle video-level interactive tasks effectively. Thirdly, a unified prompt optimization scheme for multi-task adaptation is implemented. This scheme strategically injects structured event logs from the YOLO models as contextual information into BLIP-2's input. Combined with output constraints designed to filter out technical details, this approach effectively guides the model to generate accurate and contextually relevant outputs for various tasks.",
+          "tags": [
+            "reasoning",
+            "boundary/frequency",
+            "video",
+            "UAV/small-object"
+          ],
+          "score": 103
+        },
+        {
+          "title": "VTOS: Learning to Orchestrate Vision Tools by Co-Searching Solutions and Observers",
+          "url": "http://arxiv.org/abs/2606.20728v1",
+          "pdf": "http://arxiv.org/pdf/2606.20728v1",
+          "authors": [
+            "Jinchao Ge",
+            "Lingqiao Liu",
+            "Shuwen Zhao",
+            "Lei Wang"
+          ],
+          "source": "arXiv",
+          "published": "2026-06-17",
+          "summary": "Vision foundation tools such as open-vocabulary detectors, segmentation models, and post-processing operators are powerful building blocks for computer vision, but their effectiveness depends heavily on how they are orchestrated: which tools are used, in what order, with what parameters, and under what visual conditions. Existing visual-programming agents typically generate a fixed solution pipeline, making them brittle under dense objects, occlusion, small targets, and domain shift. We introduce VTOS (Vision Tools Orchestration Search), a framework for adaptive visual tool orchestration through joint solution--observer search. VTOS co-searches executable solution programs that compose vision tools such as Grounding DINO, SAM, NMS, and slice-and-detect, together with observer programs that diagnose candidate solutions, identify failure modes, and generate actionable feedback. These observations are accumulated in a shared VisionThoughts knowledge base to guide subsequent search. We evaluate VTOS through two case studies: dense object counting on LVIS-Count and zero-shot plant-disease segmentation on PlantSeg-OOD, which stress different orchestration challenges including threshold calibration, NMS, slicing, mask refinement, and domain generalization. Across both tasks, VTOS outperforms static tool pipelines and agentic visual-programming baselines, showing that co-searching solutions and observers is an effective strategy for adapting vision tools to challenging computer vision tasks.",
+          "tags": [
+            "open-vocabulary",
+            "SAM",
+            "reasoning",
+            "diffusion",
+            "boundary/frequency",
+            "UAV/small-object",
+            "anomaly/OOD",
+            "uncertainty/calibration",
+            "domain adaptation"
+          ],
+          "score": 101
+        },
+        {
+          "title": "Zero-Shot Object-Centric Representation Learning",
+          "url": "http://arxiv.org/abs/2408.09162v1",
+          "pdf": "http://arxiv.org/pdf/2408.09162v1",
+          "authors": [
+            "Aniket Didolkar",
+            "Andrii Zadaianchuk",
+            "Anirudh Goyal",
+            "Mike Mozer",
+            "Yoshua Bengio",
+            "Georg Martius",
+            "Maximilian Seitzer"
+          ],
+          "source": "arXiv",
+          "published": "2024-08-17",
+          "summary": "The goal of object-centric representation learning is to decompose visual scenes into a structured representation that isolates the entities. Recent successes have shown that object-centric representation learning can be scaled to real-world scenes by utilizing pre-trained self-supervised features. However, so far, object-centric methods have mostly been applied in-distribution, with models trained and evaluated on the same dataset. This is in contrast to the wider trend in machine learning towards general-purpose models directly applicable to unseen data and tasks. Thus, in this work, we study current object-centric methods through the lens of zero-shot generalization by introducing a benchmark comprising eight different synthetic and real-world datasets. We analyze the factors influencing zero-shot performance and find that training on diverse real-world images improves transferability to unseen scenarios. Furthermore, inspired by the success of task-specific fine-tuning in foundation models, we introduce a novel fine-tuning strategy to adapt pre-trained vision encoders for the task of object discovery. We find that the proposed approach results in state-of-the-art performance for unsupervised object discovery, exhibiting strong zero-shot transfer to unseen datasets.",
+          "tags": [
+            "unsupervised",
+            "object discovery",
+            "object-centric",
+            "self-supervised",
+            "representation learning"
+          ],
+          "score": 100
+        },
+        {
+          "title": "Zero-shot Shark Tracking and Biometrics from Aerial Imagery",
+          "url": "http://arxiv.org/abs/2501.05717v1",
+          "pdf": "http://arxiv.org/pdf/2501.05717v1",
+          "authors": [
+            "Chinmay K Lalgudi",
+            "Mark E Leone",
+            "Jaden V Clark",
+            "Sergio Madrigal-Mora",
+            "Mario Espinoza"
+          ],
+          "source": "arXiv",
+          "published": "2025-01-10",
+          "summary": "The recent widespread adoption of drones for studying marine animals provides opportunities for deriving biological information from aerial imagery. The large scale of imagery data acquired from drones is well suited for machine learning (ML) analysis. Development of ML models for analyzing marine animal aerial imagery has followed the classical paradigm of training, testing, and deploying a new model for each dataset, requiring significant time, human effort, and ML expertise. We introduce Frame Level ALIgment and tRacking (FLAIR), which leverages the video understanding of Segment Anything Model 2 (SAM2) and the vision-language capabilities of Contrastive Language-Image Pre-training (CLIP). FLAIR takes a drone video as input and outputs segmentation masks of the species of interest across the video. Notably, FLAIR leverages a zero-shot approach, eliminating the need for labeled data, training a new model, or fine-tuning an existing model to generalize to other species. With a dataset of 18,000 drone images of Pacific nurse sharks, we trained state-of-the-art object detection models to compare against FLAIR. We show that FLAIR massively outperforms these object detectors and performs competitively against two human-in-the-loop methods for prompting SAM2, achieving a Dice score of 0.81. FLAIR readily generalizes to other shark species without additional human effort and can be combined with novel heuristics to automatically extract relevant information including length and tailbeat frequency. FLAIR has significant potential to accelerate aerial imagery analysis workflows, requiring markedly less human effort and expertise than traditional machine learning workflows, while achieving superior accuracy. By reducing the effort required for aerial imagery analysis, FLAIR allows scientists to spend more time interpreting results and deriving insights about marine ecosystems.",
+          "tags": [
+            "SAM",
+            "VLM/MLLM",
+            "diffusion",
+            "boundary/frequency",
+            "video",
+            "UAV/small-object"
+          ],
+          "score": 98
+        },
+        {
+          "title": "G2VD: Generalizable AI-Generated Video Detection via Counterfactual Intervention and Causal Disentanglement",
+          "url": "http://arxiv.org/abs/2607.04607v1",
+          "pdf": "http://arxiv.org/pdf/2607.04607v1",
+          "authors": [
+            "Meng Du",
+            "Hongchang Chen",
+            "Ran Li",
+            "Junjie Zhang",
+            "Qi Ouyang",
+            "Shuxin Liu"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-06",
+          "summary": "The rapid advancement of AI-generated videos poses increasing security risks and calls for robust detectors with strong cross-domain generalization. Although existing methods achieve promising results under in-domain evaluation, their performance often degrades substantially when tested on unseen generators. A key reason is shortcut learning, where detectors rely on domain-specific spurious cues, such as generator-dependent fingerprints and generation styles, instead of intrinsic forgery traces. To address this issue, we propose G2VD, a Generalizable AI-Generated Video Detection framework based on counterfactual intervention and causal disentanglement. First, G2VD introduces a counterfactual intervention pipeline (CFIPipeline) that generates controlled counterfactual samples via variational autoencoders (VAEs), followed by frequency-domain and pixel-domain alignment, thereby encouraging the detector to focus on generator-intrinsic cues. Building on this intervention process, we further design a causal disentanglement classifier consisting of two domain-anchored branches with distinct classification objectives, combined with an HSIC-based independence constraint to encourage the separation of task-relevant cues from domain-specific bias. Across four public datasets, G2VD shows strong average cross-domain performance and consistent gains over matched backbones. On the challenging GenVidBench cross-domain setting, it exceeds 90% accuracy and reaches an AUC close to 0.95. Notably, this performance is obtained using only 10% of the original training data. The code is available at https://github.com/dumeng98/G2VD.",
+          "tags": [
+            "boundary/frequency",
+            "video",
+            "causal/counterfactual",
+            "domain adaptation"
+          ],
+          "score": 97
+        },
+        {
+          "title": "Weighted Reverse Convolution for Feature Upsampling",
+          "url": "http://arxiv.org/abs/2605.17472v2",
+          "pdf": "http://arxiv.org/pdf/2605.17472v2",
+          "authors": [
+            "Wentong Li",
+            "Zhiyuan Qi",
+            "Zichen Zhao",
+            "Kai Zhang",
+            "Lei Zhang"
+          ],
+          "source": "arXiv",
+          "published": "2026-05-17",
+          "summary": "Pre-trained vision foundation models (VFMs) provide strong semantic representations, yet their patch-level features are inherently coarse, limiting their effectiveness on tasks requiring fine-grained localization, dense prediction, and point-wise correspondence. In this work, we revisit feature upsampling for VFMs from the perspective of \\textbf{\\textit{inverse problem}} and propose Weighted Reverse Convolution (WRC), a spatially adaptive inverse operator for densifying high-level visual descriptors. Specifically, we formulate feature upsampling as a weighted Tikhonov-regularized least-squares problem, where spatially varying weights modulate both data fidelity and prior strength at each spatial location. This allows WRC to adapt the reconstruction to spatially varying feature characteristics, thereby preserving critical structures while mitigating over-smoothing. Moreover, WRC retains an efficient, fully differentiable closed-form FFT solution, making it a practical drop-in upsampling operator. Integrated into a lightweight self-supervised densification framework, WRC consistently improves dense feature quality across various downstream benchmarks, including segmentation, depth estimation, video object segmentation, object discovery, and keypoint correspondence, while maintaining high computational efficiency.",
+          "tags": [
+            "depth/geometry",
+            "video",
+            "object discovery",
+            "self-supervised",
+            "representation learning"
+          ],
+          "score": 96
+        }
+      ]
+    }
+  },
+  {
     "date": "2026-07-12",
     "generated_at": "2026-07-12 12:37",
     "timezone": "Asia/Shanghai",
