@@ -31,6 +31,7 @@ DAILY_HTML = DOCS / "html"
 HISTORY_FILE = DATA / "feed_history.json"
 ABSTRACT_DETAILS_FILE = DATA / "abstract_details.json"
 DEEP_SOURCE_SCAN = os.environ.get("DEEP_SOURCE_SCAN", "").lower() in {"1", "true", "yes"}
+SOURCE_FAILURE_LIMIT = max(1, int(os.environ.get("SOURCE_FAILURE_LIMIT", "3")))
 
 HIGHLIGHT_LIMIT = 5
 QUALITY_LIMIT = 10
@@ -1006,6 +1007,7 @@ def fetch_arxiv(max_results_per_query: int = 18) -> list[Paper]:
     queries = list(ARXIV_QUERIES)
     if fire_topic_enabled():
         queries.extend(FIRE_ARXIV_QUERIES)
+    consecutive_failures = 0
     for query in queries:
         params = {
             "search_query": query,
@@ -1020,7 +1022,16 @@ def fetch_arxiv(max_results_per_query: int = 18) -> list[Paper]:
             root = ET.fromstring(xml_text)
         except Exception as exc:  # pragma: no cover - network resilience
             print(f"[warn] arXiv query failed: {query}: {exc}", file=sys.stderr)
+            consecutive_failures += 1
+            if consecutive_failures >= SOURCE_FAILURE_LIMIT:
+                print(
+                    f"[warn] arXiv unavailable after {consecutive_failures} consecutive "
+                    "failures; continuing with other sources",
+                    file=sys.stderr,
+                )
+                break
             continue
+        consecutive_failures = 0
 
         for entry in root.findall("a:entry", ns):
             title = clean_text(entry.findtext("a:title", "", ns))
@@ -1118,6 +1129,7 @@ def fetch_semantic_scholar(max_results_per_query: int = 8) -> list[Paper]:
     )
     if fire_topic_enabled():
         queries.extend(FIRE_SEMANTIC_SCHOLAR_QUERIES)
+    consecutive_failures = 0
     for query in queries:
         params = {
             "query": query,
@@ -1130,8 +1142,18 @@ def fetch_semantic_scholar(max_results_per_query: int = 8) -> list[Paper]:
             data = json.loads(fetch_url(url, timeout=25))
         except Exception as exc:  # pragma: no cover - network resilience
             print(f"[warn] Semantic Scholar query failed: {query}: {exc}", file=sys.stderr)
+            consecutive_failures += 1
+            if consecutive_failures >= SOURCE_FAILURE_LIMIT:
+                print(
+                    "[warn] Semantic Scholar unavailable after "
+                    f"{consecutive_failures} consecutive failures; continuing with "
+                    "other sources",
+                    file=sys.stderr,
+                )
+                break
             time.sleep(1.0)
             continue
+        consecutive_failures = 0
         for item in data.get("data", []):
             title = clean_text(item.get("title", ""))
             if not title:
@@ -1649,7 +1671,7 @@ def md_paper_item(idx: int, paper: Paper) -> str:
             f"   - 任务设定：{task_setting(paper)}",
             f"   - 摘要详解：{abstract_explanation(paper)}",
             f"   - 实验结论：{experiment_takeaway(paper)}",
-            f"   - 和关注方向的关系：{relation_to_topic(paper)}",
+            f"   - 和我课题的关系：{relation_to_topic(paper)}",
             f"   - 可借鉴点：{borrow_points(paper)}",
             f"   - 可改进点：{improvement_ideas(paper)}",
             f"   - 是否值得精读：{should_deep_read(paper)}",
