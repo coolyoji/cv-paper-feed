@@ -30,6 +30,8 @@ DAILY_MD = DOCS / "md"
 DAILY_HTML = DOCS / "html"
 HISTORY_FILE = DATA / "feed_history.json"
 ABSTRACT_DETAILS_FILE = DATA / "abstract_details.json"
+DAILY_HIGHLIGHTS_FILE = DATA / "daily_highlights.json"
+DAILY_ABSTRACT_DETAILS_FILE = DATA / "daily_abstract_details.json"
 DEEP_SOURCE_SCAN = os.environ.get("DEEP_SOURCE_SCAN", "").lower() in {"1", "true", "yes"}
 SOURCE_FAILURE_LIMIT = max(1, int(os.environ.get("SOURCE_FAILURE_LIMIT", "3")))
 
@@ -1423,19 +1425,24 @@ def method_core(paper: Paper) -> str:
 
 
 def load_abstract_details() -> dict[str, str]:
-    if not ABSTRACT_DETAILS_FILE.exists():
-        return {}
-    try:
-        data = json.loads(ABSTRACT_DETAILS_FILE.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return {}
-    if not isinstance(data, dict):
-        return {}
-    return {
-        str(title): clean_text(str(detail))
-        for title, detail in data.items()
-        if detail
-    }
+    details: dict[str, str] = {}
+    for path in (ABSTRACT_DETAILS_FILE, DAILY_ABSTRACT_DETAILS_FILE):
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        if not isinstance(data, dict):
+            continue
+        details.update(
+            {
+                str(title): clean_text(str(detail))
+                for title, detail in data.items()
+                if detail
+            }
+        )
+    return details
 
 
 def abstract_sentences(summary: str) -> list[str]:
@@ -2115,6 +2122,19 @@ def snapshot_highlights(snapshot: dict) -> list[Paper]:
     return [paper_from_dict(item) for item in highlights if isinstance(item, dict)]
 
 
+def daily_curated_highlights(date_text: str) -> list[Paper]:
+    if not DAILY_HIGHLIGHTS_FILE.exists():
+        return []
+    try:
+        data = json.loads(DAILY_HIGHLIGHTS_FILE.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return []
+    items = data.get(date_text, []) if isinstance(data, dict) else []
+    if not isinstance(items, list):
+        return []
+    return [paper_from_dict(item) for item in items if isinstance(item, dict)]
+
+
 def history_highlight_keys(history: list[dict]) -> set[str]:
     keys: set[str] = set()
     for snapshot in history:
@@ -2137,14 +2157,18 @@ def update_history(
     history = [
         item for item in loaded_history if snapshot_date_text(item) != date_text
     ]
+    curated_highlights = daily_curated_highlights(date_text)
     snapshot = make_snapshot(
         papers,
         now,
         excluded_highlight_keys=history_highlight_keys(history),
         preserved_highlights=(
-            snapshot_highlights(current_snapshot)
-            if current_snapshot and preserve_same_day_highlights
-            else None
+            curated_highlights
+            or (
+                snapshot_highlights(current_snapshot)
+                if current_snapshot and preserve_same_day_highlights
+                else []
+            )
         ),
     )
     history.insert(0, snapshot)
@@ -2601,6 +2625,21 @@ def refresh_current_abstracts() -> None:
     print(f"[info] refreshed abstracts for {current.get('date', 'current day')}")
 
 
+def apply_daily_curation() -> None:
+    latest_path = DATA / "latest_papers.json"
+    try:
+        latest = json.loads(latest_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        latest = []
+    papers = [paper_from_dict(item) for item in latest if isinstance(item, dict)]
+    now = datetime.now(UTC8)
+    history = update_history(papers, now, preserve_same_day_highlights=False)
+    if history:
+        download_daily_pdfs(history[0])
+    render_existing_history(history, latest_only=True)
+    print(f"[info] applied daily curation for {now:%Y-%m-%d}")
+
+
 def markdown_inline(text: str) -> str:
     text = html.escape(text)
     text = re.sub(r"\*\*(.*?)\*\*", r"<strong>\1</strong>", text)
@@ -2655,7 +2694,9 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    if "--refresh-current-abstracts" in sys.argv:
+    if "--apply-daily-curation" in sys.argv:
+        apply_daily_curation()
+    elif "--refresh-current-abstracts" in sys.argv:
         refresh_current_abstracts()
     elif "--render-only" in sys.argv:
         render_existing_history(latest_only=True)

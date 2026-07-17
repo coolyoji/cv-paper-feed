@@ -1,0 +1,59 @@
+{
+  "2026-07-17": [
+    {
+      "title": "CODrone: A Comprehensive Oriented Object Detection Benchmark for UAV",
+      "url": "https://arxiv.org/abs/2504.20032",
+      "pdf": "https://arxiv.org/pdf/2504.20032",
+      "authors": ["Kai Ye", "Haidi Tang", "Bowen Liu", "Pingyang Dai", "Liujuan Cao", "Rongrong Ji"],
+      "source": "TGRS 2026 / arXiv:2504.20032",
+      "published": "2026",
+      "summary": "CODrone targets the poor real-flight generalization of UAV oriented-object detectors. It replaces narrowly task-specific benchmarks with images from multiple cities, lighting conditions, viewpoints, altitudes, resolutions, and a broader category set, then evaluates 22 classical and state-of-the-art oriented detectors to expose practical bottlenecks.",
+      "tags": ["UAV/small-object", "benchmark", "remote sensing"],
+      "score": 89
+    },
+    {
+      "title": "Probing Deep Into Temporal Profile Makes the Infrared Small Target Detector Much Better",
+      "url": "https://arxiv.org/abs/2506.12766",
+      "pdf": "https://arxiv.org/pdf/2506.12766",
+      "authors": ["Ruojing Li", "Wei An", "Xinyi Ying", "Yingqian Wang", "Yimian Dai", "Longguang Wang", "Miao Li", "Yulan Guo", "Li Liu"],
+      "source": "TPAMI 2026 / arXiv:2506.12766",
+      "published": "2026",
+      "summary": "DeepPro reformulates multi-frame infrared small-target detection as one-dimensional anomaly detection along each pixel's global temporal profile. A temporal probe and lightweight signal-correlation modules exploit temporal saliency and autocorrelation while avoiding redundant spatial computation; experiments report strong robustness for dim targets and complex interference at high efficiency.",
+      "tags": ["UAV/small-object", "video", "anomaly/OOD"],
+      "score": 88
+    },
+    {
+      "title": "EvolveNav: Empowering LLM-Based Vision-Language Navigation via Self-Improving Embodied Reasoning",
+      "url": "https://arxiv.org/abs/2506.01551",
+      "pdf": "https://arxiv.org/pdf/2506.01551",
+      "authors": ["Bingqian Lin", "Yunshuang Nie", "Khun Loun Zai", "Ziming Wei", "Mingfei Han", "Rongtao Xu", "Minzhe Niu", "Jianhua Han", "Hanwang Zhang", "Liang Lin", "Bokui Chen", "Cewu Lu", "Xiaodan Liang"],
+      "source": "TPAMI 2026 / arXiv:2506.01551",
+      "published": "2026",
+      "summary": "EvolveNav addresses unavailable perfect chain-of-thought labels and overfitting in LLM-based vision-language navigation. It first activates navigation reasoning with curated formalized CoT supervision, then iteratively enriches supervision with the model's own reasoning and a self-reflective auxiliary task contrasting correct and wrong patterns.",
+      "tags": ["VLM/MLLM", "reasoning", "self-training"],
+      "score": 84
+    },
+    {
+      "title": "BTKD++: Beyond Teachers by Critically Distilling Knowledge from Teacher's Bias",
+      "url": "https://doi.org/10.1007/s11263-026-02924-x",
+      "pdf": "https://arxiv.org/pdf/2503.16105",
+      "authors": ["Jianhua Zhang", "Yi Gao", "Yu He", "Shuo Chen", "Xu Cheng"],
+      "source": "IJCV 2026",
+      "published": "2026-07-08",
+      "summary": "BTKD++ challenges blind knowledge distillation because teacher output errors can mislead students. It partitions samples into Easy Tasks with correct teacher predictions and Hard Tasks with incorrect predictions, then uses bias elimination, bias rectification, and a dynamic curriculum to convert structured teacher errors into corrective supervision across classification, detection, and segmentation.",
+      "tags": ["knowledge distillation", "uncertainty/calibration"],
+      "score": 85
+    },
+    {
+      "title": "Beyond Pixel Uncertainty: Bounding the OoD Objects in Road Scenes",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhu_Beyond_Pixel_Uncertainty_Bounding_the_OoD_Objects_in_Road_Scenes_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhu_Beyond_Pixel_Uncertainty_Bounding_the_OoD_Objects_in_Road_Scenes_ICCV_2025_paper.pdf",
+      "authors": ["Huachao Zhu", "Zelong Liu", "Zhichao Sun", "Yuda Zou", "Gui-Song Xia", "Yongchao Xu"],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "DetSeg replaces fragile pixel-uncertainty thresholding with object-level OOD proposals. It detects open-world objects, suppresses in-distribution boxes, and either restricts an existing anomaly map or prompts SAM for a binary mask; vanishing-point-guided Hungarian matching smooths video predictions. It reduces prior methods' FPR95 by up to 37.45%.",
+      "tags": ["anomaly/OOD", "uncertainty/calibration", "open-world", "video"],
+      "score": 82
+    }
+  ]
+}

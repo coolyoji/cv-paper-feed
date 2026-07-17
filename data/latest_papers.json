@@ -625,6 +625,25 @@
     "score": 91
   },
   {
+    "title": "Uncertainty Meets Diversity: A Comprehensive Active Learning Framework for Indoor 3D Object Detection",
+    "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Uncertainty_Meets_Diversity_A_Comprehensive_Active_Learning_Framework_for_Indoor_CVPR_2025_paper.html",
+    "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_Uncertainty_Meets_Diversity_A_Comprehensive_Active_Learning_Framework_for_Indoor_CVPR_2025_paper.pdf",
+    "authors": [
+      "Jiangyi Wang",
+      "Na Zhao"
+    ],
+    "source": "CVPR 2025",
+    "published": "2025",
+    "summary": "Active learning has emerged as a promising approach to reduce the substantial annotation burden in 3D object detection tasks, spurring several initiatives in outdoor environments. However, its application in indoor environments remains unexplored. Compared to outdoor 3D datasets, indoor datasets face significant challenges, including fewer training samples per class, a greater number of classes, more severe class imbalance, and more diverse scene types and intra-class variances.This paper presents the first study on active learning for indoor 3D object detection, where we propose a novel framework tailored for this task. Our method incorporates two key criteria - uncertainty and diversity - to actively select the most ambiguous and informative unlabeled samples for annotation. The uncertainty criterion accounts for both inaccurate detections and undetected objects, ensuring that the most ambiguous samples are prioritized. Meanwhile, the diversity criterion is formulated as a joint optimization problem that maximizes the diversity of both object class distributions and scene types, using a new Class-aware Adaptive Prototype (CAP) bank. The CAP bank dynamically allocates representative prototypes to each class, helping to capture varying intra-class diversity across different categories.We evaluate our method on SUN RGB-D and ScanNetV2, where it outperforms baselines by a significant margin, achieving over 85% of fully-supervised performance with just 10% of the annotation budget.",
+    "tags": [
+      "retrieval/prototype",
+      "depth/geometry",
+      "uncertainty/calibration",
+      "active/interactive"
+    ],
+    "score": 91
+  },
+  {
     "title": "Seeing the Unseen: Towards Zero-Shot Inspection for Wind Turbine Blades using Knowledge-Augmented Vision Language Models",
     "url": "http://arxiv.org/abs/2510.22868v1",
     "pdf": "http://arxiv.org/pdf/2510.22868v1",
@@ -1950,25 +1969,6 @@
     "score": 79
   },
   {
-    "title": "Uncertainty Meets Diversity: A Comprehensive Active Learning Framework for Indoor 3D Object Detection",
-    "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Uncertainty_Meets_Diversity_A_Comprehensive_Active_Learning_Framework_for_Indoor_CVPR_2025_paper.html",
-    "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_Uncertainty_Meets_Diversity_A_Comprehensive_Active_Learning_Framework_for_Indoor_CVPR_2025_paper.pdf",
-    "authors": [
-      "Jiangyi Wang",
-      "Na Zhao"
-    ],
-    "source": "CVPR 2025",
-    "published": "2025",
-    "summary": "Active learning has emerged as a promising approach to reduce the substantial annotation burden in 3D object detection tasks, spurring several initiatives in outdoor environments. However, its application in indoor environments remains unexplored. Compared to outdoor 3D datasets, indoor datasets face significant challenges, including fewer training samples per class, a greater number of classes, more severe class imbalance, and more diverse scene types and intra-class variances.This paper presents the first study on active learning for indoor 3D object detection, where we propose a novel framework tailored for this task. Our method incorporates two key criteria - uncertainty and diversity - to actively select the most ambiguous and informative unlabeled samples for annotation. The uncertainty criterion accounts for both inaccurate detections and undetected objects, ensuring that the most ambiguous samples are prioritized. Meanwhile, the diversity criterion is formulated as a joint optimization problem that maximizes the diversity of both object class distributions and scene types, using a new Class-aware Adaptive Prototype (CAP) bank. The CAP bank dynamically allocates representative prototypes to each class, helping to capture varying intra-class diversity across different categories.We evaluate our method on SUN RGB-D and ScanNetV2, where it outperforms baselines by a significant margin, achieving over 85% of fully-supervised performance with just 10% of the annotation budget.",
-    "tags": [
-      "retrieval/prototype",
-      "depth/geometry",
-      "uncertainty/calibration",
-      "active/interactive"
-    ],
-    "score": 91
-  },
-  {
     "title": "OV-SCAN: Semantically Consistent Alignment for Novel Object Discovery in Open-Vocabulary 3D Object Detection",
     "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Chow_OV-SCAN_Semantically_Consistent_Alignment_for_Novel_Object_Discovery_in_Open-Vocabulary_ICCV_2025_paper.html",
     "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Chow_OV-SCAN_Semantically_Consistent_Alignment_for_Novel_Object_Discovery_in_Open-Vocabulary_ICCV_2025_paper.pdf",
@@ -2726,6 +2726,51 @@
     "tags": [
       "open-vocabulary",
       "self-supervised"
+    ],
+    "score": 76
+  },
+  {
+    "title": "Reasoning Diffusion for Unpaired Test Time Out-of-distribution Text-Image to Video Generation",
+    "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Pan_Reasoning_Diffusion_for_Unpaired_Test_Time_Out-of-distribution_Text-Image_to_Video_CVPR_2026_paper.html",
+    "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Pan_Reasoning_Diffusion_for_Unpaired_Test_Time_Out-of-distribution_Text-Image_to_Video_CVPR_2026_paper.pdf",
+    "authors": [
+      "Zirui Pan",
+      "Xin Wang",
+      "Yipeng Zhang",
+      "Hong Chen",
+      "Kecheng Zheng",
+      "Wenwu Zhu"
+    ],
+    "source": "CVPR 2026",
+    "published": "2026",
+    "summary": "Text-image to video generation aims to synthesize a video conditioned on the given text-image inputs. Nevertheless, existing methods generally assume that the semantic information carried in the input text and image tends to be perfectly paired and temporally aligned, occurring simultaneously in the generated video. As such, existing literature struggles with out-of-distribution (OOD) \"unpaired\" text-image inputs in the more universal and realistic scenario where i) the semantic information carried by the text and image may occur at different timestamps and ii) the condition image can appear at an arbitrary position rather than the first frame of the synthesized video. Video generation under this OOD setting poses an urgent need to conduct reasoning over the intrinsic connections between the given textual description and referred image, which is challenging and remains unexplored. To address the challenge, in this paper we study the problem of unpaired text-image to video generation for the first time, proposing ReasonDiff, a novel model for accurate video generation from unpaired text-image inputs. Specifically, ReasonDiff designs a VisionNarrator module to harness the powerful reasoning abilities of a multi-modal LLM to analyze the unpaired text-image inputs, producing coherent per-frame narratives that temporally align them. Building upon this VisionNarrator module, ReasonDiff further introduces a novel AlignFormer module, which employs a Multi-stage Temporal Anchor Attention mechanism to predict frame-wise latent representations. These reasoning-enhanced latents are subsequently fused with the condition frame, providing structured guidance throughout the video generation process. Extensive experiments and ablation studies demonstrate that ReasonDiff beats state-of-the-art baselines in terms of video generation quality with unpaired text-image inputs.",
+    "tags": [
+      "VLM/MLLM",
+      "reasoning",
+      "diffusion",
+      "video",
+      "anomaly/OOD"
+    ],
+    "score": 76
+  },
+  {
+    "title": "Looking Similar Sounding Different: Leveraging Counterfactual Cross-Modal Pairs for Audiovisual Representation Learning",
+    "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Singh_Looking_Similar_Sounding_Different_Leveraging_Counterfactual_Cross-Modal_Pairs_for_Audiovisual_CVPR_2024_paper.html",
+    "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Singh_Looking_Similar_Sounding_Different_Leveraging_Counterfactual_Cross-Modal_Pairs_for_Audiovisual_CVPR_2024_paper.pdf",
+    "authors": [
+      "Nikhil Singh",
+      "Chih-Wei Wu",
+      "Iroro Orife",
+      "Mahdi Kalayeh"
+    ],
+    "source": "CVPR 2024",
+    "published": "2024",
+    "summary": "Audiovisual representation learning typically relies on the correspondence between sight and sound. However there are often multiple audio tracks that can correspond with a visual scene. Consider for example different conversations on the same crowded street. The effect of such counterfactual pairs on audiovisual representation learning has not been previously explored. To investigate this we use dubbed versions of movies and television shows to augment cross-modal contrastive learning. Our approach learns to represent alternate audio tracks differing only in speech similarly to the same video. Our results from a comprehensive set of experiments investigating different training strategies show this general approach improves performance on a range of downstream auditory and audiovisual tasks without majorly affecting linguistic task performance overall. These findings highlight the importance of considering speech variation when learning scene-level audiovisual correspondences and suggest that dubbed audio can be a useful augmentation technique for training audiovisual models toward more robust performance on diverse downstream tasks.",
+    "tags": [
+      "diffusion",
+      "video",
+      "causal/counterfactual",
+      "representation learning"
     ],
     "score": 76
   },
@@ -3590,23 +3635,25 @@
     "score": 73
   },
   {
-    "title": "IPDiff: Diffusion-driven ORSI Salient Object Detection with Information Reconstruction and Multi-Prior Guidance",
-    "url": "https://doi.org/10.1007/s11263-026-02931-y",
-    "pdf": "",
+    "title": "GroupContrast: Semantic-aware Self-supervised Representation Learning for 3D Understanding",
+    "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_GroupContrast_Semantic-aware_Self-supervised_Representation_Learning_for_3D_Understanding_CVPR_2024_paper.html",
+    "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Wang_GroupContrast_Semantic-aware_Self-supervised_Representation_Learning_for_3D_Understanding_CVPR_2024_paper.pdf",
     "authors": [
-      "Gongyang Li",
-      "Zhen Bai",
-      "Runmin Cong",
-      "Dan Zeng",
-      "Weisi Lin",
-      "Xiao-Ping Zhang"
+      "Chengyao Wang",
+      "Li Jiang",
+      "Xiaoyang Wu",
+      "Zhuotao Tian",
+      "Bohao Peng",
+      "Hengshuang Zhao",
+      "Jiaya Jia"
     ],
-    "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
-    "published": "2026-07-09",
-    "summary": "IJCV article matched by title in a top journal; abstract unavailable from Crossref.",
+    "source": "CVPR 2024",
+    "published": "2024",
+    "summary": "Self-supervised 3D representation learning aims to learn effective representations from large-scale unlabeled point clouds. Most existing approaches adopt point discrimination as the pretext task which assigns matched points in two distinct views as positive pairs and unmatched points as negative pairs. However this approach often results in semantically identical points having dissimilar representations leading to a high number of false negatives and introducing a semantic conflict problem. To address this issue we propose GroupContrast a novel approach that combines segment grouping and semantic-aware contrastive learning. Segment grouping partitions points into semantically meaningful regions which enhances semantic coherence and provides semantic guidance for the subsequent contrastive representation learning. Semantic-aware contrastive learning augments the semantic information extracted from segment grouping and helps to alleviate the issue of semantic conflict. We conducted extensive experiments on multiple 3D scene understanding tasks. The results demonstrate that GroupContrast learns semantically meaningful representations and achieves promising transfer learning performance.",
     "tags": [
-      "diffusion",
-      "saliency/transparent"
+      "depth/geometry",
+      "self-supervised",
+      "representation learning"
     ],
     "score": 73
   },
@@ -4816,30 +4863,6 @@
       "causal/counterfactual"
     ],
     "score": 70
-  },
-  {
-    "title": "Reasoning Diffusion for Unpaired Test Time Out-of-distribution Text-Image to Video Generation",
-    "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Pan_Reasoning_Diffusion_for_Unpaired_Test_Time_Out-of-distribution_Text-Image_to_Video_CVPR_2026_paper.html",
-    "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Pan_Reasoning_Diffusion_for_Unpaired_Test_Time_Out-of-distribution_Text-Image_to_Video_CVPR_2026_paper.pdf",
-    "authors": [
-      "Zirui Pan",
-      "Xin Wang",
-      "Yipeng Zhang",
-      "Hong Chen",
-      "Kecheng Zheng",
-      "Wenwu Zhu"
-    ],
-    "source": "CVPR 2026",
-    "published": "2026",
-    "summary": "Text-image to video generation aims to synthesize a video conditioned on the given text-image inputs. Nevertheless, existing methods generally assume that the semantic information carried in the input text and image tends to be perfectly paired and temporally aligned, occurring simultaneously in the generated video. As such, existing literature struggles with out-of-distribution (OOD) \"unpaired\" text-image inputs in the more universal and realistic scenario where i) the semantic information carried by the text and image may occur at different timestamps and ii) the condition image can appear at an arbitrary position rather than the first frame of the synthesized video. Video generation under this OOD setting poses an urgent need to conduct reasoning over the intrinsic connections between the given textual description and referred image, which is challenging and remains unexplored. To address the challenge, in this paper we study the problem of unpaired text-image to video generation for the first time, proposing ReasonDiff, a novel model for accurate video generation from unpaired text-image inputs. Specifically, ReasonDiff designs a VisionNarrator module to harness the powerful reasoning abilities of a multi-modal LLM to analyze the unpaired text-image inputs, producing coherent per-frame narratives that temporally align them. Building upon this VisionNarrator module, ReasonDiff further introduces a novel AlignFormer module, which employs a Multi-stage Temporal Anchor Attention mechanism to predict frame-wise latent representations. These reasoning-enhanced latents are subsequently fused with the condition frame, providing structured guidance throughout the video generation process. Extensive experiments and ablation studies demonstrate that ReasonDiff beats state-of-the-art baselines in terms of video generation quality with unpaired text-image inputs.",
-    "tags": [
-      "VLM/MLLM",
-      "reasoning",
-      "diffusion",
-      "video",
-      "anomaly/OOD"
-    ],
-    "score": 76
   },
   {
     "title": "Towards Zero-Shot Anomaly Detection and Reasoning with Multimodal Large Language Models",
@@ -6103,6 +6126,54 @@
     "score": 68
   },
   {
+    "title": "Knowledge-Aligned Counterfactual-Enhancement Diffusion Perception for Unsupervised Cross-Domain Visual Emotion Recognition",
+    "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yin_Knowledge-Aligned_Counterfactual-Enhancement_Diffusion_Perception_for_Unsupervised_Cross-Domain_Visual_Emotion_Recognition_CVPR_2025_paper.html",
+    "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Yin_Knowledge-Aligned_Counterfactual-Enhancement_Diffusion_Perception_for_Unsupervised_Cross-Domain_Visual_Emotion_Recognition_CVPR_2025_paper.pdf",
+    "authors": [
+      "Wen Yin",
+      "Yong Wang",
+      "Guiduo Duan",
+      "Dongyang Zhang",
+      "Xin Hu",
+      "Yuan-Fang Li",
+      "Tao He"
+    ],
+    "source": "CVPR 2025",
+    "published": "2025",
+    "summary": "Visual Emotion Recognition (VER) is a critical yet challenging task aimed at inferring emotional states of individuals based on visual cues. However, existing works focus on single domains, e.g., realistic images or stickers, limiting VER models' cross-domain generalizability. To fill this gap, we introduce an Unsupervised Cross-Domain Visual Emotion Recognition (UCDVER) task, which aims to generalize visual emotion recognition from the source domain (e.g., realistic images) to the low-resource target domain (e.g., stickers) in an unsupervised manner. Compared to the conventional unsupervised domain adaptation problems, UCDVER presents two key challenges: a significant emotional expression variability and an affective distribution shift. To mitigate these issues, we propose the Knowledge-aligned Counterfactual-enhancement Diffusion Perception (KCDP) framework. Specifically, KCDP leverages a VLM to align emotional representations in a shared knowledge space and guides diffusion models for improved visual affective perception. Furthermore, a Counterfactual-Enhanced Language-image Emotional Alignment (CLIEA) method generates high-quality pseudo-labels for the target domain. Extensive experiments demonstrate that our model surpasses SOTA models in both perceptibility and generalization, e.g., gaining 12% improvements over SOTA VER model TGCA-PVT.",
+    "tags": [
+      "unsupervised",
+      "diffusion",
+      "boundary/frequency",
+      "video",
+      "causal/counterfactual",
+      "low-level",
+      "domain adaptation"
+    ],
+    "score": 68
+  },
+  {
+    "title": "IPDiff: Diffusion-driven ORSI Salient Object Detection with Information Reconstruction and Multi-Prior Guidance",
+    "url": "https://doi.org/10.1007/s11263-026-02931-y",
+    "pdf": "",
+    "authors": [
+      "Gongyang Li",
+      "Zhen Bai",
+      "Runmin Cong",
+      "Dan Zeng",
+      "Weisi Lin",
+      "Xiao-Ping Zhang"
+    ],
+    "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
+    "published": "2026-07-09",
+    "summary": "IJCV article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "diffusion",
+      "saliency/transparent"
+    ],
+    "score": 67
+  },
+  {
     "title": "ZS-VCOS: Zero-Shot Video Camouflaged Object Segmentation By Optical Flow and Open Vocabulary Object Detection",
     "url": "http://arxiv.org/abs/2505.01431v2",
     "pdf": "http://arxiv.org/pdf/2505.01431v2",
@@ -6826,29 +6897,6 @@
       "domain adaptation"
     ],
     "score": 67
-  },
-  {
-    "title": "GroupContrast: Semantic-aware Self-supervised Representation Learning for 3D Understanding",
-    "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_GroupContrast_Semantic-aware_Self-supervised_Representation_Learning_for_3D_Understanding_CVPR_2024_paper.html",
-    "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Wang_GroupContrast_Semantic-aware_Self-supervised_Representation_Learning_for_3D_Understanding_CVPR_2024_paper.pdf",
-    "authors": [
-      "Chengyao Wang",
-      "Li Jiang",
-      "Xiaoyang Wu",
-      "Zhuotao Tian",
-      "Bohao Peng",
-      "Hengshuang Zhao",
-      "Jiaya Jia"
-    ],
-    "source": "CVPR 2024",
-    "published": "2024",
-    "summary": "Self-supervised 3D representation learning aims to learn effective representations from large-scale unlabeled point clouds. Most existing approaches adopt point discrimination as the pretext task which assigns matched points in two distinct views as positive pairs and unmatched points as negative pairs. However this approach often results in semantically identical points having dissimilar representations leading to a high number of false negatives and introducing a semantic conflict problem. To address this issue we propose GroupContrast a novel approach that combines segment grouping and semantic-aware contrastive learning. Segment grouping partitions points into semantically meaningful regions which enhances semantic coherence and provides semantic guidance for the subsequent contrastive representation learning. Semantic-aware contrastive learning augments the semantic information extracted from segment grouping and helps to alleviate the issue of semantic conflict. We conducted extensive experiments on multiple 3D scene understanding tasks. The results demonstrate that GroupContrast learns semantically meaningful representations and achieves promising transfer learning performance.",
-    "tags": [
-      "depth/geometry",
-      "self-supervised",
-      "representation learning"
-    ],
-    "score": 73
   },
   {
     "title": "Deception Detection Meets Vision-Language Models",
@@ -9409,27 +9457,6 @@
     "score": 64
   },
   {
-    "title": "Looking Similar Sounding Different: Leveraging Counterfactual Cross-Modal Pairs for Audiovisual Representation Learning",
-    "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Singh_Looking_Similar_Sounding_Different_Leveraging_Counterfactual_Cross-Modal_Pairs_for_Audiovisual_CVPR_2024_paper.html",
-    "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Singh_Looking_Similar_Sounding_Different_Leveraging_Counterfactual_Cross-Modal_Pairs_for_Audiovisual_CVPR_2024_paper.pdf",
-    "authors": [
-      "Nikhil Singh",
-      "Chih-Wei Wu",
-      "Iroro Orife",
-      "Mahdi Kalayeh"
-    ],
-    "source": "CVPR 2024",
-    "published": "2024",
-    "summary": "Audiovisual representation learning typically relies on the correspondence between sight and sound. However there are often multiple audio tracks that can correspond with a visual scene. Consider for example different conversations on the same crowded street. The effect of such counterfactual pairs on audiovisual representation learning has not been previously explored. To investigate this we use dubbed versions of movies and television shows to augment cross-modal contrastive learning. Our approach learns to represent alternate audio tracks differing only in speech similarly to the same video. Our results from a comprehensive set of experiments investigating different training strategies show this general approach improves performance on a range of downstream auditory and audiovisual tasks without majorly affecting linguistic task performance overall. These findings highlight the importance of considering speech variation when learning scene-level audiovisual correspondences and suggest that dubbed audio can be a useful augmentation technique for training audiovisual models toward more robust performance on diverse downstream tasks.",
-    "tags": [
-      "diffusion",
-      "video",
-      "causal/counterfactual",
-      "representation learning"
-    ],
-    "score": 76
-  },
-  {
     "title": "Open-Vocabulary Segmentation with Semantic-Assisted Calibration",
     "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Liu_Open-Vocabulary_Segmentation_with_Semantic-Assisted_Calibration_CVPR_2024_paper.html",
     "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Liu_Open-Vocabulary_Segmentation_with_Semantic-Assisted_Calibration_CVPR_2024_paper.pdf",
@@ -11751,33 +11778,6 @@
     "score": 62
   },
   {
-    "title": "Knowledge-Aligned Counterfactual-Enhancement Diffusion Perception for Unsupervised Cross-Domain Visual Emotion Recognition",
-    "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yin_Knowledge-Aligned_Counterfactual-Enhancement_Diffusion_Perception_for_Unsupervised_Cross-Domain_Visual_Emotion_Recognition_CVPR_2025_paper.html",
-    "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Yin_Knowledge-Aligned_Counterfactual-Enhancement_Diffusion_Perception_for_Unsupervised_Cross-Domain_Visual_Emotion_Recognition_CVPR_2025_paper.pdf",
-    "authors": [
-      "Wen Yin",
-      "Yong Wang",
-      "Guiduo Duan",
-      "Dongyang Zhang",
-      "Xin Hu",
-      "Yuan-Fang Li",
-      "Tao He"
-    ],
-    "source": "CVPR 2025",
-    "published": "2025",
-    "summary": "Visual Emotion Recognition (VER) is a critical yet challenging task aimed at inferring emotional states of individuals based on visual cues. However, existing works focus on single domains, e.g., realistic images or stickers, limiting VER models' cross-domain generalizability. To fill this gap, we introduce an Unsupervised Cross-Domain Visual Emotion Recognition (UCDVER) task, which aims to generalize visual emotion recognition from the source domain (e.g., realistic images) to the low-resource target domain (e.g., stickers) in an unsupervised manner. Compared to the conventional unsupervised domain adaptation problems, UCDVER presents two key challenges: a significant emotional expression variability and an affective distribution shift. To mitigate these issues, we propose the Knowledge-aligned Counterfactual-enhancement Diffusion Perception (KCDP) framework. Specifically, KCDP leverages a VLM to align emotional representations in a shared knowledge space and guides diffusion models for improved visual affective perception. Furthermore, a Counterfactual-Enhanced Language-image Emotional Alignment (CLIEA) method generates high-quality pseudo-labels for the target domain. Extensive experiments demonstrate that our model surpasses SOTA models in both perceptibility and generalization, e.g., gaining 12% improvements over SOTA VER model TGCA-PVT.",
-    "tags": [
-      "unsupervised",
-      "diffusion",
-      "boundary/frequency",
-      "video",
-      "causal/counterfactual",
-      "low-level",
-      "domain adaptation"
-    ],
-    "score": 68
-  },
-  {
     "title": "CTRL-O: Language-Controllable Object-Centric Visual Representation Learning",
     "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Didolkar_CTRL-O_Language-Controllable_Object-Centric_Visual_Representation_Learning_CVPR_2025_paper.html",
     "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Didolkar_CTRL-O_Language-Controllable_Object-Centric_Visual_Representation_Learning_CVPR_2025_paper.pdf",
@@ -13352,26 +13352,6 @@
     "tags": [
       "self-supervised",
       "representation learning"
-    ],
-    "score": 61
-  },
-  {
-    "title": "Rethinking Neuromorphic Object Detection with Hybrid Dynamic Interaction Transformers",
-    "url": "https://doi.org/10.1007/s11263-026-02927-8",
-    "pdf": "",
-    "authors": [
-      "Dianze Li",
-      "Jianing Li",
-      "Xu Liu",
-      "Zhaokun Zhou",
-      "Xiaopeng Fan",
-      "Yonghong Tian"
-    ],
-    "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
-    "published": "2026-07-09",
-    "summary": "IJCV article matched by title in a top journal; abstract unavailable from Crossref.",
-    "tags": [
-      "computer vision"
     ],
     "score": 61
   },
@@ -15827,6 +15807,27 @@
     "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
     "tags": [
       "UAV/small-object"
+    ],
+    "score": 60
+  },
+  {
+    "title": "Robust hyperspectral anomaly detection via low-rank discriminative dictionary and global-local saliency weight",
+    "url": "https://doi.org/10.1016/j.jag.2026.105422",
+    "pdf": "",
+    "authors": [
+      "Yufan Yang",
+      "Hongjun Su",
+      "Zhaoyue Wu",
+      "Hui Yang",
+      "Qian Du"
+    ],
+    "source": "Crossref / JAG / 遥感高水平期刊 / International Journal of Applied Earth Observation and Geoinformation",
+    "published": "2026-08",
+    "summary": "JAG article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "remote sensing",
+      "anomaly/OOD",
+      "saliency/transparent"
     ],
     "score": 60
   },
@@ -22833,6 +22834,26 @@
       "causal/counterfactual"
     ],
     "score": 56
+  },
+  {
+    "title": "Rethinking Neuromorphic Object Detection with Hybrid Dynamic Interaction Transformers",
+    "url": "https://doi.org/10.1007/s11263-026-02927-8",
+    "pdf": "",
+    "authors": [
+      "Dianze Li",
+      "Jianing Li",
+      "Xu Liu",
+      "Zhaokun Zhou",
+      "Xiaopeng Fan",
+      "Yonghong Tian"
+    ],
+    "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
+    "published": "2026-07-09",
+    "summary": "IJCV article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "computer vision"
+    ],
+    "score": 55
   },
   {
     "title": "SAM3-Adapter: Efficient Adaptation of Segment Anything 3 for Camouflage Object Segmentation, Shadow Detection, and Medical Image Segmentation",
@@ -42138,6 +42159,26 @@
     "score": 49
   },
   {
+    "title": "NESS-Net: An NAMLab Edge-Guided and Scribble-Supervised Swin-Transformer Net for RGB-D Salient Object Detection",
+    "url": "https://doi.org/10.1109/tcsvt.2026.3673067",
+    "pdf": "",
+    "authors": [
+      "Yunping Zheng",
+      "Hao Li",
+      "Shiqiang Shu",
+      "Ke Xu",
+      "Mudar Sarem"
+    ],
+    "source": "Crossref / TCSVT / CCF-B / 顶刊 / IEEE Transactions on Circuits and Systems for Video Technology",
+    "published": "2026-07",
+    "summary": "TCSVT article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "boundary/frequency",
+      "saliency/transparent"
+    ],
+    "score": 49
+  },
+  {
     "title": "MedCRP-CL: Continual Medical Image Segmentation via Bayesian Nonparametric Semantic Modality Discovery",
     "url": "http://arxiv.org/abs/2605.20297v1",
     "pdf": "http://arxiv.org/pdf/2605.20297v1",
@@ -51475,6 +51516,27 @@
     "score": 47
   },
   {
+    "title": "Toward robust histopathology imaging: An unsupervised framework for artifact detection, localization, and restoration",
+    "url": "https://doi.org/10.1016/j.media.2026.104215",
+    "pdf": "",
+    "authors": [
+      "Huaishui Yang",
+      "Mengye Lyu",
+      "Huhan Xie",
+      "Jie Xiao",
+      "Shaojun Liu"
+    ],
+    "source": "Crossref / MedIA / 医学影像顶刊 / Medical Image Analysis",
+    "published": "2026-09",
+    "summary": "MedIA article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "unsupervised",
+      "low-level",
+      "medical imaging"
+    ],
+    "score": 47
+  },
+  {
     "title": "Beyond Heatmaps: Unsupervised Concept-Graph Reasoning for Interpretable Visual Explanation",
     "url": "http://arxiv.org/abs/2607.01416v1",
     "pdf": "http://arxiv.org/pdf/2607.01416v1",
@@ -53901,6 +53963,23 @@
       "Qiang Zhang",
       "Zishuo Wang",
       "Tongde Yang"
+    ],
+    "source": "Crossref / RSE / 遥感顶刊 / Remote Sensing of Environment",
+    "published": "2026-10",
+    "summary": "RSE article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "remote sensing"
+    ],
+    "score": 45
+  },
+  {
+    "title": "Probability of detection for airborne sensing of methane plumes using long wavelength infrared hyperspectral imaging",
+    "url": "https://doi.org/10.1016/j.rse.2026.115556",
+    "pdf": "",
+    "authors": [
+      "Kyle J. Daun",
+      "Om Patel",
+      "Sina Talebi Moghaddam"
     ],
     "source": "Crossref / RSE / 遥感顶刊 / Remote Sensing of Environment",
     "published": "2026-10",
@@ -65311,6 +65390,25 @@
     "summary": "TCSVT article matched by title in a top journal; abstract unavailable from Crossref.",
     "tags": [
       "computer vision"
+    ],
+    "score": 43
+  },
+  {
+    "title": "$\\rm {M}^{2}\\rm {C-EvDet}$: Multi-Domain Multi-Order Cross-Modal Knowledge Distillation for Event-based Object Detection",
+    "url": "https://doi.org/10.1109/tmm.2026.3714316",
+    "pdf": "",
+    "authors": [
+      "Wei Bao",
+      "Siqi Li",
+      "Shouan Pan",
+      "Yi Xie",
+      "Yue Gao"
+    ],
+    "source": "Crossref / TMM / CCF-B / 顶刊 / IEEE Transactions on Multimedia",
+    "published": "2026",
+    "summary": "TMM article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "boundary/frequency"
     ],
     "score": 43
   },
@@ -181665,6 +181763,24 @@
     "score": 29
   },
   {
+    "title": "Prompt-guided foundation model tuning for pathology image classification",
+    "url": "https://doi.org/10.1016/j.media.2026.104214",
+    "pdf": "",
+    "authors": [
+      "Yi Lin",
+      "Zhengjie Zhu",
+      "Kwang-Ting Cheng",
+      "Hao Chen"
+    ],
+    "source": "Crossref / MedIA / 医学影像顶刊 / Medical Image Analysis",
+    "published": "2026-09",
+    "summary": "MedIA article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "computer vision"
+    ],
+    "score": 29
+  },
+  {
     "title": "Spatially Grounded Concept Bottleneck Models via Part-Factorized Attention",
     "url": "http://arxiv.org/abs/2606.04364v2",
     "pdf": "http://arxiv.org/pdf/2606.04364v2",
@@ -182036,6 +182152,23 @@
     "summary": "CVIU article matched by title in a top journal; abstract unavailable from Crossref.",
     "tags": [
       "computer vision"
+    ],
+    "score": 28
+  },
+  {
+    "title": "AINPAINT: A comprehensive dataset and dual branch architecture for practical video inpainting localization",
+    "url": "https://doi.org/10.1016/j.cviu.2026.104866",
+    "pdf": "",
+    "authors": [
+      "Andrea Montibeller",
+      "Giulia Boato",
+      "Luisa Verdoliva"
+    ],
+    "source": "Crossref / CVIU / CCF-B / 视觉期刊 / Computer Vision and Image Understanding",
+    "published": "2026-09",
+    "summary": "CVIU article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "video"
     ],
     "score": 28
   },
