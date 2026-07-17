@@ -1,9 +1,9 @@
 [
   {
     "date": "2026-07-17",
-    "generated_at": "2026-07-17 10:19",
+    "generated_at": "2026-07-17 12:23",
     "timezone": "Asia/Shanghai",
-    "total_selected": 9494,
+    "total_selected": 9518,
     "sections": {
       "highlights": [
         {
@@ -153,25 +153,6 @@
             "medical imaging"
           ],
           "score": 94
-        },
-        {
-          "title": "Uncertainty Meets Diversity: A Comprehensive Active Learning Framework for Indoor 3D Object Detection",
-          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Uncertainty_Meets_Diversity_A_Comprehensive_Active_Learning_Framework_for_Indoor_CVPR_2025_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_Uncertainty_Meets_Diversity_A_Comprehensive_Active_Learning_Framework_for_Indoor_CVPR_2025_paper.pdf",
-          "authors": [
-            "Jiangyi Wang",
-            "Na Zhao"
-          ],
-          "source": "CVPR 2025",
-          "published": "2025",
-          "summary": "Active learning has emerged as a promising approach to reduce the substantial annotation burden in 3D object detection tasks, spurring several initiatives in outdoor environments. However, its application in indoor environments remains unexplored. Compared to outdoor 3D datasets, indoor datasets face significant challenges, including fewer training samples per class, a greater number of classes, more severe class imbalance, and more diverse scene types and intra-class variances.This paper presents the first study on active learning for indoor 3D object detection, where we propose a novel framework tailored for this task. Our method incorporates two key criteria - uncertainty and diversity - to actively select the most ambiguous and informative unlabeled samples for annotation. The uncertainty criterion accounts for both inaccurate detections and undetected objects, ensuring that the most ambiguous samples are prioritized. Meanwhile, the diversity criterion is formulated as a joint optimization problem that maximizes the diversity of both object class distributions and scene types, using a new Class-aware Adaptive Prototype (CAP) bank. The CAP bank dynamically allocates representative prototypes to each class, helping to capture varying intra-class diversity across different categories.We evaluate our method on SUN RGB-D and ScanNetV2, where it outperforms baselines by a significant margin, achieving over 85% of fully-supervised performance with just 10% of the annotation budget.",
-          "tags": [
-            "retrieval/prototype",
-            "depth/geometry",
-            "uncertainty/calibration",
-            "active/interactive"
-          ],
-          "score": 91
         },
         {
           "title": "Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport",
@@ -343,6 +324,23 @@
             "uncertainty/calibration"
           ],
           "score": 85
+        },
+        {
+          "title": "Breaking Spurious Correlations: Uncertainty-Driven Causal Transformers for AU Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Breaking_Spurious_Correlations_Uncertainty-Driven_Causal_Transformers_for_AU_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_Breaking_Spurious_Correlations_Uncertainty-Driven_Causal_Transformers_for_AU_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Yuru Wang",
+            "Yue Zhou"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "causal/counterfactual",
+            "uncertainty/calibration"
+          ],
+          "score": 84
         }
       ],
       "cod": [
@@ -561,6 +559,38 @@
           "score": 71
         },
         {
+          "title": "Inspiring the Next Generation of Segment Anything Models: Comprehensively Evaluate SAM and SAM 2 with Diverse Prompts Towards Context-Dependent Concepts under Different Scenes",
+          "url": "http://arxiv.org/abs/2412.01240v3",
+          "pdf": "http://arxiv.org/pdf/2412.01240v3",
+          "authors": [
+            "Xiaoqi Zhao",
+            "Youwei Pang",
+            "Shijie Chang",
+            "Yuan Zhao",
+            "Lihe Zhang",
+            "Chenyang Yu",
+            "Hanqi Liu",
+            "Jiaming Zuo",
+            "Jinsong Ouyang",
+            "Weisi Lin",
+            "Georges El Fakhri",
+            "Huchuan Lu",
+            "Xiaofeng Liu"
+          ],
+          "source": "arXiv",
+          "published": "2024-12-02",
+          "summary": "As large-scale foundation models trained on billions of image--mask pairs covering a vast diversity of scenes, objects, and contexts, SAM and its upgraded version, SAM~2, have significantly influenced multiple fields within computer vision. Leveraging such unprecedented data diversity, they exhibit strong open-world segmentation capabilities, with SAM~2 further enhancing these capabilities to support high-quality video segmentation. While SAMs (SAM and SAM~2) have demonstrated excellent performance in segmenting context-independent concepts like people, cars, and roads, they overlook more challenging context-dependent (CD) concepts, such as visual saliency, camouflage, industrial defects, and medical lesions. CD concepts rely heavily on global and local contextual information, making them susceptible to shifts in different contexts, which requires strong discriminative capabilities from the model. The lack of comprehensive evaluation of SAMs limits understanding of their performance boundaries, which may hinder the design of future models. In this paper, we conduct a thorough evaluation of SAMs on 11 CD concepts across 2D and 3D images and videos in various visual modalities within natural, medical, and industrial scenes. We develop a unified evaluation framework for SAM and SAM~2 that supports manual, automatic, and intermediate self-prompting, aided by our specific prompt generation and interaction strategies. We further explore the potential of SAM~2 for in-context learning and introduce prompt robustness testing to simulate real-world imperfect prompts. Finally, we analyze the benefits and limitations of SAMs in understanding CD concepts and discuss their future development in segmentation tasks.",
+          "tags": [
+            "COD",
+            "SAM",
+            "depth/geometry",
+            "video",
+            "open-world",
+            "saliency/transparent"
+          ],
+          "score": 71
+        },
+        {
           "title": "Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation",
           "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.html",
           "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.pdf",
@@ -599,26 +629,6 @@
           "tags": [
             "COD",
             "open-vocabulary"
-          ],
-          "score": 68
-        },
-        {
-          "title": "EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection",
-          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.pdf",
-          "authors": [
-            "Shuo Jiang",
-            "Gaojia Zhang",
-            "Min Tan",
-            "Yufei Yin",
-            "Gang Pan"
-          ],
-          "source": "CVPR 2026",
-          "published": "2026",
-          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
-          "tags": [
-            "COD",
-            "unsupervised"
           ],
           "score": 68
         }
@@ -958,6 +968,34 @@
           "score": 55
         },
         {
+          "title": "QFireNet: A Quantum-Enhanced U-Net for Wildfire Segmentation from Sentinel-2 Imagery",
+          "url": "http://arxiv.org/abs/2607.14160v1",
+          "pdf": "http://arxiv.org/pdf/2607.14160v1",
+          "authors": [
+            "Jaiman Munshi",
+            "Tanvi Tewary",
+            "Sawyer Bloom",
+            "Aidan Chu",
+            "Chetan Maviti",
+            "Kyon Winston-Bey",
+            "Harshit Badjatia",
+            "Farhan Kittur",
+            "Vardhan Madhavarapu",
+            "Varun Kota",
+            "Joshua Kwon",
+            "Nazia Rangwala-Vohra",
+            "Franz Klein"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-14",
+          "summary": "Wildfire detection from satellite imagery is a semantic image segmentation problem that has proven to be difficult due to challenges such as class imbalance, feature complexity, and atmospheric interference. In this paper, we build on the foundational U-Net image segmentation model to develop a quantum-hybrid solution in hopes of more effectively modeling the high-dimensional spectral feature space of the Sen2Fire dataset. We inject a variational quantum circuit in the bottleneck portion of U-Net, specifically the QuFeX and QB-Net ansatzes. We test a classical Feature Pyramid Network (FPN) for further comparative analysis of the model, and we also explore classical improvements to the U-Net model and its training process, including a compression of parameters, alternative loss functions, and uniform mixing of input data. Our primary finding is that under matched conditions, both QB-Net (with an $F_1$ score of 31.18) and QuFeX ($F_1 = 30.79$) outperformed the classical U-Net baseline results ($F_1 = 28.71$). Additionally, the classical FPN achieved a comparable score of 31.13. A crucial finding was that data mixing removed a significant domain shift between the geographically-separated train and test sets, which boosted the classical FPN $F_1$ score to 39.76. We validate the architecture's robustness and generalizability to the wildfire detection problem via cross-dataset transfer on the California Burned Areas (CaBuAr) dataset. Overall, we find that quantum machine learning has potential to provide an advantage in the problem of wildfire image segmentation, and further experiments will continue to validate and expand upon this finding.",
+          "tags": [
+            "multispectral fire",
+            "diffusion"
+          ],
+          "score": 51
+        },
+        {
           "title": "Systematic Absence of Low-Confidence Nighttime Fire Detections in VIIRS Active Fire Product: Evidence of Undocumented Algorithmic Filtering",
           "url": "http://arxiv.org/abs/2510.26816v1",
           "pdf": "http://arxiv.org/pdf/2510.26816v1",
@@ -1037,26 +1075,6 @@
             "remote sensing"
           ],
           "score": 37
-        },
-        {
-          "title": "Data Likelihood of Active Fires Satellite Detection and Applications to Ignition Estimation and Data Assimilation",
-          "url": "http://arxiv.org/abs/1808.03318v1",
-          "pdf": "http://arxiv.org/pdf/1808.03318v1",
-          "authors": [
-            "James Haley",
-            "Angel Farguell Caus",
-            "Adam K. Kochanski",
-            "Sher Schranz",
-            "Jan Mandel"
-          ],
-          "source": "arXiv",
-          "published": "2018-07-09",
-          "summary": "Data likelihood of fire detection is the probability of the observed detection outcome given the state of the fire spread model. We derive fire detection likelihood of satellite data as a function of the fire arrival time on the model grid. The data likelihood is constructed by a combination of the burn model, the logistic regression of the active fires detections, and the Gaussian distribution of the geolocation error. The use of the data likelihood is then demonstrated by an estimation of the ignition point of a wildland fire by the maximization of the likelihood of MODIS and VIIRS data over multiple possible ignition points.",
-          "tags": [
-            "multispectral fire",
-            "anomaly/OOD"
-          ],
-          "score": 31
         }
       ],
       "fire_foundation": [
@@ -1164,6 +1182,32 @@
             "self-supervised"
           ],
           "score": 114
+        },
+        {
+          "title": "MagicSeg: Open-World Segmentation Pretraining via Counterfactural Diffusion-Based Auto-Generation",
+          "url": "http://arxiv.org/abs/2603.19575v1",
+          "pdf": "http://arxiv.org/pdf/2603.19575v1",
+          "authors": [
+            "Kaixin Cai",
+            "Pengzhen Ren",
+            "Jianhua Han",
+            "Yi Zhu",
+            "Hang Xu",
+            "Jianzhuang Liu",
+            "Xiaodan Liang"
+          ],
+          "source": "arXiv",
+          "published": "2026-03-20",
+          "summary": "Open-world semantic segmentation presently relies significantly on extensive image-text pair datasets, which often suffer from a lack of fine-grained pixel annotations on sufficient categories. The acquisition of such data is rendered economically prohibitive due to the substantial investments of both human labor and time. In light of the formidable image generation capabilities of diffusion models, we introduce a novel diffusion model-driven pipeline for automatically generating datasets tailored to the needs of open-world semantic segmentation, named \"MagicSeg\". Our MagicSeg initiates from class labels and proceeds to generate high-fidelity textual descriptions, which in turn serve as guidance for the diffusion model to generate images. Rather than only generating positive samples for each label, our process encompasses the simultaneous generation of corresponding negative images, designed to serve as paired counterfactual samples for contrastive training. Then, to provide a self-supervised signal for open-world segmentation pretraining, our MagicSeg integrates an open-vocabulary detection model and an interactive segmentation model to extract object masks as precise segmentation labels from images based on the provided category labels. By applying our dataset to the contrastive language-image pretraining model with the pseudo mask supervision and the auxiliary counterfactual contrastive training, the downstream model obtains strong performance on open-world semantic segmentation. We evaluate our model on PASCAL VOC, PASCAL Context, and COCO, achieving SOTA with performance of 62.9%, 26.7%, and 40.2%, respectively, demonstrating our dataset's effectiveness in enhancing open-world semantic segmentation capabilities. Project website: https://github.com/ckxhp/magicseg.",
+          "tags": [
+            "open-vocabulary",
+            "diffusion",
+            "causal/counterfactual",
+            "open-world",
+            "self-supervised",
+            "active/interactive"
+          ],
+          "score": 112
         },
         {
           "title": "Promptable Concept Segmentation from Above: Evaluating SAM 3's Zero-Shot and One-Shot Capabilities in Remote Sensing",
@@ -1402,30 +1446,6 @@
             "boundary/frequency",
             "open-world",
             "compositionality"
-          ],
-          "score": 98
-        },
-        {
-          "title": "Zero-shot Shark Tracking and Biometrics from Aerial Imagery",
-          "url": "http://arxiv.org/abs/2501.05717v1",
-          "pdf": "http://arxiv.org/pdf/2501.05717v1",
-          "authors": [
-            "Chinmay K Lalgudi",
-            "Mark E Leone",
-            "Jaden V Clark",
-            "Sergio Madrigal-Mora",
-            "Mario Espinoza"
-          ],
-          "source": "arXiv",
-          "published": "2025-01-10",
-          "summary": "The recent widespread adoption of drones for studying marine animals provides opportunities for deriving biological information from aerial imagery. The large scale of imagery data acquired from drones is well suited for machine learning (ML) analysis. Development of ML models for analyzing marine animal aerial imagery has followed the classical paradigm of training, testing, and deploying a new model for each dataset, requiring significant time, human effort, and ML expertise. We introduce Frame Level ALIgment and tRacking (FLAIR), which leverages the video understanding of Segment Anything Model 2 (SAM2) and the vision-language capabilities of Contrastive Language-Image Pre-training (CLIP). FLAIR takes a drone video as input and outputs segmentation masks of the species of interest across the video. Notably, FLAIR leverages a zero-shot approach, eliminating the need for labeled data, training a new model, or fine-tuning an existing model to generalize to other species. With a dataset of 18,000 drone images of Pacific nurse sharks, we trained state-of-the-art object detection models to compare against FLAIR. We show that FLAIR massively outperforms these object detectors and performs competitively against two human-in-the-loop methods for prompting SAM2, achieving a Dice score of 0.81. FLAIR readily generalizes to other shark species without additional human effort and can be combined with novel heuristics to automatically extract relevant information including length and tailbeat frequency. FLAIR has significant potential to accelerate aerial imagery analysis workflows, requiring markedly less human effort and expertise than traditional machine learning workflows, while achieving superior accuracy. By reducing the effort required for aerial imagery analysis, FLAIR allows scientists to spend more time interpreting results and deriving insights about marine ecosystems.",
-          "tags": [
-            "SAM",
-            "VLM/MLLM",
-            "diffusion",
-            "boundary/frequency",
-            "video",
-            "UAV/small-object"
           ],
           "score": 98
         }
