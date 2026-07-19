@@ -1,5 +1,1107 @@
 [
   {
+    "date": "2026-07-19",
+    "generated_at": "2026-07-19 12:33",
+    "timezone": "Asia/Shanghai",
+    "total_selected": 8905,
+    "sections": {
+      "highlights": [
+        {
+          "title": "DARC: Dual Adjustment Reasoning with Counterfactuals for Trustworthy Chest X-ray Classification",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liao_DARC_Dual_Adjustment_Reasoning_with_Counterfactuals_for_Trustworthy_Chest_X-ray_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liao_DARC_Dual_Adjustment_Reasoning_with_Counterfactuals_for_Trustworthy_Chest_X-ray_CVPR_2026_paper.pdf",
+          "authors": [
+            "Zhifang Liao",
+            "Junhao Li",
+            "HaoKang Ding",
+            "Yucheng Song"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Despite their impressive performance in multi-label classification of chest X-ray images (CXR), deep learning models are widely plagued by two types of spurious correlations: feature confounding arising from pathological co-occurrence and shortcut learning triggered by non-pathological visual confounders. These non-causal dependencies severely undermine the interpretability and robustness of models in real-world clinical settings. To address these challenges, we propose the Dual Adjustment Reasoning with Counterfactuals for Trustworthy Chest X-ray Classification (DARC) framework, the first to synergistically decouple both types of confounding sources from a causal mechanism perspective. At the data level, we construct CheXconf, the first pixel-level annotation dataset of non-pathological visual confounders in CXR, comprising 40,213 annotated instances across 11 categories. This provides a solid foundation for accurately modeling these confounders. At the methodological level, we design a novel dual-stream causal learning architecture. Its Global Stream leverages the back-door adjustment criterion with CheXconf to explicitly block spurious paths from non-pathological confounders. Concurrently, the Local Stream employs counterfactual reasoning, constrained by anatomical priors, to disentangle the visual coupling of co-occurring pathologies. Experiments on large-scale public benchmarks demonstrate that our method achieves significant improvements in task performance, interpretability, and robustness.",
+          "tags": [
+            "reasoning",
+            "causal/counterfactual"
+          ],
+          "score": 82
+        },
+        {
+          "title": "Learning for Transductive Threshold Calibration in Open-World Recognition",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_Learning_for_Transductive_Threshold_Calibration_in_Open-World_Recognition_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_Learning_for_Transductive_Threshold_Calibration_in_Open-World_Recognition_CVPR_2024_paper.pdf",
+          "authors": [
+            "Qin Zhang",
+            "Dongsheng An",
+            "Tianjun Xiao",
+            "Tong He",
+            "Qingming Tang",
+            "Ying Nian Wu",
+            "Joseph Tighe",
+            "Yifan Xing"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "In deep metric learning for visual recognition the calibration of distance thresholds is crucial for achieving desired model performance in the true positive rates (TPR) or true negative rates (TNR). However calibrating this thresh- old presents challenges in open-world scenarios where the test classes can be entirely disjoint from those encountered during training. We define the problem of finding distance thresholds for a trained embedding model to achieve target performance metrics over unseen open-world test classes as open-world threshold calibration. Existing posthoc threshold calibration methods reliant on inductive inference and requiring a calibration dataset with a similar distance distribution as the test data often prove ineffective in open- world scenarios. To address this we introduce OpenGCN a Graph Neural Network-based transductive threshold calibration method with enhanced adaptability and robustness. OpenGCN learns to predict pairwise connectivity for the unlabeled test instances embedded in a graph to determine its TPR and TNR at various distance thresholds allowing for transductive inference of the distance thresholds which also incorporates test-time information. Extensive experiments across open-world visual recognition benchmarks validate OpenGCN's superiority over existing posthoc calibration methods for open-world threshold calibration.",
+          "tags": [
+            "uncertainty/calibration",
+            "open-world"
+          ],
+          "score": 68
+        },
+        {
+          "title": "What If the TV Was Off? Examining Counterfactual Reasoning Abilities of Multi-modal Language Models",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_What_If_the_TV_Was_Off_Examining_Counterfactual_Reasoning_Abilities_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_What_If_the_TV_Was_Off_Examining_Counterfactual_Reasoning_Abilities_CVPR_2024_paper.pdf",
+          "authors": [
+            "Letian Zhang",
+            "Xiaotong Zhai",
+            "Zhongkai Zhao",
+            "Yongshuo Zong",
+            "Xin Wen",
+            "Bingchen Zhao"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "Counterfactual reasoning a fundamental aspect of human cognition involves contemplating alternatives to established facts or past events significantly enhancing our abilities in planning and decision-making. In light of the advancements in current multi-modal large language models we explore their effectiveness in counterfactual reasoning. To facilitate this investigation we introduce a novel dataset C-VQA specifically designed to examine the counterfactual reasoning capabilities of modern multi-modal large language models. This dataset is constructed by infusing original questions with counterfactual presuppositions spanning various types such as numerical and boolean queries. It encompasses a mix of real and synthetic data representing a wide range of difficulty levels. Our thorough evaluations of contemporary vision-language models using this dataset have revealed substantial performance drops with some models showing up to a 40% decrease highlighting a significant gap between current models and human-like vision reasoning capabilities. We hope our dataset will serve as a vital benchmark for evaluating the counterfactual reasoning capabilities of models. Code and dataset are publicly available at https://bzhao.me/C-VQA/.",
+          "tags": [
+            "VLM/MLLM",
+            "reasoning",
+            "causal/counterfactual"
+          ],
+          "score": 74
+        },
+        {
+          "title": "GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Yasuki_GeoProg3D_Compositional_Visual_Reasoning_for_City-Scale_3D_Language_Fields_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Yasuki_GeoProg3D_Compositional_Visual_Reasoning_for_City-Scale_3D_Language_Fields_ICCV_2025_paper.pdf",
+          "authors": [
+            "Shunsuke Yasuki",
+            "Taiki Miyanishi",
+            "Nakamasa Inoue",
+            "Shuhei Kurita",
+            "Koya Sakamoto",
+            "Daichi Azuma",
+            "Masato Taki",
+            "Yutaka Matsuo"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "The advancement of 3D language fields has enabled intuitive interactions with 3D scenes via natural language. However, existing approaches are typically limited to small-scale environments, lacking the scalability and compositional reasoning capabilities necessary for large, complex urban settings. To overcome these limitations, we propose GeoProg3D, a visual programming framework that enables natural language-driven interactions with city-scale high-fidelity 3D scenes. GeoProg3D consists of two key components: (i) a Geography-aware City-scale 3D Language Field (GCLF) that leverages a memory-efficient hierarchical 3D model to handle large-scale data, integrated with geographic information for efficiently filtering vast urban spaces using directional cues, distance measurements, elevation data, and landmark references; and (ii) Geographical Vision APIs (GV-APIs), specialized geographic vision tools such as area segmentation and object detection. Our framework employs large language models (LLMs) as reasoning engines to dynamically combine GV-APIs and operate GCLF, effectively supporting diverse geographic vision tasks. To assess performance in city-scale reasoning, we introduce GeoEval3D, a comprehensive benchmark dataset containing 952 query-answer pairs across five challenging tasks: grounding, spatial reasoning, comparison, counting, and measurement. Experiments demonstrate that GeoProg3D significantly outperforms existing 3D language fields and vision-language models across multiple tasks. To our knowledge, GeoProg3D is the first framework enabling compositional geographic reasoning in high-fidelity city-scale 3D environments via natural language.",
+          "tags": [
+            "VLM/MLLM",
+            "reasoning",
+            "boundary/frequency",
+            "depth/geometry",
+            "remote sensing",
+            "compositionality"
+          ],
+          "score": 114
+        },
+        {
+          "title": "A Causal Marriage between VLM and IRM from Understanding to Reasoning",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_A_Causal_Marriage_between_VLM_and_IRM_from_Understanding_to_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_A_Causal_Marriage_between_VLM_and_IRM_from_Understanding_to_CVPR_2026_paper.pdf",
+          "authors": [
+            "Ziliang Chen",
+            "Tianang Xiao",
+            "Jusheng Zhang",
+            "Yongsen Zheng",
+            "Yang Liu",
+            "Zhao-rong Lai",
+            "Liang Lin"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Vision-Language Models (VLMs) like CLIP exhibit extraordinary out-of-distribution (OOD) generalization, while the theoretical foundations underlying this robustness remain largely unexplored. This work establishes a connection between CLIP and Invariant Risk Minimization (IRM), the principled paradigm to overcome OOD problems, through token-level causal representation learning. Our key insight is that CLIP's contrastive objective, when optimally trained, recovers modality-invariant causal factors at the word-and-phrase granularity. By decomposing text prompts into class-specific tokens (causal factors) and class-agnostic context tokens (environmental factors), we prove that a vocabulary-constrained InfoNCE objective becomes formally equivalent to IRM's invariance criterion. Grounded in this equivalence, we propose a mid-training paradigm aiming to inject invariant learning signals into pre-trained CLIP without architectural modification, yielding CLIP-IRM with superior OOD performance. We further extend this causal alignment to multimodal reasoning via using CLIP-IRM's invariant alignment scores as process-level rewards in reinforcement learning, effectively transplanting IRM's guarantees to robust sequential decision-making in Multimodal Large Language Models. Extensive experiments validate our theoretical framework and present substantial improvements in both multimodal OOD understanding and reasoning tasks.",
+          "tags": [
+            "VLM/MLLM",
+            "reasoning",
+            "anomaly/OOD",
+            "causal/counterfactual",
+            "representation learning"
+          ],
+          "score": 126
+        }
+      ],
+      "quality": [
+        {
+          "title": "Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liang_Multimodal_Causality-Driven_Representation_Learning_for_Generalizable_Medical_Image_Segmentation_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liang_Multimodal_Causality-Driven_Representation_Learning_for_Generalizable_Medical_Image_Segmentation_CVPR_2026_paper.pdf",
+          "authors": [
+            "Xusheng Liang",
+            "Lihua Zhou",
+            "Nianxin Li",
+            "Miao Xu",
+            "Ziyang Song",
+            "Dong Yi",
+            "Jinlin Wu",
+            "Jiawei Ma",
+            "Hongbin Liu",
+            "Zhen Lei",
+            "Jiebo Luo"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "causal/counterfactual",
+            "representation learning",
+            "medical imaging"
+          ],
+          "score": 94
+        },
+        {
+          "title": "Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.pdf",
+          "authors": [
+            "Khushboo Mishra",
+            "Varun Trivedi",
+            "Tanima Dutta"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "unsupervised",
+            "video",
+            "causal/counterfactual",
+            "uncertainty/calibration",
+            "domain adaptation"
+          ],
+          "score": 90
+        },
+        {
+          "title": "GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Deng_GS-CLIP_Zero-shot_3D_Anomaly_Detection_by_Geometry-Aware_Prompt_and_Synergistic_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Deng_GS-CLIP_Zero-shot_3D_Anomaly_Detection_by_Geometry-Aware_Prompt_and_Synergistic_CVPR_2026_paper.pdf",
+          "authors": [
+            "Zehao Deng",
+            "An Liu",
+            "Yan Wang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "depth/geometry",
+            "anomaly/OOD",
+            "representation learning"
+          ],
+          "score": 90
+        },
+        {
+          "title": "CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.pdf",
+          "authors": [
+            "Weiwei Duan",
+            "Luping Ji",
+            "Shipeng Lei",
+            "Sicheng Zhu",
+            "Jianghong Huang",
+            "Mao Ye"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object",
+            "anomaly/OOD",
+            "causal/counterfactual"
+          ],
+          "score": 90
+        },
+        {
+          "title": "CODrone: A Comprehensive Oriented Object Detection Benchmark for UAV",
+          "url": "https://doi.org/10.1109/tgrs.2026.3677376",
+          "pdf": "",
+          "authors": [
+            "Kai Ye",
+            "Haidi Tang",
+            "Bowen Liu",
+            "Pingyang Dai",
+            "Liujuan Cao"
+          ],
+          "source": "Crossref / TGRS / 遥感顶刊 / IEEE Transactions on Geoscience and Remote Sensing",
+          "published": "2026",
+          "summary": "TGRS article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "UAV/small-object"
+          ],
+          "score": 89
+        },
+        {
+          "title": "Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Beemelmanns_Query2Uncertainty_Robust_Uncertainty_Quantification_and_Calibration_for_3D_Object_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Beemelmanns_Query2Uncertainty_Robust_Uncertainty_Quantification_and_Calibration_for_3D_Object_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Till Beemelmanns",
+            "Alexey Nekrasov",
+            "Stefan Vilceanu",
+            "Jonas Steinhaus",
+            "Timo Woopen",
+            "Bastian Leibe",
+            "Lutz Eckstein"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "depth/geometry",
+            "uncertainty/calibration"
+          ],
+          "score": 88
+        },
+        {
+          "title": "Dual Energy-Based Model with Open-World Uncertainty Estimation for Out-of-distribution Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Dual_Energy-Based_Model_with_Open-World_Uncertainty_Estimation_for_Out-of-distribution_Detection_CVPR_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Dual_Energy-Based_Model_with_Open-World_Uncertainty_Estimation_for_Out-of-distribution_Detection_CVPR_2025_paper.pdf",
+          "authors": [
+            "Qi Chen",
+            "Hu Ding"
+          ],
+          "source": "CVPR 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "anomaly/OOD",
+            "uncertainty/calibration",
+            "open-world"
+          ],
+          "score": 86
+        },
+        {
+          "title": "Learning Counterfactually Decoupled Attention for Open-World Model Attribution",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zheng_Learning_Counterfactually_Decoupled_Attention_for_Open-World_Model_Attribution_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zheng_Learning_Counterfactually_Decoupled_Attention_for_Open-World_Model_Attribution_ICCV_2025_paper.pdf",
+          "authors": [
+            "Yu Zheng",
+            "Boyang Gong",
+            "Fanye Kong",
+            "Yueqi Duan",
+            "Bingyao Yu",
+            "Wenzhao Zheng",
+            "Lei Chen",
+            "Jiwen Lu",
+            "Jie Zhou"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "causal/counterfactual",
+            "open-world"
+          ],
+          "score": 85
+        },
+        {
+          "title": "BTKD++: Beyond Teachers by Critically Distilling Knowledge from Teacher’s Bias",
+          "url": "https://doi.org/10.1007/s11263-026-02924-x",
+          "pdf": "",
+          "authors": [
+            "Jianhua Zhang",
+            "Yi Gao",
+            "Yu He",
+            "Shuo Chen",
+            "Xu Cheng",
+            "Xiufeng Liu",
+            "Shengyong Chen",
+            "Houxiang Zhang",
+            "Ruyu Liu"
+          ],
+          "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
+          "published": "2026-07-08",
+          "summary": "Abstract Existing knowledge distillation methods indiscriminately transfer knowledge from teacher networks, including output-level decisional biases, i.e., incorrect final predictions that can mislead student learning and limit student performance. We challenge this paradigm by proposing BTKD++, a framework that systematically filters and rectifies teacher’s output-level biased knowledge into corrective signals. Our approach partitions training data into Easy Tasks (correct teacher predictions) and Hard Tasks (incorrect predictions), then applies bias elimination and rectification modules orchestrated by dynamic learning curriculum. We provide an interpretive information-theoretic abstraction to explain the observed competence-threshold phenomenon, under which bias rectification becomes more effective when teacher errors contain sufficiently structured corrective information. BTKD++ demonstrates broad applicability across classification, detection, and segmentation tasks when task outputs are equipped with suitable probabilistic interfaces, and shows consistent effectiveness across CNNs, Transformers, and State-Space Models. Extensive experiments show consistent student-teacher transcendence, establishing new state-of-the-art results. This work redefines knowledge distillation from blind mimicry to critical learning, proving that students can surpass teachers through principled bias correction. The source code is available at https://github.com/smartyige/BTKD .",
+          "tags": [
+            "boundary/frequency"
+          ],
+          "score": 85
+        },
+        {
+          "title": "Breaking Spurious Correlations: Uncertainty-Driven Causal Transformers for AU Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Breaking_Spurious_Correlations_Uncertainty-Driven_Causal_Transformers_for_AU_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_Breaking_Spurious_Correlations_Uncertainty-Driven_Causal_Transformers_for_AU_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Yuru Wang",
+            "Yue Zhou"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "causal/counterfactual",
+            "uncertainty/calibration"
+          ],
+          "score": 84
+        }
+      ],
+      "cod": [
+        {
+          "title": "Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ren_Training-Free_Open-Vocabulary_Camouflaged_Object_Segmentation_via_Fine-Grained_Object_Binding_and_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ren_Training-Free_Open-Vocabulary_Camouflaged_Object_Segmentation_via_Fine-Grained_Object_Binding_and_CVPR_2026_paper.pdf",
+          "authors": [
+            "Peng Ren",
+            "Cheng Jiang",
+            "Chuande Yang",
+            "Fuming Sun",
+            "Tian Bai"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "open-vocabulary",
+            "training-free"
+          ],
+          "score": 74
+        },
+        {
+          "title": "Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Du_Beyond_Single_Images_Retrieval_Self-Augmented_Unsupervised_Camouflaged_Object_Detection_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Du_Beyond_Single_Images_Retrieval_Self-Augmented_Unsupervised_Camouflaged_Object_Detection_ICCV_2025_paper.pdf",
+          "authors": [
+            "Ji Du",
+            "Xin Wang",
+            "Fangwei Hao",
+            "Mingyang Yu",
+            "Chunyuan Chen",
+            "Jiesheng Wu",
+            "Bin Wang",
+            "Jing Xu",
+            "Ping Li"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "unsupervised",
+            "retrieval/prototype"
+          ],
+          "score": 71
+        },
+        {
+          "title": "SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liang_SDDF_Specificity-Driven_Dynamic_Focusing_for_Open-Vocabulary_Camouflaged_Object_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liang_SDDF_Specificity-Driven_Dynamic_Focusing_for_Open-Vocabulary_Camouflaged_Object_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Jiaming Liang",
+            "Yifeng Zhan",
+            "Chunlin Liu",
+            "Weihua Zheng",
+            "Bingye Peng",
+            "Qiwei Liang",
+            "Boyang Cai",
+            "Xiaochun Mai",
+            "Qiang Nie"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "open-vocabulary"
+          ],
+          "score": 68
+        },
+        {
+          "title": "EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jiang_EReCu_Pseudo-label_Evolution_Fusion_and_Refinement_with_Multi-Cue_Learning_for_CVPR_2026_paper.pdf",
+          "authors": [
+            "Shuo Jiang",
+            "Gaojia Zhang",
+            "Min Tan",
+            "Yufei Yin",
+            "Gang Pan"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "unsupervised"
+          ],
+          "score": 68
+        },
+        {
+          "title": "Seeing Both Sides: Towards Bidirectional Semantic Alignment for Open-Vocabulary Camouflaged Object Segmentation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Seeing_Both_Sides_Towards_Bidirectional_Semantic_Alignment_for_Open-Vocabulary_Camouflaged_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Seeing_Both_Sides_Towards_Bidirectional_Semantic_Alignment_for_Open-Vocabulary_Camouflaged_CVPR_2026_paper.pdf",
+          "authors": [
+            "Guohui Zhang",
+            "Fuming Sun",
+            "Yu Zhao",
+            "Yuqiu Kong",
+            "Jing Sun",
+            "Fasheng Wang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "open-vocabulary"
+          ],
+          "score": 68
+        },
+        {
+          "title": "Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Discover_Segment_and_Select_A_Progressive_Mechanism_for_Zero-shot_Camouflaged_CVPR_2026_paper.pdf",
+          "authors": [
+            "Yilong Yang",
+            "Jianxin Tian",
+            "Shengchuan Zhang",
+            "Liujuan Cao"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD"
+          ],
+          "score": 68
+        },
+        {
+          "title": "Beyond Weak Supervision: MLLMs-Guided Graded Knowledge Distillation for Unsupervised Camouflaged Object Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_Beyond_Weak_Supervision_MLLMs-Guided_Graded_Knowledge_Distillation_for_Unsupervised_Camouflaged_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_Beyond_Weak_Supervision_MLLMs-Guided_Graded_Knowledge_Distillation_for_Unsupervised_Camouflaged_CVPR_2026_paper.pdf",
+          "authors": [
+            "Huafeng Chen",
+            "Chenguang Zhu",
+            "Yueming Lyu",
+            "Caifeng Shan"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "unsupervised",
+            "VLM/MLLM",
+            "boundary/frequency"
+          ],
+          "score": 68
+        },
+        {
+          "title": "Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Hui_Endow_SAM_with_Keen_Eyes_Temporal-spatial_Prompt_Learning_for_Video_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Hui_Endow_SAM_with_Keen_Eyes_Temporal-spatial_Prompt_Learning_for_Video_CVPR_2024_paper.pdf",
+          "authors": [
+            "Wenjun Hui",
+            "Zhenfeng Zhu",
+            "Shuai Zheng",
+            "Yao Zhao"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "SAM",
+            "video"
+          ],
+          "score": 66
+        },
+        {
+          "title": "3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Lou_3D_Gaussian_Splatting_Driven_Multi-View_Robust_Physical_Adversarial_Camouflage_Generation_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Lou_3D_Gaussian_Splatting_Driven_Multi-View_Robust_Physical_Adversarial_Camouflage_Generation_ICCV_2025_paper.pdf",
+          "authors": [
+            "Tianrui Lou",
+            "Xiaojun Jia",
+            "Siyuan Liang",
+            "Jiawei Liang",
+            "Ming Zhang",
+            "Yanjun Xiao",
+            "Xiaochun Cao"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "depth/geometry",
+            "remote sensing"
+          ],
+          "score": 65
+        },
+        {
+          "title": "Gradient-Reweighted Adversarial Camouflage for Physical Object Detection Evasion",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Liang_Gradient-Reweighted_Adversarial_Camouflage_for_Physical_Object_Detection_Evasion_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Liang_Gradient-Reweighted_Adversarial_Camouflage_for_Physical_Object_Detection_Evasion_ICCV_2025_paper.pdf",
+          "authors": [
+            "Jiawei Liang",
+            "Siyuan Liang",
+            "Tianrui Lou",
+            "Ming Zhang",
+            "Wenjin Li",
+            "Dunqiu Fan",
+            "Xiaochun Cao"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "remote sensing"
+          ],
+          "score": 65
+        },
+        {
+          "title": "Seeing the Unseen: A Semantic Alignment and Context-Aware Prompt Framework for Open-Vocabulary Camouflaged Object Segmentation",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Ren_Seeing_the_Unseen_A_Semantic_Alignment_and_Context-Aware_Prompt_Framework_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ren_Seeing_the_Unseen_A_Semantic_Alignment_and_Context-Aware_Prompt_Framework_ICCV_2025_paper.pdf",
+          "authors": [
+            "Peng Ren",
+            "Tian Bai",
+            "Jing Sun",
+            "Fuming Sun"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "open-vocabulary"
+          ],
+          "score": 65
+        },
+        {
+          "title": "Improving SAM for Camouflaged Object Detection via Dual Stream Adapters",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Liu_Improving_SAM_for_Camouflaged_Object_Detection_via_Dual_Stream_Adapters_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Improving_SAM_for_Camouflaged_Object_Detection_via_Dual_Stream_Adapters_ICCV_2025_paper.pdf",
+          "authors": [
+            "Jiaming Liu",
+            "Linghe Kong",
+            "Guihai Chen"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "SAM"
+          ],
+          "score": 65
+        }
+      ],
+      "uav": [
+        {
+          "title": "CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.pdf",
+          "authors": [
+            "Weiwei Duan",
+            "Luping Ji",
+            "Shipeng Lei",
+            "Sicheng Zhu",
+            "Jianghong Huang",
+            "Mao Ye"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object",
+            "anomaly/OOD",
+            "causal/counterfactual"
+          ],
+          "score": 90
+        },
+        {
+          "title": "MMGeo: Multimodal Compositional Geo-Localization for UAVs",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Ji_MMGeo_Multimodal_Compositional_Geo-Localization_for_UAVs_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ji_MMGeo_Multimodal_Compositional_Geo-Localization_for_UAVs_ICCV_2025_paper.pdf",
+          "authors": [
+            "Yuxiang Ji",
+            "Boyong He",
+            "Zhuoyue Tan",
+            "Liaoni Wu"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object",
+            "compositionality"
+          ],
+          "score": 73
+        },
+        {
+          "title": "PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ke_PixDLM_A_Dual-Path_Multimodal_Language_Model_for_UAV_Reasoning_Segmentation_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ke_PixDLM_A_Dual-Path_Multimodal_Language_Model_for_UAV_Reasoning_Segmentation_CVPR_2026_paper.pdf",
+          "authors": [
+            "Shuyan Ke",
+            "Yifan Mei",
+            "Changli Wu",
+            "Yonghan Zheng",
+            "Jiayi Ji",
+            "Liujuan Cao",
+            "Rongrong Ji"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "reasoning",
+            "UAV/small-object"
+          ],
+          "score": 81
+        },
+        {
+          "title": "From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Yu_From_Easy_to_Hard_Progressive_Active_Learning_Framework_for_Infrared_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Yu_From_Easy_to_Hard_Progressive_Active_Learning_Framework_for_Infrared_ICCV_2025_paper.pdf",
+          "authors": [
+            "Chuang Yu",
+            "Jinmiao Zhao",
+            "Yunpeng Liu",
+            "Sicheng Zhao",
+            "Yimian Dai",
+            "Xiangyu Yue"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object",
+            "active/interactive"
+          ],
+          "score": 78
+        },
+        {
+          "title": "UAVLight: A Benchmark for Illumination-Robust 3D Reconstruction in Unmanned Aerial Vehicle (UAV) Scenes",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Du_UAVLight_A_Benchmark_for_Illumination-Robust_3D_Reconstruction_in_Unmanned_Aerial_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Du_UAVLight_A_Benchmark_for_Illumination-Robust_3D_Reconstruction_in_Unmanned_Aerial_CVPR_2026_paper.pdf",
+          "authors": [
+            "Kang Du",
+            "Xue Liao",
+            "Junpeng Xia",
+            "Chaozheng Guo",
+            "Yi Gu",
+            "Yirui Guan",
+            "Duotun Wang",
+            "Sheng Huang",
+            "Zeyu Wang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "depth/geometry",
+            "UAV/small-object"
+          ],
+          "score": 75
+        },
+        {
+          "title": "Uncertainty-Aware Gradient Stabilization for Small Object Detection",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Sun_Uncertainty-Aware_Gradient_Stabilization_for_Small_Object_Detection_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Sun_Uncertainty-Aware_Gradient_Stabilization_for_Small_Object_Detection_ICCV_2025_paper.pdf",
+          "authors": [
+            "Huixin Sun",
+            "Yanjing Li",
+            "Linlin Yang",
+            "Xianbin Cao",
+            "Baochang Zhang"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object",
+            "uncertainty/calibration"
+          ],
+          "score": 71
+        },
+        {
+          "title": "JTD-UAV: MLLM-Enhanced Joint Tracking and Description Framework for Anti-UAV Systems",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_JTD-UAV_MLLM-Enhanced_Joint_Tracking_and_Description_Framework_for_Anti-UAV_Systems_CVPR_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_JTD-UAV_MLLM-Enhanced_Joint_Tracking_and_Description_Framework_for_Anti-UAV_Systems_CVPR_2025_paper.pdf",
+          "authors": [
+            "Yifan Wang",
+            "Jian Zhao",
+            "Zhaoxin Fan",
+            "Xin Zhang",
+            "Xuecheng Wu",
+            "Yudian Zhang",
+            "Lei Jin",
+            "Xinyue Li",
+            "Gang Wang",
+            "Mengxi Jia",
+            "Ping Hu",
+            "Zheng Zhu",
+            "Xuelong Li"
+          ],
+          "source": "CVPR 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "VLM/MLLM",
+            "video",
+            "UAV/small-object"
+          ],
+          "score": 53
+        },
+        {
+          "title": "Breaking Smooth-Motion Assumptions: A UAV Benchmark for Multi-Object Tracking in Complex and Adverse Conditions",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ye_Breaking_Smooth-Motion_Assumptions_A_UAV_Benchmark_for_Multi-Object_Tracking_in_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ye_Breaking_Smooth-Motion_Assumptions_A_UAV_Benchmark_for_Multi-Object_Tracking_in_CVPR_2026_paper.pdf",
+          "authors": [
+            "Jingtao Ye",
+            "Kexin Zhang",
+            "Xunchi Ma",
+            "Yuechan Li",
+            "Guangming Zhu",
+            "Peiyi Shen",
+            "Linhua Jiang",
+            "Xiangdong Zhang",
+            "Liang Zhang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "diffusion",
+            "video",
+            "UAV/small-object"
+          ],
+          "score": 61
+        },
+        {
+          "title": "CODrone: A Comprehensive Oriented Object Detection Benchmark for UAV",
+          "url": "https://doi.org/10.1109/tgrs.2026.3677376",
+          "pdf": "",
+          "authors": [
+            "Kai Ye",
+            "Haidi Tang",
+            "Bowen Liu",
+            "Pingyang Dai",
+            "Liujuan Cao"
+          ],
+          "source": "Crossref / TGRS / 遥感顶刊 / IEEE Transactions on Geoscience and Remote Sensing",
+          "published": "2026",
+          "summary": "TGRS article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "UAV/small-object"
+          ],
+          "score": 89
+        },
+        {
+          "title": "Beyond Matching to Tiles: Bridging Unaligned Aerial and Satellite Views for Vision-Only UAV Navigation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liu_Beyond_Matching_to_Tiles_Bridging_Unaligned_Aerial_and_Satellite_Views_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liu_Beyond_Matching_to_Tiles_Bridging_Unaligned_Aerial_and_Satellite_Views_CVPR_2026_paper.pdf",
+          "authors": [
+            "Kejia Liu",
+            "Haoyang Zhou",
+            "Ruoyu Xu",
+            "Peicheng Wang",
+            "Mingli Song",
+            "Haofei Zhang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object"
+          ],
+          "score": 69
+        }
+      ],
+      "fire_multispectral": [],
+      "fire_foundation": [
+        {
+          "title": "SmokeBench: Evaluating Multimodal Large Language Models for Wildfire Smoke Detection",
+          "url": "https://openaccess.thecvf.com/content/WACV2026/html/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.pdf",
+          "authors": [
+            "Tianye Qi",
+            "Weihao Li",
+            "Nick Barnes"
+          ],
+          "source": "WACV 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "fire foundation model",
+            "VLM/MLLM"
+          ],
+          "score": 43
+        }
+      ],
+      "broad": [
+        {
+          "title": "Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liang_Multimodal_Causality-Driven_Representation_Learning_for_Generalizable_Medical_Image_Segmentation_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liang_Multimodal_Causality-Driven_Representation_Learning_for_Generalizable_Medical_Image_Segmentation_CVPR_2026_paper.pdf",
+          "authors": [
+            "Xusheng Liang",
+            "Lihua Zhou",
+            "Nianxin Li",
+            "Miao Xu",
+            "Ziyang Song",
+            "Dong Yi",
+            "Jinlin Wu",
+            "Jiawei Ma",
+            "Hongbin Liu",
+            "Zhen Lei",
+            "Jiebo Luo"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "causal/counterfactual",
+            "representation learning",
+            "medical imaging"
+          ],
+          "score": 94
+        },
+        {
+          "title": "Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.pdf",
+          "authors": [
+            "Khushboo Mishra",
+            "Varun Trivedi",
+            "Tanima Dutta"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "unsupervised",
+            "video",
+            "causal/counterfactual",
+            "uncertainty/calibration",
+            "domain adaptation"
+          ],
+          "score": 90
+        },
+        {
+          "title": "GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Deng_GS-CLIP_Zero-shot_3D_Anomaly_Detection_by_Geometry-Aware_Prompt_and_Synergistic_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Deng_GS-CLIP_Zero-shot_3D_Anomaly_Detection_by_Geometry-Aware_Prompt_and_Synergistic_CVPR_2026_paper.pdf",
+          "authors": [
+            "Zehao Deng",
+            "An Liu",
+            "Yan Wang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "depth/geometry",
+            "anomaly/OOD",
+            "representation learning"
+          ],
+          "score": 90
+        },
+        {
+          "title": "CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.pdf",
+          "authors": [
+            "Weiwei Duan",
+            "Luping Ji",
+            "Shipeng Lei",
+            "Sicheng Zhu",
+            "Jianghong Huang",
+            "Mao Ye"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object",
+            "anomaly/OOD",
+            "causal/counterfactual"
+          ],
+          "score": 90
+        },
+        {
+          "title": "CODrone: A Comprehensive Oriented Object Detection Benchmark for UAV",
+          "url": "https://doi.org/10.1109/tgrs.2026.3677376",
+          "pdf": "",
+          "authors": [
+            "Kai Ye",
+            "Haidi Tang",
+            "Bowen Liu",
+            "Pingyang Dai",
+            "Liujuan Cao"
+          ],
+          "source": "Crossref / TGRS / 遥感顶刊 / IEEE Transactions on Geoscience and Remote Sensing",
+          "published": "2026",
+          "summary": "TGRS article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "UAV/small-object"
+          ],
+          "score": 89
+        },
+        {
+          "title": "Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Beemelmanns_Query2Uncertainty_Robust_Uncertainty_Quantification_and_Calibration_for_3D_Object_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Beemelmanns_Query2Uncertainty_Robust_Uncertainty_Quantification_and_Calibration_for_3D_Object_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Till Beemelmanns",
+            "Alexey Nekrasov",
+            "Stefan Vilceanu",
+            "Jonas Steinhaus",
+            "Timo Woopen",
+            "Bastian Leibe",
+            "Lutz Eckstein"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "depth/geometry",
+            "uncertainty/calibration"
+          ],
+          "score": 88
+        },
+        {
+          "title": "Dual Energy-Based Model with Open-World Uncertainty Estimation for Out-of-distribution Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Dual_Energy-Based_Model_with_Open-World_Uncertainty_Estimation_for_Out-of-distribution_Detection_CVPR_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Dual_Energy-Based_Model_with_Open-World_Uncertainty_Estimation_for_Out-of-distribution_Detection_CVPR_2025_paper.pdf",
+          "authors": [
+            "Qi Chen",
+            "Hu Ding"
+          ],
+          "source": "CVPR 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "anomaly/OOD",
+            "uncertainty/calibration",
+            "open-world"
+          ],
+          "score": 86
+        },
+        {
+          "title": "Learning Counterfactually Decoupled Attention for Open-World Model Attribution",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zheng_Learning_Counterfactually_Decoupled_Attention_for_Open-World_Model_Attribution_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zheng_Learning_Counterfactually_Decoupled_Attention_for_Open-World_Model_Attribution_ICCV_2025_paper.pdf",
+          "authors": [
+            "Yu Zheng",
+            "Boyang Gong",
+            "Fanye Kong",
+            "Yueqi Duan",
+            "Bingyao Yu",
+            "Wenzhao Zheng",
+            "Lei Chen",
+            "Jiwen Lu",
+            "Jie Zhou"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "causal/counterfactual",
+            "open-world"
+          ],
+          "score": 85
+        },
+        {
+          "title": "BTKD++: Beyond Teachers by Critically Distilling Knowledge from Teacher’s Bias",
+          "url": "https://doi.org/10.1007/s11263-026-02924-x",
+          "pdf": "",
+          "authors": [
+            "Jianhua Zhang",
+            "Yi Gao",
+            "Yu He",
+            "Shuo Chen",
+            "Xu Cheng",
+            "Xiufeng Liu",
+            "Shengyong Chen",
+            "Houxiang Zhang",
+            "Ruyu Liu"
+          ],
+          "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
+          "published": "2026-07-08",
+          "summary": "Abstract Existing knowledge distillation methods indiscriminately transfer knowledge from teacher networks, including output-level decisional biases, i.e., incorrect final predictions that can mislead student learning and limit student performance. We challenge this paradigm by proposing BTKD++, a framework that systematically filters and rectifies teacher’s output-level biased knowledge into corrective signals. Our approach partitions training data into Easy Tasks (correct teacher predictions) and Hard Tasks (incorrect predictions), then applies bias elimination and rectification modules orchestrated by dynamic learning curriculum. We provide an interpretive information-theoretic abstraction to explain the observed competence-threshold phenomenon, under which bias rectification becomes more effective when teacher errors contain sufficiently structured corrective information. BTKD++ demonstrates broad applicability across classification, detection, and segmentation tasks when task outputs are equipped with suitable probabilistic interfaces, and shows consistent effectiveness across CNNs, Transformers, and State-Space Models. Extensive experiments show consistent student-teacher transcendence, establishing new state-of-the-art results. This work redefines knowledge distillation from blind mimicry to critical learning, proving that students can surpass teachers through principled bias correction. The source code is available at https://github.com/smartyige/BTKD .",
+          "tags": [
+            "boundary/frequency"
+          ],
+          "score": 85
+        },
+        {
+          "title": "Breaking Spurious Correlations: Uncertainty-Driven Causal Transformers for AU Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Breaking_Spurious_Correlations_Uncertainty-Driven_Causal_Transformers_for_AU_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_Breaking_Spurious_Correlations_Uncertainty-Driven_Causal_Transformers_for_AU_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Yuru Wang",
+            "Yue Zhou"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "causal/counterfactual",
+            "uncertainty/calibration"
+          ],
+          "score": 84
+        },
+        {
+          "title": "A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.pdf",
+          "authors": [
+            "Zexi Jia",
+            "Chuanwei Huang",
+            "Hongyan Fei",
+            "Yeshuang Zhu",
+            "Zhiqiang Yuan",
+            "Ying Deng",
+            "Jiapei Zhang",
+            "Jinchao Zhang",
+            "Jie Zhou"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "reasoning",
+            "causal/counterfactual",
+            "compositionality"
+          ],
+          "score": 84
+        },
+        {
+          "title": "REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shi_REALM_An_MLLM-Agent_Framework_for_Open_World_3D_Reasoning_Segmentation_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Shi_REALM_An_MLLM-Agent_Framework_for_Open_World_3D_Reasoning_Segmentation_CVPR_2026_paper.pdf",
+          "authors": [
+            "Changyue Shi",
+            "Minghao Chen",
+            "Yiping Mao",
+            "Chuxiao Yang",
+            "Xinyuan Hu",
+            "Jiajun Ding",
+            "Zhou Yu"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "VLM/MLLM",
+            "reasoning",
+            "diffusion",
+            "depth/geometry",
+            "open-world"
+          ],
+          "score": 82
+        }
+      ]
+    }
+  },
+  {
     "date": "2026-07-18",
     "generated_at": "2026-07-18 12:15",
     "timezone": "Asia/Shanghai",
