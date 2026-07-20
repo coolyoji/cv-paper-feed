@@ -69,91 +69,91 @@
 </head>
 <body>
 <main>
-<h1>2026-07-17 CV Paper Feed</h1>
+<h1>2026-07-18 CV Paper Feed</h1>
 <p><a href="../index.html">返回首页</a></p>
-<p>Last updated: 2026-07-17 12:23 Asia/Shanghai</p>
-<p>Candidate pool: 9518 papers</p>
+<p>Last updated: 2026-07-18 12:15 Asia/Shanghai</p>
+<p>Candidate pool: 9520 papers</p>
 <p>慢读模式：本页只展示 5 篇当日精读、10 篇高质量来源、12 篇 COD 相关、10 篇无人机小目标、10 篇多光谱火灾探测、10 篇火灾监测大模型、12 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。</p>
 <p>精读队列优先选择能给 COD 带来新问题设定或新方法范式的论文，例如开放世界、目标发现、反事实/因果、不确定性、自监督稠密表征、对象中心建模和视觉推理；纯 COD 直系论文主要作为背景和对照。</p>
 <h2>当日精读队列</h2>
 <article class='paper'>
-<h3><strong>CODrone: A Comprehensive Oriented Object Detection Benchmark for UAV</strong></h3>
-<p class='meta'>Source: TGRS 2026 / arXiv:2504.20032, 2026</p>
-<p class='meta'>Authors: Kai Ye, Haidi Tang, Bowen Liu, Pingyang Dai, Liujuan Cao et al.</p>
-<p class='meta'>Tags: UAV/small-object, benchmark, remote sensing</p>
-<p class='meta'>Links: <a href="https://arxiv.org/abs/2504.20032">paper</a> / <a href="https://arxiv.org/pdf/2504.20032">pdf</a></p>
-<p class='meta'>论文：CODrone: A Comprehensive Oriented Object Detection Benchmark for UAV</p>
-<p class='meta'>一句话总结：CODrone targets the poor real-flight generalization of UAV oriented-object detectors. It replaces narrowly task-specific benchmarks with images from multiple cities, lighting conditions, viewpoints, altitudes,...</p>
-<p class='meta'>任务设定：无人机/航拍小目标检测、分割或跟踪，重点处理目标像素少、尺度变化大、密集遮挡、运动模糊和边缘部署限制。</p>
-<p class='meta'>摘要详解：研究问题：现有无人机旋转目标数据集多为特定下游任务设计，图像分辨率、类别、视角与飞行高度覆盖有限，导致算法在真实飞行条件下的泛化能力被高估。方法与流程：CODrone不是提出单一检测器，而是按应用需求补齐上述四类缺口，采集多城市、多光照、多视角和多高度影像，扩展目标类别并提供旋转框标注；随后统一评测22种经典与最新旋转检测方法，用跨条件结果定位真实部署瓶颈。实验结论：作者认为该基准更贴近物流、农业和城市管理场景，现有方法在复杂条件下仍有明显提升空间。对COD可迁移的是把弱证据评测从单一平均指标扩展到尺度、视角、光照和场景分层；差异在于UAV难点主要是像素少与尺度变化，COD还需额外处理目标背景相似性。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：与 COD 的交叉点是弱目标证据：无人机目标通常尺寸极小，COD 目标通常与背景相似；二者都需要避免下采样丢失细节，并抑制复杂背景误检。</p>
-<p class='meta'>可借鉴点：小目标特征保真、多尺度融合、密集遮挡处理、轻量化实时推理。</p>
-<p class='meta'>可改进点：可把无人机小目标的高分辨率分支、多尺度候选和轻量检测头迁移到 COD，并验证其是否改善小型伪装目标、远景目标和复杂背景误检。</p>
-<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
-</article>
-<article class='paper'>
-<h3><strong>Probing Deep Into Temporal Profile Makes the Infrared Small Target Detector Much Better</strong></h3>
-<p class='meta'>Source: TPAMI 2026 / arXiv:2506.12766, 2026</p>
-<p class='meta'>Authors: Ruojing Li, Wei An, Xinyi Ying, Yingqian Wang, Yimian Dai et al.</p>
-<p class='meta'>Tags: UAV/small-object, video, anomaly/OOD</p>
-<p class='meta'>Links: <a href="https://arxiv.org/abs/2506.12766">paper</a> / <a href="https://arxiv.org/pdf/2506.12766">pdf</a></p>
-<p class='meta'>论文：Probing Deep Into Temporal Profile Makes the Infrared Small Target Detector Much Better</p>
-<p class='meta'>一句话总结：DeepPro reformulates multi-frame infrared small-target detection as one-dimensional anomaly detection along each pixel&#x27;s global temporal profile. A temporal probe and lightweight signal-correlation modules exp...</p>
-<p class='meta'>任务设定：异常检测或分布外识别，可类比伪装目标的弱异常发现。</p>
-<p class='meta'>摘要详解：研究问题：红外小目标极暗且受强杂波干扰，现有网络不断增加空间与短时序建模，却仍在复杂场景下不稳并产生大量冗余计算。方法与流程：作者先用理论分析和首个面向该任务的预测归因工具证明，全局时间剖面的显著性与自相关比局部空间纹理更能区分目标；随后把检测重写为逐像素一维时间信号异常检测，提出DeepPro，只沿时间维计算，并以Temporal Probe和轻量信号相关模块提取目标的起伏波形与相关结构。实验结论：在常用多帧红外基准上整体超过既有方法；公开消融中8个相关模块版本达到Pd 76.23、Fa 1.69且仅277K参数，显示高效时序建模并不依赖庞大空间骨干。对COD可尝试视频时间剖面，但需注意伪装目标未必运动，时序线索可能来自视角或光照扰动而非位移。</p>
-<p class='meta'>实验结论：摘要强调消融、鲁棒性或泛化；适合优先看实验设计和跨域表现。</p>
-<p class='meta'>和我课题的关系：与 COD 的交叉点是弱目标证据：无人机目标通常尺寸极小，COD 目标通常与背景相似；二者都需要避免下采样丢失细节，并抑制复杂背景误检。</p>
-<p class='meta'>可借鉴点：跨域鲁棒性、不确定性或异常分数；小目标特征保真、多尺度融合、密集遮挡处理、轻量化实时推理。</p>
-<p class='meta'>可改进点：可把无人机小目标的高分辨率分支、多尺度候选和轻量检测头迁移到 COD，并验证其是否改善小型伪装目标、远景目标和复杂背景误检。</p>
-<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
-</article>
-<article class='paper'>
-<h3><strong>EvolveNav: Empowering LLM-Based Vision-Language Navigation via Self-Improving Embodied Reasoning</strong></h3>
-<p class='meta'>Source: TPAMI 2026 / arXiv:2506.01551, 2026</p>
-<p class='meta'>Authors: Bingqian Lin, Yunshuang Nie, Khun Loun Zai, Ziming Wei, Mingfei Han et al.</p>
-<p class='meta'>Tags: VLM/MLLM, reasoning, self-training</p>
-<p class='meta'>Links: <a href="https://arxiv.org/abs/2506.01551">paper</a> / <a href="https://arxiv.org/pdf/2506.01551">pdf</a></p>
-<p class='meta'>论文：EvolveNav: Empowering LLM-Based Vision-Language Navigation via Self-Improving Embodied Reasoning</p>
-<p class='meta'>一句话总结：EvolveNav addresses unavailable perfect chain-of-thought labels and overfitting in LLM-based vision-language navigation. It first activates navigation reasoning with curated formalized CoT supervision, then it...</p>
+<h3><strong>Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Authors: Jooyoung Kim, Wonje Choi, Younguk Song, Honguk Woo</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, video, causal/counterfactual, domain adaptation</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Kim_Cross-Domain_Demo-to-Code_via_Neurosymbolic_Counterfactual_Reasoning_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Kim_Cross-Domain_Demo-to-Code_via_Neurosymbolic_Counterfactual_Reasoning_CVPR_2026_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning</p>
+<p class='meta'>一句话总结：Recent advances in Vision-Language Models (VLMs) have enabled video-instructed robotic programming, allowing agents to interpret video demonstrations and generate executable control code. We formulate video-in...</p>
 <p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>摘要详解：研究问题：LLM导航模型若只学习观测到动作的直接映射，决策难解释且跨任务泛化弱；直接用思维链监督又因完美推理标签难获得而容易过拟合固定表达。方法与流程：EvolveNav采用两阶段训练。第一阶段用规范化的“地标—方向”CoT标签监督微调，在压缩冗余语言的同时激活导航推理；第二阶段让模型迭代生成自扩充CoT标签，并加入自反思辅助任务，对比正确与错误推理模式，从而扩大监督分布。代理由场景编码器、LLM骨干和动作头组成，同时输出显式推理与动作。实验结论：作者在R2R、REVERIE、CVDN和SOON的任务内及跨任务设置中均报告稳定优于既有LLM导航方法，摘要未给具体数值。对COD可迁移“先规范化解释、再自反思纠错”，用于候选掩码的逐步证据审查。</p>
-<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
-<p class='meta'>和我课题的关系：可用于伪装目标的语义描述、环境理解和候选区域判断。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位。</p>
+<p class='meta'>摘要详解：研究问题：Recent advances in Vision-Language Models (VLMs) have enabled video-instructed robotic programming, allowing agents to interpret video demonstrations and generate executable control code. We formulate video-instructed robotic programming as a cross-domain adaptation problem, where perceptual and physical differences between demonstration and deployment induce procedural mismatches. 方法与流程：反事实建模/拒识机制，用来降低误检或判断目标是否存在。 摘要中的具体做法包括：We introduce NeSyCR, a neurosymbolic counterfactual reasoning framework that enables verifiable adaptation of task procedures, providing a reliable synthesis of code policies. 摘要结论：However, current VLMs lack the procedural understanding needed to reformulate causal dependencies and achieve task-compatible behavior under such domain shifts. By exploring the symbolic state space with verifiable checks, NeSyCR proposes procedural revisions that restore compatibility with the demonstrated procedure.</p>
+<p class='meta'>实验结论：摘要强调消融、鲁棒性或泛化；适合优先看实验设计和跨域表现。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数；反事实验证、目标存在性判断、误检拒识。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
-<h3><strong>BTKD++: Beyond Teachers by Critically Distilling Knowledge from Teacher&#x27;s Bias</strong></h3>
-<p class='meta'>Source: IJCV 2026, 2026-07-08</p>
-<p class='meta'>Authors: Jianhua Zhang, Yi Gao, Yu He, Shuo Chen, Xu Cheng</p>
-<p class='meta'>Tags: knowledge distillation, uncertainty/calibration</p>
-<p class='meta'>Links: <a href="https://doi.org/10.1007/s11263-026-02924-x">paper</a> / <a href="https://arxiv.org/pdf/2503.16105">pdf</a></p>
-<p class='meta'>论文：BTKD++: Beyond Teachers by Critically Distilling Knowledge from Teacher&#x27;s Bias</p>
-<p class='meta'>一句话总结：BTKD++ challenges blind knowledge distillation because teacher output errors can mislead students. It partitions samples into Easy Tasks with correct teacher predictions and Hard Tasks with incorrect predictio...</p>
-<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
-<p class='meta'>摘要详解：研究问题：传统知识蒸馏把教师输出一并传给学生，其中错误最终预测会成为决策偏差，限制学生甚至使其复制教师失误。方法与流程：BTKD++先按教师是否预测正确把训练数据分为Easy Tasks和Hard Tasks；对易样本保留可靠知识，对难样本通过偏差消除与偏差校正模块把错误输出转化为纠正信号，再由动态学习课程协调两类任务。作者还以信息论抽象解释“能力阈值”：只有当教师错误含有足够结构化的纠错信息时，偏差校正才更有效。实验结论：该框架在分类、检测和分割上适配CNN、Transformer与状态空间模型，持续实现学生超越教师并取得新的最佳结果，摘要未列具体增益。对COD可把教师误检按背景纹理、边界泄漏和漏检类型拆分，训练学生批判性吸收而非照搬伪标签。</p>
-<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
+<h3><strong>TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Authors: Qin Wang, Abigail Morrison, Hanno Scharr, Kai Krajsek</p>
+<p class='meta'>Tags: video, self-supervised, representation learning</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Wang_TimeBridge_Self-Supervised_Video_Representation_Learning_via_Start-End_Joint_Embedding_and_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_TimeBridge_Self-Supervised_Video_Representation_Learning_via_Start-End_Joint_Embedding_and_CVPR_2026_paper.pdf">pdf</a></p>
+<p class='meta'>论文：TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction</p>
+<p class='meta'>一句话总结：Learning temporal transformations, that is, how visual objects evolve across frames, is a fundamental challenge in video representation learning. Frame-to-frame dynamics involve complex, non-linear, and non-lo...</p>
+<p class='meta'>任务设定：视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。</p>
+<p class='meta'>摘要详解：研究问题：Learning temporal transformations, that is, how visual objects evolve across frames, is a fundamental challenge in video representation learning. Frame-to-frame dynamics involve complex, non-linear, and non-local changes that go far beyond conventional spatial augmentations. 方法与流程：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。 摘要中的具体做法包括：We propose TimeBridge, a self-supervised method that combines the joint embedding for video representation with learning temporal transformations by reconstructing in-between frames from only the start and end frames. 摘要结论：TimeBridge achieves new state-of-the-art performance on multiple dense video prediction benchmarks, including 73.5 J&amp;F on DAVIS 2017 video object segmentation, 47.5 mIoU on VIP semantic part propagation.</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可用于少标注/无标注 COD，重点借鉴稠密表征如何保留弱边界和局部结构。</p>
+<p class='meta'>可借鉴点：无标注稠密表征、预训练特征选择、局部结构保持。</p>
+<p class='meta'>可改进点：可尝试用无标注自然图像预训练稠密表征，再用少量 COD 标注验证跨数据集泛化。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Learning by Analogy: A Causal Framework for Compositional Generalization</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Authors: Lingjing Kong, Shaoan Xie, Yang Jiao, Yetian Chen, Yanhui Guo et al.</p>
+<p class='meta'>Tags: diffusion, remote sensing, anomaly/OOD, causal/counterfactual, compositionality</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Kong_Learning_by_Analogy_A_Causal_Framework_for_Compositional_Generalization_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Kong_Learning_by_Analogy_A_Causal_Framework_for_Compositional_Generalization_CVPR_2026_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Learning by Analogy: A Causal Framework for Compositional Generalization</p>
+<p class='meta'>一句话总结：Compositional generalization -- the ability to understand and generate novel combinations of learned concepts -- enables models to extend their capabilities beyond limited experiences. While effective, the dat...</p>
+<p class='meta'>任务设定：异常检测或分布外识别，可类比伪装目标的弱异常发现。</p>
+<p class='meta'>摘要详解：研究问题：Compositional generalization -- the ability to understand and generate novel combinations of learned concepts -- enables models to extend their capabilities beyond limited experiences. While effective, the data structures and principles that enable this crucial capability remain poorly understood. 方法与流程：组合式或概念瓶颈建模，可把 COD 拆成颜色、纹理、边界、环境关系等可解释概念。 摘要中的具体做法包括：We propose that compositional generalization fundamentally requires decomposing high-level concepts into basic, low-level concepts that can be recombined across similar contexts, similar to how humans draw analogies between concepts. We introduce a hierarchical data-generating process that naturally encodes different levels of concepts and their interaction mechanisms. 摘要结论：Theoretically, we demonstrate that this approach enables compositional generalization supporting complex relations between composed concepts, advancing beyond prior work that assumes simpler interactions like additive effects. To validate our theory, we apply insights from our theoretical framework and achieve significant improvements on benchmark datasets.</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：跨域鲁棒性、不确定性或异常分数；反事实验证、目标存在性判断、误检拒识；对象-背景解耦、概念分解、可解释中间变量。</p>
+<p class='meta'>可改进点：可把反事实干预落到 COD：替换背景、扰动纹理、隐藏候选区域，验证模型是否真正依赖目标而非环境偏差。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>When the Future Becomes the Past: Taming Temporal Correspondence for Self-supervised Video Representation Learning</strong></h3>
+<p class='meta'>Source: CVPR 2025, 2025</p>
+<p class='meta'>Authors: Yang Liu, Qianqian Xu, Peisong Wen, Siran Dai, Qingming Huang</p>
+<p class='meta'>Tags: video, uncertainty/calibration, self-supervised, representation learning</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Liu_When_the_Future_Becomes_the_Past_Taming_Temporal_Correspondence_for_CVPR_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_When_the_Future_Becomes_the_Past_Taming_Temporal_Correspondence_for_CVPR_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：When the Future Becomes the Past: Taming Temporal Correspondence for Self-supervised Video Representation Learning</p>
+<p class='meta'>一句话总结：The past decade has witnessed notable achievements in self-supervised learning for video tasks. Recent efforts typically adopt the Masked Video Modeling (MVM) paradigm, leading to significant progress on multi...</p>
+<p class='meta'>任务设定：视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。</p>
+<p class='meta'>摘要详解：研究问题：The past decade has witnessed notable achievements in self-supervised learning for video tasks. Recent efforts typically adopt the Masked Video Modeling (MVM) paradigm, leading to significant progress on multiple video tasks. 方法与流程：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。 摘要中的具体做法包括：To address these challenges jointly, we propose a self-supervised framework that leverages Temporal Correspondence for video Representation learning (T-CoRe). For challenge 1), we propose a sandwich sampling strategy that selects two auxiliary frames to reduce reconstruction uncertainty in a two-side-squeezing manner. Addressing challenge 2), we introduce an auxiliary branch into a self-distillation architecture to restore representations in the latent space, generating high-level semantic representations enriched with temporal information. 摘要结论：The past decade has witnessed notable achievements in self-supervised learning for video tasks. Experiments of T-CoRe consistently present superior performance across several downstream tasks, demonstrating its effectiveness for video representation learning.</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
 <p class='meta'>和我课题的关系：可迁移到 COD 的误检拒识、mask 置信度校准和目标缺失判断，适合做更可信的检测系统。</p>
-<p class='meta'>可借鉴点：mask 置信度校准、不确定性图、低置信样本处理。</p>
+<p class='meta'>可借鉴点：mask 置信度校准、不确定性图、低置信样本处理；无标注稠密表征、预训练特征选择、局部结构保持。</p>
 <p class='meta'>可改进点：可进一步做 COD mask 置信度校准，让模型在看不准时拒识或触发二阶段推理。</p>
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
-<h3><strong>Beyond Pixel Uncertainty: Bounding the OoD Objects in Road Scenes</strong></h3>
+<h3><strong>CARL: Causality-guided Architecture Representation Learning for an Interpretable Performance Predictor</strong></h3>
 <p class='meta'>Source: ICCV 2025, 2025</p>
-<p class='meta'>Authors: Huachao Zhu, Zelong Liu, Zhichao Sun, Yuda Zou, Gui-Song Xia et al.</p>
-<p class='meta'>Tags: anomaly/OOD, uncertainty/calibration, open-world, video</p>
-<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Zhu_Beyond_Pixel_Uncertainty_Bounding_the_OoD_Objects_in_Road_Scenes_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Zhu_Beyond_Pixel_Uncertainty_Bounding_the_OoD_Objects_in_Road_Scenes_ICCV_2025_paper.pdf">pdf</a></p>
-<p class='meta'>论文：Beyond Pixel Uncertainty: Bounding the OoD Objects in Road Scenes</p>
-<p class='meta'>一句话总结：DetSeg replaces fragile pixel-uncertainty thresholding with object-level OOD proposals. It detects open-world objects, suppresses in-distribution boxes, and either restricts an existing anomaly map or prompts...</p>
-<p class='meta'>任务设定：异常检测或分布外识别，可类比伪装目标的弱异常发现。</p>
-<p class='meta'>摘要详解：研究问题：道路OOD分割常把像素不确定性直接当异常分数，边界等天然高不确定区域会产生大量假阳性，而且逐帧阈值在视频中不稳定。方法与流程：DetSeg先用开放世界检测器产生全部目标框，再用增强NMS抑制已知类框，保留OOD候选；DetSeg-R用这些框裁剪既有异常图，DetSeg-S则将框作为提示交给SAM直接生成二值掩码，避免复杂阈值搜索。为改善跨帧抖动，方法利用道路消失点先验构造VPHM匈牙利匹配并做动量平滑，无需视频训练数据。实验结论：在多个道路异常基准上，DetSeg将既有方法的FPR95最多降低37.45%，说明对象级约束能有效剔除非对象区域的零散响应并稳定视频输出。对COD可把“像素置信度”升级为“候选对象是否成立”，但需防止开放世界检测器先把低对比伪装目标当背景漏掉。</p>
-<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
-<p class='meta'>和我课题的关系：可迁移到 COD 的误检拒识、mask 置信度校准和目标缺失判断，适合做更可信的检测系统。</p>
-<p class='meta'>可借鉴点：跨域鲁棒性、不确定性或异常分数；mask 置信度校准、不确定性图、低置信样本处理；类别无关候选发现、未知目标设定、目标缺失场景。</p>
-<p class='meta'>可改进点：可进一步做 COD mask 置信度校准，让模型在看不准时拒识或触发二阶段推理。</p>
+<p class='meta'>Authors: Han Ji, Yuqi Feng, Jiahao Fan, Yanan Sun</p>
+<p class='meta'>Tags: causal/counterfactual, representation learning</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Ji_CARL_Causality-guided_Architecture_Representation_Learning_for_an_Interpretable_Performance_Predictor_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Ji_CARL_Causality-guided_Architecture_Representation_Learning_for_an_Interpretable_Performance_Predictor_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：CARL: Causality-guided Architecture Representation Learning for an Interpretable Performance Predictor</p>
+<p class='meta'>一句话总结：Performance predictors have emerged as a promising method to accelerate the evaluation stage of neural architecture search (NAS). These predictors estimate the performance of unseen architectures by learning f...</p>
+<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
+<p class='meta'>摘要详解：研究问题：Performance predictors have emerged as a promising method to accelerate the evaluation stage of neural architecture search (NAS). These predictors estimate the performance of unseen architectures by learning from the correlation between a small set of trained architectures and their performance. 方法与流程：神经架构搜索/结构自动设计，重点看搜索空间、效率约束和是否适合 COD 解码器。 摘要中的具体做法包括：To address this, we propose a Causality-guided Architecture Representation Learning (CARL) method aiming to separate critical (causal) and redundant (non-causal) features of architectures for generalizable architecture performance prediction. Specifically, we employ a substructure extractor to split the input architecture into critical and redundant substructures in the latent space. Then, we generate multiple interventional samples by pairing critical representations with diverse redundant representations to prioritize critical features. 摘要结论：Extensive experiments on five NAS search spaces demonstrate the state-of-the-art accuracy and superior interpretability of CARL. For instance, CARL achieves 97.67% top-1 accuracy on CIFAR-10 using DARTS.</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
+<p class='meta'>可借鉴点：反事实验证、目标存在性判断、误检拒识；无标注稠密表征、预训练特征选择、局部结构保持。</p>
+<p class='meta'>可改进点：可把反事实干预落到 COD：替换背景、扰动纹理、隐藏候选区域，验证模型是否真正依赖目标而非环境偏差。</p>
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <h2>高质量来源优先读：CCF-A/B 与顶刊顶会</h2>
@@ -225,13 +225,13 @@
 <h3><strong>CODrone: A Comprehensive Oriented Object Detection Benchmark for UAV</strong></h3>
 <p class='meta'>Source: Crossref / TGRS / 遥感顶刊 / IEEE Transactions on Geoscience and Remote Sensing, 2026</p>
 <p class='meta'>Authors: Kai Ye, Haidi Tang, Bowen Liu, Pingyang Dai, Liujuan Cao</p>
-<p class='meta'>Tags: UAV/small-object, benchmark, remote sensing</p>
+<p class='meta'>Tags: UAV/small-object</p>
 <p class='meta'>Links: <a href="https://doi.org/10.1109/tgrs.2026.3677376">paper</a></p>
 <p class='meta'>论文：CODrone: A Comprehensive Oriented Object Detection Benchmark for UAV</p>
-<p class='meta'>一句话总结：CODrone targets the poor real-flight generalization of UAV oriented-object detectors. It replaces narrowly task-specific benchmarks with images from multiple cities, lighting conditions, viewpoints, altitudes,...</p>
+<p class='meta'>一句话总结：TGRS article matched by title in a top journal; abstract unavailable from Crossref.</p>
 <p class='meta'>任务设定：无人机/航拍小目标检测、分割或跟踪，重点处理目标像素少、尺度变化大、密集遮挡、运动模糊和边缘部署限制。</p>
 <p class='meta'>摘要详解：研究问题：现有无人机旋转目标数据集多为特定下游任务设计，图像分辨率、类别、视角与飞行高度覆盖有限，导致算法在真实飞行条件下的泛化能力被高估。方法与流程：CODrone不是提出单一检测器，而是按应用需求补齐上述四类缺口，采集多城市、多光照、多视角和多高度影像，扩展目标类别并提供旋转框标注；随后统一评测22种经典与最新旋转检测方法，用跨条件结果定位真实部署瓶颈。实验结论：作者认为该基准更贴近物流、农业和城市管理场景，现有方法在复杂条件下仍有明显提升空间。对COD可迁移的是把弱证据评测从单一平均指标扩展到尺度、视角、光照和场景分层；差异在于UAV难点主要是像素少与尺度变化，COD还需额外处理目标背景相似性。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
 <p class='meta'>和我课题的关系：与 COD 的交叉点是弱目标证据：无人机目标通常尺寸极小，COD 目标通常与背景相似；二者都需要避免下采样丢失细节，并抑制复杂背景误检。</p>
 <p class='meta'>可借鉴点：小目标特征保真、多尺度融合、密集遮挡处理、轻量化实时推理。</p>
 <p class='meta'>可改进点：可把无人机小目标的高分辨率分支、多尺度候选和轻量检测头迁移到 COD，并验证其是否改善小型伪装目标、远景目标和复杂背景误检。</p>
@@ -289,16 +289,16 @@
 <h3><strong>BTKD++: Beyond Teachers by Critically Distilling Knowledge from Teacher’s Bias</strong></h3>
 <p class='meta'>Source: Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision, 2026-07-08</p>
 <p class='meta'>Authors: Jianhua Zhang, Yi Gao, Yu He, Shuo Chen, Xu Cheng et al.</p>
-<p class='meta'>Tags: knowledge distillation, uncertainty/calibration</p>
+<p class='meta'>Tags: boundary/frequency</p>
 <p class='meta'>Links: <a href="https://doi.org/10.1007/s11263-026-02924-x">paper</a></p>
 <p class='meta'>论文：BTKD++: Beyond Teachers by Critically Distilling Knowledge from Teacher’s Bias</p>
-<p class='meta'>一句话总结：BTKD++ challenges blind knowledge distillation because teacher output errors can mislead students. It partitions samples into Easy Tasks with correct teacher predictions and Hard Tasks with incorrect predictio...</p>
+<p class='meta'>一句话总结：Abstract Existing knowledge distillation methods indiscriminately transfer knowledge from teacher networks, including output-level decisional biases, i.e., incorrect final predictions that can mislead student...</p>
 <p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
-<p class='meta'>摘要详解：研究问题：BTKD++ challenges blind knowledge distillation because teacher output errors can mislead students. It partitions samples into Easy Tasks with correct teacher predictions and Hard Tasks with incorrect predictions, then uses bias elimination, bias rectification, and a dynamic curriculum to convert structured teacher errors into corrective supervision across classification, detection, and segmentation. 方法与流程：边界感知建模，适合改善伪装目标轮廓不清的问题。 摘要中的具体做法包括：It partitions samples into Easy Tasks with correct teacher predictions and Hard Tasks with incorrect predictions, then uses bias elimination, bias rectification, and a dynamic curriculum to convert structured teacher errors into corrective supervision across classification, detection, and segmentation. 摘要结论：摘要未给出具体数值，需要到实验部分核对数据集、指标和对比结果。</p>
-<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
-<p class='meta'>和我课题的关系：可迁移到 COD 的误检拒识、mask 置信度校准和目标缺失判断，适合做更可信的检测系统。</p>
-<p class='meta'>可借鉴点：mask 置信度校准、不确定性图、低置信样本处理。</p>
-<p class='meta'>可改进点：可进一步做 COD mask 置信度校准，让模型在看不准时拒识或触发二阶段推理。</p>
+<p class='meta'>摘要详解：研究问题：Abstract Existing knowledge distillation methods indiscriminately transfer knowledge from teacher networks, including output-level decisional biases, i.e., incorrect final predictions that can mislead student learning and limit student performance. We challenge this paradigm by proposing BTKD++, a framework that systematically filters and rectifies teacher’s output-level biased knowledge into corrective signals. 方法与流程：边界感知建模，适合改善伪装目标轮廓不清的问题。 摘要中的具体做法包括：Our approach partitions training data into Easy Tasks (correct teacher predictions) and Hard Tasks (incorrect predictions), then applies bias elimination and rectification modules orchestrated by dynamic learning curriculum. 摘要结论：BTKD++ demonstrates broad applicability across classification, detection, and segmentation tasks when task outputs are equipped with suitable probabilistic interfaces, and shows consistent effectiveness across CNNs, Transformers, and State-Space Models. Extensive experiments show consistent student-teacher transcendence, establishing new state-of-the-art results.</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：可补充 COD 中纹理、边界、几何先验不足的问题。</p>
+<p class='meta'>可借鉴点：边界/频域增强模块。</p>
+<p class='meta'>可改进点：可结合多尺度语义上下文，避免只强化纹理导致误检。</p>
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
@@ -643,13 +643,13 @@
 <h3><strong>CODrone: A Comprehensive Oriented Object Detection Benchmark for UAV</strong></h3>
 <p class='meta'>Source: Crossref / TGRS / 遥感顶刊 / IEEE Transactions on Geoscience and Remote Sensing, 2026</p>
 <p class='meta'>Authors: Kai Ye, Haidi Tang, Bowen Liu, Pingyang Dai, Liujuan Cao</p>
-<p class='meta'>Tags: UAV/small-object, benchmark, remote sensing</p>
+<p class='meta'>Tags: UAV/small-object</p>
 <p class='meta'>Links: <a href="https://doi.org/10.1109/tgrs.2026.3677376">paper</a></p>
 <p class='meta'>论文：CODrone: A Comprehensive Oriented Object Detection Benchmark for UAV</p>
-<p class='meta'>一句话总结：CODrone targets the poor real-flight generalization of UAV oriented-object detectors. It replaces narrowly task-specific benchmarks with images from multiple cities, lighting conditions, viewpoints, altitudes,...</p>
+<p class='meta'>一句话总结：TGRS article matched by title in a top journal; abstract unavailable from Crossref.</p>
 <p class='meta'>任务设定：无人机/航拍小目标检测、分割或跟踪，重点处理目标像素少、尺度变化大、密集遮挡、运动模糊和边缘部署限制。</p>
 <p class='meta'>摘要详解：研究问题：现有无人机旋转目标数据集多为特定下游任务设计，图像分辨率、类别、视角与飞行高度覆盖有限，导致算法在真实飞行条件下的泛化能力被高估。方法与流程：CODrone不是提出单一检测器，而是按应用需求补齐上述四类缺口，采集多城市、多光照、多视角和多高度影像，扩展目标类别并提供旋转框标注；随后统一评测22种经典与最新旋转检测方法，用跨条件结果定位真实部署瓶颈。实验结论：作者认为该基准更贴近物流、农业和城市管理场景，现有方法在复杂条件下仍有明显提升空间。对COD可迁移的是把弱证据评测从单一平均指标扩展到尺度、视角、光照和场景分层；差异在于UAV难点主要是像素少与尺度变化，COD还需额外处理目标背景相似性。</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
 <p class='meta'>和我课题的关系：与 COD 的交叉点是弱目标证据：无人机目标通常尺寸极小，COD 目标通常与背景相似；二者都需要避免下采样丢失细节，并抑制复杂背景误检。</p>
 <p class='meta'>可借鉴点：小目标特征保真、多尺度融合、密集遮挡处理、轻量化实时推理。</p>
 <p class='meta'>可改进点：可把无人机小目标的高分辨率分支、多尺度候选和轻量检测头迁移到 COD，并验证其是否改善小型伪装目标、远景目标和复杂背景误检。</p>
@@ -931,22 +931,6 @@
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
-<h3><strong>Promptable Concept Segmentation from Above: Evaluating SAM 3&#x27;s Zero-Shot and One-Shot Capabilities in Remote Sensing</strong></h3>
-<p class='meta'>Source: arXiv, 2026-07-10</p>
-<p class='meta'>Authors: Mohammad Dabaja, Turgay Celik</p>
-<p class='meta'>Tags: open-vocabulary, training-free, SAM, depth/geometry, remote sensing, anomaly/OOD</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2607.09583v1">paper</a> / <a href="http://arxiv.org/pdf/2607.09583v1">pdf</a></p>
-<p class='meta'>论文：Promptable Concept Segmentation from Above: Evaluating SAM 3&#x27;s Zero-Shot and One-Shot Capabilities in Remote Sensing</p>
-<p class='meta'>一句话总结：The deployment of large-scale foundation models, such as the Segment Anything Model 3 (SAM 3), promises a transition toward open-vocabulary, training-free computer vision. However, their capacity to generalize...</p>
-<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
-<p class='meta'>摘要详解：研究问题：The deployment of large-scale foundation models, such as the Segment Anything Model 3 (SAM 3), promises a transition toward open-vocabulary, training-free computer vision. However, their capacity to generalize out-of-distribution to the complex, top-down geometric structures of Earth Observation imagery remains largely unquantified. 方法与流程：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。 摘要中的具体做法包括：Driven by SAM 3&#x27;s performance disparities in highly specialized domains, we present a comprehensive, multi-task empirical evaluation across remote sensing scene classification, object detection, and instance segmentation under strict zero-shot and one-shot constraints. To achieve this, we introduce a structural adaptation of SAM 3 by repurposing its decoupled binary presence head into a standalone zero-shot classifier. Furthermore, by systematically isolating textual and visual prompt modalities across five configurations, we explicitly diagnose the alignment mechanics within the model&#x27;s multimodal decoder. 摘要结论：To achieve this, we introduce a structural adaptation of SAM 3 by repurposing its decoupled binary presence head into a standalone zero-shot classifier. Ultimately, our results demonstrate that SAM 3 avoids the overfitting commonly seen in legacy domain-adapted models, achieving high Harmonic Mean scores in segmentation tasks.</p>
-<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
-<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合；跨域鲁棒性、不确定性或异常分数。</p>
-<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
-<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
-</article>
-<article class='paper'>
 <h3><strong>Slot-RAE: Streamlining Object-Centric Learning via Direct Representation Auto-Encoders</strong></h3>
 <p class='meta'>Source: arXiv, 2026-07-13</p>
 <p class='meta'>Authors: Alexandre Chapin, Emmanuel Dellandrea, Liming Chen</p>
@@ -1011,6 +995,22 @@
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
+<h3><strong>Promptable Concept Segmentation from Above: Evaluating SAM 3&#x27;s Zero-Shot and One-Shot Capabilities in Remote Sensing</strong></h3>
+<p class='meta'>Source: arXiv, 2026-07-10</p>
+<p class='meta'>Authors: Mohammad Dabaja, Turgay Celik</p>
+<p class='meta'>Tags: open-vocabulary, training-free, SAM, depth/geometry, remote sensing, anomaly/OOD</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2607.09583v1">paper</a> / <a href="http://arxiv.org/pdf/2607.09583v1">pdf</a></p>
+<p class='meta'>论文：Promptable Concept Segmentation from Above: Evaluating SAM 3&#x27;s Zero-Shot and One-Shot Capabilities in Remote Sensing</p>
+<p class='meta'>一句话总结：The deployment of large-scale foundation models, such as the Segment Anything Model 3 (SAM 3), promises a transition toward open-vocabulary, training-free computer vision. However, their capacity to generalize...</p>
+<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
+<p class='meta'>摘要详解：研究问题：The deployment of large-scale foundation models, such as the Segment Anything Model 3 (SAM 3), promises a transition toward open-vocabulary, training-free computer vision. However, their capacity to generalize out-of-distribution to the complex, top-down geometric structures of Earth Observation imagery remains largely unquantified. 方法与流程：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。 摘要中的具体做法包括：Driven by SAM 3&#x27;s performance disparities in highly specialized domains, we present a comprehensive, multi-task empirical evaluation across remote sensing scene classification, object detection, and instance segmentation under strict zero-shot and one-shot constraints. To achieve this, we introduce a structural adaptation of SAM 3 by repurposing its decoupled binary presence head into a standalone zero-shot classifier. Furthermore, by systematically isolating textual and visual prompt modalities across five configurations, we explicitly diagnose the alignment mechanics within the model&#x27;s multimodal decoder. 摘要结论：To achieve this, we introduce a structural adaptation of SAM 3 by repurposing its decoupled binary presence head into a standalone zero-shot classifier. Ultimately, our results demonstrate that SAM 3 avoids the overfitting commonly seen in legacy domain-adapted models, achieving high Harmonic Mean scores in segmentation tasks.</p>
+<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
+<p class='meta'>和我课题的关系：适合拓展到开放词汇、零样本或少标注 COD。</p>
+<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合；跨域鲁棒性、不确定性或异常分数。</p>
+<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
 <h3><strong>Edge-Optimized Multimodal Learning for UAV Video Understanding via BLIP-2</strong></h3>
 <p class='meta'>Source: arXiv, 2026-01-13</p>
 <p class='meta'>Authors: Yizhan Feng, Hichem Snoussi, Jing Teng, Jian Liu, Yuyang Wang et al.</p>
@@ -1023,22 +1023,6 @@
 <p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
 <p class='meta'>和我课题的关系：与 COD 的交叉点是弱目标证据：无人机目标通常尺寸极小，COD 目标通常与背景相似；二者都需要避免下采样丢失细节，并抑制复杂背景误检。</p>
 <p class='meta'>可借鉴点：边界/频域增强模块；小目标特征保真、多尺度融合、密集遮挡处理、轻量化实时推理。</p>
-<p class='meta'>可改进点：可把无人机小目标的高分辨率分支、多尺度候选和轻量检测头迁移到 COD，并验证其是否改善小型伪装目标、远景目标和复杂背景误检。</p>
-<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
-</article>
-<article class='paper'>
-<h3><strong>VTOS: Learning to Orchestrate Vision Tools by Co-Searching Solutions and Observers</strong></h3>
-<p class='meta'>Source: arXiv, 2026-06-17</p>
-<p class='meta'>Authors: Jinchao Ge, Lingqiao Liu, Shuwen Zhao, Lei Wang</p>
-<p class='meta'>Tags: open-vocabulary, SAM, reasoning, diffusion, boundary/frequency, UAV/small-object, anomaly/OOD, uncertainty/calibration, domain adaptation</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2606.20728v1">paper</a> / <a href="http://arxiv.org/pdf/2606.20728v1">pdf</a></p>
-<p class='meta'>论文：VTOS: Learning to Orchestrate Vision Tools by Co-Searching Solutions and Observers</p>
-<p class='meta'>一句话总结：Vision foundation tools such as open-vocabulary detectors, segmentation models, and post-processing operators are powerful building blocks for computer vision, but their effectiveness depends heavily on how th...</p>
-<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
-<p class='meta'>摘要详解：研究问题：Vision foundation tools such as open-vocabulary detectors, segmentation models, and post-processing operators are powerful building blocks for computer vision, but their effectiveness depends heavily on how they are orchestrated: which tools are used, in what order, with what parameters, and under what visual conditions. 方法与流程：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。 摘要中的具体做法包括：We introduce VTOS (Vision Tools Orchestration Search), a framework for adaptive visual tool orchestration through joint solution--observer search. 摘要结论：Across both tasks, VTOS outperforms static tool pipelines and agentic visual-programming baselines, showing that co-searching solutions and observers is an effective strategy for adapting vision tools to challenging computer vision tasks.</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：与 COD 的交叉点是弱目标证据：无人机目标通常尺寸极小，COD 目标通常与背景相似；二者都需要避免下采样丢失细节，并抑制复杂背景误检。</p>
-<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；跨域鲁棒性、不确定性或异常分数；mask 置信度校准、不确定性图、低置信样本处理；小目标特征保真、多尺度融合、密集遮挡处理、轻量化实时推理。</p>
 <p class='meta'>可改进点：可把无人机小目标的高分辨率分支、多尺度候选和轻量检测头迁移到 COD，并验证其是否改善小型伪装目标、远景目标和复杂背景误检。</p>
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
@@ -1088,6 +1072,22 @@
 <p class='meta'>和我课题的关系：可帮助 COD 跳出固定类别监督，转向未知目标发现、开放世界分割和类别无关候选生成。</p>
 <p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；类别无关候选发现、未知目标设定、目标缺失场景；对象-背景解耦、概念分解、可解释中间变量。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Zero-shot Shark Tracking and Biometrics from Aerial Imagery</strong></h3>
+<p class='meta'>Source: arXiv, 2025-01-10</p>
+<p class='meta'>Authors: Chinmay K Lalgudi, Mark E Leone, Jaden V Clark, Sergio Madrigal-Mora, Mario Espinoza</p>
+<p class='meta'>Tags: SAM, VLM/MLLM, diffusion, boundary/frequency, video, UAV/small-object</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2501.05717v1">paper</a> / <a href="http://arxiv.org/pdf/2501.05717v1">pdf</a></p>
+<p class='meta'>论文：Zero-shot Shark Tracking and Biometrics from Aerial Imagery</p>
+<p class='meta'>一句话总结：The recent widespread adoption of drones for studying marine animals provides opportunities for deriving biological information from aerial imagery. The large scale of imagery data acquired from drones is well...</p>
+<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
+<p class='meta'>摘要详解：研究问题：The recent widespread adoption of drones for studying marine animals provides opportunities for deriving biological information from aerial imagery. The large scale of imagery data acquired from drones is well suited for machine learning (ML) analysis. 方法与流程：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。 摘要中的具体做法包括：We introduce Frame Level ALIgment and tRacking (FLAIR), which leverages the video understanding of Segment Anything Model 2 (SAM2) and the vision-language capabilities of Contrastive Language-Image Pre-training (CLIP). 摘要结论：With a dataset of 18,000 drone images of Pacific nurse sharks, we trained state-of-the-art object detection models to compare against FLAIR. We show that FLAIR massively outperforms these object detectors and performs competitively against two human-in-the-loop methods for prompting SAM2, achieving a Dice score of 0.81.</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：与 COD 的交叉点是弱目标证据：无人机目标通常尺寸极小，COD 目标通常与背景相似；二者都需要避免下采样丢失细节，并抑制复杂背景误检。</p>
+<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；边界/频域增强模块；小目标特征保真、多尺度融合、密集遮挡处理、轻量化实时推理。</p>
+<p class='meta'>可改进点：可把无人机小目标的高分辨率分支、多尺度候选和轻量检测头迁移到 COD，并验证其是否改善小型伪装目标、远景目标和复杂背景误检。</p>
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <h2>阅读记录模板</h2>
