@@ -43,6 +43,7 @@ FIRE_MULTISPECTRAL_LIMIT = 10
 FIRE_FOUNDATION_LIMIT = 10
 BROAD_LIMIT = 12
 DOWNLOAD_LIMIT = 5
+MIN_FRESH_CANDIDATES = 500
 DOWNLOAD_ROOT = Path(
     os.environ.get("PAPER_DOWNLOAD_ROOT", r"F:\文献整理\每日精读论文")
 )
@@ -2047,6 +2048,32 @@ def load_history() -> list[dict]:
     return [item for item in data if isinstance(item, dict)]
 
 
+def load_cached_candidate_pool() -> list[Paper]:
+    cached: list[Paper] = []
+    latest_path = DATA / "latest_papers.json"
+    if latest_path.exists():
+        try:
+            latest = json.loads(latest_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            latest = []
+        if isinstance(latest, list):
+            cached.extend(
+                paper_from_dict(item) for item in latest if isinstance(item, dict)
+            )
+
+    for snapshot in load_history():
+        sections = snapshot.get("sections", {})
+        if not isinstance(sections, dict):
+            continue
+        for items in sections.values():
+            if not isinstance(items, list):
+                continue
+            cached.extend(
+                paper_from_dict(item) for item in items if isinstance(item, dict)
+            )
+    return dedupe(cached)
+
+
 def enrich_selected_sections(sections: dict[str, list[Paper]]) -> None:
     highlights = sections.get("highlights", [])
     enrich_paper_abstracts(highlights)
@@ -2627,16 +2654,26 @@ def refresh_current_abstracts() -> None:
 
 def apply_daily_curation() -> None:
     latest_path = DATA / "latest_papers.json"
-    try:
-        latest = json.loads(latest_path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        latest = []
-    papers = [paper_from_dict(item) for item in latest if isinstance(item, dict)]
     now = datetime.now(UTC8)
+    curated = daily_curated_highlights(now.strftime("%Y-%m-%d"))
+    papers = dedupe(load_cached_candidate_pool() + curated)
+    for paper in papers:
+        paper.score = score_paper(paper)
+    papers = [paper for paper in papers if paper.score >= 12]
+    papers.sort(key=lambda paper: paper.score, reverse=True)
     history = update_history(papers, now, preserve_same_day_highlights=False)
     if history:
         download_daily_pdfs(history[0])
     render_existing_history(history, latest_only=True)
+    latest_path.write_text(
+        json.dumps(
+            [paper_to_dict(paper) for paper in papers],
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+        newline="\n",
+    )
     print(f"[info] applied daily curation for {now:%Y-%m-%d}")
 
 
@@ -2652,6 +2689,8 @@ def main() -> None:
     DOCS.mkdir(exist_ok=True)
     DAILY_MD.mkdir(exist_ok=True)
     DAILY_HTML.mkdir(exist_ok=True)
+
+    cached_papers = load_cached_candidate_pool()
 
     print("[info] fetching arXiv")
     papers = fetch_arxiv()
@@ -2670,6 +2709,13 @@ def main() -> None:
     print(f"[info] total raw papers: {len(papers)}")
 
     papers = dedupe(papers)
+    fresh_count = len(papers)
+    if fresh_count < MIN_FRESH_CANDIDATES and cached_papers:
+        papers = dedupe(papers + cached_papers)
+        print(
+            "[warn] live sources returned only "
+            f"{fresh_count} unique papers; merged {len(cached_papers)} cached candidates"
+        )
     for paper in papers:
         paper.score = score_paper(paper)
     papers = [p for p in papers if p.score >= 12]

@@ -349,6 +349,37 @@ class HighlightHistoryTests(unittest.TestCase):
             [paper.title for paper in afternoon_candidates],
         )
 
+    def test_cached_candidate_pool_combines_latest_and_history_sections(self):
+        latest_paper = self.make_paper("Latest Candidate", 80, "latest")
+        history_paper = self.make_paper("History Candidate", 70, "history")
+        snapshot = update_papers.make_snapshot(
+            [history_paper],
+            datetime(2026, 7, 12, 9, 10, tzinfo=update_papers.UTC8),
+            enrich_abstracts=False,
+        )
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            data_dir = Path(temp_dir)
+            (data_dir / "latest_papers.json").write_text(
+                json.dumps([update_papers.paper_to_dict(latest_paper)]),
+                encoding="utf-8",
+            )
+            history_file = data_dir / "feed_history.json"
+            history_file.write_text(
+                json.dumps([snapshot]),
+                encoding="utf-8",
+            )
+            with (
+                patch.object(update_papers, "DATA", data_dir),
+                patch.object(update_papers, "HISTORY_FILE", history_file),
+            ):
+                cached = update_papers.load_cached_candidate_pool()
+
+        self.assertEqual(
+            {paper.title for paper in cached},
+            {latest_paper.title, history_paper.title},
+        )
+
     def test_history_key_reader_accepts_missing_sections(self):
         self.assertEqual(update_papers.history_highlight_keys([{"date": "2026-07-01"}]), set())
 

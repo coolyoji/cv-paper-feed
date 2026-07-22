@@ -62,5 +62,62 @@
     {"title":"Learning by Analogy: A Causal Framework for Compositional Generalization","url":"https://openaccess.thecvf.com/content/CVPR2026/html/Kong_Learning_by_Analogy_A_Causal_Framework_for_Compositional_Generalization_CVPR_2026_paper.html","pdf":"https://openaccess.thecvf.com/content/CVPR2026/papers/Kong_Learning_by_Analogy_A_Causal_Framework_for_Compositional_Generalization_CVPR_2026_paper.pdf","authors":["Lingjing Kong","Shaoan Xie","Yang Jiao","Yetian Chen","Yanhui Guo","Simone Shao","Yan Gao","Guangyi Chen","Kun Zhang"],"source":"CVPR 2026","published":"2026","summary":"This work explains compositional generalization through causal modularity and minimal changes, introducing an identifiable hierarchical process that supports complex non-additive concept interactions.","tags":["causal/counterfactual","compositionality","representation learning"],"score":94},
     {"title":"DARC: Dual Adjustment Reasoning with Counterfactuals for Trustworthy Chest X-ray Classification","url":"https://openaccess.thecvf.com/content/CVPR2026/html/Liao_DARC_Dual_Adjustment_Reasoning_with_Counterfactuals_for_Trustworthy_Chest_X-ray_CVPR_2026_paper.html","pdf":"https://openaccess.thecvf.com/content/CVPR2026/papers/Liao_DARC_Dual_Adjustment_Reasoning_with_Counterfactuals_for_Trustworthy_Chest_X-ray_CVPR_2026_paper.pdf","authors":["Zhifang Liao","Junhao Li","HaoKang Ding","Yucheng Song"],"source":"CVPR 2026","published":"2026","summary":"DARC separates non-pathological shortcuts and disease co-occurrence bias with back-door adjustment and anatomy-constrained counterfactual reasoning. CheXconf contains 40,213 instances across 11 categories.","tags":["medical imaging","causal/counterfactual","uncertainty/calibration"],"score":93},
     {"title":"Learning for Transductive Threshold Calibration in Open-World Recognition","url":"https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_Learning_for_Transductive_Threshold_Calibration_in_Open-World_Recognition_CVPR_2024_paper.html","pdf":"https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_Learning_for_Transductive_Threshold_Calibration_in_Open-World_Recognition_CVPR_2024_paper.pdf","authors":["Qin Zhang","Dongsheng An","Tianjun Xiao","Tong He","Qingming Tang","Ying Nian Wu","Joseph Tighe","Yifan Xing"],"source":"CVPR 2024","published":"2024","summary":"OpenGCN graphs unlabeled test instances, predicts pairwise connectivity, and transductively selects distance thresholds that satisfy target TPR or TNR for unseen open-world classes.","tags":["uncertainty/calibration","open-world"],"score":92}
+  ],
+  "2026-07-22": [
+    {
+      "title": "Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Beemelmanns_Query2Uncertainty_Robust_Uncertainty_Quantification_and_Calibration_for_3D_Object_Detection_CVPR_2026_paper.html",
+      "pdf": "https://arxiv.org/pdf/2605.05328",
+      "authors": ["Till Beemelmanns", "Alexey Nekrasov", "Stefan Vilceanu", "Jonas Steinhaus", "Timo Woopen", "Bastian Leibe", "Lutz Eckstein"],
+      "source": "CVPR 2026 / arXiv:2605.05328",
+      "published": "2026",
+      "summary": "Modern 3D detectors remain poorly calibrated under distribution shift because static post-hoc calibration only models in-distribution behavior. Query2Uncertainty fits a density estimator to class- and location-aware latent object queries from DETR-style detectors, then conditions post-hoc calibration on query density to jointly recalibrate classification confidence and bounding-box regression uncertainty. Experiments with camera-based PETR and LiDAR-based SECOND on nuScenes and MultiCorrupt consistently outperform standard post-hoc methods in both in-distribution and shifted settings.",
+      "tags": ["uncertainty/calibration", "anomaly/OOD", "depth/geometry"],
+      "score": 98
+    },
+    {
+      "title": "EvObj: Learning Evolving Object-centric Representations for 3D Instance Segmentation without Scene Supervision",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_EvObj_Learning_Evolving_Object-centric_Representations_for_3D_Instance_Segmentation_without_CVPR_2026_paper.html",
+      "pdf": "https://arxiv.org/pdf/2605.13152",
+      "authors": ["Jiahao Chen", "Zihui Zhang", "Yafei Yang", "Jinxi Li", "Shenxing Wei", "Zhixuan Sun", "Bo Yang"],
+      "source": "CVPR 2026 / arXiv:2605.13152",
+      "published": "2026",
+      "summary": "EvObj targets unsupervised 3D instance segmentation when synthetic object priors transfer poorly to real scans because of morphology changes and occlusion. Its object discerning module continually refines object candidates and adapts priors to the target domain, while an object completion module reconstructs partial geometry after discovery. It achieves state-of-the-art results on real and synthetic datasets; on ScanNet++ it reports 42.0 AP, 69.3 AP50, and 82.7 AP25 versus 19.8, 35.6, and 48.1 for GrabS.",
+      "tags": ["object-centric", "object discovery", "self-supervised", "depth/geometry"],
+      "score": 97
+    },
+    {
+      "title": "PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ke_PixDLM_A_Dual-Path_Multimodal_Language_Model_for_UAV_Reasoning_Segmentation_CVPR_2026_paper.html",
+      "pdf": "https://arxiv.org/pdf/2604.15670",
+      "authors": ["Shuyan Ke", "Yifan Mei", "Changli Wu", "Yonghan Zheng", "Jiayi Ji", "Liujuan Cao", "Rongrong Ji"],
+      "source": "CVPR 2026 / arXiv:2604.15670",
+      "published": "2026",
+      "summary": "PixDLM defines UAV reasoning segmentation across spatial, attribute, and scene-level reasoning, and introduces DRSeg with 10,000 high-resolution UAV images, instance masks, and chain-of-thought QA. A low-resolution CLIP semantic path and high-resolution SAM perception path are linked by MultiPath Alignment and a hierarchical reasoning decoder. On DRSeg it reaches gIoU values of 62.80, 61.75, and 62.51 for attribute, scene, and spatial reasoning.",
+      "tags": ["VLM/MLLM", "reasoning", "UAV/small-object", "remote sensing"],
+      "score": 96
+    },
+    {
+      "title": "R2-Seg: Training-Free OOD Medical Tumor Segmentation via Anatomical Reasoning and Statistical Rejection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shen_R2-Seg_Training-Free_OOD_Medical_Tumor_Segmentation_via_Anatomical_Reasoning_and_CVPR_2026_paper.html",
+      "pdf": "https://arxiv.org/pdf/2511.12691",
+      "authors": ["Shuaike Shen", "Ke Liu", "Jiaqing Xie", "Shangde Gao", "Chunhua Shen", "Ge Liu", "Mireia Crispin-Ortuzar", "Shangqi Gao"],
+      "source": "CVPR 2026 Oral / arXiv:2511.12691",
+      "published": "2026",
+      "summary": "R2-Seg addresses fragmented false positives produced by frozen medical segmentation foundation models on out-of-distribution tumors. Its training-free Reason stage uses an LLM anatomical planner to find organ anchors and multi-scale ROIs; the Reject stage applies two-sample statistical tests and false-discovery control to BiomedParse candidates, retaining regions unlike normal tissue. It substantially improves Dice, specificity, and sensitivity across multi-center, multi-modal benchmarks without parameter updates.",
+      "tags": ["training-free", "reasoning", "anomaly/OOD", "medical imaging"],
+      "score": 95
+    },
+    {
+      "title": "Better than Average: Spatially-Aware Aggregation of Segmentation Uncertainty Improves Downstream Performance",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Guarino_Better_than_Average_Spatially-Aware_Aggregation_of_Segmentation_Uncertainty_Improves_Downstream_CVPR_2026_paper.html",
+      "pdf": "https://arxiv.org/pdf/2603.29941",
+      "authors": ["Vanessa Emanuela Guarino", "Claudia Winklmayr", "Jannik Franzen", "Josef Lorenz Rumberger", "Manuel Pfeuffer", "Sonja Greven", "Klaus Maier-Hein", "Dagmar Kainmueller", "Christoph Karg", "Carsten T. Lüth"],
+      "source": "CVPR 2026 / arXiv:2603.29941",
+      "published": "2026",
+      "summary": "Pixel-wise segmentation uncertainty must be reduced to an image score for OOD and failure detection, but global averaging erases localized boundary and structural evidence. This work analyzes common aggregators, introduces spatially aware strategies, and combines intensity and spatial signals with a GMM meta-aggregator. Across ten datasets, spatial and prediction-aware aggregation outperform global averaging, while GMM-All matches or beats individual-feature fits in six of ten settings.",
+      "tags": ["uncertainty/calibration", "anomaly/OOD", "medical imaging"],
+      "score": 94
+    }
   ]
 }
