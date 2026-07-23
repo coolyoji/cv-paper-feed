@@ -119,5 +119,62 @@
       "tags": ["uncertainty/calibration", "anomaly/OOD", "medical imaging"],
       "score": 94
     }
+  ],
+  "2026-07-23": [
+    {
+      "title": "Unleashing Multimodal Large Language Models for Training-free HOI Detection in the Wild",
+      "url": "http://arxiv.org/abs/2607.13881v1",
+      "pdf": "http://arxiv.org/pdf/2607.13881v1",
+      "authors": ["Ting Lei", "Jialin Liu", "Zhu Xu", "Yuxin Peng", "Yang Liu"],
+      "source": "arXiv:2607.13881",
+      "published": "2026-07-15",
+      "summary": "AgentHOI is a training-free agentic framework for open-world human-object interaction detection. It coordinates foundation models through context-aware multi-round reasoning and multifaceted interaction localization, replacing fixed interaction classifiers with open-ended semantic discovery and instance-specific spatial grounding.",
+      "tags": ["training-free", "VLM/MLLM", "reasoning", "open-world", "compositionality"],
+      "score": 97
+    },
+    {
+      "title": "TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors",
+      "url": "http://arxiv.org/abs/2607.12571v1",
+      "pdf": "http://arxiv.org/pdf/2607.12571v1",
+      "authors": ["Pinhan Fu", "Xianda Guo", "Xuetao Li", "Wenke Huang", "Ruilin Wang", "Weiheng Zhao", "Wei Sui", "Mang Ye"],
+      "source": "arXiv:2607.12571",
+      "published": "2026-07-14",
+      "summary": "TrustVLA identifies a compact causal footprint shared by visual-triggered VLA backdoors, then uses Dirichlet evidence evolution, counterfactual localization, and localized inpainting to detect and repair attacks at inference time without retraining.",
+      "tags": ["training-free", "VLM/MLLM", "causal/counterfactual", "uncertainty/calibration"],
+      "score": 96
+    },
+    {
+      "title": "Slot-RAE: Streamlining Object-Centric Learning via Direct Representation Auto-Encoders",
+      "url": "http://arxiv.org/abs/2607.11196v1",
+      "pdf": "http://arxiv.org/pdf/2607.11196v1",
+      "authors": ["Alexandre Chapin", "Emmanuel Dellandrea", "Liming Chen"],
+      "source": "arXiv:2607.11196",
+      "published": "2026-07-13",
+      "summary": "Slot-RAE learns object-centric decomposition directly in a frozen visual foundation model feature space. Slot Attention, a DiT feature decoder, and a REPA alignment head remove the need for external VAEs and pretrained text-to-image priors while retaining discovery, reconstruction, and compositional generalization.",
+      "tags": ["unsupervised", "diffusion", "object discovery", "object-centric", "compositionality"],
+      "score": 95
+    },
+    {
+      "title": "Promptable Concept Segmentation from Above: Evaluating SAM 3's Zero-Shot and One-Shot Capabilities in Remote Sensing",
+      "url": "http://arxiv.org/abs/2607.09583v1",
+      "pdf": "http://arxiv.org/pdf/2607.09583v1",
+      "authors": ["Mohammad Dabaja", "Turgay Celik"],
+      "source": "arXiv:2607.09583",
+      "published": "2026-07-10",
+      "summary": "This study evaluates SAM 3 across remote-sensing classification, detection, and instance segmentation under zero-shot and one-shot constraints. It isolates five prompt configurations and exposes cross-modal interference, sub-pixel limits, and overhead semantic blind spots.",
+      "tags": ["open-vocabulary", "training-free", "SAM", "remote sensing", "UAV/small-object"],
+      "score": 94
+    },
+    {
+      "title": "Preserve the Hard, Regenerate the Rest: Uncertainty-Guided Synthetic Training Data Augmentation with Diffusion Models",
+      "url": "http://arxiv.org/abs/2606.31603v1",
+      "pdf": "http://arxiv.org/pdf/2606.31603v1",
+      "authors": ["Nikolai Rohrich", "Julian Gleissner", "Ahmed H. A. Ibrahim", "Silvan Mertes", "Tobias Huber"],
+      "source": "arXiv:2606.31603",
+      "published": "2026-06-30",
+      "summary": "This method uses predictive entropy to preserve difficult labeled pixels while diffusion inpaints only their complementary context. Fine-tuning excludes generated pixels from the loss, maintaining label validity while exposing rare UAV and street-scene objects to diverse backgrounds.",
+      "tags": ["diffusion", "UAV/small-object", "uncertainty/calibration", "domain generalization"],
+      "score": 93
+    }
   ]
 }

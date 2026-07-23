@@ -135,6 +135,9 @@ class FireTopicTests(unittest.TestCase):
 
 
 class HighlightHistoryTests(unittest.TestCase):
+    def test_partial_source_pool_triggers_cached_candidate_merge(self):
+        self.assertGreater(update_papers.MIN_FRESH_CANDIDATES, 775)
+
     @staticmethod
     def make_paper(title: str, score: int, url_suffix: str) -> object:
         return update_papers.Paper(

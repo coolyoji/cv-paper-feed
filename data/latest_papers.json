@@ -411,7 +411,7 @@
       "UAV/small-object",
       "remote sensing"
     ],
-    "score": 96
+    "score": 103
   },
   {
     "title": "Promptable Concept Segmentation from Above: Evaluating SAM 3's Zero-Shot and One-Shot Capabilities in Remote Sensing",
@@ -636,32 +636,6 @@
     "tags": [
       "fire foundation model",
       "UAV/small-object"
-    ],
-    "score": 98
-  },
-  {
-    "title": "Unleashing Multimodal Large Language Models for Training-free HOI Detection in the Wild",
-    "url": "http://arxiv.org/abs/2607.13881v1",
-    "pdf": "http://arxiv.org/pdf/2607.13881v1",
-    "authors": [
-      "Ting Lei",
-      "Jialin Liu",
-      "Zhu Xu",
-      "Yuxin Peng",
-      "Yang Liu"
-    ],
-    "source": "arXiv",
-    "published": "2026-07-15",
-    "summary": "Human-object interaction detection (HOID) has traditionally been formulated as a supervised detection problem over predefined interaction categories. While such paradigms achieve strong performance on closed-set benchmarks, they fundamentally entangle interaction understanding with dataset-specific supervision, limiting their ability to generalize to open-world and compositional scenarios. Recent HOI detectors attempt to leverage MLLMs through prompting strategies to transfer interaction-specific knowledge. However, such prompt-based approaches primarily focus on extracting discriminative representations from pretrained models, while underexploring their inherent multimodal reasoning capabilities. As a result, they struggle to provide informative contextual reasoning for ambiguous and open-world interaction scenarios. In this work, we present AgentHOI, a training-free, agentic framework that transfers the generalist multimodal reasoning capabilities of foundation models to HOI detection in the wild. Instead of learning interaction classifiers, AgentHOI modularly orchestrates complementary vision foundation modules to perform open-ended semantic reasoning and spatial grounding in a coordinated manner. To address the challenges of incomplete interaction discovery and ambiguous localization in complex scenes, we introduce two key mechanisms: (1) Context-aware Multi-round Reasoning, which progressively refines interaction hypotheses to ensure exhaustive and compositional HOI discovery, and (2) Multifaceted Interaction Localization, which enhances grounding precision by generating instance-specific descriptions that integrate semantic, spatial, and appearance cues. Extensive experiments demonstrate that AgentHOI achieves superior performance over state-of-the-art supervised and weakly supervised methods in real-world settings, despite requiring no HOID data for training.",
-    "tags": [
-      "training-free",
-      "unsupervised",
-      "VLM/MLLM",
-      "reasoning",
-      "diffusion",
-      "boundary/frequency",
-      "open-world",
-      "compositionality"
     ],
     "score": 98
   },
@@ -970,6 +944,32 @@
       "uncertainty/calibration"
     ],
     "score": 93
+  },
+  {
+    "title": "Unleashing Multimodal Large Language Models for Training-free HOI Detection in the Wild",
+    "url": "http://arxiv.org/abs/2607.13881v1",
+    "pdf": "http://arxiv.org/pdf/2607.13881v1",
+    "authors": [
+      "Ting Lei",
+      "Jialin Liu",
+      "Zhu Xu",
+      "Yuxin Peng",
+      "Yang Liu"
+    ],
+    "source": "arXiv",
+    "published": "2026-07-15",
+    "summary": "Human-object interaction detection (HOID) has traditionally been formulated as a supervised detection problem over predefined interaction categories. While such paradigms achieve strong performance on closed-set benchmarks, they fundamentally entangle interaction understanding with dataset-specific supervision, limiting their ability to generalize to open-world and compositional scenarios. Recent HOI detectors attempt to leverage MLLMs through prompting strategies to transfer interaction-specific knowledge. However, such prompt-based approaches primarily focus on extracting discriminative representations from pretrained models, while underexploring their inherent multimodal reasoning capabilities. As a result, they struggle to provide informative contextual reasoning for ambiguous and open-world interaction scenarios. In this work, we present AgentHOI, a training-free, agentic framework that transfers the generalist multimodal reasoning capabilities of foundation models to HOI detection in the wild. Instead of learning interaction classifiers, AgentHOI modularly orchestrates complementary vision foundation modules to perform open-ended semantic reasoning and spatial grounding in a coordinated manner. To address the challenges of incomplete interaction discovery and ambiguous localization in complex scenes, we introduce two key mechanisms: (1) Context-aware Multi-round Reasoning, which progressively refines interaction hypotheses to ensure exhaustive and compositional HOI discovery, and (2) Multifaceted Interaction Localization, which enhances grounding precision by generating instance-specific descriptions that integrate semantic, spatial, and appearance cues. Extensive experiments demonstrate that AgentHOI achieves superior performance over state-of-the-art supervised and weakly supervised methods in real-world settings, despite requiring no HOID data for training.",
+    "tags": [
+      "training-free",
+      "unsupervised",
+      "VLM/MLLM",
+      "reasoning",
+      "diffusion",
+      "boundary/frequency",
+      "open-world",
+      "compositionality"
+    ],
+    "score": 92
   },
   {
     "title": "CGU-Bayes: Causal Graph Uncertainty-Guided Bayesian Inference for Domain Generalization",
@@ -2730,30 +2730,6 @@
     "score": 73
   },
   {
-    "title": "FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning",
-    "url": "http://arxiv.org/abs/2603.22969v1",
-    "pdf": "http://arxiv.org/pdf/2603.22969v1",
-    "authors": [
-      "Jingchen Ni",
-      "Quan Zhang",
-      "Dan Jiang",
-      "Keyu Lv",
-      "Ke Zhang",
-      "Chun Yuan"
-    ],
-    "source": "arXiv",
-    "published": "2026-03-24",
-    "summary": "Existing camouflage object detection (COD) methods typically rely on fully-supervised learning guided by mask annotations. However, obtaining mask annotations is time-consuming and labor-intensive. Compared to fully-supervised methods, existing weakly-supervised COD methods exhibit significantly poorer performance. Even for the Segment Anything Model (SAM), there are still challenges in handling weakly-supervised camouflage object detection (WSCOD), such as: a. non-camouflage target responses, b. local responses, c. extreme responses, and d. lack of refined boundary awareness, which leads to unsatisfactory results in camouflage scenes. To alleviate these issues, we propose a frequency-aware and contrastive learning-based WSCOD framework in this paper, named FCL-COD. To mitigate the problem of non-camouflaged object responses, we propose the Frequency-aware Low-rank Adaptation (FoRA) method, which incorporates frequency-aware camouflage scene knowledge into SAM. To overcome the challenges of local and extreme responses, we introduce a gradient-aware contrastive learning approach that effectively delineates precise foreground-background boundaries. Additionally, to address the lack of refined boundary perception, we present a multi-scale frequency-aware representation learning strategy that facilitates the modeling of more refined boundaries. We validate the effectiveness of our approach through extensive empirical experiments on three widely recognized COD benchmarks. The results confirm that our method surpasses both state-of-the-art weakly supervised and even fully supervised techniques.",
-    "tags": [
-      "COD",
-      "unsupervised",
-      "SAM",
-      "diffusion",
-      "boundary/frequency"
-    ],
-    "score": 73
-  },
-  {
     "title": "LSP-ST: Ladder Shape-Biased Side-Tuning for Robust Infrared Small Target Detection",
     "url": "http://arxiv.org/abs/2504.14481v2",
     "pdf": "http://arxiv.org/pdf/2504.14481v2",
@@ -3475,6 +3451,30 @@
       "causal/counterfactual"
     ],
     "score": 70
+  },
+  {
+    "title": "FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning",
+    "url": "http://arxiv.org/abs/2603.22969v1",
+    "pdf": "http://arxiv.org/pdf/2603.22969v1",
+    "authors": [
+      "Jingchen Ni",
+      "Quan Zhang",
+      "Dan Jiang",
+      "Keyu Lv",
+      "Ke Zhang",
+      "Chun Yuan"
+    ],
+    "source": "arXiv",
+    "published": "2026-03-24",
+    "summary": "Existing camouflage object detection (COD) methods typically rely on fully-supervised learning guided by mask annotations. However, obtaining mask annotations is time-consuming and labor-intensive. Compared to fully-supervised methods, existing weakly-supervised COD methods exhibit significantly poorer performance. Even for the Segment Anything Model (SAM), there are still challenges in handling weakly-supervised camouflage object detection (WSCOD), such as: a. non-camouflage target responses, b. local responses, c. extreme responses, and d. lack of refined boundary awareness, which leads to unsatisfactory results in camouflage scenes. To alleviate these issues, we propose a frequency-aware and contrastive learning-based WSCOD framework in this paper, named FCL-COD. To mitigate the problem of non-camouflaged object responses, we propose the Frequency-aware Low-rank Adaptation (FoRA) method, which incorporates frequency-aware camouflage scene knowledge into SAM. To overcome the challenges of local and extreme responses, we introduce a gradient-aware contrastive learning approach that effectively delineates precise foreground-background boundaries. Additionally, to address the lack of refined boundary perception, we present a multi-scale frequency-aware representation learning strategy that facilitates the modeling of more refined boundaries. We validate the effectiveness of our approach through extensive empirical experiments on three widely recognized COD benchmarks. The results confirm that our method surpasses both state-of-the-art weakly supervised and even fully supervised techniques.",
+    "tags": [
+      "COD",
+      "unsupervised",
+      "SAM",
+      "diffusion",
+      "boundary/frequency"
+    ],
+    "score": 69
   },
   {
     "title": "Beyond Matching to Tiles: Bridging Unaligned Aerial and Satellite Views for Vision-Only UAV Navigation",
@@ -29799,31 +29799,6 @@
     "score": 45
   },
   {
-    "title": "IMAGIN-4D: Image-Guided Controllable Interaction Generation",
-    "url": "http://arxiv.org/abs/2606.23675v1",
-    "pdf": "http://arxiv.org/pdf/2606.23675v1",
-    "authors": [
-      "Sai Kumar Dwivedi",
-      "Federica Bogo",
-      "Buğra Tekin",
-      "Chenhongyi Yang",
-      "Nadine Bertsch",
-      "Tomas Hodan",
-      "Michael J. Black",
-      "Dimitrios Tzionas",
-      "Shreyas Hampali"
-    ],
-    "source": "arXiv",
-    "published": "2026-06-22",
-    "summary": "Generating human-object interactions (HOI) is central to character animation, robotics, AR/VR, and embodied AI. Recent HOI generation methods synthesize motion from text, object geometry, and sparse waypoints, controlling action semantics and object trajectories. However, these signals underspecify interaction: the same prompt and trajectory can produce different grasps, approach directions, body poses, object poses, contacts, and body-object layouts. We address this ambiguity with a reference image as a visual specification of the desired interaction snapshot. However, a single global image representation conflates distinct cues and conditions all frames on identical visual evidence. We therefore introduce IMAGIN-4D, a diffusion-based HOI generator that decomposes image conditioning spatio-temporally. For spatial conditioning, IMAGIN-4D extracts supervised interaction-state tokens for body pose, object pose, body-object contact, and spatial relationships at the depicted frame. For temporal conditioning, it computes frame-aware tokens by querying image patches per generated frame, allowing sequence segments to attend to different visual cues from the same image. To balance image, text, and waypoint cues, IMAGIN-4D uses role-aware conditioning: text, waypoints, and interaction-state tokens use separate AdaLN streams, while frame-aware visual tokens cross-attend with motion tokens. Since HOI motion datasets lack paired images, we build a synthetic motion-to-image rendering pipeline from FullBodyManipulation (FBM) and introduce an image-adherence metric to evaluate whether generated motions match the reference snapshot. Experiments on FBM and BEHAVE show that IMAGIN-4D improves fine-grained interaction control over single-token and uniformly image-conditioned baselines while preserving waypoint-following and motion quality. Code and models will be released at https://imagin4d.github.io.",
-    "tags": [
-      "diffusion",
-      "depth/geometry",
-      "video"
-    ],
-    "score": 45
-  },
-  {
     "title": "Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking",
     "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xiao_Generalizable_Structure-Aware_Keypoint_Correspondence_for_Category-Unified_3D_Single_Object_Tracking_CVPR_2026_paper.html",
     "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Xiao_Generalizable_Structure-Aware_Keypoint_Correspondence_for_Category-Unified_3D_Single_Object_Tracking_CVPR_2026_paper.pdf",
@@ -44528,6 +44503,31 @@
       "boundary/frequency"
     ],
     "score": 42
+  },
+  {
+    "title": "IMAGIN-4D: Image-Guided Controllable Interaction Generation",
+    "url": "http://arxiv.org/abs/2606.23675v1",
+    "pdf": "http://arxiv.org/pdf/2606.23675v1",
+    "authors": [
+      "Sai Kumar Dwivedi",
+      "Federica Bogo",
+      "Buğra Tekin",
+      "Chenhongyi Yang",
+      "Nadine Bertsch",
+      "Tomas Hodan",
+      "Michael J. Black",
+      "Dimitrios Tzionas",
+      "Shreyas Hampali"
+    ],
+    "source": "arXiv",
+    "published": "2026-06-22",
+    "summary": "Generating human-object interactions (HOI) is central to character animation, robotics, AR/VR, and embodied AI. Recent HOI generation methods synthesize motion from text, object geometry, and sparse waypoints, controlling action semantics and object trajectories. However, these signals underspecify interaction: the same prompt and trajectory can produce different grasps, approach directions, body poses, object poses, contacts, and body-object layouts. We address this ambiguity with a reference image as a visual specification of the desired interaction snapshot. However, a single global image representation conflates distinct cues and conditions all frames on identical visual evidence. We therefore introduce IMAGIN-4D, a diffusion-based HOI generator that decomposes image conditioning spatio-temporally. For spatial conditioning, IMAGIN-4D extracts supervised interaction-state tokens for body pose, object pose, body-object contact, and spatial relationships at the depicted frame. For temporal conditioning, it computes frame-aware tokens by querying image patches per generated frame, allowing sequence segments to attend to different visual cues from the same image. To balance image, text, and waypoint cues, IMAGIN-4D uses role-aware conditioning: text, waypoints, and interaction-state tokens use separate AdaLN streams, while frame-aware visual tokens cross-attend with motion tokens. Since HOI motion datasets lack paired images, we build a synthetic motion-to-image rendering pipeline from FullBodyManipulation (FBM) and introduce an image-adherence metric to evaluate whether generated motions match the reference snapshot. Experiments on FBM and BEHAVE show that IMAGIN-4D improves fine-grained interaction control over single-token and uniformly image-conditioned baselines while preserving waypoint-following and motion quality. Code and models will be released at https://imagin4d.github.io.",
+    "tags": [
+      "diffusion",
+      "depth/geometry",
+      "video"
+    ],
+    "score": 41
   },
   {
     "title": "Detection of oriented lunar rockfalls and kinematic analysis in Tycho Crater",
