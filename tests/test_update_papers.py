@@ -103,6 +103,9 @@ class FireTopicTests(unittest.TestCase):
         self.assertIn("## 多光谱火灾探测", markdown)
         self.assertIn("## 火灾监测大模型", markdown)
         self.assertIn("WildFireVLM", markdown)
+        self.assertIn("0 篇多光谱火灾探测", markdown)
+        self.assertIn("1 篇火灾监测大模型", markdown)
+        self.assertIn("本日未筛到可核验且达到质量阈值的候选", markdown)
 
     def test_fire_topics_start_on_july_14(self):
         self.assertFalse(update_papers.fire_topic_enabled(date(2026, 7, 13)))

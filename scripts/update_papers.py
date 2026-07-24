@@ -2246,19 +2246,19 @@ def render_snapshot_markdown(snapshot: dict) -> str:
     date_text = current.get("date", now.strftime("%Y-%m-%d"))
     show_fire_topics = fire_topic_enabled(str(date_text))
     limits = [
-        f"{HIGHLIGHT_LIMIT} 篇当日精读",
-        f"{QUALITY_LIMIT} 篇高质量来源",
-        f"{COD_LIMIT} 篇 COD 相关",
-        f"{UAV_LIMIT} 篇无人机小目标",
+        f"{len(highlights)} 篇当日精读",
+        f"{len(quality)} 篇高质量来源",
+        f"{len(cod)} 篇 COD 相关",
+        f"{len(uav)} 篇无人机小目标",
     ]
     if show_fire_topics:
         limits.extend(
             [
-                f"{FIRE_MULTISPECTRAL_LIMIT} 篇多光谱火灾探测",
-                f"{FIRE_FOUNDATION_LIMIT} 篇火灾监测大模型",
+                f"{len(fire_multispectral)} 篇多光谱火灾探测",
+                f"{len(fire_foundation)} 篇火灾监测大模型",
             ]
         )
-    limits.append(f"{BROAD_LIMIT} 篇泛视觉候选")
+    limits.append(f"{len(broad)} 篇泛视觉候选")
     arxiv_source = (
         "- arXiv API: recent preprints from COD, UAV small objects, VLM, "
         "segmentation, diffusion, adaptation, medical and remote-sensing queries, "
@@ -2326,14 +2326,20 @@ def render_snapshot_markdown(snapshot: dict) -> str:
 
     if show_fire_topics:
         lines.extend(["## 多光谱火灾探测", ""])
-        for i, paper in enumerate(fire_multispectral, 1):
-            lines.append(md_paper_item(i, paper))
-            lines.append("")
+        if fire_multispectral:
+            for i, paper in enumerate(fire_multispectral, 1):
+                lines.append(md_paper_item(i, paper))
+                lines.append("")
+        else:
+            lines.extend(["- 本日未筛到可核验且达到质量阈值的候选；不为凑数收录。", ""])
 
         lines.extend(["## 火灾监测大模型", ""])
-        for i, paper in enumerate(fire_foundation, 1):
-            lines.append(md_paper_item(i, paper))
-            lines.append("")
+        if fire_foundation:
+            for i, paper in enumerate(fire_foundation, 1):
+                lines.append(md_paper_item(i, paper))
+                lines.append("")
+        else:
+            lines.extend(["- 本日未筛到可核验且达到质量阈值的候选；不为凑数收录。", ""])
 
     lines.extend(["## 泛计算机视觉方法池", ""])
     for i, paper in enumerate(broad, 1):
@@ -2378,20 +2384,21 @@ def render_markdown(history: list[dict]) -> str:
     }
     current_date = current.get("date", now.strftime("%Y-%m-%d"))
     show_fire_topics = fire_topic_enabled(str(current_date))
+    current_sections = snapshot_sections(current)
     daily_limits = [
-        f"{HIGHLIGHT_LIMIT} 篇精读",
-        f"{QUALITY_LIMIT} 篇高质量来源",
-        f"{COD_LIMIT} 篇 COD",
-        f"{UAV_LIMIT} 篇无人机小目标",
+        f"{len(current_sections['highlights'])} 篇精读",
+        f"{len(current_sections['quality'])} 篇高质量来源",
+        f"{len(current_sections['cod'])} 篇 COD",
+        f"{len(current_sections['uav'])} 篇无人机小目标",
     ]
     if show_fire_topics:
         daily_limits.extend(
             [
-                f"{FIRE_MULTISPECTRAL_LIMIT} 篇多光谱火灾探测",
-                f"{FIRE_FOUNDATION_LIMIT} 篇火灾监测大模型",
+                f"{len(current_sections['fire_multispectral'])} 篇多光谱火灾探测",
+                f"{len(current_sections['fire_foundation'])} 篇火灾监测大模型",
             ]
         )
-    daily_limits.append(f"{BROAD_LIMIT} 篇泛视觉")
+    daily_limits.append(f"{len(current_sections['broad'])} 篇泛视觉")
     lines = [
         "# Daily CV Paper Feed",
         "",

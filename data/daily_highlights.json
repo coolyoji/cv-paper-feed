@@ -176,5 +176,62 @@
       "tags": ["diffusion", "UAV/small-object", "uncertainty/calibration", "domain generalization"],
       "score": 93
     }
+  ],
+  "2026-07-24": [
+    {
+      "title": "Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_Graph-to-Frame_RAG_Visual-Space_Knowledge_Fusion_for_Training-Free_and_Auditable_Video_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Graph-to-Frame_RAG_Visual-Space_Knowledge_Fusion_for_Training-Free_and_Auditable_Video_CVPR_2026_paper.pdf",
+      "authors": ["Songyuan Yang", "Weijiang Yu", "Ziyu Liu", "Guijian Tang", "Wenjing Yang", "Huibin Tan", "Nong Xiao"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "G2F-RAG builds a problem-agnostic video knowledge graph, retrieves a compact query-specific subgraph, and renders it as one reasoning frame for a frozen multimodal model. The visual-space representation improves Qwen2.5-VL-7B from 68.8/51.3/65.1 to 73.4/55.4/70.6 on MLVU, WildVideo, and VideoMME.",
+      "tags": ["training-free", "reasoning", "retrieval/prototype", "video"],
+      "score": 98
+    },
+    {
+      "title": "Compositional Transformation Reasoning for Composed Video Retrieval",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Huang_Compositional_Transformation_Reasoning_for_Composed_Video_Retrieval_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Huang_Compositional_Transformation_Reasoning_for_Composed_Video_Retrieval_CVPR_2026_paper.pdf",
+      "authors": ["Sihong Huang", "Jiaxin Wu", "Dongmei Jiang", "Yi Cai", "Yaowei Wang", "Xiaoyong Wei"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "MoRe performs recall-oriented Pareto selection over visual, textual, and multimodal similarities, then uses an MLLM to compare candidates pairwise along entity, action, and scene transformations. It reaches 20.4 R@1 on EgoCVR and 63.0 R@1 on WebVid-CoVR in the zero-shot setting.",
+      "tags": ["VLM/MLLM", "reasoning", "retrieval/prototype", "video", "compositionality"],
+      "score": 97
+    },
+    {
+      "title": "Finding Distributed Object-Centric Properties in Self-Supervised Transformers",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Rawlekar_Finding_Distributed_Object-Centric_Properties_in_Self-Supervised_Transformers_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Rawlekar_Finding_Distributed_Object-Centric_Properties_in_Self-Supervised_Transformers_CVPR_2026_paper.pdf",
+      "authors": ["Samyak Rawlekar", "Amitabh Swain", "Yujun Cai", "Yiwei Wang", "Ming-Hsuan Yang", "Narendra Ahuja"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "Object-DINO clusters attention heads using patch-level query, key, and value self-similarities across all transformer layers, then aggregates the object-centric cluster without task training. It improves unsupervised object discovery by 3.6 to 12.4 CorLoc points and reduces multimodal hallucination.",
+      "tags": ["training-free", "unsupervised", "object discovery", "object-centric", "self-supervised"],
+      "score": 96
+    },
+    {
+      "title": "Convexity-Aware Noise Calibration: A Self-Supervised Framework for Noise-Level-Unknown Image Denoising",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Convexity-Aware_Noise_Calibration_A_Self-Supervised_Framework_for_Noise-Level-Unknown_Image_Denoising_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_Convexity-Aware_Noise_Calibration_A_Self-Supervised_Framework_for_Noise-Level-Unknown_Image_Denoising_CVPR_2026_paper.pdf",
+      "authors": ["Zhan Wang", "Leiquan Wang", "Chunlei Wu", "Yu Meng"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "CANC derives a convex relationship between additional synthetic AWGN and denoised-image variance, estimates the unknown noise level by ternary search, calibrates the estimate, and uses it to create supervised denoising pairs. At a true level of 25/255 it estimates 25.21/255 and nearly matches a known-noise DnCNN-S.",
+      "tags": ["uncertainty/calibration", "self-supervised", "low-level"],
+      "score": 95
+    },
+    {
+      "title": "GeometryCrafter: Consistent Geometry Estimation for Open-world Videos with Diffusion Priors",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Xu_GeometryCrafter_Consistent_Geometry_Estimation_for_Open-world_Videos_with_Diffusion_Priors_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Xu_GeometryCrafter_Consistent_Geometry_Estimation_for_Open-world_Videos_with_Diffusion_Priors_ICCV_2025_paper.pdf",
+      "authors": ["Tian-Xing Xu", "Xiangjun Gao", "Wenbo Hu", "Xiaoyu Li", "Song-Hai Zhang", "Ying Shan"],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "GeometryCrafter introduces a dual-encoder point-map VAE for unbounded geometry, aligns its latent space with Stable Video Diffusion, and conditions a video diffusion UNet on per-frame geometry priors. It achieves the best average rank across seven unseen point-map and depth benchmarks.",
+      "tags": ["diffusion", "depth/geometry", "video", "open-world"],
+      "score": 94
+    }
   ]
 }
