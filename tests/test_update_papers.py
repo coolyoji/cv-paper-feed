@@ -137,6 +137,61 @@ class FireTopicTests(unittest.TestCase):
         self.assertIn("foundation model", semantic_queries)
 
 
+class ExpandedResearchDirectionTests(unittest.TestCase):
+    def test_every_requested_direction_has_search_coverage(self):
+        query_corpus = " ".join(
+            [
+                *update_papers.RESEARCH_DIRECTION_ARXIV_QUERIES,
+                *update_papers.RESEARCH_DIRECTION_SEMANTIC_SCHOLAR_QUERIES,
+                *update_papers.FIRE_ARXIV_QUERIES,
+                *update_papers.FIRE_SEMANTIC_SCHOLAR_QUERIES,
+            ]
+        ).lower()
+
+        for direction in update_papers.EXPANDED_RESEARCH_DIRECTIONS:
+            with self.subTest(direction=direction):
+                self.assertIn(direction, query_corpus)
+                self.assertIn(direction, update_papers.BROAD_KEYWORDS)
+
+    def test_requested_direction_clusters_receive_specific_tags(self):
+        tags = update_papers.derive_tags(
+            "Risk-Controlling Prediction for Safety-Critical Video Hazard Anticipation",
+            (
+                "We study grounded visual reasoning and open-vocabulary visual grounding "
+                "under missing modalities, degraded multimodal perception, and multimodal "
+                "out-of-distribution shifts."
+            ),
+        )
+
+        self.assertIn("safety-critical/hazard", tags)
+        self.assertIn("grounded vision", tags)
+        self.assertIn("multimodal robustness", tags)
+        self.assertIn("selective/risk control", tags)
+        self.assertIn("video anticipation", tags)
+
+    def test_requested_directions_raise_transfer_priority(self):
+        baseline = update_papers.Paper(
+            title="A Generic Vision Method",
+            url="https://example.com/generic",
+            summary="A visual model is evaluated on a benchmark.",
+            source="CVPR 2026",
+        )
+        targeted = update_papers.Paper(
+            title="Selective Prediction for Open-World Multimodal Perception",
+            url="https://example.com/targeted",
+            summary=(
+                "The method handles missing modality learning and multimodal "
+                "out-of-distribution detection in safety-critical perception."
+            ),
+            source="CVPR 2026",
+        )
+
+        self.assertGreater(
+            update_papers.score_paper(targeted),
+            update_papers.score_paper(baseline),
+        )
+
+
 class HighlightHistoryTests(unittest.TestCase):
     def test_partial_source_pool_triggers_cached_candidate_merge(self):
         self.assertGreater(update_papers.MIN_FRESH_CANDIDATES, 775)

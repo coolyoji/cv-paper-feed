@@ -71,6 +71,42 @@ def fire_topic_enabled(at: date | datetime | str | None = None) -> bool:
     return current_date >= FIRE_TOPIC_START_DATE
 
 
+EXPANDED_RESEARCH_DIRECTIONS = [
+    "safety-critical perception",
+    "multimodal hazard understanding",
+    "open-world multimodal perception",
+    "grounded visual reasoning",
+    "open-vocabulary visual grounding",
+    "compositional generalization",
+    "missing modality learning",
+    "degraded multimodal perception",
+    "multimodal out-of-distribution detection",
+    "selective prediction",
+    "risk-controlling prediction",
+    "video hazard anticipation",
+    "visual fire and smoke detection",
+    "rgb-t fire detection",
+]
+
+
+RESEARCH_DIRECTION_ARXIV_QUERIES = [
+    'all:"safety-critical perception"',
+    'all:"multimodal hazard understanding"',
+    'all:"open-world multimodal perception"',
+    'all:"grounded visual reasoning"',
+    'all:"open-vocabulary visual grounding"',
+    'all:"compositional generalization" AND all:"vision"',
+    'all:"missing modality learning"',
+    'all:"missing modality" AND all:"multimodal"',
+    'all:"degraded multimodal perception"',
+    'all:"multimodal out-of-distribution detection"',
+    'all:"selective prediction" AND all:"vision"',
+    'all:"risk-controlling prediction" AND all:"vision"',
+    'all:"conformal risk control" AND all:"vision"',
+    'all:"video hazard anticipation"',
+]
+
+
 ARXIV_QUERIES = [
     # COD / camouflage direct line. These are kept as anchors, but the daily
     # deep-read queue is intentionally biased toward transferable methods below.
@@ -122,6 +158,8 @@ ARXIV_QUERIES = [
     'all:"continual learning" AND all:"segmentation"',
     'all:"world model" AND all:"vision"',
     'all:"concept bottleneck" AND all:"vision"',
+    # Safety-critical, grounded, and reliability-aware multimodal perception
+    *RESEARCH_DIRECTION_ARXIV_QUERIES,
     # UAV / aerial tiny-object perception
     'all:"UAV small object detection"',
     'all:"drone small object detection"',
@@ -148,6 +186,9 @@ FIRE_ARXIV_QUERIES = [
     'all:"wildfire detection" AND all:"vision-language"',
     'all:"fire monitoring" AND all:"multimodal large language model"',
     'all:"wildfire" AND all:"segment anything"',
+    'all:"visual fire and smoke detection"',
+    'all:"RGB-T fire detection"',
+    'all:"RGB thermal" AND all:"fire smoke detection"',
 ]
 
 
@@ -204,6 +245,22 @@ SEMANTIC_SCHOLAR_QUERIES = [
 ]
 
 
+RESEARCH_DIRECTION_SEMANTIC_SCHOLAR_QUERIES = [
+    "safety-critical perception",
+    "multimodal hazard understanding",
+    "open-world multimodal perception",
+    "grounded visual reasoning",
+    "open-vocabulary visual grounding",
+    "compositional generalization computer vision",
+    "missing modality learning multimodal vision",
+    "degraded multimodal perception",
+    "multimodal out-of-distribution detection",
+    "selective prediction computer vision",
+    "risk-controlling prediction vision",
+    "video hazard anticipation",
+]
+
+
 FIRE_SEMANTIC_SCHOLAR_QUERIES = [
     "multispectral wildfire fire detection",
     "visible thermal infrared fire smoke detection",
@@ -213,6 +270,8 @@ FIRE_SEMANTIC_SCHOLAR_QUERIES = [
     "fire smoke detection vision language model",
     "wildfire multimodal large language model",
     "wildfire segment anything foundation model",
+    "visual fire and smoke detection",
+    "RGB-T fire detection",
 ]
 
 
@@ -312,6 +371,8 @@ FIRE_CONTEXT_KEYWORDS = [
     "flame detection",
     "smoke detection",
     "fire smoke",
+    "fire and smoke detection",
+    "smoke and fire detection",
     "active fire",
     "burned area",
     "burnt area",
@@ -434,6 +495,20 @@ BROAD_KEYWORDS = [
     "small target",
     "low altitude",
     "foundation model",
+    *EXPANDED_RESEARCH_DIRECTIONS,
+    "safety critical",
+    "hazard perception",
+    "hazard understanding",
+    "visual grounding",
+    "missing modality",
+    "modality missing",
+    "incomplete multimodal",
+    "multimodal ood",
+    "selective classification",
+    "risk control",
+    "conformal risk control",
+    "abstention",
+    "accident anticipation",
 ]
 
 
@@ -474,6 +549,26 @@ IDEA_TRANSFER_KEYWORD_WEIGHTS = {
     "aerial": 8,
     "tiny object": 10,
     "small target": 10,
+    "safety-critical perception": 12,
+    "safety critical perception": 12,
+    "multimodal hazard understanding": 12,
+    "open-world multimodal perception": 12,
+    "grounded visual reasoning": 10,
+    "open-vocabulary visual grounding": 12,
+    "compositional generalization": 12,
+    "missing modality learning": 12,
+    "missing modality": 9,
+    "degraded multimodal perception": 12,
+    "multimodal out-of-distribution detection": 12,
+    "multimodal ood": 10,
+    "selective prediction": 12,
+    "selective classification": 9,
+    "risk-controlling prediction": 14,
+    "conformal risk control": 12,
+    "video hazard anticipation": 14,
+    "accident anticipation": 11,
+    "visual fire and smoke detection": 12,
+    "rgb-t fire detection": 14,
 }
 
 TRANSFER_TAG_WEIGHTS = {
@@ -503,6 +598,11 @@ TRANSFER_TAG_WEIGHTS = {
     "UAV/small-object": 10,
     "multispectral fire": 12,
     "fire foundation model": 12,
+    "safety-critical/hazard": 14,
+    "grounded vision": 11,
+    "multimodal robustness": 14,
+    "selective/risk control": 14,
+    "video anticipation": 12,
 }
 
 TRANSFER_TAGS = set(TRANSFER_TAG_WEIGHTS)
@@ -692,6 +792,55 @@ def derive_tags(
         ("compositionality", ["compositional", "composition"]),
         ("active/interactive", ["interactive segmentation", "active learning"]),
         ("continual learning", ["continual learning", "lifelong learning"]),
+        (
+            "safety-critical/hazard",
+            [
+                "safety-critical perception",
+                "safety critical perception",
+                "hazard perception",
+                "hazard understanding",
+                "hazard anticipation",
+                "accident anticipation",
+            ],
+        ),
+        (
+            "grounded vision",
+            [
+                "grounded visual reasoning",
+                "open-vocabulary visual grounding",
+                "visual grounding",
+            ],
+        ),
+        (
+            "multimodal robustness",
+            [
+                "open-world multimodal perception",
+                "missing modality",
+                "modality missing",
+                "incomplete multimodal",
+                "degraded multimodal perception",
+                "multimodal out-of-distribution",
+                "multimodal ood",
+            ],
+        ),
+        (
+            "selective/risk control",
+            [
+                "selective prediction",
+                "selective classification",
+                "risk-controlling prediction",
+                "conformal risk control",
+                "abstention",
+            ],
+        ),
+        (
+            "video anticipation",
+            [
+                "video hazard anticipation",
+                "accident anticipation",
+                "risk anticipation",
+            ],
+        ),
         ("low-level", ["low-light", "restoration", "enhancement", "denoising"]),
         ("saliency/transparent", ["salient", "saliency", "transparent", "low contrast"]),
         ("domain adaptation", ["domain generalization", "domain adaptation", "test-time adaptation"]),
@@ -1125,11 +1274,12 @@ def fetch_semantic_scholar(max_results_per_query: int = 8) -> list[Paper]:
             "citationCount",
         ]
     )
-    queries = (
+    general_queries = (
         list(SEMANTIC_SCHOLAR_QUERIES)
         if DEEP_SOURCE_SCAN
         else list(SEMANTIC_SCHOLAR_QUERIES[:6])
     )
+    queries = list(RESEARCH_DIRECTION_SEMANTIC_SCHOLAR_QUERIES) + general_queries
     if fire_topic_enabled():
         queries.extend(FIRE_SEMANTIC_SCHOLAR_QUERIES)
     consecutive_failures = 0
@@ -1224,7 +1374,9 @@ def fetch_crossref_journals(rows_per_query: int = 4) -> list[Paper]:
     papers: list[Paper] = []
     broad_query = (
         "camouflaged OR concealed OR segmentation OR detection OR "
-        "vision-language OR foundation model OR anomaly"
+        "vision-language OR foundation model OR anomaly OR safety-critical OR "
+        "visual grounding OR missing modality OR selective prediction OR "
+        "hazard anticipation"
     )
     deep_queries = [
         "camouflaged object detection",
@@ -1235,11 +1387,19 @@ def fetch_crossref_journals(rows_per_query: int = 4) -> list[Paper]:
         "anomaly detection vision",
         "salient object detection",
         "remote sensing segmentation",
+        "safety critical multimodal hazard perception",
+        "open world multimodal perception visual grounding",
+        "compositional generalization grounded visual reasoning",
+        "missing modality degraded multimodal perception",
+        "multimodal out of distribution selective prediction risk control",
+        "video hazard anticipation",
     ]
     fire_queries = [
         "multispectral wildfire detection",
         "thermal infrared fire smoke detection",
         "wildfire monitoring foundation model vision language",
+        "visual fire and smoke detection",
+        "RGB-T fire detection",
     ]
     queries = list(deep_queries) if DEEP_SOURCE_SCAN else [broad_query]
     if fire_topic_enabled():
