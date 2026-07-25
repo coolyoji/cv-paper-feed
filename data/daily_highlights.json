@@ -233,5 +233,62 @@
       "tags": ["diffusion", "depth/geometry", "video", "open-world"],
       "score": 94
     }
+  ],
+  "2026-07-25": [
+    {
+      "title": "Proof-of-Perception: Certified Tool-Using Multimodal Reasoning with Compositional Conformal Guarantees",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Fayyazi_Proof-of-Perception_Certified_Tool-Using_Multimodal_Reasoning_with_Compositional_Conformal_Guarantees_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Fayyazi_Proof-of-Perception_Certified_Tool-Using_Multimodal_Reasoning_with_Compositional_Conformal_Guarantees_CVPR_2026_paper.pdf",
+      "authors": ["Arya Fayyazi", "Haleh Akrami"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "PoP compiles multimodal reasoning into an executable DAG whose perception and logic nodes emit split-conformal candidate sets; a learned controller accepts, retries, expands, or aborts under a compute budget. On TextVQA it raises F1 from ProgVLM's 69.7 to 72.9, cuts hallucination from 15.1 to 9.3, and keeps node coverage near the 90% target.",
+      "tags": ["VLM/MLLM", "reasoning", "compositionality", "uncertainty/calibration", "selective prediction"],
+      "score": 100
+    },
+    {
+      "title": "DPU: Dynamic Prototype Updating for Multimodal Out-of-Distribution Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_DPU_Dynamic_Prototype_Updating_for_Multimodal_Out-of-Distribution_Detection_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_DPU_Dynamic_Prototype_Updating_for_Multimodal_Out-of-Distribution_Detection_CVPR_2025_paper.pdf",
+      "authors": ["Shawn Li", "Huixian Gong", "Hao Dong", "Tiankai Yang", "Zhengzhong Tu", "Yue Zhao"],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "DPU first learns cohesive but separated multimodal embeddings, then updates class prototypes according to within-batch variance and scales cross-modal prediction disagreement by sample-to-prototype similarity. Across two OOD tasks, five datasets, and nine base detectors, it reports near-OOD gains around 10% and far-OOD gains up to 80%; VIM FPR95 on HMDB51 to Kinetics600 falls from 13.68 to 0.01.",
+      "tags": ["multimodal", "anomaly/OOD", "retrieval/prototype", "uncertainty/calibration"],
+      "score": 99
+    },
+    {
+      "title": "Beyond Missing Modalities: Hypergraph Conditioned Diffusion for Uncertainty-Aware Multimodal Emotion Recognition",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Qiu_Beyond_Missing_Modalities_Hypergraph_Conditioned_Diffusion_for_Uncertainty-Aware_Multimodal_Emotion_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Qiu_Beyond_Missing_Modalities_Hypergraph_Conditioned_Diffusion_for_Uncertainty-Aware_Multimodal_Emotion_CVPR_2026_paper.pdf",
+      "authors": ["Xihang Qiu", "Yuhao Fang", "Qing Zhou", "Bin Zhai", "Jialong Hong", "Wanpeng Zhang", "Yao Lu", "Ye Zhang", "Chun Li"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "HyperEF uses masked hypergraph attention to encode high-order modality and dialogue-context relations, conditions a diffusion model to recover missing latent features, and fuses modality evidence with source-level and discriminative uncertainty. It leads all tested missing-rate settings; at 60% missingness it improves IEMOCAP6 accuracy from 55.5 to 59.5, while recovery MSE is far below the diffusion baseline.",
+      "tags": ["multimodal", "missing modality", "diffusion", "uncertainty/calibration", "video"],
+      "score": 98
+    },
+    {
+      "title": "TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shu_TerraScope_Pixel-Grounded_Visual_Reasoning_for_Earth_Observation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Shu_TerraScope_Pixel-Grounded_Visual_Reasoning_for_Earth_Observation_CVPR_2026_paper.pdf",
+      "authors": ["Yan Shu", "Bin Ren", "Zhitong Xiong", "Xiao Xiang Zhu", "Begum Demir", "Nicu Sebe", "Paolo Rota"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "TerraScope interleaves textual reasoning with explicit segmentation masks and reinjects masked optical, SAR, or temporal visual tokens into later reasoning steps. After grounding pretraining and Terra-CoT instruction tuning, it reaches 68.9, 73.9, and 46.5 on TerraScope-Bench, Landsat30-AU, and DisasterM3, versus 33.8, 45.7, and 23.6 for the original same-backbone setting.",
+      "tags": ["VLM/MLLM", "reasoning", "visual grounding", "remote sensing", "multimodal"],
+      "score": 97
+    },
+    {
+      "title": "Seeing Through the Noise: Improving Infrared Small Target Detection and Segmentation from Noise Suppression Perspective",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yuan_Seeing_Through_the_Noise_Improving_Infrared_Small_Target_Detection_and_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yuan_Seeing_Through_the_Noise_Improving_Infrared_Small_Target_Detection_and_CVPR_2026_paper.pdf",
+      "authors": ["Maoxun Yuan", "Duanni Meng", "Ziteng Xi", "Tianyi Zhao", "Shiji Zhao", "Yimian Dai", "Xingxing Wei"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "NS-FPN changes infrared small-target perception from feature amplification to noise suppression: LFP uses low-frequency guidance and gated Gaussian filtering to purify high-frequency responses, while SFS samples higher-level semantics along a learnable spiral prior. On IRSTD-1k it reaches 69.29 IoU, 95.24 Pd, and 8.58 Fa; on NUAA-SIRST it reaches 78.75 IoU, 100.0 Pd, and 1.60 Fa.",
+      "tags": ["UAV/small-object", "boundary/frequency", "remote sensing", "weak signal"],
+      "score": 96
+    }
   ]
 }

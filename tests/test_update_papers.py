@@ -16,6 +16,22 @@ sys.modules[SPEC.name] = update_papers
 SPEC.loader.exec_module(update_papers)
 
 
+class FeedDateOverrideTests(unittest.TestCase):
+    def test_feed_now_pins_retry_to_requested_date(self):
+        with patch.object(update_papers, "FEED_DATE_OVERRIDE", "2026-07-25"):
+            current = update_papers.feed_now()
+
+        self.assertEqual(current.date(), date(2026, 7, 25))
+        self.assertEqual(current.tzinfo, update_papers.UTC8)
+
+    def test_feed_now_rejects_invalid_override(self):
+        with (
+            patch.object(update_papers, "FEED_DATE_OVERRIDE", "2026/07/25"),
+            self.assertRaisesRegex(ValueError, "YYYY-MM-DD"),
+        ):
+            update_papers.feed_now()
+
+
 class FireTopicTests(unittest.TestCase):
     def test_multispectral_fire_tag_requires_both_signals(self):
         tags = update_papers.derive_tags(

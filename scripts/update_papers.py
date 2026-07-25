@@ -33,6 +33,7 @@ ABSTRACT_DETAILS_FILE = DATA / "abstract_details.json"
 DAILY_HIGHLIGHTS_FILE = DATA / "daily_highlights.json"
 DAILY_ABSTRACT_DETAILS_FILE = DATA / "daily_abstract_details.json"
 DEEP_SOURCE_SCAN = os.environ.get("DEEP_SOURCE_SCAN", "").lower() in {"1", "true", "yes"}
+FEED_DATE_OVERRIDE = os.environ.get("FEED_DATE", "").strip()
 SOURCE_FAILURE_LIMIT = max(1, int(os.environ.get("SOURCE_FAILURE_LIMIT", "3")))
 
 HIGHLIGHT_LIMIT = 5
@@ -59,9 +60,20 @@ UTC8 = timezone(timedelta(hours=8))
 FIRE_TOPIC_START_DATE = date(2026, 7, 14)
 
 
+def feed_now() -> datetime:
+    current = datetime.now(UTC8)
+    if not FEED_DATE_OVERRIDE:
+        return current
+    try:
+        target = date.fromisoformat(FEED_DATE_OVERRIDE)
+    except ValueError as exc:
+        raise ValueError("FEED_DATE must use YYYY-MM-DD format") from exc
+    return current.replace(year=target.year, month=target.month, day=target.day)
+
+
 def fire_topic_enabled(at: date | datetime | str | None = None) -> bool:
     if at is None:
-        current_date = datetime.now(UTC8).date()
+        current_date = feed_now().date()
     elif isinstance(at, datetime):
         current_date = at.astimezone(UTC8).date() if at.tzinfo else at.date()
     elif isinstance(at, str):
@@ -1012,7 +1024,7 @@ def is_recent_published_source(paper: Paper) -> bool:
     year = publication_year(paper)
     if year is None:
         return False
-    current_year = datetime.now(UTC8).year
+    current_year = feed_now().year
     return (
         has_quality_published_source(paper)
         and year >= current_year - RECENT_PUBLISHED_YEAR_WINDOW
@@ -1406,7 +1418,7 @@ def fetch_crossref_journals(rows_per_query: int = 4) -> list[Paper]:
         if not DEEP_SOURCE_SCAN:
             queries[0] += " OR wildfire OR fire monitoring"
         queries.extend(fire_queries)
-    from_date = f"{datetime.now(UTC8).year - 1}-01-01"
+    from_date = f"{feed_now().year - 1}-01-01"
     for journal in TOP_JOURNALS:
         for query in queries:
             params = {
@@ -2167,7 +2179,7 @@ def previous_update_time() -> str:
     if latest_path.exists():
         ts = datetime.fromtimestamp(latest_path.stat().st_mtime, UTC8)
         return ts.strftime("%Y-%m-%d %H:%M")
-    return datetime.now(UTC8).strftime("%Y-%m-%d %H:%M")
+    return feed_now().strftime("%Y-%m-%d %H:%M")
 
 
 def legacy_snapshot_from_latest() -> dict | None:
@@ -2187,8 +2199,8 @@ def legacy_snapshot_from_latest() -> dict | None:
     try:
         date_text = datetime.strptime(generated_at[:10], "%Y-%m-%d").strftime("%Y-%m-%d")
     except ValueError:
-        date_text = datetime.now(UTC8).strftime("%Y-%m-%d")
-    snapshot = make_snapshot(papers, datetime.now(UTC8), enrich_abstracts=False)
+        date_text = feed_now().strftime("%Y-%m-%d")
+    snapshot = make_snapshot(papers, feed_now(), enrich_abstracts=False)
     snapshot["date"] = date_text
     snapshot["generated_at"] = generated_at
     snapshot["legacy"] = True
@@ -2388,7 +2400,7 @@ def snapshot_sections(snapshot: dict) -> dict[str, list[Paper]]:
 
 
 def render_snapshot_markdown(snapshot: dict) -> str:
-    now = datetime.now(UTC8)
+    now = feed_now()
     current = snapshot or {
         "date": now.strftime("%Y-%m-%d"),
         "generated_at": now.strftime("%Y-%m-%d %H:%M"),
@@ -2536,7 +2548,7 @@ def render_snapshot_markdown(snapshot: dict) -> str:
 
 def render_markdown(history: list[dict]) -> str:
     history = collapse_history_by_date(history)
-    now = datetime.now(UTC8)
+    now = feed_now()
     current = history[0] if history else {
         "date": now.strftime("%Y-%m-%d"),
         "generated_at": now.strftime("%Y-%m-%d %H:%M"),
@@ -2821,7 +2833,7 @@ def refresh_current_abstracts() -> None:
 
 def apply_daily_curation() -> None:
     latest_path = DATA / "latest_papers.json"
-    now = datetime.now(UTC8)
+    now = feed_now()
     curated = daily_curated_highlights(now.strftime("%Y-%m-%d"))
     papers = dedupe(load_cached_candidate_pool() + curated)
     for paper in papers:
@@ -2888,7 +2900,7 @@ def main() -> None:
     papers = [p for p in papers if p.score >= 12]
     papers.sort(key=lambda p: p.score, reverse=True)
 
-    now = datetime.now(UTC8)
+    now = feed_now()
     history = update_history(papers, now)
     if history:
         download_daily_pdfs(history[0])
@@ -2906,8 +2918,18 @@ def main() -> None:
     print(f"[info] wrote HTML previews under {DAILY_HTML}")
 
 
+def print_usage() -> None:
+    print(
+        "Usage: python scripts/update_papers.py "
+        "[--apply-daily-curation|--refresh-current-abstracts|--render-only]\n"
+        "Set FEED_DATE=YYYY-MM-DD to pin a retry to its intended feed date."
+    )
+
+
 if __name__ == "__main__":
-    if "--apply-daily-curation" in sys.argv:
+    if "--help" in sys.argv or "-h" in sys.argv:
+        print_usage()
+    elif "--apply-daily-curation" in sys.argv:
         apply_daily_curation()
     elif "--refresh-current-abstracts" in sys.argv:
         refresh_current_abstracts()
