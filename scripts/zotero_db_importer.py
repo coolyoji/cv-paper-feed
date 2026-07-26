@@ -170,9 +170,13 @@ def set_field(cur: sqlite3.Cursor, item_id: int, field_id: int, value: str | Non
 
 def get_or_create_collection(cur: sqlite3.Cursor, name: str, parent_id: int | None) -> int:
     cur.execute(
-        """SELECT collectionID FROM collections
-           WHERE libraryID=? AND collectionName=?
-           AND ((parentCollectionID IS NULL AND ? IS NULL) OR parentCollectionID=?)""",
+        """SELECT c.collectionID FROM collections c
+           LEFT JOIN deletedCollections d ON d.collectionID=c.collectionID
+           WHERE c.libraryID=? AND c.collectionName=?
+           AND d.collectionID IS NULL
+           AND ((c.parentCollectionID IS NULL AND ? IS NULL) OR c.parentCollectionID=?)
+           ORDER BY c.collectionID DESC
+           LIMIT 1""",
         (LIBRARY_ID, name, parent_id, parent_id),
     )
     row = cur.fetchone()
@@ -201,19 +205,56 @@ def build_title_index(cur: sqlite3.Cursor, fields: dict[str, int]) -> dict[str, 
            FROM items i
            JOIN itemData d ON d.itemID=i.itemID AND d.fieldID=?
            JOIN itemDataValues v ON v.valueID=d.valueID
-           WHERE i.itemTypeID != (SELECT itemTypeID FROM itemTypes WHERE typeName='attachment')""",
-        (fields["title"],),
+           LEFT JOIN deletedItems deleted ON deleted.itemID=i.itemID
+           WHERE i.libraryID=? AND deleted.itemID IS NULL
+             AND i.itemTypeID != (
+               SELECT itemTypeID FROM itemTypes WHERE typeName='attachment'
+             )""",
+        (fields["title"], LIBRARY_ID),
     )
     return {norm_title(title): item_id for item_id, title in cur.fetchall() if norm_title(title)}
 
 
-def add_to_collection(cur: sqlite3.Cursor, collection_id: int, item_id: int) -> None:
+def mark_item_unsynced(cur: sqlite3.Cursor, item_id: int) -> None:
+    cur.execute(
+        "UPDATE items SET clientDateModified=?, synced=0 WHERE itemID=?",
+        (now_sql(), item_id),
+    )
+
+
+def remove_tombstoned_sibling_memberships(
+    cur: sqlite3.Cursor, collection_id: int, item_id: int
+) -> bool:
+    cur.execute(
+        """DELETE FROM collectionItems
+           WHERE itemID=? AND collectionID IN (
+             SELECT old.collectionID
+             FROM collections active
+             JOIN collections old
+               ON old.libraryID=active.libraryID
+              AND old.collectionName=active.collectionName
+              AND (
+                (old.parentCollectionID IS NULL AND active.parentCollectionID IS NULL)
+                OR old.parentCollectionID=active.parentCollectionID
+              )
+             JOIN deletedCollections d ON d.collectionID=old.collectionID
+             WHERE active.collectionID=? AND old.collectionID!=active.collectionID
+           )""",
+        (item_id, collection_id),
+    )
+    if cur.rowcount <= 0:
+        return False
+    mark_item_unsynced(cur, item_id)
+    return True
+
+
+def add_to_collection(cur: sqlite3.Cursor, collection_id: int, item_id: int) -> bool:
     cur.execute(
         "SELECT 1 FROM collectionItems WHERE collectionID=? AND itemID=?",
         (collection_id, item_id),
     )
     if cur.fetchone():
-        return
+        return False
     cur.execute(
         "SELECT COALESCE(MAX(orderIndex), -1) + 1 FROM collectionItems WHERE collectionID=?",
         (collection_id,),
@@ -222,6 +263,8 @@ def add_to_collection(cur: sqlite3.Cursor, collection_id: int, item_id: int) -> 
         "INSERT INTO collectionItems(collectionID,itemID,orderIndex) VALUES (?,?,?)",
         (collection_id, item_id, cur.fetchone()[0]),
     )
+    mark_item_unsynced(cur, item_id)
+    return True
 
 
 def split_name(name: str) -> tuple[str, str, int] | None:
@@ -385,6 +428,7 @@ def import_records_to_zotero(
     records: list[dict],
     root_collection: str = "每日精读论文",
     close_running: bool = True,
+    repair_existing: bool = False,
 ) -> bool:
     pending = [
         record
@@ -393,7 +437,16 @@ def import_records_to_zotero(
         and record.get("file")
         and Path(record["file"]).exists()
     ]
-    if not pending:
+    imported_records = (
+        [
+            record
+            for record in records
+            if record.get("zotero_imported") and record.get("zotero_item_id")
+        ]
+        if repair_existing
+        else []
+    )
+    if not pending and not imported_records:
         return False
 
     was_running = zotero_running()
@@ -415,14 +468,37 @@ def import_records_to_zotero(
         item_types, fields, creator_types = get_ids(cur)
         title_index = build_title_index(cur, fields)
         cur.execute("BEGIN")
+        collection_id, collection_path = daily_collection(cur, date_text, root_collection)
+
+        relinked = 0
+        for record in imported_records:
+            parent_id = int(record["zotero_item_id"])
+            title_key = norm_title(record.get("title", ""))
+            cur.execute(
+                """SELECT v.value FROM items i
+                   JOIN itemData data ON data.itemID=i.itemID AND data.fieldID=?
+                   JOIN itemDataValues v ON v.valueID=data.valueID
+                   LEFT JOIN deletedItems deleted ON deleted.itemID=i.itemID
+                   WHERE i.itemID=? AND i.libraryID=? AND deleted.itemID IS NULL""",
+                (fields["title"], parent_id, LIBRARY_ID),
+            )
+            row = cur.fetchone()
+            if not row or (title_key and norm_title(row[0]) != title_key):
+                parent_id = title_index.get(title_key)
+            if parent_id is None:
+                continue
+            remove_tombstoned_sibling_memberships(cur, collection_id, parent_id)
+            add_to_collection(cur, collection_id, parent_id)
+            record["zotero_collection_path"] = collection_path
+            relinked += 1
 
         for record in pending:
-            collection_id, collection_path = daily_collection(cur, date_text, root_collection)
             title_key = norm_title(record.get("title", ""))
             parent_id = title_index.get(title_key)
             if parent_id is None:
                 parent_id = create_parent_item(cur, record, item_types, fields, creator_types)
                 title_index[title_key] = parent_id
+            remove_tombstoned_sibling_memberships(cur, collection_id, parent_id)
             add_to_collection(cur, collection_id, parent_id)
 
             pdf_path = Path(record["file"])
@@ -462,10 +538,17 @@ def import_records_to_zotero(
             pdf_path.unlink()
             record["local_pdf_moved_to_zotero"] = True
             removed += 1
-    print(
-        f"[info] imported {len(pending)} PDFs into Zotero collection "
-        f"{root_collection}/{date_text.replace('-', '/')}; removed {removed} F-drive PDFs"
-    )
+    if pending:
+        print(
+            f"[info] imported {len(pending)} PDFs into Zotero collection "
+            f"{root_collection}/{date_text.replace('-', '/')}; "
+            f"removed {removed} F-drive PDFs"
+        )
+    if imported_records:
+        print(
+            f"[info] ensured {relinked} existing Zotero items remain linked to "
+            f"{root_collection}/{date_text.replace('-', '/')}"
+        )
     return True
 
 

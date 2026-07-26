@@ -290,5 +290,62 @@
       "tags": ["UAV/small-object", "boundary/frequency", "remote sensing", "weak signal"],
       "score": 96
     }
+  ],
+  "2026-07-26": [
+    {
+      "title": "RiskProp: Collision-Anchored Self-Supervised Risk Propagation For Early Accident Anticipation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zou_RiskProp_Collision-Anchored_Self-Supervised_Risk_Propagation_For_Early_Accident_Anticipation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zou_RiskProp_Collision-Anchored_Self-Supervised_Risk_Propagation_For_Early_Accident_Anticipation_CVPR_2026_paper.pdf",
+      "authors": ["Yiyang Zou", "Tianhao Zhao", "Peilun Xiao", "Hongyu Jin", "Longyu Qi", "Yuxuan Li", "Liyin Liang", "Yifeng Qian", "Chunbo Lai", "Yutian Lin", "Zhihui Li", "Yu Wu"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "RiskProp learns early accident risk without subjective anomaly-onset labels. It propagates collision-anchored logits backward with a stop-gradient future-frame target and regularizes sampled frame pairs with an adaptive monotonic margin. On CAP it reaches mAUC@0.1 0.483, mAP 0.890, and mTTA@0.1 1.207 seconds; on Nexar it improves mAUC@0.1 over CRASH by 0.079.",
+      "tags": ["safety-critical", "video", "self-supervised", "weak supervision", "hazard anticipation"],
+      "score": 100
+    },
+    {
+      "title": "Resilient Sensor Fusion under Adverse Sensor Failures via Multi-Modal Expert Fusion",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Park_Resilient_Sensor_Fusion_Under_Adverse_Sensor_Failures_via_Multi-Modal_Expert_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Park_Resilient_Sensor_Fusion_Under_Adverse_Sensor_Failures_via_Multi-Modal_Expert_CVPR_2025_paper.pdf",
+      "authors": ["Konyul Park", "Yecheol Kim", "Daehun Kim", "Jun Won Choi"],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "MoME decouples LiDAR, camera, and fused 3D detection paths, then uses a locality-aware Adaptive Query Router to send each object query to one expert according to nearby sensor evidence. It reaches 71.2 mAP and 73.6 NDS on clean nuScenes, while improving limited-FOV mAP from CMT's 43.9 to 50.6 with only four milliseconds of reported decoder overhead.",
+      "tags": ["multimodal", "degraded modality", "sensor fusion", "safety-critical", "3D detection"],
+      "score": 99
+    },
+    {
+      "title": "NAVER: A Neuro-Symbolic Compositional Automaton for Visual Grounding with Explicit Logic Reasoning",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Cai_NAVER_A_Neuro-Symbolic_Compositional_Automaton_for_Visual_Grounding_with_Explicit_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Cai_NAVER_A_Neuro-Symbolic_Compositional_Automaton_for_Visual_Grounding_with_Explicit_ICCV_2025_paper.pdf",
+      "authors": ["Zhixi Cai", "Fucai Ke", "Simindokht Jahangard", "Maria Garcia de la Banda", "Reza Haffari", "Peter J. Stuckey", "Hamid Rezatofighi"],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "NAVER organizes perception, ProbLog generation, logic execution, answer verification, and return into a self-correcting deterministic finite-state automaton. Under a shared tool setting it cuts compositional pipeline failures to 0.3%, versus 10.3% for HYDRA and 70.2% for ViperGPT, while making intermediate entities, relations, rules, and retry paths auditable.",
+      "tags": ["visual grounding", "reasoning", "compositionality", "neuro-symbolic", "VLM/MLLM"],
+      "score": 98
+    },
+    {
+      "title": "Masked-Diffusion Autoencoders for 3D Medical Vision Representation Learning",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Tu_Masked-Diffusion_Autoencoders_for_3D_Medical_Vision_Representation_Learning_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Tu_Masked-Diffusion_Autoencoders_for_3D_Medical_Vision_Representation_Learning_CVPR_2026_paper.pdf",
+      "authors": ["Jiachen Tu", "Guanghui Qin", "Theodore Zhengde Zhao", "Jeya Maria Jose Valanarasu", "Sheng Zhang", "Tristan Naumann", "Fan Lam", "Sheng Wang", "Hoifung Poon"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "MDAE corrupts 3D MRI with both variable block masking and diffusion noise, then trains a time-conditioned U-Net to reconstruct masked anatomy and denoise visible tissue against the same clean target. Pretraining on 114,570 volumes yields 73.6 mean in-distribution AUROC and 78.6 cross-sequence AUROC, versus MAE's 69.5 and 70.0, and reaches 81.4 Dice on BraTS18 segmentation.",
+      "tags": ["medical imaging", "self-supervised", "diffusion", "representation learning", "domain generalization"],
+      "score": 97
+    },
+    {
+      "title": "UAV-CB: A Complex-Background RGB-T Dataset and Local Frequency Bridge Network for UAV Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Huang_UAV-CB_A_Complex-Background_RGB-T_Dataset_and_Local_Frequency_Bridge_Network_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Huang_UAV-CB_A_Complex-Background_RGB-T_Dataset_and_Local_Frequency_Bridge_Network_CVPR_2026_paper.pdf",
+      "authors": ["Shenghui Huang", "Menghao Hu", "Longkun Zou", "Hongyu Chi", "Zekai Li", "Feng Gao", "Fan Yang", "Qingyao Wu", "Ke Chen"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "UAV-CB contributes 3,442 unregistered RGB-thermal pairs of small UAVs in building, vegetation, powerline, cloud, and ground backgrounds. LFBNet aligns local amplitude and phase, converts spectral discrepancy into a dense guidance map, and drives deformable spatial fusion. It reaches 84.6 AP50, 57.2 AP75, and 54.4 AP, improving C2Former by 5.3 AP.",
+      "tags": ["UAV/small-object", "multimodal", "RGB-T", "boundary/frequency", "remote sensing"],
+      "score": 96
+    }
   ]
 }

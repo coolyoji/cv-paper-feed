@@ -35,6 +35,7 @@ DAILY_ABSTRACT_DETAILS_FILE = DATA / "daily_abstract_details.json"
 DEEP_SOURCE_SCAN = os.environ.get("DEEP_SOURCE_SCAN", "").lower() in {"1", "true", "yes"}
 FEED_DATE_OVERRIDE = os.environ.get("FEED_DATE", "").strip()
 SOURCE_FAILURE_LIMIT = max(1, int(os.environ.get("SOURCE_FAILURE_LIMIT", "3")))
+SOURCE_DEGRADED = False
 
 HIGHLIGHT_LIMIT = 5
 QUALITY_LIMIT = 10
@@ -69,6 +70,15 @@ def feed_now() -> datetime:
     except ValueError as exc:
         raise ValueError("FEED_DATE must use YYYY-MM-DD format") from exc
     return current.replace(year=target.year, month=target.month, day=target.day)
+
+
+def mark_source_degraded() -> None:
+    global SOURCE_DEGRADED
+    SOURCE_DEGRADED = True
+
+
+def should_merge_cached_candidates(fresh_count: int) -> bool:
+    return fresh_count < MIN_FRESH_CANDIDATES or SOURCE_DEGRADED
 
 
 def fire_topic_enabled(at: date | datetime | str | None = None) -> bool:
@@ -1185,6 +1195,7 @@ def fetch_arxiv(max_results_per_query: int = 18) -> list[Paper]:
             xml_text = fetch_url(url, timeout=60)
             root = ET.fromstring(xml_text)
         except Exception as exc:  # pragma: no cover - network resilience
+            mark_source_degraded()
             print(f"[warn] arXiv query failed: {query}: {exc}", file=sys.stderr)
             consecutive_failures += 1
             if consecutive_failures >= SOURCE_FAILURE_LIMIT:
@@ -1227,6 +1238,7 @@ def parse_cvf_listing(conf_id: str, conf_name: str, url: str) -> list[Paper]:
     try:
         text = fetch_url(url, timeout=25)
     except Exception as exc:  # pragma: no cover - network resilience
+        mark_source_degraded()
         print(f"[warn] CVF fetch failed: {conf_name}: {exc}", file=sys.stderr)
         return []
     pattern = re.compile(
@@ -1306,6 +1318,7 @@ def fetch_semantic_scholar(max_results_per_query: int = 8) -> list[Paper]:
         try:
             data = json.loads(fetch_url(url, timeout=25))
         except Exception as exc:  # pragma: no cover - network resilience
+            mark_source_degraded()
             print(f"[warn] Semantic Scholar query failed: {query}: {exc}", file=sys.stderr)
             consecutive_failures += 1
             if consecutive_failures >= SOURCE_FAILURE_LIMIT:
@@ -1433,6 +1446,7 @@ def fetch_crossref_journals(rows_per_query: int = 4) -> list[Paper]:
             try:
                 data = json.loads(fetch_url(url, timeout=25))
             except Exception as exc:  # pragma: no cover - network resilience
+                mark_source_degraded()
                 print(
                     f"[warn] Crossref query failed: {journal['short']} / {query}: {exc}",
                     file=sys.stderr,
@@ -2085,6 +2099,7 @@ def import_daily_pdfs_to_zotero(date_text: str, records: list[dict]) -> bool:
         records,
         root_collection=ZOTERO_ROOT_COLLECTION,
         close_running=True,
+        repair_existing=True,
     )
 
 
@@ -2843,6 +2858,7 @@ def apply_daily_curation() -> None:
     history = update_history(papers, now, preserve_same_day_highlights=False)
     if history:
         download_daily_pdfs(history[0])
+    papers.sort(key=lambda paper: paper.score, reverse=True)
     render_existing_history(history, latest_only=True)
     latest_path.write_text(
         json.dumps(
@@ -2864,6 +2880,9 @@ def markdown_inline(text: str) -> str:
 
 
 def main() -> None:
+    global SOURCE_DEGRADED
+    SOURCE_DEGRADED = False
+
     DATA.mkdir(exist_ok=True)
     DOCS.mkdir(exist_ok=True)
     DAILY_MD.mkdir(exist_ok=True)
@@ -2889,11 +2908,15 @@ def main() -> None:
 
     papers = dedupe(papers)
     fresh_count = len(papers)
-    if fresh_count < MIN_FRESH_CANDIDATES and cached_papers:
+    if should_merge_cached_candidates(fresh_count) and cached_papers:
         papers = dedupe(papers + cached_papers)
+        reason = (
+            "one or more live sources degraded"
+            if SOURCE_DEGRADED
+            else f"only {fresh_count} unique papers were returned"
+        )
         print(
-            "[warn] live sources returned only "
-            f"{fresh_count} unique papers; merged {len(cached_papers)} cached candidates"
+            f"[warn] {reason}; merged {len(cached_papers)} cached candidates"
         )
     for paper in papers:
         paper.score = score_paper(paper)

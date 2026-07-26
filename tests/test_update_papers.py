@@ -32,6 +32,24 @@ class FeedDateOverrideTests(unittest.TestCase):
             update_papers.feed_now()
 
 
+class SourceFallbackTests(unittest.TestCase):
+    def test_degraded_source_forces_cached_merge_above_count_threshold(self):
+        with patch.object(update_papers, "SOURCE_DEGRADED", True):
+            self.assertTrue(
+                update_papers.should_merge_cached_candidates(
+                    update_papers.MIN_FRESH_CANDIDATES + 1
+                )
+            )
+
+    def test_complete_large_source_pool_does_not_force_cached_merge(self):
+        with patch.object(update_papers, "SOURCE_DEGRADED", False):
+            self.assertFalse(
+                update_papers.should_merge_cached_candidates(
+                    update_papers.MIN_FRESH_CANDIDATES
+                )
+            )
+
+
 class FireTopicTests(unittest.TestCase):
     def test_multispectral_fire_tag_requires_both_signals(self):
         tags = update_papers.derive_tags(
