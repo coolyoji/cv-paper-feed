@@ -347,5 +347,62 @@
       "tags": ["UAV/small-object", "multimodal", "RGB-T", "boundary/frequency", "remote sensing"],
       "score": 96
     }
+  ],
+  "2026-07-27": [
+    {
+      "title": "False Alarm Rectification for Early Smoke Segmentation",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Zhao_False_Alarm_Rectification_for_Early_Smoke_Segmentation_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Zhao_False_Alarm_Rectification_for_Early_Smoke_Segmentation_WACV_2026_paper.pdf",
+      "authors": ["Hongjin Zhao", "Weihao Li", "Ge-Peng Ji", "Nick Barnes"],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "SmokeCPC combines MiT multi-scale features with DINOv3 global semantics through CFM, then shifts and temperature-scales pixel logits with an image-level smoke prior in CPCM. On SmokeSeg it reaches 61.83 IoU and 75.26 F1 while reducing image-level false positive rate to 0.28%.",
+      "tags": ["fire/smoke", "safety-critical", "segmentation", "false-positive control", "foundation model"],
+      "score": 100
+    },
+    {
+      "title": "Hyperdimensional Uncertainty Quantification for Multimodal Uncertainty Fusion in Autonomous Vehicles Perception",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Hyperdimensional_Uncertainty_Quantification_for_Multimodal_Uncertainty_Fusion_in_Autonomous_Vehicles_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Hyperdimensional_Uncertainty_Quantification_for_Multimodal_Uncertainty_Fusion_in_Autonomous_Vehicles_CVPR_2025_paper.pdf",
+      "authors": ["Luke Chen", "Junyao Wang", "Trier Mortlock", "Pramod Khargonekar", "Mohammad Abdullah Al Faruque"],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "HyperDUM projects modality features into fixed hyperdimensional spaces, builds scene-conditioned channel and patch prototypes, and uses cosine-similarity relations to gate sensor features before fusion. It reaches 66.70/66.00 average AP on aiMotive and 67.59 mIoU on DeLiVER with deterministic single-pass inference.",
+      "tags": ["multimodal", "uncertainty/calibration", "degraded modality", "safety-critical", "sensor fusion"],
+      "score": 99
+    },
+    {
+      "title": "MultiOOD: Scaling Out-of-Distribution Detection for Multiple Modalities",
+      "url": "https://papers.neurips.cc/paper_files/paper/2024/hash/e969483cbae5a24df038fb5847f5b8b0-Abstract-Conference.html",
+      "pdf": "https://papers.neurips.cc/paper_files/paper/2024/file/e969483cbae5a24df038fb5847f5b8b0-Paper-Conference.pdf",
+      "authors": ["Hao Dong", "Yue Zhao", "Eleni Chatzi", "Olga Fink"],
+      "source": "NeurIPS 2024 Spotlight",
+      "published": "2024",
+      "summary": "MultiOOD establishes a multimodal OOD benchmark and trains A2D to preserve true-class agreement while enlarging non-target prediction discrepancy; NP-Mix synthesizes proxy outliers between neighboring class prototypes. On UCF101 near-OOD, ASH FPR95 drops from 32.14 to 10.68 and AUROC rises from 94.02 to 97.80.",
+      "tags": ["multimodal", "anomaly/OOD", "uncertainty/calibration", "selective prediction", "safety-critical"],
+      "score": 98
+    },
+    {
+      "title": "Investigating Compositional Challenges in Vision-Language Models for Visual Grounding",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zeng_Investigating_Compositional_Challenges_in_Vision-Language_Models_for_Visual_Grounding_CVPR_2024_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zeng_Investigating_Compositional_Challenges_in_Vision-Language_Models_for_Visual_Grounding_CVPR_2024_paper.pdf",
+      "authors": ["Yunan Zeng", "Yan Huang", "Jinjin Zhang", "Zequn Jie", "Zhenhua Chai", "Liang Wang"],
+      "source": "CVPR 2024",
+      "published": "2024",
+      "summary": "ARPGrounding constructs 11,425 paired counterexamples across attribute, relation, and noun-priority grounding, then improves VLM compositionality by minimizing overlap between heatmaps from texts referring to different objects. ALBEF relation/priority accuracy rises from 29.19/14.94 to 38.65/24.21.",
+      "tags": ["VLM/MLLM", "visual grounding", "compositionality", "weak supervision", "grounded vision"],
+      "score": 97
+    },
+    {
+      "title": "DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_DyFCLT_Dynamic_Frequency-Decoupled_Cross-Modal_Learning_Transformer_for_Multimodal_Tiny_Object_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_DyFCLT_Dynamic_Frequency-Decoupled_Cross-Modal_Learning_Transformer_for_Multimodal_Tiny_Object_CVPR_2026_paper.pdf",
+      "authors": ["Chaolang Li", "Pengwen Dai", "Jingyu Li", "Siyuan Yao", "Yuchen Jiang", "Zhuoran Zheng"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "DyFCLT dynamically partitions RGB-T query/key/value spectra into learnable radial bands for within-band cross-modal attention, then uses selective background smoothing and foreground-guided dynamic upsampling. It reaches 48.2 AP and 69.1 AP50 on RGBT-Tiny and 61.0 AP50 on RGBTDronePerson.",
+      "tags": ["UAV/small-object", "multimodal", "RGB-T", "boundary/frequency", "remote sensing"],
+      "score": 96
+    }
   ]
 }
