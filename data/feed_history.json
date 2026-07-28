@@ -1,5 +1,1439 @@
 [
   {
+    "date": "2026-07-28",
+    "generated_at": "2026-07-28 12:27",
+    "timezone": "Asia/Shanghai",
+    "total_selected": 3365,
+    "sections": {
+      "highlights": [
+        {
+          "title": "Align and Aggregate: Compositional Reasoning with Video Alignment and Answer Aggregation for Video Question-Answering",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Liao_Align_and_Aggregate_Compositional_Reasoning_with_Video_Alignment_and_Answer_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Liao_Align_and_Aggregate_Compositional_Reasoning_with_Video_Alignment_and_Answer_CVPR_2024_paper.pdf",
+          "authors": [
+            "Zhaohe Liao",
+            "Jiangtong Li",
+            "Li Niu",
+            "Liqing Zhang"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "Despite the recent progress made in Video Question-Answering (VideoQA) these methods typically function as black-boxes making it difficult to understand their reasoning processes and perform consistent compositional reasoning. To address these challenges we propose a model-agnostic Video Alignment and Answer Aggregation (VA3) framework which is capable of enhancing both compositional consistency and accuracy of existing VidQA methods by integrating video aligner and answer aggregator modules. The video aligner hierarchically selects the relevant video clips based on the question while the answer aggregator deduces the answer to the question based on its sub-questions with compositional consistency ensured by the information flow along the question decompose graph and the contrastive learning strategy. We evaluate our framework on three settings of the AGQA-Decomp dataset with three baseline methods and propose new metrics to measure the compositional consistency of VidQA methods more comprehensively. Moreover we propose a large language model (LLM) based automatic question decompose pipeline to apply our framework on any VidQA data. We extend MSVD and NExT-QA datasets with it to evaluate such scheme and our VA3 framework on broader scenarios. Extensive experiments show that our framework improves both compositional consistency and accuracy of existing methods leading to more interpretable models in real-world applications.",
+          "tags": [
+            "VLM/MLLM",
+            "reasoning",
+            "video",
+            "compositionality"
+          ],
+          "score": 67
+        },
+        {
+          "title": "Continual Learning for Motion Prediction Model via Meta-Representation Learning and Optimal Memory Buffer Retention Strategy",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Kang_Continual_Learning_for_Motion_Prediction_Model_via_Meta-Representation_Learning_and_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Kang_Continual_Learning_for_Motion_Prediction_Model_via_Meta-Representation_Learning_and_CVPR_2024_paper.pdf",
+          "authors": [
+            "DaeJun Kang",
+            "Dongsuk Kum",
+            "Sanmin Kim"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "Embodied AI such as autonomous vehicles suffers from insufficient long-tailed data because it must be obtained from the physical world. In fact data must be continuously obtained in a series of small batches and the model must also be continuously trained to achieve generalizability and scalability by improving the biased data distribution. This paper addresses the training cost and catastrophic forgetting problems when continuously updating models to adapt to incoming small batches from various environments for real-world motion prediction in autonomous driving. To this end we propose a novel continual motion prediction (CMP) learning framework based on sparse meta-representation learning and an optimal memory buffer retention strategy. In meta-representation learning a model explicitly learns a sparse representation of each driving environment from road geometry to vehicle states by training to reduce catastrophic forgetting based on an augmented modulation network with sparsity regularization. Also in the adaptation phase We develop an Optimal Memory Buffer Retention strategy that smartly preserves diverse samples by focusing on representation similarity. This approach handles the nuanced task distribution shifts characteristic of motion prediction datasets ensuring our model stays responsive to evolving input variations without requiring extensive resources. The experiment results demonstrate that the proposed method shows superior adaptation performance to the conventional continual learning approach which is developed using a synthetic dataset for the continual learning problem.",
+          "tags": [
+            "depth/geometry",
+            "video",
+            "representation learning",
+            "continual learning"
+          ],
+          "score": 65
+        },
+        {
+          "title": "Separating the \"Chirp\" from the \"Chat\": Self-supervised Visual Grounding of Sound and Language",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Hamilton_Separating_the_Chirp_from_the_Chat_Self-supervised_Visual_Grounding_of_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Hamilton_Separating_the_Chirp_from_the_Chat_Self-supervised_Visual_Grounding_of_CVPR_2024_paper.pdf",
+          "authors": [
+            "Mark Hamilton",
+            "Andrew Zisserman",
+            "John R. Hershey",
+            "William T. Freeman"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "We present DenseAV a novel dual encoder grounding architecture that learns high-resolution semantically meaningful and audio-visual aligned features solely through watching videos. We show that DenseAV can discover the \"meaning\" of words and the \"location\" of sounds without explicit localization supervision. Furthermore it automatically discovers and distinguishes between these two types of associations without supervision. We show that DenseAV's localization abilities arise from a new multi-head feature aggregation operator that directly compares dense image and audio representations for contrastive learning. In contrast many other systems that learn \"global\" audio and video representations cannot localize words and sound. Finally we contribute two new datasets to improve the evaluation of AV representations through speech and sound prompted semantic segmentation. On these and other datasets we show DenseAV dramatically outperforms the prior art on speech and sound prompted semantic segmentation. DenseAV outperforms the current state-of-the-art ImageBind on cross-modal retrieval using fewer than half of the parameters. Project Page: https://aka.ms/denseav",
+          "tags": [
+            "reasoning",
+            "retrieval/prototype",
+            "video",
+            "self-supervised",
+            "grounded vision"
+          ],
+          "score": 93
+        },
+        {
+          "title": "ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhou_ExACT_Language-guided_Conceptual_Reasoning_and_Uncertainty_Estimation_for_Event-based_Action_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_ExACT_Language-guided_Conceptual_Reasoning_and_Uncertainty_Estimation_for_Event-based_Action_CVPR_2024_paper.pdf",
+          "authors": [
+            "Jiazhou Zhou",
+            "Xu Zheng",
+            "Yuanhuiyi Lyu",
+            "Lin Wang"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "Event cameras have recently been shown beneficial for practical vision tasks such as action recognition thanks to their high temporal resolution power efficiency and reduced privacy concerns. However current research is hindered by 1) the difficulty in processing events because of their prolonged duration and dynamic actions with complex and ambiguous semantics and 2) the redundant action depiction of the event frame representation with fixed stacks. We find language naturally conveys abundant semantic information rendering it stunningly superior in reducing semantic uncertainty. In light of this we propose ExACT a novel approach that for the first time tackles event-based action recognition from a cross-modal conceptualizing perspective. Our ExACT brings two technical contributions. Firstly we propose an adaptive fine-grained event (AFE) representation to adaptively filter out the repeated events for the stationary objects while preserving dynamic ones. This subtly enhances the performance of ExACT without extra computational cost. Then we propose a conceptual reasoning-based uncertainty estimation module which simulates the recognition process to enrich the semantic representation. In particular conceptual reasoning builds the temporal relation based on the action semantics and uncertainty estimation tackles the semantic uncertainty of actions based on the distributional representation. Experiments show that our ExACT achieves superior recognition accuracy of 94.83%(+2.23%) 90.10%(+37.47%) and 67.24% on PAF HARDVS and our SeAct datasets respectively.",
+          "tags": [
+            "reasoning",
+            "video",
+            "uncertainty/calibration"
+          ],
+          "score": 56
+        },
+        {
+          "title": "Self-Supervised Facial Representation Learning with Facial Region Awareness",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Gao_Self-Supervised_Facial_Representation_Learning_with_Facial_Region_Awareness_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Gao_Self-Supervised_Facial_Representation_Learning_with_Facial_Region_Awareness_CVPR_2024_paper.pdf",
+          "authors": [
+            "Zheng Gao",
+            "Ioannis Patras"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "Self-supervised pre-training has been proved to be effective in learning transferable representations that benefit various visual tasks. This paper asks this question: can self-supervised pre-training learn general facial representations for various facial analysis tasks? Recent efforts toward this goal are limited to treating each face image as a whole i.e. learning consistent facial representations at the image-level which overlooks the consistency of local facial representations (i.e. facial regions like eyes nose etc). In this work we make a first attempt to propose a novel self-supervised facial representation learning framework to learn consistent global and local facial representations Facial Region Awareness (FRA). Specifically we explicitly enforce the consistency of facial regions by matching the local facial representations across views which are extracted with learned heatmaps highlighting the facial regions. Inspired by the mask prediction in supervised semantic segmentation we obtain the heatmaps via cosine similarity between the per-pixel projection of feature maps and facial mask embeddings computed from learnable positional embeddings which leverage the attention mechanism to globally look up the facial image for facial regions. To learn such heatmaps we formulate the learning of facial mask embeddings as a deep clustering problem by assigning the pixel features from the feature maps to them. The transfer learning results on facial classification and regression tasks show that our FRA outperforms previous pre-trained models and more importantly using ResNet as the unified backbone for various tasks our FRA achieves comparable or even better performance compared with SOTA methods in facial analysis tasks.",
+          "tags": [
+            "self-supervised",
+            "representation learning"
+          ],
+          "score": 73
+        }
+      ],
+      "quality": [
+        {
+          "title": "Semantic-Guided Fine-Tuning of Foundation Model for Long-Tailed Visual Recognition",
+          "url": "https://doi.org/10.1007/s11263-026-02874-4",
+          "pdf": "",
+          "authors": [
+            "Yufei Peng",
+            "Yonggang Zhang",
+            "Yiu-ming Cheung"
+          ],
+          "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
+          "published": "2026-06-18",
+          "summary": "Abstract The variance in class-wise sample sizes within long-tailed scenarios often results in degraded performance in less frequent classes. Fortunately, foundation models, pre-trained on vast open-world datasets, demonstrate strong potential for this task due to their generalizable representation, which promotes the development of adaptive strategies on pre-trained models in long-tailed learning. Advanced fine-tuning methods typically adjust visual encoders while neglecting the semantics derived from the frozen text encoder, overlooking the visual and textual alignment. To strengthen this alignment, we propose a novel approach, S em a ntic- g uid e d fine-tuning of foundation model for long-tailed visual recognition (Sage), which incorporates semantic guidance derived from textual modality into the visual fine-tuning process. Specifically, we introduce an SG-Adapter that integrates class descriptions as semantic guidance to guide the fine-tuning of the visual encoder. The introduced guidance is passed through the attention mechanism and enables the model to focus more on semantically relevant content, strengthening the alignment between the visual and textual modalities. Due to the inconsistent class-conditional distributions neglected by the existing loss function, the resulting prediction bias causes performance improvements for the tail class to be less than for the head class, even when the multi-modal alignment is enhanced. To address this challenge, we propose a novel distribution mismatch-aware compensation factor, which is specifically designed to rectify the prediction bias caused by the ignored inconsistent distribution based on our theoretical analysis, and is seamlessly integrated into the loss function. Extensive experiments on benchmark datasets demonstrate the effectiveness of the proposed Sage in enhancing performance in long-tailed learning.",
+          "tags": [
+            "diffusion",
+            "open-world"
+          ],
+          "score": 85
+        },
+        {
+          "title": "MAPSeg: Unified Unsupervised Domain Adaptation for Heterogeneous Medical Image Segmentation Based on 3D Masked Autoencoding and Pseudo-Labeling",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_MAPSeg_Unified_Unsupervised_Domain_Adaptation_for_Heterogeneous_Medical_Image_Segmentation_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_MAPSeg_Unified_Unsupervised_Domain_Adaptation_for_Heterogeneous_Medical_Image_Segmentation_CVPR_2024_paper.pdf",
+          "authors": [
+            "Xuzhe Zhang",
+            "Yuhao Wu",
+            "Elsa Angelini",
+            "Ang Li",
+            "Jia Guo",
+            "Jerod M. Rasmussen",
+            "Thomas G. O'Connor",
+            "Pathik D. Wadhwa",
+            "Andrea Parolin Jackowski",
+            "Hai Li",
+            "Jonathan Posner",
+            "Andrew F. Laine",
+            "Yun Wang"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "unsupervised",
+            "depth/geometry",
+            "domain adaptation",
+            "medical imaging"
+          ],
+          "score": 78
+        },
+        {
+          "title": "Towards Scalable 3D Anomaly Detection and Localization: A Benchmark via 3D Anomaly Synthesis and A Self-Supervised Learning Network",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Li_Towards_Scalable_3D_Anomaly_Detection_and_Localization_A_Benchmark_via_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Li_Towards_Scalable_3D_Anomaly_Detection_and_Localization_A_Benchmark_via_CVPR_2024_paper.pdf",
+          "authors": [
+            "Wenqiao Li",
+            "Xiaohao Xu",
+            "Yao Gu",
+            "Bozhong Zheng",
+            "Shenghua Gao",
+            "Yingna Wu"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "depth/geometry",
+            "anomaly/OOD",
+            "self-supervised"
+          ],
+          "score": 71
+        },
+        {
+          "title": "Weakly Misalignment-free Adaptive Feature Alignment for UAVs-based Multimodal Object Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Chen_Weakly_Misalignment-free_Adaptive_Feature_Alignment_for_UAVs-based_Multimodal_Object_Detection_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Chen_Weakly_Misalignment-free_Adaptive_Feature_Alignment_for_UAVs-based_Multimodal_Object_Detection_CVPR_2024_paper.pdf",
+          "authors": [
+            "Chen Chen",
+            "Jiahao Qi",
+            "Xingyue Liu",
+            "Kangcheng Bin",
+            "Ruigang Fu",
+            "Xikun Hu",
+            "Ping Zhong"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "unsupervised",
+            "UAV/small-object"
+          ],
+          "score": 71
+        },
+        {
+          "title": "VSCode-v2: Dynamic Prompt Learning for General Visual Salient and Camouflaged Object Detection With Two-Stage Optimization",
+          "url": "https://doi.org/10.1109/tpami.2025.3635136",
+          "pdf": "",
+          "authors": [
+            "Ziyang Luo",
+            "Nian Liu",
+            "Xuguang Yang",
+            "Dingwen Zhang",
+            "Deng-Ping Fan",
+            "Fahad Shahbaz Khan",
+            "Junwei Han"
+          ],
+          "source": "Crossref / TPAMI / CCF-A / 顶刊 / IEEE Transactions on Pattern Analysis and Machine Intelligence",
+          "published": "2026-03",
+          "summary": "TPAMI article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "COD",
+            "saliency/transparent"
+          ],
+          "score": 71
+        },
+        {
+          "title": "Multi-Scale Video Anomaly Detection by Multi-Grained Spatio-Temporal Representation Learning",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_Multi-Scale_Video_Anomaly_Detection_by_Multi-Grained_Spatio-Temporal_Representation_Learning_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_Multi-Scale_Video_Anomaly_Detection_by_Multi-Grained_Spatio-Temporal_Representation_Learning_CVPR_2024_paper.pdf",
+          "authors": [
+            "Menghao Zhang",
+            "Jingyu Wang",
+            "Qi Qi",
+            "Haifeng Sun",
+            "Zirui Zhuang",
+            "Pengfei Ren",
+            "Ruilong Ma",
+            "Jianxin Liao"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "video",
+            "anomaly/OOD",
+            "representation learning"
+          ],
+          "score": 70
+        },
+        {
+          "title": "GroupContrast: Semantic-aware Self-supervised Representation Learning for 3D Understanding",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_GroupContrast_Semantic-aware_Self-supervised_Representation_Learning_for_3D_Understanding_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Wang_GroupContrast_Semantic-aware_Self-supervised_Representation_Learning_for_3D_Understanding_CVPR_2024_paper.pdf",
+          "authors": [
+            "Chengyao Wang",
+            "Li Jiang",
+            "Xiaoyang Wu",
+            "Zhuotao Tian",
+            "Bohao Peng",
+            "Hengshuang Zhao",
+            "Jiaya Jia"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "depth/geometry",
+            "self-supervised",
+            "representation learning"
+          ],
+          "score": 67
+        },
+        {
+          "title": "IPDiff: Diffusion-driven ORSI Salient Object Detection with Information Reconstruction and Multi-Prior Guidance",
+          "url": "https://doi.org/10.1007/s11263-026-02931-y",
+          "pdf": "",
+          "authors": [
+            "Gongyang Li",
+            "Zhen Bai",
+            "Runmin Cong",
+            "Dan Zeng",
+            "Weisi Lin",
+            "Xiao-Ping Zhang"
+          ],
+          "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
+          "published": "2026-07-09",
+          "summary": "IJCV article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "diffusion",
+            "saliency/transparent"
+          ],
+          "score": 67
+        },
+        {
+          "title": "TunCLIP: Adaptive Multi-Scale Zero-Shot Anomaly Detection Via Vision-Language Feature Infiltration and Semantic Enhancement",
+          "url": "https://doi.org/10.1109/tmm.2026.3684998",
+          "pdf": "",
+          "authors": [
+            "Tao Zhang",
+            "Wenbo Pang",
+            "Xuequan Lu"
+          ],
+          "source": "Crossref / TMM / CCF-B / 顶刊 / IEEE Transactions on Multimedia",
+          "published": "2026",
+          "summary": "TMM article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "VLM/MLLM",
+            "anomaly/OOD",
+            "low-level"
+          ],
+          "score": 67
+        },
+        {
+          "title": "Endow SAM with Keen Eyes: Temporal-spatial Prompt Learning for Video Camouflaged Object Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Hui_Endow_SAM_with_Keen_Eyes_Temporal-spatial_Prompt_Learning_for_Video_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Hui_Endow_SAM_with_Keen_Eyes_Temporal-spatial_Prompt_Learning_for_Video_CVPR_2024_paper.pdf",
+          "authors": [
+            "Wenjun Hui",
+            "Zhenfeng Zhu",
+            "Shuai Zheng",
+            "Yao Zhao"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "SAM",
+            "video"
+          ],
+          "score": 66
+        }
+      ],
+      "cod": [
+        {
+          "title": "First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection",
+          "url": "http://arxiv.org/abs/2508.15313v2",
+          "pdf": "http://arxiv.org/pdf/2508.15313v2",
+          "authors": [
+            "Wutao Liu",
+            "YiDan Wang",
+            "Pan Gao"
+          ],
+          "source": "arXiv",
+          "published": "2025-08-21",
+          "summary": "Camouflaged object detection (COD) poses a significant challenge in computer vision due to the high similarity between objects and their backgrounds. Existing approaches often rely on heavy training and large computational resources. While foundation models such as the Segment Anything Model (SAM) offer strong generalization, they still struggle to handle COD tasks without fine-tuning and require high-quality prompts to yield good performance. However, generating such prompts manually is costly and inefficient. To address these challenges, we propose \\textbf{First RAG, Second SEG (RAG-SEG)}, a training-free paradigm that decouples COD into two stages: Retrieval-Augmented Generation (RAG) for generating coarse masks as prompts, followed by SAM-based segmentation (SEG) for refinement. RAG-SEG constructs a compact retrieval database via unsupervised clustering, enabling fast and effective feature retrieval. During inference, the retrieved features produce pseudo-labels that guide precise mask generation using SAM2. Our method eliminates the need for conventional training while maintaining competitive performance. Extensive experiments on benchmark COD datasets demonstrate that RAG-SEG performs on par with or surpasses state-of-the-art methods. Notably, all experiments are conducted on a \\textbf{personal laptop}, highlighting the computational efficiency and practicality of our approach. We present further analysis in the Appendix, covering limitations, salient object detection extension, and possible improvements. \\textcolor{blue} {Code: https://github.com/Lwt-diamond/RAG-SEG.}",
+          "tags": [
+            "COD",
+            "training-free",
+            "unsupervised",
+            "SAM",
+            "retrieval/prototype",
+            "anomaly/OOD",
+            "saliency/transparent"
+          ],
+          "score": 79
+        },
+        {
+          "title": "Source-free Depth for Object Pop-out",
+          "url": "http://arxiv.org/abs/2212.05370v3",
+          "pdf": "http://arxiv.org/pdf/2212.05370v3",
+          "authors": [
+            "Zongwei Wu",
+            "Danda Pani Paudel",
+            "Deng-Ping Fan",
+            "Jingjing Wang",
+            "Shuo Wang",
+            "Cédric Demonceaux",
+            "Radu Timofte",
+            "Luc Van Gool"
+          ],
+          "source": "arXiv",
+          "published": "2022-12-10",
+          "summary": "Depth cues are known to be useful for visual perception. However, direct measurement of depth is often impracticable. Fortunately, though, modern learning-based methods offer promising depth maps by inference in the wild. In this work, we adapt such depth inference models for object segmentation using the objects' \"pop-out\" prior in 3D. The \"pop-out\" is a simple composition prior that assumes objects reside on the background surface. Such compositional prior allows us to reason about objects in the 3D space. More specifically, we adapt the inferred depth maps such that objects can be localized using only 3D information. Such separation, however, requires knowledge about contact surface which we learn using the weak supervision of the segmentation mask. Our intermediate representation of contact surface, and thereby reasoning about objects purely in 3D, allows us to better transfer the depth knowledge into semantics. The proposed adaptation method uses only the depth model without needing the source data used for training, making the learning process efficient and practical. Our experiments on eight datasets of two challenging tasks, namely camouflaged object detection and salient object detection, consistently demonstrate the benefit of our method in terms of both performance and generalizability.",
+          "tags": [
+            "COD",
+            "reasoning",
+            "boundary/frequency",
+            "depth/geometry",
+            "compositionality",
+            "saliency/transparent"
+          ],
+          "score": 78
+        },
+        {
+          "title": "LSP-ST: Ladder Shape-Biased Side-Tuning for Robust Infrared Small Target Detection",
+          "url": "http://arxiv.org/abs/2504.14481v2",
+          "pdf": "http://arxiv.org/pdf/2504.14481v2",
+          "authors": [
+            "Guoyi Zhang",
+            "Siyang Chen",
+            "Guangsheng Xu",
+            "Han Wang",
+            "Donghe Wang",
+            "Xiaohu Zhang"
+          ],
+          "source": "arXiv",
+          "published": "2025-04-20",
+          "summary": "Fine-tuning the Segment Anything Model (SAM) for infrared small target detection poses significant challenges due to severe domain shifts. Existing adaptation methods often incorporate handcrafted priors to bridge this gap, yet such designs limit generalization and scalability. We identify a fundamental texture bias in foundation models, which overly depend on local texture cues for target localization. To address this, we propose Ladder Shape-Biased Side-Tuning (LSP-ST), a novel approach that introduces a shape-aware inductive bias to facilitate effective adaptation beyond texture cues. In contrast to prior work that injects explicit edge or contour features, LSP-ST models shape as a global structural prior, integrating both boundaries and internal layouts. We design a Shape-Enhanced Large-Kernel Attention Module to hierarchically and implicitly capture structural information in a fully differentiable manner, without task-specific handcrafted guidance. A theoretical analysis grounded in matched filtering and backpropagation reveals the mechanism by which the proposed attention improves structure-aware learning. With only 4.72M learnable parameters, LSP-ST achieves state-of-the-art performance on multiple infrared small target detection benchmarks. Furthermore, its strong generalization is validated across tasks such as mirror detection, shadow detection, and camouflaged object detection, while maintaining stable performance on texture-driven tasks like salient object detection, demonstrating that the introduced shape bias complements rather than competes with texture-based reasoning.",
+          "tags": [
+            "COD",
+            "SAM",
+            "reasoning",
+            "boundary/frequency",
+            "UAV/small-object",
+            "saliency/transparent"
+          ],
+          "score": 73
+        },
+        {
+          "title": "BED-SAM2: Boundary-Enhanced-Depth SAM2 via Monocular Geometric Priors",
+          "url": "http://arxiv.org/abs/2605.24893v1",
+          "pdf": "http://arxiv.org/pdf/2605.24893v1",
+          "authors": [
+            "Tyler Rust",
+            "Dara McNally",
+            "Kyle O'Donnell",
+            "Colin Kelly",
+            "Chandra Kambhamettu"
+          ],
+          "source": "arXiv",
+          "published": "2026-05-24",
+          "summary": "Building upon the SAM2 vision foundation model for downstream segmentation, this study introduces Boundary Enhanced Depth (BED)-SAM2. The SAM2 Hiera encoder architecture is modified to directly encode monocular depth information from RGB images, thereby providing geometric cues that enhance object boundary delineation and facilitate the extraction of camouflaged object shapes. BED-SAM2 demonstrates competitive state-of-the-art performance across multiple salient and camouflaged object detection tasks with as few as five training epochs.",
+          "tags": [
+            "COD",
+            "boundary/frequency",
+            "depth/geometry",
+            "saliency/transparent"
+          ],
+          "score": 71
+        },
+        {
+          "title": "Open-Vocabulary Camouflaged Object Segmentation",
+          "url": "http://arxiv.org/abs/2311.11241v3",
+          "pdf": "http://arxiv.org/pdf/2311.11241v3",
+          "authors": [
+            "Youwei Pang",
+            "Xiaoqi Zhao",
+            "Jiaming Zuo",
+            "Lihe Zhang",
+            "Huchuan Lu"
+          ],
+          "source": "arXiv",
+          "published": "2023-11-19",
+          "summary": "Recently, the emergence of the large-scale vision-language model (VLM), such as CLIP, has opened the way towards open-world object perception. Many works have explored the utilization of pre-trained VLM for the challenging open-vocabulary dense prediction task that requires perceiving diverse objects with novel classes at inference time. Existing methods construct experiments based on the public datasets of related tasks, which are not tailored for open vocabulary and rarely involve imperceptible objects camouflaged in complex scenes due to data collection bias and annotation costs. To fill in the gaps, we introduce a new task, open-vocabulary camouflaged object segmentation (OVCOS), and construct a large-scale complex scene dataset (\\textbf{OVCamo}) containing 11,483 hand-selected images with fine annotations and corresponding object classes. Further, we build a strong single-stage open-vocabulary \\underline{c}amouflaged \\underline{o}bject \\underline{s}egmentation transform\\underline{er} baseline \\textbf{OVCoser} attached to the parameter-fixed CLIP with iterative semantic guidance and structure enhancement. By integrating the guidance of class semantic knowledge and the supplement of visual structure cues from the edge and depth information, the proposed method can efficiently capture camouflaged objects. Moreover, this effective framework also surpasses previous state-of-the-arts of open-vocabulary semantic image segmentation by a large margin on our OVCamo dataset. With the proposed dataset and baseline, we hope that this new task with more practical value can further expand the research on open-vocabulary dense prediction tasks. Our code and data can be found in the \\href{https://github.com/lartpang/OVCamo}{link}.",
+          "tags": [
+            "COD",
+            "open-vocabulary",
+            "VLM/MLLM",
+            "boundary/frequency",
+            "depth/geometry",
+            "open-world",
+            "low-level"
+          ],
+          "score": 71
+        },
+        {
+          "title": "Inspiring the Next Generation of Segment Anything Models: Comprehensively Evaluate SAM and SAM 2 with Diverse Prompts Towards Context-Dependent Concepts under Different Scenes",
+          "url": "http://arxiv.org/abs/2412.01240v3",
+          "pdf": "http://arxiv.org/pdf/2412.01240v3",
+          "authors": [
+            "Xiaoqi Zhao",
+            "Youwei Pang",
+            "Shijie Chang",
+            "Yuan Zhao",
+            "Lihe Zhang",
+            "Chenyang Yu",
+            "Hanqi Liu",
+            "Jiaming Zuo",
+            "Jinsong Ouyang",
+            "Weisi Lin",
+            "Georges El Fakhri",
+            "Huchuan Lu",
+            "Xiaofeng Liu"
+          ],
+          "source": "arXiv",
+          "published": "2024-12-02",
+          "summary": "As large-scale foundation models trained on billions of image--mask pairs covering a vast diversity of scenes, objects, and contexts, SAM and its upgraded version, SAM~2, have significantly influenced multiple fields within computer vision. Leveraging such unprecedented data diversity, they exhibit strong open-world segmentation capabilities, with SAM~2 further enhancing these capabilities to support high-quality video segmentation. While SAMs (SAM and SAM~2) have demonstrated excellent performance in segmenting context-independent concepts like people, cars, and roads, they overlook more challenging context-dependent (CD) concepts, such as visual saliency, camouflage, industrial defects, and medical lesions. CD concepts rely heavily on global and local contextual information, making them susceptible to shifts in different contexts, which requires strong discriminative capabilities from the model. The lack of comprehensive evaluation of SAMs limits understanding of their performance boundaries, which may hinder the design of future models. In this paper, we conduct a thorough evaluation of SAMs on 11 CD concepts across 2D and 3D images and videos in various visual modalities within natural, medical, and industrial scenes. We develop a unified evaluation framework for SAM and SAM~2 that supports manual, automatic, and intermediate self-prompting, aided by our specific prompt generation and interaction strategies. We further explore the potential of SAM~2 for in-context learning and introduce prompt robustness testing to simulate real-world imperfect prompts. Finally, we analyze the benefits and limitations of SAMs in understanding CD concepts and discuss their future development in segmentation tasks.",
+          "tags": [
+            "COD",
+            "SAM",
+            "depth/geometry",
+            "video",
+            "open-world",
+            "saliency/transparent"
+          ],
+          "score": 71
+        },
+        {
+          "title": "VSCode-v2: Dynamic Prompt Learning for General Visual Salient and Camouflaged Object Detection With Two-Stage Optimization",
+          "url": "https://doi.org/10.1109/tpami.2025.3635136",
+          "pdf": "",
+          "authors": [
+            "Ziyang Luo",
+            "Nian Liu",
+            "Xuguang Yang",
+            "Dingwen Zhang",
+            "Deng-Ping Fan",
+            "Fahad Shahbaz Khan",
+            "Junwei Han"
+          ],
+          "source": "Crossref / TPAMI / CCF-A / 顶刊 / IEEE Transactions on Pattern Analysis and Machine Intelligence",
+          "published": "2026-03",
+          "summary": "TPAMI article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "COD",
+            "saliency/transparent"
+          ],
+          "score": 71
+        },
+        {
+          "title": "GFR-SAM: Training-Free Referring Camouflaged Object Segmentation via Cross-Image Prompting",
+          "url": "http://arxiv.org/abs/2607.11732v1",
+          "pdf": "http://arxiv.org/pdf/2607.11732v1",
+          "authors": [
+            "Yilong Yang",
+            "Jianxin Tian",
+            "Shengchuan Zhang",
+            "Liujuan Cao"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-13",
+          "summary": "Referring Camouflaged Object Detection (Ref-COD) requires segmenting hidden targets guided by reference cues. While supervised methods are annotation-heavy and training-free approaches via sparse point-prompting are sensitive to localization errors, we propose GFR-SAM, a robust three-stage training-free framework. GFR-SAM shifts the paradigm from fragile point-matching to a \"Generate-Filter-Refine\" pipeline. First, we introduce In-Context Exemplar-guided Segmentation, empowering SAM3 with cross-image inference to generate candidate masks via holistic visual exemplars, bypassing its native intra-image constraints. Second, a Region-Global Contrastive Filtering module ranks candidates through DINOv3-based prototypical alignment, effectively suppressing background distractors. Finally, a Geometric-Semantic Refinement module synergizes bounding box and text prompts to recover fine-grained boundaries and enhance instance recall. Evaluated on the R2C7K benchmark, GFR-SAM outperforms existing training-free methods by 8.7\\% in weighted F-measure ($F_β^w$) and competes with supervised state-of-the-art counterparts. Ultimately, this work underscores the potential of unlocking SAM3's latent capability for cross-image In-Context prompting, establishing a robust, training-free paradigm that effectively bridges the gap between general-purpose foundation models and specialized, label-intensive perception tasks without the need for task-specific fine-tuning.",
+          "tags": [
+            "COD",
+            "training-free",
+            "SAM",
+            "depth/geometry"
+          ],
+          "score": 69
+        },
+        {
+          "title": "FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning",
+          "url": "http://arxiv.org/abs/2603.22969v2",
+          "pdf": "http://arxiv.org/pdf/2603.22969v2",
+          "authors": [
+            "Jingchen Ni",
+            "Quan Zhang",
+            "Dan Jiang",
+            "Keyu Lv",
+            "Ke Zhang",
+            "Chun Yuan"
+          ],
+          "source": "arXiv",
+          "published": "2026-03-24",
+          "summary": "Existing camouflage object detection (COD) methods typically rely on fully-supervised learning guided by mask annotations. However, obtaining mask annotations is time-consuming and labor-intensive. Compared to fully-supervised methods, existing weakly-supervised COD methods exhibit significantly poorer performance. Even for the Segment Anything Model (SAM), there are still challenges in handling weakly-supervised camouflage object detection (WSCOD), such as: a. non-camouflage target responses, b. local responses, c. extreme responses, and d. lack of refined boundary awareness, which leads to unsatisfactory results in camouflage scenes. To alleviate these issues, we propose a frequency-aware and contrastive learning-based WSCOD framework in this paper, named FCL-COD. To mitigate the problem of non-camouflaged object responses, we propose the Frequency-aware Low-rank Adaptation (FoRA) method, which incorporates frequency-aware camouflage scene knowledge into SAM. To overcome the challenges of local and extreme responses, we introduce a gradient-aware contrastive learning approach that effectively delineates precise foreground-background boundaries. Additionally, to address the lack of refined boundary perception, we present a multi-scale frequency-aware representation learning strategy that facilitates the modeling of more refined boundaries. We validate the effectiveness of our approach through extensive empirical experiments on three widely recognized COD benchmarks. The results confirm that our method surpasses both state-of-the-art weakly supervised and even fully supervised techniques.",
+          "tags": [
+            "COD",
+            "unsupervised",
+            "SAM",
+            "diffusion",
+            "boundary/frequency",
+            "representation learning"
+          ],
+          "score": 69
+        },
+        {
+          "title": "Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation",
+          "url": "http://arxiv.org/abs/2602.19944v1",
+          "pdf": "http://arxiv.org/pdf/2602.19944v1",
+          "authors": [
+            "Yilong Yang",
+            "Jianxin Tian",
+            "Shengchuan Zhang",
+            "Liujuan Cao"
+          ],
+          "source": "arXiv",
+          "published": "2026-02-23",
+          "summary": "Current zero-shot Camouflaged Object Segmentation methods typically employ a two-stage pipeline (discover-then-segment): using MLLMs to obtain visual prompts, followed by SAM segmentation. However, relying solely on MLLMs for camouflaged object discovery often leads to inaccurate localization, false positives, and missed detections. To address these issues, we propose the \\textbf{D}iscover-\\textbf{S}egment-\\textbf{S}elect (\\textbf{DSS}) mechanism, a progressive framework designed to refine segmentation step by step. The proposed method contains a Feature-coherent Object Discovery (FOD) module that leverages visual features to generate diverse object proposals, a segmentation module that refines these proposals through SAM segmentation, and a Semantic-driven Mask Selection (SMS) module that employs MLLMs to evaluate and select the optimal segmentation mask from multiple candidates. Without requiring any training or supervision, DSS achieves state-of-the-art performance on multiple COS benchmarks, especially in multiple-instance scenes.",
+          "tags": [
+            "COD",
+            "SAM",
+            "VLM/MLLM",
+            "object discovery"
+          ],
+          "score": 67
+        },
+        {
+          "title": "ZS-VCOS: Zero-Shot Video Camouflaged Object Segmentation By Optical Flow and Open Vocabulary Object Detection",
+          "url": "http://arxiv.org/abs/2505.01431v2",
+          "pdf": "http://arxiv.org/pdf/2505.01431v2",
+          "authors": [
+            "Wenqi Guo",
+            "Mohamed Shehata",
+            "Shan Du"
+          ],
+          "source": "arXiv",
+          "published": "2025-04-10",
+          "summary": "Camouflaged object segmentation presents unique challenges compared to traditional segmentation tasks, primarily due to the high similarity in patterns and colors between camouflaged objects and their backgrounds. Effective solutions to this problem have significant implications in critical areas such as pest control, defect detection, and lesion segmentation in medical imaging. Prior research has predominantly emphasized supervised or unsupervised pre-training methods, leaving zero-shot approaches significantly underdeveloped. Existing zero-shot techniques commonly utilize the Segment Anything Model (SAM) in automatic mode or rely on vision-language models to generate cues for segmentation; however, their performances remain unsatisfactory, due to the similarity of the camouflaged object and the background. This work studies how to avoid training by integrating large pre-trained models like SAM-2 and Owl-v2 with temporal information into a modular pipeline. Evaluated on the MoCA-Mask dataset, our approach achieves outstanding performance improvements, significantly outperforming existing zero-shot methods by raising the F-measure ($F_β^w$) from 0.296 to 0.628. Our approach also surpasses supervised methods, increasing the F-measure from 0.476 to 0.628. Additionally, evaluation on the MoCA-Filter dataset demonstrates an increase in the success rate from 0.628 to 0.697 when compared with FlowSAM, a supervised transfer method. A thorough ablation study further validates the individual contributions of each component. Besides our main contributions, we also highlight inconsistencies in previous work regarding metrics and settings. Code can be found in https://github.com/weathon/vcos.",
+          "tags": [
+            "COD",
+            "open-vocabulary",
+            "unsupervised",
+            "SAM",
+            "VLM/MLLM",
+            "diffusion",
+            "video"
+          ],
+          "score": 67
+        },
+        {
+          "title": "SAM2-UNeXT: An Improved High-Resolution Baseline for Adapting Foundation Models to Downstream Segmentation Tasks",
+          "url": "http://arxiv.org/abs/2508.03566v1",
+          "pdf": "http://arxiv.org/pdf/2508.03566v1",
+          "authors": [
+            "Xinyu Xiong",
+            "Zihuang Wu",
+            "Lei Zhang",
+            "Lei Lu",
+            "Ming Li",
+            "Guanbin Li"
+          ],
+          "source": "arXiv",
+          "published": "2025-08-05",
+          "summary": "Recent studies have highlighted the potential of adapting the Segment Anything Model (SAM) for various downstream tasks. However, constructing a more powerful and generalizable encoder to further enhance performance remains an open challenge. In this work, we propose SAM2-UNeXT, an advanced framework that builds upon the core principles of SAM2-UNet while extending the representational capacity of SAM2 through the integration of an auxiliary DINOv2 encoder. By incorporating a dual-resolution strategy and a dense glue layer, our approach enables more accurate segmentation with a simple architecture, relaxing the need for complex decoder designs. Extensive experiments conducted on four benchmarks, including dichotomous image segmentation, camouflaged object detection, marine animal segmentation, and remote sensing saliency detection, demonstrate the superior performance of our proposed method. The code is available at https://github.com/WZH0120/SAM2-UNeXT.",
+          "tags": [
+            "COD",
+            "SAM",
+            "remote sensing",
+            "saliency/transparent"
+          ],
+          "score": 67
+        }
+      ],
+      "uav": [
+        {
+          "title": "Infrared Small Target Detection with Scale and Location Sensitivity",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Liu_Infrared_Small_Target_Detection_with_Scale_and_Location_Sensitivity_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Liu_Infrared_Small_Target_Detection_with_Scale_and_Location_Sensitivity_CVPR_2024_paper.pdf",
+          "authors": [
+            "Qiankun Liu",
+            "Rui Liu",
+            "Bolun Zheng",
+            "Hongkui Wang",
+            "Ying Fu"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object"
+          ],
+          "score": 60
+        },
+        {
+          "title": "Weakly Misalignment-free Adaptive Feature Alignment for UAVs-based Multimodal Object Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Chen_Weakly_Misalignment-free_Adaptive_Feature_Alignment_for_UAVs-based_Multimodal_Object_Detection_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Chen_Weakly_Misalignment-free_Adaptive_Feature_Alignment_for_UAVs-based_Multimodal_Object_Detection_CVPR_2024_paper.pdf",
+          "authors": [
+            "Chen Chen",
+            "Jiahao Qi",
+            "Xingyue Liu",
+            "Kangcheng Bin",
+            "Ruigang Fu",
+            "Xikun Hu",
+            "Ping Zhong"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "unsupervised",
+            "UAV/small-object"
+          ],
+          "score": 71
+        },
+        {
+          "title": "Integrating UAV image time-series with multi-source environmental features for sequential wildfire spread prediction",
+          "url": "https://doi.org/10.1016/j.jag.2026.105473",
+          "pdf": "",
+          "authors": [
+            "Jiahao Zhou",
+            "Sen He",
+            "Shanjunxia Wu",
+            "Qiuhua Wang",
+            "Fei Wang"
+          ],
+          "source": "Crossref / JAG / 遥感高水平期刊 / International Journal of Applied Earth Observation and Geoinformation",
+          "published": "2026-08",
+          "summary": "JAG article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "UAV/small-object"
+          ],
+          "score": 53
+        },
+        {
+          "title": "WildlifeMapper: Aerial Image Analysis for Multi-Species Detection and Identification",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Kumar_WildlifeMapper_Aerial_Image_Analysis_for_Multi-Species_Detection_and_Identification_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Kumar_WildlifeMapper_Aerial_Image_Analysis_for_Multi-Species_Detection_and_Identification_CVPR_2024_paper.pdf",
+          "authors": [
+            "Satish Kumar",
+            "Bowen Zhang",
+            "Chandrakanth Gudavalli",
+            "Connor Levenson",
+            "Lacey Hughey",
+            "Jared A. Stabach",
+            "Irene Amoke",
+            "Gordon Ojwang",
+            "Joseph Mukeka",
+            "Stephen Mwiu",
+            "Joseph Ogutu",
+            "Howard Frederick",
+            "B.S. Manjunath"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object"
+          ],
+          "score": 58
+        },
+        {
+          "title": "Aerial Lifting: Neural Urban Semantic and Building Instance Lifting from Aerial Imagery",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_Aerial_Lifting_Neural_Urban_Semantic_and_Building_Instance_Lifting_from_CVPR_2024_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_Aerial_Lifting_Neural_Urban_Semantic_and_Building_Instance_Lifting_from_CVPR_2024_paper.pdf",
+          "authors": [
+            "Yuqi Zhang",
+            "Guanying Chen",
+            "Jiaxing Chen",
+            "Shuguang Cui"
+          ],
+          "source": "CVPR 2024",
+          "published": "2024",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "UAV/small-object"
+          ],
+          "score": 46
+        },
+        {
+          "title": "VTOS: Learning to Orchestrate Vision Tools by Co-Searching Solutions and Observers",
+          "url": "http://arxiv.org/abs/2606.20728v1",
+          "pdf": "http://arxiv.org/pdf/2606.20728v1",
+          "authors": [
+            "Jinchao Ge",
+            "Lingqiao Liu",
+            "Shuwen Zhao",
+            "Lei Wang"
+          ],
+          "source": "arXiv",
+          "published": "2026-06-17",
+          "summary": "Vision foundation tools such as open-vocabulary detectors, segmentation models, and post-processing operators are powerful building blocks for computer vision, but their effectiveness depends heavily on how they are orchestrated: which tools are used, in what order, with what parameters, and under what visual conditions. Existing visual-programming agents typically generate a fixed solution pipeline, making them brittle under dense objects, occlusion, small targets, and domain shift. We introduce VTOS (Vision Tools Orchestration Search), a framework for adaptive visual tool orchestration through joint solution--observer search. VTOS co-searches executable solution programs that compose vision tools such as Grounding DINO, SAM, NMS, and slice-and-detect, together with observer programs that diagnose candidate solutions, identify failure modes, and generate actionable feedback. These observations are accumulated in a shared VisionThoughts knowledge base to guide subsequent search. We evaluate VTOS through two case studies: dense object counting on LVIS-Count and zero-shot plant-disease segmentation on PlantSeg-OOD, which stress different orchestration challenges including threshold calibration, NMS, slicing, mask refinement, and domain generalization. Across both tasks, VTOS outperforms static tool pipelines and agentic visual-programming baselines, showing that co-searching solutions and observers is an effective strategy for adapting vision tools to challenging computer vision tasks.",
+          "tags": [
+            "open-vocabulary",
+            "SAM",
+            "reasoning",
+            "diffusion",
+            "boundary/frequency",
+            "UAV/small-object",
+            "anomaly/OOD",
+            "uncertainty/calibration",
+            "domain adaptation"
+          ],
+          "score": 97
+        },
+        {
+          "title": "Bridge: Basis-Driven Causal Inference Marries VFMs for Domain Generalization",
+          "url": "http://arxiv.org/abs/2604.26820v1",
+          "pdf": "http://arxiv.org/pdf/2604.26820v1",
+          "authors": [
+            "Mingbo Hong",
+            "Feng Liu",
+            "Caroline Gevaert",
+            "George Vosselman",
+            "Hao Cheng"
+          ],
+          "source": "arXiv",
+          "published": "2026-04-29",
+          "summary": "Detectors often suffer from degraded performance, primarily due to the distributional gap between the source and target domains. This issue is especially evident in single-source domains with limited data, as models tend to rely on confounders (e.g., illumination, co-occurrence, and style) from the source domain, leading to spurious correlations that hinder generalization. To this end, this paper proposes a novel Basis-driven framework for domain generalization, namely \\textbf{\\textit{Bridge}}, that incorporates causal inference into object detection. By learning the low-rank bases for front-door adjustment, \\textbf{\\textit{Bridge}} blocks confounders' effects to mitigate spurious correlations, while simultaneously refining representations by filtering redundant and task-irrelevant components. \\textbf{\\textit{Bridge}} can be seamlessly integrated with both discriminative (e.g., DINOv2/3, SAM) and generative (e.g., Stable Diffusion) Vision Foundation Models (VFMs). Extensive experiments across multiple domain generalization object detection datasets, i.e., Cross-Camera, Adverse Weather, Real-to-Artistic, Diverse Weather Datasets, and Diverse Weather DroneVehicle (our newly augmented real-world UAV-based benchmark), underscore the superiority of our proposed method over previous state-of-the-art approaches. The project page is available at: https://mingbohong.github.io/Bridge/.",
+          "tags": [
+            "SAM",
+            "diffusion",
+            "UAV/small-object",
+            "causal/counterfactual",
+            "domain adaptation"
+          ],
+          "score": 95
+        },
+        {
+          "title": "Silent Failures in Physical AI: A Literature Review of Runtime Action Authorization for Autonomous Systems",
+          "url": "http://arxiv.org/abs/2606.00090v1",
+          "pdf": "http://arxiv.org/pdf/2606.00090v1",
+          "authors": [
+            "Barak Or"
+          ],
+          "source": "arXiv",
+          "published": "2026-05-23",
+          "summary": "Physical AI systems increasingly map multimodal observations, language instructions, and learned world representations into physically consequential actions. Robotics foundation models, vision-language-action models, and world-model-based autonomous systems can condition decisions that move vehicles, robots, drones, and industrial machines. This transition exposes a safety problem that is not fully captured by conventional AI content moderation or by classical robot safety alone: a black-box model may issue a physically consequential action while appearing confident, plausible, and semantically aligned. The resulting failure can be silent, arising from sensor drift, occlusion, state-estimation error, distribution shift, hallucinated affordances, or invalid physical assumptions before downstream hardware controllers detect a violation. Across embodied foundation models, world models, robotics simulation, embodied safety benchmarks, safe control, runtime assurance, uncertainty estimation, verification, and guardrail evaluation, model capability and safety mechanisms have advanced along largely separate technical tracks. A recurring gap synthesized here is that no single stream surveyed in this review supplies a complete runtime authorization boundary between black-box Physical AI models and physical execution. The resulting analysis develops a bounded problem formulation, a definition of silent physical-action failure, a taxonomy of runtime guardrail functions, and evaluation requirements for comparing guardrails as Physical AI assurance mechanisms.",
+          "tags": [
+            "VLM/MLLM",
+            "diffusion",
+            "boundary/frequency",
+            "UAV/small-object",
+            "uncertainty/calibration"
+          ],
+          "score": 82
+        },
+        {
+          "title": "See&Say: Vision Language Guided Safe Zone Detection for Autonomous Package Delivery Drones",
+          "url": "http://arxiv.org/abs/2604.13292v1",
+          "pdf": "http://arxiv.org/pdf/2604.13292v1",
+          "authors": [
+            "Mahyar Ghazanfari",
+            "Peng Wei"
+          ],
+          "source": "arXiv",
+          "published": "2026-04-14",
+          "summary": "Autonomous drone delivery systems are rapidly advancing, but ensuring safe and reliable package drop-offs remains highly challenging in cluttered urban and suburban environments where accurately identifying suitable package drop zones is critical. Existing approaches typically rely on either geometry-based analysis or semantic segmentation alone, but these methods lack the integrated semantic reasoning required for robust decision-making. To address this gap, we propose See&Say, a novel framework that combines geometric safety cues with semantic perception, guided by a Vision-Language Model (VLM) for iterative refinement. The system fuses monocular depth gradients with open-vocabulary detection masks to produce safety maps, while the VLM dynamically adjusts object category prompts and refines hazard detection across time, enabling reliable reasoning under dynamic conditions during the final delivery phase. When the primary drop-pad is occupied or unsafe, the proposed See&Say also identifies alternative candidate zones for package delivery. We curated a dataset of urban delivery scenarios with moving objects and human activities to evaluate the approach. Experimental results show that See&Say outperforms all baselines, achieving the highest accuracy and IoU for safety map prediction as well as superior performance in alternative drop zone evaluation across multiple thresholds. These findings highlight the promise of VLM-guided segmentation-depth fusion for advancing safe and practical drone-based package delivery.",
+          "tags": [
+            "open-vocabulary",
+            "VLM/MLLM",
+            "reasoning",
+            "diffusion",
+            "depth/geometry",
+            "UAV/small-object"
+          ],
+          "score": 72
+        },
+        {
+          "title": "Temporal-Emerged Prompting for Segment Anything in Multiframe Infrared Small Target Detection",
+          "url": "http://arxiv.org/abs/2606.27655v1",
+          "pdf": "http://arxiv.org/pdf/2606.27655v1",
+          "authors": [
+            "Yinghui Xing",
+            "Donghao Chu",
+            "Shizhou Zhang",
+            "Di Xu"
+          ],
+          "source": "arXiv",
+          "published": "2026-06-26",
+          "summary": "Accurately localizing and segmenting small targets in low signal-to-noise ratio (SNR) infrared sequences remains a challenging task. Since targets are often indistinguishable from the background in individual frames, existing methods, even when equipped with advanced foundation model and powerful inter-frame association mechanisms, still fail to detect them. Motivated by the observation that targets tend to emerge gradually from the background over time and become distinguishable, we propose Temporal-Emerged Prompting for Segment Anything Model (TEP-SAM), a principled framework designed to explicitly exploit such temporal-emerged cues to modulate and prompt SAM. TEP-SAM operates by jointly modeling global motion patterns and local motion deviations to locate potential targets. It further enhances target region features by leveraging motion discrepancy, thereby generating temporal-emerged cues for SAM and enabling non-interactive segmentation. By bridging large-scale semantic pretraining with task-specific temporal modeling, TEP-SAM effectively adapts SAM to the challenging multiframe infrared small target detection task. Extensive experiments demonstrate the effectiveness of our approach, particularly under severely low-SNR conditions and in complex dynamic background.",
+          "tags": [
+            "SAM",
+            "diffusion",
+            "video",
+            "UAV/small-object",
+            "active/interactive"
+          ],
+          "score": 73
+        }
+      ],
+      "fire_multispectral": [
+        {
+          "title": "Seeing Heat with Color -- RGB-Only Wildfire Temperature Inference from SAM-Guided Multimodal Distillation using Radiometric Ground Truth",
+          "url": "http://arxiv.org/abs/2505.01638v1",
+          "pdf": "http://arxiv.org/pdf/2505.01638v1",
+          "authors": [
+            "Michael Marinaccio",
+            "Fatemeh Afghah"
+          ],
+          "source": "arXiv",
+          "published": "2025-05-03",
+          "summary": "High-fidelity wildfire monitoring using Unmanned Aerial Vehicles (UAVs) typically requires multimodal sensing - especially RGB and thermal imagery - which increases hardware cost and power consumption. This paper introduces SAM-TIFF, a novel teacher-student distillation framework for pixel-level wildfire temperature prediction and segmentation using RGB input only. A multimodal teacher network trained on paired RGB-Thermal imagery and radiometric TIFF ground truth distills knowledge to a unimodal RGB student network, enabling thermal-sensor-free inference. Segmentation supervision is generated using a hybrid approach of segment anything (SAM)-guided mask generation, and selection via TOPSIS, along with Canny edge detection and Otsu's thresholding pipeline for automatic point prompt selection. Our method is the first to perform per-pixel temperature regression from RGB UAV data, demonstrating strong generalization on the recent FLAME 3 dataset. This work lays the foundation for lightweight, cost-effective UAV-based wildfire monitoring systems without thermal sensors.",
+          "tags": [
+            "multispectral fire",
+            "fire foundation model",
+            "SAM",
+            "boundary/frequency",
+            "UAV/small-object"
+          ],
+          "score": 106
+        },
+        {
+          "title": "Generating Satellite Imagery Data for Wildfire Detection through Mask-Conditioned Generative AI",
+          "url": "http://arxiv.org/abs/2604.02479v1",
+          "pdf": "http://arxiv.org/pdf/2604.02479v1",
+          "authors": [
+            "Valeria Martin",
+            "K. Brent Venable",
+            "Derek Morgan"
+          ],
+          "source": "arXiv",
+          "published": "2026-04-02",
+          "summary": "The scarcity of labeled satellite imagery remains a fundamental bottleneck for deep-learning (DL)-based wildfire monitoring systems. This paper investigates whether a diffusion-based foundation model for Earth Observation (EO), EarthSynth, can synthesize realistic post-wildfire Sentinel-2 RGB imagery conditioned on existing burn masks, without task-specific retraining. Using burn masks derived from the CalFireSeg-50 dataset (Martin et al., 2025), we design and evaluate six controlled experimental configurations that systematically vary: (i) pipeline architecture (mask-only full generation vs. inpainting with pre-fire context), (ii) prompt engineering strategy (three hand-crafted prompts and a VLM-generated prompt via Qwen2-VL), and (iii) a region-wise color-matching post-processing step. Quantitative assessment on 10 stratified test samples uses four complementary metrics: Burn IoU, burn-region color distance (ΔC_burn), Darkness Contrast, and Spectral Plausibility. Results show that inpainting-based pipelines consistently outperform full-tile generation across all metrics, with the structured inpainting prompt achieving the best spatial alignment (Burn IoU = 0.456) and burn saliency (Darkness Contrast = 20.44), while color matching produces the lowest color distance (ΔC_burn = 63.22) at the cost of reduced burn saliency. VLM-assisted inpainting is competitive with hand-crafted prompts. These findings provide a foundation for incorporating generative data augmentation into wildfire detection pipelines. Code and experiments are available at: https://www.kaggle.com/code/valeriamartinh/genai-all-runned",
+          "tags": [
+            "multispectral fire",
+            "fire foundation model",
+            "diffusion",
+            "remote sensing",
+            "saliency/transparent"
+          ],
+          "score": 97
+        },
+        {
+          "title": "On-Orbit Real-Time Wildfire Detection Under On-Board Constraints",
+          "url": "http://arxiv.org/abs/2605.06273v1",
+          "pdf": "http://arxiv.org/pdf/2605.06273v1",
+          "authors": [
+            "Matthias Rötzer",
+            "Veronika Pörtge",
+            "Martin Ickerott",
+            "Jayendra Praveen Kumar Chorapalli",
+            "Dimitri Scheftelowitsch",
+            "Max Bereczky",
+            "Dmitry Rashkovetsky",
+            "Sai Manoj Appalla",
+            "Julia Gottfriedsen"
+          ],
+          "source": "arXiv",
+          "published": "2026-05-07",
+          "summary": "We present a deployed system for on-orbit wildfire detection aboard a nine-satellite commercial thermal infrared constellation, operating under demanding joint constraints: sub-megabyte model footprint, sub-150 ms per-batch TensorRT FP16 inference on an NVIDIA Jetson Xavier NX, and an end-to-end alert pipeline targeting under 10 minutes from satellite overpass to fire event communication. The system operates on uncalibrated mid-wave infrared (MWIR) single-band imagery at 200 m ground sampling distance, where fires frequently appear as sub-pixel or single-pixel thermal anomalies under extreme class imbalance -- challenges not addressed by the contextual thermal-thresholding pipelines (MODIS, VIIRS) that currently dominate operational fire monitoring. We present an empirical study of lightweight dense representation learning for this regime using a proprietary nine-satellite MWIR dataset. We compare dense masked autoencoding (DenseMAE) and a hybrid DenseMAE+EMA (exponential moving average) distillation variant, and evaluate representations via linear probing and full-distribution pixel-level average precision (AP) under extreme class imbalance. DenseMAE pretraining enables compact downstream models on the latency-accuracy Pareto frontier: our fastest SSL-pretrained model achieves 0.640 test AP and 0.69 event-level Fire-F1 with 65.34 ms latency per batch and a 0.52 MB engine, without pruning or compression. The best configuration reaches 0.699 AP and 0.744 Fire-F1 below 1 MB, outperforming a supervised baseline (0.650 AP) under comparable constraints.",
+          "tags": [
+            "multispectral fire",
+            "representation learning"
+          ],
+          "score": 67
+        },
+        {
+          "title": "PyroFocus: A Deep Learning Approach to Real-Time Wildfire Detection in Multispectral Remote Sensing Imagery",
+          "url": "http://arxiv.org/abs/2512.03257v1",
+          "pdf": "http://arxiv.org/pdf/2512.03257v1",
+          "authors": [
+            "Mark Moussa",
+            "Andre Williams",
+            "Seth Roffe",
+            "Douglas Morton"
+          ],
+          "source": "arXiv",
+          "published": "2025-12-02",
+          "summary": "Rapid and accurate wildfire detection is crucial for emergency response and environmental management. In airborne and spaceborne missions, real-time algorithms must distinguish between no fire, active fire, and post-fire conditions, and estimate fire intensity. Multispectral and hyperspectral thermal imagers provide rich spectral information, but high data dimensionality and limited onboard resources make real-time processing challenging. As wildfires increase in frequency and severity, the need for low-latency and computationally efficient onboard detection methods is critical. We present a systematic evaluation of multiple deep learning architectures, including custom Convolutional Neural Networks (CNNs) and Transformer-based models, for multi-class fire classification. We also introduce PyroFocus, a two-stage pipeline that performs fire classification followed by fire radiative power (FRP) regression or segmentation to reduce inference time and computational cost for onboard deployment. Using data from NASA's MODIS/ASTER Airborne Simulator (MASTER), which is similar to a next-generation fire detection sensor, we compare accuracy, inference latency, and resource efficiency. Experimental results show that the proposed two-stage pipeline achieves strong trade-offs between speed and accuracy, demonstrating significant potential for real-time edge deployment in future wildfire monitoring missions.",
+          "tags": [
+            "multispectral fire",
+            "diffusion",
+            "boundary/frequency",
+            "remote sensing"
+          ],
+          "score": 55
+        },
+        {
+          "title": "ABANICCO: A New Color Space for Multi-Label Pixel Classification and Color Segmentation",
+          "url": "http://arxiv.org/abs/2211.08460v1",
+          "pdf": "http://arxiv.org/pdf/2211.08460v1",
+          "authors": [
+            "Laura Nicolás-Sáenz",
+            "Agapito Ledezma",
+            "Javier Pascau",
+            "Arrate Muñoz-Barrutia"
+          ],
+          "source": "arXiv",
+          "published": "2022-11-15",
+          "summary": "In any computer vision task involving color images, a necessary step is classifying pixels according to color and segmenting the respective areas. However, the development of methods able to successfully complete this task has proven challenging, mainly due to the gap between human color perception, linguistic color terms, and digital representation. In this paper, we propose a novel method combining geometric analysis of color theory, fuzzy color spaces, and multi-label systems for the automatic classification of pixels according to 12 standard color categories (Green, Yellow, Light Orange, Deep Orange, Red, Pink, Purple, Ultramarine, Blue, Teal, Brown, and Neutral). Moreover, we present a robust, unsupervised, unbiased strategy for color naming based on statistics and color theory. ABANICCO was tested against the state of the art in color classification and with the standarized ISCC-NBS color system, providing accurate classification and a standard, easily understandable alternative for hue naming recognizable by humans and machines. We expect this solution to become the base to successfully tackle a myriad of problems in all fields of computer vision, such as region characterization, histopathology analysis, fire detection, product quality prediction, object description, and hyperspectral imaging.",
+          "tags": [
+            "multispectral fire",
+            "unsupervised",
+            "depth/geometry",
+            "remote sensing",
+            "medical imaging"
+          ],
+          "score": 55
+        },
+        {
+          "title": "Systematic Absence of Low-Confidence Nighttime Fire Detections in VIIRS Active Fire Product: Evidence of Undocumented Algorithmic Filtering",
+          "url": "http://arxiv.org/abs/2510.26816v1",
+          "pdf": "http://arxiv.org/pdf/2510.26816v1",
+          "authors": [
+            "Rohit Rajendra Dhage"
+          ],
+          "source": "arXiv",
+          "published": "2025-10-28",
+          "summary": "The Visible Infrared Imaging Radiometer Suite (VIIRS) active fire product is widely used for global fire monitoring, yet its confidence classification scheme exhibits an undocumented systematic pattern. Through analysis of 21,540,921 fire detections spanning one year (January 2023 - January 2024), I demonstrate a complete absence of low-confidence classifications during nighttime observations. Of 6,007,831 nighttime fires, zero were classified as low confidence, compared to an expected 696,908 under statistical independence (chi-squared = 1,474,795, p < 10^-15, Z = -833). This pattern persists globally across all months, latitude bands, and both NOAA-20 and Suomi-NPP satellites. Machine learning reverse-engineering (88.9% accuracy), bootstrap simulation (1,000 iterations), and spatial-temporal analysis confirm this is an algorithmic constraint rather than a geophysical phenomenon. Brightness temperature analysis reveals nighttime fires below approximately 295K are likely excluded entirely rather than flagged as low-confidence, while daytime fires show normal confidence distributions. This undocumented behavior affects 27.9% of all VIIRS fire detections and has significant implications for fire risk assessment, day-night detection comparisons, confidence-weighted analyses, and any research treating confidence levels as uncertainty metrics. I recommend explicit documentation of this algorithmic constraint in VIIRS user guides and reprocessing strategies for affected analyses.",
+          "tags": [
+            "multispectral fire",
+            "video",
+            "uncertainty/calibration"
+          ],
+          "score": 49
+        },
+        {
+          "title": "Sen2Fire: A Challenging Benchmark Dataset for Wildfire Detection using Sentinel Data",
+          "url": "http://arxiv.org/abs/2403.17884v1",
+          "pdf": "http://arxiv.org/pdf/2403.17884v1",
+          "authors": [
+            "Yonghao Xu",
+            "Amanda Berg",
+            "Leif Haglund"
+          ],
+          "source": "arXiv",
+          "published": "2024-03-26",
+          "summary": "Utilizing satellite imagery for wildfire detection presents substantial potential for practical applications. To advance the development of machine learning algorithms in this domain, our study introduces the \\textit{Sen2Fire} dataset--a challenging satellite remote sensing dataset tailored for wildfire detection. This dataset is curated from Sentinel-2 multi-spectral data and Sentinel-5P aerosol product, comprising a total of 2466 image patches. Each patch has a size of 512$\\times$512 pixels with 13 bands. Given the distinctive sensitivities of various wavebands to wildfire responses, our research focuses on optimizing wildfire detection by evaluating different wavebands and employing a combination of spectral indices, such as normalized burn ratio (NBR) and normalized difference vegetation index (NDVI). The results suggest that, in contrast to using all bands for wildfire detection, selecting specific band combinations yields superior performance. Additionally, our study underscores the positive impact of integrating Sentinel-5 aerosol data for wildfire detection. The code and dataset are available online (https://zenodo.org/records/10881058).",
+          "tags": [
+            "multispectral fire",
+            "diffusion",
+            "remote sensing"
+          ],
+          "score": 49
+        },
+        {
+          "title": "QFireNet: A Quantum-Enhanced U-Net for Wildfire Segmentation from Sentinel-2 Imagery",
+          "url": "http://arxiv.org/abs/2607.14160v1",
+          "pdf": "http://arxiv.org/pdf/2607.14160v1",
+          "authors": [
+            "Jaiman Munshi",
+            "Tanvi Tewary",
+            "Sawyer Bloom",
+            "Aidan Chu",
+            "Chetan Maviti",
+            "Kyon Winston-Bey",
+            "Harshit Badjatia",
+            "Farhan Kittur",
+            "Vardhan Madhavarapu",
+            "Varun Kota",
+            "Joshua Kwon",
+            "Nazia Rangwala-Vohra",
+            "Franz Klein"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-14",
+          "summary": "Wildfire detection from satellite imagery is a semantic image segmentation problem that has proven to be difficult due to challenges such as class imbalance, feature complexity, and atmospheric interference. In this paper, we build on the foundational U-Net image segmentation model to develop a quantum-hybrid solution in hopes of more effectively modeling the high-dimensional spectral feature space of the Sen2Fire dataset. We inject a variational quantum circuit in the bottleneck portion of U-Net, specifically the QuFeX and QB-Net ansatzes. We test a classical Feature Pyramid Network (FPN) for further comparative analysis of the model, and we also explore classical improvements to the U-Net model and its training process, including a compression of parameters, alternative loss functions, and uniform mixing of input data. Our primary finding is that under matched conditions, both QB-Net (with an $F_1$ score of 31.18) and QuFeX ($F_1 = 30.79$) outperformed the classical U-Net baseline results ($F_1 = 28.71$). Additionally, the classical FPN achieved a comparable score of 31.13. A crucial finding was that data mixing removed a significant domain shift between the geographically-separated train and test sets, which boosted the classical FPN $F_1$ score to 39.76. We validate the architecture's robustness and generalizability to the wildfire detection problem via cross-dataset transfer on the California Burned Areas (CaBuAr) dataset. Overall, we find that quantum machine learning has potential to provide an advantage in the problem of wildfire image segmentation, and further experiments will continue to validate and expand upon this finding.",
+          "tags": [
+            "multispectral fire",
+            "diffusion"
+          ],
+          "score": 45
+        },
+        {
+          "title": "Integrating earth observation data into the tri-environmental evaluation of the economic cost of natural disasters: a case study of 2025 LA wildfire",
+          "url": "http://arxiv.org/abs/2505.01721v1",
+          "pdf": "http://arxiv.org/pdf/2505.01721v1",
+          "authors": [
+            "Zongrong Li",
+            "Haiyang Li",
+            "Yifan Yang",
+            "Siqin Wang",
+            "Yingxin Zhu"
+          ],
+          "source": "arXiv",
+          "published": "2025-05-03",
+          "summary": "Wildfires in urbanized regions, particularly within the wildland-urban interface, have significantly intensified in frequency and severity, driven by rapid urban expansion and climate change. This study aims to provide a comprehensive, fine-grained evaluation of the recent 2025 Los Angeles wildfire's impacts, through a multi-source, tri-environmental framework in the social, built and natural environmental dimensions. This study employed a spatiotemporal wildfire impact assessment method based on daily satellite fire detections from the Visible Infrared Imaging Radiometer Suite (VIIRS), infrastructure data from OpenStreetMap, and high-resolution dasymetric population modeling to capture the dynamic progression of wildfire events in two distinct Los Angeles County regions, Eaton and Palisades, which occurred in January 2025. The modelling result estimated that the total direct economic losses reached approximately 4.86 billion USD with the highest single-day losses recorded on January 8 in both districts. Population exposure reached a daily maximum of 4,342 residents in Eaton and 3,926 residents in Palisades. Our modelling results highlight early, severe ecological and infrastructural damage in Palisades, as well as delayed, intense social and economic disruptions in Eaton. This tri-environmental framework underscores the necessity for tailored, equitable wildfire management strategies, enabling more effective emergency responses, targeted urban planning, and community resilience enhancement. Our study contributes a highly replicable tri-environmental framework for evaluating the natural, built and social environmental costs of natural disasters, which can be applied to future risk profiling, hazard mitigation, and environmental management in the era of climate change.",
+          "tags": [
+            "multispectral fire",
+            "boundary/frequency",
+            "video",
+            "remote sensing",
+            "low-level"
+          ],
+          "score": 37
+        },
+        {
+          "title": "On the Detectability of Conflict: a Remote Sensing Study of the Rohingya Conflict",
+          "url": "http://arxiv.org/abs/2003.08874v1",
+          "pdf": "http://arxiv.org/pdf/2003.08874v1",
+          "authors": [
+            "Christopher X. Ren",
+            "Matthew T. Calef",
+            "Alice M. S. Durieux",
+            "A. Ziemann",
+            "J. Theiler"
+          ],
+          "source": "arXiv",
+          "published": "2020-03-19",
+          "summary": "The detection and quantification of conflict through remote sensing modalities represents a challenging but crucial aspect of human rights monitoring. In this work we demonstrate how utilizing multi-modal data sources can help build a comprehensive picture of conflict and human displacement, using the Rohingya conflict in the state of Rakhine, Myanmar as a case study. We show that time series analysis of fire detections from the Moderate Resolution Imaging Spectroradiometer (MODIS) and Visible Infrared Imaging Radiometer Suite (VIIRS) can reveal anomalous spatial and temporal distributions of fires related to conflict. This work also shows that Synthetic Aperture Radar (SAR) backscatter and coherence data can detect the razing and burning of buildings and villages, even in cloudy conditions. These techniques may be further developed in the future to enable the monitoring and detection of signals originating from these types of conflict.",
+          "tags": [
+            "multispectral fire",
+            "diffusion",
+            "video",
+            "remote sensing"
+          ],
+          "score": 37
+        }
+      ],
+      "fire_foundation": [
+        {
+          "title": "Seeing Heat with Color -- RGB-Only Wildfire Temperature Inference from SAM-Guided Multimodal Distillation using Radiometric Ground Truth",
+          "url": "http://arxiv.org/abs/2505.01638v1",
+          "pdf": "http://arxiv.org/pdf/2505.01638v1",
+          "authors": [
+            "Michael Marinaccio",
+            "Fatemeh Afghah"
+          ],
+          "source": "arXiv",
+          "published": "2025-05-03",
+          "summary": "High-fidelity wildfire monitoring using Unmanned Aerial Vehicles (UAVs) typically requires multimodal sensing - especially RGB and thermal imagery - which increases hardware cost and power consumption. This paper introduces SAM-TIFF, a novel teacher-student distillation framework for pixel-level wildfire temperature prediction and segmentation using RGB input only. A multimodal teacher network trained on paired RGB-Thermal imagery and radiometric TIFF ground truth distills knowledge to a unimodal RGB student network, enabling thermal-sensor-free inference. Segmentation supervision is generated using a hybrid approach of segment anything (SAM)-guided mask generation, and selection via TOPSIS, along with Canny edge detection and Otsu's thresholding pipeline for automatic point prompt selection. Our method is the first to perform per-pixel temperature regression from RGB UAV data, demonstrating strong generalization on the recent FLAME 3 dataset. This work lays the foundation for lightweight, cost-effective UAV-based wildfire monitoring systems without thermal sensors.",
+          "tags": [
+            "multispectral fire",
+            "fire foundation model",
+            "SAM",
+            "boundary/frequency",
+            "UAV/small-object"
+          ],
+          "score": 106
+        },
+        {
+          "title": "Detecting Wildfires on UAVs with Real-time Segmentation Trained by Larger Teacher Models",
+          "url": "http://arxiv.org/abs/2408.10843v3",
+          "pdf": "http://arxiv.org/pdf/2408.10843v3",
+          "authors": [
+            "Julius Pesonen",
+            "Teemu Hakala",
+            "Väinö Karjalainen",
+            "Niko Koivumäki",
+            "Lauri Markelin",
+            "Anna-Maria Raita-Hakola",
+            "Juha Suomalainen",
+            "Ilkka Pölönen",
+            "Eija Honkavaara"
+          ],
+          "source": "arXiv",
+          "published": "2024-08-19",
+          "summary": "Early detection of wildfires is essential to prevent large-scale fires resulting in extensive environmental, structural, and societal damage. Uncrewed aerial vehicles (UAVs) can cover large remote areas effectively with quick deployment requiring minimal infrastructure and equipping them with small cameras and computers enables autonomous real-time detection. In remote areas, however, detection methods are limited to onboard computation due to the lack of high-bandwidth mobile networks. For accurate camera-based localisation, segmentation of the detected smoke is essential but training data for deep learning-based wildfire smoke segmentation is limited. This study shows how small specialised segmentation models can be trained using only bounding box labels, leveraging zero-shot foundation model supervision. The method offers the advantages of needing only fairly easily obtainable bounding box labels and requiring training solely for the smaller student network. The proposed method achieved 63.3% mIoU on a manually annotated and diverse wildfire dataset. The used model can perform in real-time at ~25 fps with a UAV-carried NVIDIA Jetson Orin NX computer while reliably recognising smoke, as demonstrated at real-world forest burning events. Code is available at: https://gitlab.com/fgi_nls/public/wildfire-real-time-segmentation",
+          "tags": [
+            "fire foundation model",
+            "UAV/small-object"
+          ],
+          "score": 98
+        },
+        {
+          "title": "Generating Satellite Imagery Data for Wildfire Detection through Mask-Conditioned Generative AI",
+          "url": "http://arxiv.org/abs/2604.02479v1",
+          "pdf": "http://arxiv.org/pdf/2604.02479v1",
+          "authors": [
+            "Valeria Martin",
+            "K. Brent Venable",
+            "Derek Morgan"
+          ],
+          "source": "arXiv",
+          "published": "2026-04-02",
+          "summary": "The scarcity of labeled satellite imagery remains a fundamental bottleneck for deep-learning (DL)-based wildfire monitoring systems. This paper investigates whether a diffusion-based foundation model for Earth Observation (EO), EarthSynth, can synthesize realistic post-wildfire Sentinel-2 RGB imagery conditioned on existing burn masks, without task-specific retraining. Using burn masks derived from the CalFireSeg-50 dataset (Martin et al., 2025), we design and evaluate six controlled experimental configurations that systematically vary: (i) pipeline architecture (mask-only full generation vs. inpainting with pre-fire context), (ii) prompt engineering strategy (three hand-crafted prompts and a VLM-generated prompt via Qwen2-VL), and (iii) a region-wise color-matching post-processing step. Quantitative assessment on 10 stratified test samples uses four complementary metrics: Burn IoU, burn-region color distance (ΔC_burn), Darkness Contrast, and Spectral Plausibility. Results show that inpainting-based pipelines consistently outperform full-tile generation across all metrics, with the structured inpainting prompt achieving the best spatial alignment (Burn IoU = 0.456) and burn saliency (Darkness Contrast = 20.44), while color matching produces the lowest color distance (ΔC_burn = 63.22) at the cost of reduced burn saliency. VLM-assisted inpainting is competitive with hand-crafted prompts. These findings provide a foundation for incorporating generative data augmentation into wildfire detection pipelines. Code and experiments are available at: https://www.kaggle.com/code/valeriamartinh/genai-all-runned",
+          "tags": [
+            "multispectral fire",
+            "fire foundation model",
+            "diffusion",
+            "remote sensing",
+            "saliency/transparent"
+          ],
+          "score": 97
+        },
+        {
+          "title": "SmokeBench: Evaluating Multimodal Large Language Models for Wildfire Smoke Detection",
+          "url": "https://openaccess.thecvf.com/content/WACV2026/html/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.pdf",
+          "authors": [
+            "Tianye Qi",
+            "Weihao Li",
+            "Nick Barnes"
+          ],
+          "source": "WACV 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "fire foundation model",
+            "VLM/MLLM"
+          ],
+          "score": 43
+        }
+      ],
+      "broad": [
+        {
+          "title": "RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images",
+          "url": "http://arxiv.org/abs/2509.18711v2",
+          "pdf": "http://arxiv.org/pdf/2509.18711v2",
+          "authors": [
+            "Ke Li",
+            "Di Wang",
+            "Ting Wang",
+            "Fuyu Dong",
+            "Yiming Zhang",
+            "Luyao Zhang",
+            "Xiangyu Wang",
+            "Shaofeng Li",
+            "Quan Wang"
+          ],
+          "source": "arXiv",
+          "published": "2025-09-23",
+          "summary": "Remote sensing visual grounding (RSVG) aims to localize objects in remote sensing images based on free-form natural language expressions. Existing approaches are typically constrained to closed-set vocabularies, limiting their applicability in open-world scenarios. While recent attempts to leverage generic foundation models for open-vocabulary RSVG, they overly rely on expensive high-quality datasets and time-consuming fine-tuning. To address these limitations, we propose \\textbf{RSVG-ZeroOV}, a training-free framework that aims to explore the potential of frozen generic foundation models for zero-shot open-vocabulary RSVG. Specifically, RSVG-ZeroOV comprises three key stages: (i) Overview: We utilize a vision-language model (VLM) to obtain cross-attention\\footnote[1]{In this paper, although decoder-only VLMs use self-attention over all tokens, we refer to the image-text interaction part as cross-attention to distinguish it from pure visual self-attention.}maps that capture semantic correlations between text queries and visual regions. (ii) Focus: By leveraging the fine-grained modeling priors of a diffusion model (DM), we fill in gaps in structural and shape information of objects, which are often overlooked by VLM. (iii) Evolve: A simple yet effective attention evolution module is introduced to suppress irrelevant activations, yielding purified segmentation masks over the referred objects. Without cumbersome task-specific training, RSVG-ZeroOV offers an efficient and scalable solution. Extensive experiments demonstrate that the proposed framework consistently outperforms existing weakly-supervised and zero-shot methods.",
+          "tags": [
+            "open-vocabulary",
+            "training-free",
+            "unsupervised",
+            "VLM/MLLM",
+            "reasoning",
+            "diffusion",
+            "remote sensing",
+            "open-world",
+            "grounded vision"
+          ],
+          "score": 119
+        },
+        {
+          "title": "Trustworthy Medical Segmentation: Uncertainty-Aware U-Net Evaluation Under Clinical Image Degradation",
+          "url": "http://arxiv.org/abs/2607.22727v1",
+          "pdf": "http://arxiv.org/pdf/2607.22727v1",
+          "authors": [
+            "Pranav Kaliaperumal",
+            "Manisha Kaliaperumal"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-22",
+          "summary": "Medical image segmentation models often report high benchmark accuracy under ideal imaging conditions, yet their failures under clinical degradation can be quiet: sensor noise, patient motion, low- resolution acquisition, and contrast variability may all alter model behavior without producing an obvious warning. We present a reproducible framework for evaluating uncertainty-aware segmentation under con- trolled clinical degradation. Our experiments use a synthetic multimodal brain tumor MRI cohort generated with a biophysical phantom simulator that follows the BraTS protocol. We train U-Net and Attention U-Net baselines for multi-class tumor sub-region segmentation and augment both models with Monte Carlo dropout to estimate per-voxel uncertainty. Across eight clinically motivated corruption types at five severity levels, we measure segmentation accuracy, calibration, failure detection, and selective prediction coverage. On clean data, Attention U-Net achieves a whole-tumor Dice of 0.990; under severe Gaussian noise, its performance falls to 0.089. Predictive uncertainty rises with degradation and tracks segmentation error (Pearson r = 0.53 under severity-3 Gaussian noise), allowing us to flag failures with an AUROC of 0.843. These results argue for uncertainty-aware inference as a practical safety layer in physician-in-the-loop radiology workflows. We release the code, trained models, and evaluation protocol to support direct reproduction.",
+          "tags": [
+            "diffusion",
+            "video",
+            "uncertainty/calibration",
+            "selective/risk control",
+            "medical imaging"
+          ],
+          "score": 111
+        },
+        {
+          "title": "MagicSeg: Open-World Segmentation Pretraining via Counterfactural Diffusion-Based Auto-Generation",
+          "url": "http://arxiv.org/abs/2603.19575v1",
+          "pdf": "http://arxiv.org/pdf/2603.19575v1",
+          "authors": [
+            "Kaixin Cai",
+            "Pengzhen Ren",
+            "Jianhua Han",
+            "Yi Zhu",
+            "Hang Xu",
+            "Jianzhuang Liu",
+            "Xiaodan Liang"
+          ],
+          "source": "arXiv",
+          "published": "2026-03-20",
+          "summary": "Open-world semantic segmentation presently relies significantly on extensive image-text pair datasets, which often suffer from a lack of fine-grained pixel annotations on sufficient categories. The acquisition of such data is rendered economically prohibitive due to the substantial investments of both human labor and time. In light of the formidable image generation capabilities of diffusion models, we introduce a novel diffusion model-driven pipeline for automatically generating datasets tailored to the needs of open-world semantic segmentation, named \"MagicSeg\". Our MagicSeg initiates from class labels and proceeds to generate high-fidelity textual descriptions, which in turn serve as guidance for the diffusion model to generate images. Rather than only generating positive samples for each label, our process encompasses the simultaneous generation of corresponding negative images, designed to serve as paired counterfactual samples for contrastive training. Then, to provide a self-supervised signal for open-world segmentation pretraining, our MagicSeg integrates an open-vocabulary detection model and an interactive segmentation model to extract object masks as precise segmentation labels from images based on the provided category labels. By applying our dataset to the contrastive language-image pretraining model with the pseudo mask supervision and the auxiliary counterfactual contrastive training, the downstream model obtains strong performance on open-world semantic segmentation. We evaluate our model on PASCAL VOC, PASCAL Context, and COCO, achieving SOTA with performance of 62.9%, 26.7%, and 40.2%, respectively, demonstrating our dataset's effectiveness in enhancing open-world semantic segmentation capabilities. Project website: https://github.com/ckxhp/magicseg.",
+          "tags": [
+            "open-vocabulary",
+            "diffusion",
+            "causal/counterfactual",
+            "open-world",
+            "self-supervised",
+            "active/interactive"
+          ],
+          "score": 108
+        },
+        {
+          "title": "Excite, Attend and Segment (EASe): Domain-Agnostic Fine-Grained Mask Discovery with Feature Calibration and Self-Supervised Upsampling",
+          "url": "http://arxiv.org/abs/2604.00276v1",
+          "pdf": "http://arxiv.org/pdf/2604.00276v1",
+          "authors": [
+            "Deepank Singh",
+            "Anurag Nihal",
+            "Vedhus Hoskere"
+          ],
+          "source": "arXiv",
+          "published": "2026-03-31",
+          "summary": "Unsupervised segmentation approaches have increasingly leveraged foundation models (FM) to improve salient object discovery. However, these methods often falter in scenes with complex, multi-component morphologies, where fine-grained structural detail is indispensable. Many state-of-the-art unsupervised segmentation pipelines rely on mask discovery approaches that utilize coarse, patch-level representations. These coarse representations inherently suppress the fine-grained detail required to resolve such complex morphologies. To overcome this limitation, we propose Excite, Attend and Segment (EASe), an unsupervised domain-agnostic semantic segmentation framework for easy fine-grained mask discovery across challenging real-world scenes. EASe utilizes novel Semantic-Aware Upsampling with Channel Excitation (SAUCE) to excite low-resolution FM feature channels for selective calibration and attends across spatially-encoded image and FM features to recover full-resolution semantic representations. Finally, EASe segments the aggregated features into multi-granularity masks using a novel training-free Cue-Attentive Feature Aggregator (CAFE) which leverages SAUCE attention scores as a semantic grouping signal. EASe, together with SAUCE and CAFE, operate directly at pixel-level feature representations to enable accurate fine-grained dense semantic mask discovery. Our evaluation demonstrates superior performance of EASe over previous state-of-the-arts (SOTAs) across major standard benchmarks and diverse datasets with complex morphologies. Code is available at https://ease-project.github.io",
+          "tags": [
+            "training-free",
+            "unsupervised",
+            "uncertainty/calibration",
+            "object discovery",
+            "self-supervised",
+            "saliency/transparent"
+          ],
+          "score": 106
+        },
+        {
+          "title": "Are We Done with Object-Centric Learning?",
+          "url": "http://arxiv.org/abs/2504.07092v2",
+          "pdf": "http://arxiv.org/pdf/2504.07092v2",
+          "authors": [
+            "Alexander Rubinstein",
+            "Ameya Prabhu",
+            "Matthias Bethge",
+            "Seong Joon Oh"
+          ],
+          "source": "arXiv",
+          "published": "2025-04-09",
+          "summary": "Object-centric learning (OCL) seeks to learn representations that only encode an object, isolated from other objects or background cues in a scene. This approach underpins various aims, including out-of-distribution (OOD) generalization, sample-efficient composition, and modeling of structured environments. Most research has focused on developing unsupervised mechanisms that separate objects into discrete slots in the representation space, evaluated using unsupervised object discovery. However, with recent sample-efficient segmentation models, we can separate objects in the pixel space and encode them independently. This achieves remarkable zero-shot performance on OOD object discovery benchmarks, is scalable to foundation models, and can handle a variable number of slots out-of-the-box. Hence, the goal of OCL methods to obtain object-centric representations has been largely achieved. Despite this progress, a key question remains: How does the ability to separate objects within a scene contribute to broader OCL objectives, such as OOD generalization? We address this by investigating the OOD generalization challenge caused by spurious background cues through the lens of OCL. We propose a novel, training-free probe called Object-Centric Classification with Applied Masks (OCCAM), demonstrating that segmentation-based encoding of individual objects significantly outperforms slot-based OCL methods. However, challenges in real-world applications remain. We provide the toolbox for the OCL community to use scalable object-centric representations, and focus on practical applications and fundamental questions, such as understanding object perception in human cognition. Our code is available here: https://github.com/AlexanderRubinstein/OCCAM.",
+          "tags": [
+            "training-free",
+            "unsupervised",
+            "anomaly/OOD",
+            "object discovery",
+            "object-centric",
+            "compositionality"
+          ],
+          "score": 105
+        },
+        {
+          "title": "Promptable Concept Segmentation from Above: Evaluating SAM 3's Zero-Shot and One-Shot Capabilities in Remote Sensing",
+          "url": "http://arxiv.org/abs/2607.09583v1",
+          "pdf": "http://arxiv.org/pdf/2607.09583v1",
+          "authors": [
+            "Mohammad Dabaja",
+            "Turgay Celik"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-10",
+          "summary": "The deployment of large-scale foundation models, such as the Segment Anything Model 3 (SAM 3), promises a transition toward open-vocabulary, training-free computer vision. However, their capacity to generalize out-of-distribution to the complex, top-down geometric structures of Earth Observation imagery remains largely unquantified. Driven by SAM 3's performance disparities in highly specialized domains, we present a comprehensive, multi-task empirical evaluation across remote sensing scene classification, object detection, and instance segmentation under strict zero-shot and one-shot constraints. To achieve this, we introduce a structural adaptation of SAM 3 by repurposing its decoupled binary presence head into a standalone zero-shot classifier. Furthermore, by systematically isolating textual and visual prompt modalities across five configurations, we explicitly diagnose the alignment mechanics within the model's multimodal decoder. Our findings reveal severe cross-modal interference: while visual prompts successfully align the decoder to complex remote sensing geometry, textual prompts inject misaligned, ground-level semantic bias, actively degrading coordinate regression. To benchmark these capabilities without resource-intensive training, we formulate a novel training-free proxy evaluation protocol for Generalized Zero-Shot tasks (scene classification and instance segmentation). Ultimately, our results demonstrate that SAM 3 avoids the overfitting commonly seen in legacy domain-adapted models, achieving high Harmonic Mean scores in segmentation tasks. However, it remains fundamentally constrained by sub-pixel resolution limits and overhead semantic blind spots, charting a definitive mandate for parameter-efficient geospatial fine-tuning of its multimodal decoder.",
+          "tags": [
+            "open-vocabulary",
+            "training-free",
+            "SAM",
+            "depth/geometry",
+            "remote sensing",
+            "anomaly/OOD"
+          ],
+          "score": 103
+        },
+        {
+          "title": "Edge-Optimized Multimodal Learning for UAV Video Understanding via BLIP-2",
+          "url": "http://arxiv.org/abs/2601.08408v1",
+          "pdf": "http://arxiv.org/pdf/2601.08408v1",
+          "authors": [
+            "Yizhan Feng",
+            "Hichem Snoussi",
+            "Jing Teng",
+            "Jian Liu",
+            "Yuyang Wang",
+            "Abel Cherouat",
+            "Tian Wang"
+          ],
+          "source": "arXiv",
+          "published": "2026-01-13",
+          "summary": "The demand for real-time visual understanding and interaction in complex scenarios is increasingly critical for unmanned aerial vehicles. However, a significant challenge arises from the contradiction between the high computational cost of large Vision language models and the limited computing resources available on UAV edge devices. To address this challenge, this paper proposes a lightweight multimodal task platform based on BLIP-2, integrated with YOLO-World and YOLOv8-Seg models. This integration extends the multi-task capabilities of BLIP-2 for UAV applications with minimal adaptation and without requiring task-specific fine-tuning on drone data. Firstly, the deep integration of BLIP-2 with YOLO models enables it to leverage the precise perceptual results of YOLO for fundamental tasks like object detection and instance segmentation, thereby facilitating deeper visual-attention understanding and reasoning. Secondly, a content-aware key frame sampling mechanism based on K-Means clustering is designed, which incorporates intelligent frame selection and temporal feature concatenation. This equips the lightweight BLIP-2 architecture with the capability to handle video-level interactive tasks effectively. Thirdly, a unified prompt optimization scheme for multi-task adaptation is implemented. This scheme strategically injects structured event logs from the YOLO models as contextual information into BLIP-2's input. Combined with output constraints designed to filter out technical details, this approach effectively guides the model to generate accurate and contextually relevant outputs for various tasks.",
+          "tags": [
+            "reasoning",
+            "boundary/frequency",
+            "video",
+            "UAV/small-object"
+          ],
+          "score": 103
+        },
+        {
+          "title": "C2RM-Seg: Causal Counterfactual Reasoning with Structural-Semantic Priors for Weakly Supervised Histopathological Tissue Segmentation",
+          "url": "http://arxiv.org/abs/2606.25508v1",
+          "pdf": "http://arxiv.org/pdf/2606.25508v1",
+          "authors": [
+            "Hualong Zhang",
+            "Siyang Feng",
+            "Zihan Huan",
+            "Yi Qian",
+            "Zhenbing Liu",
+            "Rushi Lan",
+            "Xipeng Pan"
+          ],
+          "source": "arXiv",
+          "published": "2026-06-24",
+          "summary": "Histopathological tissue segmentation is essential for computer-aided diagnosis, yet weakly supervised methods often suffer from noisy pseudo-labels generated by Class Activation Mapping (CAM). Existing CAM approaches tend to focus on staining-driven appearance cues rather than true causal tissue morphology, resulting in spurious localization and poor structural consistency. To address this issue, we propose C$^2$RM-Seg, a two-stage framework that integrates causal pseudo-label refinement with structure-aware semantic enhancement. For classification, we introduce a Causal Counterfactual Reasoning Module (C$^2$RM) that decomposes features into latent factors and performs counterfactual intervention via a learned causal structure matrix, suppressing confounding context and producing morphology-aligned CAMs. For segmentation, we design a Dual-Path Structural-Semantic Architecture that combines fine-grained structural features from ResNeSt with global semantic priors from a frozen DINOV3 foundation model. A cross-path gating mechanism adaptively regulates semantic injection using local structural cues to preserve boundary fidelity. To further mitigate residual pseudo-label noise, we propose an Uncertainty-Gated Margin (UGM) loss, which dynamically balances margin enforcement and confidence learning based on prediction uncertainty. Extensive experiments on two public histopathological tissue datasets show that C$^2$RM-Seg achieves state-of-the-art performance.",
+          "tags": [
+            "unsupervised",
+            "reasoning",
+            "boundary/frequency",
+            "causal/counterfactual",
+            "uncertainty/calibration",
+            "low-level"
+          ],
+          "score": 101
+        },
+        {
+          "title": "Slot-RAE: Streamlining Object-Centric Learning via Direct Representation Auto-Encoders",
+          "url": "http://arxiv.org/abs/2607.11196v1",
+          "pdf": "http://arxiv.org/pdf/2607.11196v1",
+          "authors": [
+            "Alexandre Chapin",
+            "Emmanuel Dellandrea",
+            "Liming Chen"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-13",
+          "summary": "Deploying object-centric models for real-world scene understanding typically requires complex pipelines to achieve both robust scene decomposition and high-fidelity generation. Recent diffusion-based approaches have improved visual quality, but they almost universally rely on heavy, pretrained generative priors (e.g., Stable Diffusion) and external VAE latent spaces. In this paper, we propose Slot-RAE, a much simpler, fully integrated framework that operates directly within the continuous semantic feature space of visual foundation models (e.g., DINOv3). Slot-RAE employs a feature-space diffusion process using a Diffusion Transformer (DiT) decoder and a Representation Alignment (REPA) head. Unlike existing diffusion-based objectcentric methods that rely heavily on subsidized text-toimage priors, the generative core of Slot-RAE (Slot Attention and the DiT) is trained from scratch within the frozen VFM feature space. This eliminates the need for VAE bottlenecks and task-agnostic generative pre-training. Experiments on the COCO dataset demonstrate that despite its architectural simplicity, Slot-RAE achieves state-of-the-art results. It delivers comparable unsupervised object discovery, higher-fidelity image reconstruction, and robust zero-shot compositionality, all while being significantly faster and more computationally efficient than existing object-centric latent diffusion models.",
+          "tags": [
+            "unsupervised",
+            "diffusion",
+            "object discovery",
+            "object-centric",
+            "compositionality"
+          ],
+          "score": 100
+        },
+        {
+          "title": "Zero-Shot Object-Centric Representation Learning",
+          "url": "http://arxiv.org/abs/2408.09162v1",
+          "pdf": "http://arxiv.org/pdf/2408.09162v1",
+          "authors": [
+            "Aniket Didolkar",
+            "Andrii Zadaianchuk",
+            "Anirudh Goyal",
+            "Mike Mozer",
+            "Yoshua Bengio",
+            "Georg Martius",
+            "Maximilian Seitzer"
+          ],
+          "source": "arXiv",
+          "published": "2024-08-17",
+          "summary": "The goal of object-centric representation learning is to decompose visual scenes into a structured representation that isolates the entities. Recent successes have shown that object-centric representation learning can be scaled to real-world scenes by utilizing pre-trained self-supervised features. However, so far, object-centric methods have mostly been applied in-distribution, with models trained and evaluated on the same dataset. This is in contrast to the wider trend in machine learning towards general-purpose models directly applicable to unseen data and tasks. Thus, in this work, we study current object-centric methods through the lens of zero-shot generalization by introducing a benchmark comprising eight different synthetic and real-world datasets. We analyze the factors influencing zero-shot performance and find that training on diverse real-world images improves transferability to unseen scenarios. Furthermore, inspired by the success of task-specific fine-tuning in foundation models, we introduce a novel fine-tuning strategy to adapt pre-trained vision encoders for the task of object discovery. We find that the proposed approach results in state-of-the-art performance for unsupervised object discovery, exhibiting strong zero-shot transfer to unseen datasets.",
+          "tags": [
+            "unsupervised",
+            "object discovery",
+            "object-centric",
+            "self-supervised",
+            "representation learning"
+          ],
+          "score": 100
+        },
+        {
+          "title": "UAV-OVVIS: Unmanned Aerial Vehicles Also Need Open-Vocabulary Video Instance Segmentation",
+          "url": "http://arxiv.org/abs/2607.08075v2",
+          "pdf": "http://arxiv.org/pdf/2607.08075v2",
+          "authors": [
+            "Mingyu Dou",
+            "Shi Qiu",
+            "Ming Hu",
+            "Yifan Chen",
+            "Zhe Sun"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-09",
+          "summary": "Unmanned Aerial Vehicle (UAV) videos are widely used in traffic monitoring, urban management, and emergency rescue. However, existing UAV video perception is largely limited to box-level detection and tracking over predefined categories, making it difficult to jointly support flexible queries and fine-grained instance-level understanding of temporal dynamics in open scenarios. To this end, we introduce a new task, UAV Open-Vocabulary Video Instance Segmentation (UAV-OVVIS), which aims to discover targets in UAV videos according to open-vocabulary queries and output instance segmentation trajectories with globally consistent identities. Considering the scarcity of instance-level annotations in UAV scenarios, we propose AeroTrack, a training-free framework that coordinates existing visual foundation models to realize UAV-OVVIS. AeroTrack performs target discovery and segmentation through periodic open-vocabulary detection and short-segment mask propagation, and introduces Lifecycle-aware ID Association (LIA) to recover global identities under segment-wise inference. Based on this framework, we instantiate five feasible variants and construct AeroVIS, a UAV-OVVIS evaluation benchmark containing 9 UAV object categories and 8,279 trajectories. Experiments show that AeroTrack achieves better overall performance than the evaluated OV-VIS methods transferred to AeroVIS, while demonstrating good open-vocabulary transferability and dense-target handling capability in long UAV videos. The AeroTrack framework and the AeroVIS dataset will be open-sourced upon acceptance.",
+          "tags": [
+            "open-vocabulary",
+            "training-free",
+            "video",
+            "UAV/small-object",
+            "anomaly/OOD"
+          ],
+          "score": 100
+        },
+        {
+          "title": "DPU: Dynamic Prototype Updating for Multimodal Out-of-Distribution Detection",
+          "url": "http://arxiv.org/abs/2411.08227v1",
+          "pdf": "http://arxiv.org/pdf/2411.08227v1",
+          "authors": [
+            "Shawn Li",
+            "Huixian Gong",
+            "Hao Dong",
+            "Tiankai Yang",
+            "Zhengzhong Tu",
+            "Yue Zhao"
+          ],
+          "source": "arXiv",
+          "published": "2024-11-12",
+          "summary": "Out-of-distribution (OOD) detection is essential for ensuring the robustness of machine learning models by identifying samples that deviate from the training distribution. While traditional OOD detection has primarily focused on single-modality inputs, such as images, recent advances in multimodal models have demonstrated the potential of leveraging multiple modalities (e.g., video, optical flow, audio) to enhance detection performance. However, existing methods often overlook intra-class variability within in-distribution (ID) data, assuming that samples of the same class are perfectly cohesive and consistent. This assumption can lead to performance degradation, especially when prediction discrepancies are uniformly amplified across all samples. To address this issue, we propose Dynamic Prototype Updating (DPU), a novel plug-and-play framework for multimodal OOD detection that accounts for intra-class variations. Our method dynamically updates class center representations for each class by measuring the variance of similar samples within each batch, enabling adaptive adjustments. This approach allows us to amplify prediction discrepancies based on the updated class centers, thereby improving the model's robustness and generalization across different modalities. Extensive experiments on two tasks, five datasets, and nine base OOD algorithms demonstrate that DPU significantly improves OOD detection performance, setting a new state-of-the-art in multimodal OOD detection, with improvements of up to 80 percent in Far-OOD detection. To facilitate accessibility and reproducibility, our code is publicly available on GitHub.",
+          "tags": [
+            "diffusion",
+            "retrieval/prototype",
+            "video",
+            "anomaly/OOD",
+            "multimodal robustness"
+          ],
+          "score": 99
+        }
+      ]
+    }
+  },
+  {
     "date": "2026-07-27",
     "generated_at": "2026-07-27 12:54",
     "timezone": "Asia/Shanghai",
