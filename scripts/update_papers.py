@@ -392,6 +392,8 @@ FIRE_CONTEXT_KEYWORDS = [
     "fire segmentation",
     "flame detection",
     "smoke detection",
+    "smoke segmentation",
+    "early smoke",
     "fire smoke",
     "fire and smoke detection",
     "smoke and fire detection",
@@ -619,6 +621,7 @@ TRANSFER_TAG_WEIGHTS = {
     "video": 5,
     "UAV/small-object": 10,
     "multispectral fire": 12,
+    "fire perception": 12,
     "fire foundation model": 12,
     "safety-critical/hazard": 14,
     "grounded vision": 11,
@@ -638,6 +641,7 @@ QUALITY_SOURCE_HINTS = {
     "iclr": 12,
     "aaai": 10,
     "ijcai": 10,
+    "wacv": 12,
     "acm multimedia": 10,
     "tpami": 16,
     "ijcv": 16,
@@ -772,6 +776,8 @@ def derive_tags(
     if include_fire is None:
         include_fire = fire_topic_enabled()
     if include_fire:
+        if fire_context_signal(text):
+            tags.append("fire perception")
         if multispectral_fire_signal(text):
             tags.append("multispectral fire")
         if fire_foundation_model_signal(text):
@@ -1511,6 +1517,8 @@ def why_read(paper: Paper) -> str:
         return "直接覆盖多光谱火灾探测，可重点看可见光、红外/热红外与遥感波段如何互补。"
     if "fire foundation model" in tags:
         return "直接覆盖火灾监测大模型，可重点看基础模型适配、开放场景泛化和可解释告警。"
+    if "fire perception" in tags:
+        return "直接覆盖火灾或烟雾感知，可重点看早期弱证据、时序增长、硬负样本误报和跨区域泛化。"
     if tags & {
         "causal/counterfactual",
         "uncertainty/calibration",
@@ -1551,6 +1559,8 @@ def task_setting(paper: Paper) -> str:
         return "可见光、红外/热红外、高光谱或多传感器火灾探测，关注早期火焰/烟雾发现、复杂环境误报和全天候监测。"
     if "fire foundation model" in tags:
         return "基础模型或视觉语言大模型驱动的火灾监测，关注开放场景识别、时空理解、告警解释和少样本迁移。"
+    if "fire perception" in tags:
+        return "火焰/烟雾检测与分割，关注早期小烟、非刚性时序演化、云雾霾夕阳反射误报和跨区域泛化。"
     if "COD" in tags:
         return "伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。"
     if "open-vocabulary" in tags:
@@ -1709,6 +1719,17 @@ def abstract_explanation(paper: Paper) -> str:
 
 
 def experiment_takeaway(paper: Paper) -> str:
+    curated = load_abstract_details().get(paper.title, "")
+    if "实验结论：" in curated or "实验结论:" in curated:
+        evidence = re.split(r"实验结论[：:]", curated, maxsplit=1)[1].strip()
+        evidence = re.split(
+            r"(?<=。)(?=(?:对COD|对UAV|对火灾|迁移到|迁移至|该思路|该方法|其风险))",
+            evidence,
+            maxsplit=1,
+        )[0].strip()
+        if evidence:
+            return evidence
+
     text = paper.summary.lower()
     if not paper.summary or paper.summary.startswith("CVF OpenAccess paper"):
         return "当前来源只提供标题级信息；需要打开论文页确认数据集、指标和消融。"
@@ -1729,6 +1750,8 @@ def relation_to_topic(paper: Paper) -> str:
         return "直接对应多光谱火灾探测，重点关注不同谱段在烟雾、火焰、热点和夜间场景中的互补性。"
     if "fire foundation model" in tags:
         return "直接对应火灾监测大模型，重点关注基础模型在新区域、新传感器和少标注火情上的泛化。"
+    if "fire perception" in tags:
+        return "直接对应火灾/烟雾感知，重点关注早期弱证据召回、复杂背景假警、时间一致性和可审计告警。"
     if "COD" in tags and (tags & TRANSFER_TAGS):
         return "它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。"
     if "COD" in tags:
@@ -1765,6 +1788,8 @@ def borrow_points(paper: Paper) -> str:
         points.append("可见光-红外/热红外对齐、谱段融合、早期烟火特征与全天候监测")
     if "fire foundation model" in tags:
         points.append("基础模型适配、视觉语言告警、时空推理、少样本迁移与可解释输出")
+    if "fire perception" in tags:
+        points.append("早期烟火弱证据、时序增长、云雾霾夕阳反射硬负样本与误报控制")
     if "COD" in tags:
         points.append("数据集设置、评价指标、失败案例分析")
     if "open-vocabulary" in tags or "training-free" in tags:
@@ -1804,6 +1829,8 @@ def improvement_ideas(paper: Paper) -> str:
         return "可重点验证跨传感器配准误差、昼夜变化、云雾遮挡、热点干扰和缺失谱段，并报告跨区域泛化与误报率。"
     if "fire foundation model" in tags:
         return "可重点验证开放世界火情、跨区域/跨传感器迁移、幻觉抑制、时序一致性和边缘端推理成本。"
+    if "fire perception" in tags:
+        return "应补充视频级划分、无火硬负样本、早期烟火召回、每小时误报和报警提前量，避免大烟区域主导平均分。"
     if "UAV/small-object" in tags:
         return "可把无人机小目标的高分辨率分支、多尺度候选和轻量检测头迁移到 COD，并验证其是否改善小型伪装目标、远景目标和复杂背景误检。"
     if "COD" in tags and ("VLM/MLLM" not in tags and "SAM" not in tags):
@@ -1828,7 +1855,11 @@ def improvement_ideas(paper: Paper) -> str:
 
 
 def should_deep_read(paper: Paper) -> str:
-    fire_tags = {"multispectral fire", "fire foundation model"} & set(paper.tags)
+    fire_tags = {
+        "multispectral fire",
+        "fire perception",
+        "fire foundation model",
+    } & set(paper.tags)
     if fire_tags and has_quality_published_source(paper):
         return "建议精读：直接命中新增火灾方向，且来自正式发表的高质量来源。"
     if fire_tags and paper.score >= 35:
@@ -1881,9 +1912,13 @@ def select_feed_sections(
 ) -> dict[str, list[Paper]]:
     cod = [p for p in papers if "COD" in p.tags]
     uav = [p for p in papers if "UAV/small-object" in p.tags]
-    fire_multispectral = [p for p in papers if "multispectral fire" in p.tags]
+    fire_multispectral = [
+        p
+        for p in papers
+        if "multispectral fire" in p.tags or "fire perception" in p.tags
+    ]
     fire_foundation = [p for p in papers if "fire foundation model" in p.tags]
-    fire_tags = {"multispectral fire", "fire foundation model"}
+    fire_tags = {"multispectral fire", "fire perception", "fire foundation model"}
     broad = [
         p
         for p in papers
@@ -2441,7 +2476,7 @@ def render_snapshot_markdown(snapshot: dict) -> str:
     if show_fire_topics:
         limits.extend(
             [
-                f"{len(fire_multispectral)} 篇多光谱火灾探测",
+                f"{len(fire_multispectral)} 篇火灾/烟雾与多光谱感知",
                 f"{len(fire_foundation)} 篇火灾监测大模型",
             ]
         )
@@ -2512,7 +2547,7 @@ def render_snapshot_markdown(snapshot: dict) -> str:
         lines.append("")
 
     if show_fire_topics:
-        lines.extend(["## 多光谱火灾探测", ""])
+        lines.extend(["## 火灾/烟雾与多光谱感知", ""])
         if fire_multispectral:
             for i, paper in enumerate(fire_multispectral, 1):
                 lines.append(md_paper_item(i, paper))
@@ -2581,7 +2616,7 @@ def render_markdown(history: list[dict]) -> str:
     if show_fire_topics:
         daily_limits.extend(
             [
-                f"{len(current_sections['fire_multispectral'])} 篇多光谱火灾探测",
+                f"{len(current_sections['fire_multispectral'])} 篇火灾/烟雾与多光谱感知",
                 f"{len(current_sections['fire_foundation'])} 篇火灾监测大模型",
             ]
         )
@@ -2594,7 +2629,7 @@ def render_markdown(history: list[dict]) -> str:
         "",
         "这是文献日报目录页。每天更新会生成一个独立 Markdown 文件，文件名就是日期；想看哪一天，直接点对应日期即可。HTML 文件单独放在 html/ 目录，仅作为网页预览备用。",
         "从 2026-07-09 开始，精读队列不再只追 COD 直系论文，而是优先寻找 COD 尚未充分使用、但可能迁移出新 idea 的计算机视觉方法。",
-        "从 2026-07-14 开始，新增多光谱火灾探测与火灾监测大模型两个独立栏目，优先展示正式发表的顶会顶刊与领域高水平期刊论文。",
+        "从 2026-07-14 开始，新增火灾/烟雾与多光谱感知及火灾监测大模型两个独立栏目，优先展示正式发表的顶会顶刊与领域高水平期刊论文。",
         "",
         "## 最新日报",
         "",

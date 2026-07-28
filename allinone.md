@@ -1,26 +1,20 @@
-# Supplemental Paper Search Report - 2026-07-27
+# Supplemental Paper Search Report - 2026-07-28
 
-Query: `multimodal reliability uncertainty risk control visual grounding UAV fire smoke computer vision`
+Query cluster: `safety-critical perception multimodal hazard grounding missing degraded modality OOD selective prediction video anticipation UAV tiny object fire smoke RGB-T`
 
 Year range: 2024-2026
 
-Maximum results per source: 5
+Maximum results per source: 10
 
 ## Source Results
 
-### Crossref (5 records)
+### Crossref (10 discovery records)
 
-1. *MIMO: A Medical Vision Language Model with Visual Referring Multimodal Input and Pixel Grounding Multimodal Output* (CVPR 2025).
-2. *Wildfire Fire-Smoke Detection in UAV Imagery via Scale-Guided Feature Routing and Uncertainty-Aware Localization* (IEEE Access, 2026).
-3. *Selective Visual Grounding for Multimodal Machine Translation* (CMES, 2026).
-4. *VideoGLaMM: A Large Multimodal Model for Pixel-Level Visual Grounding in Videos* (CVPR 2025).
-5. A multimodal visual health-risk record whose venue and task fit were too weak for the daily queue.
-
-Crossref supplied discovery metadata only. No paper was promoted from title matching alone; venue pages, abstracts, and complete PDFs were checked independently.
+Crossref returned a mixture of UAV, fire/smoke, and cross-modal records, including an SSRN UAV-guided detector, *GLAFC-YOLO*, an ICICAT fire/smoke paper, *YOLOv7-FIRE*, *LFS-YOLO*, an RGB-T cross-modal Mamba record, and several unrelated or weak-venue UAV records. These records were retained only as discovery metadata. None was promoted from title matching because venue quality, abstract evidence, or complete full text was insufficient for today's queue.
 
 ### Semantic Scholar (0 papers)
 
-Source error: rate limited during the supplemental query.
+Source error: rate limited during the supplemental query. The affected clusters remain in the cached-candidate and next-run search plan.
 
 ### OpenAlex (0 papers)
 
@@ -28,7 +22,7 @@ Source error: gateway timeout (`504`).
 
 ### arXiv (0 papers)
 
-Source error: request timed out. Relevant clusters remain in the next-run search plan rather than being treated as empty.
+Source error: request timed out. This was treated as a degraded source, not evidence that no relevant preprints exist.
 
 ### OpenReview (0 papers)
 
@@ -36,16 +30,27 @@ Source error: the OpenReview client is not installed in the paper-search environ
 
 ### DBLP (0 papers)
 
-Source error: upstream request returned `500`.
+Source error: the upstream request returned `500`.
 
-## Screening Outcome
+## Independent Primary-Source Verification
 
-The supplemental search helped retain UAV fire-smoke, selective grounding, and pixel-grounded video reasoning in the monitored pool, but it did not by itself establish full-text eligibility. The final five were selected from verified primary publication pages and complete local PDFs:
+Because the aggregator run was degraded, candidate screening continued through official CVF, IEEE, Elsevier, and publisher full texts plus the project's cached pool. Every selected paper was checked beyond the abstract, including its complete method, numbered equations, implementation details, main experiments, ablations, qualitative evidence, and stated limitations. The five PDFs passed local text and visual preflight checks.
 
-1. *False Alarm Rectification for Early Smoke Segmentation* (WACV 2026).
-2. *Hyperdimensional Uncertainty Quantification for Multimodal Uncertainty Fusion in Autonomous Vehicles Perception* (CVPR 2025).
-3. *MultiOOD: Scaling Out-of-Distribution Detection for Multiple Modalities* (NeurIPS 2024 Spotlight).
-4. *Investigating Compositional Challenges in Vision-Language Models for Visual Grounding* (CVPR 2024).
-5. *DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection* (CVPR 2026).
+The final non-duplicate deep-reading queue is:
 
-This queue covers the three standing research clusters without forcing a keyword match: fire false-alarm control, deterministic multimodal uncertainty, semantic multimodal OOD, compositional grounding, and RGB-T tiny-object perception. Each paper was checked beyond the abstract, including its method, equations, experiments, ablations, and stated limitations.
+1. *Quantifying and Communicating Uncertainty in SAR-Based Flood Mapping via Density-Aware Neural Networks and Conformal Risk Control* (IEEE TGRS 2026).
+2. *Slot-BERT: Self-supervised Object Discovery in Surgical Video* (Medical Image Analysis 2026).
+3. *Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration* (CVPR 2026).
+4. *Enhanced OoD Detection through Cross-Modal Alignment of Multi-Modal Representations* (CVPR 2025).
+5. *SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World* (CVPR 2026).
+
+This queue covers conformal risk control, temporal object-centric discovery, reliability-aware multimodal learning, multimodal OOD geometry, and fine-grained safety reasoning. No direct COD paper was forced into the five; each paper instead supplies a distinct transferable hypothesis for weak-evidence perception.
+
+## Dedicated UAV and Fire Monitoring
+
+Two formally published candidates were independently verified and surfaced in the daily targeted sections without displacing the five deep reads:
+
+- *Detection-Friendly Nonuniformity Correction: A Union Framework for Infrared UAV Target Detection* (CVPR 2025) anchors degraded thermal sensing and tiny-target feature preservation.
+- *AusSmoke meets MultiNatSmoke: a fully-labelled diverse smoke segmentation dataset* (WACV 2026) anchors visible-smoke segmentation, hard-background false alarms, and multimodal fire monitoring.
+
+Additional full-text-audited candidates retained for future runs include PURA (CVPR 2025), Event-based Tiny Object Detection (ICCV 2025), SET (CVPR 2025), SimMLM (ICCV 2025), Caltech Aerial RGB-Thermal (ECCV 2024), and OpenRSS (ECCV 2024). Their inclusion in a future top-five queue remains contingent on daily non-duplication and comparative method strength.

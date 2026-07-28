@@ -404,5 +404,62 @@
       "tags": ["UAV/small-object", "multimodal", "RGB-T", "boundary/frequency", "remote sensing"],
       "score": 96
     }
+  ],
+  "2026-07-28": [
+    {
+      "title": "Quantifying and Communicating Uncertainty in SAR-Based Flood Mapping via Density-Aware Neural Networks and Conformal Risk Control",
+      "url": "https://doi.org/10.1109/TGRS.2026.3661208",
+      "pdf": "https://ieeexplore.ieee.org/ielx8/36/11333908/11373100.pdf?arnumber=11373100",
+      "authors": ["Yu Li", "Patrick Matgen", "Marco Chini"],
+      "source": "IEEE TGRS 2026",
+      "published": "2026",
+      "summary": "作者把谱归一化 UNet34、潜特征密度和两级共形风险控制连成洪水制图决策链：先以校准条件有效的密度 p 值拒绝分布外像素，再对保留像素输出风险受控的 Water/Nonwater 集合；密度 OOD AUROC 达 0.921，集合预测把平均漏覆盖率从 4.4% 降到 1.6%。",
+      "tags": ["remote sensing", "anomaly/OOD", "uncertainty/calibration", "selective/risk control", "safety-critical"],
+      "score": 100
+    },
+    {
+      "title": "Slot-BERT: Self-supervised Object Discovery in Surgical Video",
+      "url": "https://doi.org/10.1016/j.media.2026.103972",
+      "pdf": "https://arxiv.org/pdf/2501.12477",
+      "authors": ["Guiqiu Liao", "Matjaz Jogan", "Marcel Hussing", "Kenta Nakahashi", "Kazuhiro Yasufuku", "Amin Madani", "Eric Eaton", "Daniel A. Hashimoto"],
+      "source": "Medical Image Analysis 2026",
+      "published": "2026",
+      "summary": "Slot-BERT 先用递归 slot attention 建立邻帧对象候选，再以双向遮蔽 Temporal Slot Transformer 补全长程状态，并用 slot 去相似目标抑制对象合并；MICCAI 上 mBO-V、mBO-F、FG-ARI 和 CorLoc 分别达 48.9%、52.8%、58.2% 和 70.7%。",
+      "tags": ["medical imaging", "object discovery", "object-centric", "self-supervised", "video", "segmentation"],
+      "score": 99
+    },
+    {
+      "title": "Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Multimodal_Learning_on_Low-Quality_Data_with_Conformal_Predictive_Self-Calibration_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jiang_Multimodal_Learning_on_Low-Quality_Data_with_Conformal_Predictive_Self-Calibration_CVPR_2026_paper.pdf",
+      "authors": ["Xun Jiang", "Yufan Gu", "Disen Hu", "Yuqing Hou", "Yazhou Yao", "Fumin Shen", "Heng Tao Shen", "Xing Xu"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "CPSC 用共形预测同时处理模态不平衡与显式噪声：Representation Self-Calibration 选择可靠特征成分再融合，Gradient Self-Calibration 按实例可靠性重标定反向梯度，并让共形预测器随网络共同更新；CREMA-D 平均完整模态准确率达 78.65%。",
+      "tags": ["multimodal", "degraded modality", "missing modality", "uncertainty/calibration", "conformal prediction", "safety-critical"],
+      "score": 98
+    },
+    {
+      "title": "Enhanced OoD Detection through Cross-Modal Alignment of Multi-Modal Representations",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Kim_Enhanced_OoD_Detection_through_Cross-Modal_Alignment_of_Multi-Modal_Representations_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_Enhanced_OoD_Detection_through_Cross-Modal_Alignment_of_Multi-Modal_Representations_CVPR_2025_paper.pdf",
+      "authors": ["Jeonghyeon Kim", "Sangheum Hwang"],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "论文指出完整微调 CLIP 会扩大 ID 图像与 ID 文本的模态间隙，削弱负文本 OOD 分数；Cross-Modal Alignment 以双向 log-sum-exp 正则拉近两种 ID 表示，再接 NegLabel 检测，在 MOS 上平均 FPR95 19.93、AUROC 95.13。",
+      "tags": ["vision-language", "anomaly/OOD", "cross-modal alignment", "open-world", "uncertainty/calibration"],
+      "score": 97
+    },
+    {
+      "title": "SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Kim_SafeDrive_Fine-Grained_Safety_Reasoning_for_End-to-End_Driving_in_a_Sparse_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kim_SafeDrive_Fine-Grained_Safety_Reasoning_for_End-to-End_Driving_in_a_Sparse_CVPR_2026_paper.pdf",
+      "authors": ["Jungho Kim", "Jiyong Oh", "Seunghoon Yu", "Hongjae Shin", "Donghyuk Kwak", "Jun Won Choi"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "SafeDrive 为每条候选自车轨迹构造实例级稀疏未来世界，再由 FRNet 逐对象、逐时刻计算碰撞风险并检查可行驶区域；NAVSIM PDMS/EPDMS 达 91.6/87.5，12,146 个场景仅 61 次碰撞，Bench2Drive Driving Score 为 66.77%。",
+      "tags": ["safety-critical", "hazard reasoning", "world model", "video anticipation", "autonomous driving", "multimodal"],
+      "score": 96
+    }
   ]
 }

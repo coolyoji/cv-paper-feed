@@ -50,6 +50,28 @@ class SourceFallbackTests(unittest.TestCase):
             )
 
 
+class CuratedNoteTests(unittest.TestCase):
+    def test_experiment_takeaway_uses_verified_curated_evidence(self):
+        paper = update_papers.Paper(
+            title="Verified Paper",
+            url="https://example.com/verified",
+            summary="A generic summary.",
+        )
+        detail = (
+            "研究问题：测试。方法与流程：测试。"
+            "实验结论：AUROC为95.1，FPR95为19.9。"
+            "迁移到COD时需要重新校准。"
+        )
+        with patch.object(
+            update_papers,
+            "load_abstract_details",
+            return_value={paper.title: detail},
+        ):
+            takeaway = update_papers.experiment_takeaway(paper)
+
+        self.assertEqual(takeaway, "AUROC为95.1，FPR95为19.9。")
+
+
 class FireTopicTests(unittest.TestCase):
     def test_multispectral_fire_tag_requires_both_signals(self):
         tags = update_papers.derive_tags(
@@ -87,6 +109,16 @@ class FireTopicTests(unittest.TestCase):
             include_fire=True,
         )
         self.assertNotIn("fire foundation model", conventional_tags)
+
+    def test_general_fire_perception_tag_covers_visible_smoke(self):
+        tags = update_papers.derive_tags(
+            "False Alarm Rectification for Early Smoke Segmentation",
+            "Visible video separates early smoke from fog, cloud, and haze.",
+            include_fire=True,
+        )
+
+        self.assertIn("fire perception", tags)
+        self.assertNotIn("multispectral fire", tags)
 
     def test_fire_sections_prefer_formally_published_quality_sources(self):
         preprint = update_papers.Paper(
@@ -134,10 +166,10 @@ class FireTopicTests(unittest.TestCase):
         )
         markdown = update_papers.render_snapshot_markdown(snapshot)
 
-        self.assertIn("## 多光谱火灾探测", markdown)
+        self.assertIn("## 火灾/烟雾与多光谱感知", markdown)
         self.assertIn("## 火灾监测大模型", markdown)
         self.assertIn("WildFireVLM", markdown)
-        self.assertIn("0 篇多光谱火灾探测", markdown)
+        self.assertIn("0 篇火灾/烟雾与多光谱感知", markdown)
         self.assertIn("1 篇火灾监测大模型", markdown)
         self.assertIn("本日未筛到可核验且达到质量阈值的候选", markdown)
 
@@ -157,7 +189,7 @@ class FireTopicTests(unittest.TestCase):
             enrich_abstracts=False,
         )
         markdown = update_papers.render_snapshot_markdown(july_13)
-        self.assertNotIn("## 多光谱火灾探测", markdown)
+        self.assertNotIn("## 火灾/烟雾与多光谱感知", markdown)
         self.assertNotIn("## 火灾监测大模型", markdown)
 
     def test_daily_queries_cover_both_fire_directions(self):
