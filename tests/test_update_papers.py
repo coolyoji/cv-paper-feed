@@ -71,6 +71,30 @@ class CuratedNoteTests(unittest.TestCase):
 
         self.assertEqual(takeaway, "AUROC为95.1，FPR95为19.9。")
 
+    def test_verified_curated_highlight_is_not_overwritten_by_cvf_abstract(self):
+        paper = update_papers.Paper(
+            title="Verified Short Summary",
+            url="https://openaccess.thecvf.com/example.html",
+            summary="人工核验的中文精炼摘要。",
+            tags=["missing modality"],
+            score=90,
+        )
+        sections = {"highlights": [paper]}
+
+        with (
+            patch.object(
+                update_papers,
+                "load_abstract_details",
+                return_value={paper.title: "研究问题：已核验。方法与流程：已核验。"},
+            ),
+            patch.object(update_papers, "enrich_paper_abstracts") as enrich,
+        ):
+            update_papers.enrich_selected_sections(sections)
+
+        enrich.assert_called_once_with([])
+        self.assertEqual(paper.summary, "人工核验的中文精炼摘要。")
+        self.assertEqual(paper.tags, ["missing modality"])
+
 
 class FireTopicTests(unittest.TestCase):
     def test_multispectral_fire_tag_requires_both_signals(self):

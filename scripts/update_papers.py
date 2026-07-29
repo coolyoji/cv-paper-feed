@@ -2298,7 +2298,10 @@ def load_cached_candidate_pool() -> list[Paper]:
 
 def enrich_selected_sections(sections: dict[str, list[Paper]]) -> None:
     highlights = sections.get("highlights", [])
-    enrich_paper_abstracts(highlights)
+    curated_titles = set(load_abstract_details())
+    enrich_paper_abstracts(
+        [paper for paper in highlights if paper.title not in curated_titles]
+    )
     enriched = {
         re.sub(r"\W+", "", paper.title.lower()): paper
         for paper in highlights

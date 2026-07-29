@@ -461,5 +461,62 @@
       "tags": ["safety-critical", "hazard reasoning", "world model", "video anticipation", "autonomous driving", "multimodal"],
       "score": 96
     }
+  ],
+  "2026-07-29": [
+    {
+      "title": "Anchor-Guided Gradient Alignment for Incomplete Multimodal Learning",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Guan_Anchor-Guided_Gradient_Alignment_for_Incomplete_Multimodal_Learning_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Guan_Anchor-Guided_Gradient_Alignment_for_Incomplete_Multimodal_Learning_CVPR_2026_paper.pdf",
+      "authors": ["Zhi-Hao Guan", "Longfei Huang", "Yang Yang"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "ANGA 先以检索实例重建缺失模态，再用预测熵课程构造完整样本主导的动态优化锚点，并把偏离或冲突的重建样本梯度投影回可靠锥域；70% 缺失率下，HateMemes 文本缺失 AUROC 达 68.54，较 RAGPT 提高 4.44 点。",
+      "tags": ["multimodal", "missing modality", "degraded modality", "gradient alignment", "safety-critical"],
+      "score": 100
+    },
+    {
+      "title": "Spatio-Temporal Conditional Denoising Transformer for Modality-Missing RGBT Tracking",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Lu_Spatio-Temporal_Conditional_Denoising_Transformer_for_Modality-Missing_RGBT_Tracking_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Lu_Spatio-Temporal_Conditional_Denoising_Transformer_for_Modality-Missing_RGBT_Tracking_CVPR_2026_paper.pdf",
+      "authors": ["Andong Lu", "Ziyi Zha", "Jiandong Jin", "Shihao Li", "Chenglong Li", "Jin Tang", "Bin Luo"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "SCDT 用同一个时空条件去噪器统一缺失模态重建和完整模态增强：强噪声迫使模型恢复缺失 RGB/TIR，弱噪声配合统计对齐细化完整输入，短期跨注意力与长期 FiLM 共同抑制漂移；LasHeR-Miss 达 69.3 PR/54.4 SR。",
+      "tags": ["multimodal", "RGB-T", "missing modality", "video tracking", "UAV/small-object"],
+      "score": 99
+    },
+    {
+      "title": "SRA-Det: Learning Omni-Grained Open-Vocabulary Detection Beyond Category Names",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_SRA-Det_Learning_Omni-Grained_Open-Vocabulary_Detection_Beyond_Category_Names_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_SRA-Det_Learning_Omni-Grained_Open-Vocabulary_Detection_Beyond_Category_Names_CVPR_2026_paper.pdf",
+      "authors": ["Li Yang", "Boyu Cai", "Wei Liu", "Yan Wang", "Chunfeng Yuan", "Bing Li", "Weiming Hu"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "SRA-Det 以多个可学习查询从 token 级描述中检索颜色、材质、部件和姿态等语义面，再用 soft-min 近似逻辑 AND，惩罚只满足部分属性的候选；FG-OVD 八个子集平均 54.9 mAP，较 OWL-ViT-L/14 提高 13.8 点。",
+      "tags": ["open-vocabulary", "visual grounding", "compositionality", "vision-language", "fine-grained detection"],
+      "score": 98
+    },
+    {
+      "title": "Synthetic Object Compositions for Scalable and Accurate Learning in Detection, Segmentation, and Grounding",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Huang_Synthetic_Object_Compositions_for_Scalable_and_Accurate_Learning_in_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Huang_Synthetic_Object_Compositions_for_Scalable_and_Accurate_Learning_in_Detection_CVPR_2026_paper.pdf",
+      "authors": ["Weikai Huang", "Jieyu Zhang", "Taoyang Jia", "Chenhao Zheng", "Ziqi Gao", "Jae Sung Park", "Ranjay Krishna"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "SOC 从对象片段自底向上组装场景，以类别无关的三维深度和位置采样打破尺度捷径，再经扩散修复、全局重光照和面积加权回混保护标签与小目标细节；加入 50K 合成样本后 LVIS AP 从 20.1 升至 29.8，rare AP 从 10.1 升至 23.5。",
+      "tags": ["compositionality", "synthetic data", "object detection", "segmentation", "visual grounding"],
+      "score": 97
+    },
+    {
+      "title": "Towards Persistence: Learning Topological Constraints for Event-based Small Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/He_Towards_Persistence_Learning_Topological_Constraints_for_Event-based_Small_Object_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/He_Towards_Persistence_Learning_Topological_Constraints_for_Event-based_Small_Object_Detection_CVPR_2026_paper.pdf",
+      "authors": ["Shiman He", "Nuo Chen", "Xinyi Ying", "Yihang Luo", "Yangsi Shi", "Zaiping Lin", "Miao Li"],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "SpTopoNet 在稀疏事件点云中同时学习局部邻域和全局轨迹拓扑，并以持久同调、几何匹配与阈值邻域主动梯度约束轨迹连续性；EV-UAV 上 IoU/Pd 达 66.62/83.36，Fa 降至 1.29×10^-4，明显优于 Ev-SpSegNet。",
+      "tags": ["UAV/small-object", "event camera", "topological learning", "video", "weak signal"],
+      "score": 96
+    }
   ]
 }
