@@ -1,9 +1,9 @@
 [
   {
     "date": "2026-07-30",
-    "generated_at": "2026-07-30 10:56",
+    "generated_at": "2026-07-30 12:21",
     "timezone": "Asia/Shanghai",
-    "total_selected": 10451,
+    "total_selected": 10474,
     "sections": {
       "highlights": [
         {
@@ -626,6 +626,28 @@
           "score": 71
         },
         {
+          "title": "VSCode-v2: Dynamic Prompt Learning for General Visual Salient and Camouflaged Object Detection With Two-Stage Optimization",
+          "url": "https://doi.org/10.1109/tpami.2025.3635136",
+          "pdf": "",
+          "authors": [
+            "Ziyang Luo",
+            "Nian Liu",
+            "Xuguang Yang",
+            "Dingwen Zhang",
+            "Deng-Ping Fan",
+            "Fahad Shahbaz Khan",
+            "Junwei Han"
+          ],
+          "source": "Crossref / TPAMI / CCF-A / 顶刊 / IEEE Transactions on Pattern Analysis and Machine Intelligence",
+          "published": "2026-03",
+          "summary": "TPAMI article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "COD",
+            "saliency/transparent"
+          ],
+          "score": 71
+        },
+        {
           "title": "GFR-SAM: Training-Free Referring Camouflaged Object Segmentation via Cross-Image Prompting",
           "url": "http://arxiv.org/abs/2607.11732v1",
           "pdf": "http://arxiv.org/pdf/2607.11732v1",
@@ -643,30 +665,6 @@
             "training-free",
             "SAM",
             "depth/geometry"
-          ],
-          "score": 69
-        },
-        {
-          "title": "FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning",
-          "url": "http://arxiv.org/abs/2603.22969v1",
-          "pdf": "http://arxiv.org/pdf/2603.22969v1",
-          "authors": [
-            "Jingchen Ni",
-            "Quan Zhang",
-            "Dan Jiang",
-            "Keyu Lv",
-            "Ke Zhang",
-            "Chun Yuan"
-          ],
-          "source": "arXiv",
-          "published": "2026-03-24",
-          "summary": "Existing camouflage object detection (COD) methods typically rely on fully-supervised learning guided by mask annotations. However, obtaining mask annotations is time-consuming and labor-intensive. Compared to fully-supervised methods, existing weakly-supervised COD methods exhibit significantly poorer performance. Even for the Segment Anything Model (SAM), there are still challenges in handling weakly-supervised camouflage object detection (WSCOD), such as: a. non-camouflage target responses, b. local responses, c. extreme responses, and d. lack of refined boundary awareness, which leads to unsatisfactory results in camouflage scenes. To alleviate these issues, we propose a frequency-aware and contrastive learning-based WSCOD framework in this paper, named FCL-COD. To mitigate the problem of non-camouflaged object responses, we propose the Frequency-aware Low-rank Adaptation (FoRA) method, which incorporates frequency-aware camouflage scene knowledge into SAM. To overcome the challenges of local and extreme responses, we introduce a gradient-aware contrastive learning approach that effectively delineates precise foreground-background boundaries. Additionally, to address the lack of refined boundary perception, we present a multi-scale frequency-aware representation learning strategy that facilitates the modeling of more refined boundaries. We validate the effectiveness of our approach through extensive empirical experiments on three widely recognized COD benchmarks. The results confirm that our method surpasses both state-of-the-art weakly supervised and even fully supervised techniques.",
-          "tags": [
-            "COD",
-            "unsupervised",
-            "SAM",
-            "diffusion",
-            "boundary/frequency"
           ],
           "score": 69
         }
