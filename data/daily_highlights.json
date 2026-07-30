@@ -4,119 +4,353 @@
       "title": "CODrone: A Comprehensive Oriented Object Detection Benchmark for UAV",
       "url": "https://arxiv.org/abs/2504.20032",
       "pdf": "https://arxiv.org/pdf/2504.20032",
-      "authors": ["Kai Ye", "Haidi Tang", "Bowen Liu", "Pingyang Dai", "Liujuan Cao", "Rongrong Ji"],
+      "authors": [
+        "Kai Ye",
+        "Haidi Tang",
+        "Bowen Liu",
+        "Pingyang Dai",
+        "Liujuan Cao",
+        "Rongrong Ji"
+      ],
       "source": "TGRS 2026 / arXiv:2504.20032",
       "published": "2026",
       "summary": "CODrone targets the poor real-flight generalization of UAV oriented-object detectors. It replaces narrowly task-specific benchmarks with images from multiple cities, lighting conditions, viewpoints, altitudes, resolutions, and a broader category set, then evaluates 22 classical and state-of-the-art oriented detectors to expose practical bottlenecks.",
-      "tags": ["UAV/small-object", "benchmark", "remote sensing"],
+      "tags": [
+        "UAV/small-object",
+        "benchmark",
+        "remote sensing"
+      ],
       "score": 89
     },
     {
       "title": "Probing Deep Into Temporal Profile Makes the Infrared Small Target Detector Much Better",
       "url": "https://arxiv.org/abs/2506.12766",
       "pdf": "https://arxiv.org/pdf/2506.12766",
-      "authors": ["Ruojing Li", "Wei An", "Xinyi Ying", "Yingqian Wang", "Yimian Dai", "Longguang Wang", "Miao Li", "Yulan Guo", "Li Liu"],
+      "authors": [
+        "Ruojing Li",
+        "Wei An",
+        "Xinyi Ying",
+        "Yingqian Wang",
+        "Yimian Dai",
+        "Longguang Wang",
+        "Miao Li",
+        "Yulan Guo",
+        "Li Liu"
+      ],
       "source": "TPAMI 2026 / arXiv:2506.12766",
       "published": "2026",
       "summary": "DeepPro reformulates multi-frame infrared small-target detection as one-dimensional anomaly detection along each pixel's global temporal profile. A temporal probe and lightweight signal-correlation modules exploit temporal saliency and autocorrelation while avoiding redundant spatial computation; experiments report strong robustness for dim targets and complex interference at high efficiency.",
-      "tags": ["UAV/small-object", "video", "anomaly/OOD"],
+      "tags": [
+        "UAV/small-object",
+        "video",
+        "anomaly/OOD"
+      ],
       "score": 88
     },
     {
       "title": "EvolveNav: Empowering LLM-Based Vision-Language Navigation via Self-Improving Embodied Reasoning",
       "url": "https://arxiv.org/abs/2506.01551",
       "pdf": "https://arxiv.org/pdf/2506.01551",
-      "authors": ["Bingqian Lin", "Yunshuang Nie", "Khun Loun Zai", "Ziming Wei", "Mingfei Han", "Rongtao Xu", "Minzhe Niu", "Jianhua Han", "Hanwang Zhang", "Liang Lin", "Bokui Chen", "Cewu Lu", "Xiaodan Liang"],
+      "authors": [
+        "Bingqian Lin",
+        "Yunshuang Nie",
+        "Khun Loun Zai",
+        "Ziming Wei",
+        "Mingfei Han",
+        "Rongtao Xu",
+        "Minzhe Niu",
+        "Jianhua Han",
+        "Hanwang Zhang",
+        "Liang Lin",
+        "Bokui Chen",
+        "Cewu Lu",
+        "Xiaodan Liang"
+      ],
       "source": "TPAMI 2026 / arXiv:2506.01551",
       "published": "2026",
       "summary": "EvolveNav addresses unavailable perfect chain-of-thought labels and overfitting in LLM-based vision-language navigation. It first activates navigation reasoning with curated formalized CoT supervision, then iteratively enriches supervision with the model's own reasoning and a self-reflective auxiliary task contrasting correct and wrong patterns.",
-      "tags": ["VLM/MLLM", "reasoning", "self-training"],
+      "tags": [
+        "VLM/MLLM",
+        "reasoning",
+        "self-training"
+      ],
       "score": 84
     },
     {
       "title": "BTKD++: Beyond Teachers by Critically Distilling Knowledge from Teacher's Bias",
       "url": "https://doi.org/10.1007/s11263-026-02924-x",
       "pdf": "https://arxiv.org/pdf/2503.16105",
-      "authors": ["Jianhua Zhang", "Yi Gao", "Yu He", "Shuo Chen", "Xu Cheng"],
+      "authors": [
+        "Jianhua Zhang",
+        "Yi Gao",
+        "Yu He",
+        "Shuo Chen",
+        "Xu Cheng"
+      ],
       "source": "IJCV 2026",
       "published": "2026-07-08",
       "summary": "BTKD++ challenges blind knowledge distillation because teacher output errors can mislead students. It partitions samples into Easy Tasks with correct teacher predictions and Hard Tasks with incorrect predictions, then uses bias elimination, bias rectification, and a dynamic curriculum to convert structured teacher errors into corrective supervision across classification, detection, and segmentation.",
-      "tags": ["knowledge distillation", "uncertainty/calibration"],
+      "tags": [
+        "knowledge distillation",
+        "uncertainty/calibration"
+      ],
       "score": 85
     },
     {
       "title": "Beyond Pixel Uncertainty: Bounding the OoD Objects in Road Scenes",
       "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhu_Beyond_Pixel_Uncertainty_Bounding_the_OoD_Objects_in_Road_Scenes_ICCV_2025_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhu_Beyond_Pixel_Uncertainty_Bounding_the_OoD_Objects_in_Road_Scenes_ICCV_2025_paper.pdf",
-      "authors": ["Huachao Zhu", "Zelong Liu", "Zhichao Sun", "Yuda Zou", "Gui-Song Xia", "Yongchao Xu"],
+      "authors": [
+        "Huachao Zhu",
+        "Zelong Liu",
+        "Zhichao Sun",
+        "Yuda Zou",
+        "Gui-Song Xia",
+        "Yongchao Xu"
+      ],
       "source": "ICCV 2025",
       "published": "2025",
       "summary": "DetSeg replaces fragile pixel-uncertainty thresholding with object-level OOD proposals. It detects open-world objects, suppresses in-distribution boxes, and either restricts an existing anomaly map or prompts SAM for a binary mask; vanishing-point-guided Hungarian matching smooths video predictions. It reduces prior methods' FPR95 by up to 37.45%.",
-      "tags": ["anomaly/OOD", "uncertainty/calibration", "open-world", "video"],
+      "tags": [
+        "anomaly/OOD",
+        "uncertainty/calibration",
+        "open-world",
+        "video"
+      ],
       "score": 82
     }
   ],
   "2026-07-20": [
-    {"title":"Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning","url":"https://openaccess.thecvf.com/content/CVPR2026/html/Kim_Cross-Domain_Demo-to-Code_via_Neurosymbolic_Counterfactual_Reasoning_CVPR_2026_paper.html","pdf":"https://openaccess.thecvf.com/content/CVPR2026/papers/Kim_Cross-Domain_Demo-to-Code_via_Neurosymbolic_Counterfactual_Reasoning_CVPR_2026_paper.pdf","authors":["Jooyoung Kim","Wonje Choi","Younguk Song","Honguk Woo"],"source":"CVPR 2026","published":"2026","summary":"NeSyCR abstracts video demonstrations into symbolic trajectories, derives counterfactual deployment states, and verifies procedural revisions before compiling executable code. It improves task success by 31.14% over Statler.","tags":["reasoning","causal/counterfactual","VLM/MLLM"],"score":96},
-    {"title":"TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction","url":"https://openaccess.thecvf.com/content/CVPR2026/html/Wang_TimeBridge_Self-Supervised_Video_Representation_Learning_via_Start-End_Joint_Embedding_and_CVPR_2026_paper.html","pdf":"https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_TimeBridge_Self-Supervised_Video_Representation_Learning_via_Start-End_Joint_Embedding_and_CVPR_2026_paper.pdf","authors":["Qin Wang","Abigail Morrison","Hanno Scharr","Kai Krajsek"],"source":"CVPR 2026","published":"2026","summary":"TimeBridge jointly embeds endpoint frames and reconstructs the frames between them, forcing explicit learning of nonlinear temporal transformations. It reports 73.5 J&F on DAVIS 2017 and 47.5 mIoU on VIP.","tags":["video","self-supervised","representation learning"],"score":95},
-    {"title":"Learning by Analogy: A Causal Framework for Compositional Generalization","url":"https://openaccess.thecvf.com/content/CVPR2026/html/Kong_Learning_by_Analogy_A_Causal_Framework_for_Compositional_Generalization_CVPR_2026_paper.html","pdf":"https://openaccess.thecvf.com/content/CVPR2026/papers/Kong_Learning_by_Analogy_A_Causal_Framework_for_Compositional_Generalization_CVPR_2026_paper.pdf","authors":["Lingjing Kong","Shaoan Xie","Yang Jiao","Yetian Chen","Yanhui Guo","Simone Shao","Yan Gao","Guangyi Chen","Kun Zhang"],"source":"CVPR 2026","published":"2026","summary":"This work explains compositional generalization through causal modularity and minimal changes, introducing an identifiable hierarchical process that supports complex non-additive concept interactions.","tags":["causal/counterfactual","compositionality","representation learning"],"score":94},
-    {"title":"DARC: Dual Adjustment Reasoning with Counterfactuals for Trustworthy Chest X-ray Classification","url":"https://openaccess.thecvf.com/content/CVPR2026/html/Liao_DARC_Dual_Adjustment_Reasoning_with_Counterfactuals_for_Trustworthy_Chest_X-ray_CVPR_2026_paper.html","pdf":"https://openaccess.thecvf.com/content/CVPR2026/papers/Liao_DARC_Dual_Adjustment_Reasoning_with_Counterfactuals_for_Trustworthy_Chest_X-ray_CVPR_2026_paper.pdf","authors":["Zhifang Liao","Junhao Li","HaoKang Ding","Yucheng Song"],"source":"CVPR 2026","published":"2026","summary":"DARC separates non-pathological shortcuts and disease co-occurrence bias with back-door adjustment and anatomy-constrained counterfactual reasoning. CheXconf contains 40,213 instances across 11 categories.","tags":["medical imaging","causal/counterfactual","uncertainty/calibration"],"score":93},
-    {"title":"Learning for Transductive Threshold Calibration in Open-World Recognition","url":"https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_Learning_for_Transductive_Threshold_Calibration_in_Open-World_Recognition_CVPR_2024_paper.html","pdf":"https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_Learning_for_Transductive_Threshold_Calibration_in_Open-World_Recognition_CVPR_2024_paper.pdf","authors":["Qin Zhang","Dongsheng An","Tianjun Xiao","Tong He","Qingming Tang","Ying Nian Wu","Joseph Tighe","Yifan Xing"],"source":"CVPR 2024","published":"2024","summary":"OpenGCN graphs unlabeled test instances, predicts pairwise connectivity, and transductively selects distance thresholds that satisfy target TPR or TNR for unseen open-world classes.","tags":["uncertainty/calibration","open-world"],"score":92}
+    {
+      "title": "Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Kim_Cross-Domain_Demo-to-Code_via_Neurosymbolic_Counterfactual_Reasoning_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kim_Cross-Domain_Demo-to-Code_via_Neurosymbolic_Counterfactual_Reasoning_CVPR_2026_paper.pdf",
+      "authors": [
+        "Jooyoung Kim",
+        "Wonje Choi",
+        "Younguk Song",
+        "Honguk Woo"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "NeSyCR abstracts video demonstrations into symbolic trajectories, derives counterfactual deployment states, and verifies procedural revisions before compiling executable code. It improves task success by 31.14% over Statler.",
+      "tags": [
+        "reasoning",
+        "causal/counterfactual",
+        "VLM/MLLM"
+      ],
+      "score": 96
+    },
+    {
+      "title": "TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_TimeBridge_Self-Supervised_Video_Representation_Learning_via_Start-End_Joint_Embedding_and_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_TimeBridge_Self-Supervised_Video_Representation_Learning_via_Start-End_Joint_Embedding_and_CVPR_2026_paper.pdf",
+      "authors": [
+        "Qin Wang",
+        "Abigail Morrison",
+        "Hanno Scharr",
+        "Kai Krajsek"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "TimeBridge jointly embeds endpoint frames and reconstructs the frames between them, forcing explicit learning of nonlinear temporal transformations. It reports 73.5 J&F on DAVIS 2017 and 47.5 mIoU on VIP.",
+      "tags": [
+        "video",
+        "self-supervised",
+        "representation learning"
+      ],
+      "score": 95
+    },
+    {
+      "title": "Learning by Analogy: A Causal Framework for Compositional Generalization",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Kong_Learning_by_Analogy_A_Causal_Framework_for_Compositional_Generalization_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kong_Learning_by_Analogy_A_Causal_Framework_for_Compositional_Generalization_CVPR_2026_paper.pdf",
+      "authors": [
+        "Lingjing Kong",
+        "Shaoan Xie",
+        "Yang Jiao",
+        "Yetian Chen",
+        "Yanhui Guo",
+        "Simone Shao",
+        "Yan Gao",
+        "Guangyi Chen",
+        "Kun Zhang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "This work explains compositional generalization through causal modularity and minimal changes, introducing an identifiable hierarchical process that supports complex non-additive concept interactions.",
+      "tags": [
+        "causal/counterfactual",
+        "compositionality",
+        "representation learning"
+      ],
+      "score": 94
+    },
+    {
+      "title": "DARC: Dual Adjustment Reasoning with Counterfactuals for Trustworthy Chest X-ray Classification",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liao_DARC_Dual_Adjustment_Reasoning_with_Counterfactuals_for_Trustworthy_Chest_X-ray_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liao_DARC_Dual_Adjustment_Reasoning_with_Counterfactuals_for_Trustworthy_Chest_X-ray_CVPR_2026_paper.pdf",
+      "authors": [
+        "Zhifang Liao",
+        "Junhao Li",
+        "HaoKang Ding",
+        "Yucheng Song"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "DARC separates non-pathological shortcuts and disease co-occurrence bias with back-door adjustment and anatomy-constrained counterfactual reasoning. CheXconf contains 40,213 instances across 11 categories.",
+      "tags": [
+        "medical imaging",
+        "causal/counterfactual",
+        "uncertainty/calibration"
+      ],
+      "score": 93
+    },
+    {
+      "title": "Learning for Transductive Threshold Calibration in Open-World Recognition",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_Learning_for_Transductive_Threshold_Calibration_in_Open-World_Recognition_CVPR_2024_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_Learning_for_Transductive_Threshold_Calibration_in_Open-World_Recognition_CVPR_2024_paper.pdf",
+      "authors": [
+        "Qin Zhang",
+        "Dongsheng An",
+        "Tianjun Xiao",
+        "Tong He",
+        "Qingming Tang",
+        "Ying Nian Wu",
+        "Joseph Tighe",
+        "Yifan Xing"
+      ],
+      "source": "CVPR 2024",
+      "published": "2024",
+      "summary": "OpenGCN graphs unlabeled test instances, predicts pairwise connectivity, and transductively selects distance thresholds that satisfy target TPR or TNR for unseen open-world classes.",
+      "tags": [
+        "uncertainty/calibration",
+        "open-world"
+      ],
+      "score": 92
+    }
   ],
   "2026-07-22": [
     {
       "title": "Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Beemelmanns_Query2Uncertainty_Robust_Uncertainty_Quantification_and_Calibration_for_3D_Object_Detection_CVPR_2026_paper.html",
       "pdf": "https://arxiv.org/pdf/2605.05328",
-      "authors": ["Till Beemelmanns", "Alexey Nekrasov", "Stefan Vilceanu", "Jonas Steinhaus", "Timo Woopen", "Bastian Leibe", "Lutz Eckstein"],
+      "authors": [
+        "Till Beemelmanns",
+        "Alexey Nekrasov",
+        "Stefan Vilceanu",
+        "Jonas Steinhaus",
+        "Timo Woopen",
+        "Bastian Leibe",
+        "Lutz Eckstein"
+      ],
       "source": "CVPR 2026 / arXiv:2605.05328",
       "published": "2026",
       "summary": "Modern 3D detectors remain poorly calibrated under distribution shift because static post-hoc calibration only models in-distribution behavior. Query2Uncertainty fits a density estimator to class- and location-aware latent object queries from DETR-style detectors, then conditions post-hoc calibration on query density to jointly recalibrate classification confidence and bounding-box regression uncertainty. Experiments with camera-based PETR and LiDAR-based SECOND on nuScenes and MultiCorrupt consistently outperform standard post-hoc methods in both in-distribution and shifted settings.",
-      "tags": ["uncertainty/calibration", "anomaly/OOD", "depth/geometry"],
+      "tags": [
+        "uncertainty/calibration",
+        "anomaly/OOD",
+        "depth/geometry"
+      ],
       "score": 98
     },
     {
       "title": "EvObj: Learning Evolving Object-centric Representations for 3D Instance Segmentation without Scene Supervision",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_EvObj_Learning_Evolving_Object-centric_Representations_for_3D_Instance_Segmentation_without_CVPR_2026_paper.html",
       "pdf": "https://arxiv.org/pdf/2605.13152",
-      "authors": ["Jiahao Chen", "Zihui Zhang", "Yafei Yang", "Jinxi Li", "Shenxing Wei", "Zhixuan Sun", "Bo Yang"],
+      "authors": [
+        "Jiahao Chen",
+        "Zihui Zhang",
+        "Yafei Yang",
+        "Jinxi Li",
+        "Shenxing Wei",
+        "Zhixuan Sun",
+        "Bo Yang"
+      ],
       "source": "CVPR 2026 / arXiv:2605.13152",
       "published": "2026",
       "summary": "EvObj targets unsupervised 3D instance segmentation when synthetic object priors transfer poorly to real scans because of morphology changes and occlusion. Its object discerning module continually refines object candidates and adapts priors to the target domain, while an object completion module reconstructs partial geometry after discovery. It achieves state-of-the-art results on real and synthetic datasets; on ScanNet++ it reports 42.0 AP, 69.3 AP50, and 82.7 AP25 versus 19.8, 35.6, and 48.1 for GrabS.",
-      "tags": ["object-centric", "object discovery", "self-supervised", "depth/geometry"],
+      "tags": [
+        "object-centric",
+        "object discovery",
+        "self-supervised",
+        "depth/geometry"
+      ],
       "score": 97
     },
     {
       "title": "PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ke_PixDLM_A_Dual-Path_Multimodal_Language_Model_for_UAV_Reasoning_Segmentation_CVPR_2026_paper.html",
       "pdf": "https://arxiv.org/pdf/2604.15670",
-      "authors": ["Shuyan Ke", "Yifan Mei", "Changli Wu", "Yonghan Zheng", "Jiayi Ji", "Liujuan Cao", "Rongrong Ji"],
+      "authors": [
+        "Shuyan Ke",
+        "Yifan Mei",
+        "Changli Wu",
+        "Yonghan Zheng",
+        "Jiayi Ji",
+        "Liujuan Cao",
+        "Rongrong Ji"
+      ],
       "source": "CVPR 2026 / arXiv:2604.15670",
       "published": "2026",
       "summary": "PixDLM defines UAV reasoning segmentation across spatial, attribute, and scene-level reasoning, and introduces DRSeg with 10,000 high-resolution UAV images, instance masks, and chain-of-thought QA. A low-resolution CLIP semantic path and high-resolution SAM perception path are linked by MultiPath Alignment and a hierarchical reasoning decoder. On DRSeg it reaches gIoU values of 62.80, 61.75, and 62.51 for attribute, scene, and spatial reasoning.",
-      "tags": ["VLM/MLLM", "reasoning", "UAV/small-object", "remote sensing"],
+      "tags": [
+        "VLM/MLLM",
+        "reasoning",
+        "UAV/small-object",
+        "remote sensing"
+      ],
       "score": 96
     },
     {
       "title": "R2-Seg: Training-Free OOD Medical Tumor Segmentation via Anatomical Reasoning and Statistical Rejection",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shen_R2-Seg_Training-Free_OOD_Medical_Tumor_Segmentation_via_Anatomical_Reasoning_and_CVPR_2026_paper.html",
       "pdf": "https://arxiv.org/pdf/2511.12691",
-      "authors": ["Shuaike Shen", "Ke Liu", "Jiaqing Xie", "Shangde Gao", "Chunhua Shen", "Ge Liu", "Mireia Crispin-Ortuzar", "Shangqi Gao"],
+      "authors": [
+        "Shuaike Shen",
+        "Ke Liu",
+        "Jiaqing Xie",
+        "Shangde Gao",
+        "Chunhua Shen",
+        "Ge Liu",
+        "Mireia Crispin-Ortuzar",
+        "Shangqi Gao"
+      ],
       "source": "CVPR 2026 Oral / arXiv:2511.12691",
       "published": "2026",
       "summary": "R2-Seg addresses fragmented false positives produced by frozen medical segmentation foundation models on out-of-distribution tumors. Its training-free Reason stage uses an LLM anatomical planner to find organ anchors and multi-scale ROIs; the Reject stage applies two-sample statistical tests and false-discovery control to BiomedParse candidates, retaining regions unlike normal tissue. It substantially improves Dice, specificity, and sensitivity across multi-center, multi-modal benchmarks without parameter updates.",
-      "tags": ["training-free", "reasoning", "anomaly/OOD", "medical imaging"],
+      "tags": [
+        "training-free",
+        "reasoning",
+        "anomaly/OOD",
+        "medical imaging"
+      ],
       "score": 95
     },
     {
       "title": "Better than Average: Spatially-Aware Aggregation of Segmentation Uncertainty Improves Downstream Performance",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Guarino_Better_than_Average_Spatially-Aware_Aggregation_of_Segmentation_Uncertainty_Improves_Downstream_CVPR_2026_paper.html",
       "pdf": "https://arxiv.org/pdf/2603.29941",
-      "authors": ["Vanessa Emanuela Guarino", "Claudia Winklmayr", "Jannik Franzen", "Josef Lorenz Rumberger", "Manuel Pfeuffer", "Sonja Greven", "Klaus Maier-Hein", "Dagmar Kainmueller", "Christoph Karg", "Carsten T. Lüth"],
+      "authors": [
+        "Vanessa Emanuela Guarino",
+        "Claudia Winklmayr",
+        "Jannik Franzen",
+        "Josef Lorenz Rumberger",
+        "Manuel Pfeuffer",
+        "Sonja Greven",
+        "Klaus Maier-Hein",
+        "Dagmar Kainmueller",
+        "Christoph Karg",
+        "Carsten T. Lüth"
+      ],
       "source": "CVPR 2026 / arXiv:2603.29941",
       "published": "2026",
       "summary": "Pixel-wise segmentation uncertainty must be reduced to an image score for OOD and failure detection, but global averaging erases localized boundary and structural evidence. This work analyzes common aggregators, introduces spatially aware strategies, and combines intensity and spatial signals with a GMM meta-aggregator. Across ten datasets, spatial and prediction-aware aggregation outperform global averaging, while GMM-All matches or beats individual-feature fits in six of ten settings.",
-      "tags": ["uncertainty/calibration", "anomaly/OOD", "medical imaging"],
+      "tags": [
+        "uncertainty/calibration",
+        "anomaly/OOD",
+        "medical imaging"
+      ],
       "score": 94
     }
   ],
@@ -125,55 +359,111 @@
       "title": "Unleashing Multimodal Large Language Models for Training-free HOI Detection in the Wild",
       "url": "http://arxiv.org/abs/2607.13881v1",
       "pdf": "http://arxiv.org/pdf/2607.13881v1",
-      "authors": ["Ting Lei", "Jialin Liu", "Zhu Xu", "Yuxin Peng", "Yang Liu"],
+      "authors": [
+        "Ting Lei",
+        "Jialin Liu",
+        "Zhu Xu",
+        "Yuxin Peng",
+        "Yang Liu"
+      ],
       "source": "arXiv:2607.13881",
       "published": "2026-07-15",
       "summary": "AgentHOI is a training-free agentic framework for open-world human-object interaction detection. It coordinates foundation models through context-aware multi-round reasoning and multifaceted interaction localization, replacing fixed interaction classifiers with open-ended semantic discovery and instance-specific spatial grounding.",
-      "tags": ["training-free", "VLM/MLLM", "reasoning", "open-world", "compositionality"],
+      "tags": [
+        "training-free",
+        "VLM/MLLM",
+        "reasoning",
+        "open-world",
+        "compositionality"
+      ],
       "score": 97
     },
     {
       "title": "TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors",
       "url": "http://arxiv.org/abs/2607.12571v1",
       "pdf": "http://arxiv.org/pdf/2607.12571v1",
-      "authors": ["Pinhan Fu", "Xianda Guo", "Xuetao Li", "Wenke Huang", "Ruilin Wang", "Weiheng Zhao", "Wei Sui", "Mang Ye"],
+      "authors": [
+        "Pinhan Fu",
+        "Xianda Guo",
+        "Xuetao Li",
+        "Wenke Huang",
+        "Ruilin Wang",
+        "Weiheng Zhao",
+        "Wei Sui",
+        "Mang Ye"
+      ],
       "source": "arXiv:2607.12571",
       "published": "2026-07-14",
       "summary": "TrustVLA identifies a compact causal footprint shared by visual-triggered VLA backdoors, then uses Dirichlet evidence evolution, counterfactual localization, and localized inpainting to detect and repair attacks at inference time without retraining.",
-      "tags": ["training-free", "VLM/MLLM", "causal/counterfactual", "uncertainty/calibration"],
+      "tags": [
+        "training-free",
+        "VLM/MLLM",
+        "causal/counterfactual",
+        "uncertainty/calibration"
+      ],
       "score": 96
     },
     {
       "title": "Slot-RAE: Streamlining Object-Centric Learning via Direct Representation Auto-Encoders",
       "url": "http://arxiv.org/abs/2607.11196v1",
       "pdf": "http://arxiv.org/pdf/2607.11196v1",
-      "authors": ["Alexandre Chapin", "Emmanuel Dellandrea", "Liming Chen"],
+      "authors": [
+        "Alexandre Chapin",
+        "Emmanuel Dellandrea",
+        "Liming Chen"
+      ],
       "source": "arXiv:2607.11196",
       "published": "2026-07-13",
       "summary": "Slot-RAE learns object-centric decomposition directly in a frozen visual foundation model feature space. Slot Attention, a DiT feature decoder, and a REPA alignment head remove the need for external VAEs and pretrained text-to-image priors while retaining discovery, reconstruction, and compositional generalization.",
-      "tags": ["unsupervised", "diffusion", "object discovery", "object-centric", "compositionality"],
+      "tags": [
+        "unsupervised",
+        "diffusion",
+        "object discovery",
+        "object-centric",
+        "compositionality"
+      ],
       "score": 95
     },
     {
       "title": "Promptable Concept Segmentation from Above: Evaluating SAM 3's Zero-Shot and One-Shot Capabilities in Remote Sensing",
       "url": "http://arxiv.org/abs/2607.09583v1",
       "pdf": "http://arxiv.org/pdf/2607.09583v1",
-      "authors": ["Mohammad Dabaja", "Turgay Celik"],
+      "authors": [
+        "Mohammad Dabaja",
+        "Turgay Celik"
+      ],
       "source": "arXiv:2607.09583",
       "published": "2026-07-10",
       "summary": "This study evaluates SAM 3 across remote-sensing classification, detection, and instance segmentation under zero-shot and one-shot constraints. It isolates five prompt configurations and exposes cross-modal interference, sub-pixel limits, and overhead semantic blind spots.",
-      "tags": ["open-vocabulary", "training-free", "SAM", "remote sensing", "UAV/small-object"],
+      "tags": [
+        "open-vocabulary",
+        "training-free",
+        "SAM",
+        "remote sensing",
+        "UAV/small-object"
+      ],
       "score": 94
     },
     {
       "title": "Preserve the Hard, Regenerate the Rest: Uncertainty-Guided Synthetic Training Data Augmentation with Diffusion Models",
       "url": "http://arxiv.org/abs/2606.31603v1",
       "pdf": "http://arxiv.org/pdf/2606.31603v1",
-      "authors": ["Nikolai Rohrich", "Julian Gleissner", "Ahmed H. A. Ibrahim", "Silvan Mertes", "Tobias Huber"],
+      "authors": [
+        "Nikolai Rohrich",
+        "Julian Gleissner",
+        "Ahmed H. A. Ibrahim",
+        "Silvan Mertes",
+        "Tobias Huber"
+      ],
       "source": "arXiv:2606.31603",
       "published": "2026-06-30",
       "summary": "This method uses predictive entropy to preserve difficult labeled pixels while diffusion inpaints only their complementary context. Fine-tuning excludes generated pixels from the loss, maintaining label validity while exposing rare UAV and street-scene objects to diverse backgrounds.",
-      "tags": ["diffusion", "UAV/small-object", "uncertainty/calibration", "domain generalization"],
+      "tags": [
+        "diffusion",
+        "UAV/small-object",
+        "uncertainty/calibration",
+        "domain generalization"
+      ],
       "score": 93
     }
   ],
@@ -182,55 +472,115 @@
       "title": "Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_Graph-to-Frame_RAG_Visual-Space_Knowledge_Fusion_for_Training-Free_and_Auditable_Video_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Graph-to-Frame_RAG_Visual-Space_Knowledge_Fusion_for_Training-Free_and_Auditable_Video_CVPR_2026_paper.pdf",
-      "authors": ["Songyuan Yang", "Weijiang Yu", "Ziyu Liu", "Guijian Tang", "Wenjing Yang", "Huibin Tan", "Nong Xiao"],
+      "authors": [
+        "Songyuan Yang",
+        "Weijiang Yu",
+        "Ziyu Liu",
+        "Guijian Tang",
+        "Wenjing Yang",
+        "Huibin Tan",
+        "Nong Xiao"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "G2F-RAG builds a problem-agnostic video knowledge graph, retrieves a compact query-specific subgraph, and renders it as one reasoning frame for a frozen multimodal model. The visual-space representation improves Qwen2.5-VL-7B from 68.8/51.3/65.1 to 73.4/55.4/70.6 on MLVU, WildVideo, and VideoMME.",
-      "tags": ["training-free", "reasoning", "retrieval/prototype", "video"],
+      "tags": [
+        "training-free",
+        "reasoning",
+        "retrieval/prototype",
+        "video"
+      ],
       "score": 98
     },
     {
       "title": "Compositional Transformation Reasoning for Composed Video Retrieval",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Huang_Compositional_Transformation_Reasoning_for_Composed_Video_Retrieval_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Huang_Compositional_Transformation_Reasoning_for_Composed_Video_Retrieval_CVPR_2026_paper.pdf",
-      "authors": ["Sihong Huang", "Jiaxin Wu", "Dongmei Jiang", "Yi Cai", "Yaowei Wang", "Xiaoyong Wei"],
+      "authors": [
+        "Sihong Huang",
+        "Jiaxin Wu",
+        "Dongmei Jiang",
+        "Yi Cai",
+        "Yaowei Wang",
+        "Xiaoyong Wei"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "MoRe performs recall-oriented Pareto selection over visual, textual, and multimodal similarities, then uses an MLLM to compare candidates pairwise along entity, action, and scene transformations. It reaches 20.4 R@1 on EgoCVR and 63.0 R@1 on WebVid-CoVR in the zero-shot setting.",
-      "tags": ["VLM/MLLM", "reasoning", "retrieval/prototype", "video", "compositionality"],
+      "tags": [
+        "VLM/MLLM",
+        "reasoning",
+        "retrieval/prototype",
+        "video",
+        "compositionality"
+      ],
       "score": 97
     },
     {
       "title": "Finding Distributed Object-Centric Properties in Self-Supervised Transformers",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Rawlekar_Finding_Distributed_Object-Centric_Properties_in_Self-Supervised_Transformers_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Rawlekar_Finding_Distributed_Object-Centric_Properties_in_Self-Supervised_Transformers_CVPR_2026_paper.pdf",
-      "authors": ["Samyak Rawlekar", "Amitabh Swain", "Yujun Cai", "Yiwei Wang", "Ming-Hsuan Yang", "Narendra Ahuja"],
+      "authors": [
+        "Samyak Rawlekar",
+        "Amitabh Swain",
+        "Yujun Cai",
+        "Yiwei Wang",
+        "Ming-Hsuan Yang",
+        "Narendra Ahuja"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "Object-DINO clusters attention heads using patch-level query, key, and value self-similarities across all transformer layers, then aggregates the object-centric cluster without task training. It improves unsupervised object discovery by 3.6 to 12.4 CorLoc points and reduces multimodal hallucination.",
-      "tags": ["training-free", "unsupervised", "object discovery", "object-centric", "self-supervised"],
+      "tags": [
+        "training-free",
+        "unsupervised",
+        "object discovery",
+        "object-centric",
+        "self-supervised"
+      ],
       "score": 96
     },
     {
       "title": "Convexity-Aware Noise Calibration: A Self-Supervised Framework for Noise-Level-Unknown Image Denoising",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Convexity-Aware_Noise_Calibration_A_Self-Supervised_Framework_for_Noise-Level-Unknown_Image_Denoising_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_Convexity-Aware_Noise_Calibration_A_Self-Supervised_Framework_for_Noise-Level-Unknown_Image_Denoising_CVPR_2026_paper.pdf",
-      "authors": ["Zhan Wang", "Leiquan Wang", "Chunlei Wu", "Yu Meng"],
+      "authors": [
+        "Zhan Wang",
+        "Leiquan Wang",
+        "Chunlei Wu",
+        "Yu Meng"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "CANC derives a convex relationship between additional synthetic AWGN and denoised-image variance, estimates the unknown noise level by ternary search, calibrates the estimate, and uses it to create supervised denoising pairs. At a true level of 25/255 it estimates 25.21/255 and nearly matches a known-noise DnCNN-S.",
-      "tags": ["uncertainty/calibration", "self-supervised", "low-level"],
+      "tags": [
+        "uncertainty/calibration",
+        "self-supervised",
+        "low-level"
+      ],
       "score": 95
     },
     {
       "title": "GeometryCrafter: Consistent Geometry Estimation for Open-world Videos with Diffusion Priors",
       "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Xu_GeometryCrafter_Consistent_Geometry_Estimation_for_Open-world_Videos_with_Diffusion_Priors_ICCV_2025_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Xu_GeometryCrafter_Consistent_Geometry_Estimation_for_Open-world_Videos_with_Diffusion_Priors_ICCV_2025_paper.pdf",
-      "authors": ["Tian-Xing Xu", "Xiangjun Gao", "Wenbo Hu", "Xiaoyu Li", "Song-Hai Zhang", "Ying Shan"],
+      "authors": [
+        "Tian-Xing Xu",
+        "Xiangjun Gao",
+        "Wenbo Hu",
+        "Xiaoyu Li",
+        "Song-Hai Zhang",
+        "Ying Shan"
+      ],
       "source": "ICCV 2025",
       "published": "2025",
       "summary": "GeometryCrafter introduces a dual-encoder point-map VAE for unbounded geometry, aligns its latent space with Stable Video Diffusion, and conditions a video diffusion UNet on per-frame geometry priors. It achieves the best average rank across seven unseen point-map and depth benchmarks.",
-      "tags": ["diffusion", "depth/geometry", "video", "open-world"],
+      "tags": [
+        "diffusion",
+        "depth/geometry",
+        "video",
+        "open-world"
+      ],
       "score": 94
     }
   ],
@@ -239,55 +589,119 @@
       "title": "Proof-of-Perception: Certified Tool-Using Multimodal Reasoning with Compositional Conformal Guarantees",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Fayyazi_Proof-of-Perception_Certified_Tool-Using_Multimodal_Reasoning_with_Compositional_Conformal_Guarantees_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Fayyazi_Proof-of-Perception_Certified_Tool-Using_Multimodal_Reasoning_with_Compositional_Conformal_Guarantees_CVPR_2026_paper.pdf",
-      "authors": ["Arya Fayyazi", "Haleh Akrami"],
+      "authors": [
+        "Arya Fayyazi",
+        "Haleh Akrami"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "PoP compiles multimodal reasoning into an executable DAG whose perception and logic nodes emit split-conformal candidate sets; a learned controller accepts, retries, expands, or aborts under a compute budget. On TextVQA it raises F1 from ProgVLM's 69.7 to 72.9, cuts hallucination from 15.1 to 9.3, and keeps node coverage near the 90% target.",
-      "tags": ["VLM/MLLM", "reasoning", "compositionality", "uncertainty/calibration", "selective prediction"],
+      "tags": [
+        "VLM/MLLM",
+        "reasoning",
+        "compositionality",
+        "uncertainty/calibration",
+        "selective prediction"
+      ],
       "score": 100
     },
     {
       "title": "DPU: Dynamic Prototype Updating for Multimodal Out-of-Distribution Detection",
       "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_DPU_Dynamic_Prototype_Updating_for_Multimodal_Out-of-Distribution_Detection_CVPR_2025_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_DPU_Dynamic_Prototype_Updating_for_Multimodal_Out-of-Distribution_Detection_CVPR_2025_paper.pdf",
-      "authors": ["Shawn Li", "Huixian Gong", "Hao Dong", "Tiankai Yang", "Zhengzhong Tu", "Yue Zhao"],
+      "authors": [
+        "Shawn Li",
+        "Huixian Gong",
+        "Hao Dong",
+        "Tiankai Yang",
+        "Zhengzhong Tu",
+        "Yue Zhao"
+      ],
       "source": "CVPR 2025",
       "published": "2025",
       "summary": "DPU first learns cohesive but separated multimodal embeddings, then updates class prototypes according to within-batch variance and scales cross-modal prediction disagreement by sample-to-prototype similarity. Across two OOD tasks, five datasets, and nine base detectors, it reports near-OOD gains around 10% and far-OOD gains up to 80%; VIM FPR95 on HMDB51 to Kinetics600 falls from 13.68 to 0.01.",
-      "tags": ["multimodal", "anomaly/OOD", "retrieval/prototype", "uncertainty/calibration"],
+      "tags": [
+        "multimodal",
+        "anomaly/OOD",
+        "retrieval/prototype",
+        "uncertainty/calibration"
+      ],
       "score": 99
     },
     {
       "title": "Beyond Missing Modalities: Hypergraph Conditioned Diffusion for Uncertainty-Aware Multimodal Emotion Recognition",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Qiu_Beyond_Missing_Modalities_Hypergraph_Conditioned_Diffusion_for_Uncertainty-Aware_Multimodal_Emotion_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Qiu_Beyond_Missing_Modalities_Hypergraph_Conditioned_Diffusion_for_Uncertainty-Aware_Multimodal_Emotion_CVPR_2026_paper.pdf",
-      "authors": ["Xihang Qiu", "Yuhao Fang", "Qing Zhou", "Bin Zhai", "Jialong Hong", "Wanpeng Zhang", "Yao Lu", "Ye Zhang", "Chun Li"],
+      "authors": [
+        "Xihang Qiu",
+        "Yuhao Fang",
+        "Qing Zhou",
+        "Bin Zhai",
+        "Jialong Hong",
+        "Wanpeng Zhang",
+        "Yao Lu",
+        "Ye Zhang",
+        "Chun Li"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "HyperEF uses masked hypergraph attention to encode high-order modality and dialogue-context relations, conditions a diffusion model to recover missing latent features, and fuses modality evidence with source-level and discriminative uncertainty. It leads all tested missing-rate settings; at 60% missingness it improves IEMOCAP6 accuracy from 55.5 to 59.5, while recovery MSE is far below the diffusion baseline.",
-      "tags": ["multimodal", "missing modality", "diffusion", "uncertainty/calibration", "video"],
+      "tags": [
+        "multimodal",
+        "missing modality",
+        "diffusion",
+        "uncertainty/calibration",
+        "video"
+      ],
       "score": 98
     },
     {
       "title": "TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shu_TerraScope_Pixel-Grounded_Visual_Reasoning_for_Earth_Observation_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Shu_TerraScope_Pixel-Grounded_Visual_Reasoning_for_Earth_Observation_CVPR_2026_paper.pdf",
-      "authors": ["Yan Shu", "Bin Ren", "Zhitong Xiong", "Xiao Xiang Zhu", "Begum Demir", "Nicu Sebe", "Paolo Rota"],
+      "authors": [
+        "Yan Shu",
+        "Bin Ren",
+        "Zhitong Xiong",
+        "Xiao Xiang Zhu",
+        "Begum Demir",
+        "Nicu Sebe",
+        "Paolo Rota"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "TerraScope interleaves textual reasoning with explicit segmentation masks and reinjects masked optical, SAR, or temporal visual tokens into later reasoning steps. After grounding pretraining and Terra-CoT instruction tuning, it reaches 68.9, 73.9, and 46.5 on TerraScope-Bench, Landsat30-AU, and DisasterM3, versus 33.8, 45.7, and 23.6 for the original same-backbone setting.",
-      "tags": ["VLM/MLLM", "reasoning", "visual grounding", "remote sensing", "multimodal"],
+      "tags": [
+        "VLM/MLLM",
+        "reasoning",
+        "visual grounding",
+        "remote sensing",
+        "multimodal"
+      ],
       "score": 97
     },
     {
       "title": "Seeing Through the Noise: Improving Infrared Small Target Detection and Segmentation from Noise Suppression Perspective",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yuan_Seeing_Through_the_Noise_Improving_Infrared_Small_Target_Detection_and_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yuan_Seeing_Through_the_Noise_Improving_Infrared_Small_Target_Detection_and_CVPR_2026_paper.pdf",
-      "authors": ["Maoxun Yuan", "Duanni Meng", "Ziteng Xi", "Tianyi Zhao", "Shiji Zhao", "Yimian Dai", "Xingxing Wei"],
+      "authors": [
+        "Maoxun Yuan",
+        "Duanni Meng",
+        "Ziteng Xi",
+        "Tianyi Zhao",
+        "Shiji Zhao",
+        "Yimian Dai",
+        "Xingxing Wei"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "NS-FPN changes infrared small-target perception from feature amplification to noise suppression: LFP uses low-frequency guidance and gated Gaussian filtering to purify high-frequency responses, while SFS samples higher-level semantics along a learnable spiral prior. On IRSTD-1k it reaches 69.29 IoU, 95.24 Pd, and 8.58 Fa; on NUAA-SIRST it reaches 78.75 IoU, 100.0 Pd, and 1.60 Fa.",
-      "tags": ["UAV/small-object", "boundary/frequency", "remote sensing", "weak signal"],
+      "tags": [
+        "UAV/small-object",
+        "boundary/frequency",
+        "remote sensing",
+        "weak signal"
+      ],
       "score": 96
     }
   ],
@@ -296,55 +710,131 @@
       "title": "RiskProp: Collision-Anchored Self-Supervised Risk Propagation For Early Accident Anticipation",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zou_RiskProp_Collision-Anchored_Self-Supervised_Risk_Propagation_For_Early_Accident_Anticipation_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zou_RiskProp_Collision-Anchored_Self-Supervised_Risk_Propagation_For_Early_Accident_Anticipation_CVPR_2026_paper.pdf",
-      "authors": ["Yiyang Zou", "Tianhao Zhao", "Peilun Xiao", "Hongyu Jin", "Longyu Qi", "Yuxuan Li", "Liyin Liang", "Yifeng Qian", "Chunbo Lai", "Yutian Lin", "Zhihui Li", "Yu Wu"],
+      "authors": [
+        "Yiyang Zou",
+        "Tianhao Zhao",
+        "Peilun Xiao",
+        "Hongyu Jin",
+        "Longyu Qi",
+        "Yuxuan Li",
+        "Liyin Liang",
+        "Yifeng Qian",
+        "Chunbo Lai",
+        "Yutian Lin",
+        "Zhihui Li",
+        "Yu Wu"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "RiskProp learns early accident risk without subjective anomaly-onset labels. It propagates collision-anchored logits backward with a stop-gradient future-frame target and regularizes sampled frame pairs with an adaptive monotonic margin. On CAP it reaches mAUC@0.1 0.483, mAP 0.890, and mTTA@0.1 1.207 seconds; on Nexar it improves mAUC@0.1 over CRASH by 0.079.",
-      "tags": ["safety-critical", "video", "self-supervised", "weak supervision", "hazard anticipation"],
+      "tags": [
+        "safety-critical",
+        "video",
+        "self-supervised",
+        "weak supervision",
+        "hazard anticipation"
+      ],
       "score": 100
     },
     {
       "title": "Resilient Sensor Fusion under Adverse Sensor Failures via Multi-Modal Expert Fusion",
       "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Park_Resilient_Sensor_Fusion_Under_Adverse_Sensor_Failures_via_Multi-Modal_Expert_CVPR_2025_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Park_Resilient_Sensor_Fusion_Under_Adverse_Sensor_Failures_via_Multi-Modal_Expert_CVPR_2025_paper.pdf",
-      "authors": ["Konyul Park", "Yecheol Kim", "Daehun Kim", "Jun Won Choi"],
+      "authors": [
+        "Konyul Park",
+        "Yecheol Kim",
+        "Daehun Kim",
+        "Jun Won Choi"
+      ],
       "source": "CVPR 2025",
       "published": "2025",
       "summary": "MoME decouples LiDAR, camera, and fused 3D detection paths, then uses a locality-aware Adaptive Query Router to send each object query to one expert according to nearby sensor evidence. It reaches 71.2 mAP and 73.6 NDS on clean nuScenes, while improving limited-FOV mAP from CMT's 43.9 to 50.6 with only four milliseconds of reported decoder overhead.",
-      "tags": ["multimodal", "degraded modality", "sensor fusion", "safety-critical", "3D detection"],
+      "tags": [
+        "multimodal",
+        "degraded modality",
+        "sensor fusion",
+        "safety-critical",
+        "3D detection"
+      ],
       "score": 99
     },
     {
       "title": "NAVER: A Neuro-Symbolic Compositional Automaton for Visual Grounding with Explicit Logic Reasoning",
       "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Cai_NAVER_A_Neuro-Symbolic_Compositional_Automaton_for_Visual_Grounding_with_Explicit_ICCV_2025_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Cai_NAVER_A_Neuro-Symbolic_Compositional_Automaton_for_Visual_Grounding_with_Explicit_ICCV_2025_paper.pdf",
-      "authors": ["Zhixi Cai", "Fucai Ke", "Simindokht Jahangard", "Maria Garcia de la Banda", "Reza Haffari", "Peter J. Stuckey", "Hamid Rezatofighi"],
+      "authors": [
+        "Zhixi Cai",
+        "Fucai Ke",
+        "Simindokht Jahangard",
+        "Maria Garcia de la Banda",
+        "Reza Haffari",
+        "Peter J. Stuckey",
+        "Hamid Rezatofighi"
+      ],
       "source": "ICCV 2025",
       "published": "2025",
       "summary": "NAVER organizes perception, ProbLog generation, logic execution, answer verification, and return into a self-correcting deterministic finite-state automaton. Under a shared tool setting it cuts compositional pipeline failures to 0.3%, versus 10.3% for HYDRA and 70.2% for ViperGPT, while making intermediate entities, relations, rules, and retry paths auditable.",
-      "tags": ["visual grounding", "reasoning", "compositionality", "neuro-symbolic", "VLM/MLLM"],
+      "tags": [
+        "visual grounding",
+        "reasoning",
+        "compositionality",
+        "neuro-symbolic",
+        "VLM/MLLM"
+      ],
       "score": 98
     },
     {
       "title": "Masked-Diffusion Autoencoders for 3D Medical Vision Representation Learning",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Tu_Masked-Diffusion_Autoencoders_for_3D_Medical_Vision_Representation_Learning_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Tu_Masked-Diffusion_Autoencoders_for_3D_Medical_Vision_Representation_Learning_CVPR_2026_paper.pdf",
-      "authors": ["Jiachen Tu", "Guanghui Qin", "Theodore Zhengde Zhao", "Jeya Maria Jose Valanarasu", "Sheng Zhang", "Tristan Naumann", "Fan Lam", "Sheng Wang", "Hoifung Poon"],
+      "authors": [
+        "Jiachen Tu",
+        "Guanghui Qin",
+        "Theodore Zhengde Zhao",
+        "Jeya Maria Jose Valanarasu",
+        "Sheng Zhang",
+        "Tristan Naumann",
+        "Fan Lam",
+        "Sheng Wang",
+        "Hoifung Poon"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "MDAE corrupts 3D MRI with both variable block masking and diffusion noise, then trains a time-conditioned U-Net to reconstruct masked anatomy and denoise visible tissue against the same clean target. Pretraining on 114,570 volumes yields 73.6 mean in-distribution AUROC and 78.6 cross-sequence AUROC, versus MAE's 69.5 and 70.0, and reaches 81.4 Dice on BraTS18 segmentation.",
-      "tags": ["medical imaging", "self-supervised", "diffusion", "representation learning", "domain generalization"],
+      "tags": [
+        "medical imaging",
+        "self-supervised",
+        "diffusion",
+        "representation learning",
+        "domain generalization"
+      ],
       "score": 97
     },
     {
       "title": "UAV-CB: A Complex-Background RGB-T Dataset and Local Frequency Bridge Network for UAV Detection",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Huang_UAV-CB_A_Complex-Background_RGB-T_Dataset_and_Local_Frequency_Bridge_Network_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Huang_UAV-CB_A_Complex-Background_RGB-T_Dataset_and_Local_Frequency_Bridge_Network_CVPR_2026_paper.pdf",
-      "authors": ["Shenghui Huang", "Menghao Hu", "Longkun Zou", "Hongyu Chi", "Zekai Li", "Feng Gao", "Fan Yang", "Qingyao Wu", "Ke Chen"],
+      "authors": [
+        "Shenghui Huang",
+        "Menghao Hu",
+        "Longkun Zou",
+        "Hongyu Chi",
+        "Zekai Li",
+        "Feng Gao",
+        "Fan Yang",
+        "Qingyao Wu",
+        "Ke Chen"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "UAV-CB contributes 3,442 unregistered RGB-thermal pairs of small UAVs in building, vegetation, powerline, cloud, and ground backgrounds. LFBNet aligns local amplitude and phase, converts spectral discrepancy into a dense guidance map, and drives deformable spatial fusion. It reaches 84.6 AP50, 57.2 AP75, and 54.4 AP, improving C2Former by 5.3 AP.",
-      "tags": ["UAV/small-object", "multimodal", "RGB-T", "boundary/frequency", "remote sensing"],
+      "tags": [
+        "UAV/small-object",
+        "multimodal",
+        "RGB-T",
+        "boundary/frequency",
+        "remote sensing"
+      ],
       "score": 96
     }
   ],
@@ -353,55 +843,115 @@
       "title": "False Alarm Rectification for Early Smoke Segmentation",
       "url": "https://openaccess.thecvf.com/content/WACV2026/html/Zhao_False_Alarm_Rectification_for_Early_Smoke_Segmentation_WACV_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Zhao_False_Alarm_Rectification_for_Early_Smoke_Segmentation_WACV_2026_paper.pdf",
-      "authors": ["Hongjin Zhao", "Weihao Li", "Ge-Peng Ji", "Nick Barnes"],
+      "authors": [
+        "Hongjin Zhao",
+        "Weihao Li",
+        "Ge-Peng Ji",
+        "Nick Barnes"
+      ],
       "source": "WACV 2026",
       "published": "2026",
       "summary": "SmokeCPC combines MiT multi-scale features with DINOv3 global semantics through CFM, then shifts and temperature-scales pixel logits with an image-level smoke prior in CPCM. On SmokeSeg it reaches 61.83 IoU and 75.26 F1 while reducing image-level false positive rate to 0.28%.",
-      "tags": ["fire/smoke", "safety-critical", "segmentation", "false-positive control", "foundation model"],
+      "tags": [
+        "fire/smoke",
+        "safety-critical",
+        "segmentation",
+        "false-positive control",
+        "foundation model"
+      ],
       "score": 100
     },
     {
       "title": "Hyperdimensional Uncertainty Quantification for Multimodal Uncertainty Fusion in Autonomous Vehicles Perception",
       "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Hyperdimensional_Uncertainty_Quantification_for_Multimodal_Uncertainty_Fusion_in_Autonomous_Vehicles_CVPR_2025_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Hyperdimensional_Uncertainty_Quantification_for_Multimodal_Uncertainty_Fusion_in_Autonomous_Vehicles_CVPR_2025_paper.pdf",
-      "authors": ["Luke Chen", "Junyao Wang", "Trier Mortlock", "Pramod Khargonekar", "Mohammad Abdullah Al Faruque"],
+      "authors": [
+        "Luke Chen",
+        "Junyao Wang",
+        "Trier Mortlock",
+        "Pramod Khargonekar",
+        "Mohammad Abdullah Al Faruque"
+      ],
       "source": "CVPR 2025",
       "published": "2025",
       "summary": "HyperDUM projects modality features into fixed hyperdimensional spaces, builds scene-conditioned channel and patch prototypes, and uses cosine-similarity relations to gate sensor features before fusion. It reaches 66.70/66.00 average AP on aiMotive and 67.59 mIoU on DeLiVER with deterministic single-pass inference.",
-      "tags": ["multimodal", "uncertainty/calibration", "degraded modality", "safety-critical", "sensor fusion"],
+      "tags": [
+        "multimodal",
+        "uncertainty/calibration",
+        "degraded modality",
+        "safety-critical",
+        "sensor fusion"
+      ],
       "score": 99
     },
     {
       "title": "MultiOOD: Scaling Out-of-Distribution Detection for Multiple Modalities",
       "url": "https://papers.neurips.cc/paper_files/paper/2024/hash/e969483cbae5a24df038fb5847f5b8b0-Abstract-Conference.html",
       "pdf": "https://papers.neurips.cc/paper_files/paper/2024/file/e969483cbae5a24df038fb5847f5b8b0-Paper-Conference.pdf",
-      "authors": ["Hao Dong", "Yue Zhao", "Eleni Chatzi", "Olga Fink"],
+      "authors": [
+        "Hao Dong",
+        "Yue Zhao",
+        "Eleni Chatzi",
+        "Olga Fink"
+      ],
       "source": "NeurIPS 2024 Spotlight",
       "published": "2024",
       "summary": "MultiOOD establishes a multimodal OOD benchmark and trains A2D to preserve true-class agreement while enlarging non-target prediction discrepancy; NP-Mix synthesizes proxy outliers between neighboring class prototypes. On UCF101 near-OOD, ASH FPR95 drops from 32.14 to 10.68 and AUROC rises from 94.02 to 97.80.",
-      "tags": ["multimodal", "anomaly/OOD", "uncertainty/calibration", "selective prediction", "safety-critical"],
+      "tags": [
+        "multimodal",
+        "anomaly/OOD",
+        "uncertainty/calibration",
+        "selective prediction",
+        "safety-critical"
+      ],
       "score": 98
     },
     {
       "title": "Investigating Compositional Challenges in Vision-Language Models for Visual Grounding",
       "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zeng_Investigating_Compositional_Challenges_in_Vision-Language_Models_for_Visual_Grounding_CVPR_2024_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zeng_Investigating_Compositional_Challenges_in_Vision-Language_Models_for_Visual_Grounding_CVPR_2024_paper.pdf",
-      "authors": ["Yunan Zeng", "Yan Huang", "Jinjin Zhang", "Zequn Jie", "Zhenhua Chai", "Liang Wang"],
+      "authors": [
+        "Yunan Zeng",
+        "Yan Huang",
+        "Jinjin Zhang",
+        "Zequn Jie",
+        "Zhenhua Chai",
+        "Liang Wang"
+      ],
       "source": "CVPR 2024",
       "published": "2024",
       "summary": "ARPGrounding constructs 11,425 paired counterexamples across attribute, relation, and noun-priority grounding, then improves VLM compositionality by minimizing overlap between heatmaps from texts referring to different objects. ALBEF relation/priority accuracy rises from 29.19/14.94 to 38.65/24.21.",
-      "tags": ["VLM/MLLM", "visual grounding", "compositionality", "weak supervision", "grounded vision"],
+      "tags": [
+        "VLM/MLLM",
+        "visual grounding",
+        "compositionality",
+        "weak supervision",
+        "grounded vision"
+      ],
       "score": 97
     },
     {
       "title": "DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_DyFCLT_Dynamic_Frequency-Decoupled_Cross-Modal_Learning_Transformer_for_Multimodal_Tiny_Object_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_DyFCLT_Dynamic_Frequency-Decoupled_Cross-Modal_Learning_Transformer_for_Multimodal_Tiny_Object_CVPR_2026_paper.pdf",
-      "authors": ["Chaolang Li", "Pengwen Dai", "Jingyu Li", "Siyuan Yao", "Yuchen Jiang", "Zhuoran Zheng"],
+      "authors": [
+        "Chaolang Li",
+        "Pengwen Dai",
+        "Jingyu Li",
+        "Siyuan Yao",
+        "Yuchen Jiang",
+        "Zhuoran Zheng"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "DyFCLT dynamically partitions RGB-T query/key/value spectra into learnable radial bands for within-band cross-modal attention, then uses selective background smoothing and foreground-guided dynamic upsampling. It reaches 48.2 AP and 69.1 AP50 on RGBT-Tiny and 61.0 AP50 on RGBTDronePerson.",
-      "tags": ["UAV/small-object", "multimodal", "RGB-T", "boundary/frequency", "remote sensing"],
+      "tags": [
+        "UAV/small-object",
+        "multimodal",
+        "RGB-T",
+        "boundary/frequency",
+        "remote sensing"
+      ],
       "score": 96
     }
   ],
@@ -410,55 +960,120 @@
       "title": "Quantifying and Communicating Uncertainty in SAR-Based Flood Mapping via Density-Aware Neural Networks and Conformal Risk Control",
       "url": "https://doi.org/10.1109/TGRS.2026.3661208",
       "pdf": "https://ieeexplore.ieee.org/ielx8/36/11333908/11373100.pdf?arnumber=11373100",
-      "authors": ["Yu Li", "Patrick Matgen", "Marco Chini"],
+      "authors": [
+        "Yu Li",
+        "Patrick Matgen",
+        "Marco Chini"
+      ],
       "source": "IEEE TGRS 2026",
       "published": "2026",
       "summary": "作者把谱归一化 UNet34、潜特征密度和两级共形风险控制连成洪水制图决策链：先以校准条件有效的密度 p 值拒绝分布外像素，再对保留像素输出风险受控的 Water/Nonwater 集合；密度 OOD AUROC 达 0.921，集合预测把平均漏覆盖率从 4.4% 降到 1.6%。",
-      "tags": ["remote sensing", "anomaly/OOD", "uncertainty/calibration", "selective/risk control", "safety-critical"],
+      "tags": [
+        "remote sensing",
+        "anomaly/OOD",
+        "uncertainty/calibration",
+        "selective/risk control",
+        "safety-critical"
+      ],
       "score": 100
     },
     {
       "title": "Slot-BERT: Self-supervised Object Discovery in Surgical Video",
       "url": "https://doi.org/10.1016/j.media.2026.103972",
       "pdf": "https://arxiv.org/pdf/2501.12477",
-      "authors": ["Guiqiu Liao", "Matjaz Jogan", "Marcel Hussing", "Kenta Nakahashi", "Kazuhiro Yasufuku", "Amin Madani", "Eric Eaton", "Daniel A. Hashimoto"],
+      "authors": [
+        "Guiqiu Liao",
+        "Matjaz Jogan",
+        "Marcel Hussing",
+        "Kenta Nakahashi",
+        "Kazuhiro Yasufuku",
+        "Amin Madani",
+        "Eric Eaton",
+        "Daniel A. Hashimoto"
+      ],
       "source": "Medical Image Analysis 2026",
       "published": "2026",
       "summary": "Slot-BERT 先用递归 slot attention 建立邻帧对象候选，再以双向遮蔽 Temporal Slot Transformer 补全长程状态，并用 slot 去相似目标抑制对象合并；MICCAI 上 mBO-V、mBO-F、FG-ARI 和 CorLoc 分别达 48.9%、52.8%、58.2% 和 70.7%。",
-      "tags": ["medical imaging", "object discovery", "object-centric", "self-supervised", "video", "segmentation"],
+      "tags": [
+        "medical imaging",
+        "object discovery",
+        "object-centric",
+        "self-supervised",
+        "video",
+        "segmentation"
+      ],
       "score": 99
     },
     {
       "title": "Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Multimodal_Learning_on_Low-Quality_Data_with_Conformal_Predictive_Self-Calibration_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jiang_Multimodal_Learning_on_Low-Quality_Data_with_Conformal_Predictive_Self-Calibration_CVPR_2026_paper.pdf",
-      "authors": ["Xun Jiang", "Yufan Gu", "Disen Hu", "Yuqing Hou", "Yazhou Yao", "Fumin Shen", "Heng Tao Shen", "Xing Xu"],
+      "authors": [
+        "Xun Jiang",
+        "Yufan Gu",
+        "Disen Hu",
+        "Yuqing Hou",
+        "Yazhou Yao",
+        "Fumin Shen",
+        "Heng Tao Shen",
+        "Xing Xu"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "CPSC 用共形预测同时处理模态不平衡与显式噪声：Representation Self-Calibration 选择可靠特征成分再融合，Gradient Self-Calibration 按实例可靠性重标定反向梯度，并让共形预测器随网络共同更新；CREMA-D 平均完整模态准确率达 78.65%。",
-      "tags": ["multimodal", "degraded modality", "missing modality", "uncertainty/calibration", "conformal prediction", "safety-critical"],
+      "tags": [
+        "multimodal",
+        "degraded modality",
+        "missing modality",
+        "uncertainty/calibration",
+        "conformal prediction",
+        "safety-critical"
+      ],
       "score": 98
     },
     {
       "title": "Enhanced OoD Detection through Cross-Modal Alignment of Multi-Modal Representations",
       "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Kim_Enhanced_OoD_Detection_through_Cross-Modal_Alignment_of_Multi-Modal_Representations_CVPR_2025_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_Enhanced_OoD_Detection_through_Cross-Modal_Alignment_of_Multi-Modal_Representations_CVPR_2025_paper.pdf",
-      "authors": ["Jeonghyeon Kim", "Sangheum Hwang"],
+      "authors": [
+        "Jeonghyeon Kim",
+        "Sangheum Hwang"
+      ],
       "source": "CVPR 2025",
       "published": "2025",
       "summary": "论文指出完整微调 CLIP 会扩大 ID 图像与 ID 文本的模态间隙，削弱负文本 OOD 分数；Cross-Modal Alignment 以双向 log-sum-exp 正则拉近两种 ID 表示，再接 NegLabel 检测，在 MOS 上平均 FPR95 19.93、AUROC 95.13。",
-      "tags": ["vision-language", "anomaly/OOD", "cross-modal alignment", "open-world", "uncertainty/calibration"],
+      "tags": [
+        "vision-language",
+        "anomaly/OOD",
+        "cross-modal alignment",
+        "open-world",
+        "uncertainty/calibration"
+      ],
       "score": 97
     },
     {
       "title": "SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Kim_SafeDrive_Fine-Grained_Safety_Reasoning_for_End-to-End_Driving_in_a_Sparse_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kim_SafeDrive_Fine-Grained_Safety_Reasoning_for_End-to-End_Driving_in_a_Sparse_CVPR_2026_paper.pdf",
-      "authors": ["Jungho Kim", "Jiyong Oh", "Seunghoon Yu", "Hongjae Shin", "Donghyuk Kwak", "Jun Won Choi"],
+      "authors": [
+        "Jungho Kim",
+        "Jiyong Oh",
+        "Seunghoon Yu",
+        "Hongjae Shin",
+        "Donghyuk Kwak",
+        "Jun Won Choi"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "SafeDrive 为每条候选自车轨迹构造实例级稀疏未来世界，再由 FRNet 逐对象、逐时刻计算碰撞风险并检查可行驶区域；NAVSIM PDMS/EPDMS 达 91.6/87.5，12,146 个场景仅 61 次碰撞，Bench2Drive Driving Score 为 66.77%。",
-      "tags": ["safety-critical", "hazard reasoning", "world model", "video anticipation", "autonomous driving", "multimodal"],
+      "tags": [
+        "safety-critical",
+        "hazard reasoning",
+        "world model",
+        "video anticipation",
+        "autonomous driving",
+        "multimodal"
+      ],
       "score": 96
     }
   ],
@@ -467,55 +1082,233 @@
       "title": "Anchor-Guided Gradient Alignment for Incomplete Multimodal Learning",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Guan_Anchor-Guided_Gradient_Alignment_for_Incomplete_Multimodal_Learning_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Guan_Anchor-Guided_Gradient_Alignment_for_Incomplete_Multimodal_Learning_CVPR_2026_paper.pdf",
-      "authors": ["Zhi-Hao Guan", "Longfei Huang", "Yang Yang"],
+      "authors": [
+        "Zhi-Hao Guan",
+        "Longfei Huang",
+        "Yang Yang"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "ANGA 先以检索实例重建缺失模态，再用预测熵课程构造完整样本主导的动态优化锚点，并把偏离或冲突的重建样本梯度投影回可靠锥域；70% 缺失率下，HateMemes 文本缺失 AUROC 达 68.54，较 RAGPT 提高 4.44 点。",
-      "tags": ["multimodal", "missing modality", "degraded modality", "gradient alignment", "safety-critical"],
+      "tags": [
+        "multimodal",
+        "missing modality",
+        "degraded modality",
+        "gradient alignment",
+        "safety-critical"
+      ],
       "score": 100
     },
     {
       "title": "Spatio-Temporal Conditional Denoising Transformer for Modality-Missing RGBT Tracking",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Lu_Spatio-Temporal_Conditional_Denoising_Transformer_for_Modality-Missing_RGBT_Tracking_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Lu_Spatio-Temporal_Conditional_Denoising_Transformer_for_Modality-Missing_RGBT_Tracking_CVPR_2026_paper.pdf",
-      "authors": ["Andong Lu", "Ziyi Zha", "Jiandong Jin", "Shihao Li", "Chenglong Li", "Jin Tang", "Bin Luo"],
+      "authors": [
+        "Andong Lu",
+        "Ziyi Zha",
+        "Jiandong Jin",
+        "Shihao Li",
+        "Chenglong Li",
+        "Jin Tang",
+        "Bin Luo"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "SCDT 用同一个时空条件去噪器统一缺失模态重建和完整模态增强：强噪声迫使模型恢复缺失 RGB/TIR，弱噪声配合统计对齐细化完整输入，短期跨注意力与长期 FiLM 共同抑制漂移；LasHeR-Miss 达 69.3 PR/54.4 SR。",
-      "tags": ["multimodal", "RGB-T", "missing modality", "video tracking", "UAV/small-object"],
+      "tags": [
+        "multimodal",
+        "RGB-T",
+        "missing modality",
+        "video tracking",
+        "UAV/small-object"
+      ],
       "score": 99
     },
     {
       "title": "SRA-Det: Learning Omni-Grained Open-Vocabulary Detection Beyond Category Names",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_SRA-Det_Learning_Omni-Grained_Open-Vocabulary_Detection_Beyond_Category_Names_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_SRA-Det_Learning_Omni-Grained_Open-Vocabulary_Detection_Beyond_Category_Names_CVPR_2026_paper.pdf",
-      "authors": ["Li Yang", "Boyu Cai", "Wei Liu", "Yan Wang", "Chunfeng Yuan", "Bing Li", "Weiming Hu"],
+      "authors": [
+        "Li Yang",
+        "Boyu Cai",
+        "Wei Liu",
+        "Yan Wang",
+        "Chunfeng Yuan",
+        "Bing Li",
+        "Weiming Hu"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "SRA-Det 以多个可学习查询从 token 级描述中检索颜色、材质、部件和姿态等语义面，再用 soft-min 近似逻辑 AND，惩罚只满足部分属性的候选；FG-OVD 八个子集平均 54.9 mAP，较 OWL-ViT-L/14 提高 13.8 点。",
-      "tags": ["open-vocabulary", "visual grounding", "compositionality", "vision-language", "fine-grained detection"],
+      "tags": [
+        "open-vocabulary",
+        "visual grounding",
+        "compositionality",
+        "vision-language",
+        "fine-grained detection"
+      ],
       "score": 98
     },
     {
       "title": "Synthetic Object Compositions for Scalable and Accurate Learning in Detection, Segmentation, and Grounding",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Huang_Synthetic_Object_Compositions_for_Scalable_and_Accurate_Learning_in_Detection_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Huang_Synthetic_Object_Compositions_for_Scalable_and_Accurate_Learning_in_Detection_CVPR_2026_paper.pdf",
-      "authors": ["Weikai Huang", "Jieyu Zhang", "Taoyang Jia", "Chenhao Zheng", "Ziqi Gao", "Jae Sung Park", "Ranjay Krishna"],
+      "authors": [
+        "Weikai Huang",
+        "Jieyu Zhang",
+        "Taoyang Jia",
+        "Chenhao Zheng",
+        "Ziqi Gao",
+        "Jae Sung Park",
+        "Ranjay Krishna"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "SOC 从对象片段自底向上组装场景，以类别无关的三维深度和位置采样打破尺度捷径，再经扩散修复、全局重光照和面积加权回混保护标签与小目标细节；加入 50K 合成样本后 LVIS AP 从 20.1 升至 29.8，rare AP 从 10.1 升至 23.5。",
-      "tags": ["compositionality", "synthetic data", "object detection", "segmentation", "visual grounding"],
+      "tags": [
+        "compositionality",
+        "synthetic data",
+        "object detection",
+        "segmentation",
+        "visual grounding"
+      ],
       "score": 97
     },
     {
       "title": "Towards Persistence: Learning Topological Constraints for Event-based Small Object Detection",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/He_Towards_Persistence_Learning_Topological_Constraints_for_Event-based_Small_Object_Detection_CVPR_2026_paper.html",
       "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/He_Towards_Persistence_Learning_Topological_Constraints_for_Event-based_Small_Object_Detection_CVPR_2026_paper.pdf",
-      "authors": ["Shiman He", "Nuo Chen", "Xinyi Ying", "Yihang Luo", "Yangsi Shi", "Zaiping Lin", "Miao Li"],
+      "authors": [
+        "Shiman He",
+        "Nuo Chen",
+        "Xinyi Ying",
+        "Yihang Luo",
+        "Yangsi Shi",
+        "Zaiping Lin",
+        "Miao Li"
+      ],
       "source": "CVPR 2026",
       "published": "2026",
       "summary": "SpTopoNet 在稀疏事件点云中同时学习局部邻域和全局轨迹拓扑，并以持久同调、几何匹配与阈值邻域主动梯度约束轨迹连续性；EV-UAV 上 IoU/Pd 达 66.62/83.36，Fa 降至 1.29×10^-4，明显优于 Ev-SpSegNet。",
-      "tags": ["UAV/small-object", "event camera", "topological learning", "video", "weak signal"],
+      "tags": [
+        "UAV/small-object",
+        "event camera",
+        "topological learning",
+        "video",
+        "weak signal"
+      ],
+      "score": 96
+    }
+  ],
+  "2026-07-30": [
+    {
+      "title": "Adaptive Confidence Regularization for Multimodal Failure Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liu_Adaptive_Confidence_Regularization_for_Multimodal_Failure_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liu_Adaptive_Confidence_Regularization_for_Multimodal_Failure_Detection_CVPR_2026_paper.pdf",
+      "authors": [
+        "Moru Liu",
+        "Hao Dong",
+        "Olga Fink",
+        "Mario Trapp"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "ACR 把多模态融合置信度不应低于可靠单模态置信度写成自适应正则，并用连续特征块跨模态交换合成带软异常标签的内部冲突；HMDB51 的 AURC 从 MSP 的 29.56 降至 19.97，同时分类准确率由 86.20% 升至 87.23%。",
+      "tags": [
+        "multimodal",
+        "failure detection",
+        "selective prediction",
+        "uncertainty/calibration",
+        "safety-critical"
+      ],
+      "score": 100
+    },
+    {
+      "title": "Uncertainty-Aware Modality Fusion for Unaligned RGB-T Salient Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Uncertainty-Aware_Modality_Fusion_for_Unaligned_RGB-T_Salient_Object_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_Uncertainty-Aware_Modality_Fusion_for_Unaligned_RGB-T_Salient_Object_Detection_CVPR_2026_paper.pdf",
+      "authors": [
+        "Mianzhao Wang",
+        "Fan Shi",
+        "Xu Cheng",
+        "Chen Jia",
+        "Shengyong Chen"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "UMFNet 不显式估计几何变换，而在像素级高斯潜空间中联合表示 RGB、热红外及残余错位不确定性，再以置信度控制通道调制和空间先验；UVT20K 的结构度量、增强对齐度量和加权 F 分别达到 0.890、0.918、0.836。",
+      "tags": [
+        "RGB-T",
+        "multimodal",
+        "uncertainty/calibration",
+        "salient object detection",
+        "degraded modality"
+      ],
+      "score": 99
+    },
+    {
+      "title": "UNI-OOD: Unified Object- and Image-level Out-of-Distribution Detection via Cross-Context Attentive Vision-Language Modeling",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_UNI-OOD_Unified_Object-_and_Image-level_Out-of-Distribution_Detection_via_Cross-Context_Attentive_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_UNI-OOD_Unified_Object-_and_Image-level_Out-of-Distribution_Detection_via_Cross-Context_Attentive_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yuchuan Li",
+        "Azadeh Motamedi",
+        "Hyock Ju Kwon",
+        "Chul B Park",
+        "Il-Min Kim"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "UNI-OOD 用共享冻结 CLIP 分别编码目标裁剪与掩蔽背景，以层头聚合注意力、视觉文本一致性和目标条件背景文本建模统一对象级与图像级 OOD；BDD100K 到 OpenImages 达到 98.52 AUROC、3.68 FPR95。",
+      "tags": [
+        "OOD",
+        "open-world",
+        "vision-language",
+        "object detection",
+        "safety-critical"
+      ],
+      "score": 98
+    },
+    {
+      "title": "Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Weakly_Supervised_Video_Anomaly_Detection_with_Anomaly-Connected_Components_and_Intention_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_Weakly_Supervised_Video_Anomaly_Detection_with_Anomaly-Connected_Components_and_Intention_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yu Wang",
+        "Shengjie Zhao"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "LAS-VAD 以视觉和文本相似度修正的连通分量生成片段级伪标签，再用位置、速度、加速度意图特征与困难对比学习区分外观相似行为；XD-Violence 细粒度平均 mAP 达 36.89，UCF-Crime 达 15.62。",
+      "tags": [
+        "video anomaly detection",
+        "weak supervision",
+        "intention reasoning",
+        "vision-language",
+        "hazard anticipation"
+      ],
+      "score": 97
+    },
+    {
+      "title": "Target-Aware Invertible Encoder with Reconstruction Guidance for Infrared Small Target Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yan_Target-Aware_Invertible_Encoder_with_Reconstruction_Guidance_for_Infrared_Small_Target_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yan_Target-Aware_Invertible_Encoder_with_Reconstruction_Guidance_for_Infrared_Small_Target_CVPR_2026_paper.pdf",
+      "authors": [
+        "Shule Yan",
+        "Zetian Zhang",
+        "Xiao Ma",
+        "Zexuan Ji"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "InvDet 用 Haar 分解与可逆耦合保留微弱红外目标信息，只在逆向重建路径以 TARM 强化目标频率，并用几何-灰度容差图分配重建约束；IRSTD-1K、NUAA-SIRST、NUDT-SIRST 的 F1 分别为 84.4%、87.4%、86.2%。",
+      "tags": [
+        "infrared small target",
+        "UAV/small-object",
+        "invertible network",
+        "reconstruction",
+        "weak signal"
+      ],
       "score": 96
     }
   ]
