@@ -1,9 +1,9 @@
 [
   {
     "date": "2026-07-31",
-    "generated_at": "2026-07-31 10:33",
+    "generated_at": "2026-07-31 12:39",
     "timezone": "Asia/Shanghai",
-    "total_selected": 10497,
+    "total_selected": 10519,
     "sections": {
       "highlights": [
         {
@@ -1001,6 +1001,27 @@
           "score": 42
         },
         {
+          "title": "Advancing coal fire detection model for large-scale areas based on RS indices and machine learning",
+          "url": "https://doi.org/10.1016/j.jag.2025.104587",
+          "pdf": "",
+          "authors": [
+            "Jinglong Liu",
+            "Feng Zhao",
+            "Yunjia Wang",
+            "Yanan Wang",
+            "Sen Du",
+            "Libo Dang",
+            "Jordi J. Mallorqui"
+          ],
+          "source": "Crossref / JAG / 遥感高水平期刊 / International Journal of Applied Earth Observation and Geoinformation",
+          "published": "2025-06",
+          "summary": "JAG article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "fire perception"
+          ],
+          "score": 42
+        },
+        {
           "title": "Seasonal hazard-vulnerability patterns between drought and wildfire in New Caledonia derived from remote sensing products",
           "url": "https://doi.org/10.1016/j.jag.2026.105159",
           "pdf": "",
@@ -1084,28 +1105,6 @@
             "UAV/small-object"
           ],
           "score": 98
-        },
-        {
-          "title": "Generating Satellite Imagery Data for Wildfire Detection through Mask-Conditioned Generative AI",
-          "url": "http://arxiv.org/abs/2604.02479v1",
-          "pdf": "http://arxiv.org/pdf/2604.02479v1",
-          "authors": [
-            "Valeria Martin",
-            "K. Brent Venable",
-            "Derek Morgan"
-          ],
-          "source": "arXiv",
-          "published": "2026-04-02",
-          "summary": "The scarcity of labeled satellite imagery remains a fundamental bottleneck for deep-learning (DL)-based wildfire monitoring systems. This paper investigates whether a diffusion-based foundation model for Earth Observation (EO), EarthSynth, can synthesize realistic post-wildfire Sentinel-2 RGB imagery conditioned on existing burn masks, without task-specific retraining. Using burn masks derived from the CalFireSeg-50 dataset (Martin et al., 2025), we design and evaluate six controlled experimental configurations that systematically vary: (i) pipeline architecture (mask-only full generation vs. inpainting with pre-fire context), (ii) prompt engineering strategy (three hand-crafted prompts and a VLM-generated prompt via Qwen2-VL), and (iii) a region-wise color-matching post-processing step. Quantitative assessment on 10 stratified test samples uses four complementary metrics: Burn IoU, burn-region color distance (ΔC_burn), Darkness Contrast, and Spectral Plausibility. Results show that inpainting-based pipelines consistently outperform full-tile generation across all metrics, with the structured inpainting prompt achieving the best spatial alignment (Burn IoU = 0.456) and burn saliency (Darkness Contrast = 20.44), while color matching produces the lowest color distance (ΔC_burn = 63.22) at the cost of reduced burn saliency. VLM-assisted inpainting is competitive with hand-crafted prompts. These findings provide a foundation for incorporating generative data augmentation into wildfire detection pipelines. Code and experiments are available at: https://www.kaggle.com/code/valeriamartinh/genai-all-runned",
-          "tags": [
-            "fire perception",
-            "multispectral fire",
-            "fire foundation model",
-            "diffusion",
-            "remote sensing",
-            "saliency/transparent"
-          ],
-          "score": 97
         }
       ],
       "fire_foundation": [

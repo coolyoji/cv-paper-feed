@@ -71,8 +71,8 @@
 <main>
 <h1>2026-07-31 CV Paper Feed</h1>
 <p><a href="../index.html">返回首页</a></p>
-<p>Last updated: 2026-07-31 10:33 Asia/Shanghai</p>
-<p>Candidate pool: 10497 papers</p>
+<p>Last updated: 2026-07-31 12:39 Asia/Shanghai</p>
+<p>Candidate pool: 10519 papers</p>
 <p>慢读模式：本页只展示 5 篇当日精读、10 篇高质量来源、12 篇 COD 相关、10 篇无人机小目标、10 篇火灾/烟雾与多光谱感知、5 篇火灾监测大模型、12 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。</p>
 <p>精读队列优先选择能给 COD 带来新问题设定或新方法范式的论文，例如开放世界、目标发现、反事实/因果、不确定性、自监督稠密表征、对象中心建模和视觉推理；纯 COD 直系论文主要作为背景和对照。</p>
 <h2>当日精读队列</h2>
@@ -753,6 +753,22 @@
 <p class='meta'>是否值得精读：建议精读：直接命中新增火灾方向，且来自正式发表的高质量来源。</p>
 </article>
 <article class='paper'>
+<h3><strong>Advancing coal fire detection model for large-scale areas based on RS indices and machine learning</strong></h3>
+<p class='meta'>Source: Crossref / JAG / 遥感高水平期刊 / International Journal of Applied Earth Observation and Geoinformation, 2025-06</p>
+<p class='meta'>Authors: Jinglong Liu, Feng Zhao, Yunjia Wang, Yanan Wang, Sen Du et al.</p>
+<p class='meta'>Tags: fire perception</p>
+<p class='meta'>Links: <a href="https://doi.org/10.1016/j.jag.2025.104587">paper</a></p>
+<p class='meta'>论文：Advancing coal fire detection model for large-scale areas based on RS indices and machine learning</p>
+<p class='meta'>一句话总结：JAG article matched by title in a top journal; abstract unavailable from Crossref.</p>
+<p class='meta'>任务设定：火焰/烟雾检测与分割，关注早期小烟、非刚性时序演化、云雾霾夕阳反射误报和跨区域泛化。</p>
+<p class='meta'>摘要详解：当前来源尚未取得可靠摘要，不能仅凭标题推断方法；需要先打开论文页或 PDF 补齐摘要后再详解。</p>
+<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
+<p class='meta'>和我课题的关系：直接对应火灾/烟雾感知，重点关注早期弱证据召回、复杂背景假警、时间一致性和可审计告警。</p>
+<p class='meta'>可借鉴点：早期烟火弱证据、时序增长、云雾霾夕阳反射硬负样本与误报控制。</p>
+<p class='meta'>可改进点：应补充视频级划分、无火硬负样本、早期烟火召回、每小时误报和报警提前量，避免大烟区域主导平均分。</p>
+<p class='meta'>是否值得精读：建议精读：直接命中新增火灾方向，且来自正式发表的高质量来源。</p>
+</article>
+<article class='paper'>
 <h3><strong>Seasonal hazard-vulnerability patterns between drought and wildfire in New Caledonia derived from remote sensing products</strong></h3>
 <p class='meta'>Source: Crossref / JAG / 遥感高水平期刊 / International Journal of Applied Earth Observation and Geoinformation, 2026-02</p>
 <p class='meta'>Authors: Mathis Neuhauser, Alexandre Peltier, Thomas Ibanez, Marc Despinoy, Michel Le Page</p>
@@ -814,22 +830,6 @@
 <p class='meta'>和我课题的关系：直接对应火灾监测大模型，重点关注基础模型在新区域、新传感器和少标注火情上的泛化。</p>
 <p class='meta'>可借鉴点：基础模型适配、视觉语言告警、时空推理、少样本迁移与可解释输出；早期烟火弱证据、时序增长、云雾霾夕阳反射硬负样本与误报控制；小目标特征保真、多尺度融合、密集遮挡处理、轻量化实时推理。</p>
 <p class='meta'>可改进点：可重点验证开放世界火情、跨区域/跨传感器迁移、幻觉抑制、时序一致性和边缘端推理成本。</p>
-<p class='meta'>是否值得精读：建议泛读：主题高度相关；若为预印本，需再核验正式发表状态与实验可靠性。</p>
-</article>
-<article class='paper'>
-<h3><strong>Generating Satellite Imagery Data for Wildfire Detection through Mask-Conditioned Generative AI</strong></h3>
-<p class='meta'>Source: arXiv, 2026-04-02</p>
-<p class='meta'>Authors: Valeria Martin, K. Brent Venable, Derek Morgan</p>
-<p class='meta'>Tags: fire perception, multispectral fire, fire foundation model, diffusion, remote sensing, saliency/transparent</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2604.02479v1">paper</a> / <a href="http://arxiv.org/pdf/2604.02479v1">pdf</a></p>
-<p class='meta'>论文：Generating Satellite Imagery Data for Wildfire Detection through Mask-Conditioned Generative AI</p>
-<p class='meta'>一句话总结：The scarcity of labeled satellite imagery remains a fundamental bottleneck for deep-learning (DL)-based wildfire monitoring systems. This paper investigates whether a diffusion-based foundation model for Earth...</p>
-<p class='meta'>任务设定：多光谱火灾感知与基础模型联合监测，关注跨模态融合、早期发现、时空推理、误报控制和跨区域泛化。</p>
-<p class='meta'>摘要详解：研究问题：The scarcity of labeled satellite imagery remains a fundamental bottleneck for deep-learning (DL)-based wildfire monitoring systems. This paper investigates whether a diffusion-based foundation model for Earth Observation (EO), EarthSynth, can synthesize realistic post-wildfire Sentinel-2 RGB imagery conditioned on existing burn masks, without task-specific retraining. 方法与流程：融合多光谱/多传感器观测与基础模型语义推理，用于火情定位、演化理解和可靠告警。 摘要中的具体做法包括：Using burn masks derived from the CalFireSeg-50 dataset (Martin et al., 2025), we design and evaluate six controlled experimental configurations that systematically vary: (i) pipeline architecture (mask-only full generation vs. inpainting with pre-fire context), (ii) prompt engineering strategy (three hand-crafted prompts and a VLM-generated prompt via Qwen2-VL), and (iii) a region-wise color-matching post-processing step. Quantitative assessment on 10 stratified test samples uses four complementary metrics: Burn IoU, burn-region color distance (ΔC_burn), Darkness Contrast, and Spectral Plausibility. 摘要结论：Using burn masks derived from the CalFireSeg-50 dataset (Martin et al., 2025), we design and evaluate six controlled experimental configurations that systematically vary: (i) pipeline architecture (mask-only full generation vs.</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：同时命中两个新增方向，可作为多源感知与大模型监测协同设计的核心候选。</p>
-<p class='meta'>可借鉴点：可见光-红外/热红外对齐、谱段融合、早期烟火特征与全天候监测；基础模型适配、视觉语言告警、时空推理、少样本迁移与可解释输出；早期烟火弱证据、时序增长、云雾霾夕阳反射硬负样本与误报控制。</p>
-<p class='meta'>可改进点：可进一步研究缺失模态与传感器噪声下的稳健融合，并让大模型输出可校准的火情位置、置信度、证据和告警等级。</p>
 <p class='meta'>是否值得精读：建议泛读：主题高度相关；若为预印本，需再核验正式发表状态与实验可靠性。</p>
 </article>
 <h2>火灾监测大模型</h2>
