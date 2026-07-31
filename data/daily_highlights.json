@@ -1311,5 +1311,123 @@
       ],
       "score": 96
     }
+  ],
+  "2026-07-31": [
+    {
+      "title": "Distribution-Aligned Multimodal Fusion for Robust Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Hao_Distribution-Aligned_Multimodal_Fusion_for_Robust_Object_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Hao_Distribution-Aligned_Multimodal_Fusion_for_Robust_Object_Detection_CVPR_2026_paper.pdf",
+      "authors": [
+        "Xiaohui Hao",
+        "Yanglin Pu",
+        "Yongjun Wang",
+        "Rui She"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "DAMF freezes a pretrained ViT-DETR detector and learns a lightweight RGB-infrared fusion module whose CLS feature is explicitly aligned to a GMM fitted on normal target-domain features. It reports 98.1, 79.5, and 57.8 mAP on LLVIP, FLIR, and DroneVehicle, while normal-distribution alignment generalizes better to unseen night and blur than degradation-distribution alignment.",
+      "tags": [
+        "multimodal reliability",
+        "degraded multimodal perception",
+        "domain generalization",
+        "RGB-T",
+        "UAV/small-object",
+        "safety-critical perception"
+      ],
+      "score": 99
+    },
+    {
+      "title": "LATA: Laplacian-Assisted Transductive Adaptation for Conformal Uncertainty in Medical VLMs",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Bozorgtabar_LATA_Laplacian-Assisted_Transductive_Adaptation_for_Conformal_Uncertainty_in_Medical_VLMs_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Bozorgtabar_LATA_Laplacian-Assisted_Transductive_Adaptation_for_Conformal_Uncertainty_in_Medical_VLMs_CVPR_2026_paper.pdf",
+      "authors": [
+        "Behzad Bozorgtabar",
+        "Dwarikanath Mahapatra",
+        "Sudipta Roy",
+        "Muzammal Naseer",
+        "Imran Razzak",
+        "Zongyuan Ge"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "LATA refines frozen medical VLM probabilities over the joint calibration-test pool with a deterministic kNN graph Laplacian update, then combines ViLU failure signals with split conformal prediction. At alpha 0.10 with APS it preserves 0.900 coverage while reducing average set size from 3.35 to 2.95 and class-conditioned coverage gap from 7.18 to 6.32.",
+      "tags": [
+        "uncertainty/calibration",
+        "selective prediction",
+        "risk-controlling prediction",
+        "medical imaging",
+        "test-time adaptation",
+        "safety-critical perception"
+      ],
+      "score": 98
+    },
+    {
+      "title": "PostAlign: Multimodal Grounding as a Corrective Lens for MLLMs",
+      "url": "https://openreview.net/forum?id=zJnPyb2xrp",
+      "pdf": "https://arxiv.org/pdf/2506.17901",
+      "authors": [
+        "Yixuan Wu",
+        "Yang Zhang",
+        "Jian Wu",
+        "Philip Torr",
+        "Jindong Gu"
+      ],
+      "source": "ICLR 2026 Poster / arXiv:2506.17901",
+      "published": "2026",
+      "summary": "MMGrounded-PostAlign adds explicit visual and textual grounding to an MLLM: a LOC token prompts SAM-based mask and box decoders, REJ handles absent referents, and SIMPLE or COMPLEX tokens select whether to generate a rationale. On HaloQuest the 7B model improves false-premise accuracy from 2.0 to 33.2 and insufficient-context accuracy from 2.5 to 31.4 without sacrificing general reasoning benchmarks.",
+      "tags": [
+        "grounded visual reasoning",
+        "visual grounding",
+        "VLM/MLLM",
+        "selective reasoning",
+        "hallucination rejection",
+        "open-world"
+      ],
+      "score": 97
+    },
+    {
+      "title": "OpenDPR: Open-Vocabulary Change Detection via Vision-Centric Diffusion-Guided Prototype Retrieval for Remote Sensing Imagery",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Guo_OpenDPR_Open-Vocabulary_Change_Detection_via_Vision-Centric_Diffusion-Guided_Prototype_Retrieval_for_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Guo_OpenDPR_Open-Vocabulary_Change_Detection_via_Vision-Centric_Diffusion-Guided_Prototype_Retrieval_for_CVPR_2026_paper.pdf",
+      "authors": [
+        "Qi Guo",
+        "Jue Wang",
+        "Yinhe Liu",
+        "Yanfei Zhong"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "OpenDPR separates open-vocabulary remote-sensing change detection into class-agnostic proposal generation and vision-centric category retrieval. It constructs reusable DINOv2 prototypes from diffusion-synthesized, APE-localized support images and reports 44.8 and 54.3 IoU on LEVIR-CD and WHU-CD without training; its weakly supervised S2C variant reaches 48.1 and 68.3 IoU.",
+      "tags": [
+        "open-vocabulary",
+        "visual grounding",
+        "diffusion",
+        "retrieval/prototype",
+        "remote sensing",
+        "change detection"
+      ],
+      "score": 96
+    },
+    {
+      "title": "Tri-Modal Fusion Transformers for UAV-based Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Iaboni_Tri-Modal_Fusion_Transformers_for_UAV-based_Object_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Iaboni_Tri-Modal_Fusion_Transformers_for_UAV-based_Object_Detection_CVPR_2026_paper.pdf",
+      "authors": [
+        "Craig Iaboni",
+        "Pramod Abichandani"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "This CVPR 2026 study builds a synchronized RGB-LWIR-event UAV benchmark and a dual-stream MiT detector. MAGE gates cross-sensor channel and spatial residuals, BiTE performs symmetric token exchange, and an unchanged FPN/Faster R-CNN head isolates fusion effects across 61 ablations. The MiT-B1 tri-modal model reaches 84.24 mAP, versus 83.42 for RGB-thermal and 66.32 for RGB-event.",
+      "tags": [
+        "UAV/small-object",
+        "multimodal reliability",
+        "RGB-T",
+        "event camera",
+        "tiny object detection",
+        "safety-critical perception"
+      ],
+      "score": 95
+    }
   ]
 }
