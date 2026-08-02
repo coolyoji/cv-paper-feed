@@ -1969,6 +1969,29 @@
     "score": 87
   },
   {
+    "title": "SegCLIP: Multimodal Visual-Language and Prompt Learning for High-Resolution Remote Sensing Semantic Segmentation",
+    "url": "https://www.semanticscholar.org/paper/17cb6a48e637a7b97a93e7143d1415e98560d586",
+    "pdf": "",
+    "authors": [
+      "Shijie Zhang",
+      "Bin Zhang",
+      "Yuntao Wu",
+      "Huabing Zhou",
+      "Junjun Jiang",
+      "Jiayi Ma"
+    ],
+    "source": "Semantic Scholar / IEEE Transactions on Geoscience and Remote Sensing / citations 26",
+    "published": "2024",
+    "summary": "Remote sensing semantic segmentation is considered a key step in the intelligent interpretation of high-resolution remote sensing (HRRS) images, with widespread applications in fields such as hazard assessment, environmental monitoring, and urban planning. Recently, numerous deep learning-based semantic segmentation methods have emerged, achieving significant breakthroughs. However, the majority of current research still concentrates on representation learning in the visual feature space, with the potential of multimodal data sources yet to be fully explored. In recent years, the foundational visual language model, namely contrastive language-image pretraining (CLIP), has established a new paradigm in the visual field, demonstrating excellent generalization capabilities and deep semantic understanding across a variety of tasks. Inspired by prompt learning, we propose a prompting approach based on linguistic descriptions to enable CLIP to generate semantically distinct contextual information for remote sensing images. We introduce the SegCLIP network architecture, a novel framework specifically designed for semantic segmentation of HRRS images. Specifically, we have adapted CLIP to extract text information, thereby guiding the visual model in distinguishing among classes. Additionally, we have designed a cross-modal feature fusion (CFF) module that integrates linguistic and visual semantic features, ensuring semantic consistency across modalities. Finally, we have fully exploited the potential of text data and have used additional real text to refine ambiguous query features. Experimental evaluations confirm that the method exhibits superior performance on the LoveDA, iSAID, and UAVid public semantic segmentation datasets.",
+    "tags": [
+      "diffusion",
+      "remote sensing",
+      "UAV/small-object",
+      "representation learning"
+    ],
+    "score": 87
+  },
+  {
     "title": "A Scale-adaptive Vision Model Links C. elegans Neuronal Morphology to Behavior for Neurotoxicity Assessment",
     "url": "http://arxiv.org/abs/2607.23183v1",
     "pdf": "http://arxiv.org/pdf/2607.23183v1",
@@ -12773,6 +12796,26 @@
     "score": 65
   },
   {
+    "title": "AutoSAM: Auto-Prompting Mamba-Based Vision Foundation Model for Multimodal Remote Sensing Semantic Segmentation",
+    "url": "https://doi.org/10.1109/tgrs.2026.3667690",
+    "pdf": "",
+    "authors": [
+      "Jiayuan Li",
+      "Zhen Wang",
+      "Xiao Sun",
+      "Nan Xu",
+      "Zhuhong You",
+      "Deshuang Huang"
+    ],
+    "source": "Crossref / TGRS / 遥感顶刊 / IEEE Transactions on Geoscience and Remote Sensing",
+    "published": "2026",
+    "summary": "TGRS article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "remote sensing"
+    ],
+    "score": 65
+  },
+  {
     "title": "SpatialCLI: Learning to Reason With Spatial Tools, Then Without Them",
     "url": "http://arxiv.org/abs/2607.27703v1",
     "pdf": "http://arxiv.org/pdf/2607.27703v1",
@@ -22558,6 +22601,27 @@
     "score": 59
   },
   {
+    "title": "CLIP2RS: Leveraging Pretrained Vision-Language Model for Semantic Segmentation of Remote Sensing Images",
+    "url": "https://doi.org/10.1109/tgrs.2025.3647015",
+    "pdf": "",
+    "authors": [
+      "Yinghui Xing",
+      "Dexuan Kong",
+      "Shizhou Zhang",
+      "Ziyi Li",
+      "Qingyi Li",
+      "Yanning Zhang"
+    ],
+    "source": "Crossref / TGRS / 遥感顶刊 / IEEE Transactions on Geoscience and Remote Sensing",
+    "published": "2026",
+    "summary": "TGRS article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "VLM/MLLM",
+      "remote sensing"
+    ],
+    "score": 59
+  },
+  {
     "title": "Slide-Level Active Learning Reduces Annotation Burden in H&E images",
     "url": "http://arxiv.org/abs/2607.09831v1",
     "pdf": "http://arxiv.org/pdf/2607.09831v1",
@@ -23820,6 +23884,22 @@
     "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
     "tags": [
       "causal/counterfactual"
+    ],
+    "score": 58
+  },
+  {
+    "title": "Understanding Cognitive Anticipatory Process in Dynamic Hazard Anticipation Using Multimodal Psychophysiological Responses",
+    "url": "https://www.semanticscholar.org/paper/2a485dcd7a2863bba1cd299fe54990ed87df1ecd",
+    "pdf": "",
+    "authors": [
+      "Kyeongsuk Lee",
+      "Sogand Hasanzadeh"
+    ],
+    "source": "Semantic Scholar / Journal of construction engineering and management / citations 12",
+    "published": "2024-04-01",
+    "summary": "Semantic Scholar result for query: multimodal hazard understanding.",
+    "tags": [
+      "safety-critical/hazard"
     ],
     "score": 58
   },
@@ -29173,6 +29253,28 @@
     "score": 56
   },
   {
+    "title": "A Multimodal Agent Framework for Construction Scenarios: Accurate Perception, Dynamic Retrieval, and Explainable Hazard Reasoning",
+    "url": "https://www.semanticscholar.org/paper/209831e7a7ab6e7d40f6355f489391ec85f9091d",
+    "pdf": "https://www.mdpi.com/2075-5309/15/24/4439/pdf?version=1765273495",
+    "authors": [
+      "Sihan Cheng",
+      "Yujun Qi",
+      "Rui Wu",
+      "Yangyang Guan"
+    ],
+    "source": "Semantic Scholar / Buildings / citations 2",
+    "published": "2025-12-09",
+    "summary": "Construction sites are complex environments where traditional safety monitoring methods often suffer from low detection accuracy and limited interpretability. To address these challenges, this study proposes a modular multimodal agent framework that integrates computer vision, knowledge representation, and large language model (LLM)–based reasoning. First, the CLIP model fine-tuned with Low-Rank Adaptation (LoRA) is combined with YOLOv10 to achieve precise recognition of construction activities and personal protective equipment (PPE). Second, a construction safety knowledge graph integrating Retrieval-Augmented Generation (RAG) is constructed to provide structured domain knowledge and enhance contextual understanding. Third, the FusedChain prompting strategy is designed to guide large language models (LLMs) to perform step-by-step safety risk reasoning. Experimental results show that the proposed approach achieves 97.35% accuracy in activity recognition, an average F1-score of 0.84 in PPE detection, and significantly higher performance than existing methods in hazard reasoning. The modular design also facilitates scalable integration with more advanced foundation models, indicating strong potential for real-world deployment in intelligent construction safety management.",
+    "tags": [
+      "VLM/MLLM",
+      "reasoning",
+      "diffusion",
+      "retrieval/prototype",
+      "boundary/frequency"
+    ],
+    "score": 56
+  },
+  {
     "title": "SAM3-Adapter: Efficient Adaptation of Segment Anything 3 for Camouflage Object Segmentation, Shadow Detection, and Medical Image Segmentation",
     "url": "http://arxiv.org/abs/2511.19425v1",
     "pdf": "http://arxiv.org/pdf/2511.19425v1",
@@ -30976,6 +31078,52 @@
       "diffusion",
       "retrieval/prototype",
       "video"
+    ],
+    "score": 55
+  },
+  {
+    "title": "Frequency-selective boundary transition learning for mixed-modality medical image segmentation",
+    "url": "https://doi.org/10.1016/j.patcog.2026.114483",
+    "pdf": "",
+    "authors": [
+      "Lijuan Xu",
+      "Dong Lian",
+      "Fuqiang Yu",
+      "Fenghua Tong",
+      "Shengnan Zhao",
+      "Yifei Li",
+      "Dawei Zhao"
+    ],
+    "source": "Crossref / PR / CCF-B / 顶刊 / Pattern Recognition",
+    "published": "2026-12",
+    "summary": "PR article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "boundary/frequency",
+      "medical imaging"
+    ],
+    "score": 55
+  },
+  {
+    "title": "LoFT-CLIP: Few-shot anomaly detection for railway fasteners based on large vision-language models",
+    "url": "https://doi.org/10.1016/j.patcog.2026.114099",
+    "pdf": "",
+    "authors": [
+      "Bo Tang",
+      "Zhanwei Yang",
+      "Dechen Yao",
+      "Buyao Yang",
+      "Longting Chen",
+      "Ran Bi",
+      "Yongxing Zhao",
+      "Jingsong Xie",
+      "Zhibin Guo"
+    ],
+    "source": "Crossref / PR / CCF-B / 顶刊 / Pattern Recognition",
+    "published": "2026-12",
+    "summary": "PR article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "VLM/MLLM",
+      "anomaly/OOD"
     ],
     "score": 55
   },
@@ -52188,6 +52336,30 @@
     "score": 49
   },
   {
+    "title": "DINO-PCB: Two-stage vision foundation model pretraining and distillation for real-time circuit-board defect detection",
+    "url": "https://doi.org/10.1016/j.patcog.2026.114338",
+    "pdf": "",
+    "authors": [
+      "Junjie Ke",
+      "Lihuo He",
+      "Jing Zhang",
+      "Haiming Wang",
+      "Yuqi Ji",
+      "Hui Chen",
+      "Jie Li",
+      "Sicheng Zhao",
+      "Guiguang Ding",
+      "Xinbo Gao"
+    ],
+    "source": "Crossref / PR / CCF-B / 顶刊 / Pattern Recognition",
+    "published": "2026-12",
+    "summary": "PR article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "computer vision"
+    ],
+    "score": 49
+  },
+  {
     "title": "MedCRP-CL: Continual Medical Image Segmentation via Bayesian Nonparametric Semantic Modality Discovery",
     "url": "http://arxiv.org/abs/2605.20297v1",
     "pdf": "http://arxiv.org/pdf/2605.20297v1",
@@ -56537,6 +56709,26 @@
       "video anticipation",
       "autonomous driving",
       "multimodal"
+    ],
+    "score": 48
+  },
+  {
+    "title": "PyramidMamba: Rethinking pyramid feature fusion with selective space state model for semantic segmentation of remote sensing imagery",
+    "url": "https://doi.org/10.1016/j.jag.2025.104884",
+    "pdf": "",
+    "authors": [
+      "Libo Wang",
+      "Dongxu Li",
+      "Sijun Dong",
+      "Xiaoliang Meng",
+      "Xiaokang Zhang",
+      "Danfeng Hong"
+    ],
+    "source": "Crossref / JAG / 遥感高水平期刊 / International Journal of Applied Earth Observation and Geoinformation",
+    "published": "2025-11",
+    "summary": "JAG article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "remote sensing"
     ],
     "score": 48
   },
@@ -61878,6 +62070,28 @@
       "diffusion",
       "depth/geometry",
       "medical imaging"
+    ],
+    "score": 47
+  },
+  {
+    "title": "Vision foundation model for 3D magnetic resonance imaging segmentation, classification, and registration",
+    "url": "https://doi.org/10.1016/j.media.2026.103992",
+    "pdf": "",
+    "authors": [
+      "Shansong Wang",
+      "Mojtaba Safari",
+      "Qiang Li",
+      "Chih-Wei Chang",
+      "Richard LJ Qiu",
+      "Justin Roper",
+      "David S. Yu",
+      "Xiaofeng Yang"
+    ],
+    "source": "Crossref / MedIA / 医学影像顶刊 / Medical Image Analysis",
+    "published": "2026-05",
+    "summary": "MedIA article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "depth/geometry"
     ],
     "score": 47
   },
@@ -87290,6 +87504,27 @@
     "score": 42
   },
   {
+    "title": "Advancing coal fire detection model for large-scale areas based on RS indices and machine learning",
+    "url": "https://doi.org/10.1016/j.jag.2025.104587",
+    "pdf": "",
+    "authors": [
+      "Jinglong Liu",
+      "Feng Zhao",
+      "Yunjia Wang",
+      "Yanan Wang",
+      "Sen Du",
+      "Libo Dang",
+      "Jordi J. Mallorqui"
+    ],
+    "source": "Crossref / JAG / 遥感高水平期刊 / International Journal of Applied Earth Observation and Geoinformation",
+    "published": "2025-06",
+    "summary": "JAG article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "fire perception"
+    ],
+    "score": 42
+  },
+  {
     "title": "HVPNet: A Bio-Inspired Network for General Salient and Camouflaged Object Detection",
     "url": "http://arxiv.org/abs/2606.31496v1",
     "pdf": "http://arxiv.org/pdf/2606.31496v1",
@@ -101636,6 +101871,30 @@
     "tags": [
       "VLM/MLLM",
       "reasoning",
+      "video"
+    ],
+    "score": 39
+  },
+  {
+    "title": "Spatial-ORMLLM: Improve Spatial Relation Understanding in the Operating Room with Multimodal Large Language Model",
+    "url": "https://www.semanticscholar.org/paper/d814acbeb6f6baee4283006640932b83b20a7ca7",
+    "pdf": "",
+    "authors": [
+      "Peiqi He",
+      "Zhenhao Zhang",
+      "Yixiang Zhang",
+      "Xiongjun Zhao",
+      "Shaoliang Peng"
+    ],
+    "source": "Semantic Scholar / arXiv.org / citations 7",
+    "published": "2025-08-11",
+    "summary": "Precise spatial modeling in the operating room (OR) is foundational to many clinical tasks, supporting intraoperative awareness, hazard avoidance, and surgical decision-making. While existing approaches leverage large-scale multimodal datasets for latent-space alignment to implicitly learn spatial relationships, they overlook the 3D capabilities of MLLMs. However, this approach raises two issues: (1) Operating rooms typically lack multiple video and audio sensors, making multimodal 3D data difficult to obtain; (2) Training solely on readily available 2D data fails to capture fine-grained details in complex scenes. To address this gap, we introduce Spatial-ORMLLM, the first large vision-language model for 3D spatial reasoning in operating rooms using only RGB modality to infer volumetric and semantic cues, enabling downstream medical tasks with detailed and holistic spatial context. Spatial-ORMLLM incorporates a Spatial-Enhanced Feature Fusion Block, which integrates 2D modality inputs with rich 3D spatial knowledge extracted by the estimation algorithm and then feeds the combined features into the visual tower. By employing a unified end-to-end MLLM framework, it combines powerful spatial features with textual features to deliver robust 3D scene reasoning without any additional expert annotations or sensor inputs. Experiments on multiple benchmark clinical datasets demonstrate that Spatial-ORMLLM achieves state-of-the-art performance and generalizes robustly to previously unseen surgical scenarios and downstream tasks.",
+    "tags": [
+      "VLM/MLLM",
+      "reasoning",
+      "diffusion",
+      "boundary/frequency",
+      "depth/geometry",
       "video"
     ],
     "score": 39
@@ -163526,6 +163785,75 @@
     "score": 35
   },
   {
+    "title": "No modality left behind: Adapting to missing modalities via knowledge distillation for brain tumor segmentation",
+    "url": "https://doi.org/10.1016/j.media.2026.104108",
+    "pdf": "",
+    "authors": [
+      "Shenghao Zhu",
+      "Yifei Chen",
+      "Weihong Chen",
+      "Shuo Jiang",
+      "Guanyu Zhou",
+      "Yuanhan Wang",
+      "Feiwei Qin",
+      "Changmiao Wang",
+      "Qiyuan Tian"
+    ],
+    "source": "Crossref / MedIA / 医学影像顶刊 / Medical Image Analysis",
+    "published": "2026-07",
+    "summary": "MedIA article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "boundary/frequency"
+    ],
+    "score": 35
+  },
+  {
+    "title": "PASS-Tr: PAtch-wise swin slice attention to leverage generalization of 2D large vision model to universal lesion detection",
+    "url": "https://doi.org/10.1016/j.media.2026.104036",
+    "pdf": "",
+    "authors": [
+      "Han Li",
+      "Jingsong Liu",
+      "Zhen Huang",
+      "Zhicheng Li",
+      "Xun Ma",
+      "Peter Schüffler",
+      "Nassir Navab",
+      "S Kevin Zhou"
+    ],
+    "source": "Crossref / MedIA / 医学影像顶刊 / Medical Image Analysis",
+    "published": "2026-06",
+    "summary": "MedIA article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "computer vision"
+    ],
+    "score": 35
+  },
+  {
+    "title": "MADAT: Missing-aware dynamic adaptive transformer model for medical prognosis prediction with incomplete multimodal data",
+    "url": "https://doi.org/10.1016/j.media.2026.103958",
+    "pdf": "",
+    "authors": [
+      "Jianbin He",
+      "Guoheng Huang",
+      "Xiaochen Yuan",
+      "Chi-Man Pun",
+      "Guo Zhong",
+      "Qi Yang",
+      "Ling Guo",
+      "Siyu Zhu",
+      "Baiying Lei",
+      "Haojiang Li"
+    ],
+    "source": "Crossref / MedIA / 医学影像顶刊 / Medical Image Analysis",
+    "published": "2026-05",
+    "summary": "MedIA article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "multimodal robustness"
+    ],
+    "score": 35
+  },
+  {
     "title": "Cover First, Disagree Softly: Rethinking Mismatch-First Active Learning for Frame-Level Audio Classification",
     "url": "http://arxiv.org/abs/2607.13571v1",
     "pdf": "http://arxiv.org/pdf/2607.13571v1",
@@ -212906,6 +213234,22 @@
     "score": 28
   },
   {
+    "title": "NavigateSense: a multimodal smart blind cane system with deep learning for enhanced environmental perception and mobility assistance",
+    "url": "https://www.semanticscholar.org/paper/f5a857a4b9eac44bfd6e5bd38c33d3ba793de3f6",
+    "pdf": "",
+    "authors": [
+      "Yuhan Chen"
+    ],
+    "source": "Semantic Scholar / International Conference on Computer Vision, Robotics and Automation Engineering",
+    "published": "2025-09-19",
+    "summary": "According to the World Health Organization (WHO), approximately 285 million people worldwide have visual impairments, including 39 million who are completely blind. These individuals face significant challenges in daily navigation, obstacle detection, and environmental perception. Traditional assistive devices often suffer from limited environmental awareness, unimodal feedback, and poor adaptability to varying conditions. To address these limitations, we have developed a comprehensive assistive system that integrates multiple sensors and delivers multi-modal feedback. The system consists of four core modules: an environmental perception module that utilizes computer vision and depth sensing for real-time detection of surroundings; a data processing module that employs deep learning algorithms for scene understanding and hazard identification; a multi-modal feedback module that combines voice prompts and Braille output to convey intuitive and efficient environmental information; and a power management module that uses intelligent algorithms to optimize energy consumption and ensure stable long-term operation. Through systematic testing in both indoor and outdoor scenarios, the smart blind cane achieved 95% accuracy in obstacle detection, with an average response time of less than 0.5 seconds. User satisfaction evaluations revealed that 92% and 95% of participants reported high satisfaction and convenience rates, which are also kept relatively high in the following 6 months too. A comprehensive market analysis demonstrates the system's competitive advantages in detection range and accuracy compared to existing products, and an economic feasibility analysis also reveals its low production cost and maintenance cost and high scalability potential. These results demonstrate the system’s strong potential for application in daily navigation, emergency alerting, and environmental information acquisition, offering a safe and reliable assistive solution for visually impaired individuals.",
+    "tags": [
+      "diffusion",
+      "depth/geometry"
+    ],
+    "score": 28
+  },
+  {
     "title": "LoCA: Spatially-Aware Low-Rank Convolutional Adaptation of Vision Foundation Models",
     "url": "http://arxiv.org/abs/2607.06918v1",
     "pdf": "http://arxiv.org/pdf/2607.06918v1",
@@ -213962,6 +214306,26 @@
     "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
     "tags": [
       "representation learning"
+    ],
+    "score": 22
+  },
+  {
+    "title": "A Transformer-Based Multimodal Object Detection System for Real-World Applications",
+    "url": "https://www.semanticscholar.org/paper/4f53339b1ebe0e712c2c9fd1281ea7c00943797a",
+    "pdf": "https://doi.org/10.1109/access.2025.3539569",
+    "authors": [
+      "Sunnia Ikram",
+      "Imran Sarwar Bajwa",
+      "Aamna Ikram",
+      "M. Abdullah-Al-Wadud",
+      "Haleema Pk"
+    ],
+    "source": "Semantic Scholar / IEEE Access / citations 12",
+    "published": "2025",
+    "summary": "Obstacle detection is a critical task for visually impaired individuals to ensure safe navigation and hazard avoidance. This study presents FusionSight, an innovative multimodal fusion model that integrates radar and image data to address challenges in real-time object classification for dynamic environments. The system leverages an Arduino Uni microcontroller for data acquisition and transmission, enabling seamless communication between radar and image datasets and the cloud environment. For image data, the Vision Transformer (ViT) was employed to extract high-level features, capturing fine details and long-range dependencies essential for accurate object recognition. Concurrently. Radar data was processed using a Convolutional Neural Network (CNN) to extract spatial and temporal features such as distance, speed and velocity critically for understanding object dynamics. To unify these diverse modalities, a Feature Fusion Multimodal Transformer (FFMA) was utilized, facilitating the integration of complementary features into a comprehensive representation. This fusion mechanism enables the model to effectively handle challenges such as occlusion, overlapping objects and varying lighting conditions. The unified features were classified into four categories “close, far, moving and fast-moving” using a Feed-Forward Neural Network (FFN). The classification results were then converted into actionable audible feedback, providing real-time navigation assistance to visually impaired users. The FusionSight model set a benchmark in multimodal data fusion, achieving an impressive classification accuracy of 99% when using static dataset and 98% accuracy with real-time dataset. This study demonstrates the practical implementation navigation for visually impaired individuals and other use cases involving dynamic and complex environments.",
+    "tags": [
+      "diffusion",
+      "video"
     ],
     "score": 22
   },
