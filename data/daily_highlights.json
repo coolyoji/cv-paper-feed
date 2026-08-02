@@ -1429,5 +1429,133 @@
       ],
       "score": 95
     }
+  ],
+  "2026-08-01": [
+    {
+      "title": "Think Before You Drive: World Model-Inspired Multimodal Grounding",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liao_Think_Before_You_Drive_World_Model-Inspired_Multimodal_Grounding_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liao_Think_Before_You_Drive_World_Model-Inspired_Multimodal_Grounding_CVPR_2026_paper.pdf",
+      "authors": [
+        "Haicheng Liao",
+        "Huanming Shen",
+        "Bonan Wang",
+        "Yongkang Li",
+        "Yihong Tang",
+        "Chengyue Wang",
+        "Dingyi Zhuang",
+        "Kehua Chen",
+        "Hai Yang",
+        "Chengzhong Xu",
+        "Zhenning Li"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "ThinkDeeper combines monocular depth-modulated grounding, recurrent latent refinement, and a cross-modal hypergraph decoder for driving instructions. It reaches 77.27 IoU@0.5 on DrivePilot, but its rollout is supervised by the current mask rather than future observations, so the world-model interpretation remains unproven.",
+      "tags": [
+        "grounded visual reasoning",
+        "safety-critical perception",
+        "autonomous driving",
+        "visual grounding",
+        "world models",
+        "spatial reasoning"
+      ],
+      "score": 99
+    },
+    {
+      "title": "MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Kim_MUST_Modality-Specific_Representation-Aware_Transformer_for_Diffusion-Enhanced_Survival_Prediction_with_Missing_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kim_MUST_Modality-Specific_Representation-Aware_Transformer_for_Diffusion-Enhanced_Survival_Prediction_with_Missing_CVPR_2026_paper.pdf",
+      "authors": [
+        "Kyungwon Kim",
+        "Dosik Hwang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "MUST decomposes pathology and genomics representations into low-rank shared and modality-specific components, algebraically recovers the shared part, and uses conditional latent diffusion only for the missing specific residual. Across five TCGA cohorts it reports C-index 0.742 complete, 0.716 missing genomics, and 0.739 missing pathology.",
+      "tags": [
+        "missing modality learning",
+        "multimodal reliability",
+        "latent diffusion",
+        "medical imaging",
+        "survival prediction",
+        "shared-specific representation"
+      ],
+      "score": 98
+    },
+    {
+      "title": "VideoICL: Confidence-based Iterative In-context Learning for Out-of-Distribution Video Understanding",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Kim_VideoICL_Confidence-based_Iterative_In-context_Learning_for_Out-of-Distribution_Video_Understanding_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_VideoICL_Confidence-based_Iterative_In-context_Learning_for_Out-of-Distribution_Video_Understanding_CVPR_2025_paper.pdf",
+      "authors": [
+        "Kangsan Kim",
+        "Geon Park",
+        "Youngwan Lee",
+        "Woongyeong Yeo",
+        "Sung Ju Hwang"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "VideoICL retrieves text-video demonstrations, feeds them to a frozen video LMM in small batches, and retries until minimum token probability crosses a threshold. LLaVA-Video-7B improves by up to 54.6 percentage points on OOD tasks, although the score controls computation rather than calibrated abstention or risk.",
+      "tags": [
+        "out-of-distribution",
+        "video understanding",
+        "multimodal in-context learning",
+        "confidence estimation",
+        "selective prediction",
+        "safety-critical perception"
+      ],
+      "score": 97
+    },
+    {
+      "title": "Event-based Tiny Object Detection: A Benchmark Dataset and Baseline",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Chen_Event-based_Tiny_Object_Detection_A_Benchmark_Dataset_and_Baseline_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Chen_Event-based_Tiny_Object_Detection_A_Benchmark_Dataset_and_Baseline_ICCV_2025_paper.pdf",
+      "authors": [
+        "Nuo Chen",
+        "Chao Xiao",
+        "Yimian Dai",
+        "Shiman He",
+        "Miao Li",
+        "Wei An"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "EV-UAV supplies 147 event-camera sequences with targets averaging 6.8 by 5.4 pixels. EV-SpSegNet combines grouped dilated sparse convolutions, patch attention, and a spatiotemporal-correlation-weighted loss, reaching 55.18 IoU, 77.53 Pd, and 1.63e-4 Fa with 4.0M parameters.",
+      "tags": [
+        "UAV/small-object",
+        "event camera",
+        "tiny object detection",
+        "spatiotemporal perception",
+        "sparse convolution",
+        "safety-critical perception"
+      ],
+      "score": 96
+    },
+    {
+      "title": "SET: Spectral Enhancement for Tiny Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Sun_SET_Spectral_Enhancement_for_Tiny_Object_Detection_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Sun_SET_Spectral_Enhancement_for_Tiny_Object_Detection_CVPR_2025_paper.pdf",
+      "authors": [
+        "Huixin Sun",
+        "Runqi Wang",
+        "Yanjing Li",
+        "Linlin Yang",
+        "Shaohui Lin",
+        "Xianbin Cao",
+        "Baochang Zhang"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "SET uses training-only ground-truth-guided background smoothing and feature-level adversarial perturbations to strengthen tiny-object evidence without changing the inference detector. It raises RFLA from 21.7 to 24.9 AP and DINO-5scale from 23.2 to 26.6 on AI-TOD, at a substantial training-time cost.",
+      "tags": [
+        "UAV/small-object",
+        "tiny object detection",
+        "spectral representation",
+        "adversarial training",
+        "background suppression",
+        "remote sensing"
+      ],
+      "score": 95
+    }
   ]
 }
