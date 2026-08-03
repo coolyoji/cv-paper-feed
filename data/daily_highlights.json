@@ -1682,5 +1682,132 @@
       ],
       "score": 95
     }
+  ],
+  "2026-08-03": [
+    {
+      "title": "VGent: Visual Grounding via Modular Design for Disentangling Reasoning and Prediction",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Kang_VGent_Visual_Grounding_via_Modular_Design_for_Disentangling_Reasoning_and_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kang_VGent_Visual_Grounding_via_Modular_Design_for_Disentangling_Reasoning_and_CVPR_2026_paper.pdf",
+      "authors": [
+        "Weitai Kang",
+        "Jason Kuen",
+        "Mengwei Ren",
+        "Zijun Wei",
+        "Yan Yan",
+        "Kangning Liu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "VGent keeps an MLLM frozen as a reasoning encoder and lets a detector-conditioned decoder select proposals in parallel, avoiding autoregressive box hallucination. QuadThinker, mask-aware labels, and global target recognition improve multi-target grounding; it reports +20.58 F1, +8.22 gIoU, and +5.83 cIoU over prior best results.",
+      "tags": [
+        "visual grounding",
+        "open-vocabulary visual grounding",
+        "grounded visual reasoning",
+        "multimodal reasoning",
+        "reinforcement learning",
+        "foundation models"
+      ],
+      "score": 99
+    },
+    {
+      "title": "Cross-modal Causal Relation Alignment for Video Question Grounding",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Cross-modal_Causal_Relation_Alignment_for_Video_Question_Grounding_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Cross-modal_Causal_Relation_Alignment_for_Video_Question_Grounding_CVPR_2025_paper.pdf",
+      "authors": [
+        "Weixing Chen",
+        "Yang Liu",
+        "Binglin Chen",
+        "Jiandong Su",
+        "Yongsen Zheng",
+        "Liang Lin"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "CRA weakly supervises video question grounding with Gaussian-smoothed temporal attention, bidirectional QA-segment contrastive alignment, and explicit front-door visual/back-door linguistic interventions. It raises NextGQA grounded-answer accuracy to 18.2 and STAR grounded-answer accuracy to 26.8 without interval labels.",
+      "tags": [
+        "video grounding",
+        "causal/counterfactual",
+        "grounded visual reasoning",
+        "weak supervision",
+        "multimodal alignment",
+        "video hazard anticipation"
+      ],
+      "score": 98
+    },
+    {
+      "title": "Zero-Shot Compositional Video Learning with Coding Rate Reduction",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jung_Zero-Shot_Compositional_Video_Learning_with_Coding_Rate_Reduction_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jung_Zero-Shot_Compositional_Video_Learning_with_Coding_Rate_Reduction_ICCV_2025_paper.pdf",
+      "authors": [
+        "Heeseok Jung",
+        "Jun-Hyeon Bak",
+        "Yujin Jeong",
+        "Gyugeun Lee",
+        "Jinwoo Ahn",
+        "Eun-Sol Kim"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "This method uses a latent-query resampler and coding-rate reduction to separate spatial object concepts from temporal action concepts before recomposition. It reaches 52.4 unseen accuracy and 42.6 harmonic mean on Sth-Com, and 74.0 unseen mAP on CATER using only RGB video.",
+      "tags": [
+        "compositional generalization",
+        "zero-shot learning",
+        "video understanding",
+        "disentangled representation",
+        "coding rate reduction",
+        "self-supervised dense representation"
+      ],
+      "score": 97
+    },
+    {
+      "title": "Fusion Meets Diverse Conditions: A High-diversity Benchmark and Baseline for UAV-based Multimodal Object Detection with Condition Cues",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Chen_Fusion_Meets_Diverse_Conditions_A_High-diversity_Benchmark_and_Baseline_for_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Chen_Fusion_Meets_Diverse_Conditions_A_High-diversity_Benchmark_and_Baseline_for_ICCV_2025_paper.pdf",
+      "authors": [
+        "Chen Chen",
+        "Kangcheng Bin",
+        "Ting Hu",
+        "Jiahao Qi",
+        "Xingyue Liu",
+        "Tianpeng Liu",
+        "Zhen Liu",
+        "Yongxiang Liu",
+        "Ping Zhong"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "ATR-UMOD supplies 13,353 aligned UAV RGB-IR pairs with six condition labels, while PCDF turns those conditions into prompts, decouples condition information at test time, and dynamically gates modality contributions. It achieves 63.3 mAP@0.5, 3.3 points above the strongest reported comparator.",
+      "tags": [
+        "UAV/small-object",
+        "RGB-T",
+        "degraded multimodal perception",
+        "condition-aware fusion",
+        "remote sensing",
+        "multimodal reliability"
+      ],
+      "score": 96
+    },
+    {
+      "title": "RoboFireFuseNet: Robust Fusion of Visible and Infrared Wildfire Imaging for Real-Time Flame and Smoke Segmentation",
+      "url": "https://doi.org/10.1016/j.patrec.2026.04.024",
+      "pdf": "https://zenodo.org/records/18199667/files/RFFNet%20%281%29.pdf?download=1",
+      "authors": [
+        "Dimitrios Fotiou",
+        "Vasileios Mygdalis",
+        "Ioannis Pitas"
+      ],
+      "source": "Pattern Recognition Letters 205 (2026)",
+      "published": "2026",
+      "summary": "RoboFireFuseNet fuses visible and infrared wildfire imagery with modality-specific paths, channel attention, SwinV2 semantic processing, detail-preserving skips, Lovasz-Softmax, copy-paste, and modality dropout. It reports 81.5 flame IoU, 87.98 smoke IoU, 88.17 mIoU, and 29.5M parameters.",
+      "tags": [
+        "visual fire and smoke detection",
+        "RGB-T fire detection",
+        "wildfire segmentation",
+        "degraded multimodal perception",
+        "real-time edge inference",
+        "safety-critical perception"
+      ],
+      "score": 95
+    }
   ]
 }
