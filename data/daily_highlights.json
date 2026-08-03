@@ -1557,5 +1557,130 @@
       ],
       "score": 95
     }
+  ],
+  "2026-08-02": [
+    {
+      "title": "Multi-modal Test-time Adaptation via Adaptive Probabilistic Gaussian Calibration",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xu_Multi-modal_Test-time_Adaptation_via_Adaptive_Probabilistic_Gaussian_Calibration_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Xu_Multi-modal_Test-time_Adaptation_via_Adaptive_Probabilistic_Gaussian_Calibration_CVPR_2026_paper.pdf",
+      "authors": [
+        "Jinglin Xu",
+        "Yi Li",
+        "Chuxiong Sun",
+        "Xiao Xu",
+        "Jiangmeng Li",
+        "Fanjiang Xu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "AdaPGC maintains class-conditional Gaussian statistics for every modality during streaming test-time adaptation, detects the less reliable view through posterior disagreement, and updates only that view against a stop-gradient reliable anchor. It reaches 66.1/73.2 accuracy on Kinetics50-C video/audio corruptions.",
+      "tags": [
+        "degraded multimodal perception",
+        "test-time adaptation",
+        "multimodal OOD",
+        "uncertainty/calibration",
+        "missing modality learning",
+        "safety-critical perception"
+      ],
+      "score": 99
+    },
+    {
+      "title": "Uncertainty-Driven Expert Control: Enhancing the Reliability of Medical Vision-Language Models",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Liang_Uncertainty-Driven_Expert_Control_Enhancing_the_Reliability_of_Medical_Vision-Language_Models_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Liang_Uncertainty-Driven_Expert_Control_Enhancing_the_Reliability_of_Medical_Vision-Language_Models_ICCV_2025_paper.pdf",
+      "authors": [
+        "Xiao Liang",
+        "Di Wang",
+        "Zhicheng Jiao",
+        "Ronghan Li",
+        "Pengfei Yang",
+        "Quan Wang",
+        "Tat-Seng Chua"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "Expert-CFG uses normalized token predictive entropy to route only uncertain medical VQA answers to an expert, then injects highlighted clinical evidence through classifier-free guidance without retraining. With 5% intervention, Phi3.5V-Med improves overall accuracy by 2.66, 2.55, and 4.32 points on three benchmarks.",
+      "tags": [
+        "uncertainty/calibration",
+        "selective prediction",
+        "human-in-the-loop",
+        "medical VLM",
+        "classifier-free guidance",
+        "safety-critical perception"
+      ],
+      "score": 98
+    },
+    {
+      "title": "Uncertainty-Aware Gradient Stabilization for Small Object Detection",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Sun_Uncertainty-Aware_Gradient_Stabilization_for_Small_Object_Detection_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Sun_Uncertainty-Aware_Gradient_Stabilization_for_Small_Object_Detection_ICCV_2025_paper.pdf",
+      "authors": [
+        "Huixin Sun",
+        "Yanjing Li",
+        "Linlin Yang",
+        "Xianbin Cao",
+        "Baochang Zhang"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "UGS explains small-object localization failure through scale-dependent sharp loss curvature, then replaces regression with non-uniform discretized classification, entropy minimization, and adversarial uncertainty refinement. It lifts DINO-5scale from 35.5 to 38.1 AP on VisDrone and reduces small-anchor gradient variance by 2.9x.",
+      "tags": [
+        "UAV/small-object",
+        "tiny object detection",
+        "uncertainty-aware optimization",
+        "gradient stabilization",
+        "remote sensing",
+        "weak signal"
+      ],
+      "score": 97
+    },
+    {
+      "title": "DarkAct: A RGB-Thermal Dataset and Fusion Framework for Multimodal Low-Light Action Recognition",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Tan_DarkAct_A_RGB-Thermal_Dataset_and_Fusion_Framework_for_Multimodal_Low-Light_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Tan_DarkAct_A_RGB-Thermal_Dataset_and_Fusion_Framework_for_Multimodal_Low-Light_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yuanjun Tan",
+        "Aoran Xiao",
+        "Liqian Deng",
+        "Zhigang Tu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "DarkAct introduces 12,778 paired RGB-thermal low-light videos and DarkAct-Net, whose motion-aware attention tolerates sensor misalignment and whose light-adaptive fusion reweights cross-modal evidence at every transformer stage. It reaches 74.4 Top-1, while all tested zero-shot VLMs remain below 20%.",
+      "tags": [
+        "RGB-T",
+        "degraded multimodal perception",
+        "low-light video",
+        "motion understanding",
+        "missing/degraded modality",
+        "fire perception transfer"
+      ],
+      "score": 96
+    },
+    {
+      "title": "Conformal Prediction and MLLM aided Uncertainty Quantification in Scene Graph Generation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Nag_Conformal_Prediction_and_MLLM_aided_Uncertainty_Quantification_in_Scene_Graph_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Nag_Conformal_Prediction_and_MLLM_aided_Uncertainty_Quantification_in_Scene_Graph_CVPR_2025_paper.pdf",
+      "authors": [
+        "Sayak Nag",
+        "Udita Ghosh",
+        "Calvin-Khang Ta",
+        "Sarosij Bose",
+        "Jiachen Li",
+        "Amit K. Roy-Chowdhury"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "PC-SGG applies class-conditional conformal prediction to object and predicate heads, forms triplet prediction sets, and uses an MLLM to remove implausible relations. The filter halves set size with little coverage loss, but no tested SGG model reaches the nominal triplet guarantee, exposing exchangeability and calibration failures.",
+      "tags": [
+        "risk-controlling prediction",
+        "conformal prediction",
+        "scene graph generation",
+        "grounded visual reasoning",
+        "uncertainty/calibration",
+        "safety-critical perception"
+      ],
+      "score": 95
+    }
   ]
 }
