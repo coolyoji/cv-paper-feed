@@ -414,6 +414,43 @@ class HighlightHistoryTests(unittest.TestCase):
         self.assertEqual(len(selected_titles), update_papers.HIGHLIGHT_LIMIT)
         self.assertEqual(history[1]["date"], "2026-07-12")
 
+    def test_update_history_rejects_historical_daily_curation(self):
+        previous = self.make_paper("Previously Curated", 999, "previous-curated")
+        old_snapshot = update_papers.make_snapshot(
+            [previous],
+            datetime(2026, 7, 12, 9, 10, tzinfo=update_papers.UTC8),
+            enrich_abstracts=False,
+        )
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            data_dir = Path(temp_dir)
+            history_file = data_dir / "feed_history.json"
+            highlights_file = data_dir / "daily_highlights.json"
+            history_file.write_text(
+                json.dumps([old_snapshot], ensure_ascii=False),
+                encoding="utf-8",
+            )
+            highlights_file.write_text(
+                json.dumps(
+                    {"2026-07-13": [update_papers.paper_to_dict(previous)]},
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            with (
+                patch.object(update_papers, "HISTORY_FILE", history_file),
+                patch.object(update_papers, "DAILY_HIGHLIGHTS_FILE", highlights_file),
+                patch.object(update_papers, "enrich_selected_sections"),
+            ):
+                with self.assertRaisesRegex(
+                    ValueError,
+                    "Previously Curated",
+                ):
+                    update_papers.update_history(
+                        [previous],
+                        datetime(2026, 7, 13, 9, 10, tzinfo=update_papers.UTC8),
+                    )
+
     def test_same_day_refresh_keeps_current_day_eligible(self):
         morning_candidates = [
             self.make_paper("Current Day Top Paper", 999, "top"),

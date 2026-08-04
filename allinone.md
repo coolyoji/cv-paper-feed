@@ -129,3 +129,21 @@ Citation counts are the values returned by the source at run time. Ties at zero 
 5. **M3F-UAV** is the closest returned record to missing-modality low-altitude sensing, but it remains a recent arXiv candidate and requires full-text and venue verification before promotion.
 
 The automation's actual five-paper selections are documented separately in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-01\2026-08-01-检索与筛选报告.md`; they were chosen only after official full-text verification and historical deduplication.
+
+---
+
+# Verified Daily Search Update - 2026-08-04
+
+The expanded scan ran with `DEEP_SOURCE_SCAN=1` and covered causal/OOD vision, object-centric self-supervision, UAV tiny-object perception, missing/degraded multimodal learning, grounded reasoning, selective risk, and RGB-T fire perception. Discovery produced 845 arXiv records, 3,921 cumulative CVF records, 4,709 cumulative Crossref records, and 10,534 merged cached candidates. Semantic Scholar returned 429 records for the safety/multimodal cluster before rate limiting; OpenAlex, DBLP, and OpenReview were degraded or unavailable, so final promotion relied on official CVF/IEEE pages and the actual PDFs.
+
+The exact non-duplicate deep-reading queue is:
+
+1. **From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision** (ICCV 2025)
+2. **U2Flow: Uncertainty-Aware Unsupervised Optical Flow Estimation** (CVPR 2026)
+3. **Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection** (CVPR 2026)
+4. **What You Have is What You Track: Adaptive and Robust Multimodal Tracking** (ICCV 2025)
+5. **FlameFinder: Illuminating Obscured Fire Through Smoke With Attentive Deep Metric Learning** (IEEE TGRS 2024)
+
+All five PDFs passed page-count/signature/text preflight and were checked beyond the abstract. The queue deliberately joins progressive weak supervision, temporal uncertainty estimation, UAV-specific synthetic data, missing-modality temporal routing, and a direct visible-thermal fire anchor. A release-stage audit caught two initially proposed historical highlights and replaced them with PAL and U2Flow; the final five have zero prior deep-reading matches in both the historical highlight set and the F-drive download index.
+
+Strong retained candidates include *SkySense V2*, *SegEarth-OV*, MD2N, Synergistic Prompting, missing-modality semi-supervised segmentation, RGBT-3M, MISSRAG, and GroundingME. They remain in the dedicated UAV, fire, reliability, or grounding sections rather than being forced into the five. The complete evidence and exclusion rationale is in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-04\2026-08-04-检索与筛选报告.md`.

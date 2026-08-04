@@ -1809,5 +1809,131 @@
       ],
       "score": 95
     }
+  ],
+  "2026-08-04": [
+    {
+      "title": "From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Yu_From_Easy_to_Hard_Progressive_Active_Learning_Framework_for_Infrared_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Yu_From_Easy_to_Hard_Progressive_Active_Learning_Framework_for_Infrared_ICCV_2025_paper.pdf",
+      "authors": [
+        "Chuang Yu",
+        "Jinmiao Zhao",
+        "Yunpeng Liu",
+        "Sicheng Zhao",
+        "Yimian Dai",
+        "Xiangyu Yue"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "PAL turns single-point infrared small-target supervision into a progressive curriculum: it pre-starts on automatically selected easy samples, admits harder cases through a coarse outer update, and refines pseudo-masks with a decay-controlled fine inner update. Across several SIRST backbones it substantially narrows the gap to full supervision.",
+      "tags": [
+        "weak supervision",
+        "infrared small target",
+        "active learning",
+        "pseudo-label refinement",
+        "curriculum learning",
+        "safety-critical perception"
+      ],
+      "score": 99
+    },
+    {
+      "title": "U2Flow: Uncertainty-Aware Unsupervised Optical Flow Estimation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Sun_U2Flow_Uncertainty-Aware_Unsupervised_Optical_Flow_Estimation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Sun_U2Flow_Uncertainty-Aware_Unsupervised_Optical_Flow_Estimation_CVPR_2026_paper.pdf",
+      "authors": [
+        "Xunpei Sun",
+        "Wenwei Lin",
+        "Yi Chang",
+        "Gang Chen"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "U2Flow jointly predicts recurrent optical flow and per-pixel uncertainty without flow ground truth. Augmentation inconsistency supplies a detached residual for a Laplace likelihood objective; the learned uncertainty then gates refinement, regional smoothness, reliable correspondence selection, and bidirectional flow fusion.",
+      "tags": [
+        "uncertainty estimation",
+        "unsupervised optical flow",
+        "selective evidence",
+        "temporal perception",
+        "calibration",
+        "safety-critical perception"
+      ],
+      "score": 98
+    },
+    {
+      "title": "Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_Visual_Prototype_Conditioned_Focal_Region_Generation_for_UAV-Based_Object_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_Visual_Prototype_Conditioned_Focal_Region_Generation_for_UAV-Based_Object_Detection_CVPR_2026_paper.pdf",
+      "authors": [
+        "Wenhao Li",
+        "Zimeng Wu",
+        "Yu Wu",
+        "Zehua Fu",
+        "Jiaxin Chen"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "UAVGen conditions diffusion on class prototypes and focal-region layouts, then repairs missing, extra, and misaligned synthetic labels before detector training. It raises GFL mAP from 24.5 to 25.9 on VisDrone and from 14.5 to 16.6 on UAVDT with far fewer synthetic full images than competing generators.",
+      "tags": [
+        "UAV/small-object",
+        "diffusion",
+        "synthetic data",
+        "layout conditioning",
+        "dense targets",
+        "remote sensing"
+      ],
+      "score": 97
+    },
+    {
+      "title": "What You Have is What You Track: Adaptive and Robust Multimodal Tracking",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Tan_What_You_Have_is_What_You_Track_Adaptive_and_Robust_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Tan_What_You_Have_is_What_You_Track_Adaptive_and_Robust_ICCV_2025_paper.pdf",
+      "authors": [
+        "Yuedong Tan",
+        "Jiawei Shao",
+        "Eduard Zamfir",
+        "Ruanjun Li",
+        "Zhaochong An",
+        "Chao Ma",
+        "Danda Paudel",
+        "Luc Van Gool",
+        "Radu Timofte",
+        "Zongwei Wu"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "FlexTrack routes incomplete RGB-X video through heterogeneous experts of different capacity and trains with a structured video-level modality mask. It preserves temporal continuity under sensor gaps, improves complete-modality tracking by 2.6%, and gains 3.8 and 6.5 points on two missing-modality ablations.",
+      "tags": [
+        "missing modality learning",
+        "degraded multimodal perception",
+        "RGB-X tracking",
+        "mixture of experts",
+        "video",
+        "multimodal reliability"
+      ],
+      "score": 96
+    },
+    {
+      "title": "FlameFinder: Illuminating Obscured Fire Through Smoke With Attentive Deep Metric Learning",
+      "url": "https://doi.org/10.1109/TGRS.2024.3440880",
+      "pdf": "https://par.nsf.gov/servlets/purl/10588427",
+      "authors": [
+        "Hossein Rajoli",
+        "Sahand Khoshdel",
+        "Fatemeh Afghah",
+        "Xiaolong Ma"
+      ],
+      "source": "IEEE Transactions on Geoscience and Remote Sensing 62 (2024)",
+      "published": "2024",
+      "summary": "FlameFinder learns paired RGB-thermal flame prototypes on unobscured UAV imagery and uses attentive center, triplet-center, and cosine metric losses to classify thermal patches behind smoke. It improves unobscured flame accuracy by 4.4 points on FLAME2 and 7 points on FLAME3 while reducing thermal hot-spot confusion.",
+      "tags": [
+        "visual fire and smoke detection",
+        "RGB-T fire detection",
+        "UAV wildfire",
+        "deep metric learning",
+        "smoke occlusion",
+        "safety-critical perception"
+      ],
+      "score": 95
+    }
   ]
 }

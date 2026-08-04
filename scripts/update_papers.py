@@ -2410,10 +2410,21 @@ def update_history(
         item for item in loaded_history if snapshot_date_text(item) != date_text
     ]
     curated_highlights = daily_curated_highlights(date_text)
+    historical_keys = history_highlight_keys(history)
+    duplicate_curated_titles = [
+        paper.title
+        for paper in curated_highlights
+        if not paper_identity_keys(paper).isdisjoint(historical_keys)
+    ]
+    if duplicate_curated_titles:
+        raise ValueError(
+            "Daily curation reuses historical deep-read paper(s): "
+            + "; ".join(duplicate_curated_titles)
+        )
     snapshot = make_snapshot(
         papers,
         now,
-        excluded_highlight_keys=history_highlight_keys(history),
+        excluded_highlight_keys=historical_keys,
         preserved_highlights=(
             curated_highlights
             or (
