@@ -1935,5 +1935,125 @@
       ],
       "score": 95
     }
+  ],
+  "2026-08-05": [
+    {
+      "title": "Detection-Friendly Nonuniformity Correction: A Union Framework for Infrared UAV Target Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Fang_Detection-Friendly_Nonuniformity_Correction_A_Union_Framework_for_Infrared_UAV_Target_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Fang_Detection-Friendly_Nonuniformity_Correction_A_Union_Framework_for_Infrared_UAV_Target_CVPR_2025_paper.pdf",
+      "authors": [
+        "Houzhang Fang",
+        "Xiaolin Wang",
+        "Zengyang Li",
+        "Lu Wang",
+        "Qingshan Li",
+        "Yi Chang",
+        "Luxin Yan"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "UniCD jointly optimizes infrared nonuniformity correction and UAV target detection instead of treating restoration as an independent front end. GBFE and LBFE estimate a smooth bias field, TEBS protects target evidence at four detector stages, and backbone representation alignment keeps corrected features close to clean-image features. On real IRBFD it reaches 0.994 precision and 0.901 recall; TEBS raises recall from 0.762 to 0.810.",
+      "tags": [
+        "UAV/small-object",
+        "infrared",
+        "degraded perception",
+        "joint restoration-detection",
+        "weak evidence"
+      ],
+      "score": 99
+    },
+    {
+      "title": "Quantifying and Enhancing Multi-modal Robustness with Modality Preference",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/45a9d4290ae75ceb752b2a61be1d2baa-Abstract-Conference.html",
+      "pdf": "https://proceedings.iclr.cc/paper_files/paper/2024/file/45a9d4290ae75ceb752b2a61be1d2baa-Paper-Conference.pdf",
+      "authors": [
+        "Zequn Yang",
+        "Yake Wei",
+        "Ce Liang",
+        "Di Hu"
+      ],
+      "source": "ICLR 2024",
+      "published": "2024",
+      "summary": "CRMT explains multimodal fragility through modality preference: a model can over-rely on the most informative modality, leaving other unimodal margins narrow and attacks on the preferred stream unusually effective. It derives certified multimodal and unimodal robustness bounds, introduces orthogonal unimodal classifiers, enlarges the unreliable-modality margin, and then adjusts modality integration to maximize the certified bound. On Kinetics-Sounds, CRMT-AT reports 0.626 accuracy when the preferred modality is missing and 0.464 under an L2 attack on that modality.",
+      "tags": [
+        "multimodal robustness",
+        "modality preference",
+        "missing modality",
+        "adversarial robustness",
+        "safety-critical perception"
+      ],
+      "score": 98
+    },
+    {
+      "title": "Open-Vocabulary Domain Generalization in Urban-Scene Segmentation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhao_Open-Vocabulary_Domain_Generalization_in_Urban-Scene_Segmentation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhao_Open-Vocabulary_Domain_Generalization_in_Urban-Scene_Segmentation_CVPR_2026_paper.pdf",
+      "authors": [
+        "Dong Zhao",
+        "Qi Zang",
+        "Nan Pu",
+        "Wenjing Li",
+        "Nicu Sebe",
+        "Zhun Zhong"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "S2-Corr defines open-vocabulary domain-generalized urban segmentation, where both the deployment domain and part of the vocabulary are unseen. It replaces noise-amplifying correlation attention with selective state-space aggregation, then adds image/text-conditioned modulation, a learnable geometric decay, and chunk-wise snake scanning. With a ViT-B backbone it reaches 50.3 and 47.9 mIoU on Dv-19 and Dv-58, improving the strongest prior results by 4.3 and 2.9 points.",
+      "tags": [
+        "open-vocabulary",
+        "domain generalization",
+        "urban segmentation",
+        "vision-language grounding",
+        "state-space model"
+      ],
+      "score": 97
+    },
+    {
+      "title": "H2ST: Hierarchical Two-Sample Tests for Continual Out-of-Distribution Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Liu_H2ST_Hierarchical_Two-Sample_Tests_for_Continual_Out-of-Distribution_Detection_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_H2ST_Hierarchical_Two-Sample_Tests_for_Continual_Out-of-Distribution_Detection_CVPR_2025_paper.pdf",
+      "authors": [
+        "Yuhang Liu",
+        "Wenjie Zhao",
+        "Yunhui Guo"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "H2ST reformulates continual OOD detection in task-incremental learning as a hierarchy of classifier two-sample tests. Each task-specific layer compares replayed source features with a target stream, updates a source-target classifier online, and uses a Clopper-Pearson interval for calibrated accept/reject decisions; early exit identifies the task while rejection by every layer marks OOD. With GEM it reports 89.12 F1 and 89.10 task accuracy, 23.23 and 20.40 points above the second-best method.",
+      "tags": [
+        "continual learning",
+        "anomaly/OOD",
+        "statistical testing",
+        "selective prediction",
+        "open-world"
+      ],
+      "score": 96
+    },
+    {
+      "title": "Object-centric Video Question Answering with Visual Grounding and Referring",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Wang_Object-centric_Video_Question_Answering_with_Visual_Grounding_and_Referring_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Wang_Object-centric_Video_Question_Answering_with_Visual_Grounding_and_Referring_ICCV_2025_paper.pdf",
+      "authors": [
+        "Haochen Wang",
+        "Qirui Chen",
+        "Cilin Yan",
+        "Jiayin Cai",
+        "Xiaolong Jiang",
+        "Yao Hu",
+        "Weidi Xie",
+        "Stratis Gavves"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "RGA3 unifies object-centric video question answering with spatial-temporal grounding. STOM propagates an arbitrary visual prompt from any timestamp and alpha-composites it onto every frame; Qwen2.5-VL then reasons over the overlaid video, while a SEG-token hidden state conditions a SAM2 decoder for masks. VideoInfer contains 1,620 videos and 28,811 QA pairs. RGA3-7B reaches 46.7 GPT-4o accuracy and 2.60 score, versus 43.6 and 2.46 without STOM.",
+      "tags": [
+        "video reasoning",
+        "visual grounding",
+        "object-centric",
+        "multimodal interaction",
+        "temporal perception"
+      ],
+      "score": 95
+    }
   ]
 }
