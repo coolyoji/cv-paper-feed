@@ -2055,5 +2055,121 @@
       ],
       "score": 95
     }
+  ],
+  "2026-08-06": [
+    {
+      "title": "Linking Modality Isolation in Heterogeneous Collaborative Perception",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liu_Linking_Modality_Isolation_in_Heterogeneous_Collaborative_Perception_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liu_Linking_Modality_Isolation_in_Heterogeneous_Collaborative_Perception_CVPR_2026_paper.pdf",
+      "authors": [
+        "Changxing Liu",
+        "Zichen Chao",
+        "Siheng Chen"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "CodeAlign studies modality isolation, where heterogeneous agents never co-occur in any training frame and correspondence-based alignment is therefore impossible. It learns per-modality codebooks and feature-code-feature translators that map a source feature into a target code map and decode it in the target feature space without paired scenes. Communicating discrete indices costs 0.03 MB, 1024 times less than 32 MB dense features; in three-modality collaboration it uses 8% of HEAL's alignment parameters and improves several DAIR-V2X AP30 results by more than eight points.",
+      "tags": [
+        "multimodal reliability",
+        "modality isolation",
+        "collaborative perception",
+        "missing co-occurrence",
+        "UAV/small-object"
+      ],
+      "score": 99
+    },
+    {
+      "title": "TTL: Test-time Textual Learning for OOD Detection with Pretrained Vision-Language Models",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ye_TTL_Test-time_Textual_Learning_for_OOD_Detection_with_Pretrained_Vision-Language_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ye_TTL_Test-time_Textual_Learning_for_OOD_Detection_with_Pretrained_Vision-Language_CVPR_2026_paper.pdf",
+      "authors": [
+        "Jinlun Ye",
+        "Jiang Liao",
+        "Runhe Lai",
+        "Xinhua Lu",
+        "Jiaxin Zhuang",
+        "Zhiyong Gan",
+        "Ruixuan Wang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "TTL adapts the textual side of a pretrained vision-language model to the unlabeled deployment stream instead of relying on a fixed negative-class vocabulary. It learns class-specific OOD prompts from pseudo-labeled samples, purifies low-confidence boundary cases, and accumulates reliable prompt features in an OOD Textual Knowledge Bank for cross-batch calibration. Across two standard protocols and nine OOD datasets, the authors report average gains of 12.67 FPR95 points and 3.94 AUROC points; on the ImageNet benchmark TTL reaches 12.46 FPR95 and 97.29 AUROC.",
+      "tags": [
+        "anomaly/OOD",
+        "test-time adaptation",
+        "vision-language model",
+        "open-world perception",
+        "selective prediction"
+      ],
+      "score": 98
+    },
+    {
+      "title": "SPAR: Single-Pass Any-Resolution ViT for Open-vocabulary Segmentation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Kombol_SPAR_Single-Pass_Any-Resolution_ViT_for_Open-vocabulary_Segmentation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kombol_SPAR_Single-Pass_Any-Resolution_ViT_for_Open-vocabulary_Segmentation_CVPR_2026_paper.pdf",
+      "authors": [
+        "Naomi Kombol",
+        "Ivan Martinovic",
+        "Sinisa Segvic",
+        "Giorgos Tolias"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "SPAR compresses the dense spatial quality of an overlapping sliding-window foundation-model teacher into a single-pass arbitrary-resolution ViT student. The frozen teacher stitches fine-grained window features, while the student regresses the aligned feature map on 25K unlabeled SA-1B images and normally updates only its final two transformer blocks. It improves SigLIP2 and OpenCLIP single-pass baselines by 10.5 and 6.7 mean-mIoU points on six open-vocabulary segmentation datasets while running up to 52 times faster than the sliding teacher.",
+      "tags": [
+        "open-vocabulary segmentation",
+        "high-resolution feature preservation",
+        "knowledge distillation",
+        "foundation model",
+        "UAV/small-object"
+      ],
+      "score": 97
+    },
+    {
+      "title": "PointSR: Self-Regularized Point Supervision for Drone-View Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_PointSR_Self-Regularized_Point_Supervision_for_Drone-View_Object_Detection_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_PointSR_Self-Regularized_Point_Supervision_for_Drone-View_Object_Detection_CVPR_2025_paper.pdf",
+      "authors": [
+        "Weizhuo Li",
+        "Yue Xi",
+        "Wenjing Jia",
+        "Zehao Zhang",
+        "Fei Li",
+        "Xiangzeng Liu",
+        "Qiguang Miao"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "PointSR addresses unstable pseudo-box generation from point labels in dense drone imagery. Its Temporal-Ensembling Encoder builds an epoch-spanning anchor prototype library, coarse prediction adjusts anchors and collects high-loss informative negatives, and refinement uses those negatives to suppress ambiguous positive proposals. It reaches AP50 values of 42.5, 38.7, and 35.0 on DroneVehicle, UAVDT, and VisDrone, improving the strongest reported point-supervised baselines by 7.2, 5.4, and 2.6 points while also reducing sensitivity to point perturbation.",
+      "tags": [
+        "UAV/small-object",
+        "point supervision",
+        "pseudo-box refinement",
+        "dense targets",
+        "weak supervision"
+      ],
+      "score": 96
+    },
+    {
+      "title": "SmokeBench: Evaluating Multimodal Large Language Models for Wildfire Smoke Detection",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.pdf",
+      "authors": [
+        "Tianye Qi",
+        "Weihao Li",
+        "Nick Barnes"
+      ],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "SmokeBench evaluates MLLMs on a progression from smoke classification to tile localization, grid localization, and bounding-box detection. It stratifies results by smoke area and Weber contrast, revealing that large smoke volume strongly improves recognition whereas contrast has a much smaller effect. GPT-4o reaches 0.931 classification accuracy for the very-large area bin, but localization remains weak and general-purpose box outputs are near zero IoU, exposing a safety-critical gap for transparent, amorphous early smoke.",
+      "tags": [
+        "visual fire and smoke detection",
+        "multimodal hazard understanding",
+        "foundation model evaluation",
+        "early wildfire warning",
+        "safety-critical perception"
+      ],
+      "score": 95
+    }
   ]
 }
