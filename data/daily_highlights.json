@@ -2171,5 +2171,130 @@
       ],
       "score": 95
     }
+  ],
+  "2026-08-07": [
+    {
+      "title": "ReasonGrounder: LVLM-Guided Hierarchical Feature Splatting for Open-Vocabulary 3D Visual Grounding and Reasoning",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Liu_ReasonGrounder_LVLM-Guided_Hierarchical_Feature_Splatting_for_Open-Vocabulary_3D_Visual_Grounding_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_ReasonGrounder_LVLM-Guided_Hierarchical_Feature_Splatting_for_Open-Vocabulary_3D_Visual_Grounding_CVPR_2025_paper.pdf",
+      "authors": [
+        "Zhenyang Liu",
+        "Yikai Wang",
+        "Sixiao Zheng",
+        "Tongying Pan",
+        "Longfei Liang",
+        "Yanwei Fu",
+        "Xiangyang Xue"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "ReasonGrounder separates implicit-language reasoning from 3D localization. An LVLM first rewrites a reasoning instruction into explicit object concepts; SAM masks and multi-view CLIP features are then distilled into scale-specific 3D Gaussian feature fields, whose hierarchical groups support both visible and occluded target localization. The accompanying ReasoningGD benchmark contains over 10K scenes and two million annotations. On the implicit subset, the paper reports 25.98 mIoU and 40.02 precision at IoU 0.25, substantially exceeding the strongest compared open-vocabulary 3D baseline.",
+      "tags": [
+        "grounded visual reasoning",
+        "open-vocabulary visual grounding",
+        "3D Gaussian splatting",
+        "amodal perception",
+        "foundation model"
+      ],
+      "score": 99
+    },
+    {
+      "title": "RobSense: A Robust Multi-modal Foundation Model for Remote Sensing with Static, Temporal, and Incomplete Data Adaptability",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Kha_RobSense_A_Robust_Multi-modal_Foundation_Model_for_Remote_Sensing_with_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kha_RobSense_A_Robust_Multi-modal_Foundation_Model_for_Remote_Sensing_with_CVPR_2025_paper.pdf",
+      "authors": [
+        "Minh Kha Do",
+        "Kang Han",
+        "Phu Lai",
+        "Khoa T. Phan",
+        "Wei Xiang"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "RobSense addresses remote-sensing models that assume a fixed set of complete multispectral and SAR observations. Phase one combines date-of-year encoding, symmetric temporal-distribution alignment, and masked reconstruction to learn a shared temporal multimodal representation. Phase two freezes that representation and trains latent reconstructors to recover complete features from missing bands or dates. It reports 46.36 mIoU for complete MS-SAR segmentation and 44.26 under random missing data, while BigEarthNet complete/random-missing mAP reaches 88.17/84.87.",
+      "tags": [
+        "missing modality learning",
+        "degraded multimodal perception",
+        "remote sensing",
+        "temporal representation",
+        "foundation model"
+      ],
+      "score": 98
+    },
+    {
+      "title": "Weakly Misalignment-free Adaptive Feature Alignment for UAVs-based Multimodal Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Chen_Weakly_Misalignment-free_Adaptive_Feature_Alignment_for_UAVs-based_Multimodal_Object_Detection_CVPR_2024_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Chen_Weakly_Misalignment-free_Adaptive_Feature_Alignment_for_UAVs-based_Multimodal_Object_Detection_CVPR_2024_paper.pdf",
+      "authors": [
+        "Chen Chen",
+        "Jiahao Qi",
+        "Xingyue Liu",
+        "Kangcheng Bin",
+        "Ruigang Fu",
+        "Xikun Hu",
+        "Ping Zhong"
+      ],
+      "source": "CVPR 2024",
+      "published": "2024",
+      "summary": "OAFA targets weak RGB-thermal registration in UAV detection without requiring offset labels. CSOM decomposes each modality into common and specific subspaces using central-moment similarity, difference, and auxiliary detection objectives; ODAF predicts a basic cross-modal offset plus local deformable offsets and modulation masks, then fuses aligned common and modality-specific features. A two-stage schedule prevents unstable alignment from corrupting early semantics. On DroneVehicle it reaches 79.4 mAP at IoU 0.4 and 33.1 FPS, 3.3 points above the reported runner-up.",
+      "tags": [
+        "UAV/small-object",
+        "RGB-T perception",
+        "multimodal alignment",
+        "dense targets",
+        "weak misregistration"
+      ],
+      "score": 97
+    },
+    {
+      "title": "WiSE-OD: Benchmarking Robustness in Infrared Object Detection",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Medeiros_WiSE-OD_Benchmarking_Robustness_in_Infrared_Object_Detection_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Medeiros_WiSE-OD_Benchmarking_Robustness_in_Infrared_Object_Detection_WACV_2026_paper.pdf",
+      "authors": [
+        "Heitor R. Medeiros",
+        "Atif Belal",
+        "Masih Aminbeidokhti",
+        "Eric Granger",
+        "Marco Pedersoli"
+      ],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "WiSE-OD introduces LLVIP-C and FLIR-C to measure infrared detector robustness across 14 corruptions, and separates synthetic corruption from natural day-to-fog/rain/night/indoor shifts on M3FD. Its deployment-time model linearly interpolates a broad RGB COCO endpoint with an infrared-adapted endpoint, producing one detector with no extra online inference. Faster R-CNN reaches 75.08/75.83 mPC on LLVIP-C for the zero-shot/linear-probe variants versus 56.40 for full fine-tuning, but still collapses on severe low contrast and is not an OOD rejection method.",
+      "tags": [
+        "safety-critical perception",
+        "degraded infrared perception",
+        "multimodal out-of-distribution",
+        "robust object detection",
+        "risk evaluation"
+      ],
+      "score": 96
+    },
+    {
+      "title": "SCOT: Self-Supervised Contrastive Pretraining for Zero-Shot Compositional Retrieval",
+      "url": "https://openaccess.thecvf.com/content/WACV2025/html/Jawade_SCOT_Self-Supervised_Contrastive_Pretraining_for_Zero-Shot_Compositional_Retrieval_WACV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2025/papers/Jawade_SCOT_Self-Supervised_Contrastive_Pretraining_for_Zero-Shot_Compositional_Retrieval_WACV_2025_paper.pdf",
+      "authors": [
+        "Bhavin Jawade",
+        "João V. B. Soares",
+        "Kapil Thadani",
+        "Deen Dayal Mohan",
+        "Amir Erfan Eshratifar",
+        "Benjamin Culpepper",
+        "Paloma de Juan",
+        "Srirangaraj Setlur",
+        "Venu Govindaraju"
+      ],
+      "source": "WACV 2025",
+      "published": "2025",
+      "summary": "SCOT learns compositional image retrieval without labeled query-image, modification-text, and target-image triplets. An LLM rewrites web image captions into source descriptions and relative modifications; a composition network combines the source image with the modification, while the frozen vision-language text embedding of the original caption serves as a proxy target. Contrastive training on large image-text pairs yields a transferable zero-shot composition function. The paper reports average FashionIQ R@10/R@50 of 34.08/56.38 and CIRR R@1 of 25.70, outperforming prior zero-shot methods and several supervised baselines.",
+      "tags": [
+        "compositional generalization",
+        "self-supervised learning",
+        "vision-language grounding",
+        "zero-shot retrieval",
+        "foundation model"
+      ],
+      "score": 95
+    }
   ]
 }
