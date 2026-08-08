@@ -2296,5 +2296,115 @@
       ],
       "score": 95
     }
+  ],
+  "2026-08-08": [
+    {
+      "title": "Geo3DVQA: Evaluating Vision-Language Models for 3D Geospatial Reasoning from Aerial Imagery",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Tsujimoto_Geo3DVQA_Evaluating_Vision-Language_Models_for_3D_Geospatial_Reasoning_from_Aerial_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Tsujimoto_Geo3DVQA_Evaluating_Vision-Language_Models_for_3D_Geospatial_Reasoning_from_Aerial_WACV_2026_paper.pdf",
+      "authors": [
+        "Mai Tsujimoto",
+        "Junjue Wang",
+        "Weihao Xuan",
+        "Naoto Yokoya"
+      ],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "Three-dimensional geospatial analysis is critical to applications in urban planning, climate adaptation, and environmental assessment. Current methodologies depend on costly, specialized sensors (e.g., LiDAR and multispectral), which restrict global accessibility. Existing sensor-based and rule-driven methods further struggle with tasks requiring the integration of multiple 3D cues, handling diverse queries, and providing interpretable reasoning. We hereby present Geo3DVQA, a comprehensive benchmark for evaluating vision-language models (VLMs) in height-aware, 3D geospatial reasoning using RGB-only remote sensing imagery. Unlike conventional sensor-based frameworks, Geo3DVQA emphasizes realistic scenarios that integrate elevation, sky view factors, and land cover patterns. The benchmark encompasses 110k curated question-answer pairs spanning 16 task categories across three complexity levels: single-feature inference, multi-feature reasoning, and application-level spatial analysis. The evaluation of ten state-of-the-art VLMs highlights the difficulty of RGB-to-3D reasoning. GPT-4o and Gemini-2.5-Flash achieved only 28.6% and 33.0% accuracy respectively, while domain-specific fine-tuning of Qwen2.5-VL-7B achieved 49.6% (+24.8 points). These results reveal both the limitations of current VLMs and the effectiveness of domain adaptation. Geo3DVQA introduces a new frontier of challenges for scalable, accessible, and holistic 3D geospatial analysis. The dataset and code will be released upon publication at https://github.com/mm1129/Geo3DVQA.",
+      "tags": [
+        "VLM/MLLM",
+        "reasoning",
+        "depth/geometry",
+        "remote sensing",
+        "UAV/small-object",
+        "domain adaptation"
+      ],
+      "score": 91
+    },
+    {
+      "title": "UCDSC: Open Set UnCertainty aware Deep Simplex Classifier for Medical Image Datasets",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Aditya_UCDSC_Open_Set_UnCertainty_aware_Deep_Simplex_Classifier_for_Medical_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Aditya_UCDSC_Open_Set_UnCertainty_aware_Deep_Simplex_Classifier_for_Medical_WACV_2026_paper.pdf",
+      "authors": [
+        "Arnav Aditya",
+        "Nitin Kumar",
+        "Saurabh Shigwan"
+      ],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "Driven by advancements in deep learning, computer-aided diagnoses have made remarkable progress. However, outside controlled laboratory settings, algorithms may encounter several challenges. In the medical domain, these difficulties often stem from limited data availability due to ethical and legal restrictions, as well as the high cost and time required for expert annotations--especially in the face of emerging or rare diseases. In this context, open-set recognition plays a vital role by identifying whether a sample belongs to one of the known classes seen during training or should be rejected as an unknown. Recent studies have shown that features learned in the later stages of deep neural networks are observed to cluster around their class means, which themselves are arranged as individual vertices of a regular simplex [32]. The proposed method introduces a loss function designed to reject samples of unknown classes effectively by penalizing open space regions using auxiliary datasets. This approach achieves significant performance gain across four MedMNIST datasets--BloodMNIST, OCTMNIST, DermaMNIST, TissueMNIST and a publicly available skin dataset[29] outperforming state-of-the-art techniques.",
+      "tags": [
+        "anomaly/OOD",
+        "uncertainty/calibration",
+        "open-world",
+        "medical imaging"
+      ],
+      "score": 83
+    },
+    {
+      "title": "Unified Framework for Open-World Compositional Zero-Shot Learning",
+      "url": "https://openaccess.thecvf.com/content/WACV2025/html/Jayasekara_Unified_Framework_for_Open-World_Compositional_Zero-Shot_Learning_WACV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2025/papers/Jayasekara_Unified_Framework_for_Open-World_Compositional_Zero-Shot_Learning_WACV_2025_paper.pdf",
+      "authors": [
+        "Hirunima Jayasekara",
+        "Khoi Pham",
+        "Nirat Saini",
+        "Abhinav Shrivastava"
+      ],
+      "source": "WACV 2025",
+      "published": "2025",
+      "summary": "Open-World Compositional Zero-Shot Learning (OW-CZSL) addresses the challenge of recognizing novel compositions of known primitives and entities. Even though prior works utilize language knowledge for recognition such approaches exhibit limited interactions between language-image modalities. Our approach primarily focuses on enhancing the inter-modality interactions through fostering richer interactions between image and textual data. Additionally we introduce a novel module aimed at alleviating the computational burden associated with exhaustive exploration of all possible compositions during the inference stage. While previous methods exclusively learn compositions jointly or independently we introduce an advanced hybrid procedure that leverages both learning mechanisms to generate final predictions. Our proposed model achieves state-of-the-art in OW-CZSL in three datasets while surpassing Large Vision Language Models (LLVM) in two datasets. Our code is available at https://github.com/hirunima/OWCZSL",
+      "tags": [
+        "open-world",
+        "compositionality",
+        "VLM/MLLM",
+        "reasoning",
+        "representation learning"
+      ],
+      "score": 77
+    },
+    {
+      "title": "UNO: Unifying One-stage Video Scene Graph Generation via Object-Centric Visual Representation Learning",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Le_UNO_Unifying_One-stage_Video_Scene_Graph_Generation_via_Object-Centric_Visual_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Le_UNO_Unifying_One-stage_Video_Scene_Graph_Generation_via_Object-Centric_Visual_WACV_2026_paper.pdf",
+      "authors": [
+        "Huy Le",
+        "Nhat Chung",
+        "Tung Kieu",
+        "Jingkang Yang",
+        "Ngan Le"
+      ],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "Video Scene Graph Generation (VidSGG) aims to represent dynamic visual content by detecting objects and modeling their temporal interactions as structured graphs. Prior studies typically target either coarse-grained box-level or fine-grained panoptic pixel-level VidSGG, often requiring task-specific architectures and multi-stage training pipelines. In this paper, we present UNO (UNified Object-centric VidSGG), a single-stage, unified framework that jointly addresses both tasks within an end-to-end architecture. UNO is designed to minimize task-specific modifications and maximize parameter sharing, enabling generalization across different levels of visual granularity. The core of UNO is an extended slot attention mechanism that decomposes visual features into object and relation slots. To ensure robust temporal modeling, we introduce object temporal consistency learning, which enforces consistent object representations across frames without relying on explicit tracking modules. Additionally, a dynamic triplet prediction module links relation slots to corresponding object pairs, capturing evolving interactions over time. We evaluate UNO on standard box-level and pixel-level VidSGG benchmarks. Results demonstrate that UNO not only achieves competitive performance across both tasks but also offers improved efficiency through a unified, object-centric design.",
+      "tags": [
+        "video",
+        "object-centric",
+        "representation learning",
+        "reasoning",
+        "foundation model"
+      ],
+      "score": 83
+    },
+    {
+      "title": "MUSE: Model-based Uncertainty-aware Similarity Estimation for zero-shot 2D Object Detection and Segmentation",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Cho_MUSE_Model-based_Uncertainty-aware_Similarity_Estimation_for_zero-shot_2D_Object_Detection_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Cho_MUSE_Model-based_Uncertainty-aware_Similarity_Estimation_for_zero-shot_2D_Object_Detection_WACV_2026_paper.pdf",
+      "authors": [
+        "Sungmin Cho",
+        "Sungbum Park",
+        "Insoo Oh"
+      ],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "MUSE 在无需训练的 BOP 零样本检测/分割中，把 Grounding DINO 与 SAM2 候选、DINOv2 全局和局部特征、GeM 聚合、跨类别相对相似度及候选 objectness 先验组合成可解释排序，在 BOP 2025 Classic Core 上报告检测 AP 0.533、分割 AP 0.525。",
+      "tags": [
+        "open-vocabulary",
+        "training-free",
+        "uncertainty/calibration",
+        "object discovery"
+      ],
+      "score": 94
+    }
   ]
 }
