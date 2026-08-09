@@ -2406,5 +2406,121 @@
       ],
       "score": 94
     }
+  ],
+  "2026-08-09": [
+    {
+      "title": "UniGeoSeg: Towards Unified Open-World Segmentation for Geospatial Scenes",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ni_UniGeoSeg_Towards_Unified_Open-World_Segmentation_for_Geospatial_Scenes_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ni_UniGeoSeg_Towards_Unified_Open-World_Segmentation_for_Geospatial_Scenes_CVPR_2026_paper.pdf",
+      "authors": [
+        "Shuo Ni",
+        "Di Wang",
+        "He Chen",
+        "Haonan Guo",
+        "Ning Zhang",
+        "Jing Zhang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "Instruction-driven segmentation in remote sensing generates masks from guidance, offering great potential for accessible and generalizable applications. Existing methods, however, fragment referring, interactive, and reasoning segmentation and lack sufficiently broad instruction data. UniGeoSeg introduces GeoSeg-1M with 590K images, 117 categories, and 1.1M image-mask-instruction triplets, then combines task-aware text enhancement, latent knowledge memory, and progressive training in one framework. It achieves state-of-the-art results on GeoSeg-Bench and public benchmarks while showing strong zero-shot generalization.",
+      "tags": [
+        "remote sensing",
+        "open-world",
+        "reasoning",
+        "visual grounding",
+        "UAV/small-object"
+      ],
+      "score": 97
+    },
+    {
+      "title": "Prior2Former - Evidential Modeling of Mask Transformers for Assumption-Free Open-World Panoptic Segmentation",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Schmidt_Prior2Former_-_Evidential_Modeling_of_Mask_Transformers_for_Assumption-Free_Open-World_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Schmidt_Prior2Former_-_Evidential_Modeling_of_Mask_Transformers_for_Assumption-Free_Open-World_ICCV_2025_paper.pdf",
+      "authors": [
+        "Sebastian Schmidt",
+        "Julius Korner",
+        "Dominik Fuchsgruber",
+        "Stefano Gasperini",
+        "Federico Tombari",
+        "Stephan Gunnemann"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "Prior2Former extends Mask2Former with evidential Beta priors over pixel-wise binary mask assignments. It estimates positive and negative evidence for each mask, samples uncertain pixels during training, and combines mask evidence with class confidence to identify and cluster unknown objects. Unlike most open-world segmentation systems, it uses neither OOD samples, void-class supervision, nor external foundation models. Experiments on Cityscapes, COCO, SegmentMeIfYouCan, and OoDIS report state-of-the-art anomaly-instance and open-world panoptic results under this assumption-free setting.",
+      "tags": [
+        "open-world",
+        "uncertainty/calibration",
+        "anomaly/OOD",
+        "safety-critical perception",
+        "segmentation"
+      ],
+      "score": 96
+    },
+    {
+      "title": "SCOD: From Heuristics to Theory",
+      "url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/11303_ECCV_2024_paper.php",
+      "pdf": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/11303.pdf",
+      "authors": [
+        "Vojtech Franc",
+        "Jakub Paplham",
+        "Daniel Prusa"
+      ],
+      "source": "ECCV 2024",
+      "published": "2024",
+      "summary": "SCOD studies selective classification when test data mixes in-distribution examples, including hard misclassifications, with out-of-distribution samples. The paper proves that the optimal selector is a stochastic linear rule in a two-dimensional space defined by conditional classification risk and the OOD-to-ID likelihood ratio, and that ID data alone is insufficient for distribution-free PAC learning. POSCOD estimates this rule from labeled ID data plus an unlabeled ID/OOD mixture and substantially improves risk-coverage behavior over single-score OOD methods and SIRC.",
+      "tags": [
+        "selective prediction",
+        "risk control",
+        "anomaly/OOD",
+        "uncertainty/calibration",
+        "safety-critical perception"
+      ],
+      "score": 95
+    },
+    {
+      "title": "SimMLM: A Simple Framework for Multi-modal Learning with Missing Modality",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Li_SimMLM_A_Simple_Framework_for_Multi-modal_Learning_with_Missing_Modality_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Li_SimMLM_A_Simple_Framework_for_Multi-modal_Learning_with_Missing_Modality_ICCV_2025_paper.pdf",
+      "authors": [
+        "Sijie Li",
+        "Chen Chen",
+        "Jungong Han"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "SimMLM addresses deployment-time modality absence without synthesizing missing data or imposing a task-specific fusion architecture. A Dynamic Mixture of Modality Experts processes available inputs with modality-specific experts and a learned gate, while the More-vs-Fewer ranking loss enforces that adding modalities should not worsen task loss. Across BraTS 2018 segmentation and UPMC Food-101 and avMNIST classification, the framework improves complete- and missing-modality accuracy, robustness, interpretability, and reliability over competitive methods.",
+      "tags": [
+        "missing modality learning",
+        "multimodal reliability",
+        "medical imaging",
+        "degraded multimodal perception",
+        "robustness"
+      ],
+      "score": 94
+    },
+    {
+      "title": "Text-IRSTD: Leveraging Semantic Text to Promote Infrared Small Target Detection in Complex Scenes",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Huang_Text-IRSTD_Leveraging_Semantic_Text_to_Promote_Infrared_Small_Target_Detection_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Huang_Text-IRSTD_Leveraging_Semantic_Text_to_Promote_Infrared_Small_Target_Detection_ICCV_2025_paper.pdf",
+      "authors": [
+        "Feng Huang",
+        "Shuyuan Zheng",
+        "Zhaobing Qiu",
+        "Huanxian Liu",
+        "Huanxin Bai",
+        "Liqiong Chen"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "Text-IRSTD reformulates infrared small-target detection as text-guided segmentation because a few bright pixels often cannot distinguish targets from clutter. It introduces fuzzy prompts that describe the interested region and scene rather than an unreliable object class, and a progressive cross-modal semantic interaction decoder with text-guided feature aggregation and semantic interaction blocks. The accompanying FZDT benchmark contains 2,755 infrared images with fuzzy text annotations; experiments report stronger contour recovery, clutter suppression, and cross-dataset generalization.",
+      "tags": [
+        "infrared small target",
+        "visual grounding",
+        "UAV/small-object",
+        "multimodal perception",
+        "remote sensing"
+      ],
+      "score": 93
+    }
   ]
 }

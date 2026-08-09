@@ -147,3 +147,29 @@ The exact non-duplicate deep-reading queue is:
 All five PDFs passed page-count/signature/text preflight and were checked beyond the abstract. The queue deliberately joins progressive weak supervision, temporal uncertainty estimation, UAV-specific synthetic data, missing-modality temporal routing, and a direct visible-thermal fire anchor. A release-stage audit caught two initially proposed historical highlights and replaced them with PAL and U2Flow; the final five have zero prior deep-reading matches in both the historical highlight set and the F-drive download index.
 
 Strong retained candidates include *SkySense V2*, *SegEarth-OV*, MD2N, Synergistic Prompting, missing-modality semi-supervised segmentation, RGBT-3M, MISSRAG, and GroundingME. They remain in the dedicated UAV, fire, reliability, or grounding sections rather than being forced into the five. The complete evidence and exclusion rationale is in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-04\2026-08-04-检索与筛选报告.md`.
+
+---
+
+# Verified Daily Search Update - 2026-08-09
+
+The expanded project scan ran with `DEEP_SOURCE_SCAN=1`: arXiv returned 865 records, CVF accumulated 10,268 raw records, Crossref accumulated 11,066 raw records, and 10,720 cached candidates were merged. Semantic Scholar entered degraded mode after three 429 responses, and one Remote Sensing of Environment Crossref query returned 429. These source clusters remain cached for the next run.
+
+An independent six-source Paper Search queried `open-world segmentation selective prediction missing modality infrared small target visual grounding` for 2023–2026. OpenReview was unavailable because `openreview-py` is not installed; DBLP returned HTTP 500; OpenAlex returned HTTP 504; Semantic Scholar returned no record. The complete returned discovery set was:
+
+## Crossref results
+
+1. [Modality Discrepancy Reduction for Visible-Infrared Person Re-Identification under Complete Modality Missing](https://doi.org/10.21203/rs.3.rs-4142107/v1)
+2. [LW-IRSTNet: Lightweight Infrared Small Target Segmentation Network, version 1](https://doi.org/10.36227/techrxiv.22280995.v1)
+3. [LW-IRSTNet: Lightweight Infrared Small Target Segmentation Network, version 2](https://doi.org/10.36227/techrxiv.22280995.v2)
+4. [LW-IRSTNet: Lightweight Infrared Small Target Segmentation Network, version 3](https://doi.org/10.36227/techrxiv.22280995.v3)
+5. [Temporal Segmentation Modeling with Sample Augmentation for Moving Infrared Small Target Detection](https://doi.org/10.2139/ssrn.5181885)
+
+## arXiv results
+
+1. [MiM-ISTD: Mamba-in-Mamba for Efficient Infrared Small Target Detection](http://arxiv.org/abs/2403.02148v4)
+2. [Rethinking Generalizable Infrared Small Target Detection: A Real-scene Benchmark and Cross-view Representation Learning](http://arxiv.org/abs/2504.16487v1)
+3. [AdaMSS: Adaptive Multi-Modality Segmentation-to-Survival Learning for Survival Outcome Prediction from PET/CT Images](http://arxiv.org/abs/2305.09946v3)
+4. [DEGround: An Effective Baseline for Ego-centric 3D Visual Grounding with a Homogeneous Framework](http://arxiv.org/abs/2506.05199v3)
+5. [Lidar Panoptic Segmentation in an Open World](http://arxiv.org/abs/2409.14273v1)
+
+None of these discovery-only records was promoted solely from a title or search abstract. The final verified, historically non-duplicate queue is UniGeoSeg (CVPR 2026), Prior2Former (ICCV 2025), SCOD (ECCV 2024), SimMLM (ICCV 2025), and Text-IRSTD (ICCV 2025); all five were selected only after official full-PDF reading and page-integrity checks. Full evidence and exclusions are in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-09\2026-08-09-检索与筛选报告.md`.
