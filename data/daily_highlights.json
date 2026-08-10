@@ -2522,5 +2522,135 @@
       ],
       "score": 93
     }
+  ],
+  "2026-08-10": [
+    {
+      "title": "FE-CLIP: Frequency Enhanced CLIP Model for Zero-Shot Anomaly Detection and Segmentation",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Gong_FE-CLIP_Frequency_Enhanced_CLIP_Model_for_Zero-Shot_Anomaly_Detection_and_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Gong_FE-CLIP_Frequency_Enhanced_CLIP_Model_for_Zero-Shot_Anomaly_Detection_and_ICCV_2025_paper.pdf",
+      "authors": [
+        "Tao Gong",
+        "Qi Chu",
+        "Bin Liu",
+        "Wei Zhou",
+        "Nenghai Yu"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "FE-CLIP injects localized frequency evidence into a frozen CLIP visual encoder through complementary DCT reconstruction and frequency-statistics adapters. It improves zero-shot anomaly classification and segmentation across industrial and medical datasets while training only lightweight adapters.",
+      "tags": [
+        "anomaly/OOD",
+        "boundary/frequency",
+        "zero-shot",
+        "medical imaging",
+        "safety-critical perception"
+      ],
+      "score": 95
+    },
+    {
+      "title": "Synthesizing Near-Boundary OOD Samples for Out-of-Distribution Detection",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Li_Synthesizing_Near-Boundary_OOD_Samples_for_Out-of-Distribution_Detection_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Li_Synthesizing_Near-Boundary_OOD_Samples_for_Out-of-Distribution_Detection_ICCV_2025_paper.pdf",
+      "authors": [
+        "Jinglun Li",
+        "Kaixun Jiang",
+        "Zhaoyu Chen",
+        "Bo Lin",
+        "Yao Tang",
+        "Weifeng Ge",
+        "Wenqiang Zhang"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "SynOOD generates hard OOD samples near the in-distribution boundary by iteratively optimizing diffusion noise against an OOD score, then uses the paired samples to adapt CLIP image projections and negative text features. The design targets the boundary cases that conventional far-OOD negatives fail to represent.",
+      "tags": [
+        "anomaly/OOD",
+        "synthetic data",
+        "foundation models",
+        "risk control",
+        "safety-critical perception"
+      ],
+      "score": 94
+    },
+    {
+      "title": "Talking to DINO: Bridging Self-Supervised Vision Backbones with Language for Open-Vocabulary Segmentation",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Barsellotti_Talking_to_DINO_Bridging_Self-Supervised_Vision_Backbones_with_Language_for_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Barsellotti_Talking_to_DINO_Bridging_Self-Supervised_Vision_Backbones_with_Language_for_ICCV_2025_paper.pdf",
+      "authors": [
+        "Luca Barsellotti",
+        "Lorenzo Bianchi",
+        "Nicola Messina",
+        "Fabio Carrara",
+        "Marcella Cornia",
+        "Lorenzo Baraldi",
+        "Fabrizio Falchi",
+        "Rita Cucchiara"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "Talk2DINO nonlinearly warps CLIP text embeddings into DINOv2's dense visual space using image-caption supervision and DINO attention heads as region selectors. The frozen backbones then support open-vocabulary segmentation, with a separate attention-based background cleaning procedure.",
+      "tags": [
+        "open-vocabulary",
+        "visual grounding",
+        "self-supervised",
+        "segmentation",
+        "foundation models"
+      ],
+      "score": 93
+    },
+    {
+      "title": "Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhan_Rotation_Invariant_and_Symmetry_Aware_Pixel_Difference_Network_for_Remote_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhan_Rotation_Invariant_and_Symmetry_Aware_Pixel_Difference_Network_for_Remote_CVPR_2026_paper.pdf",
+      "authors": [
+        "Jialei Zhan",
+        "Li Liu",
+        "Jiehua Zhang",
+        "Yuhang Xie",
+        "Yongxiang Liu",
+        "Jiangming Chen",
+        "Ming-Ming Cheng"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "RIS-PiDiNet builds remote-sensing detectors around a rotation-invariant, symmetry-aware pixel-difference convolution. Polar harmonic kernels model continuous rotations, discrete response averaging approximates invariance, and symmetry-aware local differences preserve structure under rotation and partial occlusion.",
+      "tags": [
+        "remote sensing",
+        "UAV/small-object",
+        "rotation invariance",
+        "occlusion",
+        "object detection"
+      ],
+      "score": 92
+    },
+    {
+      "title": "Delving Aleatoric Uncertainty in Medical Image Segmentation via Vision Foundation Models",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_Delving_Aleatoric_Uncertainty_in_Medical_Image_Segmentation_via_Vision_Foundation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_Delving_Aleatoric_Uncertainty_in_Medical_Image_Segmentation_via_Vision_Foundation_CVPR_2026_paper.pdf",
+      "authors": [
+        "Ruiyang Li",
+        "Fang Liu",
+        "Licheng Jiao",
+        "Xinglin Xie",
+        "Jiayao Hao",
+        "Shuo Li",
+        "Xu Liu",
+        "Jingyi Yang",
+        "Lingling Li",
+        "Puhua Chen",
+        "Wenping Ma"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "This work estimates sample-level aleatoric uncertainty from the singular-value energy distribution of frozen medical foundation-model features. The resulting score supports noisy-sample filtering and a dynamic uncertainty-aware objective that combines class reweighting with learnable label denoising.",
+      "tags": [
+        "uncertainty/calibration",
+        "medical imaging",
+        "foundation models",
+        "data quality",
+        "segmentation"
+      ],
+      "score": 91
+    }
   ]
 }

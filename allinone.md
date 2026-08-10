@@ -173,3 +173,23 @@ An independent six-source Paper Search queried `open-world segmentation selectiv
 5. [Lidar Panoptic Segmentation in an Open World](http://arxiv.org/abs/2409.14273v1)
 
 None of these discovery-only records was promoted solely from a title or search abstract. The final verified, historically non-duplicate queue is UniGeoSeg (CVPR 2026), Prior2Former (ICCV 2025), SCOD (ECCV 2024), SimMLM (ICCV 2025), and Text-IRSTD (ICCV 2025); all five were selected only after official full-PDF reading and page-integrity checks. Full evidence and exclusions are in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-09\2026-08-09-检索与筛选报告.md`.
+
+---
+
+# Verified Daily Search Update - 2026-08-10
+
+The expanded project scan ran with `DEEP_SOURCE_SCAN=1`. It returned 18 arXiv records, accumulated 9,421 CVF raw records and 10,221 Crossref raw records, merged 10,727 cached candidates, and formed a final pool of 10,730 records. arXiv COD/concealed-object queries entered degraded mode after HTTP 429, timeout, and 503 failures; Semantic Scholar entered degraded mode after three HTTP 429 responses on the safety, multimodal, and open-world clusters. Those clusters remain in the cache and next-run plan.
+
+The independent six-source Paper Search produced 160 source records and 154 unique titles; 150 were not exact historical deep-reading duplicates. It recorded 16 source errors: six missing-OpenReview-dependency failures, five arXiv timeouts, three OpenAlex 504 responses, and two DBLP 500 responses. Complete stdout, stderr, candidates, and error records are retained under `D:\Codex输出\daily-cv-literature-feed-update\research\2026-08-10\paper-search`.
+
+The final queue was deduplicated against 164 normalized historical titles from feed history, daily highlights, and the F-drive download index:
+
+1. **FE-CLIP: Frequency Enhanced CLIP Model for Zero-Shot Anomaly Detection and Segmentation** (ICCV 2025)
+2. **Synthesizing Near-Boundary OOD Samples for Out-of-Distribution Detection** (ICCV 2025)
+3. **Talking to DINO: Bridging Self-Supervised Vision Backbones with Language for Open-Vocabulary Segmentation** (ICCV 2025)
+4. **Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection** (CVPR 2026)
+5. **Delving Aleatoric Uncertainty in Medical Image Segmentation via Vision Foundation Models** (CVPR 2026)
+
+All five official main PDFs passed signature, page-count, page-enumeration, and reader-count preflight. Official supplements were also obtained and passed for FE-CLIP, Talk2DINO, RIS-PiDiNet, and the AUV medical-segmentation paper; the official SynOOD page does not expose a supplement. The queue deliberately combines frequency evidence, near-boundary hard-negative synthesis, dense vision-language alignment, aerial rotation/symmetry, and data-level uncertainty instead of filling the list with direct COD papers.
+
+RIS-PiDiNet is the direct UAV/remote-sensing anchor. RareSpot+, MANTA, prompt-free remote-sensing open-world detection, TAIS-Net, UAV-OVVIS, and RIS-LAD remain in the dedicated aerial section. Strong fire candidates include spatiotemporal wildfire forecasting, AusSmoke/MultiNatSmoke, RGB-T distillation, on-orbit MWIR detection, uncertainty-aware smoke-density classification, and UAV teacher-student segmentation; none was forced into the five because full-text strength, venue status, or method novelty was insufficient relative to the selected set. The complete evidence and exclusion rationale is in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-10\2026-08-10-检索与筛选报告.md`.
