@@ -2652,5 +2652,126 @@
       ],
       "score": 91
     }
+  ],
+  "2026-08-11": [
+    {
+      "title": "ANTS: Adaptive Negative Textual Space Shaping for OOD Detection via Test-Time MLLM Understanding and Reasoning",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhu_ANTS_Adaptive_Negative_Textual_Space_Shaping_for_OOD_Detection_via_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhu_ANTS_Adaptive_Negative_Textual_Space_Shaping_for_OOD_Detection_via_CVPR_2026_paper.pdf",
+      "authors": [
+        "Wenjie Zhu",
+        "Yabin Zhang",
+        "Xin Jin",
+        "Wenjun Zeng",
+        "Lei Zhang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "ANTS uses cached test-time evidence and an MLLM to build complementary expressive-sentence and visually-similar negative-label spaces, then adapts their weighting for near- and far-OOD detection without parameter training.",
+      "tags": [
+        "anomaly/OOD",
+        "VLM/MLLM",
+        "test-time reasoning",
+        "selective prediction",
+        "safety-critical perception"
+      ],
+      "score": 96
+    },
+    {
+      "title": "ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Niu_ReAttnCLIP_Training-Free_Open-Vocabulary_Remote_Sensing_Image_Segmentation_via_Re-defined_Attention_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Niu_ReAttnCLIP_Training-Free_Open-Vocabulary_Remote_Sensing_Image_Segmentation_via_Re-defined_Attention_CVPR_2026_paper.pdf",
+      "authors": [
+        "Xin Niu",
+        "Manqi Zhao",
+        "Dongsheng Jiang",
+        "Yingying Wu",
+        "Bing Su"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "ReAttnCLIP redefines the final CLIP attention map with rotation-aware intermediate patch similarity, an intermediate-layer global token reconstruction, and removal of global-to-local bias for training-free remote-sensing segmentation.",
+      "tags": [
+        "open-vocabulary",
+        "training-free",
+        "remote sensing",
+        "UAV/small-object",
+        "visual grounding"
+      ],
+      "score": 95
+    },
+    {
+      "title": "Hyperbolic Prototype Learning with Uncertainty-Aware Consistency for Continual Test-Time Segmentation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Gole_Hyperbolic_Prototype_Learning_with_Uncertainty-Aware_Consistency_for_Continual_Test-Time_Segmentation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Gole_Hyperbolic_Prototype_Learning_with_Uncertainty-Aware_Consistency_for_Continual_Test-Time_Segmentation_CVPR_2026_paper.pdf",
+      "authors": [
+        "Siddhant Gole",
+        "Akash Pal",
+        "Amit More",
+        "S Divakar Bhat",
+        "Subhasis Chaudhuri",
+        "Biplab Banerjee"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "HyperProtoSeg places class prototypes in a Poincare ball and couples confident-region geodesic matching with conservative tangent-direction alignment at uncertain boundaries for continual source-free adaptation.",
+      "tags": [
+        "continual adaptation",
+        "uncertainty/calibration",
+        "hyperbolic learning",
+        "segmentation",
+        "safety-critical perception"
+      ],
+      "score": 94
+    },
+    {
+      "title": "SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Lu_SegCompass_Exploring_Interpretable_Alignment_with_Sparse_Autoencoders_for_Enhanced_Reasoning_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Lu_SegCompass_Exploring_Interpretable_Alignment_with_Sparse_Autoencoders_for_Enhanced_Reasoning_CVPR_2026_paper.pdf",
+      "authors": [
+        "Zhenyu Lu",
+        "Liupeng Li",
+        "Jinpeng Wang",
+        "Haoqian Kang",
+        "Yan Feng",
+        "Ke Chen",
+        "Yaowei Wang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "SegCompass turns MLLM reasoning states into sparse concepts through a sparse autoencoder, maps them to inspectable multi-slot heatmaps, and jointly trains language reasoning and mask prediction with GRPO and segmentation supervision.",
+      "tags": [
+        "grounded reasoning",
+        "reasoning segmentation",
+        "sparse autoencoder",
+        "interpretability",
+        "VLM/MLLM"
+      ],
+      "score": 93
+    },
+    {
+      "title": "Adaptive 3D Perception for Small Aerial Targets Under Sparse Sampling via Reinforcement Learning",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yuan_Adaptive_3D_Perception_for_Small_Aerial_Targets_Under_Sparse_Sampling_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yuan_Adaptive_3D_Perception_for_Small_Aerial_Targets_Under_Sparse_Sampling_CVPR_2026_paper.pdf",
+      "authors": [
+        "Shenghai Yuan",
+        "Wei Yihan",
+        "Jason Yee",
+        "Zhuoran Qiao",
+        "Boyang Lou",
+        "Enwen Hu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "A3PRL builds temporal-dispersion and velocity-change proposals from sparse LiDAR, then uses a test-time label-free RL policy to coordinate voxel scale, detection thresholds, quantile acceptance, and association gates.",
+      "tags": [
+        "UAV/small-object",
+        "sparse LiDAR",
+        "reinforcement learning",
+        "3D tracking",
+        "active perception"
+      ],
+      "score": 92
+    }
   ]
 }

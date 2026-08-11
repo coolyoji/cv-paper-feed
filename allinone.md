@@ -193,3 +193,21 @@ The final queue was deduplicated against 164 normalized historical titles from f
 All five official main PDFs passed signature, page-count, page-enumeration, and reader-count preflight. Official supplements were also obtained and passed for FE-CLIP, Talk2DINO, RIS-PiDiNet, and the AUV medical-segmentation paper; the official SynOOD page does not expose a supplement. The queue deliberately combines frequency evidence, near-boundary hard-negative synthesis, dense vision-language alignment, aerial rotation/symmetry, and data-level uncertainty instead of filling the list with direct COD papers.
 
 RIS-PiDiNet is the direct UAV/remote-sensing anchor. RareSpot+, MANTA, prompt-free remote-sensing open-world detection, TAIS-Net, UAV-OVVIS, and RIS-LAD remain in the dedicated aerial section. Strong fire candidates include spatiotemporal wildfire forecasting, AusSmoke/MultiNatSmoke, RGB-T distillation, on-orbit MWIR detection, uncertainty-aware smoke-density classification, and UAV teacher-student segmentation; none was forced into the five because full-text strength, venue status, or method novelty was insufficient relative to the selected set. The complete evidence and exclusion rationale is in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-10\2026-08-10-检索与筛选报告.md`.
+
+---
+
+# Verified Daily Search Update - 2026-08-11
+
+The expanded project scan ran with `DEEP_SOURCE_SCAN=1`. It accumulated 9,403 raw CVF records and 10,202 cumulative Crossref records, merged 10,730 cached candidates, and retained 10,561 historically new titles after exact normalized-title exclusion. arXiv COD discovery degraded after HTTP 429, timeout, and another 429; Semantic Scholar degraded after three HTTP 429 responses on the safety-critical, multimodal-hazard, and open-world-multimodal clusters. These failures are recorded in the retained search artifacts and the affected clusters remain in the next-run plan.
+
+The independent Paper Search produced 100 source records and 93 normalized unique titles, of which 91 were not exact historical deep-reading duplicates. It recorded 19 source failures and 120 rate-limit notices: OpenReview was unavailable because its client dependency is not installed, DBLP returned HTTP 503, OpenAlex returned HTTP 504, and arXiv timed out or returned HTTP 429. Final promotion therefore relied on official CVF pages and the actual main and supplemental PDFs rather than title matches or discovery snippets.
+
+The final queue was deduplicated against 169 normalized historical titles from feed history, daily highlights, and the download index:
+
+1. **ANTS: Adaptive Negative Textual Space Shaping for OOD Detection via Test-Time MLLM Understanding and Reasoning** (CVPR 2026)
+2. **ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP** (CVPR 2026)
+3. **Hyperbolic Prototype Learning with Uncertainty-Aware Consistency for Continual Test-Time Segmentation** (CVPR 2026)
+4. **SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation** (CVPR 2026)
+5. **Adaptive 3D Perception for Small Aerial Targets Under Sparse Sampling via Reinforcement Learning** (CVPR 2026)
+
+All five official main PDFs passed signature, page-count, page-enumeration, and reader-count preflight. Official supplements were also checked for ANTS, ReAttnCLIP, HyperProtoSeg, and SegCompass; the A3PRL official record exposes no supplement. The queue combines test-time negative-space OOD reasoning, remote-sensing open-vocabulary segmentation, uncertainty-aware continual adaptation, interpretable reasoning segmentation, and a direct small-aerial-target anchor. The complete evidence, source failures, UAV/fire candidates, and historical exclusions are in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-11\2026-08-11-检索与筛选报告.md`.
