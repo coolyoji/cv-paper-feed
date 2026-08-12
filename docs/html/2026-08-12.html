@@ -71,8 +71,8 @@
 <main>
 <h1>2026-08-12 CV Paper Feed</h1>
 <p><a href="../index.html">返回首页</a></p>
-<p>Last updated: 2026-08-12 10:43 Asia/Shanghai</p>
-<p>Candidate pool: 10742 papers</p>
+<p>Last updated: 2026-08-12 11:33 Asia/Shanghai</p>
+<p>Candidate pool: 10846 papers</p>
 <p>慢读模式：本页只展示 5 篇当日精读、10 篇高质量来源、12 篇 COD 相关、10 篇无人机小目标、10 篇火灾/烟雾与多光谱感知、4 篇火灾监测大模型、12 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。</p>
 <p>精读队列优先选择能给 COD 带来新问题设定或新方法范式的论文，例如开放世界、目标发现、反事实/因果、不确定性、自监督稠密表征、对象中心建模和视觉推理；纯 COD 直系论文主要作为背景和对照。</p>
 <h2>当日精读队列</h2>
@@ -335,6 +335,22 @@
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
+<h3><strong>Is There Really a Camouflaged Object? Towards Realistic Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2026-08-11</p>
+<p class='meta'>Authors: Huafeng Chen, Yueming Lyu, Chenyang Si, Wende Tan, Liucheng Guo et al.</p>
+<p class='meta'>Tags: COD, reasoning, open-world</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2608.11135v1">paper</a> / <a href="http://arxiv.org/pdf/2608.11135v1">pdf</a></p>
+<p class='meta'>论文：Is There Really a Camouflaged Object? Towards Realistic Camouflaged Object Detection</p>
+<p class='meta'>一句话总结：Camouflaged object detection (COD) aims to segment objects that are visually concealed in their surroundings and has attracted increasing attention in recent years. However, most existing COD methods are devel...</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>摘要详解：研究问题：Camouflaged object detection (COD) aims to segment objects that are visually concealed in their surroundings and has attracted increasing attention in recent years. However, most existing COD methods are developed under a closed-world assumption, where each input image is assumed to contain a camouflaged object. 方法与流程：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。 摘要中的具体做法包括：To address this limitation, we propose OPC16K, a large-scale benchmark for realistic COD. Based on this benchmark, we further propose OPCNet, a presence-aware camouflage network that reformulates COD from a pure segmentation task into a joint problem of object localization and camouflage existence reasoning. Specifically, OPCNet introduces hierarchical existence reasoning to distinguish CO, BG, and NOCOD scenarios, similarity-aware camouflage relation modeling to capture foreground-background camouflage cues, and existence-aware feature refinement to regulate segmentation features with existence predictions. 摘要结论：Extensive experiments on OPC16K demonstrate that OPCNet achieves superior performance under the proposed realistic COD evaluation protocol, significantly reducing false positives on negative samples while maintaining accurate camouflaged-object segmentation.</p>
+<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；类别无关候选发现、未知目标设定、目标缺失场景。</p>
+<p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
 <h3><strong>Multi-scale attention and boundary-aware network for military camouflaged object detection using unmanned aerial vehicles</strong></h3>
 <p class='meta'>Source: Semantic Scholar / Signal, Image and Video Processing / citations 13, 2025-01-01</p>
 <p class='meta'>Authors: Keshun Liu, Aihua Li, Sen Yang, Changlong Wang, Yuhua Zhang</p>
@@ -351,22 +367,6 @@
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
-<h3><strong>MRCNet: Motion Reasoning Chain for Cross Modal Video Camouflaged Object Detection</strong></h3>
-<p class='meta'>Source: Crossref / TPAMI / CCF-A / 顶刊 / IEEE Transactions on Pattern Analysis and Machine Intelligence, 2026-09</p>
-<p class='meta'>Authors: Wenjun Hui, Zhenfeng Zhu, Shuai Zheng, Ming-Ming Cheng, Huchuan Lu et al.</p>
-<p class='meta'>Tags: COD, reasoning, video</p>
-<p class='meta'>Links: <a href="https://doi.org/10.1109/tpami.2026.3689767">paper</a></p>
-<p class='meta'>论文：MRCNet: Motion Reasoning Chain for Cross Modal Video Camouflaged Object Detection</p>
-<p class='meta'>一句话总结：TPAMI article matched by title in a top journal; abstract unavailable from Crossref.</p>
-<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
-<p class='meta'>摘要详解：当前来源尚未取得可靠摘要，不能仅凭标题推断方法；需要先打开论文页或 PDF 补齐摘要后再详解。</p>
-<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
-<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
-<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
-<p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
-</article>
-<article class='paper'>
 <h3><strong>First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection</strong></h3>
 <p class='meta'>Source: arXiv, 2025-08-21</p>
 <p class='meta'>Authors: Wutao Liu, YiDan Wang, Pan Gao</p>
@@ -380,6 +380,22 @@
 <p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；prompt 设计、类别文本构造、免训练迁移流程；候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数。</p>
 <p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+</article>
+<article class='paper'>
+<h3><strong>MRCNet: Motion Reasoning Chain for Cross Modal Video Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: Crossref / TPAMI / CCF-A / 顶刊 / IEEE Transactions on Pattern Analysis and Machine Intelligence, 2026-09</p>
+<p class='meta'>Authors: Wenjun Hui, Zhenfeng Zhu, Shuai Zheng, Ming-Ming Cheng, Huchuan Lu et al.</p>
+<p class='meta'>Tags: COD, reasoning, video</p>
+<p class='meta'>Links: <a href="https://doi.org/10.1109/tpami.2026.3689767">paper</a></p>
+<p class='meta'>论文：MRCNet: Motion Reasoning Chain for Cross Modal Video Camouflaged Object Detection</p>
+<p class='meta'>一句话总结：TPAMI article matched by title in a top journal; abstract unavailable from Crossref.</p>
+<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
+<p class='meta'>摘要详解：当前来源尚未取得可靠摘要，不能仅凭标题推断方法；需要先打开论文页或 PDF 补齐摘要后再详解。</p>
+<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
+<p class='meta'>和我课题的关系：它既触及 COD，又包含可迁移的新方法线索；适合作为把外部范式落到 COD 的桥梁论文。</p>
+<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
+<p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
@@ -493,22 +509,6 @@
 <p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析；候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合；类别无关候选发现、未知目标设定、目标缺失场景。</p>
 <p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
-</article>
-<article class='paper'>
-<h3><strong>VSCode-v2: Dynamic Prompt Learning for General Visual Salient and Camouflaged Object Detection With Two-Stage Optimization</strong></h3>
-<p class='meta'>Source: Crossref / TPAMI / CCF-A / 顶刊 / IEEE Transactions on Pattern Analysis and Machine Intelligence, 2026-03</p>
-<p class='meta'>Authors: Ziyang Luo, Nian Liu, Xuguang Yang, Dingwen Zhang, Deng-Ping Fan et al.</p>
-<p class='meta'>Tags: COD, saliency/transparent</p>
-<p class='meta'>Links: <a href="https://doi.org/10.1109/tpami.2025.3635136">paper</a></p>
-<p class='meta'>论文：VSCode-v2: Dynamic Prompt Learning for General Visual Salient and Camouflaged Object Detection With Two-Stage Optimization</p>
-<p class='meta'>一句话总结：TPAMI article matched by title in a top journal; abstract unavailable from Crossref.</p>
-<p class='meta'>任务设定：伪装/隐蔽目标检测或分割，重点是低显著、边界模糊、目标与背景相似。</p>
-<p class='meta'>摘要详解：当前来源尚未取得可靠摘要，不能仅凭标题推断方法；需要先打开论文页或 PDF 补齐摘要后再详解。</p>
-<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
-<p class='meta'>和我课题的关系：和伪装目标检测高度相关，可作为背景、baseline 或问题定义参考；精读时重点看它还缺少哪些外部方法视角。</p>
-<p class='meta'>可借鉴点：数据集设置、评价指标、失败案例分析。</p>
-<p class='meta'>可改进点：可尝试引入基础模型、文本先验或更强的环境上下文建模。</p>
-<p class='meta'>是否值得精读：可精读但不必只看结论：重点找它没有解决的盲点，以及能否被外部方法重写。</p>
 </article>
 <h2>无人机 / 航拍小目标</h2>
 <article class='paper'>
