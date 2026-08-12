@@ -211,3 +211,21 @@ The final queue was deduplicated against 169 normalized historical titles from f
 5. **Adaptive 3D Perception for Small Aerial Targets Under Sparse Sampling via Reinforcement Learning** (CVPR 2026)
 
 All five official main PDFs passed signature, page-count, page-enumeration, and reader-count preflight. Official supplements were also checked for ANTS, ReAttnCLIP, HyperProtoSeg, and SegCompass; the A3PRL official record exposes no supplement. The queue combines test-time negative-space OOD reasoning, remote-sensing open-vocabulary segmentation, uncertainty-aware continual adaptation, interpretable reasoning segmentation, and a direct small-aerial-target anchor. The complete evidence, source failures, UAV/fire candidates, and historical exclusions are in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-11\2026-08-11-检索与筛选报告.md`.
+
+---
+
+# Verified Daily Search Update - 2026-08-12
+
+The expanded project scan ran with `DEEP_SOURCE_SCAN=1`. It collected 9,403 raw CVF records, reached 10,202 cumulative Crossref records, merged 10,732 cached candidates after live-source degradation, and produced a final pool of 10,742 records. arXiv returned HTTP 503/429 responses and Semantic Scholar entered degraded mode after repeated 429 responses; the affected research clusters remain in the cache and next-run plan.
+
+The independent 2024-2026 six-source search covered five linked clusters: safety-critical hazard perception and risk control, grounded/compositional reasoning, multimodal reliability under missing/degraded/OOD evidence, UAV aerial tiny-object perception, and fire/smoke RGB-T sensing. It returned 110 records and 104 normalized unique titles, with 101 not present in the historical index. Sixteen source errors and 34 rate-limit notices were retained verbatim under `D:\Codex输出\daily-cv-literature-feed-update\research\2026-08-12\paper-search`; no title-only candidate was promoted.
+
+The final queue was deduplicated against 359 normalized historical project titles and 145 Zotero-imported download-index records:
+
+1. **Spectral Conformal Risk Control: Distribution-Free Tail Guarantees via Bayesian Quadrature** (CVPR 2026)
+2. **FoSS: Modeling Long-Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier-State Space Integration** (CVPR 2026)
+3. **Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation** (CVPR 2026)
+4. **3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion** (CVPR 2026)
+5. **MCAM: Multimodal Causal Analysis Model for Ego-Vehicle-Level Driving Video Understanding** (ICCV 2025)
+
+All five official main PDFs passed signature, page-count, enumeration, and reader-count preflight. Official supplements were also checked for Spectral CRC, TMPA, and 3M-TI; the FoSS and MCAM official pages expose no supplement. The queue combines spectral tail-risk certification, time-frequency state-space prediction, open-vocabulary aerial adaptation, unregistered RGB-T thermal restoration, and causal-graph-inspired hazard reasoning. The complete evidence, formula audits, source failures, UAV/fire transfer boundaries, and exclusions are in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-12\2026-08-12-检索与筛选报告.md`.

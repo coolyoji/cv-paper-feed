@@ -95,6 +95,75 @@ class CuratedNoteTests(unittest.TestCase):
         self.assertEqual(paper.summary, "人工核验的中文精炼摘要。")
         self.assertEqual(paper.tags, ["missing modality"])
 
+    def test_thermal_restoration_task_is_not_mislabeled_as_fire_detection(self):
+        paper = update_papers.Paper(
+            title="Calibration-Free Mobile Thermal Imaging",
+            url="https://example.com/thermal-restoration",
+            tags=["RGB-T", "thermal imaging", "image restoration"],
+        )
+
+        setting = update_papers.task_setting(paper)
+
+        self.assertIn("热图超分", setting)
+        self.assertIn("跨模态恢复", setting)
+        self.assertNotIn("火焰/烟雾检测", setting)
+
+    def test_apply_daily_curation_overrides_stale_cached_metadata(self):
+        stale = update_papers.Paper(
+            title="Curated Paper",
+            url="https://example.com/stale",
+            summary="Stale summary",
+            tags=["stale"],
+            score=99,
+        )
+        curated = update_papers.Paper(
+            title="Curated Paper",
+            url="https://example.com/verified",
+            summary="Verified summary",
+            tags=["verified"],
+            score=1,
+        )
+        captured = {}
+
+        def capture_history(papers, now, preserve_same_day_highlights=True):
+            match = next(paper for paper in papers if paper.title == curated.title)
+            captured["summary"] = match.summary
+            captured["tags"] = match.tags
+            return []
+
+        with (
+            patch.object(update_papers, "feed_now", return_value=datetime(2026, 8, 12, tzinfo=update_papers.UTC8)),
+            patch.object(update_papers, "daily_curated_highlights", return_value=[curated]),
+            patch.object(update_papers, "load_cached_candidate_pool", return_value=[stale]),
+            patch.object(update_papers, "score_paper", return_value=50),
+            patch.object(update_papers, "update_history", side_effect=capture_history),
+            patch.object(update_papers, "render_existing_history"),
+            patch.object(Path, "write_text"),
+        ):
+            update_papers.apply_daily_curation()
+
+        self.assertEqual(captured["summary"], "Verified summary")
+        self.assertEqual(captured["tags"], ["verified"])
+
+    def test_specialized_transfer_papers_retain_their_actual_task_setting(self):
+        cases = [
+            (
+                ["selective prediction", "risk control"],
+                "选择性预测与风险控制",
+            ),
+            (["trajectory prediction"], "多模态轨迹预测"),
+            (["video understanding", "hazard perception"], "安全关键视频理解"),
+        ]
+
+        for tags, expected in cases:
+            with self.subTest(tags=tags):
+                paper = update_papers.Paper(
+                    title="Transfer Paper",
+                    url="https://example.com/transfer",
+                    tags=tags,
+                )
+                self.assertIn(expected, update_papers.task_setting(paper))
+
 
 class FireTopicTests(unittest.TestCase):
     def test_multispectral_fire_tag_requires_both_signals(self):

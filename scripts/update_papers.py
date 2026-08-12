@@ -1553,6 +1553,10 @@ def short_summary(paper: Paper) -> str:
 
 def task_setting(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "selective prediction" in tags or "risk control" in tags:
+        return "选择性预测与风险控制：输入模型逐样本或逐像素损失，输出满足给定尾部风险阈值的预测集合或拒答规则，并评估覆盖、违约率与集合成本。"
+    if "trajectory prediction" in tags:
+        return "多模态轨迹预测：输入目标历史轨迹及场景交互，输出多条可能未来轨迹，重点评估位移误差、终点误差、漏失率与长时依赖建模。"
     if {"multispectral fire", "fire foundation model"} <= tags:
         return "多光谱火灾感知与基础模型联合监测，关注跨模态融合、早期发现、时空推理、误报控制和跨区域泛化。"
     if "multispectral fire" in tags:
@@ -1573,10 +1577,14 @@ def task_setting(paper: Paper) -> str:
         return "异常检测或分布外识别，可类比伪装目标的弱异常发现。"
     if "UAV/small-object" in tags:
         return "无人机/航拍小目标检测、分割或跟踪，重点处理目标像素少、尺度变化大、密集遮挡、运动模糊和边缘部署限制。"
+    if "thermal imaging" in tags or "image restoration" in tags:
+        return "移动热图超分与跨模态恢复：输入低分辨率热图和未标定高分辨率 RGB，引导生成高分辨率热图，同时处理跨光谱错位与细节保真。"
     if "remote sensing" in tags:
         return "遥感/大场景密集视觉任务，关注小目标、尺度变化和复杂背景。"
     if "medical imaging" in tags:
         return "医学影像分割/检测，常见弱边界、低对比和标注稀缺问题。"
+    if "hazard perception" in tags or "video understanding" in tags:
+        return "安全关键视频理解：输入车辆第一视角视频及运动状态，输出动作叙述、原因解释和危险反事实，重点检验时序证据是否真正支持因果判断。"
     if "video" in tags:
         return "视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。"
     return "通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。"
@@ -2899,7 +2907,14 @@ def apply_daily_curation() -> None:
     latest_path = DATA / "latest_papers.json"
     now = feed_now()
     curated = daily_curated_highlights(now.strftime("%Y-%m-%d"))
+    curated_by_title = {
+        re.sub(r"\W+", "", paper.title.lower()): paper for paper in curated
+    }
     papers = dedupe(load_cached_candidate_pool() + curated)
+    papers = [
+        curated_by_title.get(re.sub(r"\W+", "", paper.title.lower()), paper)
+        for paper in papers
+    ]
     for paper in papers:
         paper.score = score_paper(paper)
     papers = [paper for paper in papers if paper.score >= 12]

@@ -2773,5 +2773,122 @@
       ],
       "score": 92
     }
+  ],
+  "2026-08-12": [
+    {
+      "title": "Spectral Conformal Risk Control: Distribution-Free Tail Guarantees via Bayesian Quadrature",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Esfeh_Spectral_Conformal_Risk_Control_Distribution-Free_Tail_Guarantees_via_Bayesian_Quadrature_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Esfeh_Spectral_Conformal_Risk_Control_Distribution-Free_Tail_Guarantees_via_Bayesian_Quadrature_CVPR_2026_paper.pdf",
+      "authors": [
+        "Mohammad Mahdi Kazemi Esfeh",
+        "Qi Yan",
+        "Yongxing Zhang",
+        "Zahra Gholami",
+        "Renjie Liao",
+        "Purang Abolmaesumi"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "BQ-SRC extends conformal risk control from mean loss to user-specified spectral tail risk, then certifies finite-grid choices with Monte Carlo envelopes and exact binomial lower bounds.",
+      "tags": [
+        "selective prediction",
+        "risk control",
+        "uncertainty/calibration",
+        "safety-critical perception",
+        "segmentation"
+      ],
+      "score": 98
+    },
+    {
+      "title": "FoSS: Modeling Long-Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier-State Space Integration",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Huang_FoSS_Modeling_Long-Range_Dependencies_and_Multimodal_Uncertainty_in_Trajectory_Prediction_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Huang_FoSS_Modeling_Long-Range_Dependencies_and_Multimodal_Uncertainty_in_Trajectory_Prediction_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yizhou Huang",
+        "Genze Jiang",
+        "Yihua Cheng",
+        "Kezhi Wang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "FoSS combines Fourier-domain trajectory ordering with selective state-space scans and candidate decoding to model long histories and multiple plausible futures without full temporal attention.",
+      "tags": [
+        "trajectory prediction",
+        "state-space model",
+        "Fourier representation",
+        "multimodal futures",
+        "safety-critical perception"
+      ],
+      "score": 97
+    },
+    {
+      "title": "Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_Test-Time_Multi-Prompt_Adaptation_for_Open-Vocabulary_Remote_Sensing_Image_Segmentation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Test-Time_Multi-Prompt_Adaptation_for_Open-Vocabulary_Remote_Sensing_Image_Segmentation_CVPR_2026_paper.pdf",
+      "authors": [
+        "Ting Yang",
+        "Qilong Wang",
+        "Qibin Hou",
+        "Qinghua Hu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "TMPA adapts an open-vocabulary remote-sensing segmenter per test image by building class prototypes from confident pixels and learning how strongly visual evidence should bias multiple text prompts.",
+      "tags": [
+        "open-vocabulary",
+        "remote sensing",
+        "test-time adaptation",
+        "visual prompting",
+        "UAV/small-object"
+      ],
+      "score": 96
+    },
+    {
+      "title": "3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_3M-TI_High-Quality_Mobile_Thermal_Imaging_via_Calibration-free_Multi-Camera_Cross-Modal_Diffusion_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_3M-TI_High-Quality_Mobile_Thermal_Imaging_via_Calibration-free_Multi-Camera_Cross-Modal_Diffusion_CVPR_2026_paper.pdf",
+      "authors": [
+        "Minchong Chen",
+        "Xiaoyun Yuan",
+        "Junzhe Wan",
+        "Jianing Zhang",
+        "Jun Zhang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "3M-TI uses one-step latent diffusion, joint RGB-thermal self-attention, synthetic misalignment, and thermal skip features to super-resolve mobile thermal images without explicit camera calibration.",
+      "tags": [
+        "RGB-T",
+        "thermal imaging",
+        "cross-modal diffusion",
+        "degraded multimodal perception",
+        "image restoration"
+      ],
+      "score": 95
+    },
+    {
+      "title": "MCAM: Multimodal Causal Analysis Model for Ego-Vehicle-Level Driving Video Understanding",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Cheng_MCAM_Multimodal_Causal_Analysis_Model_for_Ego-Vehicle-Level_Driving_Video_Understanding_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Cheng_MCAM_Multimodal_Causal_Analysis_Model_for_Ego-Vehicle-Level_Driving_Video_Understanding_ICCV_2025_paper.pdf",
+      "authors": [
+        "Tongtong Cheng",
+        "Rongzhen Li",
+        "Yixin Xiong",
+        "Tao Zhang",
+        "Jing Wang",
+        "Kai Liu"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "MCAM structures ego-driving video explanation around start state, environment, action, end state, and counterfactual danger, then gates global-local features before language generation.",
+      "tags": [
+        "causal/counterfactual",
+        "video understanding",
+        "grounded reasoning",
+        "hazard perception",
+        "safety-critical perception"
+      ],
+      "score": 94
+    }
   ]
 }
