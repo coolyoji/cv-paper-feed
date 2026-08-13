@@ -2890,5 +2890,120 @@
       ],
       "score": 94
     }
+  ],
+  "2026-08-13": [
+    {
+      "title": "Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Azeem_Prompt-Free_Unknown_Label_Generation_for_Open_World_Detection_in_Remote_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Azeem_Prompt-Free_Unknown_Label_Generation_for_Open_World_Detection_in_Remote_CVPR_2026_paper.pdf",
+      "authors": [
+        "Abdullah Azeem",
+        "Ruisheng Wang",
+        "Qingquan Li",
+        "Abubakar Siddique"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "HSGDet discovers unknown objects in remote-sensing images and synthesizes semantic labels at test time by navigating a scene-conditioned hierarchy and regressing unknown regions toward text embeddings without external prompts.",
+      "tags": [
+        "unknown label generation",
+        "remote sensing",
+        "open-world",
+        "UAV/small-object",
+        "open-vocabulary",
+        "visual grounding"
+      ],
+      "score": 98
+    },
+    {
+      "title": "VIRST: Video-Instructed Reasoning Assistant for SpatioTemporal Segmentation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Hong_VIRST_Video-Instructed_Reasoning_Assistant_for_SpatioTemporal_Segmentation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Hong_VIRST_Video-Instructed_Reasoning_Assistant_for_SpatioTemporal_Segmentation_CVPR_2026_paper.pdf",
+      "authors": [
+        "Jihwan Hong",
+        "Jaeyoung Do"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "VIRST fuses SAM2 segmentation features with VideoLLM reasoning twice, converts the resulting spatiotemporal tokens into frame prompts, and propagates masks with nearby anchors plus FIFO memory.",
+      "tags": [
+        "spatiotemporal segmentation",
+        "video",
+        "grounded reasoning",
+        "VLM/MLLM",
+        "foundation model",
+        "hazard perception"
+      ],
+      "score": 97
+    },
+    {
+      "title": "DiMPLe - Disentangled Multi-Modal Prompt Learning: Enhancing Out-Of-Distribution Alignment with Invariant and Spurious Feature Separation",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Rahman_DiMPLe_-_Disentangled_Multi-Modal_Prompt_Learning_Enhancing_Out-Of-Distribution_Alignment_with_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Rahman_DiMPLe_-_Disentangled_Multi-Modal_Prompt_Learning_Enhancing_Out-Of-Distribution_Alignment_with_ICCV_2025_paper.pdf",
+      "authors": [
+        "Umaima Rahman",
+        "Mohammad Yaqub",
+        "Dwarikanath Mahapatra"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "DiMPLe learns invariant and spurious prompt components in both image and text modalities, aligns matching invariant/spurious factors, and reduces mutual information between the two subspaces for OOD generalization.",
+      "tags": [
+        "spurious correlation",
+        "multimodal prompt learning",
+        "anomaly/OOD",
+        "domain generalization",
+        "open-vocabulary",
+        "causal/counterfactual"
+      ],
+      "score": 96
+    },
+    {
+      "title": "Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jin_Reasoning-Driven_Anomaly_Detection_and_Localization_with_Image-Level_Supervision_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jin_Reasoning-Driven_Anomaly_Detection_and_Localization_with_Image-Level_Supervision_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yizhou Jin",
+        "Yuezhu Feng",
+        "Jinjin Zhang",
+        "Peng Wang",
+        "Qingjie Liu",
+        "Yunhong Wang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "ReAL selects semantically anomaly-related and spatially concentrated reasoning tokens to localize defects, while CGRO uses only image-level labels to reward spatial consensus among their attention maps.",
+      "tags": [
+        "weakly supervised anomaly localization",
+        "anomaly/OOD",
+        "grounded reasoning",
+        "VLM/MLLM",
+        "image-level supervision",
+        "safety-critical perception"
+      ],
+      "score": 95
+    },
+    {
+      "title": "Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Mosco_Learning_to_Identify_Out-of-Distribution_Objects_for_3D_LiDAR_Anomaly_Segmentation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Mosco_Learning_to_Identify_Out-of-Distribution_Objects_for_3D_LiDAR_Anomaly_Segmentation_CVPR_2026_paper.pdf",
+      "authors": [
+        "Simone Mosco",
+        "Daniel Fusaro",
+        "Alberto Pretto"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "LIDO shapes inlier geometry with confidence-weighted prototypes, class contrast and an objectosphere constraint, then fuses prototype distance, entropy and feature norm for point-wise LiDAR anomaly scores.",
+      "tags": [
+        "3D LiDAR anomaly segmentation",
+        "anomaly/OOD",
+        "open-world",
+        "uncertainty/calibration",
+        "3D perception",
+        "safety-critical perception"
+      ],
+      "score": 94
+    }
   ]
 }

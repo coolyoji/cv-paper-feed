@@ -71,6 +71,26 @@ class CuratedNoteTests(unittest.TestCase):
 
         self.assertEqual(takeaway, "AUROC为95.1，FPR95为19.9。")
 
+    def test_experiment_takeaway_stops_before_analyst_boundary(self):
+        paper = update_papers.Paper(
+            title="Boundary-aware curated note",
+            url="https://example.com/boundary",
+            summary="A generic summary.",
+        )
+        detail = (
+            "研究问题：测试。方法与流程：测试。"
+            "实验结论：AUROC为95.1。"
+            "分析边界：该分数不等于校准。"
+        )
+        with patch.object(
+            update_papers,
+            "load_abstract_details",
+            return_value={paper.title: detail},
+        ):
+            takeaway = update_papers.experiment_takeaway(paper)
+
+        self.assertEqual(takeaway, "AUROC为95.1。")
+
     def test_verified_curated_highlight_is_not_overwritten_by_cvf_abstract(self):
         paper = update_papers.Paper(
             title="Verified Short Summary",
@@ -147,6 +167,20 @@ class CuratedNoteTests(unittest.TestCase):
 
     def test_specialized_transfer_papers_retain_their_actual_task_setting(self):
         cases = [
+            (
+                ["unknown label generation", "remote sensing"],
+                "遥感开放世界目标检测与未知类命名",
+            ),
+            (["spatiotemporal segmentation"], "视频时空推理分割"),
+            (
+                ["spurious correlation", "multimodal prompt learning"],
+                "跨模态 OOD 提示学习",
+            ),
+            (
+                ["weakly supervised anomaly localization"],
+                "图像级监督异常检测与定位",
+            ),
+            (["3D LiDAR anomaly segmentation"], "三维 LiDAR 开放集异常分割"),
             (
                 ["selective prediction", "risk control"],
                 "选择性预测与风险控制",

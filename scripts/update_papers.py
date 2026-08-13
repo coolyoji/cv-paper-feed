@@ -1553,6 +1553,16 @@ def short_summary(paper: Paper) -> str:
 
 def task_setting(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "unknown label generation" in tags and "remote sensing" in tags:
+        return "遥感开放世界目标检测与未知类命名：输入航拍/遥感图像，在识别已知类的同时发现未知实例，并在无外部测试提示的条件下生成可扩展语义标签。"
+    if "spatiotemporal segmentation" in tags:
+        return "视频时空推理分割：输入视频与语言问题/指令，先定位相关时间与对象证据，再输出跨帧一致的像素掩码和可核验推理结果。"
+    if "spurious correlation" in tags and "multimodal prompt learning" in tags:
+        return "跨模态 OOD 提示学习：在图像与文本两侧分离不变因素和伪相关因素，学习对新类别及分布偏移更稳健的分类提示。"
+    if "weakly supervised anomaly localization" in tags:
+        return "图像级监督异常检测与定位：训练时只有正常/异常图像标签，推理时同时输出图像级异常判断、像素级异常区域与证据一致的解释。"
+    if "3D LiDAR anomaly segmentation" in tags:
+        return "三维 LiDAR 开放集异常分割：输入带强度的点云，逐点预测已知语义类别与未知物体异常分数，并评估高召回工作点的误报风险。"
     if "selective prediction" in tags or "risk control" in tags:
         return "选择性预测与风险控制：输入模型逐样本或逐像素损失，输出满足给定尾部风险阈值的预测集合或拒答规则，并评估覆盖、违约率与集合成本。"
     if "trajectory prediction" in tags:
@@ -1731,7 +1741,7 @@ def experiment_takeaway(paper: Paper) -> str:
     if "实验结论：" in curated or "实验结论:" in curated:
         evidence = re.split(r"实验结论[：:]", curated, maxsplit=1)[1].strip()
         evidence = re.split(
-            r"(?<=。)(?=(?:对COD|对UAV|对火灾|迁移到|迁移至|该思路|该方法|其风险))",
+            r"(?<=。)(?=(?:分析边界|对COD|对UAV|对火灾|迁移到|迁移至|该思路|该方法|其风险))",
             evidence,
             maxsplit=1,
         )[0].strip()

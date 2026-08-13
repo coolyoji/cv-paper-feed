@@ -229,3 +229,19 @@ The final queue was deduplicated against 359 normalized historical project title
 5. **MCAM: Multimodal Causal Analysis Model for Ego-Vehicle-Level Driving Video Understanding** (ICCV 2025)
 
 All five official main PDFs passed signature, page-count, enumeration, and reader-count preflight. Official supplements were also checked for Spectral CRC, TMPA, and 3M-TI; the FoSS and MCAM official pages expose no supplement. The queue combines spectral tail-risk certification, time-frequency state-space prediction, open-vocabulary aerial adaptation, unregistered RGB-T thermal restoration, and causal-graph-inspired hazard reasoning. The complete evidence, formula audits, source failures, UAV/fire transfer boundaries, and exclusions are in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-12\2026-08-12-检索与筛选报告.md`.
+
+---
+
+# Verified Daily Search Update - 2026-08-13
+
+The expanded project scan ran with `DEEP_SOURCE_SCAN=1`. It accumulated 9,403 raw CVF records and 10,200 cumulative Crossref records, merged 10,742 cached candidates, and formed a final pool of 10,743 records. arXiv returned HTTP 429 for the first three COD-related queries, while Semantic Scholar returned HTTP 429 for the safety-critical, multimodal-hazard, and open-world-multimodal clusters; those clusters remain explicitly retained in the cache and next-run plan. The automatic downloader wrote one provisional PDF only to the isolated D-drive scan directory and did not touch Zotero.
+
+The final queue was selected after official main-PDF and available supplemental-material reading, mathematical inspection, and exact normalized-title exclusion against all prior feed sections and the Zotero download index:
+
+1. **Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing** (CVPR 2026)
+2. **VIRST: Video-Instructed Reasoning Assistant for SpatioTemporal Segmentation** (CVPR 2026)
+3. **DiMPLe - Disentangled Multi-Modal Prompt Learning: Enhancing Out-Of-Distribution Alignment with Invariant and Spurious Feature Separation** (ICCV 2025)
+4. **Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision** (CVPR 2026)
+5. **Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation** (CVPR 2026)
+
+All five are formally peer-reviewed CVF papers and none is a direct COD paper. The queue combines prompt-free remote-sensing unknown discovery, video-grounded temporal segmentation, multimodal spurious-factor separation, image-level-supervised anomaly localization, and efficient LiDAR OOD segmentation. HSGDet anchors the dedicated UAV/remote-sensing section; strong UAV and fire candidates remain surfaced separately without forcing a weaker or unverified fire paper into the five. The complete source failures, selection evidence, exclusions, and COD/UAV/fire transfer boundaries are retained in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-13\2026-08-13-检索与筛选报告.md`.
