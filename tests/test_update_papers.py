@@ -181,6 +181,14 @@ class CuratedNoteTests(unittest.TestCase):
                 "图像级监督异常检测与定位",
             ),
             (["3D LiDAR anomaly segmentation"], "三维 LiDAR 开放集异常分割"),
+            (["4D LiDAR generation"], "不确定性感知的 4D LiDAR 序列生成"),
+            (
+                ["open-world segmentation", "3D perception"],
+                "开放世界可提示三维语义分割",
+            ),
+            (["open-world temporal grounding"], "开放世界视频时序定位"),
+            (["video anomaly detection"], "视频异常检测与开放词汇异常识别"),
+            (["degraded perception", "object detection"], "退化水下目标检测"),
             (
                 ["selective prediction", "risk control"],
                 "选择性预测与风险控制",
@@ -197,6 +205,41 @@ class CuratedNoteTests(unittest.TestCase):
                     tags=tags,
                 )
                 self.assertIn(expected, update_papers.task_setting(paper))
+
+    def test_daily_specialized_tags_produce_specific_transfer_notes(self):
+        cases = [
+            (["4D LiDAR generation"], "高不确定弱证据区域", "条件扩散补全"),
+            (
+                ["open-world segmentation", "3D perception"],
+                "姿态与视角变化",
+                "规范参考空间",
+            ),
+            (
+                ["open-world temporal grounding"],
+                "首次发现时间",
+                "自纠边界",
+            ),
+            (["video anomaly detection"], "困难负文本", "区域文本对齐"),
+            (
+                ["degraded perception", "object detection"],
+                "介质散射",
+                "高频残差恢复",
+            ),
+        ]
+
+        for tags, relation_phrase, borrow_phrase in cases:
+            with self.subTest(tags=tags):
+                paper = update_papers.Paper(
+                    title="Specialized Paper",
+                    url="https://example.com/specialized",
+                    tags=tags,
+                )
+                self.assertIn(relation_phrase, update_papers.relation_to_topic(paper))
+                self.assertIn(borrow_phrase, update_papers.borrow_points(paper))
+                self.assertNotIn(
+                    "可思考是否缺少",
+                    update_papers.improvement_ideas(paper),
+                )
 
 
 class FireTopicTests(unittest.TestCase):

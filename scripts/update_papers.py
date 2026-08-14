@@ -1563,6 +1563,16 @@ def task_setting(paper: Paper) -> str:
         return "图像级监督异常检测与定位：训练时只有正常/异常图像标签，推理时同时输出图像级异常判断、像素级异常区域与证据一致的解释。"
     if "3D LiDAR anomaly segmentation" in tags:
         return "三维 LiDAR 开放集异常分割：输入带强度的点云，逐点预测已知语义类别与未知物体异常分数，并评估高召回工作点的误报风险。"
+    if "4D LiDAR generation" in tags:
+        return "不确定性感知的 4D LiDAR 序列生成：输入真实点云序列与预训练分割器的不确定性，先生成困难区域，再补全具有单帧几何真实性和跨帧运动一致性的完整场景。"
+    if "open-world segmentation" in tags and "3D perception" in tags:
+        return "开放世界可提示三维语义分割：输入三维形状与自由文本部件提示，在未知类别、任意姿态和跨类别条件下输出逐点部件掩码。"
+    if "open-world temporal grounding" in tags:
+        return "开放世界视频时序定位：输入未裁剪长视频与自由文本事件查询，输出事件起止时间，并重点检验稀有、抽象和训练未充分覆盖的概念。"
+    if "video anomaly detection" in tags:
+        return "视频异常检测与开放词汇异常识别：输入长视频及正常/异常语义描述，输出异常片段分数，并在弱监督、零样本和开放词汇设置下评估。"
+    if "degraded perception" in tags and "object detection" in tags:
+        return "退化水下目标检测：输入受散射、折射、低照度和悬浮颗粒影响的单幅 RGB 图像，输出目标类别、置信度与边界框。"
     if "selective prediction" in tags or "risk control" in tags:
         return "选择性预测与风险控制：输入模型逐样本或逐像素损失，输出满足给定尾部风险阈值的预测集合或拒答规则，并评估覆盖、违约率与集合成本。"
     if "trajectory prediction" in tags:
@@ -1762,6 +1772,16 @@ def experiment_takeaway(paper: Paper) -> str:
 
 def relation_to_topic(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "4D LiDAR generation" in tags:
+        return "可迁移的不是 LiDAR 表示本身，而是先识别高不确定弱证据区域、再条件化补全全局的两阶段范式；COD、UAV 和早期烟雾可分别用前景背景混淆、微小目标丢失和时序弱响应定义困难区域。"
+    if "open-world segmentation" in tags and "3D perception" in tags:
+        return "可把 COD/UAV 的姿态与视角变化从目标语义中解耦，并用相对空间关系减少背景捷径；对非刚体烟火只能迁移参考系一致性思想，不能假定固定部件结构。"
+    if "open-world temporal grounding" in tags:
+        return "可把 UAV 危险事件和早期烟火感知改写为开放世界起止时间定位，并显式衡量稀有事件、首次发现时间和危害提前量；静态 COD 只可借鉴先理解再定位的任务分解。"
+    if "video anomaly detection" in tags:
+        return "可用细粒度异常语义和困难负文本区分真正目标与相似背景；COD 可构造背景同义负例，UAV 可加强微小异常区域，火灾可针对云雾、晚霞和反射控制误报。"
+    if "degraded perception" in tags and "object detection" in tags:
+        return "水下退化与 COD、UAV、火灾共享低对比和弱结构证据，但成因分别是介质散射、像素信息损失和非刚体半透明演化；可迁移残差与原型校准，不能混同物理机制。"
     if {"multispectral fire", "fire foundation model"} <= tags:
         return "同时命中两个新增方向，可作为多源感知与大模型监测协同设计的核心候选。"
     if "multispectral fire" in tags:
@@ -1802,6 +1822,16 @@ def relation_to_topic(paper: Paper) -> str:
 def borrow_points(paper: Paper) -> str:
     tags = set(paper.tags)
     points = []
+    if "4D LiDAR generation" in tags:
+        points.append("不确定区域优先建模、条件扩散补全、空间时间门控与校准评估")
+    if "open-world segmentation" in tags and "3D perception" in tags:
+        points.append("规范参考空间、跨类别功能位置约束、语义对比与几何校准")
+    if "open-world temporal grounding" in tags:
+        points.append("语义覆盖迭代扩展、稠密描述转时间戳、自纠边界与稀有概念分层评测")
+    if "video anomaly detection" in tags:
+        points.append("正常异常语义解缠、区域文本对齐、语义困难负例与多设定异常评测")
+    if "degraded perception" in tags and "object detection" in tags:
+        points.append("高频残差恢复、双向跨尺度校准、前景背景原型与质量软标签")
     if "multispectral fire" in tags:
         points.append("可见光-红外/热红外对齐、谱段融合、早期烟火特征与全天候监测")
     if "fire foundation model" in tags:
@@ -1841,6 +1871,16 @@ def borrow_points(paper: Paper) -> str:
 
 def improvement_ideas(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "4D LiDAR generation" in tags:
+        return "应区分数据噪声与模型认知不确定性，补齐总损失系数并报告稀有事件分层、速度和风险覆盖；迁移到 RGB 时须比较随机、熵与模型分歧选区。"
+    if "open-world segmentation" in tags and "3D perception" in tags:
+        return "应在真实扫描、遮挡和自然自由文本上验证规范空间，而不只依赖 LLM 生成的离散旋转；迁移实验需控制骨干与参数量，分姿态和尺度报告性能。"
+    if "open-world temporal grounding" in tags:
+        return "应固定训练数据量，拆分数据扩张、思维链和强化学习的贡献，并加入危害提前量、首次发现时间和错误自纠率，避免把大规模教师标注增益归于推理机制。"
+    if "video anomaly detection" in tags:
+        return "应控制困难负例数量与文本长度，检查跨数据来源泄漏，并补充概率校准、风险覆盖和区域证据一致性；火灾迁移需专测云雾、晚霞与反射误报。"
+    if "degraded perception" in tags and "object detection" in tags:
+        return "应解释主文与补充材料的 UTDAC 数字冲突，公开 K-means 初始化和损失超参数，并以同参数骨干做跨水域、浑浊度分层、校准和端侧延迟实验。"
     if {"multispectral fire", "fire foundation model"} <= tags:
         return "可进一步研究缺失模态与传感器噪声下的稳健融合，并让大模型输出可校准的火情位置、置信度、证据和告警等级。"
     if "multispectral fire" in tags:

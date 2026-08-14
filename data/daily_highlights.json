@@ -3005,5 +3005,136 @@
       ],
       "score": 94
     }
+  ],
+  "2026-08-14": [
+    {
+      "title": "U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xu_U4D_Uncertainty-Aware_4D_World_Modeling_from_LiDAR_Sequences_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Xu_U4D_Uncertainty-Aware_4D_World_Modeling_from_LiDAR_Sequences_CVPR_2026_paper.pdf",
+      "authors": [
+        "Xiang Xu",
+        "Alan Liang",
+        "Youquan Liu",
+        "Linfeng Li",
+        "Lingdong Kong",
+        "Ziwei Liu",
+        "Qingshan Liu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "U4D 先生成分割高不确定的 LiDAR 困难区域，再以其为条件扩散补全全景，并用门控自适应融合空间与时间特征。",
+      "tags": [
+        "4D LiDAR generation",
+        "world model",
+        "uncertainty/calibration",
+        "diffusion",
+        "safety-critical perception"
+      ],
+      "score": 98
+    },
+    {
+      "title": "CoSMo3D: Open-World Promptable 3D Semantic Segmentation through LLM-Guided Canonical Spatial Modeling",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jin_CoSMo3D_Open-World_Promptable_3D_Semantic_Segmentation_through_LLM-Guided_Canonical_Spatial_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jin_CoSMo3D_Open-World_Promptable_3D_Semantic_Segmentation_through_LLM-Guided_Canonical_Spatial_CVPR_2026_paper.pdf",
+      "authors": [
+        "Li Jin",
+        "Weikai Chen",
+        "Yujie Wang",
+        "Yingda Yin",
+        "Zeyu Hu",
+        "Runze Zhang",
+        "Keyang Luo",
+        "Shengju Qian",
+        "Xin Wang",
+        "Xueying Qin"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "CoSMo3D 把自由文本三维部件提示锚定到学习得到的规范参考空间，并联合语言几何对齐、规范地图和包围盒校准。",
+      "tags": [
+        "open-world segmentation",
+        "visual grounding",
+        "3D perception",
+        "canonical representation",
+        "VLM/MLLM"
+      ],
+      "score": 97
+    },
+    {
+      "title": "OmniVTG: A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zheng_OmniVTG_A_Large-Scale_Dataset_and_Training_Paradigm_for_Open-World_Video_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zheng_OmniVTG_A_Large-Scale_Dataset_and_Training_Paradigm_for_Open-World_Video_CVPR_2026_paper.pdf",
+      "authors": [
+        "Minghang Zheng",
+        "Zihao Yin",
+        "Yi Yang",
+        "Yuxin Peng",
+        "Yang Liu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "OmniVTG 用描述中心的数据引擎扩展稀有事件覆盖，再经监督、思维链和强化学习训练模型预测、反思并修正时间边界。",
+      "tags": [
+        "open-world temporal grounding",
+        "video",
+        "grounded reasoning",
+        "compositionality",
+        "hazard anticipation"
+      ],
+      "score": 96
+    },
+    {
+      "title": "Alert-CLIP: Abnormality-aware Latent-Enhanced Representation Tuning of CLIP for Video Anomaly Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhu_Alert-CLIP_Abnormality-aware_Latent-Enhanced_Representation_Tuning_of_CLIP_for_Video_Anomaly_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhu_Alert-CLIP_Abnormality-aware_Latent-Enhanced_Representation_Tuning_of_CLIP_for_Video_Anomaly_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yiyan Zhu",
+        "Menghao Zhang",
+        "Haifeng Sun",
+        "Pengfei Ren",
+        "Xianao Chu",
+        "Chenye Xu",
+        "Hong Tan",
+        "Jinghan Wang",
+        "Qi Qi",
+        "Jingyu Wang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "Alert-CLIP 通过视频标签、区域文本和困难负例区域语义三层对比对齐，重塑 CLIP 中纠缠的正常与异常表示空间。",
+      "tags": [
+        "video anomaly detection",
+        "safety-critical perception",
+        "vision-language alignment",
+        "open-vocabulary",
+        "anomaly/OOD"
+      ],
+      "score": 95
+    },
+    {
+      "title": "RHCNet: Residual-Guided Hierarchical Calibration Network for Robust Underwater Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_RHCNet_Residual-Guided_Hierarchical_Calibration_Network_for_Robust_Underwater_Object_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_RHCNet_Residual-Guided_Hierarchical_Calibration_Network_for_Robust_Underwater_Object_Detection_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yueying Wang",
+        "Yiteng Guo",
+        "Weidong Zhang",
+        "Jie Wen",
+        "Liquan Shen",
+        "Huaicheng Yan",
+        "Xin Xu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "RHCNet 用残差引导高频特征恢复弱结构证据，并在检测前以跨尺度融合和前景背景原型校准语义。",
+      "tags": [
+        "degraded perception",
+        "object detection",
+        "hierarchical calibration",
+        "weak evidence",
+        "domain robustness"
+      ],
+      "score": 94
+    }
   ]
 }

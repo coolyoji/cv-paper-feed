@@ -245,3 +245,21 @@ The final queue was selected after official main-PDF and available supplemental-
 5. **Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation** (CVPR 2026)
 
 All five are formally peer-reviewed CVF papers and none is a direct COD paper. The queue combines prompt-free remote-sensing unknown discovery, video-grounded temporal segmentation, multimodal spurious-factor separation, image-level-supervised anomaly localization, and efficient LiDAR OOD segmentation. HSGDet anchors the dedicated UAV/remote-sensing section; strong UAV and fire candidates remain surfaced separately without forcing a weaker or unverified fire paper into the five. The complete source failures, selection evidence, exclusions, and COD/UAV/fire transfer boundaries are retained in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-13\2026-08-13-检索与筛选报告.md`.
+
+---
+
+# Verified Daily Search Update - 2026-08-14
+
+The expanded project scan ran with `DEEP_SOURCE_SCAN=1`. It collected 9,403 CVF records, reached 10,194 raw records after Crossref journal queries, merged 10,743 cached candidates after live-source degradation, and formed a final pool of 10,747 records. arXiv and Semantic Scholar each entered degraded mode after three HTTP 429 responses; one JAG Crossref query also returned HTTP 429. The independent paper-search pass additionally recorded OpenAlex 504 responses, a DBLP SSL failure, and a missing local OpenReview client. These affected clusters remain in the retained cache and next-run plan.
+
+The final queue was frozen only after excluding the provisional 2026-08-14 snapshot and comparing against all sections from the prior 39 days, the daily-highlight ledger, and the 155-entry Zotero-imported download index. The union contained 369 normalized historical titles; all five selected titles and official CVF URLs were new, and their closest title-token Jaccard scores ranged from 0.154 to 0.286:
+
+1. **U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences** (CVPR 2026)
+2. **CoSMo3D: Open-World Promptable 3D Semantic Segmentation through LLM-Guided Canonical Spatial Modeling** (CVPR 2026)
+3. **OmniVTG: A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding** (CVPR 2026)
+4. **Alert-CLIP: Abnormality-aware Latent-Enhanced Representation Tuning of CLIP for Video Anomaly Detection** (CVPR 2026)
+5. **RHCNet: Residual-Guided Hierarchical Calibration Network for Robust Underwater Object Detection** (CVPR 2026)
+
+All five are formally peer-reviewed CVF papers with verified full PDFs. The queue combines uncertainty-prioritized world generation, canonical open-world grounding, rare-event temporal localization, abnormality-aware vision-language alignment, and degraded weak-evidence calibration. RHCNet remains included with an explicit evidence warning: its camera-ready UTDAC table reports AP 53.35, while an older review-copy supplement reports AP 50.87 for the nominally complete configuration without explaining the version difference.
+
+The dedicated UAV pool retains **Rethinking Occlusion Modeling for UAV Tracking**, F2Net, SPAR-Det, and **Tracking Tiny Drones against Clutter**. The fire transfer pool retains **SmokeSVD**, RealX3D, and FireMan-UAV-RGBT; SmokeSVD contributes dynamic, translucent, physics-consistent smoke modeling but is not presented as an early-wildfire detector. The complete evidence, source failures, historical exclusions, and COD/UAV/fire transfer boundaries are retained in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-14\2026-08-14-检索与筛选报告.md`.
