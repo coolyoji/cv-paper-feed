@@ -1553,6 +1553,16 @@ def short_summary(paper: Paper) -> str:
 
 def task_setting(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "embodied navigation" in tags and "spatial memory" in tags:
+        return "开放世界航空目标导航：无人机根据 RGB-D、位姿和自然语言目标描述持续构建近远场记忆，结合已观测场景与当前视野决策探索方向，并输出离散飞行动作直到抵达目标。"
+    if "missing modality" in tags and "multimodal segmentation" in tags:
+        return "缺失模态脑肿瘤分割：输入四种 MRI 的任意可用子集，在十五种完整/缺失组合下输出 WT、TC、ET 三个肿瘤区域，并以 DSC 与 HD95 评价。"
+    if "multimodal safety" in tags and "causal intervention" in tags:
+        return "视觉语言模型越狱诊断与无训练修复：输入良性或图文攻击提示，以干预式实验定位对不安全回答敏感的内部层与路径，并在推理时投影激活以降低攻击成功率。"
+    if "multimodal RAG" in tags and "anomaly detection" in tags:
+        return "知识接地异常检测与推理包含两个分离协议：ZSAD 对工业或重掩膜医学图像输出图像级异常分数与像素热图；MMAD 则在工业场景评测多选异常判别及对象/缺陷知识问答。"
+    if "video anomaly detection" in tags and "selective evaluation" in tags:
+        return "弱监督视频异常检测与低误报评估：训练仅使用视频级正常/异常标签，推理输出逐片段异常分数，并重点报告固定低误报率下的召回与漏报代价。"
     if "unknown label generation" in tags and "remote sensing" in tags:
         return "遥感开放世界目标检测与未知类命名：输入航拍/遥感图像，在识别已知类的同时发现未知实例，并在无外部测试提示的条件下生成可扩展语义标签。"
     if "spatiotemporal segmentation" in tags:
@@ -1772,6 +1782,16 @@ def experiment_takeaway(paper: Paper) -> str:
 
 def relation_to_topic(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "embodied navigation" in tags and "spatial memory" in tags:
+        return "可把单帧 COD/UAV/火灾感知扩展为持续搜索：保留已见弱证据和远场上下文以辅助后续探索；八叉树并不显式存储几何前沿，且导航依赖 RGB-D 与位姿，动作成功率也不等于像素检测能力。"
+    if "missing modality" in tags and "multimodal segmentation" in tags:
+        return "可迁移“融合前先学稳健共享表示”到 RGB-T 火灾、航空多传感器和带深度辅助的 COD；MRI 随机缺失不等于真实传感器失效，必须另测非随机缺失与退化。"
+    if "multimodal safety" in tags and "causal intervention" in tags:
+        return "可借其层/路径干预诊断与安全子空间投影检验 COD 背景捷径、UAV 场景偏置和火灾伪影方向；论文控制的是 VLM 越狱输出，不是像素漏检或告警风险。"
+    if "multimodal RAG" in tags and "anomaly detection" in tags:
+        return "可把可追溯的背景/缺陷检索文档和区域异常先验引入 COD、UAV 与火灾误报分析；论文未验证自由文本事实性，工业闭集类型与标准外观也不能直接覆盖开放环境的未知目标和动态烟火。"
+    if "video anomaly detection" in tags and "selective evaluation" in tags:
+        return "可把 COD、UAV 与早期火灾从只看平均精度改为固定误报预算下检验漏检，并用片段覆盖与模型分歧发掘弱证据；时序选择不适用于单幅 COD，集成分歧也不等于校准不确定性。"
     if "4D LiDAR generation" in tags:
         return "可迁移的不是 LiDAR 表示本身，而是先识别高不确定弱证据区域、再条件化补全全局的两阶段范式；COD、UAV 和早期烟雾可分别用前景背景混淆、微小目标丢失和时序弱响应定义困难区域。"
     if "open-world segmentation" in tags and "3D perception" in tags:
@@ -1822,6 +1842,16 @@ def relation_to_topic(paper: Paper) -> str:
 def borrow_points(paper: Paper) -> str:
     tags = set(paper.tags)
     points = []
+    if "embodied navigation" in tags and "spatial memory" in tags:
+        return "自适应八叉树近远场记忆、指令调制的双查询、当前观测融合与持续弱证据搜索。"
+    if "missing modality" in tags and "multimodal segmentation" in tags:
+        return "统一编码器遮蔽预训练、共享路径与模态专属 CNN 并联、融合前表征学习及分层学习率衰减。"
+    if "multimodal safety" in tags and "causal intervention" in tags:
+        return "层阻断与 FFN/MHSA 路径干预、图文双模态安全子空间、推理期激活投影及通用能力保真评测。"
+    if "multimodal RAG" in tags and "anomaly detection" in tags:
+        return "视觉异常专家、查询到知识的多模态 RAG、类型级稀疏提示与证据接地推理。"
+    if "video anomaly detection" in tags and "selective evaluation" in tags:
+        return "时间聚类覆盖、集成分歧与异常记忆联合选段、Recall@FPR、漏报加权代价及冻结 VLM 晚期融合。"
     if "4D LiDAR generation" in tags:
         points.append("不确定区域优先建模、条件扩散补全、空间时间门控与校准评估")
     if "open-world segmentation" in tags and "3D perception" in tags:
@@ -1871,6 +1901,16 @@ def borrow_points(paper: Paper) -> str:
 
 def improvement_ideas(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "embodied navigation" in tags and "spatial memory" in tags:
+        return "应在真实飞行中注入深度、位姿、风扰和运动模糊误差，按目标尺寸与见/未见环境报告 SR、SPL、首次发现时间和能耗，并与等内存稠密图及移除远场探索查询的策略对照。"
+    if "missing modality" in tags and "multimodal segmentation" in tags:
+        return "应从随机缺失扩展到与场景相关的缺失、连续质量退化和配准误差，加入模态可靠性门控，并按缺失模式报告最坏组 DSC、HD95、校准和失败恢复。"
+    if "multimodal safety" in tags and "causal intervention" in tags:
+        return "应以人工安全标注复核模型裁判，跨架构搜索而非固定中层/维数，并用随机子空间、等秩投影和任务无关投影控制，验证 ASR 降低确由安全方向而非表示损伤。"
+    if "multimodal RAG" in tags and "anomaly detection" in tags:
+        return "应建立知识库隔离与检索污染审计，加入无相关知识时的拒答/不确定性，并以同 token 预算比较随机文档、仅类型提示和真实检索，区分信息量增益与接地机制。"
+    if "video anomaly detection" in tags and "selective evaluation" in tags:
+        return "应在独立验证集冻结提示词、阈值和融合权重，以等算力随机选段、单模型熵和仅 VLM 融合作为对照，并补充校准、每小时误报、检测延迟及含 14B 分支的端到端成本。"
     if "4D LiDAR generation" in tags:
         return "应区分数据噪声与模型认知不确定性，补齐总损失系数并报告稀有事件分层、速度和风险覆盖；迁移到 RGB 时须比较随机、熵与模型分歧选区。"
     if "open-world segmentation" in tags and "3D perception" in tags:

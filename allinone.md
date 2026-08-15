@@ -263,3 +263,19 @@ The final queue was frozen only after excluding the provisional 2026-08-14 snaps
 All five are formally peer-reviewed CVF papers with verified full PDFs. The queue combines uncertainty-prioritized world generation, canonical open-world grounding, rare-event temporal localization, abnormality-aware vision-language alignment, and degraded weak-evidence calibration. RHCNet remains included with an explicit evidence warning: its camera-ready UTDAC table reports AP 53.35, while an older review-copy supplement reports AP 50.87 for the nominally complete configuration without explaining the version difference.
 
 The dedicated UAV pool retains **Rethinking Occlusion Modeling for UAV Tracking**, F2Net, SPAR-Det, and **Tracking Tiny Drones against Clutter**. The fire transfer pool retains **SmokeSVD**, RealX3D, and FireMan-UAV-RGBT; SmokeSVD contributes dynamic, translucent, physics-consistent smoke modeling but is not presented as an early-wildfire detector. The complete evidence, source failures, historical exclusions, and COD/UAV/fire transfer boundaries are retained in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-14\2026-08-14-检索与筛选报告.md`.
+
+---
+
+# Verified Daily Search Update - 2026-08-15
+
+The expanded scan ran with `DEEP_SOURCE_SCAN=1` and isolated all automatic downloads on the D drive while Zotero import was disabled. It collected 9,403 raw CVF records, reached 10,194 cumulative Crossref records, merged 10,747 cached candidates, and formed a final pool of 10,751 papers. arXiv entered degraded mode after three HTTP 429 responses; Semantic Scholar did the same for the safety-critical, multimodal-hazard, and open-world-multimodal clusters; selected TPAMI Crossref queries also returned 429. These clusters remain in the cache and next-run plan rather than being treated as empty results.
+
+The final queue was frozen after excluding the provisional 2026-08-15 snapshot and checking normalized titles plus official CVF HTML/PDF identities against all feed sections through 2026-08-14, the curated-highlight ledger, and the 160-entry Zotero-imported download index:
+
+1. **Memory-Augmented Scene Understanding and Exploration for Open-World Aerial Object-Goal Navigation** (CVPR 2026)
+2. **The Road Less Seen: Segment Exploration for Weakly Supervised Video Anomaly Detection** (CVPR 2026)
+3. **Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities** (CVPR 2026)
+4. **Diagnosing and Repairing Unsafe Channels in Vision-Language Models via Causal Discovery and Dual-Modal Safety Subspace Projection** (CVPR 2026)
+5. **ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning** (CVPR 2026)
+
+All five official main PDFs and available supplements passed signature and three-way page-count preflight and were read beyond their abstracts. The queue combines open-world aerial active perception, low-FPR video-anomaly evaluation, missing-modality representation learning, causal VLM safety repair, and knowledge-grounded anomaly reasoning. AerialMemory is the dedicated UAV anchor. SmokeSVD remains a fire-transfer candidate because it models dynamic translucent smoke in 3D, but it was not promoted as an early-fire detector because it does not evaluate alarm recall, practical false positives, cloud/fog/haze/sunset/reflection negatives, RGB-T reliability, or edge deployment. Full source failures, evidence boundaries, specialist UAV/fire candidates, and selection rationale are retained in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-15\2026-08-15-检索与筛选报告.md`.

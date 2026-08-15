@@ -8994,9 +8994,13 @@
     ],
     "source": "CVPR 2026",
     "published": "2026",
-    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+    "summary": "OctMem-Agent把连续RGB-D观测写入自适应八叉树，以指令调制的场景查询读取近场目标证据、探索查询读取远场已观测上下文，再融合当前观测生成无人机动作。",
     "tags": [
-      "open-world"
+      "UAV/aerial",
+      "open-world",
+      "embodied navigation",
+      "spatial memory",
+      "vision-language grounding"
     ],
     "score": 70
   },
@@ -11316,11 +11320,13 @@
     ],
     "source": "CVPR 2026",
     "published": "2026",
-    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+    "summary": "论文把弱监督视频异常检测从追求整体AUROC改写为低误报工作点下的实用召回，并用聚类与模型分歧主动发掘漏学片段。",
     "tags": [
-      "unsupervised",
-      "video",
-      "anomaly/OOD"
+      "video anomaly detection",
+      "safety-critical perception",
+      "selective evaluation",
+      "uncertainty",
+      "weak supervision"
     ],
     "score": 68
   },
@@ -13083,11 +13089,13 @@
     ],
     "source": "CVPR 2026",
     "published": "2026",
-    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+    "summary": "ADSeeker把视觉异常专家、查询到知识的多模态检索和层级稀疏提示接入MLLM，使异常定位、类型知识与基于检索文档的解释进入同一推理链。",
     "tags": [
-      "reasoning",
-      "boundary/frequency",
-      "anomaly/OOD"
+      "anomaly detection",
+      "grounded reasoning",
+      "multimodal RAG",
+      "industrial vision",
+      "knowledge-grounded anomaly reasoning"
     ],
     "score": 66
   },
@@ -17448,9 +17456,13 @@
     ],
     "source": "CVPR 2026",
     "published": "2026",
-    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+    "summary": "UniME先以遮蔽自监督的Uni-Encoder学习四种MRI共享表征，第二阶段保留该共享路径并并联四个新建模态专属CNN，再用分层学习率衰减稳住缺失组合。",
     "tags": [
-      "computer vision"
+      "medical imaging",
+      "missing modality",
+      "multimodal segmentation",
+      "self-supervised learning",
+      "reliability"
     ],
     "score": 62
   },
@@ -17533,10 +17545,13 @@
     ],
     "source": "CVPR 2026",
     "published": "2026",
-    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+    "summary": "CARE以层阻断和FFN/MHSA路径消融等干预定位越狱敏感的中层FFN，再从图像和文本恶意激活学习安全子空间，推理时投影修复而无需再训练。",
     "tags": [
       "VLM/MLLM",
-      "causal/counterfactual"
+      "causal intervention",
+      "multimodal safety",
+      "representation repair",
+      "safety-critical reasoning"
     ],
     "score": 62
   },
@@ -178804,6 +178819,24 @@
     "score": 33
   },
   {
+    "title": "From PS-InSAR observations to building-level risk: A data-driven framework for urban structural resilience",
+    "url": "https://doi.org/10.1016/j.rse.2026.115454",
+    "pdf": "",
+    "authors": [
+      "Mengshi Yang",
+      "Weibin Huang",
+      "Menghua Li",
+      "Ling Chang"
+    ],
+    "source": "Crossref / RSE / 遥感顶刊 / Remote Sensing of Environment",
+    "published": "2026-08",
+    "summary": "RSE article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "remote sensing"
+    ],
+    "score": 33
+  },
+  {
     "title": "A unified deep learning framework coupling InSAR-derived spatiotemporal kinematic features for robust landslide displacement prediction",
     "url": "https://doi.org/10.1016/j.rse.2026.115469",
     "pdf": "",
@@ -178820,24 +178853,6 @@
     "summary": "RSE article matched by title in a top journal; abstract unavailable from Crossref.",
     "tags": [
       "video",
-      "remote sensing"
-    ],
-    "score": 33
-  },
-  {
-    "title": "From PS-InSAR observations to building-level risk: A data-driven framework for urban structural resilience",
-    "url": "https://doi.org/10.1016/j.rse.2026.115454",
-    "pdf": "",
-    "authors": [
-      "Mengshi Yang",
-      "Weibin Huang",
-      "Menghua Li",
-      "Ling Chang"
-    ],
-    "source": "Crossref / RSE / 遥感顶刊 / Remote Sensing of Environment",
-    "published": "2026-08",
-    "summary": "RSE article matched by title in a top journal; abstract unavailable from Crossref.",
-    "tags": [
       "remote sensing"
     ],
     "score": 33

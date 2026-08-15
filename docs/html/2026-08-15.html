@@ -71,89 +71,89 @@
 <main>
 <h1>2026-08-15 CV Paper Feed</h1>
 <p><a href="../index.html">返回首页</a></p>
-<p>Last updated: 2026-08-15 10:23 Asia/Shanghai</p>
-<p>Candidate pool: 10891 papers</p>
+<p>Last updated: 2026-08-15 10:56 Asia/Shanghai</p>
+<p>Candidate pool: 10890 papers</p>
 <p>慢读模式：本页只展示 5 篇当日精读、10 篇高质量来源、12 篇 COD 相关、10 篇无人机小目标、10 篇火灾/烟雾与多光谱感知、4 篇火灾监测大模型、12 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。</p>
 <p>精读队列优先选择能给 COD 带来新问题设定或新方法范式的论文，例如开放世界、目标发现、反事实/因果、不确定性、自监督稠密表征、对象中心建模和视觉推理；纯 COD 直系论文主要作为背景和对照。</p>
 <h2>当日精读队列</h2>
 <article class='paper'>
-<h3><strong>From Pixels to Logic: A Perception-Reasoning Decomposition Framework for Open-World Referring Expression Comprehension</strong></h3>
-<p class='meta'>Source: Semantic Scholar / AAAI Conference on Artificial Intelligence, 2026-03-14</p>
-<p class='meta'>Authors: Lihong Huang, Sheng-hua Zhong, Zhi Zhang, Yan Liu</p>
-<p class='meta'>Tags: open-vocabulary, training-free, reasoning, diffusion, open-world, compositionality, saliency/transparent</p>
-<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/7d8d2abd0e798ae5b9dc42a84c718f8980b91178">paper</a> / <a href="https://ojs.aaai.org/index.php/AAAI/article/download/37419/41381">pdf</a></p>
-<p class='meta'>论文：From Pixels to Logic: A Perception-Reasoning Decomposition Framework for Open-World Referring Expression Comprehension</p>
-<p class='meta'>一句话总结：Recent advances in Referring Expression Comprehension (REC) have been largely driven by supervised learning on curated datasets, where each expression is assumed to refer to exactly one known object. However,...</p>
-<p class='meta'>任务设定：开放词汇视觉识别/分割，目标类别或文本提示在训练时未必出现。</p>
-<p class='meta'>摘要详解：研究问题：Recent advances in Referring Expression Comprehension (REC) have been largely driven by supervised learning on curated datasets, where each expression is assumed to refer to exactly one known object. However, such assumptions rarely hold in real-world scenarios, where expressions can refer to multiple objects, fail to refer to any, or involve novel categories and complex semantics. 方法与流程：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。 摘要中的具体做法包括：In this work, we introduce a novel, training-free framework that decouples visual perception from linguistic reasoning to address open-world REC. Our method first transforms the visual scene into a rich textual representation using an open-vocabulary multimodal perception module. It then employs a reasoning language model to interpret the referring expression and perform explicit logical inference over the perceived scene, enabling transparent decision-making and strong generalization in open-world scenarios. Experiments on three standard REC benchmarks as well as two more challenging ones, gRefCOCO and D³, demonstrate that our framework achieves highly competitive zero-shot performance, often surpassing supervised baselines. 摘要结论：Experiments on three standard REC benchmarks as well as two more challenging ones, gRefCOCO and D³, demonstrate that our framework achieves highly competitive zero-shot performance, often surpassing supervised baselines.</p>
-<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：可帮助 COD 跳出固定类别监督，转向未知目标发现、开放世界分割和类别无关候选生成。</p>
-<p class='meta'>可借鉴点：prompt 设计、类别文本构造、免训练迁移流程；类别无关候选发现、未知目标设定、目标缺失场景；对象-背景解耦、概念分解、可解释中间变量。</p>
-<p class='meta'>可改进点：可改进 prompt 自动生成、负样本约束和 mask 置信度校准。</p>
+<h3><strong>Memory-Augmented Scene Understanding and Exploration for Open-World Aerial Object-Goal Navigation</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Authors: Jiacong Zhou, Jiaxu Miao, Yourun Lin, Xianyun Wang, Jun Xiao et al.</p>
+<p class='meta'>Tags: UAV/aerial, open-world, embodied navigation, spatial memory, vision-language grounding</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Zhou_Memory-Augmented_Scene_Understanding_and_Exploration_for_Open-World_Aerial_Object-Goal_Navigation_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Zhou_Memory-Augmented_Scene_Understanding_and_Exploration_for_Open-World_Aerial_Object-Goal_Navigation_CVPR_2026_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Memory-Augmented Scene Understanding and Exploration for Open-World Aerial Object-Goal Navigation</p>
+<p class='meta'>一句话总结：OctMem-Agent把连续RGB-D观测写入自适应八叉树，以指令调制的场景查询读取近场目标证据、探索查询读取远场已观测上下文，再融合当前观测生成无人机动作。</p>
+<p class='meta'>任务设定：开放世界航空目标导航：无人机根据 RGB-D、位姿和自然语言目标描述持续构建近远场记忆，结合已观测场景与当前视野决策探索方向，并输出离散飞行动作直到抵达目标。</p>
+<p class='meta'>摘要详解：研究问题：开放世界无人机目标导航既要记住已观测目标，又要判断下一步该探索哪里；仅使用当前视野或平面稠密地图容易遗忘远处结构，并在大场景浪费计算。方法与流程：OctMem-Agent把RGB-D与位姿反投影为三维点，按距离以不同粒度增量写入Adaptive Octree Memory；该树只保存已观测场景，并不显式构建几何frontier。Instruction-Guided Memory Query以目标描述经FiLM调制场景查询与探索查询，分别读取近场目标证据和远场已观测上下文，再与当前图像、语言共同输入OpenVLA式动作解码器。实验结论：在纯仿真的UAV-ON上，总SR从OpenFly的12.00%升至19.50%，OSR为29.30%、SPL为6.37%；未见环境SR为17.57%，但SPL仅5.15%。消融中单加八叉树的SR为15.70%，再加指令查询才到19.50%，支持两模块互补而非单纯扩大内存。迁移边界：可将层级近远场记忆和指令查询用于持续COD、UAV巡检及火情搜索，但真实部署必须单独检验深度/位姿噪声、运动模糊与弱小目标遗忘。</p>
+<p class='meta'>实验结论：在纯仿真的UAV-ON上，总SR从OpenFly的12.00%升至19.50%，OSR为29.30%、SPL为6.37%；未见环境SR为17.57%，但SPL仅5.15%。消融中单加八叉树的SR为15.70%，再加指令查询才到19.50%，支持两模块互补而非单纯扩大内存。迁移边界：可将层级近远场记忆和指令查询用于持续COD、UAV巡检及火情搜索，但真实部署必须单独检验深度/位姿噪声、运动模糊与弱小目标遗忘。</p>
+<p class='meta'>和我课题的关系：可把单帧 COD/UAV/火灾感知扩展为持续搜索：保留已见弱证据和远场上下文以辅助后续探索；八叉树并不显式存储几何前沿，且导航依赖 RGB-D 与位姿，动作成功率也不等于像素检测能力。</p>
+<p class='meta'>可借鉴点：自适应八叉树近远场记忆、指令调制的双查询、当前观测融合与持续弱证据搜索。</p>
+<p class='meta'>可改进点：应在真实飞行中注入深度、位姿、风扰和运动模糊误差，按目标尺寸与见/未见环境报告 SR、SPL、首次发现时间和能耗，并与等内存稠密图及移除远场探索查询的策略对照。</p>
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
-<h3><strong>MUG: Multi-human Graph Network for 3D Mesh Reconstruction from 2D Pose</strong></h3>
-<p class='meta'>Source: Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision, 2026-08-05</p>
-<p class='meta'>Authors: Chenyan Wu, Yandong Li, Xianfeng Tang, Zhe Huang, James Z. Wang</p>
-<p class='meta'>Tags: reasoning, diffusion, depth/geometry, open-world</p>
-<p class='meta'>Links: <a href="https://doi.org/10.1007/s11263-026-02942-9">paper</a></p>
-<p class='meta'>论文：MUG: Multi-human Graph Network for 3D Mesh Reconstruction from 2D Pose</p>
-<p class='meta'>一句话总结：Abstract Reconstructing multi-human body meshes from a single monocular image is a crucial yet challenging problem in computer vision. This problem requires not only generating individual body mesh models for...</p>
-<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
-<p class='meta'>摘要详解：研究问题：Abstract Reconstructing multi-human body meshes from a single monocular image is a crucial yet challenging problem in computer vision. This problem requires not only generating individual body mesh models for each person but also estimating the relative 3D positions among subjects to produce a coherent scene representation. 方法与流程：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。 摘要中的具体做法包括：In this work, we introduce MUG (Multi-hUman Graph network), which employs a single graph neural network to construct coherent multi-human meshes using only 2D pose data as input. 摘要结论：Our approach demonstrates that purely pose-based methods can effectively perform simultaneous depth reasoning and multi-human mesh generation. Despite the simplicity of using only 2D pose inputs and streamlined network architecture, MUG outperforms existing multi-human mesh estimation methods.</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：可帮助 COD 跳出固定类别监督，转向未知目标发现、开放世界分割和类别无关候选生成。</p>
-<p class='meta'>可借鉴点：深度或几何先验融合；类别无关候选发现、未知目标设定、目标缺失场景。</p>
-<p class='meta'>可改进点：可设计开放世界 COD：图像中可能没有伪装目标，或目标类别未知，模型需要先发现再判别。</p>
+<h3><strong>The Road Less Seen: Segment Exploration for Weakly Supervised Video Anomaly Detection</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Authors: Anusha Acharya, Hitesh Sapkota, Qi Yu, Xumin Liu</p>
+<p class='meta'>Tags: video anomaly detection, safety-critical perception, selective evaluation, uncertainty, weak supervision</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Acharya_The_Road_Less_Seen_Segment_Exploration_for_Weakly_Supervised_Video_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Acharya_The_Road_Less_Seen_Segment_Exploration_for_Weakly_Supervised_Video_CVPR_2026_paper.pdf">pdf</a></p>
+<p class='meta'>论文：The Road Less Seen: Segment Exploration for Weakly Supervised Video Anomaly Detection</p>
+<p class='meta'>一句话总结：论文把弱监督视频异常检测从追求整体AUROC改写为低误报工作点下的实用召回，并用聚类与模型分歧主动发掘漏学片段。</p>
+<p class='meta'>任务设定：弱监督视频异常检测与低误报评估：训练仅使用视频级正常/异常标签，推理输出逐片段异常分数，并重点报告固定低误报率下的召回与漏报代价。</p>
+<p class='meta'>摘要详解：研究问题：弱监督视频异常检测常以高AUROC宣称有效，但类别极不平衡时，模型可能在实用低误报阈值下几乎召回不到异常。方法与流程：论文先以MIL和异常记忆为基线，Temporal Clustering-Based Selection从不同聚类中发掘未覆盖片段；Uncertainty-Based Selection用三次不同初始化模型的分歧筛出高不确定、又接近异常记忆的候选，并加入二元交叉熵。最后把双探索分数与InternVL3-14B判断融合，同时提出Recall@FPR及误分类成本MCC。实验结论：UCF-Crime上融合方法AP为38.33%，Recall@1%/2%/3% FPR为0.173/0.263/0.336；它并非所有低误报点都胜过14B模型，且补充材料透露提示词曾参考异常测试视频筛选，存在测试调参风险。作者还在XD-Violence报告AP与4%至6% FPR下召回，说明其评价主张跨越两套异常视频，但仍未覆盖现场代价。对COD、UAV和早期烟火应迁移“固定误报预算看召回”，而不能把集成分歧直接称为校准不确定性。</p>
+<p class='meta'>实验结论：UCF-Crime上融合方法AP为38.33%，Recall@1%/2%/3% FPR为0.173/0.263/0.336；它并非所有低误报点都胜过14B模型，且补充材料透露提示词曾参考异常测试视频筛选，存在测试调参风险。作者还在XD-Violence报告AP与4%至6% FPR下召回，说明其评价主张跨越两套异常视频，但仍未覆盖现场代价。</p>
+<p class='meta'>和我课题的关系：可把 COD、UAV 与早期火灾从只看平均精度改为固定误报预算下检验漏检，并用片段覆盖与模型分歧发掘弱证据；时序选择不适用于单幅 COD，集成分歧也不等于校准不确定性。</p>
+<p class='meta'>可借鉴点：时间聚类覆盖、集成分歧与异常记忆联合选段、Recall@FPR、漏报加权代价及冻结 VLM 晚期融合。</p>
+<p class='meta'>可改进点：应在独立验证集冻结提示词、阈值和融合权重，以等算力随机选段、单模型熵和仅 VLM 融合作为对照，并补充校准、每小时误报、检测延迟及含 14B 分支的端到端成本。</p>
+<p class='meta'>是否值得精读：建议精读：高质量来源或方法迁移价值较高。</p>
+</article>
+<article class='paper'>
+<h3><strong>Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Authors: Peibo Song, Xiaotian Xue, Jinshuo Zhang, Zihao Wang, Jinhua Liu et al.</p>
+<p class='meta'>Tags: medical imaging, missing modality, multimodal segmentation, self-supervised learning, reliability</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Song_Uni-Encoder_Meets_Multi-Encoders_Representation_Before_Fusion_for_Brain_Tumor_Segmentation_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Song_Uni-Encoder_Meets_Multi-Encoders_Representation_Before_Fusion_for_Brain_Tumor_Segmentation_CVPR_2026_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities</p>
+<p class='meta'>一句话总结：UniME先以遮蔽自监督的Uni-Encoder学习四种MRI共享表征，第二阶段保留该共享路径并并联四个新建模态专属CNN，再用分层学习率衰减稳住缺失组合。</p>
+<p class='meta'>任务设定：缺失模态脑肿瘤分割：输入四种 MRI 的任意可用子集，在十五种完整/缺失组合下输出 WT、TC、ET 三个肿瘤区域，并以 DSC 与 HD95 评价。</p>
+<p class='meta'>摘要详解：研究问题：脑肿瘤分割部署时四种MRI序列经常缺失，直接拼接或先做模态专属编码会让单模态表征过早分化，缺失组合下融合器得不到稳定共享语义。方法与流程：UniME第一阶段用Uni-Encoder接收随机缺失且经patch masking的多模态输入，通过重建预训练学习跨模态共享表征；第二阶段保留该预训练Uni-Encoder作为共享全局路径，同时新增四条从头训练的模态专属CNN，分尺度融合两类特征，并用Layer-wise Learning Rate Decay保护共享路径，最终以Dice与交叉熵监督分割。实验结论：在BraTS 2023的15种组合上，相比次优方法，WT/TC/ET平均DSC分别提高1.40、1.53和2.36个百分点；完整两阶段方案平均DSC达83.49。作者也用HD95衡量边界误差并在BraTS 2024复验，但没有按缺失机制或扫描中心报告校准和最坏组风险。该证据只覆盖同器官MRI和随机缺失，迁移RGB-T火灾或UAV多传感器前必须加入非随机缺失、退化强度和可靠性门控对照。</p>
+<p class='meta'>实验结论：在BraTS 2023的15种组合上，相比次优方法，WT/TC/ET平均DSC分别提高1.40、1.53和2.36个百分点；完整两阶段方案平均DSC达83.49。作者也用HD95衡量边界误差并在BraTS 2024复验，但没有按缺失机制或扫描中心报告校准和最坏组风险。该证据只覆盖同器官MRI和随机缺失，迁移RGB-T火灾或UAV多传感器前必须加入非随机缺失、退化强度和可靠性门控对照。</p>
+<p class='meta'>和我课题的关系：可迁移“融合前先学稳健共享表示”到 RGB-T 火灾、航空多传感器和带深度辅助的 COD；MRI 随机缺失不等于真实传感器失效，必须另测非随机缺失与退化。</p>
+<p class='meta'>可借鉴点：统一编码器遮蔽预训练、共享路径与模态专属 CNN 并联、融合前表征学习及分层学习率衰减。</p>
+<p class='meta'>可改进点：应从随机缺失扩展到与场景相关的缺失、连续质量退化和配准误差，加入模态可靠性门控，并按缺失模式报告最坏组 DSC、HD95、校准和失败恢复。</p>
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
-<h3><strong>SegCLIP: Multimodal Visual-Language and Prompt Learning for High-Resolution Remote Sensing Semantic Segmentation</strong></h3>
-<p class='meta'>Source: Semantic Scholar / IEEE Transactions on Geoscience and Remote Sensing / citations 26, 2024</p>
-<p class='meta'>Authors: Shijie Zhang, Bin Zhang, Yuntao Wu, Huabing Zhou, Junjun Jiang et al.</p>
-<p class='meta'>Tags: diffusion, remote sensing, UAV/small-object, representation learning</p>
-<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/17cb6a48e637a7b97a93e7143d1415e98560d586">paper</a></p>
-<p class='meta'>论文：SegCLIP: Multimodal Visual-Language and Prompt Learning for High-Resolution Remote Sensing Semantic Segmentation</p>
-<p class='meta'>一句话总结：Remote sensing semantic segmentation is considered a key step in the intelligent interpretation of high-resolution remote sensing (HRRS) images, with widespread applications in fields such as hazard assessment...</p>
-<p class='meta'>任务设定：无人机/航拍小目标检测、分割或跟踪，重点处理目标像素少、尺度变化大、密集遮挡、运动模糊和边缘部署限制。</p>
-<p class='meta'>摘要详解：研究问题：Remote sensing semantic segmentation is considered a key step in the intelligent interpretation of high-resolution remote sensing (HRRS) images, with widespread applications in fields such as hazard assessment, environmental monitoring, and urban planning. Recently, numerous deep learning-based semantic segmentation methods have emerged, achieving significant breakthroughs. 方法与流程：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。 摘要中的具体做法包括：Inspired by prompt learning, we propose a prompting approach based on linguistic descriptions to enable CLIP to generate semantically distinct contextual information for remote sensing images. We introduce the SegCLIP network architecture, a novel framework specifically designed for semantic segmentation of HRRS images. Specifically, we have adapted CLIP to extract text information, thereby guiding the visual model in distinguishing among classes. 摘要结论：Experimental evaluations confirm that the method exhibits superior performance on the LoveDA, iSAID, and UAVid public semantic segmentation datasets.</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：与 COD 的交叉点是弱目标证据：无人机目标通常尺寸极小，COD 目标通常与背景相似；二者都需要避免下采样丢失细节，并抑制复杂背景误检。</p>
-<p class='meta'>可借鉴点：无标注稠密表征、预训练特征选择、局部结构保持；小目标特征保真、多尺度融合、密集遮挡处理、轻量化实时推理。</p>
-<p class='meta'>可改进点：可把无人机小目标的高分辨率分支、多尺度候选和轻量检测头迁移到 COD，并验证其是否改善小型伪装目标、远景目标和复杂背景误检。</p>
+<h3><strong>Diagnosing and Repairing Unsafe Channels in Vision-Language Models via Causal Discovery and Dual-Modal Safety Subspace Projection</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Authors: Jinhu Fu, Yihang Lou, Qingyi Si, Shudong Zhang, Sen Su</p>
+<p class='meta'>Tags: VLM/MLLM, causal intervention, multimodal safety, representation repair, safety-critical reasoning</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Fu_Diagnosing_and_Repairing_Unsafe_Channels_in_Vision-Language_Models_via_Causal_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Fu_Diagnosing_and_Repairing_Unsafe_Channels_in_Vision-Language_Models_via_Causal_CVPR_2026_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Diagnosing and Repairing Unsafe Channels in Vision-Language Models via Causal Discovery and Dual-Modal Safety Subspace Projection</p>
+<p class='meta'>一句话总结：CARE以层阻断和FFN/MHSA路径消融等干预定位越狱敏感的中层FFN，再从图像和文本恶意激活学习安全子空间，推理时投影修复而无需再训练。</p>
+<p class='meta'>任务设定：视觉语言模型越狱诊断与无训练修复：输入良性或图文攻击提示，以干预式实验定位对不安全回答敏感的内部层与路径，并在推理时投影激活以降低攻击成功率。</p>
+<p class='meta'>摘要详解：研究问题：视觉语言模型遭遇图像或文本越狱时，现有防御常靠重训练或输入过滤，却不清楚内部哪些表示与不安全回答最相关，也难兼顾安全与通用能力。方法与流程：CARE先以层阻断、FFN旁路和MHSA均匀化等干预定位越狱敏感的中层FFN；再用图像归因挑选攻击视觉token，从良性与恶意的图像、文本激活协方差中提取双模态安全子空间。推理时依据攻击相关性，用混合系数将当前激活投影到良性方向，属于无训练的表示干预。实验结论：作者在Qwen2.5-VL和LLaVA-OneVision、多种越狱与PGD设置中报告ASR显著下降，例如MM-SafetyBench从ASTRA的15.57%降至8.72%，同时通用评测仍有最多约5.73%的下降。安全标签依赖另一模型判分，固定中层和固定维数也没有证明跨架构最优；公开方法也没有正式中介效应估计。它没有控制像素漏检风险，迁移COD/UAV/火灾只能把“诊断并投影危险捷径方向”作为待验证假设。</p>
+<p class='meta'>实验结论：作者在Qwen2.5-VL和LLaVA-OneVision、多种越狱与PGD设置中报告ASR显著下降，例如MM-SafetyBench从ASTRA的15.57%降至8.72%，同时通用评测仍有最多约5.73%的下降。安全标签依赖另一模型判分，固定中层和固定维数也没有证明跨架构最优；公开方法也没有正式中介效应估计。它没有控制像素漏检风险，迁移COD/UAV/火灾只能把“诊断并投影危险捷径方向”作为待验证假设。</p>
+<p class='meta'>和我课题的关系：可借其层/路径干预诊断与安全子空间投影检验 COD 背景捷径、UAV 场景偏置和火灾伪影方向；论文控制的是 VLM 越狱输出，不是像素漏检或告警风险。</p>
+<p class='meta'>可借鉴点：层阻断与 FFN/MHSA 路径干预、图文双模态安全子空间、推理期激活投影及通用能力保真评测。</p>
+<p class='meta'>可改进点：应以人工安全标注复核模型裁判，跨架构搜索而非固定中层/维数，并用随机子空间、等秩投影和任务无关投影控制，验证 ASR 降低确由安全方向而非表示损伤。</p>
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <article class='paper'>
-<h3><strong>Open-World Hazard Detection and Captioning for Autonomous Driving with a Unified Multimodal Pipeline</strong></h3>
-<p class='meta'>Source: Semantic Scholar / 2025 IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW) / citations 3, 2025-02-28</p>
-<p class='meta'>Authors: P. Hatami, Maged Shoman, Mina Sartipi</p>
-<p class='meta'>Tags: VLM/MLLM, diffusion, depth/geometry, video, open-world, low-level</p>
-<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/b9c995cb1237cb83491c791e83cf7d04e7a77060">paper</a></p>
-<p class='meta'>论文：Open-World Hazard Detection and Captioning for Autonomous Driving with a Unified Multimodal Pipeline</p>
-<p class='meta'>一句话总结：Autonomous driving systems must operate reliably in dynamic environments where uncommon or unanticipated hazards frequently arise. Traditional perception models often rely on closed-set recognition, restrictin...</p>
-<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>摘要详解：研究问题：Autonomous driving systems must operate reliably in dynamic environments where uncommon or unanticipated hazards frequently arise. Traditional perception models often rely on closed-set recognition, restricting them to predefined object categories and limiting their ability to address novel or rare obstacles. 方法与流程：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。 摘要中的具体做法包括：To tackle these open-world challenges, we propose an integrated pipeline that merges image enhancement, optical flow, depth estimation, semantic segmentation, and vision-language models. We evaluate our method on the COOOL dataset of 200 annotated dashcam videos, containing both standard and previously unseen hazards. A vision-language module then generates concise, semantically relevant captions for novel objects, enhancing interpretability. 摘要结论：Experimental results show that our unified pipeline consistently improves hazard detection and captioning performance in open-world scenarios, underscoring the need for flexible perception strategies that advance autonomous driving safety.</p>
-<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：可帮助 COD 跳出固定类别监督，转向未知目标发现、开放世界分割和类别无关候选生成。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合；类别无关候选发现、未知目标设定、目标缺失场景。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
-</article>
-<article class='paper'>
-<h3><strong>Causality-inspired representation learning with spatiotemporal memory for polyp detection in endoscopic videos</strong></h3>
-<p class='meta'>Source: Crossref / MedIA / 医学影像顶刊 / Medical Image Analysis, 2026-11</p>
-<p class='meta'>Authors: Zhuo Hu, Changjin Sun, Qi Zheng, Xiaopu He, Cheng Xue et al.</p>
-<p class='meta'>Tags: video, causal/counterfactual, representation learning</p>
-<p class='meta'>Links: <a href="https://doi.org/10.1016/j.media.2026.104231">paper</a></p>
-<p class='meta'>论文：Causality-inspired representation learning with spatiotemporal memory for polyp detection in endoscopic videos</p>
-<p class='meta'>一句话总结：MedIA article matched by title in a top journal; abstract unavailable from Crossref.</p>
-<p class='meta'>任务设定：视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。</p>
-<p class='meta'>摘要详解：当前来源尚未取得可靠摘要，不能仅凭标题推断方法；需要先打开论文页或 PDF 补齐摘要后再详解。</p>
-<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
-<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
-<p class='meta'>可借鉴点：反事实验证、目标存在性判断、误检拒识；无标注稠密表征、预训练特征选择、局部结构保持。</p>
-<p class='meta'>可改进点：可把反事实干预落到 COD：替换背景、扰动纹理、隐藏候选区域，验证模型是否真正依赖目标而非环境偏差。</p>
+<h3><strong>ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Authors: Kai Zhang, Zekai Zhang, Xihe Sun, Anpeng Wang, Jingmeng Nie et al.</p>
+<p class='meta'>Tags: anomaly detection, grounded reasoning, multimodal RAG, industrial vision, knowledge-grounded anomaly reasoning</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_ADSeeker_A_Knowledge-Grounded_Reasoning_Framework_for_Industry_Anomaly_Detection_and_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_ADSeeker_A_Knowledge-Grounded_Reasoning_Framework_for_Industry_Anomaly_Detection_and_CVPR_2026_paper.pdf">pdf</a></p>
+<p class='meta'>论文：ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning</p>
+<p class='meta'>一句话总结：ADSeeker把视觉异常专家、查询到知识的多模态检索和层级稀疏提示接入MLLM，使异常定位、类型知识与基于检索文档的解释进入同一推理链。</p>
+<p class='meta'>任务设定：知识接地异常检测与推理包含两个分离协议：ZSAD 对工业或重掩膜医学图像输出图像级异常分数与像素热图；MMAD 则在工业场景评测多选异常判别及对象/缺陷知识问答。</p>
+<p class='meta'>摘要详解：研究问题：零样本异常检测能给出分数或热图，但工业判断还需要说明异常类型、位置依据和处理知识；通用MLLM缺少细粒度缺陷先验，直接提示容易给出空泛解释。方法与流程：ADSeeker的AD Expert用CLIP patch与正负类型提示生成异常先验；Q2K多模态RAG把查询图像检索为SEEK-M&amp;V知识文档；Hierarchical Sparse Prompt把类型级文本提示与缺陷区域特征分层注入视觉和文本编码器，最终由MLLM完成判别、定位与推理。实验结论：七个工业/医疗数据集的图像级AUROC均值为94.0，Qwen2.5-VL-7B在MMAD Seek-Setting平均准确率69.90%；完整系统约占28.36 GiB、每样本6.14秒。消融显示RAG与专家同时加入才达到最佳，但不能排除更多先验信息而非接地机制本身带来增益。所谓零样本仍在MVTec与VisA间替换微调，且自建知识库、部分MMAD子集及无拒答机制限制外推；迁移时只应测试知识接地和类型难负例，而非直接继承工业闭集假设。</p>
+<p class='meta'>实验结论：七个工业/医疗数据集的图像级AUROC均值为94.0，Qwen2.5-VL-7B在MMAD Seek-Setting平均准确率69.90%；完整系统约占28.36 GiB、每样本6.14秒。消融显示RAG与专家同时加入才达到最佳，但不能排除更多先验信息而非接地机制本身带来增益。所谓零样本仍在MVTec与VisA间替换微调，且自建知识库、部分MMAD子集及无拒答机制限制外推；迁移时只应测试知识接地和类型难负例，而非直接继承工业闭集假设。</p>
+<p class='meta'>和我课题的关系：可把可追溯的背景/缺陷检索文档和区域异常先验引入 COD、UAV 与火灾误报分析；论文未验证自由文本事实性，工业闭集类型与标准外观也不能直接覆盖开放环境的未知目标和动态烟火。</p>
+<p class='meta'>可借鉴点：视觉异常专家、查询到知识的多模态 RAG、类型级稀疏提示与证据接地推理。</p>
+<p class='meta'>可改进点：应建立知识库隔离与检索污染审计，加入无相关知识时的拒答/不确定性，并以同 token 预算比较随机文档、仅类型提示和真实检索，区分信息量增益与接地机制。</p>
 <p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
 </article>
 <h2>高质量来源优先读：CCF-A/B 与顶刊顶会</h2>

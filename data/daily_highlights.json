@@ -3136,5 +3136,129 @@
       ],
       "score": 94
     }
+  ],
+  "2026-08-15": [
+    {
+      "title": "Memory-Augmented Scene Understanding and Exploration for Open-World Aerial Object-Goal Navigation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhou_Memory-Augmented_Scene_Understanding_and_Exploration_for_Open-World_Aerial_Object-Goal_Navigation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhou_Memory-Augmented_Scene_Understanding_and_Exploration_for_Open-World_Aerial_Object-Goal_Navigation_CVPR_2026_paper.pdf",
+      "authors": [
+        "Jiacong Zhou",
+        "Jiaxu Miao",
+        "Yourun Lin",
+        "Xianyun Wang",
+        "Jun Xiao",
+        "Jun Yu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "OctMem-Agent把连续RGB-D观测写入自适应八叉树，以指令调制的场景查询读取近场目标证据、探索查询读取远场已观测上下文，再融合当前观测生成无人机动作。",
+      "tags": [
+        "UAV/aerial",
+        "open-world",
+        "embodied navigation",
+        "spatial memory",
+        "vision-language grounding"
+      ],
+      "score": 98
+    },
+    {
+      "title": "The Road Less Seen: Segment Exploration for Weakly Supervised Video Anomaly Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Acharya_The_Road_Less_Seen_Segment_Exploration_for_Weakly_Supervised_Video_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Acharya_The_Road_Less_Seen_Segment_Exploration_for_Weakly_Supervised_Video_CVPR_2026_paper.pdf",
+      "authors": [
+        "Anusha Acharya",
+        "Hitesh Sapkota",
+        "Qi Yu",
+        "Xumin Liu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "论文把弱监督视频异常检测从追求整体AUROC改写为低误报工作点下的实用召回，并用聚类与模型分歧主动发掘漏学片段。",
+      "tags": [
+        "video anomaly detection",
+        "safety-critical perception",
+        "selective evaluation",
+        "uncertainty",
+        "weak supervision"
+      ],
+      "score": 97
+    },
+    {
+      "title": "Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Song_Uni-Encoder_Meets_Multi-Encoders_Representation_Before_Fusion_for_Brain_Tumor_Segmentation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Song_Uni-Encoder_Meets_Multi-Encoders_Representation_Before_Fusion_for_Brain_Tumor_Segmentation_CVPR_2026_paper.pdf",
+      "authors": [
+        "Peibo Song",
+        "Xiaotian Xue",
+        "Jinshuo Zhang",
+        "Zihao Wang",
+        "Jinhua Liu",
+        "Shujun Fu",
+        "Fangxun Bao",
+        "Si Yong Yeo"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "UniME先以遮蔽自监督的Uni-Encoder学习四种MRI共享表征，第二阶段保留该共享路径并并联四个新建模态专属CNN，再用分层学习率衰减稳住缺失组合。",
+      "tags": [
+        "medical imaging",
+        "missing modality",
+        "multimodal segmentation",
+        "self-supervised learning",
+        "reliability"
+      ],
+      "score": 96
+    },
+    {
+      "title": "Diagnosing and Repairing Unsafe Channels in Vision-Language Models via Causal Discovery and Dual-Modal Safety Subspace Projection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Fu_Diagnosing_and_Repairing_Unsafe_Channels_in_Vision-Language_Models_via_Causal_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Fu_Diagnosing_and_Repairing_Unsafe_Channels_in_Vision-Language_Models_via_Causal_CVPR_2026_paper.pdf",
+      "authors": [
+        "Jinhu Fu",
+        "Yihang Lou",
+        "Qingyi Si",
+        "Shudong Zhang",
+        "Sen Su"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "CARE以层阻断和FFN/MHSA路径消融等干预定位越狱敏感的中层FFN，再从图像和文本恶意激活学习安全子空间，推理时投影修复而无需再训练。",
+      "tags": [
+        "VLM/MLLM",
+        "causal intervention",
+        "multimodal safety",
+        "representation repair",
+        "safety-critical reasoning"
+      ],
+      "score": 95
+    },
+    {
+      "title": "ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_ADSeeker_A_Knowledge-Grounded_Reasoning_Framework_for_Industry_Anomaly_Detection_and_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_ADSeeker_A_Knowledge-Grounded_Reasoning_Framework_for_Industry_Anomaly_Detection_and_CVPR_2026_paper.pdf",
+      "authors": [
+        "Kai Zhang",
+        "Zekai Zhang",
+        "Xihe Sun",
+        "Anpeng Wang",
+        "Jingmeng Nie",
+        "Qinghui Chen",
+        "Han Hao",
+        "Jianyuan Guo",
+        "Jinglin Zhang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "ADSeeker把视觉异常专家、查询到知识的多模态检索和层级稀疏提示接入MLLM，使异常定位、类型知识与基于检索文档的解释进入同一推理链。",
+      "tags": [
+        "anomaly detection",
+        "grounded reasoning",
+        "multimodal RAG",
+        "industrial vision",
+        "knowledge-grounded anomaly reasoning"
+      ],
+      "score": 94
+    }
   ]
 }

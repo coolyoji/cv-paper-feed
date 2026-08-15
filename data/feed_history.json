@@ -1,125 +1,132 @@
 [
   {
     "date": "2026-08-15",
-    "generated_at": "2026-08-15 10:23",
+    "generated_at": "2026-08-15 10:56",
     "timezone": "Asia/Shanghai",
-    "total_selected": 10891,
+    "total_selected": 10890,
     "sections": {
       "highlights": [
         {
-          "title": "From Pixels to Logic: A Perception-Reasoning Decomposition Framework for Open-World Referring Expression Comprehension",
-          "url": "https://www.semanticscholar.org/paper/7d8d2abd0e798ae5b9dc42a84c718f8980b91178",
-          "pdf": "https://ojs.aaai.org/index.php/AAAI/article/download/37419/41381",
+          "title": "Memory-Augmented Scene Understanding and Exploration for Open-World Aerial Object-Goal Navigation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhou_Memory-Augmented_Scene_Understanding_and_Exploration_for_Open-World_Aerial_Object-Goal_Navigation_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhou_Memory-Augmented_Scene_Understanding_and_Exploration_for_Open-World_Aerial_Object-Goal_Navigation_CVPR_2026_paper.pdf",
           "authors": [
-            "Lihong Huang",
-            "Sheng-hua Zhong",
-            "Zhi Zhang",
-            "Yan Liu"
+            "Jiacong Zhou",
+            "Jiaxu Miao",
+            "Yourun Lin",
+            "Xianyun Wang",
+            "Jun Xiao",
+            "Jun Yu"
           ],
-          "source": "Semantic Scholar / AAAI Conference on Artificial Intelligence",
-          "published": "2026-03-14",
-          "summary": "Recent advances in Referring Expression Comprehension (REC) have been largely driven by supervised learning on curated datasets, where each expression is assumed to refer to exactly one known object. However, such assumptions rarely hold in real-world scenarios, where expressions can refer to multiple objects, fail to refer to any, or involve novel categories and complex semantics. These challenges define the task of open-world REC, which demands robust generalization and structured reasoning beyond the scope of traditional REC methods. In this work, we introduce a novel, training-free framework that decouples visual perception from linguistic reasoning to address open-world REC. Our method first transforms the visual scene into a rich textual representation using an open-vocabulary multimodal perception module. It then employs a reasoning language model to interpret the referring expression and perform explicit logical inference over the perceived scene, enabling transparent decision-making and strong generalization in open-world scenarios. Experiments on three standard REC benchmarks as well as two more challenging ones, gRefCOCO and D³, demonstrate that our framework achieves highly competitive zero-shot performance, often surpassing supervised baselines.",
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "OctMem-Agent把连续RGB-D观测写入自适应八叉树，以指令调制的场景查询读取近场目标证据、探索查询读取远场已观测上下文，再融合当前观测生成无人机动作。",
           "tags": [
-            "open-vocabulary",
-            "training-free",
-            "reasoning",
-            "diffusion",
+            "UAV/aerial",
             "open-world",
-            "compositionality",
-            "saliency/transparent"
-          ],
-          "score": 86
-        },
-        {
-          "title": "MUG: Multi-human Graph Network for 3D Mesh Reconstruction from 2D Pose",
-          "url": "https://doi.org/10.1007/s11263-026-02942-9",
-          "pdf": "",
-          "authors": [
-            "Chenyan Wu",
-            "Yandong Li",
-            "Xianfeng Tang",
-            "Zhe Huang",
-            "James Z. Wang"
-          ],
-          "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
-          "published": "2026-08-05",
-          "summary": "Abstract Reconstructing multi-human body meshes from a single monocular image is a crucial yet challenging problem in computer vision. This problem requires not only generating individual body mesh models for each person but also estimating the relative 3D positions among subjects to produce a coherent scene representation. In this work, we introduce MUG (Multi-hUman Graph network), which employs a single graph neural network to construct coherent multi-human meshes using only 2D pose data as input. Our approach demonstrates that purely pose-based methods can effectively perform simultaneous depth reasoning and multi-human mesh generation. Existing image-based methods typically rely on lab-collected training datasets with accurate 3D labels; however, these datasets often introduce an image domain gap when applied to in-the-wild testing data or art images due to differences in appearance and context. In contrast, MUG leverages the geometric consistency of 2D poses across diverse datasets, mitigating domain discrepancies. The MUG network operates in three primary phases. Initially, to model the multi-human environment, it processes multi-human 2D poses and constructs a novel heterogeneous graph. This graph connects nodes both across different people and within individuals to capture inter-human interactions and accurately represent body geometry, including skeletal and mesh structures. Subsequently, it employs a dual-branch graph neural network: one branch predicts inter-human depth relations, while the other predicts the root-joint-relative mesh coordinates. Finally, the complete multi-human 3D meshes are constructed by combining the outputs from both branches. Despite the simplicity of using only 2D pose inputs and streamlined network architecture, MUG outperforms existing multi-human mesh estimation methods. This superiority is consistently observed across various datasets from diverse domains, such as RH, MuPoTS-3D, and 3DPW. Qualitative results show that MUG can effectively handle art images, through-wall scenarios, and poor lighting conditions when incorporating advanced 2D pose networks. Both qualitative and quantitative evaluations highlight MUG’s remarkable generalization ability in open-world scenarios.",
-          "tags": [
-            "reasoning",
-            "diffusion",
-            "depth/geometry",
-            "open-world"
-          ],
-          "score": 87
-        },
-        {
-          "title": "SegCLIP: Multimodal Visual-Language and Prompt Learning for High-Resolution Remote Sensing Semantic Segmentation",
-          "url": "https://www.semanticscholar.org/paper/17cb6a48e637a7b97a93e7143d1415e98560d586",
-          "pdf": "",
-          "authors": [
-            "Shijie Zhang",
-            "Bin Zhang",
-            "Yuntao Wu",
-            "Huabing Zhou",
-            "Junjun Jiang",
-            "Jiayi Ma"
-          ],
-          "source": "Semantic Scholar / IEEE Transactions on Geoscience and Remote Sensing / citations 26",
-          "published": "2024",
-          "summary": "Remote sensing semantic segmentation is considered a key step in the intelligent interpretation of high-resolution remote sensing (HRRS) images, with widespread applications in fields such as hazard assessment, environmental monitoring, and urban planning. Recently, numerous deep learning-based semantic segmentation methods have emerged, achieving significant breakthroughs. However, the majority of current research still concentrates on representation learning in the visual feature space, with the potential of multimodal data sources yet to be fully explored. In recent years, the foundational visual language model, namely contrastive language-image pretraining (CLIP), has established a new paradigm in the visual field, demonstrating excellent generalization capabilities and deep semantic understanding across a variety of tasks. Inspired by prompt learning, we propose a prompting approach based on linguistic descriptions to enable CLIP to generate semantically distinct contextual information for remote sensing images. We introduce the SegCLIP network architecture, a novel framework specifically designed for semantic segmentation of HRRS images. Specifically, we have adapted CLIP to extract text information, thereby guiding the visual model in distinguishing among classes. Additionally, we have designed a cross-modal feature fusion (CFF) module that integrates linguistic and visual semantic features, ensuring semantic consistency across modalities. Finally, we have fully exploited the potential of text data and have used additional real text to refine ambiguous query features. Experimental evaluations confirm that the method exhibits superior performance on the LoveDA, iSAID, and UAVid public semantic segmentation datasets.",
-          "tags": [
-            "diffusion",
-            "remote sensing",
-            "UAV/small-object",
-            "representation learning"
-          ],
-          "score": 87
-        },
-        {
-          "title": "Open-World Hazard Detection and Captioning for Autonomous Driving with a Unified Multimodal Pipeline",
-          "url": "https://www.semanticscholar.org/paper/b9c995cb1237cb83491c791e83cf7d04e7a77060",
-          "pdf": "",
-          "authors": [
-            "P. Hatami",
-            "Maged Shoman",
-            "Mina Sartipi"
-          ],
-          "source": "Semantic Scholar / 2025 IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW) / citations 3",
-          "published": "2025-02-28",
-          "summary": "Autonomous driving systems must operate reliably in dynamic environments where uncommon or unanticipated hazards frequently arise. Traditional perception models often rely on closed-set recognition, restricting them to predefined object categories and limiting their ability to address novel or rare obstacles. To tackle these open-world challenges, we propose an integrated pipeline that merges image enhancement, optical flow, depth estimation, semantic segmentation, and vision-language models. We evaluate our method on the COOOL dataset of 200 annotated dashcam videos, containing both standard and previously unseen hazards. By applying depth filtering and road segmentation, our system focuses on objects along the drivable surface. In parallel, optical flow analysis captures driver reactions, adding a temporal dimension that supports hazard assessment. A vision-language module then generates concise, semantically relevant captions for novel objects, enhancing interpretability. Experimental results show that our unified pipeline consistently improves hazard detection and captioning performance in open-world scenarios, underscoring the need for flexible perception strategies that advance autonomous driving safety.",
-          "tags": [
-            "VLM/MLLM",
-            "diffusion",
-            "depth/geometry",
-            "video",
-            "open-world",
-            "low-level"
+            "embodied navigation",
+            "spatial memory",
+            "vision-language grounding"
           ],
           "score": 98
         },
         {
-          "title": "Causality-inspired representation learning with spatiotemporal memory for polyp detection in endoscopic videos",
-          "url": "https://doi.org/10.1016/j.media.2026.104231",
-          "pdf": "",
+          "title": "The Road Less Seen: Segment Exploration for Weakly Supervised Video Anomaly Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Acharya_The_Road_Less_Seen_Segment_Exploration_for_Weakly_Supervised_Video_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Acharya_The_Road_Less_Seen_Segment_Exploration_for_Weakly_Supervised_Video_CVPR_2026_paper.pdf",
           "authors": [
-            "Zhuo Hu",
-            "Changjin Sun",
-            "Qi Zheng",
-            "Xiaopu He",
-            "Cheng Xue",
-            "Guangquan Zhou",
-            "Yang Chen",
-            "Yudong Zhang"
+            "Anusha Acharya",
+            "Hitesh Sapkota",
+            "Qi Yu",
+            "Xumin Liu"
           ],
-          "source": "Crossref / MedIA / 医学影像顶刊 / Medical Image Analysis",
-          "published": "2026-11",
-          "summary": "MedIA article matched by title in a top journal; abstract unavailable from Crossref.",
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "论文把弱监督视频异常检测从追求整体AUROC改写为低误报工作点下的实用召回，并用聚类与模型分歧主动发掘漏学片段。",
           "tags": [
-            "video",
-            "causal/counterfactual",
-            "representation learning"
+            "video anomaly detection",
+            "safety-critical perception",
+            "selective evaluation",
+            "uncertainty",
+            "weak supervision"
           ],
-          "score": 79
+          "score": 97
+        },
+        {
+          "title": "Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Song_Uni-Encoder_Meets_Multi-Encoders_Representation_Before_Fusion_for_Brain_Tumor_Segmentation_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Song_Uni-Encoder_Meets_Multi-Encoders_Representation_Before_Fusion_for_Brain_Tumor_Segmentation_CVPR_2026_paper.pdf",
+          "authors": [
+            "Peibo Song",
+            "Xiaotian Xue",
+            "Jinshuo Zhang",
+            "Zihao Wang",
+            "Jinhua Liu",
+            "Shujun Fu",
+            "Fangxun Bao",
+            "Si Yong Yeo"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "UniME先以遮蔽自监督的Uni-Encoder学习四种MRI共享表征，第二阶段保留该共享路径并并联四个新建模态专属CNN，再用分层学习率衰减稳住缺失组合。",
+          "tags": [
+            "medical imaging",
+            "missing modality",
+            "multimodal segmentation",
+            "self-supervised learning",
+            "reliability"
+          ],
+          "score": 96
+        },
+        {
+          "title": "Diagnosing and Repairing Unsafe Channels in Vision-Language Models via Causal Discovery and Dual-Modal Safety Subspace Projection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Fu_Diagnosing_and_Repairing_Unsafe_Channels_in_Vision-Language_Models_via_Causal_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Fu_Diagnosing_and_Repairing_Unsafe_Channels_in_Vision-Language_Models_via_Causal_CVPR_2026_paper.pdf",
+          "authors": [
+            "Jinhu Fu",
+            "Yihang Lou",
+            "Qingyi Si",
+            "Shudong Zhang",
+            "Sen Su"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CARE以层阻断和FFN/MHSA路径消融等干预定位越狱敏感的中层FFN，再从图像和文本恶意激活学习安全子空间，推理时投影修复而无需再训练。",
+          "tags": [
+            "VLM/MLLM",
+            "causal intervention",
+            "multimodal safety",
+            "representation repair",
+            "safety-critical reasoning"
+          ],
+          "score": 95
+        },
+        {
+          "title": "ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_ADSeeker_A_Knowledge-Grounded_Reasoning_Framework_for_Industry_Anomaly_Detection_and_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_ADSeeker_A_Knowledge-Grounded_Reasoning_Framework_for_Industry_Anomaly_Detection_and_CVPR_2026_paper.pdf",
+          "authors": [
+            "Kai Zhang",
+            "Zekai Zhang",
+            "Xihe Sun",
+            "Anpeng Wang",
+            "Jingmeng Nie",
+            "Qinghui Chen",
+            "Han Hao",
+            "Jianyuan Guo",
+            "Jinglin Zhang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "ADSeeker把视觉异常专家、查询到知识的多模态检索和层级稀疏提示接入MLLM，使异常定位、类型知识与基于检索文档的解释进入同一推理链。",
+          "tags": [
+            "anomaly detection",
+            "grounded reasoning",
+            "multimodal RAG",
+            "industrial vision",
+            "knowledge-grounded anomaly reasoning"
+          ],
+          "score": 94
         }
       ],
       "quality": [

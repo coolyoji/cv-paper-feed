@@ -189,6 +189,11 @@ class CuratedNoteTests(unittest.TestCase):
             (["open-world temporal grounding"], "开放世界视频时序定位"),
             (["video anomaly detection"], "视频异常检测与开放词汇异常识别"),
             (["degraded perception", "object detection"], "退化水下目标检测"),
+            (["embodied navigation", "spatial memory"], "开放世界航空目标导航"),
+            (["missing modality", "multimodal segmentation"], "缺失模态脑肿瘤分割"),
+            (["multimodal safety", "causal intervention"], "视觉语言模型越狱诊断与无训练修复"),
+            (["multimodal RAG", "anomaly detection"], "知识接地异常检测与推理"),
+            (["video anomaly detection", "selective evaluation"], "弱监督视频异常检测与低误报评估"),
             (
                 ["selective prediction", "risk control"],
                 "选择性预测与风险控制",
@@ -225,6 +230,31 @@ class CuratedNoteTests(unittest.TestCase):
                 "介质散射",
                 "高频残差恢复",
             ),
+            (
+                ["embodied navigation", "spatial memory"],
+                "持续搜索",
+                "自适应八叉树近远场记忆",
+            ),
+            (
+                ["missing modality", "multimodal segmentation"],
+                "融合前先学稳健共享表示",
+                "统一编码器遮蔽预训练",
+            ),
+            (
+                ["multimodal safety", "causal intervention"],
+                "层/路径干预诊断",
+                "层阻断与 FFN/MHSA 路径干预",
+            ),
+            (
+                ["multimodal RAG", "anomaly detection"],
+                "可追溯的背景/缺陷检索文档",
+                "查询到知识的多模态 RAG",
+            ),
+            (
+                ["video anomaly detection", "selective evaluation"],
+                "固定误报预算",
+                "时间聚类覆盖",
+            ),
         ]
 
         for tags, relation_phrase, borrow_phrase in cases:
@@ -240,6 +270,40 @@ class CuratedNoteTests(unittest.TestCase):
                     "可思考是否缺少",
                     update_papers.improvement_ideas(paper),
                 )
+
+    def test_specialized_notes_do_not_inherit_unrelated_generic_templates(self):
+        cases = [
+            (
+                ["embodied navigation", "spatial memory", "open-world"],
+                ["未探索前沿", "类别无关候选发现"],
+            ),
+            (
+                ["video anomaly detection", "selective evaluation"],
+                ["开放词汇异常识别", "区域文本对齐", "困难负例数量"],
+            ),
+            (
+                ["multimodal safety", "causal intervention", "VLM/MLLM"],
+                ["因果中介定位", "候选 mask 生成"],
+            ),
+        ]
+
+        for tags, forbidden_phrases in cases:
+            with self.subTest(tags=tags):
+                paper = update_papers.Paper(
+                    title="Specialized Paper",
+                    url="https://example.com/specialized",
+                    tags=tags,
+                )
+                note = " ".join(
+                    [
+                        update_papers.task_setting(paper),
+                        update_papers.relation_to_topic(paper),
+                        update_papers.borrow_points(paper),
+                        update_papers.improvement_ideas(paper),
+                    ]
+                )
+                for phrase in forbidden_phrases:
+                    self.assertNotIn(phrase, note)
 
 
 class FireTopicTests(unittest.TestCase):
