@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-08-17",
-    "generated_at": "2026-08-17 10:36",
+    "generated_at": "2026-08-17 10:42",
     "timezone": "Asia/Shanghai",
     "total_selected": 10905,
     "sections": {
@@ -36,7 +36,8 @@
           "pdf": "https://arxiv.org/pdf/2607.23209v1",
           "authors": [
             "Yuehai Chen",
-            "Jian Lan"
+            "Jian Lan",
+            "Yuan Wei"
           ],
           "source": "arXiv preprint",
           "published": "2026-07-25",

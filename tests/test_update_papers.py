@@ -173,7 +173,7 @@ class CuratedNoteTests(unittest.TestCase):
             (["VLA grounding risk"], "扩散式视觉语言动作模型的运行时失败检测"),
             (
                 ["degraded missing-modality crack segmentation"],
-                "缺失或退化模态下的多模态裂缝分割",
+                "任意缺失模态下的多模态裂缝分割",
             ),
             (
                 ["unknown label generation", "remote sensing"],

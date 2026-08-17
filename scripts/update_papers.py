@@ -1562,7 +1562,7 @@ def task_setting(paper: Paper) -> str:
     if "VLA grounding risk" in tags:
         return "扩散式视觉语言动作模型的运行时失败检测：输入图像、指令、状态和冻结策略的动作条件缓存，通过反事实证据消融产生时序风险分数，并在给定误报容忍度下在线报警。"
     if "degraded missing-modality crack segmentation" in tags:
-        return "缺失或退化模态下的多模态裂缝分割：输入 RGB、深度等传感器的任意可用/受损组合，通过退化模拟与互学习输出像素级裂缝掩码，并检验高缺失率下的最坏组性能。"
+        return "任意缺失模态下的多模态裂缝分割：输入 RGB、深度等传感器的可用/缺失组合，通过缺失模拟与互学习输出像素级裂缝掩码，并按缺失率与组合分层评测。"
     if "embodied navigation" in tags and "spatial memory" in tags:
         return "开放世界航空目标导航：无人机根据 RGB-D、位姿和自然语言目标描述持续构建近远场记忆，结合已观测场景与当前视野决策探索方向，并输出离散飞行动作直到抵达目标。"
     if "missing modality" in tags and "multimodal segmentation" in tags:
