@@ -284,7 +284,7 @@ All five official main PDFs and available supplements passed signature and three
 
 # Verified Daily Search Update - 2026-08-17
 
-The expanded scan ran with `DEEP_SOURCE_SCAN=1`, kept Zotero import disabled, and isolated provisional downloads on the D drive. The regenerated feed contains a 10,894-paper candidate pool. Promotion was based on actual main-PDF reading rather than title matches; all rate-limited or degraded discovery clusters remain represented in the cached-candidate and next-run plan. No separate 2026-08-16 snapshot was published.
+The expanded scan ran with `DEEP_SOURCE_SCAN=1`, kept Zotero import disabled, and isolated provisional downloads on the D drive. After merging the remote automation's 2026-08-16 additions, the regenerated feed contains a 10,905-paper candidate pool. Promotion was based on actual main-PDF reading rather than title matches; all rate-limited or degraded discovery clusters remain represented in the cached-candidate and next-run plan. The 2026-08-16 snapshot remains preserved, while only the provisional 2026-08-17 queue is replaced by the verified five below.
 
 The final queue was frozen after excluding the provisional 2026-08-17 snapshot and checking normalized titles, arXiv identifiers, DOI identities, and source URLs against every prior feed section, the curated-highlight ledger, and the 165-entry Zotero-imported download index:
 
