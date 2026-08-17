@@ -1553,6 +1553,16 @@ def short_summary(paper: Paper) -> str:
 
 def task_setting(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "open-world REC" in tags:
+        return "开放世界指代表达理解：输入图像与自然语言指称，先生成类别无关候选及结构化场景描述，再由语言推理选择目标或判断目标不存在，输出对应区域掩码。"
+    if "counterfactual UAV tracking" in tags:
+        return "红外无人机单目标跟踪：输入首帧目标框和后续低对比、遮挡或相机运动视频，学习区分真实目标运动与背景伪运动，逐帧输出目标边界框及运动可靠性。"
+    if "anchor-guided anomaly segmentation" in tags:
+        return "零样本视觉异常分割：输入无目标域异常训练样本的图像，借助多模态大模型生成正常/异常语义锚点，并输出图像级异常分数与像素级异常掩码。"
+    if "VLA grounding risk" in tags:
+        return "扩散式视觉语言动作模型的运行时失败检测：输入图像、指令、状态和冻结策略的动作条件缓存，通过反事实证据消融产生时序风险分数，并在给定误报容忍度下在线报警。"
+    if "degraded missing-modality crack segmentation" in tags:
+        return "缺失或退化模态下的多模态裂缝分割：输入 RGB、深度等传感器的任意可用/受损组合，通过退化模拟与互学习输出像素级裂缝掩码，并检验高缺失率下的最坏组性能。"
     if "embodied navigation" in tags and "spatial memory" in tags:
         return "开放世界航空目标导航：无人机根据 RGB-D、位姿和自然语言目标描述持续构建近远场记忆，结合已观测场景与当前视野决策探索方向，并输出离散飞行动作直到抵达目标。"
     if "missing modality" in tags and "multimodal segmentation" in tags:
@@ -1782,6 +1792,16 @@ def experiment_takeaway(paper: Paper) -> str:
 
 def relation_to_topic(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "open-world REC" in tags:
+        return "可把 COD/UAV/火灾从闭集分类改成“先产生类别无关候选、再以场景关系验证指称”的开放世界流程；其大模型推理依赖候选覆盖，且自然图像指称不等于像素级弱证据。"
+    if "counterfactual UAV tracking" in tags:
+        return "直接对应 UAV 弱目标时序跟踪，并把背景相机运动造成的伪相关作为反事实问题；COD 的主要矛盾是前景背景相似，火灾则是非刚体透明演化，不能照搬刚体运动假设。"
+    if "anchor-guided anomaly segmentation" in tags:
+        return "可把 COD、UAV 小目标和早期烟火视作相对正常背景的弱异常，并用正常/异常语义锚点约束像素定位；工业异常的标准外观与静态缺陷假设不覆盖开放自然场景。"
+    if "VLA grounding risk" in tags:
+        return "可迁移“删除模型声称依赖的证据、检查输出是否真正变化”的运行时审计到 COD/UAV/火灾；论文控制的是扩散 VLA 动作风险，不是分割漏检，conformal 也只在可交换成功轨迹下成立。"
+    if "degraded missing-modality crack segmentation" in tags:
+        return "可把退化模拟、模态可靠性互学习迁移到 RGB-T 火灾、航空多传感器与深度辅助 COD；裂缝细长刚性结构不同于 tiny target、伪装前景和动态半透明烟火。"
     if "embodied navigation" in tags and "spatial memory" in tags:
         return "可把单帧 COD/UAV/火灾感知扩展为持续搜索：保留已见弱证据和远场上下文以辅助后续探索；八叉树并不显式存储几何前沿，且导航依赖 RGB-D 与位姿，动作成功率也不等于像素检测能力。"
     if "missing modality" in tags and "multimodal segmentation" in tags:
@@ -1842,6 +1862,16 @@ def relation_to_topic(paper: Paper) -> str:
 def borrow_points(paper: Paper) -> str:
     tags = set(paper.tags)
     points = []
+    if "open-world REC" in tags:
+        return "类别无关感知与语言推理解耦、结构化场景描述、候选级关系推理、目标缺失判断和可替换模块接口。"
+    if "counterfactual UAV tracking" in tags:
+        return "反事实运动可靠性、目标/背景运动解缠、可靠性调制 token、时序融合及遮挡与低对比分层评测。"
+    if "anchor-guided anomaly segmentation" in tags:
+        return "正常/异常语义锚点生成、多尺度视觉特征与语言证据对齐、零样本像素异常评分及锚点消融。"
+    if "VLA grounding risk" in tags:
+        return "模态内梯度选点、共享噪声 KV-cache 均值消融、七维 grounding 诊断、短窗分类与功能型 conformal 报警。"
+    if "degraded missing-modality crack segmentation" in tags:
+        return "退化模拟蒸馏、特征对齐与原型迁移、轻量 Needle RWKV、可靠性引导融合及按缺失率分层评测。"
     if "embodied navigation" in tags and "spatial memory" in tags:
         return "自适应八叉树近远场记忆、指令调制的双查询、当前观测融合与持续弱证据搜索。"
     if "missing modality" in tags and "multimodal segmentation" in tags:
@@ -1901,6 +1931,16 @@ def borrow_points(paper: Paper) -> str:
 
 def improvement_ideas(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "open-world REC" in tags:
+        return "应按候选召回、描述正确性和推理选择分解误差，加入等候选预算与无推理对照，并在小目标、空目标、组合指称和模型替换下报告精度、延迟及大模型调用成本。"
+    if "counterfactual UAV tracking" in tags:
+        return "应加入真实无人机平台的运动模糊、热噪声与长时完全遮挡，按目标像素尺寸报告成功率/精度、失跟前预警和端侧帧率，并以等参数运动分支与随机反事实作控制。"
+    if "anchor-guided anomaly segmentation" in tags:
+        return "应隔离大模型与提示先验，比较固定词表、随机锚点及等 token 文本基线，并在自然场景未知异常、空异常图和低误报工作点报告校准、AURC与跨域稳定性。"
+    if "VLA grounding risk" in tags:
+        return "应以环境事件标注真实不可恢复时刻，解除自身低敏感事件产生标签的循环，并在等监督/等算力下报告低 FPR 召回、每小时误报、报警提前量、显存和闭环恢复收益。"
+    if "degraded missing-modality crack segmentation" in tags:
+        return "应从随机掩蔽扩展到传感器相关缺失、连续噪声和配准漂移，加入模态可靠性校准与缺失模式最坏组指标，并用等参数早期/晚期融合和单模态强基线区分机制增益。"
     if "embodied navigation" in tags and "spatial memory" in tags:
         return "应在真实飞行中注入深度、位姿、风扰和运动模糊误差，按目标尺寸与见/未见环境报告 SR、SPL、首次发现时间和能耗，并与等内存稠密图及移除远场探索查询的策略对照。"
     if "missing modality" in tags and "multimodal segmentation" in tags:

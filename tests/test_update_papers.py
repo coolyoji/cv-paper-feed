@@ -167,6 +167,14 @@ class CuratedNoteTests(unittest.TestCase):
 
     def test_specialized_transfer_papers_retain_their_actual_task_setting(self):
         cases = [
+            (["open-world REC"], "开放世界指代表达理解"),
+            (["counterfactual UAV tracking"], "红外无人机单目标跟踪"),
+            (["anchor-guided anomaly segmentation"], "零样本视觉异常分割"),
+            (["VLA grounding risk"], "扩散式视觉语言动作模型的运行时失败检测"),
+            (
+                ["degraded missing-modality crack segmentation"],
+                "缺失或退化模态下的多模态裂缝分割",
+            ),
             (
                 ["unknown label generation", "remote sensing"],
                 "遥感开放世界目标检测与未知类命名",
@@ -213,6 +221,27 @@ class CuratedNoteTests(unittest.TestCase):
 
     def test_daily_specialized_tags_produce_specific_transfer_notes(self):
         cases = [
+            (["open-world REC"], "类别无关候选", "结构化场景描述"),
+            (
+                ["counterfactual UAV tracking"],
+                "背景相机运动造成的伪相关",
+                "反事实运动可靠性",
+            ),
+            (
+                ["anchor-guided anomaly segmentation"],
+                "正常/异常语义锚点",
+                "零样本像素异常评分",
+            ),
+            (
+                ["VLA grounding risk"],
+                "删除模型声称依赖的证据",
+                "功能型 conformal 报警",
+            ),
+            (
+                ["degraded missing-modality crack segmentation"],
+                "退化模拟",
+                "轻量 Needle RWKV",
+            ),
             (["4D LiDAR generation"], "高不确定弱证据区域", "条件扩散补全"),
             (
                 ["open-world segmentation", "3D perception"],

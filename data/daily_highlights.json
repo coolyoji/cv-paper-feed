@@ -3260,5 +3260,127 @@
       ],
       "score": 94
     }
+  ],
+  "2026-08-17": [
+    {
+      "title": "From Pixels to Logic: A Perception-Reasoning Decomposition Framework for Open-World Referring Expression Comprehension",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/37419",
+      "pdf": "https://ojs.aaai.org/index.php/AAAI/article/download/37419/41381",
+      "authors": [
+        "Lihong Huang",
+        "Sheng-Hua Zhong",
+        "Zhi Zhang",
+        "Yan Liu"
+      ],
+      "source": "AAAI 2026",
+      "published": "2026",
+      "summary": "PRDF把开放世界指代表达理解拆成类别无关感知与语言逻辑推理：先将候选掩码、描述、深度和关系写成场景档案，再由推理模型选择目标或判断目标不存在。",
+      "tags": [
+        "open-world REC",
+        "open-world",
+        "grounded vision",
+        "reasoning",
+        "VLM/MLLM",
+        "training-free",
+        "compositionality"
+      ],
+      "score": 98
+    },
+    {
+      "title": "Counterfactual Motion Reliability Learning for Robust UAV Tracking",
+      "url": "https://arxiv.org/abs/2607.23209v1",
+      "pdf": "https://arxiv.org/pdf/2607.23209v1",
+      "authors": [
+        "Yuehai Chen",
+        "Jian Lan"
+      ],
+      "source": "arXiv preprint",
+      "published": "2026-07-25",
+      "summary": "CMRTrack用目标擦除的反事实历史区分真实无人机运动与背景伪运动，再以可靠性调制 token 和融合响应，增强红外低对比、遮挡与热干扰下的跟踪。",
+      "tags": [
+        "counterfactual UAV tracking",
+        "UAV/small-object",
+        "video",
+        "causal/counterfactual",
+        "thermal imaging",
+        "uncertainty/calibration"
+      ],
+      "score": 97
+    },
+    {
+      "title": "AG-VAS: Anchor-Guided Zero-Shot Visual Anomaly Segmentation with Large Multimodal Models",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Qu_AG-VAS_Anchor-Guided_Zero-Shot_Visual_Anomaly_Segmentation_with_Large_Multimodal_Models_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Qu_AG-VAS_Anchor-Guided_Zero-Shot_Visual_Anomaly_Segmentation_with_Large_Multimodal_Models_CVPR_2026_paper.pdf",
+      "authors": [
+        "Zhen Qu",
+        "Xian Tao",
+        "Xiaoyi Bao",
+        "Dingrong Wang",
+        "ShiChen Qu",
+        "Zhengtao Zhang",
+        "Xingang Wang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "AG-VAS把可学习的正常、异常与分割语义锚点接入大多模态模型，并以语义-像素对齐和锚点条件解码，把抽象异常描述落到二值像素掩码。",
+      "tags": [
+        "anchor-guided anomaly segmentation",
+        "anomaly/OOD",
+        "open-vocabulary",
+        "VLM/MLLM",
+        "zero-shot",
+        "grounded vision"
+      ],
+      "score": 96
+    },
+    {
+      "title": "GUARD: Grounding Uncertainty and Ablation-Based Risk Detection for Diffusion-Based VLAs",
+      "url": "https://arxiv.org/abs/2608.04510v1",
+      "pdf": "https://arxiv.org/pdf/2608.04510v1",
+      "authors": [
+        "Suhas Hegde",
+        "Jitendra Yasaswi Bharadwaj Katta"
+      ],
+      "source": "arXiv preprint",
+      "published": "2026-08-05",
+      "summary": "GUARD在冻结扩散式VLA上消融最显著的视觉与语言KV缓存，比较共享噪声下的动作响应，以时序grounding诊断和功能型conformal上带在线预警失败。",
+      "tags": [
+        "VLA grounding risk",
+        "safety-critical/hazard",
+        "grounded vision",
+        "causal/counterfactual",
+        "uncertainty/calibration",
+        "selective/risk control",
+        "video",
+        "VLM/MLLM"
+      ],
+      "score": 95
+    },
+    {
+      "title": "Compass: Degradation-Simulated Reciprocal Learning with Lightweight Needle RWKV for Multimodal Crack Segmentation under Missing Modalities",
+      "url": "https://arxiv.org/abs/2608.03559v1",
+      "pdf": "https://arxiv.org/pdf/2608.03559v1",
+      "authors": [
+        "Hui Liu",
+        "Chen Jia",
+        "Fan Shi",
+        "Xu Cheng",
+        "Mianzhao Wang",
+        "Shengyong Chen"
+      ],
+      "source": "arXiv preprint; authors state accepted at ACM MM 2026",
+      "published": "2026-08-04",
+      "summary": "Compass用退化模拟互蒸馏和原型传递补全缺失模态语义，以轻量Needle RWKV保持裂缝方向结构，再通过证据融合抑制不可靠传感器特征。",
+      "tags": [
+        "degraded missing-modality crack segmentation",
+        "missing modality",
+        "multimodal segmentation",
+        "multimodal robustness",
+        "degraded perception",
+        "uncertainty/calibration",
+        "boundary/frequency"
+      ],
+      "score": 94
+    }
   ]
 }

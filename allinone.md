@@ -279,3 +279,19 @@ The final queue was frozen after excluding the provisional 2026-08-15 snapshot a
 5. **ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning** (CVPR 2026)
 
 All five official main PDFs and available supplements passed signature and three-way page-count preflight and were read beyond their abstracts. The queue combines open-world aerial active perception, low-FPR video-anomaly evaluation, missing-modality representation learning, causal VLM safety repair, and knowledge-grounded anomaly reasoning. AerialMemory is the dedicated UAV anchor. SmokeSVD remains a fire-transfer candidate because it models dynamic translucent smoke in 3D, but it was not promoted as an early-fire detector because it does not evaluate alarm recall, practical false positives, cloud/fog/haze/sunset/reflection negatives, RGB-T reliability, or edge deployment. Full source failures, evidence boundaries, specialist UAV/fire candidates, and selection rationale are retained in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-15\2026-08-15-检索与筛选报告.md`.
+
+---
+
+# Verified Daily Search Update - 2026-08-17
+
+The expanded scan ran with `DEEP_SOURCE_SCAN=1`, kept Zotero import disabled, and isolated provisional downloads on the D drive. The regenerated feed contains a 10,894-paper candidate pool. Promotion was based on actual main-PDF reading rather than title matches; all rate-limited or degraded discovery clusters remain represented in the cached-candidate and next-run plan. No separate 2026-08-16 snapshot was published.
+
+The final queue was frozen after excluding the provisional 2026-08-17 snapshot and checking normalized titles, arXiv identifiers, DOI identities, and source URLs against every prior feed section, the curated-highlight ledger, and the 165-entry Zotero-imported download index:
+
+1. **From Pixels to Logic: A Perception-Reasoning Decomposition Framework for Open-World Referring Expression Comprehension** (AAAI 2026)
+2. **Counterfactual Motion Reliability Learning for Robust UAV Tracking** (arXiv:2607.23209v1; preprint)
+3. **AG-VAS: Anchor-Guided Zero-Shot Visual Anomaly Segmentation with Large Multimodal Models** (CVPR 2026)
+4. **GUARD: Grounding Uncertainty and Ablation-Based Risk Detection for Diffusion-Based VLAs** (arXiv:2608.04510v1; preprint)
+5. **Compass: Degradation-Simulated Reciprocal Learning with Lightweight Needle RWKV for Multimodal Crack Segmentation under Missing Modalities** (arXiv:2608.03559v1; the authors state ACM MM 2026 acceptance, which has not been independently verified in an official ACM record)
+
+CHAL was removed as a release-blocking duplicate: it had already appeared in the 2026-07-13 highlights and in the F-drive/Zotero index. CMRTrack replaced it as the dedicated UAV anchor, with the explicit boundary that Anti-UAV410 tracking evidence is not detection evidence. The queue otherwise combines training-free open-world referring, anchor-grounded anomaly segmentation, counterfactual VLA failure detection, and missing-modality reliability. Strong fire candidates remain in the dedicated section: uncertainty-aware satellite smoke-density classification provides calibrated static-patch evidence, while SmokeSVD provides dynamic translucent-smoke modeling; neither was misrepresented as a validated early-fire alarm system. Full identities, formula ranges, source evidence, exclusions, and COD/UAV/fire transfer boundaries are retained in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-17\2026-08-17-检索与筛选报告.md`.
