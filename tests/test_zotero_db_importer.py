@@ -146,5 +146,48 @@ class CollectionRecoveryTests(unittest.TestCase):
         self.assertEqual(self.cur.fetchone(), (9, 0))
 
 
+class CreatorImportTests(unittest.TestCase):
+    def setUp(self):
+        self.con = sqlite3.connect(":memory:")
+        self.cur = self.con.cursor()
+        self.cur.executescript(
+            """
+            CREATE TABLE creators (
+                creatorID INTEGER PRIMARY KEY,
+                firstName TEXT NOT NULL,
+                lastName TEXT NOT NULL,
+                fieldMode INTEGER NOT NULL
+            );
+            CREATE TABLE itemCreators (
+                itemID INTEGER NOT NULL,
+                creatorID INTEGER NOT NULL,
+                creatorTypeID INTEGER NOT NULL,
+                orderIndex INTEGER NOT NULL,
+                PRIMARY KEY (itemID, creatorID, creatorTypeID)
+            );
+            """
+        )
+
+    def tearDown(self):
+        self.con.close()
+
+    def test_preserves_more_than_twelve_authors_in_order(self):
+        authors = [f"Given{index} Family{index}" for index in range(13)]
+
+        zotero_db_importer.add_creators(self.cur, 1, authors, 8)
+
+        self.cur.execute(
+            """SELECT creators.firstName, creators.lastName, itemCreators.orderIndex
+               FROM itemCreators
+               JOIN creators USING (creatorID)
+               WHERE itemCreators.itemID=1
+               ORDER BY itemCreators.orderIndex"""
+        )
+        self.assertEqual(
+            self.cur.fetchall(),
+            [(f"Given{index}", f"Family{index}", index) for index in range(13)],
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

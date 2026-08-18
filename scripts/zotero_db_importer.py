@@ -302,7 +302,7 @@ def create_item(cur: sqlite3.Cursor, item_type_name: str, item_types: dict[str, 
 
 
 def add_creators(cur: sqlite3.Cursor, item_id: int, authors: list[str], creator_type_id: int) -> None:
-    for order, raw_name in enumerate(authors[:12]):
+    for order, raw_name in enumerate(authors):
         parsed = split_name(raw_name)
         if not parsed:
             continue

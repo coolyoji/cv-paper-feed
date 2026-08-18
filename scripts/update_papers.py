@@ -1553,6 +1553,18 @@ def short_summary(paper: Paper) -> str:
 
 def task_setting(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "wildfire UAV scale detection" in tags:
+        return "UAV 图像火焰与烟雾目标检测：输入单帧 RGB 航拍图像，通过尺度条件特征路由和不确定性感知的尺度回归损失，输出火焰/烟雾边界框；不确定性分支仅用于训练调制。"
+    if "latent entropy decoding" in tags:
+        return "多模态大推理模型的解码期幻觉抑制：输入图像、问题和已生成前缀，依据词元分布熵在连续概率加权语义与离散词元之间切换，输出最终推理答案。"
+    if "saliency alignment reward" in tags:
+        return "视觉语言推理的证据对齐训练：输入图像、问题和人工目标框，以生成词元对图像区域的显著贡献构造奖励，通过 GRPO 微调推理模型，输出答案及可追踪的视觉依据。"
+    if "prototype-guided 3D OOD" in tags:
+        return "自动驾驶三维语义占据与 OOD 联合预测：输入多视角图像形成体素表示，输出已知类别占据、长尾类别语义和未知物体异常分数。"
+    if "aerial dialog navigation" in tags:
+        return "免训练航空视觉对话导航：输入高空 UAV 观测和多轮自然语言指令，解析方向与目的地，持续搜索并确认候选区域，输出逐步飞行动作和到达轨迹。"
+    if "segment-centric OVSS" in tags:
+        return "免训练开放词汇语义分割：输入图像、任意类别词表及离线参考记忆，在冻结 CLIP 特征上构造区域一致表示，输出逐像素开放词汇标签。"
     if "open-world REC" in tags:
         return "开放世界指代表达理解：输入图像与自然语言指称，先生成类别无关候选及结构化场景描述，再由语言推理选择目标或判断目标不存在，输出对应区域掩码。"
     if "counterfactual UAV tracking" in tags:
@@ -1792,6 +1804,18 @@ def experiment_takeaway(paper: Paper) -> str:
 
 def relation_to_topic(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "wildfire UAV scale detection" in tags:
+        return "它直接连接 UAV 微小目标与火灾弱证据：SGFR 保留小火点尺度信息，异方差尺度损失缓和烟雾边界歧义；但 RGB 框检测不等于 COD 像素分割、时序预警或 RGB-T 可靠融合。"
+    if "latent entropy decoding" in tags:
+        return "可把高熵触发的连续语义保留迁移到 COD/UAV/火灾的二阶段解释与拒答，但词元熵不是像素不确定性或风险校准，不能直接证明弱目标定位更可靠。"
+    if "saliency alignment reward" in tags:
+        return "可用区域证据奖励约束模型真正观察 COD、UAV 小目标或早期烟火，而非依赖题目文本和背景捷径；人工框覆盖不同于精细边界，显著图也不自动等于因果解释。"
+    if "prototype-guided 3D OOD" in tags:
+        return "可借其已知长尾与未知 OOD 解耦处理 UAV 稀有目标、COD 弱前景和火灾新型干扰；三维占据异常依赖几何体素，低显著目标本身并不必然来自分布外。"
+    if "aerial dialog navigation" in tags:
+        return "可把指令解析、搜索记忆和局部确认迁移到 UAV 主动寻找弱目标，并为 COD/火灾加入多视点复核；导航成功依赖动作与路径，不等同于小目标检测或像素分割能力。"
+    if "segment-centric OVSS" in tags:
+        return "区域一致推理和参考记忆可直接服务开放词汇 COD，并帮助 UAV/火灾在弱局部证据下恢复上下文；冻结 CLIP 的尺度与语义先验可能忽略极小目标和半透明烟雾。"
     if "open-world REC" in tags:
         return "可把 COD/UAV/火灾从闭集分类改成“先产生类别无关候选、再以场景关系验证指称”的开放世界流程；其大模型推理依赖候选覆盖，且自然图像指称不等于像素级弱证据。"
     if "counterfactual UAV tracking" in tags:
@@ -1862,6 +1886,18 @@ def relation_to_topic(paper: Paper) -> str:
 def borrow_points(paper: Paper) -> str:
     tags = set(paper.tags)
     points = []
+    if "wildfire UAV scale detection" in tags:
+        return "P3/P4/P5 尺度条件路由、对数尺度回归、训练期异方差损失、尺度分层消融及 Jetson TensorRT 吞吐评测。"
+    if "latent entropy decoding" in tags:
+        return "滑窗熵估计、连续概率加权嵌入、离散/连续推理模式切换、触发率与幻觉指标联合评估。"
+    if "saliency alignment reward" in tags:
+        return "词元级与整体显著贡献追踪、框覆盖对齐奖励、GRPO视觉证据优化、推理链到最终答案的证据流检查。"
+    if "prototype-guided 3D OOD" in tags:
+        return "原型语义补全、长尾原型挖掘、EchoOOD免训练异常评分、已知占据与未知风险的联合评测。"
+    if "aerial dialog navigation" in tags:
+        return "方向/目的地结构化解析、Search-CoT、Confirmation-CoT、多尺度观测与几何记忆组成的结构化空间记忆。"
+    if "segment-centric OVSS" in tags:
+        return "区域一致交互图、条件式跨窗上下文恢复、区域级离线参考记忆及与预测单元一致的检索纠正。"
     if "open-world REC" in tags:
         return "类别无关感知与语言推理解耦、结构化场景描述、候选级关系推理、目标缺失判断和可替换模块接口。"
     if "counterfactual UAV tracking" in tags:
@@ -1931,6 +1967,18 @@ def borrow_points(paper: Paper) -> str:
 
 def improvement_ideas(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "wildfire UAV scale detection" in tags:
+        return "应加入视频级无火硬负样本和真实跨地区划分，分别报告极小火点/早期烟雾召回、每小时误报、报警提前量与时序一致性，并在推理端另行校准置信度而非把训练方差当成拒答分数。"
+    if "latent entropy decoding" in tags:
+        return "应统一论文公式、Algorithm 1 与公开代码的熵阈值、窗口和嵌入规则，在同采样预算下报告校准、幻觉类型、触发率、时延和显存，并用随机切换及等熵基线验证机制。"
+    if "saliency alignment reward" in tags:
+        return "应修正或限定 RMSNorm 的线性分解，公开唯一训练配置，并以随机框、面积匹配框和等算力奖励作控制；同时报告定位校准、无目标拒答、端到端时延与显著图忠实度。"
+    if "prototype-guided 3D OOD" in tags:
+        return "应冻结未知类构造和 OOD 阈值，在跨数据集、天气、传感器与长尾频次分层下报告 AuPRC、FPR@95 和占据精度，并用等参数原型分支区分容量与机制收益。"
+    if "aerial dialog navigation" in tags:
+        return "应在真实飞行中加入风扰、位姿漂移、运动模糊和目标缺失，报告首次发现时间、SR、SPL、调用成本与端侧延迟，并以等观察预算的无 CoT/无记忆策略作控制。"
+    if "segment-centric OVSS" in tags:
+        return "应严格隔离参考记忆与测试类别，报告构建/查询成本和类别规模扩展，并在 tiny object、空目标、跨域烟雾及硬背景上比较无记忆、随机记忆和等候选区域基线。"
     if "open-world REC" in tags:
         return "应按候选召回、描述正确性和推理选择分解误差，加入等候选预算与无推理对照，并在小目标、空目标、组合指称和模型替换下报告精度、延迟及大模型调用成本。"
     if "counterfactual UAV tracking" in tags:
@@ -2528,8 +2576,9 @@ def daily_curated_highlights(date_text: str) -> list[Paper]:
 def history_highlight_keys(history: list[dict]) -> set[str]:
     keys: set[str] = set()
     for snapshot in history:
-        for paper in snapshot_highlights(snapshot):
-            keys.update(paper_identity_keys(paper))
+        for papers in snapshot_sections(snapshot).values():
+            for paper in papers:
+                keys.update(paper_identity_keys(paper))
     return keys
 
 

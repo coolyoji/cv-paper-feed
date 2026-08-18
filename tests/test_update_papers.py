@@ -167,6 +167,12 @@ class CuratedNoteTests(unittest.TestCase):
 
     def test_specialized_transfer_papers_retain_their_actual_task_setting(self):
         cases = [
+            (["wildfire UAV scale detection"], "UAV 图像火焰与烟雾目标检测"),
+            (["latent entropy decoding"], "多模态大推理模型的解码期幻觉抑制"),
+            (["saliency alignment reward"], "视觉语言推理的证据对齐训练"),
+            (["prototype-guided 3D OOD"], "自动驾驶三维语义占据与 OOD 联合预测"),
+            (["aerial dialog navigation"], "免训练航空视觉对话导航"),
+            (["segment-centric OVSS"], "免训练开放词汇语义分割"),
             (["open-world REC"], "开放世界指代表达理解"),
             (["counterfactual UAV tracking"], "红外无人机单目标跟踪"),
             (["anchor-guided anomaly segmentation"], "零样本视觉异常分割"),
@@ -221,6 +227,36 @@ class CuratedNoteTests(unittest.TestCase):
 
     def test_daily_specialized_tags_produce_specific_transfer_notes(self):
         cases = [
+            (
+                ["wildfire UAV scale detection"],
+                "直接连接 UAV 微小目标与火灾弱证据",
+                "尺度条件路由",
+            ),
+            (
+                ["latent entropy decoding"],
+                "词元熵不是像素不确定性",
+                "滑窗熵估计",
+            ),
+            (
+                ["saliency alignment reward"],
+                "区域证据奖励",
+                "框覆盖对齐奖励",
+            ),
+            (
+                ["prototype-guided 3D OOD"],
+                "已知长尾与未知 OOD 解耦",
+                "EchoOOD免训练异常评分",
+            ),
+            (
+                ["aerial dialog navigation"],
+                "UAV 主动寻找弱目标",
+                "Search-CoT",
+            ),
+            (
+                ["segment-centric OVSS"],
+                "区域一致推理和参考记忆",
+                "区域一致交互图",
+            ),
             (["open-world REC"], "类别无关候选", "结构化场景描述"),
             (
                 ["counterfactual UAV tracking"],
@@ -652,6 +688,45 @@ class HighlightHistoryTests(unittest.TestCase):
         self.assertNotIn(previous.title, selected_titles)
         self.assertEqual(len(selected_titles), update_papers.HIGHLIGHT_LIMIT)
         self.assertEqual(history[1]["date"], "2026-07-12")
+
+    def test_update_history_excludes_papers_seen_in_non_highlight_sections(self):
+        previous = self.make_paper("Previously Surfaced UAV Paper", 999, "previous-uav")
+        candidates = [
+            previous,
+            *[
+                self.make_paper(f"Fresh Paper {index}", 100 - index, f"fresh-{index}")
+                for index in range(1, 6)
+            ],
+        ]
+        old_snapshot = {
+            "date": "2026-07-12",
+            "generated_at": "2026-07-12 09:10",
+            "sections": {
+                "highlights": [],
+                "uav": [update_papers.paper_to_dict(previous)],
+            },
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            history_file = Path(temp_dir) / "feed_history.json"
+            history_file.write_text(
+                json.dumps([old_snapshot], ensure_ascii=False),
+                encoding="utf-8",
+            )
+            with (
+                patch.object(update_papers, "HISTORY_FILE", history_file),
+                patch.object(update_papers, "enrich_selected_sections"),
+            ):
+                history = update_papers.update_history(
+                    candidates,
+                    datetime(2026, 7, 13, 9, 10, tzinfo=update_papers.UTC8),
+                )
+
+        selected_titles = [
+            item["title"] for item in history[0]["sections"]["highlights"]
+        ]
+        self.assertNotIn(previous.title, selected_titles)
+        self.assertEqual(len(selected_titles), update_papers.HIGHLIGHT_LIMIT)
 
     def test_update_history_rejects_historical_daily_curation(self):
         previous = self.make_paper("Previously Curated", 999, "previous-curated")

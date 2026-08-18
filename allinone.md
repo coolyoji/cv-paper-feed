@@ -295,3 +295,21 @@ The final queue was frozen after excluding the provisional 2026-08-17 snapshot a
 5. **Compass: Degradation-Simulated Reciprocal Learning with Lightweight Needle RWKV for Multimodal Crack Segmentation under Missing Modalities** (arXiv:2608.03559v1; the authors state ACM MM 2026 acceptance, which has not been independently verified in an official ACM record)
 
 CHAL was removed as a release-blocking duplicate: it had already appeared in the 2026-07-13 highlights and in the F-drive/Zotero index. CMRTrack replaced it as the dedicated UAV anchor, with the explicit boundary that Anti-UAV410 tracking evidence is not detection evidence. The queue otherwise combines training-free open-world referring, anchor-grounded anomaly segmentation, counterfactual VLA failure detection, and missing-modality reliability. Strong fire candidates remain in the dedicated section: uncertainty-aware satellite smoke-density classification provides calibrated static-patch evidence, while SmokeSVD provides dynamic translucent-smoke modeling; neither was misrepresented as a validated early-fire alarm system. Full identities, formula ranges, source evidence, exclusions, and COD/UAV/fire transfer boundaries are retained in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-17\2026-08-17-检索与筛选报告.md`.
+
+---
+
+# Verified Daily Search Update - 2026-08-18
+
+The expanded scan ran with `DEEP_SOURCE_SCAN=1`, kept Zotero import disabled, and isolated all provisional downloads on the D drive. It collected 9,403 raw CVF records, reached 10,205 cumulative Crossref records, and merged the 10,905-paper cache after live-source degradation. The verified WFSDet journal record was then added from the independent source audit, giving a final candidate pool of 10,908 papers. arXiv and Semantic Scholar each stopped after three HTTP 429 responses; the independent search also recorded OpenAlex HTTP 504 and a long unrestricted-search timeout. Those clusters remain represented in the cache and next-run plan rather than being treated as empty results.
+
+The final queue was frozen after excluding the provisional 2026-08-18 snapshot and checking normalized titles, official URLs, arXiv identifiers, and DOI identities against every prior feed section, the curated-highlight ledger, and the 170-entry Zotero-imported download index. The prior union contained 389 normalized titles, and all five selected papers were new:
+
+1. **Thinking in Uncertainty: Mitigating Hallucinations in MLRMs with Latent Entropy-Aware Decoding** (CVPR 2026)
+2. **Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward** (CVPR 2026)
+3. **ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction** (CVPR 2026)
+4. **Parse, Search, and Confirmation: Training-Free Aerial Vision-and-Dialog Navigation with Chain-of-Thought Reasoning and Structured Spatial Memory** (CVPR 2026)
+5. **SCI-CLIP: Segment-Centric Inference with Reference Memory for Training-Free Open-Vocabulary Segmentation** (arXiv:2608.05627v1; preprint)
+
+The first four papers have formal CVF records; SCI-CLIP remains explicitly labeled as an unreviewed preprint. The queue combines inference-time uncertainty handling, saliency-aligned grounded reasoning, prototype-guided 3D OOD occupancy, training-free aerial search and confirmation, and segment-centric open-vocabulary segmentation. Known evidence conflicts are preserved rather than silently repaired, including LEAD's formula/algorithm/code mismatch, Saliency-R1's RMSNorm and training-configuration conflicts, ProOOD's OOD-number discrepancy, PSC's invalid SPL-greater-than-SR table entries, and SCI-CLIP's stagewise-table inconsistency.
+
+The dedicated UAV and fire sections now surface **Wildfire Fire-Smoke Detection in UAV Imagery via Scale-Guided Feature Routing and Uncertainty-Aware Localization** (IEEE Access 2026). It is represented as RGB box detection with training-time heteroscedastic loss modulation, not as a calibrated inference-time rejection system, video early-warning model, or RGB-T method. Full source evidence, identity checks, formulas, source failures, alternatives, and COD/UAV/fire transfer boundaries are retained in `D:\Codex输出\daily-cv-literature-feed-update\final\2026-08-18\2026-08-18-检索与筛选报告.md`.

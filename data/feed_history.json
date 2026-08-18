@@ -1,122 +1,147 @@
 [
   {
     "date": "2026-08-18",
-    "generated_at": "2026-08-18 10:26",
+    "generated_at": "2026-08-18 10:32",
     "timezone": "Asia/Shanghai",
-    "total_selected": 10944,
+    "total_selected": 10908,
     "sections": {
       "highlights": [
         {
-          "title": "MUG: Multi-human Graph Network for 3D Mesh Reconstruction from 2D Pose",
-          "url": "https://doi.org/10.1007/s11263-026-02942-9",
-          "pdf": "",
+          "title": "Thinking in Uncertainty: Mitigating Hallucinations in MLRMs with Latent Entropy-Aware Decoding",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xu_Thinking_in_Uncertainty_Mitigating_Hallucinations_in_MLRMs_with_Latent_Entropy-Aware_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Xu_Thinking_in_Uncertainty_Mitigating_Hallucinations_in_MLRMs_with_Latent_Entropy-Aware_CVPR_2026_paper.pdf",
           "authors": [
-            "Chenyan Wu",
-            "Yandong Li",
-            "Xianfeng Tang",
-            "Zhe Huang",
-            "James Z. Wang"
+            "Zhongxing Xu",
+            "Zhonghua Wang",
+            "Zhe Qian",
+            "Dachuan Shi",
+            "Feilong Tang",
+            "Ming Hu",
+            "Shiyan Su",
+            "Xiaocheng Zou",
+            "Wei Feng",
+            "Dwarikanath Mahapatra",
+            "Yifan Peng",
+            "Minquan Lin",
+            "Zongyuan Ge"
           ],
-          "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
-          "published": "2026-08-05",
-          "summary": "Abstract Reconstructing multi-human body meshes from a single monocular image is a crucial yet challenging problem in computer vision. This problem requires not only generating individual body mesh models for each person but also estimating the relative 3D positions among subjects to produce a coherent scene representation. In this work, we introduce MUG (Multi-hUman Graph network), which employs a single graph neural network to construct coherent multi-human meshes using only 2D pose data as input. Our approach demonstrates that purely pose-based methods can effectively perform simultaneous depth reasoning and multi-human mesh generation. Existing image-based methods typically rely on lab-collected training datasets with accurate 3D labels; however, these datasets often introduce an image domain gap when applied to in-the-wild testing data or art images due to differences in appearance and context. In contrast, MUG leverages the geometric consistency of 2D poses across diverse datasets, mitigating domain discrepancies. The MUG network operates in three primary phases. Initially, to model the multi-human environment, it processes multi-human 2D poses and constructs a novel heterogeneous graph. This graph connects nodes both across different people and within individuals to capture inter-human interactions and accurately represent body geometry, including skeletal and mesh structures. Subsequently, it employs a dual-branch graph neural network: one branch predicts inter-human depth relations, while the other predicts the root-joint-relative mesh coordinates. Finally, the complete multi-human 3D meshes are constructed by combining the outputs from both branches. Despite the simplicity of using only 2D pose inputs and streamlined network architecture, MUG outperforms existing multi-human mesh estimation methods. This superiority is consistently observed across various datasets from diverse domains, such as RH, MuPoTS-3D, and 3DPW. Qualitative results show that MUG can effectively handle art images, through-wall scenarios, and poor lighting conditions when incorporating advanced 2D pose networks. Both qualitative and quantitative evaluations highlight MUG’s remarkable generalization ability in open-world scenarios.",
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "LEAD 在推理时监测词元分布熵：低熵阶段沿用离散词元，高熵阶段改用概率加权连续嵌入并保留视觉锚点，以减少过早承诺造成的多模态幻觉。",
           "tags": [
-            "reasoning",
-            "diffusion",
-            "depth/geometry",
-            "open-world"
-          ],
-          "score": 87
-        },
-        {
-          "title": "SegCLIP: Multimodal Visual-Language and Prompt Learning for High-Resolution Remote Sensing Semantic Segmentation",
-          "url": "https://www.semanticscholar.org/paper/17cb6a48e637a7b97a93e7143d1415e98560d586",
-          "pdf": "",
-          "authors": [
-            "Shijie Zhang",
-            "Bin Zhang",
-            "Yuntao Wu",
-            "Huabing Zhou",
-            "Junjun Jiang",
-            "Jiayi Ma"
-          ],
-          "source": "Semantic Scholar / IEEE Transactions on Geoscience and Remote Sensing / citations 26",
-          "published": "2024",
-          "summary": "Remote sensing semantic segmentation is considered a key step in the intelligent interpretation of high-resolution remote sensing (HRRS) images, with widespread applications in fields such as hazard assessment, environmental monitoring, and urban planning. Recently, numerous deep learning-based semantic segmentation methods have emerged, achieving significant breakthroughs. However, the majority of current research still concentrates on representation learning in the visual feature space, with the potential of multimodal data sources yet to be fully explored. In recent years, the foundational visual language model, namely contrastive language-image pretraining (CLIP), has established a new paradigm in the visual field, demonstrating excellent generalization capabilities and deep semantic understanding across a variety of tasks. Inspired by prompt learning, we propose a prompting approach based on linguistic descriptions to enable CLIP to generate semantically distinct contextual information for remote sensing images. We introduce the SegCLIP network architecture, a novel framework specifically designed for semantic segmentation of HRRS images. Specifically, we have adapted CLIP to extract text information, thereby guiding the visual model in distinguishing among classes. Additionally, we have designed a cross-modal feature fusion (CFF) module that integrates linguistic and visual semantic features, ensuring semantic consistency across modalities. Finally, we have fully exploited the potential of text data and have used additional real text to refine ambiguous query features. Experimental evaluations confirm that the method exhibits superior performance on the LoveDA, iSAID, and UAVid public semantic segmentation datasets.",
-          "tags": [
-            "diffusion",
-            "remote sensing",
-            "UAV/small-object",
-            "representation learning"
-          ],
-          "score": 87
-        },
-        {
-          "title": "Open-World Hazard Detection and Captioning for Autonomous Driving with a Unified Multimodal Pipeline",
-          "url": "https://www.semanticscholar.org/paper/b9c995cb1237cb83491c791e83cf7d04e7a77060",
-          "pdf": "",
-          "authors": [
-            "P. Hatami",
-            "Maged Shoman",
-            "Mina Sartipi"
-          ],
-          "source": "Semantic Scholar / 2025 IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW) / citations 3",
-          "published": "2025-02-28",
-          "summary": "Autonomous driving systems must operate reliably in dynamic environments where uncommon or unanticipated hazards frequently arise. Traditional perception models often rely on closed-set recognition, restricting them to predefined object categories and limiting their ability to address novel or rare obstacles. To tackle these open-world challenges, we propose an integrated pipeline that merges image enhancement, optical flow, depth estimation, semantic segmentation, and vision-language models. We evaluate our method on the COOOL dataset of 200 annotated dashcam videos, containing both standard and previously unseen hazards. By applying depth filtering and road segmentation, our system focuses on objects along the drivable surface. In parallel, optical flow analysis captures driver reactions, adding a temporal dimension that supports hazard assessment. A vision-language module then generates concise, semantically relevant captions for novel objects, enhancing interpretability. Experimental results show that our unified pipeline consistently improves hazard detection and captioning performance in open-world scenarios, underscoring the need for flexible perception strategies that advance autonomous driving safety.",
-          "tags": [
+            "latent entropy decoding",
+            "uncertainty/calibration",
             "VLM/MLLM",
-            "diffusion",
-            "depth/geometry",
-            "video",
-            "open-world",
-            "low-level"
+            "reasoning",
+            "training-free",
+            "selective/risk control",
+            "safety-critical/hazard"
           ],
           "score": 98
         },
         {
-          "title": "Causality-inspired representation learning with spatiotemporal memory for polyp detection in endoscopic videos",
-          "url": "https://doi.org/10.1016/j.media.2026.104231",
-          "pdf": "",
+          "title": "Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Gong_Saliency-R1_Enforcing_Interpretable_and_Faithful_Vision-language_Reasoning_via_Saliency-map_Alignment_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Gong_Saliency-R1_Enforcing_Interpretable_and_Faithful_Vision-language_Reasoning_via_Saliency-map_Alignment_CVPR_2026_paper.pdf",
           "authors": [
-            "Zhuo Hu",
-            "Changjin Sun",
-            "Qi Zheng",
-            "Xiaopu He",
-            "Cheng Xue",
-            "Guangquan Zhou",
-            "Yang Chen",
-            "Yudong Zhang"
+            "Shizhan Gong",
+            "Minda Hu",
+            "Qiyuan Zhang",
+            "Chen Ma",
+            "Qi Dou"
           ],
-          "source": "Crossref / MedIA / 医学影像顶刊 / Medical Image Analysis",
-          "published": "2026-11",
-          "summary": "MedIA article matched by title in a top journal; abstract unavailable from Crossref.",
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Saliency-R1 把生成词元对视觉区域的显著贡献与人工目标框对齐，并将该对齐分数加入 GRPO 奖励，使视觉语言推理不仅答对，还更依赖题目相关区域。",
           "tags": [
-            "video",
-            "causal/counterfactual",
-            "representation learning"
+            "saliency alignment reward",
+            "VLM/MLLM",
+            "reasoning",
+            "grounded vision",
+            "saliency/transparent",
+            "safety-critical/hazard"
           ],
-          "score": 79
+          "score": 97
         },
         {
-          "title": "RAVU: Retrieval Augmented Video Understanding with Compositional Reasoning over Graph",
-          "url": "https://openaccess.thecvf.com/content/WACV2026/html/Malik_RAVU_Retrieval_Augmented_Video_Understanding_with_Compositional_Reasoning_over_Graph_WACV_2026_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Malik_RAVU_Retrieval_Augmented_Video_Understanding_with_Compositional_Reasoning_over_Graph_WACV_2026_paper.pdf",
+          "title": "ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_ProOOD_Prototype-Guided_Out-of-Distribution_3D_Occupancy_Prediction_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_ProOOD_Prototype-Guided_Out-of-Distribution_3D_Occupancy_Prediction_CVPR_2026_paper.pdf",
           "authors": [
-            "Sameer Malik",
-            "Ayush Singh",
-            "Moyuru Yamada",
-            "Dishank Aggarwal"
+            "Yuheng Zhang",
+            "Mengfei Duan",
+            "Kunyu Peng",
+            "Yuhang Wang",
+            "Di Wen",
+            "Danda Pani Paudel",
+            "Luc Van Gool",
+            "Kailun Yang"
           ],
-          "source": "WACV 2026",
+          "source": "CVPR 2026",
           "published": "2026",
-          "summary": "Comprehending long videos remains a significant challenge for Large Multi-modal Models (LMMs). Current LMMs struggle to process even minutes to hours videos due to their lack of explicit memory and retrieval mechanisms. To address this limitation, we propose RAVU (Retrieval Augmented Video Understanding), a novel framework for video understanding enhanced by retrieval with compositional reasoning over a spatio-temporal graph. We construct a graph representation of the video, capturing both spatial and temporal relationships between entities. This graph serves as a long-term memory, allowing us to track objects and their actions across time. To answer complex queries, we decompose the queries into a sequence of reasoning steps and execute these steps on the graph, retrieving relevant key information. Our approach enables more accurate understanding of long videos, particularly for queries that require multi-hop reasoning and tracking objects across frames. Our approach demonstrate superior performances with limited retrieved frames (5-10) compared with other SOTA methods and baselines on two major video QA datasets, NExT-QA and EgoSchema.",
+          "summary": "ProOOD 用语义原型补全长尾占据表征，再以原型差异和 EchoOOD 分数识别未知体素，把已知类别的三维占据预测与开放世界 OOD 感知放进同一框架。",
           "tags": [
-            "reasoning",
+            "prototype-guided 3D OOD",
+            "anomaly/OOD",
+            "open-world",
+            "3D perception",
             "retrieval/prototype",
-            "video",
-            "compositionality"
+            "safety-critical/hazard",
+            "uncertainty/calibration"
           ],
-          "score": 76
+          "score": 96
+        },
+        {
+          "title": "Parse, Search, and Confirmation: Training-Free Aerial Vision-and-Dialog Navigation with Chain-of-Thought Reasoning and Structured Spatial Memory",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Qi_Parse_Search_and_Confirmation_Training-Free_Aerial_Vision-and-Dialog_Navigation_with_Chain-of-Thought_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Qi_Parse_Search_and_Confirmation_Training-Free_Aerial_Vision-and-Dialog_Navigation_with_Chain-of-Thought_CVPR_2026_paper.pdf",
+          "authors": [
+            "Yu Qi",
+            "Hongyu Li",
+            "Shaofei Huang",
+            "Tianrui Hui",
+            "Yaxiong Wang",
+            "Lechao Cheng",
+            "Zhun Zhong",
+            "Si Liu",
+            "Meng Wang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "PSC 把航空视觉对话导航拆成指令解析、Search-CoT 搜索与 Confirmation-CoT 复核，并以结构化空间记忆维持多尺度观测和几何关系，全程无需任务训练。",
+          "tags": [
+            "aerial dialog navigation",
+            "UAV/small-object",
+            "reasoning",
+            "training-free",
+            "video",
+            "world model",
+            "grounded vision",
+            "open-world"
+          ],
+          "score": 95
+        },
+        {
+          "title": "SCI-CLIP: Segment-Centric Inference with Reference Memory for Training-Free Open-Vocabulary Segmentation",
+          "url": "http://arxiv.org/abs/2608.05627v1",
+          "pdf": "http://arxiv.org/pdf/2608.05627v1",
+          "authors": [
+            "Mohamad Zamini",
+            "Diksha Shukla"
+          ],
+          "source": "arXiv preprint",
+          "published": "2026-08-06",
+          "summary": "SCI-CLIP 以同一分区作为特征传播、跨窗口补证和参考记忆检索的基本单元，把冻结 CLIP 的 patch 表征改造成区域一致的免训练开放词汇分割。",
+          "tags": [
+            "segment-centric OVSS",
+            "open-vocabulary",
+            "training-free",
+            "VLM/MLLM",
+            "retrieval/prototype",
+            "representation learning",
+            "grounded vision"
+          ],
+          "score": 94
         }
       ],
       "quality": [
@@ -451,6 +476,28 @@
           "score": 81
         },
         {
+          "title": "MRCNet: Motion Reasoning Chain for Cross Modal Video Camouflaged Object Detection",
+          "url": "https://doi.org/10.1109/tpami.2026.3689767",
+          "pdf": "",
+          "authors": [
+            "Wenjun Hui",
+            "Zhenfeng Zhu",
+            "Shuai Zheng",
+            "Ming-Ming Cheng",
+            "Huchuan Lu",
+            "Yao Zhao"
+          ],
+          "source": "Crossref / TPAMI / CCF-A / 顶刊 / IEEE Transactions on Pattern Analysis and Machine Intelligence",
+          "published": "2026-09",
+          "summary": "TPAMI article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "COD",
+            "reasoning",
+            "video"
+          ],
+          "score": 79
+        },
+        {
           "title": "First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection",
           "url": "http://arxiv.org/abs/2508.15313v2",
           "pdf": "http://arxiv.org/pdf/2508.15313v2",
@@ -470,28 +517,6 @@
             "retrieval/prototype",
             "anomaly/OOD",
             "saliency/transparent"
-          ],
-          "score": 79
-        },
-        {
-          "title": "MRCNet: Motion Reasoning Chain for Cross Modal Video Camouflaged Object Detection",
-          "url": "https://doi.org/10.1109/tpami.2026.3689767",
-          "pdf": "",
-          "authors": [
-            "Wenjun Hui",
-            "Zhenfeng Zhu",
-            "Shuai Zheng",
-            "Ming-Ming Cheng",
-            "Huchuan Lu",
-            "Yao Zhao"
-          ],
-          "source": "Crossref / TPAMI / CCF-A / 顶刊 / IEEE Transactions on Pattern Analysis and Machine Intelligence",
-          "published": "2026-09",
-          "summary": "TPAMI article matched by title in a top journal; abstract unavailable from Crossref.",
-          "tags": [
-            "COD",
-            "reasoning",
-            "video"
           ],
           "score": 79
         },
@@ -673,6 +698,57 @@
         }
       ],
       "uav": [
+        {
+          "title": "Parse, Search, and Confirmation: Training-Free Aerial Vision-and-Dialog Navigation with Chain-of-Thought Reasoning and Structured Spatial Memory",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Qi_Parse_Search_and_Confirmation_Training-Free_Aerial_Vision-and-Dialog_Navigation_with_Chain-of-Thought_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Qi_Parse_Search_and_Confirmation_Training-Free_Aerial_Vision-and-Dialog_Navigation_with_Chain-of-Thought_CVPR_2026_paper.pdf",
+          "authors": [
+            "Yu Qi",
+            "Hongyu Li",
+            "Shaofei Huang",
+            "Tianrui Hui",
+            "Yaxiong Wang",
+            "Lechao Cheng",
+            "Zhun Zhong",
+            "Si Liu",
+            "Meng Wang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "PSC 把航空视觉对话导航拆成指令解析、Search-CoT 搜索与 Confirmation-CoT 复核，并以结构化空间记忆维持多尺度观测和几何关系，全程无需任务训练。",
+          "tags": [
+            "aerial dialog navigation",
+            "UAV/small-object",
+            "reasoning",
+            "training-free",
+            "video",
+            "world model",
+            "grounded vision",
+            "open-world"
+          ],
+          "score": 95
+        },
+        {
+          "title": "Wildfire Fire-Smoke Detection in UAV Imagery via Scale-Guided Feature Routing and Uncertainty-Aware Localization",
+          "url": "https://doi.org/10.1109/ACCESS.2026.3706370",
+          "pdf": "",
+          "authors": [
+            "Linyu Wu"
+          ],
+          "source": "Crossref / IEEE Access 2026",
+          "published": "2026-06-23",
+          "summary": "WFSDet 面向 UAV 图像中微小火点与大范围烟雾的尺度冲突，以 SGFR 在 P3/P4/P5 间按目标尺度路由特征，以 SDPR 在对数尺度空间约束框回归，并用异方差尺度损失在训练期降低歧义样本的惩罚权重。论文在 DFS、M4SFWD、YUXI 上分别报告 mAP50 0.642、0.943、0.775，Jetson Orin NX TensorRT 为 18.2 FPS。其不确定性分支只调制训练损失，不是推理期校准或拒答器。",
+          "tags": [
+            "wildfire UAV scale detection",
+            "fire perception",
+            "UAV/small-object",
+            "uncertainty/calibration",
+            "safety-critical/hazard",
+            "real-time edge inference",
+            "boundary/frequency"
+          ],
+          "score": 68
+        },
         {
           "title": "CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection",
           "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.html",
@@ -861,48 +937,30 @@
             "remote sensing"
           ],
           "score": 94
-        },
-        {
-          "title": "Beyond Paired Data: Self-Supervised UAV Geo-Localization from Reference Imagery Alone",
-          "url": "https://openaccess.thecvf.com/content/WACV2026/html/Amadei_Beyond_Paired_Data_Self-Supervised_UAV_Geo-Localization_from_Reference_Imagery_Alone_WACV_2026_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Amadei_Beyond_Paired_Data_Self-Supervised_UAV_Geo-Localization_from_Reference_Imagery_Alone_WACV_2026_paper.pdf",
-          "authors": [
-            "Tristan Amadei",
-            "Enric Meinhardt-Llopis",
-            "Benedicte Bascle",
-            "Corentin Abgrall",
-            "Gabriele Facciolo"
-          ],
-          "source": "WACV 2026",
-          "published": "2026",
-          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
-          "tags": [
-            "UAV/small-object",
-            "self-supervised"
-          ],
-          "score": 65
-        },
-        {
-          "title": "MMGeo: Multimodal Compositional Geo-Localization for UAVs",
-          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Ji_MMGeo_Multimodal_Compositional_Geo-Localization_for_UAVs_ICCV_2025_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ji_MMGeo_Multimodal_Compositional_Geo-Localization_for_UAVs_ICCV_2025_paper.pdf",
-          "authors": [
-            "Yuxiang Ji",
-            "Boyong He",
-            "Zhuoyue Tan",
-            "Liaoni Wu"
-          ],
-          "source": "ICCV 2025",
-          "published": "2025",
-          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
-          "tags": [
-            "UAV/small-object",
-            "compositionality"
-          ],
-          "score": 73
         }
       ],
       "fire_multispectral": [
+        {
+          "title": "Wildfire Fire-Smoke Detection in UAV Imagery via Scale-Guided Feature Routing and Uncertainty-Aware Localization",
+          "url": "https://doi.org/10.1109/ACCESS.2026.3706370",
+          "pdf": "",
+          "authors": [
+            "Linyu Wu"
+          ],
+          "source": "Crossref / IEEE Access 2026",
+          "published": "2026-06-23",
+          "summary": "WFSDet 面向 UAV 图像中微小火点与大范围烟雾的尺度冲突，以 SGFR 在 P3/P4/P5 间按目标尺度路由特征，以 SDPR 在对数尺度空间约束框回归，并用异方差尺度损失在训练期降低歧义样本的惩罚权重。论文在 DFS、M4SFWD、YUXI 上分别报告 mAP50 0.642、0.943、0.775，Jetson Orin NX TensorRT 为 18.2 FPS。其不确定性分支只调制训练损失，不是推理期校准或拒答器。",
+          "tags": [
+            "wildfire UAV scale detection",
+            "fire perception",
+            "UAV/small-object",
+            "uncertainty/calibration",
+            "safety-critical/hazard",
+            "real-time edge inference",
+            "boundary/frequency"
+          ],
+          "score": 68
+        },
         {
           "title": "Immediate remote sensing: Dynamic context-adaptive fusion for himawari-8/9 10-minute wildfire detection",
           "url": "https://doi.org/10.1016/j.rse.2026.115524",
@@ -1086,28 +1144,6 @@
             "UAV/small-object"
           ],
           "score": 98
-        },
-        {
-          "title": "Generating Satellite Imagery Data for Wildfire Detection through Mask-Conditioned Generative AI",
-          "url": "http://arxiv.org/abs/2604.02479v1",
-          "pdf": "http://arxiv.org/pdf/2604.02479v1",
-          "authors": [
-            "Valeria Martin",
-            "K. Brent Venable",
-            "Derek Morgan"
-          ],
-          "source": "arXiv",
-          "published": "2026-04-02",
-          "summary": "The scarcity of labeled satellite imagery remains a fundamental bottleneck for deep-learning (DL)-based wildfire monitoring systems. This paper investigates whether a diffusion-based foundation model for Earth Observation (EO), EarthSynth, can synthesize realistic post-wildfire Sentinel-2 RGB imagery conditioned on existing burn masks, without task-specific retraining. Using burn masks derived from the CalFireSeg-50 dataset (Martin et al., 2025), we design and evaluate six controlled experimental configurations that systematically vary: (i) pipeline architecture (mask-only full generation vs. inpainting with pre-fire context), (ii) prompt engineering strategy (three hand-crafted prompts and a VLM-generated prompt via Qwen2-VL), and (iii) a region-wise color-matching post-processing step. Quantitative assessment on 10 stratified test samples uses four complementary metrics: Burn IoU, burn-region color distance (ΔC_burn), Darkness Contrast, and Spectral Plausibility. Results show that inpainting-based pipelines consistently outperform full-tile generation across all metrics, with the structured inpainting prompt achieving the best spatial alignment (Burn IoU = 0.456) and burn saliency (Darkness Contrast = 20.44), while color matching produces the lowest color distance (ΔC_burn = 63.22) at the cost of reduced burn saliency. VLM-assisted inpainting is competitive with hand-crafted prompts. These findings provide a foundation for incorporating generative data augmentation into wildfire detection pipelines. Code and experiments are available at: https://www.kaggle.com/code/valeriamartinh/genai-all-runned",
-          "tags": [
-            "fire perception",
-            "multispectral fire",
-            "fire foundation model",
-            "diffusion",
-            "remote sensing",
-            "saliency/transparent"
-          ],
-          "score": 93
         }
       ],
       "fire_foundation": [
@@ -1485,28 +1521,29 @@
           "score": 110
         },
         {
-          "title": "MagicSeg: Open-World Segmentation Pretraining via Counterfactural Diffusion-Based Auto-Generation",
-          "url": "http://arxiv.org/abs/2603.19575v1",
-          "pdf": "http://arxiv.org/pdf/2603.19575v1",
+          "title": "A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.pdf",
           "authors": [
-            "Kaixin Cai",
-            "Pengzhen Ren",
-            "Jianhua Han",
-            "Yi Zhu",
-            "Hang Xu",
-            "Jianzhuang Liu",
-            "Xiaodan Liang"
+            "Zexi Jia",
+            "Chuanwei Huang",
+            "Hongyan Fei",
+            "Yeshuang Zhu",
+            "Zhiqiang Yuan",
+            "Ying Deng",
+            "Jiapei Zhang",
+            "Jinchao Zhang",
+            "Jie Zhou"
           ],
-          "source": "arXiv",
-          "published": "2026-03-20",
-          "summary": "Open-world semantic segmentation presently relies significantly on extensive image-text pair datasets, which often suffer from a lack of fine-grained pixel annotations on sufficient categories. The acquisition of such data is rendered economically prohibitive due to the substantial investments of both human labor and time. In light of the formidable image generation capabilities of diffusion models, we introduce a novel diffusion model-driven pipeline for automatically generating datasets tailored to the needs of open-world semantic segmentation, named \"MagicSeg\". Our MagicSeg initiates from class labels and proceeds to generate high-fidelity textual descriptions, which in turn serve as guidance for the diffusion model to generate images. Rather than only generating positive samples for each label, our process encompasses the simultaneous generation of corresponding negative images, designed to serve as paired counterfactual samples for contrastive training. Then, to provide a self-supervised signal for open-world segmentation pretraining, our MagicSeg integrates an open-vocabulary detection model and an interactive segmentation model to extract object masks as precise segmentation labels from images based on the provided category labels. By applying our dataset to the contrastive language-image pretraining model with the pseudo mask supervision and the auxiliary counterfactual contrastive training, the downstream model obtains strong performance on open-world semantic segmentation. We evaluate our model on PASCAL VOC, PASCAL Context, and COCO, achieving SOTA with performance of 62.9%, 26.7%, and 40.2%, respectively, demonstrating our dataset's effectiveness in enhancing open-world semantic segmentation capabilities. Project website: https://github.com/ckxhp/magicseg.",
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "Vision-language models (VLMs) often struggle with compositional reasoning due to insufficient high-quality image-text data. To tackle this challenge, we propose a novel block-based diffusion approach that automatically generates counterfactual datasets without manual annotation. Our method utilizes large language models to identify entities and their spatial relationships. It then independently generates image blocks as \"puzzle pieces\" coherently arranged according to specified compositional rules. This process creates diverse, high-fidelity counterfactual image-text pairs with precisely controlled variations. In addition, we introduce a specialized loss function that differentiates inter-set from intra-set samples, enhancing training efficiency and reducing the need for negative samples. Experiments demonstrate that fine-tuning VLMs with our counterfactual datasets significantly improves visual reasoning performance. Our approach achieves state-of-the-art results across multiple benchmarks while using substantially less training data than existing methods.",
           "tags": [
-            "open-vocabulary",
+            "VLM/MLLM",
+            "reasoning",
             "diffusion",
             "causal/counterfactual",
-            "open-world",
-            "self-supervised",
-            "active/interactive"
+            "compositionality"
           ],
           "score": 108
         }

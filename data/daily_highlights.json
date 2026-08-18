@@ -3383,5 +3383,144 @@
       ],
       "score": 94
     }
+  ],
+  "2026-08-18": [
+    {
+      "title": "Thinking in Uncertainty: Mitigating Hallucinations in MLRMs with Latent Entropy-Aware Decoding",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xu_Thinking_in_Uncertainty_Mitigating_Hallucinations_in_MLRMs_with_Latent_Entropy-Aware_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Xu_Thinking_in_Uncertainty_Mitigating_Hallucinations_in_MLRMs_with_Latent_Entropy-Aware_CVPR_2026_paper.pdf",
+      "authors": [
+        "Zhongxing Xu",
+        "Zhonghua Wang",
+        "Zhe Qian",
+        "Dachuan Shi",
+        "Feilong Tang",
+        "Ming Hu",
+        "Shiyan Su",
+        "Xiaocheng Zou",
+        "Wei Feng",
+        "Dwarikanath Mahapatra",
+        "Yifan Peng",
+        "Minquan Lin",
+        "Zongyuan Ge"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "LEAD 在推理时监测词元分布熵：低熵阶段沿用离散词元，高熵阶段改用概率加权连续嵌入并保留视觉锚点，以减少过早承诺造成的多模态幻觉。",
+      "tags": [
+        "latent entropy decoding",
+        "uncertainty/calibration",
+        "VLM/MLLM",
+        "reasoning",
+        "training-free",
+        "selective/risk control",
+        "safety-critical/hazard"
+      ],
+      "score": 98
+    },
+    {
+      "title": "Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Gong_Saliency-R1_Enforcing_Interpretable_and_Faithful_Vision-language_Reasoning_via_Saliency-map_Alignment_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Gong_Saliency-R1_Enforcing_Interpretable_and_Faithful_Vision-language_Reasoning_via_Saliency-map_Alignment_CVPR_2026_paper.pdf",
+      "authors": [
+        "Shizhan Gong",
+        "Minda Hu",
+        "Qiyuan Zhang",
+        "Chen Ma",
+        "Qi Dou"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "Saliency-R1 把生成词元对视觉区域的显著贡献与人工目标框对齐，并将该对齐分数加入 GRPO 奖励，使视觉语言推理不仅答对，还更依赖题目相关区域。",
+      "tags": [
+        "saliency alignment reward",
+        "VLM/MLLM",
+        "reasoning",
+        "grounded vision",
+        "saliency/transparent",
+        "safety-critical/hazard"
+      ],
+      "score": 97
+    },
+    {
+      "title": "ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_ProOOD_Prototype-Guided_Out-of-Distribution_3D_Occupancy_Prediction_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_ProOOD_Prototype-Guided_Out-of-Distribution_3D_Occupancy_Prediction_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yuheng Zhang",
+        "Mengfei Duan",
+        "Kunyu Peng",
+        "Yuhang Wang",
+        "Di Wen",
+        "Danda Pani Paudel",
+        "Luc Van Gool",
+        "Kailun Yang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "ProOOD 用语义原型补全长尾占据表征，再以原型差异和 EchoOOD 分数识别未知体素，把已知类别的三维占据预测与开放世界 OOD 感知放进同一框架。",
+      "tags": [
+        "prototype-guided 3D OOD",
+        "anomaly/OOD",
+        "open-world",
+        "3D perception",
+        "retrieval/prototype",
+        "safety-critical/hazard",
+        "uncertainty/calibration"
+      ],
+      "score": 96
+    },
+    {
+      "title": "Parse, Search, and Confirmation: Training-Free Aerial Vision-and-Dialog Navigation with Chain-of-Thought Reasoning and Structured Spatial Memory",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Qi_Parse_Search_and_Confirmation_Training-Free_Aerial_Vision-and-Dialog_Navigation_with_Chain-of-Thought_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Qi_Parse_Search_and_Confirmation_Training-Free_Aerial_Vision-and-Dialog_Navigation_with_Chain-of-Thought_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yu Qi",
+        "Hongyu Li",
+        "Shaofei Huang",
+        "Tianrui Hui",
+        "Yaxiong Wang",
+        "Lechao Cheng",
+        "Zhun Zhong",
+        "Si Liu",
+        "Meng Wang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "PSC 把航空视觉对话导航拆成指令解析、Search-CoT 搜索与 Confirmation-CoT 复核，并以结构化空间记忆维持多尺度观测和几何关系，全程无需任务训练。",
+      "tags": [
+        "aerial dialog navigation",
+        "UAV/small-object",
+        "reasoning",
+        "training-free",
+        "video",
+        "world model",
+        "grounded vision",
+        "open-world"
+      ],
+      "score": 95
+    },
+    {
+      "title": "SCI-CLIP: Segment-Centric Inference with Reference Memory for Training-Free Open-Vocabulary Segmentation",
+      "url": "http://arxiv.org/abs/2608.05627v1",
+      "pdf": "http://arxiv.org/pdf/2608.05627v1",
+      "authors": [
+        "Mohamad Zamini",
+        "Diksha Shukla"
+      ],
+      "source": "arXiv preprint",
+      "published": "2026-08-06",
+      "summary": "SCI-CLIP 以同一分区作为特征传播、跨窗口补证和参考记忆检索的基本单元，把冻结 CLIP 的 patch 表征改造成区域一致的免训练开放词汇分割。",
+      "tags": [
+        "segment-centric OVSS",
+        "open-vocabulary",
+        "training-free",
+        "VLM/MLLM",
+        "retrieval/prototype",
+        "representation learning",
+        "grounded vision"
+      ],
+      "score": 94
+    }
   ]
 }
