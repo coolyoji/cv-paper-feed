@@ -14,12 +14,15 @@ import re
 import os
 import sys
 import textwrap
+import tempfile
 import time
+import unicodedata
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta, timezone
+from functools import lru_cache
 from pathlib import Path
 
 
@@ -32,6 +35,17 @@ HISTORY_FILE = DATA / "feed_history.json"
 ABSTRACT_DETAILS_FILE = DATA / "abstract_details.json"
 DAILY_HIGHLIGHTS_FILE = DATA / "daily_highlights.json"
 DAILY_ABSTRACT_DETAILS_FILE = DATA / "daily_abstract_details.json"
+DAILY_PAPER_NOTES_FILE = DATA / "daily_paper_notes.json"
+DAILY_NOTE_FIELDS = (
+    "一句话总结",
+    "任务设定",
+    "摘要详解",
+    "实验结论",
+    "和我课题的关系",
+    "可借鉴点",
+    "可改进点",
+    "是否值得精读",
+)
 DEEP_SOURCE_SCAN = os.environ.get("DEEP_SOURCE_SCAN", "").lower() in {"1", "true", "yes"}
 FEED_DATE_OVERRIDE = os.environ.get("FEED_DATE", "").strip()
 SOURCE_FAILURE_LIMIT = max(1, int(os.environ.get("SOURCE_FAILURE_LIMIT", "3")))
@@ -1110,7 +1124,7 @@ def is_pure_cod_anchor(paper: Paper) -> bool:
 
 def paper_identity_keys(paper: Paper) -> set[str]:
     keys: set[str] = set()
-    normalized_title = re.sub(r"\W+", "", paper.title.casefold())
+    normalized_title = normalized_title_key(paper.title)
     if normalized_title:
         digest = hashlib.sha1(normalized_title.encode("utf-8")).hexdigest()
         keys.add("title:" + digest)
@@ -1136,6 +1150,11 @@ def paper_identity_keys(paper: Paper) -> set[str]:
             digest = hashlib.sha1(f"{host}{path}".encode("utf-8")).hexdigest()
             keys.add("url:" + digest)
     return keys
+
+
+def normalized_title_key(title: str) -> str:
+    """Return the stable title form used by the feed identity rules."""
+    return re.sub(r"\W+", "", str(title).casefold())
 
 
 def select_highlights(
@@ -2061,9 +2080,86 @@ def should_deep_read(paper: Paper) -> str:
     return "暂不精读：先收藏标题，需要相关模块时再回看。"
 
 
+def normalized_note_title_key(title: str) -> str:
+    normalized = unicodedata.normalize("NFKC", html.unescape(str(title))).casefold()
+    return re.sub(r"\W+", "", normalized)
+
+
+@lru_cache(maxsize=1)
+def load_daily_paper_notes() -> dict[str, dict[str, str]]:
+    if not DAILY_PAPER_NOTES_FILE.exists():
+        return {}
+    try:
+        data = json.loads(DAILY_PAPER_NOTES_FILE.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as exc:
+        raise ValueError(
+            f"Invalid verified paper-note file: {DAILY_PAPER_NOTES_FILE}"
+        ) from exc
+    if not isinstance(data, dict):
+        raise ValueError("Verified paper-note file must contain an object")
+
+    notes: dict[str, dict[str, str]] = {}
+    expected_fields = set(DAILY_NOTE_FIELDS)
+    for raw_title, raw_note in data.items():
+        if not isinstance(raw_title, str) or not clean_text(raw_title):
+            raise ValueError("Verified paper-note title must be a non-empty string")
+        if not isinstance(raw_note, dict):
+            raise ValueError(f"Verified paper note must be an object: {raw_title}")
+        actual_fields = set(raw_note)
+        if actual_fields != expected_fields:
+            missing = sorted(expected_fields - actual_fields)
+            extra = sorted(actual_fields - expected_fields)
+            raise ValueError(
+                f"Verified paper note fields do not match for {raw_title}; "
+                f"missing={missing}, extra={extra}"
+            )
+
+        note: dict[str, str] = {}
+        for field_name in DAILY_NOTE_FIELDS:
+            value = raw_note[field_name]
+            if not isinstance(value, str) or not clean_text(value):
+                raise ValueError(
+                    f"Verified paper-note field is empty or non-text: "
+                    f"{raw_title} / {field_name}"
+                )
+            note[field_name] = clean_text(value)
+
+        title_key = normalized_note_title_key(raw_title)
+        if not title_key:
+            raise ValueError(f"Verified paper-note title has no identity: {raw_title}")
+        if title_key in notes:
+            raise ValueError(
+                f"Verified paper-note titles collide after normalization: {raw_title}"
+            )
+        notes[title_key] = note
+    return notes
+
+
+def require_verified_daily_notes(
+    papers: list[Paper],
+    notes: dict[str, dict[str, str]] | None = None,
+) -> dict[str, dict[str, str]]:
+    notes = notes if notes is not None else load_daily_paper_notes()
+    missing = [
+        paper.title
+        for paper in papers
+        if normalized_note_title_key(paper.title) not in notes
+    ]
+    if missing:
+        raise ValueError(
+            "Curated paper has no complete verified note(s): " + "; ".join(missing)
+        )
+    return notes
+
+
 def md_paper_item(idx: int, paper: Paper) -> str:
     authors = format_authors(paper.authors)
     tag_text = ", ".join(paper.tags)
+    note = load_daily_paper_notes().get(normalized_note_title_key(paper.title), {})
+
+    def note_value(field_name: str, fallback: str) -> str:
+        return note.get(field_name, fallback)
+
     links = f"[paper]({paper.url})"
     if paper.pdf:
         links += f" / [pdf]({paper.pdf})"
@@ -2078,14 +2174,14 @@ def md_paper_item(idx: int, paper: Paper) -> str:
             f"   - Tags: {tag_text}",
             f"   - Links: {links}",
             f"   - 论文：{paper.title}",
-            f"   - 一句话总结：{short_summary(paper)}",
-            f"   - 任务设定：{task_setting(paper)}",
-            f"   - 摘要详解：{abstract_explanation(paper)}",
-            f"   - 实验结论：{experiment_takeaway(paper)}",
-            f"   - 和我课题的关系：{relation_to_topic(paper)}",
-            f"   - 可借鉴点：{borrow_points(paper)}",
-            f"   - 可改进点：{improvement_ideas(paper)}",
-            f"   - 是否值得精读：{should_deep_read(paper)}",
+            f"   - 一句话总结：{note_value('一句话总结', short_summary(paper))}",
+            f"   - 任务设定：{note_value('任务设定', task_setting(paper))}",
+            f"   - 摘要详解：{note_value('摘要详解', abstract_explanation(paper))}",
+            f"   - 实验结论：{note_value('实验结论', experiment_takeaway(paper))}",
+            f"   - 和我课题的关系：{note_value('和我课题的关系', relation_to_topic(paper))}",
+            f"   - 可借鉴点：{note_value('可借鉴点', borrow_points(paper))}",
+            f"   - 可改进点：{note_value('可改进点', improvement_ideas(paper))}",
+            f"   - 是否值得精读：{note_value('是否值得精读', should_deep_read(paper))}",
         ]
     )
     return "\n".join(parts)
@@ -2560,6 +2656,21 @@ def snapshot_highlights(snapshot: dict) -> list[Paper]:
     return [paper_from_dict(item) for item in highlights if isinstance(item, dict)]
 
 
+def snapshot_all_papers(snapshot: dict) -> list[Paper]:
+    """Read every current or future section without relying on a fixed name list."""
+    sections = snapshot.get("sections", {})
+    if not isinstance(sections, dict):
+        return []
+    papers: list[Paper] = []
+    for items in sections.values():
+        if not isinstance(items, list):
+            continue
+        papers.extend(
+            paper_from_dict(item) for item in items if isinstance(item, dict)
+        )
+    return papers
+
+
 def daily_curated_highlights(date_text: str) -> list[Paper]:
     if not DAILY_HIGHLIGHTS_FILE.exists():
         return []
@@ -2576,9 +2687,8 @@ def daily_curated_highlights(date_text: str) -> list[Paper]:
 def history_highlight_keys(history: list[dict]) -> set[str]:
     keys: set[str] = set()
     for snapshot in history:
-        for papers in snapshot_sections(snapshot).values():
-            for paper in papers:
-                keys.update(paper_identity_keys(paper))
+        for paper in snapshot_all_papers(snapshot):
+            keys.update(paper_identity_keys(paper))
     return keys
 
 
@@ -3022,7 +3132,11 @@ def write_snapshot_files(snapshot: dict) -> None:
     )
 
 
-def render_existing_history(history: list[dict] | None = None, latest_only: bool = False) -> None:
+def render_existing_history(
+    history: list[dict] | None = None,
+    latest_only: bool = False,
+    only_dates: set[str] | None = None,
+) -> None:
     DATA.mkdir(exist_ok=True)
     DOCS.mkdir(exist_ok=True)
     DAILY_MD.mkdir(exist_ok=True)
@@ -3031,13 +3145,18 @@ def render_existing_history(history: list[dict] | None = None, latest_only: bool
     md = render_markdown(history)
     (DOCS / "literature.md").write_text(md, encoding="utf-8", newline="\n")
     (DOCS / "index.html").write_text(render_html(md), encoding="utf-8", newline="\n")
-    if latest_only and history:
+    if only_dates is not None:
+        for snapshot in history:
+            if snapshot_date_text(snapshot) in only_dates:
+                write_snapshot_files(snapshot)
+    elif latest_only and history:
         write_snapshot_files(history[0])
     else:
         write_daily_files(history)
 
 
 def refresh_current_abstracts() -> None:
+    load_daily_paper_notes()
     history = collapse_history_by_date(load_history())
     if not history:
         print("[warn] no feed history to refresh", file=sys.stderr)
@@ -3083,9 +3202,11 @@ def refresh_current_abstracts() -> None:
 
 
 def apply_daily_curation() -> None:
+    verified_notes = load_daily_paper_notes()
     latest_path = DATA / "latest_papers.json"
     now = feed_now()
     curated = daily_curated_highlights(now.strftime("%Y-%m-%d"))
+    require_verified_daily_notes(curated, verified_notes)
     curated_by_title = {
         re.sub(r"\W+", "", paper.title.lower()): paper for paper in curated
     }
@@ -3115,6 +3236,219 @@ def apply_daily_curation() -> None:
     print(f"[info] applied daily curation for {now:%Y-%m-%d}")
 
 
+def read_json_list_strict(path: Path, label: str) -> list[dict]:
+    if not path.exists():
+        raise FileNotFoundError(f"Missing {label}: {path}")
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as exc:
+        raise ValueError(f"Invalid {label}: {path}") from exc
+    if not isinstance(data, list) or any(not isinstance(item, dict) for item in data):
+        raise ValueError(f"{label} must be a list of objects: {path}")
+    return data
+
+
+def write_text_batch_atomic(payloads: dict[Path, str]) -> None:
+    """Stage a related file set, replacing it together or restoring prior bytes."""
+    staged: dict[Path, Path] = {}
+    originals: dict[Path, bytes | None] = {}
+    replaced: list[Path] = []
+    try:
+        for path, payload in payloads.items():
+            path.parent.mkdir(parents=True, exist_ok=True)
+            originals[path] = path.read_bytes() if path.exists() else None
+            fd, temp_name = tempfile.mkstemp(
+                prefix=f".{path.name}.", suffix=".tmp", dir=path.parent
+            )
+            temp_path = Path(temp_name)
+            staged[path] = temp_path
+            with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as handle:
+                handle.write(payload)
+                handle.flush()
+                os.fsync(handle.fileno())
+
+        for path, temp_path in staged.items():
+            os.replace(temp_path, path)
+            replaced.append(path)
+    except BaseException:
+        for temp_path in staged.values():
+            temp_path.unlink(missing_ok=True)
+        rollback_errors: list[Exception] = []
+        for path in reversed(replaced):
+            try:
+                original = originals[path]
+                if original is None:
+                    path.unlink(missing_ok=True)
+                    continue
+                fd, temp_name = tempfile.mkstemp(
+                    prefix=f".{path.name}.rollback.", suffix=".tmp", dir=path.parent
+                )
+                rollback_path = Path(temp_name)
+                try:
+                    with os.fdopen(fd, "wb") as handle:
+                        handle.write(original)
+                        handle.flush()
+                        os.fsync(handle.fileno())
+                    os.replace(rollback_path, path)
+                finally:
+                    rollback_path.unlink(missing_ok=True)
+            except Exception as rollback_error:
+                rollback_errors.append(rollback_error)
+        if rollback_errors:
+            raise RuntimeError(
+                "File batch failed and at least one prior file could not be restored"
+            ) from rollback_errors[0]
+        raise
+
+
+def json_text(data: object) -> str:
+    return json.dumps(data, ensure_ascii=False, indent=2)
+
+
+def replace_existing_snapshot_curation(
+    history: list[dict],
+    date_text: str,
+    curated: list[Paper],
+) -> list[dict]:
+    """Replace only an existing day's highlights, preserving its candidate snapshot."""
+    if len(curated) != HIGHLIGHT_LIMIT:
+        raise ValueError(
+            f"Existing-day curation requires exactly {HIGHLIGHT_LIMIT} papers"
+        )
+
+    curated_keys: set[str] = set()
+    for paper in curated:
+        identity_keys = paper_identity_keys(paper)
+        if not identity_keys:
+            raise ValueError(f"Curated paper has no identity keys: {paper.title}")
+        if not curated_keys.isdisjoint(identity_keys):
+            raise ValueError(f"Duplicate identity in daily curation: {paper.title}")
+        curated_keys.update(identity_keys)
+
+    matches = [
+        index
+        for index, snapshot in enumerate(history)
+        if snapshot_date_text(snapshot) == date_text
+    ]
+    if len(matches) != 1:
+        raise ValueError(
+            f"Expected one existing snapshot for {date_text}, found {len(matches)}"
+        )
+
+    historical_keys: set[str] = set()
+    for snapshot in history:
+        snapshot_date = snapshot_date_text(snapshot)
+        if not snapshot_date or snapshot_date == date_text:
+            continue
+        # Earlier snapshots are a prior-art gate across every section. Later
+        # snapshots only contribute their deep-read queue: their candidate
+        # sections may legitimately rediscover a paper selected on this day.
+        comparison_papers = (
+            snapshot_all_papers(snapshot)
+            if snapshot_date < date_text
+            else snapshot_highlights(snapshot)
+        )
+        for paper in comparison_papers:
+            historical_keys.update(paper_identity_keys(paper))
+    duplicates = [
+        paper.title
+        for paper in curated
+        if not paper_identity_keys(paper).isdisjoint(historical_keys)
+    ]
+    if duplicates:
+        raise ValueError(
+            "Daily curation reuses historical paper(s): " + "; ".join(duplicates)
+        )
+
+    updated = list(history)
+    target = dict(updated[matches[0]])
+    sections = target.get("sections")
+    if not isinstance(sections, dict):
+        raise ValueError(f"Snapshot {date_text} has no section mapping")
+    target["sections"] = dict(sections)
+    target["sections"]["highlights"] = [paper_to_dict(paper) for paper in curated]
+    updated[matches[0]] = target
+    return updated
+
+
+def merge_curated_into_latest(
+    latest: list[dict],
+    curated: list[Paper],
+) -> list[dict]:
+    """Replace the same title and preserve different-title source aliases."""
+    if any(not isinstance(item, dict) for item in latest):
+        raise ValueError("Latest paper pool must contain only objects")
+
+    merged = list(latest)
+    curated_titles: set[str] = set()
+    for paper in curated:
+        title_key = normalized_title_key(paper.title)
+        if not title_key:
+            raise ValueError(f"Curated paper has no normalized title: {paper.title}")
+        if title_key in curated_titles:
+            raise ValueError(f"Duplicate curated title: {paper.title}")
+        curated_titles.add(title_key)
+
+        matching_indices = [
+            index
+            for index, item in enumerate(merged)
+            if normalized_title_key(item.get("title", "")) == title_key
+        ]
+        if len(matching_indices) > 1:
+            raise ValueError(f"Latest paper pool repeats title: {paper.title}")
+        if matching_indices:
+            merged[matching_indices[0]] = paper_to_dict(paper)
+        else:
+            merged.append(paper_to_dict(paper))
+
+    seen_titles: set[str] = set()
+    for item in merged:
+        title_key = normalized_title_key(item.get("title", ""))
+        if not title_key:
+            raise ValueError("Latest paper record has no normalized title")
+        if title_key in seen_titles:
+            raise ValueError(f"Latest paper pool contains duplicate title: {item['title']}")
+        seen_titles.add(title_key)
+    return sorted(
+        merged,
+        key=lambda item: paper_from_dict(item).score,
+        reverse=True,
+    )
+
+
+def apply_existing_daily_curation() -> None:
+    """Backfill a curated Top-5 without rebuilding an older day's other sections."""
+    now = feed_now()
+    date_text = now.strftime("%Y-%m-%d")
+    curated = daily_curated_highlights(date_text)
+    latest_path = DATA / "latest_papers.json"
+    history_source = read_json_list_strict(HISTORY_FILE, "feed history")
+    latest_source = read_json_list_strict(latest_path, "latest paper pool")
+    require_verified_daily_notes(curated)
+
+    # Complete all parsing, validation and in-memory merging before any write.
+    history = collapse_history_by_date(
+        replace_existing_snapshot_curation(history_source, date_text, curated)
+    )
+    latest = merge_curated_into_latest(latest_source, curated)
+    archive_md = render_markdown(history)
+    target_snapshot = next(
+        snapshot for snapshot in history if snapshot_date_text(snapshot) == date_text
+    )
+    daily_md = render_snapshot_markdown(target_snapshot)
+    write_text_batch_atomic(
+        {
+            HISTORY_FILE: json_text(history),
+            latest_path: json_text(latest),
+            DOCS / "literature.md": archive_md,
+            DOCS / "index.html": render_html(archive_md),
+            DAILY_MD / f"{date_text}.md": daily_md,
+            DAILY_HTML / f"{date_text}.html": render_html(daily_md),
+        }
+    )
+    print(f"[info] applied existing-day curation for {date_text}")
+
+
 def markdown_inline(text: str) -> str:
     text = html.escape(text)
     text = re.sub(r"\*\*(.*?)\*\*", r"<strong>\1</strong>", text)
@@ -3125,6 +3459,8 @@ def markdown_inline(text: str) -> str:
 def main() -> None:
     global SOURCE_DEGRADED
     SOURCE_DEGRADED = False
+
+    load_daily_paper_notes()
 
     DATA.mkdir(exist_ok=True)
     DOCS.mkdir(exist_ok=True)
@@ -3167,6 +3503,9 @@ def main() -> None:
     papers.sort(key=lambda p: p.score, reverse=True)
 
     now = feed_now()
+    require_verified_daily_notes(
+        daily_curated_highlights(now.strftime("%Y-%m-%d"))
+    )
     history = update_history(papers, now)
     if history:
         download_daily_pdfs(history[0])
@@ -3187,7 +3526,8 @@ def main() -> None:
 def print_usage() -> None:
     print(
         "Usage: python scripts/update_papers.py "
-        "[--apply-daily-curation|--refresh-current-abstracts|--render-only]\n"
+        "[--apply-daily-curation|--apply-existing-daily-curation|"
+        "--refresh-current-abstracts|--render-only]\n"
         "Set FEED_DATE=YYYY-MM-DD to pin a retry to its intended feed date."
     )
 
@@ -3197,6 +3537,8 @@ if __name__ == "__main__":
         print_usage()
     elif "--apply-daily-curation" in sys.argv:
         apply_daily_curation()
+    elif "--apply-existing-daily-curation" in sys.argv:
+        apply_existing_daily_curation()
     elif "--refresh-current-abstracts" in sys.argv:
         refresh_current_abstracts()
     elif "--render-only" in sys.argv:

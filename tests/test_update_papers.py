@@ -155,6 +155,7 @@ class CuratedNoteTests(unittest.TestCase):
             patch.object(update_papers, "feed_now", return_value=datetime(2026, 8, 12, tzinfo=update_papers.UTC8)),
             patch.object(update_papers, "daily_curated_highlights", return_value=[curated]),
             patch.object(update_papers, "load_cached_candidate_pool", return_value=[stale]),
+            patch.object(update_papers, "require_verified_daily_notes"),
             patch.object(update_papers, "score_paper", return_value=50),
             patch.object(update_papers, "update_history", side_effect=capture_history),
             patch.object(update_papers, "render_existing_history"),
@@ -164,6 +165,482 @@ class CuratedNoteTests(unittest.TestCase):
 
         self.assertEqual(captured["summary"], "Verified summary")
         self.assertEqual(captured["tags"], ["verified"])
+
+    def test_existing_day_curation_preserves_non_highlight_sections(self):
+        old_highlight = update_papers.Paper(
+            title="Old Highlight",
+            url="https://example.com/old",
+        )
+        curated = [
+            update_papers.Paper(
+                title=f"Curated {index}",
+                url=f"https://example.com/curated-{index}",
+            )
+            for index in range(5)
+        ]
+        quality = {
+            "title": "Quality Anchor",
+            "url": "https://example.com/quality",
+            "pdf": "",
+            "authors": [],
+            "source": "Test",
+            "published": "2026",
+            "summary": "Keep me byte-for-byte at the object level.",
+            "tags": ["test"],
+            "score": 42,
+        }
+        history = [
+            {
+                "date": "2026-08-20",
+                "generated_at": "2026-08-20 10:28",
+                "total_selected": 100,
+                "sections": {
+                    "highlights": [update_papers.paper_to_dict(old_highlight)],
+                    "quality": [quality],
+                },
+            },
+            {
+                "date": "2026-08-19",
+                "generated_at": "2026-08-19 10:28",
+                "total_selected": 90,
+                "sections": {"highlights": []},
+            },
+        ]
+
+        result = update_papers.replace_existing_snapshot_curation(
+            history, "2026-08-20", curated
+        )
+
+        self.assertEqual(result[0]["total_selected"], 100)
+        self.assertEqual(result[0]["sections"]["quality"], [quality])
+        self.assertEqual(
+            [item["title"] for item in result[0]["sections"]["highlights"]],
+            [paper.title for paper in curated],
+        )
+
+    def test_existing_day_curation_rejects_prior_section_duplicate(self):
+        curated = [
+            update_papers.Paper(
+                title=f"Curated {index}",
+                url=f"https://example.com/curated-{index}",
+            )
+            for index in range(5)
+        ]
+        history = [
+            {
+                "date": "2026-08-20",
+                "sections": {"highlights": []},
+            },
+            {
+                "date": "2026-08-19",
+                "sections": {
+                    "quality": [update_papers.paper_to_dict(curated[3])]
+                },
+            },
+        ]
+
+        with self.assertRaisesRegex(ValueError, "historical paper"):
+            update_papers.replace_existing_snapshot_curation(
+                history, "2026-08-20", curated
+            )
+
+    def test_existing_day_curation_rejects_later_highlight_duplicate(self):
+        curated = [
+            update_papers.Paper(
+                title=f"Curated {index}",
+                url=f"https://example.com/curated-{index}",
+            )
+            for index in range(5)
+        ]
+        history = [
+            {"date": "2026-08-20", "sections": {"highlights": []}},
+            {
+                "date": "2026-08-21",
+                "sections": {
+                    "highlights": [update_papers.paper_to_dict(curated[2])]
+                },
+            },
+        ]
+
+        with self.assertRaisesRegex(ValueError, "historical paper"):
+            update_papers.replace_existing_snapshot_curation(
+                history, "2026-08-20", curated
+            )
+
+    def test_existing_day_curation_checks_new_prior_section_names(self):
+        curated = [
+            update_papers.Paper(
+                title=f"Curated {index}",
+                url=f"https://example.com/curated-{index}",
+            )
+            for index in range(5)
+        ]
+        history = [
+            {"date": "2026-08-20", "sections": {"highlights": []}},
+            {
+                "date": "2026-08-19",
+                "sections": {
+                    "future_cluster": [update_papers.paper_to_dict(curated[4])]
+                },
+            },
+        ]
+
+        with self.assertRaisesRegex(ValueError, "historical paper"):
+            update_papers.replace_existing_snapshot_curation(
+                history, "2026-08-20", curated
+            )
+
+    def test_existing_day_curation_appends_paper_missing_from_latest(self):
+        existing = update_papers.Paper(
+            title="Existing",
+            url="https://example.com/existing",
+            summary="Old metadata",
+        )
+        replacement = update_papers.Paper(
+            title="Existing",
+            url="https://example.com/existing",
+            summary="Verified metadata",
+        )
+        absent = update_papers.Paper(
+            title="Absent curated paper",
+            url="https://example.com/absent",
+            score=2,
+        )
+
+        merged = update_papers.merge_curated_into_latest(
+            [update_papers.paper_to_dict(existing)],
+            [replacement, absent],
+        )
+
+        self.assertEqual(len(merged), 2)
+        self.assertEqual(merged[0]["title"], "Absent curated paper")
+        self.assertEqual(merged[1]["summary"], "Verified metadata")
+
+    def test_latest_merge_preserves_different_title_arxiv_aliases(self):
+        aliases = [
+            update_papers.Paper(
+                title="Original arXiv title",
+                url="https://arxiv.org/abs/2608.12345v1",
+                score=10,
+            ),
+            update_papers.Paper(
+                title="Revised arXiv title",
+                url="https://arxiv.org/abs/2608.12345v2",
+                score=9,
+            ),
+        ]
+        curated = update_papers.Paper(
+            title="Official proceedings title",
+            url="https://arxiv.org/abs/2608.12345v3",
+            score=11,
+        )
+
+        merged = update_papers.merge_curated_into_latest(
+            [update_papers.paper_to_dict(paper) for paper in aliases], [curated]
+        )
+
+        self.assertEqual(
+            {item["title"] for item in merged},
+            {
+                "Original arXiv title",
+                "Revised arXiv title",
+                "Official proceedings title",
+            },
+        )
+
+    def test_verified_daily_note_overrides_generated_fields(self):
+        paper = update_papers.Paper(
+            title="Verified Paper",
+            url="https://example.com/verified",
+            summary="Fallback summary.",
+        )
+        note = {
+            "一句话总结": "核验总结",
+            "任务设定": "核验任务",
+            "摘要详解": "核验摘要",
+            "实验结论": "核验实验",
+            "和我课题的关系": "核验关系",
+            "可借鉴点": "核验借鉴",
+            "可改进点": "核验改进",
+            "是否值得精读": "核验结论",
+        }
+
+        with patch.object(
+            update_papers,
+            "load_daily_paper_notes",
+            return_value={update_papers.normalized_note_title_key(paper.title): note},
+        ):
+            rendered = update_papers.md_paper_item(1, paper)
+
+        for field_name, value in note.items():
+            self.assertIn(f"- {field_name}：{value}", rendered)
+        self.assertNotIn("Fallback summary", rendered)
+
+    def test_verified_note_matches_normalized_title(self):
+        paper = update_papers.Paper(
+            title="Evidence & Reasoning: A Test",
+            url="https://example.com/verified",
+        )
+        note = {field: f"核验{index}" for index, field in enumerate(update_papers.DAILY_NOTE_FIELDS)}
+        with patch.object(
+            update_papers,
+            "load_daily_paper_notes",
+            return_value={
+                update_papers.normalized_note_title_key(
+                    "Evidence &amp; Reasoning — A Test"
+                ): note
+            },
+        ):
+            rendered = update_papers.md_paper_item(1, paper)
+
+        self.assertIn(f"- 摘要详解：{note['摘要详解']}", rendered)
+
+    def test_verified_note_file_fails_closed_on_missing_field(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            notes_path = Path(tmp) / "notes.json"
+            incomplete = {
+                "Verified Paper": {
+                    field: "核验内容"
+                    for field in update_papers.DAILY_NOTE_FIELDS[:-1]
+                }
+            }
+            notes_path.write_text(
+                json.dumps(incomplete, ensure_ascii=False), encoding="utf-8"
+            )
+            update_papers.load_daily_paper_notes.cache_clear()
+            try:
+                with (
+                    patch.object(update_papers, "DAILY_PAPER_NOTES_FILE", notes_path),
+                    self.assertRaisesRegex(ValueError, "fields do not match"),
+                ):
+                    update_papers.load_daily_paper_notes()
+            finally:
+                update_papers.load_daily_paper_notes.cache_clear()
+
+    def test_existing_day_apply_does_not_write_when_latest_is_invalid(self):
+        curated = [
+            update_papers.Paper(
+                title=f"Curated {index}",
+                url=f"https://example.com/curated-{index}",
+            )
+            for index in range(5)
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            data_dir = Path(tmp)
+            history_path = data_dir / "feed_history.json"
+            latest_path = data_dir / "latest_papers.json"
+            history_path.write_text(
+                json.dumps(
+                    [
+                        {
+                            "date": "2026-08-20",
+                            "sections": {"highlights": []},
+                        }
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            original_history = history_path.read_bytes()
+            latest_path.write_text("{broken", encoding="utf-8")
+
+            with (
+                patch.object(update_papers, "DATA", data_dir),
+                patch.object(update_papers, "HISTORY_FILE", history_path),
+                patch.object(
+                    update_papers,
+                    "feed_now",
+                    return_value=datetime(2026, 8, 20, tzinfo=update_papers.UTC8),
+                ),
+                patch.object(
+                    update_papers, "daily_curated_highlights", return_value=curated
+                ),
+                self.assertRaisesRegex(ValueError, "latest paper pool"),
+            ):
+                update_papers.apply_existing_daily_curation()
+
+            self.assertEqual(history_path.read_bytes(), original_history)
+
+    def test_render_existing_history_only_writes_requested_daily_snapshot(self):
+        history = [
+            {
+                "date": "2026-08-20",
+                "generated_at": "2026-08-20 10:00",
+                "sections": {},
+            },
+            {
+                "date": "2026-08-19",
+                "generated_at": "2026-08-19 10:00",
+                "sections": {},
+            },
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            docs = Path(tmp) / "docs"
+            daily_md = docs / "md"
+            daily_html = docs / "html"
+            with (
+                patch.object(update_papers, "DOCS", docs),
+                patch.object(update_papers, "DAILY_MD", daily_md),
+                patch.object(update_papers, "DAILY_HTML", daily_html),
+            ):
+                update_papers.render_existing_history(
+                    history, only_dates={"2026-08-19"}
+                )
+
+            self.assertTrue((docs / "literature.md").exists())
+            self.assertTrue((docs / "index.html").exists())
+            self.assertTrue((daily_md / "2026-08-19.md").exists())
+            self.assertTrue((daily_html / "2026-08-19.html").exists())
+            self.assertFalse((daily_md / "2026-08-20.md").exists())
+            self.assertFalse((daily_html / "2026-08-20.html").exists())
+
+    def test_atomic_batch_restores_replaced_files_when_commit_fails(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            first = Path(tmp) / "first.json"
+            second = Path(tmp) / "second.json"
+            first.write_text("first-before", encoding="utf-8")
+            second.write_text("second-before", encoding="utf-8")
+            real_replace = update_papers.os.replace
+            calls = 0
+
+            def fail_second_replace(source, destination):
+                nonlocal calls
+                calls += 1
+                if calls == 2:
+                    raise OSError("simulated commit failure")
+                return real_replace(source, destination)
+
+            with (
+                patch.object(
+                    update_papers.os, "replace", side_effect=fail_second_replace
+                ),
+                self.assertRaisesRegex(OSError, "simulated commit failure"),
+            ):
+                update_papers.write_text_batch_atomic(
+                    {first: "first-after", second: "second-after"}
+                )
+
+            self.assertEqual(first.read_text(encoding="utf-8"), "first-before")
+            self.assertEqual(second.read_text(encoding="utf-8"), "second-before")
+
+    def test_atomic_batch_restores_replaced_files_on_keyboard_interrupt(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            first = Path(tmp) / "first.json"
+            second = Path(tmp) / "second.json"
+            first.write_text("first-before", encoding="utf-8")
+            second.write_text("second-before", encoding="utf-8")
+            real_replace = update_papers.os.replace
+            calls = 0
+
+            def interrupt_second_replace(source, destination):
+                nonlocal calls
+                calls += 1
+                if calls == 2:
+                    raise KeyboardInterrupt()
+                return real_replace(source, destination)
+
+            with (
+                patch.object(
+                    update_papers.os, "replace", side_effect=interrupt_second_replace
+                ),
+                self.assertRaises(KeyboardInterrupt),
+            ):
+                update_papers.write_text_batch_atomic(
+                    {first: "first-after", second: "second-after"}
+                )
+
+            self.assertEqual(first.read_text(encoding="utf-8"), "first-before")
+            self.assertEqual(second.read_text(encoding="utf-8"), "second-before")
+
+    def test_apply_daily_curation_validates_notes_before_history_update(self):
+        with (
+            patch.object(
+                update_papers,
+                "load_daily_paper_notes",
+                side_effect=ValueError("invalid verified notes"),
+            ),
+            patch.object(update_papers, "update_history") as update_history,
+            self.assertRaisesRegex(ValueError, "invalid verified notes"),
+        ):
+            update_papers.apply_daily_curation()
+
+        update_history.assert_not_called()
+
+    def test_existing_day_apply_preserves_non_target_daily_archives(self):
+        curated = [
+            update_papers.Paper(
+                title=f"Curated {index}",
+                url=f"https://example.com/curated-{index}",
+                score=10 - index,
+            )
+            for index in range(5)
+        ]
+        verified_notes = {
+            update_papers.normalized_note_title_key(paper.title): {
+                field: f"{paper.title} / {field}"
+                for field in update_papers.DAILY_NOTE_FIELDS
+            }
+            for paper in curated
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            data = root / "data"
+            docs = root / "docs"
+            daily_md = docs / "md"
+            daily_html = docs / "html"
+            data.mkdir()
+            daily_md.mkdir(parents=True)
+            daily_html.mkdir(parents=True)
+            history_path = data / "feed_history.json"
+            latest_path = data / "latest_papers.json"
+            history_path.write_text(
+                json.dumps(
+                    [
+                        {
+                            "date": "2026-08-20",
+                            "generated_at": "2026-08-20 10:00",
+                            "sections": {"highlights": []},
+                        },
+                        {
+                            "date": "2026-08-19",
+                            "generated_at": "2026-08-19 10:00",
+                            "sections": {"highlights": []},
+                        },
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            latest_path.write_text("[]", encoding="utf-8")
+            older_md = daily_md / "2026-08-19.md"
+            older_html = daily_html / "2026-08-19.html"
+            older_md.write_bytes(b"older-md")
+            older_html.write_bytes(b"older-html")
+
+            with (
+                patch.object(update_papers, "DATA", data),
+                patch.object(update_papers, "DOCS", docs),
+                patch.object(update_papers, "DAILY_MD", daily_md),
+                patch.object(update_papers, "DAILY_HTML", daily_html),
+                patch.object(update_papers, "HISTORY_FILE", history_path),
+                patch.object(
+                    update_papers,
+                    "feed_now",
+                    return_value=datetime(2026, 8, 20, tzinfo=update_papers.UTC8),
+                ),
+                patch.object(
+                    update_papers, "daily_curated_highlights", return_value=curated
+                ),
+                patch.object(
+                    update_papers,
+                    "load_daily_paper_notes",
+                    return_value=verified_notes,
+                ),
+            ):
+                update_papers.apply_existing_daily_curation()
+
+            self.assertEqual(older_md.read_bytes(), b"older-md")
+            self.assertEqual(older_html.read_bytes(), b"older-html")
+            self.assertTrue((daily_md / "2026-08-20.md").exists())
+            self.assertTrue((daily_html / "2026-08-20.html").exists())
 
     def test_specialized_transfer_papers_retain_their_actual_task_setting(self):
         cases = [

@@ -77,84 +77,84 @@
 <p>精读队列优先选择能给 COD 带来新问题设定或新方法范式的论文，例如开放世界、目标发现、反事实/因果、不确定性、自监督稠密表征、对象中心建模和视觉推理；纯 COD 直系论文主要作为背景和对照。</p>
 <h2>当日精读队列</h2>
 <article class='paper'>
-<h3><strong>MUG: Multi-human Graph Network for 3D Mesh Reconstruction from 2D Pose</strong></h3>
-<p class='meta'>Source: Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision, 2026-08-05</p>
-<p class='meta'>Authors: Chenyan Wu, Yandong Li, Xianfeng Tang, Zhe Huang, James Z. Wang</p>
-<p class='meta'>Tags: reasoning, diffusion, depth/geometry, open-world</p>
-<p class='meta'>Links: <a href="https://doi.org/10.1007/s11263-026-02942-9">paper</a></p>
-<p class='meta'>论文：MUG: Multi-human Graph Network for 3D Mesh Reconstruction from 2D Pose</p>
-<p class='meta'>一句话总结：Abstract Reconstructing multi-human body meshes from a single monocular image is a crucial yet challenging problem in computer vision. This problem requires not only generating individual body mesh models for...</p>
-<p class='meta'>任务设定：通用计算机视觉任务，先判断是否能迁移到 COD 的感知、定位或分割环节。</p>
-<p class='meta'>摘要详解：研究问题：Abstract Reconstructing multi-human body meshes from a single monocular image is a crucial yet challenging problem in computer vision. This problem requires not only generating individual body mesh models for each person but also estimating the relative 3D positions among subjects to produce a coherent scene representation. 方法与流程：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。 摘要中的具体做法包括：In this work, we introduce MUG (Multi-hUman Graph network), which employs a single graph neural network to construct coherent multi-human meshes using only 2D pose data as input. 摘要结论：Our approach demonstrates that purely pose-based methods can effectively perform simultaneous depth reasoning and multi-human mesh generation. Despite the simplicity of using only 2D pose inputs and streamlined network architecture, MUG outperforms existing multi-human mesh estimation methods.</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：可帮助 COD 跳出固定类别监督，转向未知目标发现、开放世界分割和类别无关候选生成。</p>
-<p class='meta'>可借鉴点：深度或几何先验融合；类别无关候选发现、未知目标设定、目标缺失场景。</p>
-<p class='meta'>可改进点：可设计开放世界 COD：图像中可能没有伪装目标，或目标类别未知，模型需要先发现再判别。</p>
-<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+<h3><strong>Cross Modal Fine-Grained Alignment via Granularity-Aware and Region-Uncertain Modeling</strong></h3>
+<p class='meta'>Source: AAAI 2026, 2026-03-14</p>
+<p class='meta'>Authors: Jiale Liu, Haoming Zhou, Yishu Liu, Bingzhi Chen, Yuncheng Jiang</p>
+<p class='meta'>Tags: fine-grained image-text alignment, VLM/MLLM, grounded vision, uncertainty/calibration, retrieval/prototype</p>
+<p class='meta'>Links: <a href="https://ojs.aaai.org/index.php/AAAI/article/view/39544">paper</a> / <a href="https://ojs.aaai.org/index.php/AAAI/article/download/39544/43505">pdf</a></p>
+<p class='meta'>论文：Cross Modal Fine-Grained Alignment via Granularity-Aware and Region-Uncertain Modeling</p>
+<p class='meta'>一句话总结：GRM 先在图像和文本各自内部筛关键 token，再用重叠区域提示与区域高斯表达一对多歧义，并以三层双向检索监督完成细粒度对齐。</p>
+<p class='meta'>任务设定：输入一张图像和一句描述，ViT 或 Swin 产生 patch token，BERT 产生 word token；模型输出图找文和文找图的匹配分数。区域由可学习提示软聚合，没有框、掩码或局部歧义标注，训练监督来自配对图文与难负样本。</p>
+<p class='meta'>摘要详解：研究问题：细粒度图文检索既要判断哪些 patch 与词元关键，又要表达一词多区域、一区域多词的局部歧义；普通跨模态注意力受检索损失间接驱动，且通常只给确定向量。方法与流程：GRM 用视觉 significance-aware 与文本 granularity-aware 两个 Gumbel-Softmax 适配器做模态内软筛选；多个可学习提示以 sigmoid 亲和度聚合可重叠区域，再预测对角高斯的均值和方差并重参数化采样。系统在原始、筛选、随机区域三层计算双向对比排序损失，另加重建、KL 与区域熵正则。实验结论：ViT-224+BERT 在 Flickr30K、COCO 1K、COCO 5K 的 rSum 为 516.2、532.5、443.0，均高于 AVSE；去掉 SA、GA、区域提示或不确定性后，Flickr30K rSum 分别降至 502.8、507.0、503.3、508.3。这说明分支具有互补性，但尚未排除额外容量和多重监督的影响。边界：论文没有校准指标、完整总损失系数或推理采样规则，因此只能证明多粒度建模改善检索，不能证明方差就是可靠风险。</p>
+<p class='meta'>实验结论：作者在 Flickr30K 和 MS-COCO 报告双向 R@1、R@5、R@10 与 rSum。ViT-224+BERT 的三个 rSum 为 516.2、532.5、443.0，Swin-384 为 550.7、548.0、478.3；表 2 和表 3 显示 token 门、区域提示及三层对比目标均有贡献。热图只能作为定性线索，论文未用区域真值或校准指标验证提示和方差。</p>
+<p class='meta'>和我课题的关系：COD：区域提示可并行表示伪装前景、背景和边界，但检索级监督不保证连通掩码，高方差也不等于边界错误。UAV：多提示能表达同类密集实例，区域不确定性却无法恢复下采样前已消失的微小像素。火灾：烟雾可对应多个半透明区域，云雾霾等又形成语义近邻；静态图文高斯缺少增长、漂移、可见光与热红外一致性，不能直接承担早期报警。</p>
+<p class='meta'>可借鉴点：把模态内 token 门控、重叠区域提示和区域级不确定性移到高分辨率弱证据特征层，并保留原始、筛选、随机区域三条监督路径。COD 可测试方差是否集中于真实错误边界；UAV 可让尺度提示决定局部放大或请求更高分辨率；火灾可把 RGB、热像与连续帧区域作为不同 token 集，再加入时序一致性。</p>
+<p class='meta'>可改进点：先用参数匹配的确定性多区域分支和仅增加三层损失的基线排除容量解释，再报告区域 NLL、风险覆盖率、推理重复方差与成本。COD 在 COD10K/CAMO 到 NC4K 上测掩码和边界；UAV 在 VisDrone/UAVDT 按尺寸、遮挡、模糊测 AP_S 与校准；火灾加入云、雾、霾、夕阳和反光硬负例，测固定误报下召回与报警提前量。若方差不能排序真实错误，就应放弃风险语义。</p>
+<p class='meta'>是否值得精读：值得。论文把 token 筛选、重叠区域发现和局部概率表示连成可追踪的数据流，式 (1)-(13) 与消融足以支撑方法学习；但区域可解释性、方差校准、总目标和推理采样仍未证实，迁移时必须设置确定性容量对照。</p>
 </article>
 <article class='paper'>
 <h3><strong>Open-World Hazard Detection and Captioning for Autonomous Driving with a Unified Multimodal Pipeline</strong></h3>
-<p class='meta'>Source: Semantic Scholar / 2025 IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW) / citations 3, 2025-02-28</p>
-<p class='meta'>Authors: P. Hatami, Maged Shoman, Mina Sartipi</p>
-<p class='meta'>Tags: VLM/MLLM, diffusion, depth/geometry, video, open-world, low-level</p>
-<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/b9c995cb1237cb83491c791e83cf7d04e7a77060">paper</a></p>
+<p class='meta'>Source: WACVW 2025, 2025</p>
+<p class='meta'>Authors: Parisa Hatami, Maged Shoman, Mina Sartipi</p>
+<p class='meta'>Tags: safety-critical/hazard, open-world, VLM/MLLM, depth/geometry, video, degraded perception</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/WACV2025W/COOOL/html/Hatami_Open-World_Hazard_Detection_and_Captioning_for_Autonomous_Driving_with_a_WACVW_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/WACV2025W/COOOL/papers/Hatami_Open-World_Hazard_Detection_and_Captioning_for_Autonomous_Driving_with_a_WACVW_2025_paper.pdf">pdf</a></p>
 <p class='meta'>论文：Open-World Hazard Detection and Captioning for Autonomous Driving with a Unified Multimodal Pipeline</p>
-<p class='meta'>一句话总结：Autonomous driving systems must operate reliably in dynamic environments where uncommon or unanticipated hazards frequently arise. Traditional perception models often rely on closed-set recognition, restrictin...</p>
-<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>摘要详解：研究问题：Autonomous driving systems must operate reliably in dynamic environments where uncommon or unanticipated hazards frequently arise. Traditional perception models often rely on closed-set recognition, restricting them to predefined object categories and limiting their ability to address novel or rare obstacles. 方法与流程：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。 摘要中的具体做法包括：To tackle these open-world challenges, we propose an integrated pipeline that merges image enhancement, optical flow, depth estimation, semantic segmentation, and vision-language models. We evaluate our method on the COOOL dataset of 200 annotated dashcam videos, containing both standard and previously unseen hazards. A vision-language module then generates concise, semantically relevant captions for novel objects, enhancing interpretability. 摘要结论：Experimental results show that our unified pipeline consistently improves hazard detection and captioning performance in open-world scenarios, underscoring the need for flexible perception strategies that advance autonomous driving safety.</p>
-<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：可帮助 COD 跳出固定类别监督，转向未知目标发现、开放世界分割和类别无关候选生成。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；深度或几何先验融合；类别无关候选发现、未知目标设定、目标缺失场景。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+<p class='meta'>一句话总结：论文把开放世界道路危险拆成图像增强、驾驶反应、距离、道路关系与开放词汇字幕五类证据，形成可检查但尚未校准的规则管线。</p>
+<p class='meta'>任务设定：输入约二百段 COOOL 行车记录仪视频，系统逐帧输出驾驶状态、危险框和危险名称，并处理闭集类别外的障碍。各支路调用预训练增强、光流、深度、分割和字幕模型，再由手工阈值与语义规则汇合；论文没有端到端训练损失。</p>
+<p class='meta'>摘要详解：研究问题：自动驾驶中的床垫、动物群或飞行碎片等低频危险不在闭集检测词表内，仅靠异常分数又不能区分“稀有但无害”和“真正侵入行驶空间”。方法与流程：管线先用 NAFNet 改善弱光、噪声和模糊帧，光流支路依据相邻帧角点运动判断驾驶反应；主支路用候选框、MiDaS 相对深度和 SegFormer 道路掩码逐级过滤，再扩框四十像素交给 BLIP 或 grounded captioning，最后按距离、道路关系与字幕语义判定危险并给出名称。全部模块为预训练组件与规则组合，没有端到端训练目标。实验结论：在约二百段 COOOL 行车视频的子集上，MiDaS 加 ViT-L/14 得分 0.43，换 BLIP 为 0.44，加入 grounded captioning 与道路掩码为 0.49；竞赛总分同为 0.49、排名第四，第一名为 0.57。边界：三行配置不是严格逐模块消融，也未报告危险召回、时延或校准，因此结果只支持完整管线可运行，不能证明每个模块分别控制了安全失败。</p>
+<p class='meta'>实验结论：COOOL 子集上三种配置的总分依次为 0.43、0.44、0.49，竞赛排名表中本队也是 0.49、第四名，前三为 0.57、0.51、0.51。作者没有分开报告驾驶状态、危险定位和名称三项得分，也没有候选数量匹配的逐模块消融；因此 0.49 可能部分来自道路掩码减少过预测，而非风险语义更准确。</p>
+<p class='meta'>和我课题的关系：COD：可借“局部外观加环境关系”联合判断目标，但伪装场景没有稳定车道先验，候选器还可能先漏掉前景。UAV：分级增强、几何过滤和语义复核可迁移，微小目标信息丢失与全局相机运动会破坏候选框和原光流规则。火灾：危险应由烟焰证据、距离、增长趋势与字幕共同定义；非刚性半透明烟雾不适合硬框和道路掩码，云雾霾、夕阳及反光还会产生合理的错误字幕。</p>
+<p class='meta'>可借鉴点：最值得借鉴的是把安全失败拆成可审计证据链，而非直接把未知类别塞回闭集分类器。COD 可把道路关系替换为边界连续性和背景可交换性；UAV 可加入稳像、航线和地平面约束；火灾可将 RGB、热像、时序增长和困难负样本证据并列，并为每一级保留中间输出。</p>
+<p class='meta'>可改进点：固定候选框与模型权重，依次替换原帧/NAFNet、单目/真深度、预测/真道路、普通框/实例掩码和 BLIP/grounded captioning，建立配对消融与 oracle 上界。再用单调风险头融合存在性、距离、区域、语义和持续时间，报告固定误报下召回、ECE、预警提前量与最坏天气组。COD、UAV、火灾分别加入空目标、微小模糊目标和云雾霾夕阳反光控制组。</p>
+<p class='meta'>是否值得精读：有条件值得。它提供少见的开放世界危险工程链和三个明确评测公式，适合学习如何拆解安全语义；但方法主要由现成模型和规则拼接，消融、复现细节、实时性和风险校准不足，不能作为可靠性结论的强证据。</p>
 </article>
 <article class='paper'>
-<h3><strong>Causality-inspired representation learning with spatiotemporal memory for polyp detection in endoscopic videos</strong></h3>
-<p class='meta'>Source: Crossref / MedIA / 医学影像顶刊 / Medical Image Analysis, 2026-11</p>
-<p class='meta'>Authors: Zhuo Hu, Changjin Sun, Qi Zheng, Xiaopu He, Cheng Xue et al.</p>
-<p class='meta'>Tags: video, causal/counterfactual, representation learning</p>
-<p class='meta'>Links: <a href="https://doi.org/10.1016/j.media.2026.104231">paper</a></p>
-<p class='meta'>论文：Causality-inspired representation learning with spatiotemporal memory for polyp detection in endoscopic videos</p>
-<p class='meta'>一句话总结：MedIA article matched by title in a top journal; abstract unavailable from Crossref.</p>
-<p class='meta'>任务设定：视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。</p>
-<p class='meta'>摘要详解：当前来源尚未取得可靠摘要，不能仅凭标题推断方法；需要先打开论文页或 PDF 补齐摘要后再详解。</p>
-<p class='meta'>实验结论：摘要未给出强实验信号；先看实验表格和图 1，再决定是否精读。</p>
-<p class='meta'>和我课题的关系：可把 COD 从像素匹配问题改写成因果/反事实问题：如果移除背景纹理或环境线索，目标判断是否仍成立。</p>
-<p class='meta'>可借鉴点：反事实验证、目标存在性判断、误检拒识；无标注稠密表征、预训练特征选择、局部结构保持。</p>
-<p class='meta'>可改进点：可把反事实干预落到 COD：替换背景、扰动纹理、隐藏候选区域，验证模型是否真正依赖目标而非环境偏差。</p>
-<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+<h3><strong>Generalizable Single-Source Cross-Modality Medical Image Segmentation via Invariant Causal Mechanisms</strong></h3>
+<p class='meta'>Source: WACV 2025, 2025</p>
+<p class='meta'>Authors: Boqi Chen, Yuanzhi Zhu, Yunke Ao, Sebastiano Caprara, Reto Sutter et al.</p>
+<p class='meta'>Tags: medical imaging, causal/counterfactual, domain generalization, diffusion, representation learning</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/WACV2025/html/Chen_Generalizable_Single-Source_Cross-Modality_Medical_Image_Segmentation_via_Invariant_Causal_Mechanisms_WACV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Chen_Generalizable_Single-Source_Cross-Modality_Medical_Image_Segmentation_via_Invariant_Causal_Mechanisms_WACV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Generalizable Single-Source Cross-Modality Medical Image Segmentation via Invariant Causal Mechanisms</p>
+<p class='meta'>一句话总结：论文用 DreamBooth、ControlNet 与 Style Swap 构造解剖近似不变而成像风格变化的训练对，再以逐 patch InfoNCE 约束跨模态分割表示。</p>
+<p class='meta'>任务设定：训练仅提供一个源模态的二维带标签切片，测试直接处理训练阶段完全不可见的 CT、MRI 或 X-Ray，不读取目标域无标签图像。输出为器官或椎体分割；扩散模型只在训练期生成干预图，部署时仅运行普通 U-Net。</p>
+<p class='meta'>摘要详解：研究问题：训练只有一种带标签医学模态，测试却要直接分割从未见过的 CT、MRI 或 X-Ray；手工亮度、Bézier 或随机卷积难覆盖真实成像机制变化，单源环境也无法自然暴露稳定因果特征。方法与流程：作者先用 DreamBooth 将 Stable Diffusion 主干适配源医学域，再以分割掩码训练 ControlNet 学习解剖布局；生成时执行 Style Swap，保留控制支路却换回原始扩散主干，并用目标模态词生成“内容近似不变、风格改变”的图像。原图和生成图进入同一 U-Net，在瓶颈对应 patch 上计算 InfoNCE，并与 Dice 分割损失联合优化；推理只运行 U-Net。实验结论：腹部 CT 到 MRI、MRI 到 CT 的平均 Dice 为 86.20、90.17，腰椎两向为 74.93、73.30，肺 CT 到 X-Ray 为 78.79；腰椎去掉 Style Swap 后由 74.93 降至 44.83。论文展示的生成反例还会错误改写后椎弓等细结构。边界：掩码不等于完整生物学内容，生成图可改写细结构，且实验不能证明真实因果机制已被识别。</p>
+<p class='meta'>实验结论：三次随机初始化下，腹部两向平均 Dice 为 86.20/90.17，腰椎为 74.93/73.30，肺 CT 到 X-Ray 为 78.79。腰椎 CT 到 MRI 中，无正则、KL、全局 InfoNCE、逐 patch InfoNCE 分别为 67.47、71.30、70.37、74.93；去掉 Style Swap 降至 44.83。增益支持完整训练顺序和空间对应约束，但不能拆开主干适配与恢复宽风格先验各自的作用。</p>
+<p class='meta'>和我课题的关系：COD：可把目标形状视为内容、背景材质视为风格，但伪装本身依赖前景背景相似；生成器若让前景变显眼就改变了任务。UAV：高度、天气和模糊可作风格干预，几像素目标却可能在扩散生成中直接消失。火灾：烟火非刚性、动态、半透明，外观与语义不可像器官那样干净分离；静态掩码也不能保持增长方向和可见光-热红外响应。</p>
+<p class='meta'>可借鉴点：可迁移的核心是“受控干预对加局部不变性”：让同一空间位置在外观、天气、传感器或模态变化后保持任务表示。COD 可做背景和材质干预；UAV 可把高度、照度、运动模糊作为环境变量，并用框或点热图保护小目标；火灾可用 RGB-T 配对和连续帧区域约束高置信烟焰核心，同时保留边缘不确定性。</p>
+<p class='meta'>可改进点：给生成图加入内容保真门控：源分割器集成、边界距离和拓扑检查共同决定哪些 patch 参与 InfoNCE。用不含 MRI/X-Ray 名称的目标盲提示检验是否依赖已知目标类别，并在等生成数量、等 GPU 小时下比较手工增强、LoRA 扩散和完整流程。COD 测前景背景对比度泄漏，UAV 测目标保留率与 AP_S，火灾测时序增长、固定误报召回及缺失热像风险；内容保留不达标的生成样本不得进入监督。</p>
+<p class='meta'>是否值得精读：值得。论文给出从扩散适配、ControlNet 训练、Style Swap 到逐 patch InfoNCE 的完整链条，式 (1)-(6) 和表 4-6 可核对关键机制。它证明组合方法在三个解剖任务有效，但没有识别真实因果机制，生成细结构错误和目标模态提示依赖仍是主要风险。</p>
 </article>
 <article class='paper'>
 <h3><strong>RAVU: Retrieval Augmented Video Understanding with Compositional Reasoning over Graph</strong></h3>
 <p class='meta'>Source: WACV 2026, 2026</p>
 <p class='meta'>Authors: Sameer Malik, Ayush Singh, Moyuru Yamada, Dishank Aggarwal</p>
-<p class='meta'>Tags: reasoning, retrieval/prototype, video, compositionality</p>
+<p class='meta'>Tags: reasoning, retrieval/prototype, video, compositionality, world model</p>
 <p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/WACV2026/html/Malik_RAVU_Retrieval_Augmented_Video_Understanding_with_Compositional_Reasoning_over_Graph_WACV_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Malik_RAVU_Retrieval_Augmented_Video_Understanding_with_Compositional_Reasoning_over_Graph_WACV_2026_paper.pdf">pdf</a></p>
 <p class='meta'>论文：RAVU: Retrieval Augmented Video Understanding with Compositional Reasoning over Graph</p>
-<p class='meta'>一句话总结：Comprehending long videos remains a significant challenge for Large Multi-modal Models (LMMs). Current LMMs struggle to process even minutes to hours videos due to their lack of explicit memory and retrieval m...</p>
-<p class='meta'>任务设定：视频/时序视觉任务，关注跨帧一致性、运动线索和长期上下文。</p>
-<p class='meta'>摘要详解：研究问题：Comprehending long videos remains a significant challenge for Large Multi-modal Models (LMMs). Current LMMs struggle to process even minutes to hours videos due to their lack of explicit memory and retrieval mechanisms. 方法与流程：组合式或概念瓶颈建模，可把 COD 拆成颜色、纹理、边界、环境关系等可解释概念。 摘要中的具体做法包括：To address this limitation, we propose RAVU (Retrieval Augmented Video Understanding), a novel framework for video understanding enhanced by retrieval with compositional reasoning over a spatio-temporal graph. 摘要结论：Our approach demonstrate superior performances with limited retrieved frames (5-10) compared with other SOTA methods and baselines on two major video QA datasets, NExT-QA and EgoSchema.</p>
-<p class='meta'>实验结论：摘要声称优于已有方法；精读时重点核对对比基线、数据集覆盖和消融是否充分。</p>
-<p class='meta'>和我课题的关系：可把 COD 重新建模为对象-背景解耦或概念组合问题，而不只是做边界更清晰的分割。</p>
-<p class='meta'>可借鉴点：对象-背景解耦、概念分解、可解释中间变量。</p>
-<p class='meta'>可改进点：可思考是否缺少 COD 场景验证、复杂背景失败分析或轻量化部署。</p>
-<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+<p class='meta'>一句话总结：RAVU 先把长视频写成可复用的实体-关系-事件图，再把问题编译成组合图操作，仅回看少量证据帧完成零样本问答。</p>
+<p class='meta'>任务设定：输入长视频、自然语言问题和多项选择答案，输出答案及可追踪的检索步骤。系统先离线构建与查询无关的时空图，随后对每个问题零样本分解、检索、重排并调用多模态模型；论文没有任务训练，也没有编号数学公式。</p>
+<p class='meta'>摘要详解：研究问题：长视频问答若均匀采样会漏掉短事件，若把全部帧送入大模型又昂贵且难追踪证据；单次相似度检索还不能回答“某人完成一件事之后做了什么”。方法与流程：RAVU 先用检测与跟踪稳定实体身份，以彩色框提示多模态模型生成逐帧实体、关系和动作描述，再按行为变化切分事件，形成可由多个问题复用的时空图。问答时，语言模型把问题编译为节点定位、前后事件检索和全局行为分析等函数，先用嵌入召回、再语义重排，只把约五个关键帧交给回答模型。论文没有编号数学公式。实验结论：NExT-QA 总体准确率为 74.09，VideoAgent 为 71.3；统一 EgoSchema 基线中 RAVU 为 67.76，CLIP top-10 为 63.88，但约一百八十帧的 All Frames 达 70.67。边界：效率只统计最终输入帧，未计离线构图与多次模型调用；提升可能来自更多测试时计算，而不一定来自图结构本身。</p>
+<p class='meta'>实验结论：NExT-QA 的因果、时间、描述、总体准确率为 76.67/68.91/76.11/74.09，VideoAgent 为 72.7/64.5/81.1/71.3，说明增益集中在因果和时间题，描述题反而下降。统一 EgoSchema 中 RAVU 67.76 高于 CLIP top-10 的 63.88，却低于约一百八十帧 All Frames 的 70.67。人工图 76.65 高于 SAM2 图 74.58，表明自动跟踪和图事实仍限制性能。</p>
+<p class='meta'>和我课题的关系：COD：事件图可检索目标与背景关系的跨帧变化，但 RAVU 假设检测器先找到实体，无法修复伪装前景的候选漏失。UAV：轨迹记忆适合长航拍，微小目标、密集遮挡和相机运动会放大 ID switch，彩色框还可能遮住目标。火灾：初现、增长、漂移和消散适合事件化；烟火没有稳定实例身份，应把对象节点改成区域、流场和热异常簇，并显式处理云雾霾等静态近邻。</p>
+<p class='meta'>可借鉴点：借鉴一次构建、多次查询的证据记忆，以及“问题分解、图操作、证据帧回看”的可审计链。COD 可把候选、背景区域和边界变化写入图；UAV 可按 tracklet 与航拍事件减少送入模型的帧；火灾可把连续区域的面积、透明度、流向和热响应切成增长事件，用时间证据区分烟与静态云。</p>
+<p class='meta'>可改进点：做等预算对照：固定模型版本、总像素、token 与调用次数，比较 RAVU、无图分层检索、仅 tracklet、仅事件字幕，并报告证据 recall@K、图事实精度、总时延和费用。COD 加候选召回 oracle，UAV 按尺寸、遮挡和 ID switch 分层，火灾用软区域事件图并加入云、雾、霾、夕阳、反光及缺失热像组。若等预算无图检索追平，就应否定图结构是主要增益来源。</p>
+<p class='meta'>是否值得精读：值得。它把开放词汇图记忆、可执行查询程序与证据帧回看组合成可复查的长视频框架，定位实验也暴露自动图瓶颈。需要警惕“少输入帧”等同“低总成本”的表述，以及专有模型、多次调用和函数覆盖率带来的复现边界。</p>
 </article>
 <article class='paper'>
 <h3><strong>VELOCITI: Benchmarking Video-Language Compositional Reasoning with Strict Entailment</strong></h3>
 <p class='meta'>Source: CVPR 2025, 2025</p>
 <p class='meta'>Authors: Darshana Saravanan, Varun Gupta, Darshan Singh, Zeeshan Khan, Vineet Gandhi et al.</p>
-<p class='meta'>Tags: VLM/MLLM, reasoning, video, anomaly/OOD, compositionality</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, video, compositionality, benchmark</p>
 <p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Saravanan_VELOCITI_Benchmarking_Video-Language_Compositional_Reasoning_with_Strict_Entailment_CVPR_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Saravanan_VELOCITI_Benchmarking_Video-Language_Compositional_Reasoning_with_Strict_Entailment_CVPR_2025_paper.pdf">pdf</a></p>
 <p class='meta'>论文：VELOCITI: Benchmarking Video-Language Compositional Reasoning with Strict Entailment</p>
-<p class='meta'>一句话总结：A fundamental aspect of compositional reasoning in a video is associating people and their actions across time. Recent years have seen great progress in general-purpose vision/video models and a move towards l...</p>
-<p class='meta'>任务设定：基础模型驱动的视觉定位/分割/推理，可用于自动提示生成或 mask 筛选。</p>
-<p class='meta'>摘要详解：研究问题：A fundamental aspect of compositional reasoning in a video is associating people and their actions across time. Recent years have seen great progress in general-purpose vision/video models and a move towards long-video understanding. 方法与流程：组合式或概念瓶颈建模，可把 COD 拆成颜色、纹理、边界、环境关系等可解释概念。 摘要中的具体做法包括：To this end, we introduce VELOCITI, a benchmark to study Video-LLMs by disentangling and assessing the comprehension of agents, actions, and their associations across multiple events. We also present challenges with ClassicVLE and multiple-choice (MC) evaluation, strengthening our preference for StrictVLE. 摘要结论：Results show that action understanding lags behind agents, and negative captions created using entities appearing in the video perform worse than those obtained from pure text manipulation.</p>
-<p class='meta'>实验结论：可能包含新数据集/基准；适合看评测协议、失败案例和是否能服务 COD。</p>
-<p class='meta'>和我课题的关系：可把 COD 重新建模为对象-背景解耦或概念组合问题，而不只是做边界更清晰的分割。</p>
-<p class='meta'>可借鉴点：候选 mask 生成、视觉-语言筛选、推理式定位；跨域鲁棒性、不确定性或异常分数；对象-背景解耦、概念分解、可解释中间变量。</p>
-<p class='meta'>可改进点：可改进细粒度目标绑定、误检拒识和小目标/低对比区域筛选。</p>
-<p class='meta'>是否值得精读：建议精读：它的价值不只在任务相似，而在可能给 COD 带来新问题设定或新方法范式。</p>
+<p class='meta'>一句话总结：VELOCITI 用同视频最小对照负描述和 StrictVLE 双重判定，揭示相对排序与多选协议会高估人物、动作和事件顺序的组合理解。</p>
+<p class='meta'>任务设定：输入十秒电影视频和一条描述，模型独立判断视频是否蕴含该描述；每个样本含一个正描述和只改变人物、动作绑定或事件顺序的负描述。基准不训练新模型，而以七类受控测试、严格二元判定及多种捷径对照评估 Video-LLM。</p>
+<p class='meta'>摘要详解：研究问题：经典视频语言蕴含只要求正描述分数高于负描述，模型即使对两句都回答“是”也可能得分；多选题同时展示选项，又可借相对偏好和位置偏置绕过真实组合推理。方法与流程：VELOCITI 从十秒 VidSitu 片段的五段语义角色标注生成描述，经人工核验后构造人物存在、人物绑定、跨事件指代、动作识别、动作方式、动作绑定和事件顺序七类最小对照。StrictVLE 把正句与负句分开询问，只有同时接受正句、拒绝负句才计对，并用 blind、随机单帧、更多帧和思维链设置检查捷径。实验结论：统一子集上 LLaVA-OneVision-72B 为 44.5%，Gemini-1.5-Pro 为 49.3%，人类为 93.0%；前者在 ClassicVLE 达 83.6，却在 StrictVLE 全集仅 43.1。边界：严格分数同时受组合推理与二元阈值校准影响，论文没有独立校准集，不能把全部低分都归因于视觉绑定失败。</p>
+<p class='meta'>实验结论：StrictVLE 全集上 OneVision-72B 平均 43.1；统一子集上它为 44.5，GPT-4o 为 46.2，Gemini-1.5-Pro 为 49.3，人类为 93.0。OneVision-72B 在 ClassicVLE 和多选协议下分别达 83.6、76.0，随机单帧使 7B 模型由 32.1 降至 19.0。结果证明协议和多帧输入会改变测量，但没有把二元校准误差与组合推理错误完全分离。</p>
+<p class='meta'>和我课题的关系：COD：同图负例可区分“纹理存在”和“纹理属于目标”，但语言蕴含分数不输出掩码，也不保证边界正确。UAV：同帧换绑能测密集相似实例身份，极小目标若未进入视觉 token，失败来自分辨率而非推理。火灾：正负独立判定可约束早期烟焰与云雾霾、夕阳、反光；烟火连续、非刚性、半透明，离散人物-动作语义角色不能完整表达密度增长和可见光-热红外变化。</p>
+<p class='meta'>可借鉴点：把“接受真证据”和“拒绝相似伪证据”同时列为成功条件，并用同图、同视频 hard negative 排除概念存在捷径。COD 可构造目标-背景属性换绑问句；UAV 可构造车辆 A/B 行为交换与顺序对照；火灾可独立测试早烟/火焰描述和云雾霾、夕阳、反光描述，再加入增长先后与 RGB-T 一致性。</p>
+<p class='meta'>可改进点：增加独立校准集、abstain 选项和风险覆盖曲线，报告 AURC、ECE 及固定负句误接受率下的正句召回；用温度缩放检验分数提升是否只来自阈值修正。为同一视频正交控制概念出现、绑定和顺序，并保存原始语义角色、生成候选和人工审核记录。COD 联合评估 mask，UAV 按像素面积与 ID switch 分层，火灾报告早期召回、报警提前量、时序一致性和缺失热像风险。</p>
+<p class='meta'>是否值得精读：值得。它没有新网络，却精确揭示评测协议如何把相对偏好误当组合理解，唯一公式和七类最小对照易于复用。读者应同时保留校准反解释、VidSitu 人物偏置、十秒电影片段外部效度和未来数据污染风险。</p>
 </article>
 <h2>高质量来源优先读：CCF-A/B 与顶刊顶会</h2>
 <article class='paper'>

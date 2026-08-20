@@ -3522,5 +3522,240 @@
       ],
       "score": 94
     }
+  ],
+  "2026-08-20": [
+    {
+      "title": "RoFLIP: Robust and Fine-Grained Alignment for Vision-Language Compositional Reasoning",
+      "url": "https://doi.org/10.1007/s11263-026-02944-7",
+      "pdf": "https://link.springer.com/content/pdf/10.1007/s11263-026-02944-7.pdf",
+      "authors": [
+        "Yiwei Sun",
+        "Chuanbin Liu",
+        "Shancheng Fang",
+        "Pandeng Li",
+        "Zhiying Lu",
+        "Hongtao Xie"
+      ],
+      "source": "International Journal of Computer Vision (IJCV) 2026 / DOI:10.1007/s11263-026-02944-7",
+      "published": "2026-08-19",
+      "summary": "以密集组合正负描述和假负例去噪目标提升视觉语言细粒度组合对齐，并可移植到三类主流骨干。",
+      "tags": [
+        "VLM/MLLM",
+        "reasoning",
+        "compositionality"
+      ],
+      "score": 86
+    },
+    {
+      "title": "Align and Aggregate: Compositional Reasoning with Video Alignment and Answer Aggregation for Video Question-Answering",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Liao_Align_and_Aggregate_Compositional_Reasoning_with_Video_Alignment_and_Answer_CVPR_2024_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Liao_Align_and_Aggregate_Compositional_Reasoning_with_Video_Alignment_and_Answer_CVPR_2024_paper.pdf",
+      "authors": [
+        "Zhaohe Liao",
+        "Jiangtong Li",
+        "Li Niu",
+        "Liqing Zhang"
+      ],
+      "source": "CVPR 2024",
+      "published": "2024",
+      "summary": "把复杂视频问题拆成可审计子问题，以三级证据对齐和QDG聚合同时改善答案准确率与组合一致性。",
+      "tags": [
+        "VLM/MLLM",
+        "reasoning",
+        "video",
+        "compositionality"
+      ],
+      "score": 67
+    },
+    {
+      "title": "Causal Composition Diffusion Model for Closed-loop Traffic Generation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Lin_Causal_Composition_Diffusion_Model_for_Closed-loop_Traffic_Generation_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Lin_Causal_Composition_Diffusion_Model_for_Closed-loop_Traffic_Generation_CVPR_2025_paper.pdf",
+      "authors": [
+        "Haohong Lin",
+        "Xin Huang",
+        "Tung Phan",
+        "David Hayden",
+        "Huan Zhang",
+        "Ding Zhao",
+        "Siddhartha Srinivasa",
+        "Eric Wolff",
+        "Hongge Chen"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "以稀疏交互图和关键车辆排序把危险控制梯度限制在局部，从而协调闭环交通生成的可控性与真实性。",
+      "tags": [
+        "diffusion",
+        "causal/counterfactual",
+        "compositionality"
+      ],
+      "score": 60
+    },
+    {
+      "title": "BiomedCCPL: Causal Conditional Prompt Learning for Biomedical Vision-Language Models",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Cui_BiomedCCPL_Causal_Conditional_Prompt_Learning_for_Biomedical_Vision-Language_Models_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Cui_BiomedCCPL_Causal_Conditional_Prompt_Learning_for_Biomedical_Vision-Language_Models_CVPR_2026_paper.pdf",
+      "authors": [
+        "Xueliang Cui",
+        "Juncai Zhang",
+        "Jiacheng Hou",
+        "Dan Lu",
+        "Hao Zhang",
+        "Ruxin Wang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "BiomedCCPL 用多尺度自适应视觉原型生成图像条件提示，再以协同因果解耦正则约束提示依赖可迁移的诊断证据，从而改善冻结生物医学视觉语言模型的少样本与未见类泛化。",
+      "tags": [
+        "VLM/MLLM",
+        "medical imaging",
+        "retrieval/prototype",
+        "causal/counterfactual"
+      ],
+      "score": 84
+    },
+    {
+      "title": "CTRL-O: Language-Controllable Object-Centric Visual Representation Learning",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Didolkar_CTRL-O_Language-Controllable_Object-Centric_Visual_Representation_Learning_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Didolkar_CTRL-O_Language-Controllable_Object-Centric_Visual_Representation_Learning_CVPR_2025_paper.pdf",
+      "authors": [
+        "Aniket Didolkar",
+        "Andrii Zadaianchuk",
+        "Rabiul Awal",
+        "Maximilian Seitzer",
+        "Efstratios Gavves",
+        "Aishwarya Agrawal"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "CTRL-O 用语言或点提示控制 Slot Attention 应当绑定哪个实例，并以视觉聚合后的跨模态对比目标防止 slot 只复制查询，从而获得可控、无掩码监督的对象表示。",
+      "tags": [
+        "diffusion",
+        "object discovery",
+        "object-centric",
+        "representation learning"
+      ],
+      "score": 80
+    }
+  ],
+  "2026-08-19": [
+    {
+      "title": "Cross Modal Fine-Grained Alignment via Granularity-Aware and Region-Uncertain Modeling",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/39544",
+      "pdf": "https://ojs.aaai.org/index.php/AAAI/article/download/39544/43505",
+      "authors": [
+        "Jiale Liu",
+        "Haoming Zhou",
+        "Yishu Liu",
+        "Bingzhi Chen",
+        "Yuncheng Jiang"
+      ],
+      "source": "AAAI 2026",
+      "published": "2026-03-14",
+      "summary": "GRM 先在图像和文本各自内部筛关键 token，再用重叠区域提示与区域高斯表达一对多歧义，并以三层双向检索监督完成细粒度对齐。",
+      "tags": [
+        "fine-grained image-text alignment",
+        "VLM/MLLM",
+        "grounded vision",
+        "uncertainty/calibration",
+        "retrieval/prototype"
+      ],
+      "score": 98
+    },
+    {
+      "title": "Open-World Hazard Detection and Captioning for Autonomous Driving with a Unified Multimodal Pipeline",
+      "url": "https://openaccess.thecvf.com/content/WACV2025W/COOOL/html/Hatami_Open-World_Hazard_Detection_and_Captioning_for_Autonomous_Driving_with_a_WACVW_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2025W/COOOL/papers/Hatami_Open-World_Hazard_Detection_and_Captioning_for_Autonomous_Driving_with_a_WACVW_2025_paper.pdf",
+      "authors": [
+        "Parisa Hatami",
+        "Maged Shoman",
+        "Mina Sartipi"
+      ],
+      "source": "WACVW 2025",
+      "published": "2025",
+      "summary": "论文把开放世界道路危险拆成图像增强、驾驶反应、距离、道路关系与开放词汇字幕五类证据，形成可检查但尚未校准的规则管线。",
+      "tags": [
+        "safety-critical/hazard",
+        "open-world",
+        "VLM/MLLM",
+        "depth/geometry",
+        "video",
+        "degraded perception"
+      ],
+      "score": 97
+    },
+    {
+      "title": "Generalizable Single-Source Cross-Modality Medical Image Segmentation via Invariant Causal Mechanisms",
+      "url": "https://openaccess.thecvf.com/content/WACV2025/html/Chen_Generalizable_Single-Source_Cross-Modality_Medical_Image_Segmentation_via_Invariant_Causal_Mechanisms_WACV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2025/papers/Chen_Generalizable_Single-Source_Cross-Modality_Medical_Image_Segmentation_via_Invariant_Causal_Mechanisms_WACV_2025_paper.pdf",
+      "authors": [
+        "Boqi Chen",
+        "Yuanzhi Zhu",
+        "Yunke Ao",
+        "Sebastiano Caprara",
+        "Reto Sutter",
+        "Gunnar Rätsch",
+        "Ender Konukoglu",
+        "Anna Susmelj"
+      ],
+      "source": "WACV 2025",
+      "published": "2025",
+      "summary": "论文用 DreamBooth、ControlNet 与 Style Swap 构造解剖近似不变而成像风格变化的训练对，再以逐 patch InfoNCE 约束跨模态分割表示。",
+      "tags": [
+        "medical imaging",
+        "causal/counterfactual",
+        "domain generalization",
+        "diffusion",
+        "representation learning"
+      ],
+      "score": 96
+    },
+    {
+      "title": "RAVU: Retrieval Augmented Video Understanding with Compositional Reasoning over Graph",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Malik_RAVU_Retrieval_Augmented_Video_Understanding_with_Compositional_Reasoning_over_Graph_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Malik_RAVU_Retrieval_Augmented_Video_Understanding_with_Compositional_Reasoning_over_Graph_WACV_2026_paper.pdf",
+      "authors": [
+        "Sameer Malik",
+        "Ayush Singh",
+        "Moyuru Yamada",
+        "Dishank Aggarwal"
+      ],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "RAVU 先把长视频写成可复用的实体-关系-事件图，再把问题编译成组合图操作，仅回看少量证据帧完成零样本问答。",
+      "tags": [
+        "reasoning",
+        "retrieval/prototype",
+        "video",
+        "compositionality",
+        "world model"
+      ],
+      "score": 95
+    },
+    {
+      "title": "VELOCITI: Benchmarking Video-Language Compositional Reasoning with Strict Entailment",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Saravanan_VELOCITI_Benchmarking_Video-Language_Compositional_Reasoning_with_Strict_Entailment_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Saravanan_VELOCITI_Benchmarking_Video-Language_Compositional_Reasoning_with_Strict_Entailment_CVPR_2025_paper.pdf",
+      "authors": [
+        "Darshana Saravanan",
+        "Varun Gupta",
+        "Darshan Singh",
+        "Zeeshan Khan",
+        "Vineet Gandhi",
+        "Makarand Tapaswi"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "VELOCITI 用同视频最小对照负描述和 StrictVLE 双重判定，揭示相对排序与多选协议会高估人物、动作和事件顺序的组合理解。",
+      "tags": [
+        "VLM/MLLM",
+        "reasoning",
+        "video",
+        "compositionality",
+        "benchmark"
+      ],
+      "score": 94
+    }
   ]
 }

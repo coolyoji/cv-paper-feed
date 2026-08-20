@@ -9,7 +9,7 @@
         {
           "title": "RoFLIP: Robust and Fine-Grained Alignment for Vision-Language Compositional Reasoning",
           "url": "https://doi.org/10.1007/s11263-026-02944-7",
-          "pdf": "",
+          "pdf": "https://link.springer.com/content/pdf/10.1007/s11263-026-02944-7.pdf",
           "authors": [
             "Yiwei Sun",
             "Chuanbin Liu",
@@ -18,9 +18,9 @@
             "Zhiying Lu",
             "Hongtao Xie"
           ],
-          "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
+          "source": "International Journal of Computer Vision (IJCV) 2026 / DOI:10.1007/s11263-026-02944-7",
           "published": "2026-08-19",
-          "summary": "IJCV article matched by title in a top journal; abstract unavailable from Crossref.",
+          "summary": "以密集组合正负描述和假负例去噪目标提升视觉语言细粒度组合对齐，并可移植到三类主流骨干。",
           "tags": [
             "VLM/MLLM",
             "reasoning",
@@ -40,7 +40,7 @@
           ],
           "source": "CVPR 2024",
           "published": "2024",
-          "summary": "Despite the recent progress made in Video Question-Answering (VideoQA) these methods typically function as black-boxes making it difficult to understand their reasoning processes and perform consistent compositional reasoning. To address these challenges we propose a model-agnostic Video Alignment and Answer Aggregation (VA3) framework which is capable of enhancing both compositional consistency and accuracy of existing VidQA methods by integrating video aligner and answer aggregator modules. The video aligner hierarchically selects the relevant video clips based on the question while the answer aggregator deduces the answer to the question based on its sub-questions with compositional consistency ensured by the information flow along the question decompose graph and the contrastive learning strategy. We evaluate our framework on three settings of the AGQA-Decomp dataset with three baseline methods and propose new metrics to measure the compositional consistency of VidQA methods more comprehensively. Moreover we propose a large language model (LLM) based automatic question decompose pipeline to apply our framework on any VidQA data. We extend MSVD and NExT-QA datasets with it to evaluate such scheme and our VA3 framework on broader scenarios. Extensive experiments show that our framework improves both compositional consistency and accuracy of existing methods leading to more interpretable models in real-world applications.",
+          "summary": "把复杂视频问题拆成可审计子问题，以三级证据对齐和QDG聚合同时改善答案准确率与组合一致性。",
           "tags": [
             "VLM/MLLM",
             "reasoning",
@@ -66,7 +66,7 @@
           ],
           "source": "CVPR 2025",
           "published": "2025",
-          "summary": "Simulation is critical for safety evaluation in autonomous driving, particularly in capturing complex interactive behaviors. However, generating **realistic** and **controllable** traffic scenarios in long-tail situations remains a significant challenge. Existing generative models suffer from the conflicting objective between user-defined controllability and realism constraints, which is amplified in safety-critical contexts. In this work, we introduce the **C**ausal **C**ompositional **Diff**usion Model (***CCDiff***), a structure-guided diffusion framework to address these challenges. We first formulate the learning of controllable and realistic closed-loop simulation as a constrained optimization problem. Then, CCDiff maximizes controllability while adhering to realism by automatically identifying and injecting causal structures directly into the diffusion process, providing structured guidance to enhance both realism and controllability. Through rigorous evaluations on benchmark datasets and in a closed-loop simulator, CCDiff demonstrates substantial gains over state-of-the-art approaches in generating realistic and user-preferred trajectories. Our results show CCDiff's effectiveness in extracting and leveraging causal structures, showing improved closed-loop performance based on key metrics such as collision rate, off-road rate, FDE, and comfort. For more details, welcome to check our project website: https://sites.google.com/view/ccdiff/.",
+          "summary": "以稀疏交互图和关键车辆排序把危险控制梯度限制在局部，从而协调闭环交通生成的可控性与真实性。",
           "tags": [
             "diffusion",
             "causal/counterfactual",
@@ -88,10 +88,10 @@
           ],
           "source": "CVPR 2026",
           "published": "2026",
-          "summary": "Vision-language models (VLMs) have demonstrated strong potential for adapting to downstream biomedical tasks with limited training samples. However, their generalization to unseen classes within the same dataset remains limited, as the image-text alignment semantics often rely on spurious cues present in seen classes that do not transfer. To tackle this, we propose BiomedCCPL (Causal Conditional Prompt Learning), a framework that uses VGAP (Visual Grounder with Adaptive Prototype) to generate image-conditional prompts from multi-scale adaptive prototypes and employs SCD (Synergistic Causal Disentanglement) to regularize the generation of image-conditional prompts. Guided by insights from a causal analysis of generalization to unseen classes, SCD leverages multiple synergistic learning objectives to perform front-door adjustment, ensuring that the dynamically generated image-conditional prompts focus on underlying diagnostic image features shared across seen and unseen classes. Experiments on 11 datasets across 9 modalities demonstrate that BiomedCCPL effectively enhances the model's data efficiency and generalization ability. In particular, on the Base-to-Novel task, BiomedCCPL achieves an average HM of 79.98%, surpassing the previous state-of-the-art by 6.45%. Code is available at https://github.com/burgers0708/BiomedCCPL.",
+          "summary": "BiomedCCPL 用多尺度自适应视觉原型生成图像条件提示，再以协同因果解耦正则约束提示依赖可迁移的诊断证据，从而改善冻结生物医学视觉语言模型的少样本与未见类泛化。",
           "tags": [
             "VLM/MLLM",
-            "diffusion",
+            "medical imaging",
             "retrieval/prototype",
             "causal/counterfactual"
           ],
@@ -111,7 +111,7 @@
           ],
           "source": "CVPR 2025",
           "published": "2025",
-          "summary": "Object-centric representation learning aims to decompose visual scenes into fixed-size vectors called \"slots\" or \"object files\", where each slot captures a distinct object. Current state-of-the-art object-centric models have shown remarkable success in object discovery in diverse domains including complex real-world scenes. However, these models suffer from a key limitation: they lack controllability. Specifically, current object-centric models learn representations based on their preconceived understanding of objects and parts, without allowing user input to guide which objects are represented. Introducing controllability into object-centric models could unlock a range of useful capabilities, such as the ability to extract instance-specific representations from a scene. In this work, we propose a novel approach for user-directed control over slot representations by conditioning slots on language descriptions. The proposed ConTRoLlable Object-centric representation learning approach, which we term CTRL-O, achieves targeted object-language binding in complex real-world scenes without requiring mask supervision. Next, we apply these controllable slot representations on two downstream vision language tasks: text-to-image generation and visual question answering. We find that the proposed approach enables instance-specific text-to-image generation and also achieves strong performance on visual question answering.",
+          "summary": "CTRL-O 用语言或点提示控制 Slot Attention 应当绑定哪个实例，并以视觉聚合后的跨模态对比目标防止 slot 只复制查询，从而获得可控、无掩码监督的对象表示。",
           "tags": [
             "diffusion",
             "object discovery",
@@ -1534,72 +1534,75 @@
     "sections": {
       "highlights": [
         {
-          "title": "MUG: Multi-human Graph Network for 3D Mesh Reconstruction from 2D Pose",
-          "url": "https://doi.org/10.1007/s11263-026-02942-9",
-          "pdf": "",
+          "title": "Cross Modal Fine-Grained Alignment via Granularity-Aware and Region-Uncertain Modeling",
+          "url": "https://ojs.aaai.org/index.php/AAAI/article/view/39544",
+          "pdf": "https://ojs.aaai.org/index.php/AAAI/article/download/39544/43505",
           "authors": [
-            "Chenyan Wu",
-            "Yandong Li",
-            "Xianfeng Tang",
-            "Zhe Huang",
-            "James Z. Wang"
+            "Jiale Liu",
+            "Haoming Zhou",
+            "Yishu Liu",
+            "Bingzhi Chen",
+            "Yuncheng Jiang"
           ],
-          "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
-          "published": "2026-08-05",
-          "summary": "Abstract Reconstructing multi-human body meshes from a single monocular image is a crucial yet challenging problem in computer vision. This problem requires not only generating individual body mesh models for each person but also estimating the relative 3D positions among subjects to produce a coherent scene representation. In this work, we introduce MUG (Multi-hUman Graph network), which employs a single graph neural network to construct coherent multi-human meshes using only 2D pose data as input. Our approach demonstrates that purely pose-based methods can effectively perform simultaneous depth reasoning and multi-human mesh generation. Existing image-based methods typically rely on lab-collected training datasets with accurate 3D labels; however, these datasets often introduce an image domain gap when applied to in-the-wild testing data or art images due to differences in appearance and context. In contrast, MUG leverages the geometric consistency of 2D poses across diverse datasets, mitigating domain discrepancies. The MUG network operates in three primary phases. Initially, to model the multi-human environment, it processes multi-human 2D poses and constructs a novel heterogeneous graph. This graph connects nodes both across different people and within individuals to capture inter-human interactions and accurately represent body geometry, including skeletal and mesh structures. Subsequently, it employs a dual-branch graph neural network: one branch predicts inter-human depth relations, while the other predicts the root-joint-relative mesh coordinates. Finally, the complete multi-human 3D meshes are constructed by combining the outputs from both branches. Despite the simplicity of using only 2D pose inputs and streamlined network architecture, MUG outperforms existing multi-human mesh estimation methods. This superiority is consistently observed across various datasets from diverse domains, such as RH, MuPoTS-3D, and 3DPW. Qualitative results show that MUG can effectively handle art images, through-wall scenarios, and poor lighting conditions when incorporating advanced 2D pose networks. Both qualitative and quantitative evaluations highlight MUG’s remarkable generalization ability in open-world scenarios.",
+          "source": "AAAI 2026",
+          "published": "2026-03-14",
+          "summary": "GRM 先在图像和文本各自内部筛关键 token，再用重叠区域提示与区域高斯表达一对多歧义，并以三层双向检索监督完成细粒度对齐。",
           "tags": [
-            "reasoning",
-            "diffusion",
-            "depth/geometry",
-            "open-world"
-          ],
-          "score": 87
-        },
-        {
-          "title": "Open-World Hazard Detection and Captioning for Autonomous Driving with a Unified Multimodal Pipeline",
-          "url": "https://www.semanticscholar.org/paper/b9c995cb1237cb83491c791e83cf7d04e7a77060",
-          "pdf": "",
-          "authors": [
-            "P. Hatami",
-            "Maged Shoman",
-            "Mina Sartipi"
-          ],
-          "source": "Semantic Scholar / 2025 IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW) / citations 3",
-          "published": "2025-02-28",
-          "summary": "Autonomous driving systems must operate reliably in dynamic environments where uncommon or unanticipated hazards frequently arise. Traditional perception models often rely on closed-set recognition, restricting them to predefined object categories and limiting their ability to address novel or rare obstacles. To tackle these open-world challenges, we propose an integrated pipeline that merges image enhancement, optical flow, depth estimation, semantic segmentation, and vision-language models. We evaluate our method on the COOOL dataset of 200 annotated dashcam videos, containing both standard and previously unseen hazards. By applying depth filtering and road segmentation, our system focuses on objects along the drivable surface. In parallel, optical flow analysis captures driver reactions, adding a temporal dimension that supports hazard assessment. A vision-language module then generates concise, semantically relevant captions for novel objects, enhancing interpretability. Experimental results show that our unified pipeline consistently improves hazard detection and captioning performance in open-world scenarios, underscoring the need for flexible perception strategies that advance autonomous driving safety.",
-          "tags": [
+            "fine-grained image-text alignment",
             "VLM/MLLM",
-            "diffusion",
-            "depth/geometry",
-            "video",
-            "open-world",
-            "low-level"
+            "grounded vision",
+            "uncertainty/calibration",
+            "retrieval/prototype"
           ],
           "score": 98
         },
         {
-          "title": "Causality-inspired representation learning with spatiotemporal memory for polyp detection in endoscopic videos",
-          "url": "https://doi.org/10.1016/j.media.2026.104231",
-          "pdf": "",
+          "title": "Open-World Hazard Detection and Captioning for Autonomous Driving with a Unified Multimodal Pipeline",
+          "url": "https://openaccess.thecvf.com/content/WACV2025W/COOOL/html/Hatami_Open-World_Hazard_Detection_and_Captioning_for_Autonomous_Driving_with_a_WACVW_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/WACV2025W/COOOL/papers/Hatami_Open-World_Hazard_Detection_and_Captioning_for_Autonomous_Driving_with_a_WACVW_2025_paper.pdf",
           "authors": [
-            "Zhuo Hu",
-            "Changjin Sun",
-            "Qi Zheng",
-            "Xiaopu He",
-            "Cheng Xue",
-            "Guangquan Zhou",
-            "Yang Chen",
-            "Yudong Zhang"
+            "Parisa Hatami",
+            "Maged Shoman",
+            "Mina Sartipi"
           ],
-          "source": "Crossref / MedIA / 医学影像顶刊 / Medical Image Analysis",
-          "published": "2026-11",
-          "summary": "MedIA article matched by title in a top journal; abstract unavailable from Crossref.",
+          "source": "WACVW 2025",
+          "published": "2025",
+          "summary": "论文把开放世界道路危险拆成图像增强、驾驶反应、距离、道路关系与开放词汇字幕五类证据，形成可检查但尚未校准的规则管线。",
           "tags": [
+            "safety-critical/hazard",
+            "open-world",
+            "VLM/MLLM",
+            "depth/geometry",
             "video",
+            "degraded perception"
+          ],
+          "score": 97
+        },
+        {
+          "title": "Generalizable Single-Source Cross-Modality Medical Image Segmentation via Invariant Causal Mechanisms",
+          "url": "https://openaccess.thecvf.com/content/WACV2025/html/Chen_Generalizable_Single-Source_Cross-Modality_Medical_Image_Segmentation_via_Invariant_Causal_Mechanisms_WACV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/WACV2025/papers/Chen_Generalizable_Single-Source_Cross-Modality_Medical_Image_Segmentation_via_Invariant_Causal_Mechanisms_WACV_2025_paper.pdf",
+          "authors": [
+            "Boqi Chen",
+            "Yuanzhi Zhu",
+            "Yunke Ao",
+            "Sebastiano Caprara",
+            "Reto Sutter",
+            "Gunnar Rätsch",
+            "Ender Konukoglu",
+            "Anna Susmelj"
+          ],
+          "source": "WACV 2025",
+          "published": "2025",
+          "summary": "论文用 DreamBooth、ControlNet 与 Style Swap 构造解剖近似不变而成像风格变化的训练对，再以逐 patch InfoNCE 约束跨模态分割表示。",
+          "tags": [
+            "medical imaging",
             "causal/counterfactual",
+            "domain generalization",
+            "diffusion",
             "representation learning"
           ],
-          "score": 79
+          "score": 96
         },
         {
           "title": "RAVU: Retrieval Augmented Video Understanding with Compositional Reasoning over Graph",
@@ -1613,14 +1616,15 @@
           ],
           "source": "WACV 2026",
           "published": "2026",
-          "summary": "Comprehending long videos remains a significant challenge for Large Multi-modal Models (LMMs). Current LMMs struggle to process even minutes to hours videos due to their lack of explicit memory and retrieval mechanisms. To address this limitation, we propose RAVU (Retrieval Augmented Video Understanding), a novel framework for video understanding enhanced by retrieval with compositional reasoning over a spatio-temporal graph. We construct a graph representation of the video, capturing both spatial and temporal relationships between entities. This graph serves as a long-term memory, allowing us to track objects and their actions across time. To answer complex queries, we decompose the queries into a sequence of reasoning steps and execute these steps on the graph, retrieving relevant key information. Our approach enables more accurate understanding of long videos, particularly for queries that require multi-hop reasoning and tracking objects across frames. Our approach demonstrate superior performances with limited retrieved frames (5-10) compared with other SOTA methods and baselines on two major video QA datasets, NExT-QA and EgoSchema.",
+          "summary": "RAVU 先把长视频写成可复用的实体-关系-事件图，再把问题编译成组合图操作，仅回看少量证据帧完成零样本问答。",
           "tags": [
             "reasoning",
             "retrieval/prototype",
             "video",
-            "compositionality"
+            "compositionality",
+            "world model"
           ],
-          "score": 76
+          "score": 95
         },
         {
           "title": "VELOCITI: Benchmarking Video-Language Compositional Reasoning with Strict Entailment",
@@ -1636,15 +1640,15 @@
           ],
           "source": "CVPR 2025",
           "published": "2025",
-          "summary": "A fundamental aspect of compositional reasoning in a video is associating people and their actions across time. Recent years have seen great progress in general-purpose vision/video models and a move towards long-video understanding. While exciting, we take a step back and ask: are today's models good at compositional reasoning on short videos? To this end, we introduce VELOCITI, a benchmark to study Video-LLMs by disentangling and assessing the comprehension of agents, actions, and their associations across multiple events. We adopt the Video-Language Entailment setup and propose StrictVLE that requires correct classification (rather than ranking) of the positive and negative caption. We evaluate several models and observe that even the best, LLaVA-OneVision (44.5%) and Gemini-1.5-Pro (49.3%), are far from human accuracy at 93.0%. Results show that action understanding lags behind agents, and negative captions created using entities appearing in the video perform worse than those obtained from pure text manipulation. We also present challenges with ClassicVLE and multiple-choice (MC) evaluation, strengthening our preference for StrictVLE. Finally, we validate that our benchmark requires visual inputs of multiple frames making it ideal to study video-language compositional reasoning.",
+          "summary": "VELOCITI 用同视频最小对照负描述和 StrictVLE 双重判定，揭示相对排序与多选协议会高估人物、动作和事件顺序的组合理解。",
           "tags": [
             "VLM/MLLM",
             "reasoning",
             "video",
-            "anomaly/OOD",
-            "compositionality"
+            "compositionality",
+            "benchmark"
           ],
-          "score": 67
+          "score": 94
         }
       ],
       "quality": [
