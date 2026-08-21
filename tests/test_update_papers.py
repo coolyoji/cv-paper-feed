@@ -348,6 +348,74 @@ class CuratedNoteTests(unittest.TestCase):
             },
         )
 
+    def test_verified_highlight_metadata_prevents_placeholder_downgrade(self):
+        title = (
+            "RoFLIP: Robust and Fine-Grained Alignment for "
+            "Vision-Language Compositional Reasoning"
+        )
+        placeholder = update_papers.Paper(
+            title=title.upper(),
+            url="https://doi.org/10.1007/s11263-026-02944-7",
+            pdf="",
+            source="Crossref / IJCV",
+            summary="IJCV article matched by title; abstract unavailable.",
+            score=98,
+        )
+        alias = update_papers.Paper(
+            title="An Earlier Title for the Same RoFLIP Work",
+            url="https://doi.org/10.1007/s11263-026-02944-7",
+            summary="Keep this different-title alias.",
+            score=90,
+        )
+        verified = update_papers.Paper(
+            title=title,
+            url="https://doi.org/10.1007/s11263-026-02944-7",
+            pdf=(
+                "https://link.springer.com/content/pdf/"
+                "10.1007/s11263-026-02944-7.pdf"
+            ),
+            source=(
+                "International Journal of Computer Vision (IJCV) 2026 / "
+                "DOI:10.1007/s11263-026-02944-7"
+            ),
+            summary="人工核验的中文精读摘要。",
+            score=86,
+        )
+        notes = {
+            update_papers.normalized_note_title_key(title): {
+                field: f"核验内容 / {field}"
+                for field in update_papers.DAILY_NOTE_FIELDS
+            }
+        }
+
+        with tempfile.TemporaryDirectory() as tmp:
+            highlights_path = Path(tmp) / "daily_highlights.json"
+            highlights_path.write_text(
+                json.dumps(
+                    {"2026-08-20": [update_papers.paper_to_dict(verified)]},
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            with patch.object(
+                update_papers, "DAILY_HIGHLIGHTS_FILE", highlights_path
+            ):
+                restored = update_papers.overlay_verified_highlight_metadata(
+                    [placeholder, alias], notes
+                )
+
+        self.assertEqual(restored[0], verified)
+        self.assertEqual(restored[1], alias)
+        self.assertEqual(
+            len(
+                {
+                    update_papers.normalized_title_key(paper.title)
+                    for paper in restored
+                }
+            ),
+            2,
+        )
+
     def test_verified_daily_note_overrides_generated_fields(self):
         paper = update_papers.Paper(
             title="Verified Paper",

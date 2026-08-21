@@ -3757,5 +3757,120 @@
       ],
       "score": 94
     }
+  ],
+  "2026-08-21": [
+    {
+      "title": "Interactive Object Detection for Tiny Objects in Large Remotely Sensed Images",
+      "url": "https://openaccess.thecvf.com/content/WACV2025/html/Burges_Interactive_Object_Detection_for_Tiny_Objects_in_Large_Remotely_Sensed_Images_WACV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2025/papers/Burges_Interactive_Object_Detection_for_Tiny_Objects_in_Large_Remotely_Sensed_Images_WACV_2025_paper.pdf",
+      "authors": [
+        "Marvin Burges",
+        "Sebastian Zambanini",
+        "Robert Sablatnig"
+      ],
+      "source": "WACV 2025",
+      "published": "2025",
+      "summary": "把正、负用户示例编码为多尺度交互令牌，以相似度热图重权 RT-DETR 特征，在超大遥感图中批量定位同类微小目标。",
+      "tags": [
+        "UAV/aerial",
+        "tiny-object detection",
+        "interactive detection",
+        "human-in-the-loop",
+        "weak-evidence perception"
+      ],
+      "score": 98
+    },
+    {
+      "title": "DOODLE: Diffusion-based Out-of-Distribution Learning for Open-set LiDAR Semantic Segmentation",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Oh_DOODLE_Diffusion-based_Out-of-Distribution_Learning_for_Open-set_LiDAR_Semantic_Segmentation_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Oh_DOODLE_Diffusion-based_Out-of-Distribution_Learning_for_Open-set_LiDAR_Semantic_Segmentation_WACV_2026_paper.pdf",
+      "authors": [
+        "Changgyoon Oh",
+        "Hyeonseong Kim",
+        "Daehyun We",
+        "Jongoh Jeong",
+        "Yujeong Chae",
+        "Kuk-Jin Yoon"
+      ],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "在预训练开放集 LiDAR 分割器上增加条件扩散重建、语义分歧、分数放大和密度后处理，以增强点级 OOD 排序。",
+      "tags": [
+        "open-world perception",
+        "LiDAR semantic segmentation",
+        "OOD detection",
+        "diffusion reconstruction",
+        "safety-critical perception"
+      ],
+      "score": 97
+    },
+    {
+      "title": "RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_RobustVisRAG_Causality-Aware_Vision-Based_Retrieval-Augmented_Generation_under_Visual_Degradations_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_RobustVisRAG_Causality-Aware_Vision-Based_Retrieval-Augmented_Generation_under_Visual_Degradations_CVPR_2026_paper.pdf",
+      "authors": [
+        "I-Hsiang Chen",
+        "Yu-Wei Liu",
+        "Tse-Yu Wu",
+        "Yu-Chien Chiang",
+        "Jen-Chieh Yang",
+        "Wei-Ting Chen"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026-06",
+      "summary": "以单向退化 token、退化三元组和干净-退化语义对齐，降低视觉文档 RAG 中检索错误向回答阶段的传播。",
+      "tags": [
+        "VLM/MLLM",
+        "RAG/retrieval",
+        "causal/counterfactual",
+        "degraded perception",
+        "multimodal reliability"
+      ],
+      "score": 96
+    },
+    {
+      "title": "No Hard Negatives Required: Concept Centric Learning Leads to Compositionality without Degrading Zero-shot Capabilities of Contrastive Models",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Pham_No_Hard_Negatives_Required_Concept_Centric_Learning_Leads_to_Compositionality_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Pham_No_Hard_Negatives_Required_Concept_Centric_Learning_Leads_to_Compositionality_CVPR_2026_paper.pdf",
+      "authors": [
+        "Hai X. Pham",
+        "David T. Hoffmann",
+        "Ricardo Guerrero",
+        "Brais Martinez"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026-06",
+      "summary": "C2LIP 不合成 hard negative，而把 caption 拆成名词短语多正样本，并以无参数跨模态池化在全局压缩前约束概念与视觉 patch 的绑定，推理仍沿用 SigLIP。",
+      "tags": [
+        "VLM/MLLM",
+        "compositional generalization",
+        "vision-language grounding",
+        "contrastive learning",
+        "open-vocabulary"
+      ],
+      "score": 95
+    },
+    {
+      "title": "Thinking Diffusion: Penalize and Guide Visual-Grounded Reasoning in Diffusion Multimodal Language Models",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Kim_Thinking_Diffusion_Penalize_and_Guide_Visual-Grounded_Reasoning_in_Diffusion_Multimodal_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kim_Thinking_Diffusion_Penalize_and_Guide_Visual-Grounded_Reasoning_in_Diffusion_Multimodal_CVPR_2026_paper.pdf",
+      "authors": [
+        "Keuntae Kim",
+        "Mingyu Kang",
+        "Yong Suk Choi"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026-06",
+      "summary": "PSP 延后后部答案 token 的确定，VRG 放大有图像与无图像 logits 的差，在不训练模型的前提下改善短步数 dMLLM 的视觉推理精度—时延折中。",
+      "tags": [
+        "VLM/MLLM",
+        "diffusion language model",
+        "multimodal reasoning",
+        "visual grounding",
+        "inference-time guidance",
+        "risk-aware perception"
+      ],
+      "score": 94
+    }
   ]
 }

@@ -2283,6 +2283,78 @@ def paper_from_dict(data: dict) -> Paper:
     return paper
 
 
+def overlay_verified_highlight_metadata(
+    papers: list[Paper],
+    notes: dict[str, dict[str, str]] | None = None,
+) -> list[Paper]:
+    """Restore verified daily-highlight metadata for matching candidate titles."""
+    notes = notes if notes is not None else load_daily_paper_notes()
+    if not notes:
+        return list(papers)
+    if not DAILY_HIGHLIGHTS_FILE.exists():
+        raise FileNotFoundError(
+            f"Missing daily-highlight metadata: {DAILY_HIGHLIGHTS_FILE}"
+        )
+    try:
+        data = json.loads(DAILY_HIGHLIGHTS_FILE.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as exc:
+        raise ValueError(
+            f"Invalid daily-highlight metadata: {DAILY_HIGHLIGHTS_FILE}"
+        ) from exc
+    if not isinstance(data, dict):
+        raise ValueError("Daily-highlight metadata must contain an object")
+
+    verified_by_title: dict[str, Paper] = {}
+    matched_note_keys: set[str] = set()
+    for date_text, raw_items in data.items():
+        if not isinstance(raw_items, list):
+            raise ValueError(
+                f"Daily-highlight entry must be a list: {date_text}"
+            )
+        for raw_item in raw_items:
+            if not isinstance(raw_item, dict):
+                raise ValueError(
+                    f"Daily-highlight paper must be an object: {date_text}"
+                )
+            paper = paper_from_dict(raw_item)
+            note_key = normalized_note_title_key(paper.title)
+            if note_key not in notes:
+                continue
+            title_key = normalized_title_key(paper.title)
+            if not title_key:
+                raise ValueError(
+                    f"Verified daily highlight has no normalized title: {paper.title}"
+                )
+            if title_key in verified_by_title:
+                raise ValueError(
+                    "Verified daily highlights repeat normalized title: "
+                    + paper.title
+                )
+            verified_by_title[title_key] = paper
+            matched_note_keys.add(note_key)
+
+    missing_metadata = sorted(set(notes) - matched_note_keys)
+    if missing_metadata:
+        raise ValueError(
+            "Verified paper note has no daily-highlight metadata: "
+            + "; ".join(missing_metadata)
+        )
+
+    restored: list[Paper] = []
+    seen_titles: set[str] = set()
+    for paper in papers:
+        title_key = normalized_title_key(paper.title)
+        if not title_key:
+            raise ValueError(f"Candidate paper has no normalized title: {paper.title}")
+        if title_key in seen_titles:
+            raise ValueError(
+                f"Candidate pool repeats normalized title: {paper.title}"
+            )
+        seen_titles.add(title_key)
+        restored.append(verified_by_title.get(title_key, paper))
+    return restored
+
+
 def download_root_available() -> bool:
     if os.name != "nt" and "PAPER_DOWNLOAD_ROOT" not in os.environ:
         return False
@@ -3460,7 +3532,7 @@ def main() -> None:
     global SOURCE_DEGRADED
     SOURCE_DEGRADED = False
 
-    load_daily_paper_notes()
+    verified_notes = load_daily_paper_notes()
 
     DATA.mkdir(exist_ok=True)
     DOCS.mkdir(exist_ok=True)
@@ -3499,12 +3571,13 @@ def main() -> None:
         )
     for paper in papers:
         paper.score = score_paper(paper)
+    papers = overlay_verified_highlight_metadata(papers, verified_notes)
     papers = [p for p in papers if p.score >= 12]
     papers.sort(key=lambda p: p.score, reverse=True)
 
     now = feed_now()
     require_verified_daily_notes(
-        daily_curated_highlights(now.strftime("%Y-%m-%d"))
+        daily_curated_highlights(now.strftime("%Y-%m-%d")), verified_notes
     )
     history = update_history(papers, now)
     if history:
