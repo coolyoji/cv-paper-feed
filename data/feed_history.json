@@ -3,116 +3,136 @@
     "date": "2026-08-22",
     "generated_at": "2026-08-22 10:25",
     "timezone": "Asia/Shanghai",
-    "total_selected": 11028,
+    "total_selected": 11029,
     "sections": {
       "highlights": [
         {
-          "title": "MUG: Multi-human Graph Network for 3D Mesh Reconstruction from 2D Pose",
-          "url": "https://doi.org/10.1007/s11263-026-02942-9",
-          "pdf": "",
+          "title": "GeoViS: Geospatially Rewarded Visual Search for Remote Sensing Visual Grounding",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_GeoViS_Geospatially_Rewarded_Visual_Search_for_Remote_Sensing_Visual_Grounding_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_GeoViS_Geospatially_Rewarded_Visual_Search_for_Remote_Sensing_Visual_Grounding_CVPR_2026_paper.pdf",
           "authors": [
-            "Chenyan Wu",
-            "Yandong Li",
-            "Xianfeng Tang",
-            "Zhe Huang",
-            "James Z. Wang"
+            "Peirong Zhang",
+            "Yidan Zhang",
+            "Luxiao Xu",
+            "Jinliang Lin",
+            "Zonghao Guo",
+            "Fengxiang Wang",
+            "Xue Yang",
+            "Kaiwen Wei",
+            "Lei Wang"
           ],
-          "source": "Crossref / IJCV / CCF-A / 顶刊 / International Journal of Computer Vision",
-          "published": "2026-08-05",
-          "summary": "Abstract Reconstructing multi-human body meshes from a single monocular image is a crucial yet challenging problem in computer vision. This problem requires not only generating individual body mesh models for each person but also estimating the relative 3D positions among subjects to produce a coherent scene representation. In this work, we introduce MUG (Multi-hUman Graph network), which employs a single graph neural network to construct coherent multi-human meshes using only 2D pose data as input. Our approach demonstrates that purely pose-based methods can effectively perform simultaneous depth reasoning and multi-human mesh generation. Existing image-based methods typically rely on lab-collected training datasets with accurate 3D labels; however, these datasets often introduce an image domain gap when applied to in-the-wild testing data or art images due to differences in appearance and context. In contrast, MUG leverages the geometric consistency of 2D poses across diverse datasets, mitigating domain discrepancies. The MUG network operates in three primary phases. Initially, to model the multi-human environment, it processes multi-human 2D poses and constructs a novel heterogeneous graph. This graph connects nodes both across different people and within individuals to capture inter-human interactions and accurately represent body geometry, including skeletal and mesh structures. Subsequently, it employs a dual-branch graph neural network: one branch predicts inter-human depth relations, while the other predicts the root-joint-relative mesh coordinates. Finally, the complete multi-human 3D meshes are constructed by combining the outputs from both branches. Despite the simplicity of using only 2D pose inputs and streamlined network architecture, MUG outperforms existing multi-human mesh estimation methods. This superiority is consistently observed across various datasets from diverse domains, such as RH, MuPoTS-3D, and 3DPW. Qualitative results show that MUG can effectively handle art images, through-wall scenarios, and poor lighting conditions when incorporating advanced 2D pose networks. Both qualitative and quantitative evaluations highlight MUG’s remarkable generalization ability in open-world scenarios.",
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "把遥感指代定位改写为奖励驱动的区域树搜索，由同一 VisualRAG 模型评估候选、选择放大区域，并结合全图与最佳局部输出目标框。",
           "tags": [
-            "reasoning",
-            "diffusion",
-            "depth/geometry",
-            "open-world"
+            "remote-sensing visual grounding",
+            "UAV/aerial",
+            "visual search",
+            "vision-language grounding",
+            "tiny-object perception"
           ],
-          "score": 87
+          "score": 98
         },
         {
-          "title": "Causality-inspired representation learning with spatiotemporal memory for polyp detection in endoscopic videos",
-          "url": "https://doi.org/10.1016/j.media.2026.104231",
-          "pdf": "",
+          "title": "PAF: Perturbation-Aware Filtering for Open-Set Semi-Supervised Learning",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Han_PAF_Perturbation-Aware_Filtering_for_Open-Set_Semi-Supervised_Learning_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Han_PAF_Perturbation-Aware_Filtering_for_Open-Set_Semi-Supervised_Learning_CVPR_2026_paper.pdf",
           "authors": [
-            "Zhuo Hu",
-            "Changjin Sun",
-            "Qi Zheng",
-            "Xiaopu He",
-            "Cheng Xue",
-            "Guangquan Zhou",
-            "Yang Chen",
-            "Yudong Zhang"
+            "Yinan Han",
+            "Qing-Yuan Jiang"
           ],
-          "source": "Crossref / MedIA / 医学影像顶刊 / Medical Image Analysis",
-          "published": "2026-11",
-          "summary": "MedIA article matched by title in a top journal; abstract unavailable from Crossref.",
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "以语义保持扰动下的投影表示差过滤开放集未标数据，再用不稳定度连续调低可疑伪标签的训练权重。",
           "tags": [
-            "video",
-            "causal/counterfactual",
-            "representation learning"
+            "open-set semi-supervised learning",
+            "OOD detection",
+            "selective learning",
+            "perturbation stability",
+            "weak-evidence perception"
           ],
-          "score": 79
+          "score": 97
         },
         {
-          "title": "Continual Learning for Motion Prediction Model via Meta-Representation Learning and Optimal Memory Buffer Retention Strategy",
-          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Kang_Continual_Learning_for_Motion_Prediction_Model_via_Meta-Representation_Learning_and_CVPR_2024_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Kang_Continual_Learning_for_Motion_Prediction_Model_via_Meta-Representation_Learning_and_CVPR_2024_paper.pdf",
+          "title": "Partial Weakly-Supervised Oriented Object Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liu_Partial_Weakly-Supervised_Oriented_Object_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liu_Partial_Weakly-Supervised_Oriented_Object_Detection_CVPR_2026_paper.pdf",
           "authors": [
-            "DaeJun Kang",
-            "Dongsuk Kum",
-            "Sanmin Kim"
+            "Mingxin Liu",
+            "Peiyuan Zhang",
+            "Yuan Liu",
+            "Wei Zhang",
+            "Yue Zhou",
+            "Ning Liao",
+            "Ziyang Gong",
+            "Junwei Luo",
+            "Zhirui Wang",
+            "Yi Yu",
+            "Xue Yang"
           ],
-          "source": "CVPR 2024",
-          "published": "2024",
-          "summary": "Embodied AI such as autonomous vehicles suffers from insufficient long-tailed data because it must be obtained from the physical world. In fact data must be continuously obtained in a series of small batches and the model must also be continuously trained to achieve generalizability and scalability by improving the biased data distribution. This paper addresses the training cost and catastrophic forgetting problems when continuously updating models to adapt to incoming small batches from various environments for real-world motion prediction in autonomous driving. To this end we propose a novel continual motion prediction (CMP) learning framework based on sparse meta-representation learning and an optimal memory buffer retention strategy. In meta-representation learning a model explicitly learns a sparse representation of each driving environment from road geometry to vehicle states by training to reduce catastrophic forgetting based on an augmented modulation network with sparsity regularization. Also in the adaptation phase We develop an Optimal Memory Buffer Retention strategy that smartly preserves diverse samples by focusing on representation similarity. This approach handles the nuanced task distribution shifts characteristic of motion prediction datasets ensuring our model stays responsive to evolving input variations without requiring extensive resources. The experiment results demonstrate that the proposed method shows superior adaptation performance to the conventional continual learning approach which is developed using a synthetic dataset for the continual learning problem.",
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "把少量水平框或点标注先转成可估计方向与尺度的学生，再用动态高斯混合阈值筛选无标签图像的旋转伪框。",
           "tags": [
-            "depth/geometry",
-            "video",
-            "representation learning",
-            "continual learning"
+            "oriented object detection",
+            "partial weak supervision",
+            "UAV/aerial",
+            "teacher-student",
+            "pseudo-label filtering"
           ],
-          "score": 65
+          "score": 96
         },
         {
-          "title": "Separating the \"Chirp\" from the \"Chat\": Self-supervised Visual Grounding of Sound and Language",
-          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Hamilton_Separating_the_Chirp_from_the_Chat_Self-supervised_Visual_Grounding_of_CVPR_2024_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Hamilton_Separating_the_Chirp_from_the_Chat_Self-supervised_Visual_Grounding_of_CVPR_2024_paper.pdf",
+          "title": "Towards Robust Multi-Modal Semantic Segmentation with Teacher-Student Framework and Hybrid Prototype Distillation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Towards_Robust_Multi-Modal_Semantic_Segmentation_with_Teacher-Student_Framework_and_Hybrid_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Tan_Towards_Robust_Multi-Modal_Semantic_Segmentation_with_Teacher-Student_Framework_and_Hybrid_CVPR_2026_paper.pdf",
           "authors": [
-            "Mark Hamilton",
-            "Andrew Zisserman",
-            "John R. Hershey",
-            "William T. Freeman"
-          ],
-          "source": "CVPR 2024",
-          "published": "2024",
-          "summary": "We present DenseAV a novel dual encoder grounding architecture that learns high-resolution semantically meaningful and audio-visual aligned features solely through watching videos. We show that DenseAV can discover the \"meaning\" of words and the \"location\" of sounds without explicit localization supervision. Furthermore it automatically discovers and distinguishes between these two types of associations without supervision. We show that DenseAV's localization abilities arise from a new multi-head feature aggregation operator that directly compares dense image and audio representations for contrastive learning. In contrast many other systems that learn \"global\" audio and video representations cannot localize words and sound. Finally we contribute two new datasets to improve the evaluation of AV representations through speech and sound prompted semantic segmentation. On these and other datasets we show DenseAV dramatically outperforms the prior art on speech and sound prompted semantic segmentation. DenseAV outperforms the current state-of-the-art ImageBind on cross-modal retrieval using fewer than half of the parameters. Project Page: https://aka.ms/denseav",
-          "tags": [
-            "reasoning",
-            "retrieval/prototype",
-            "video",
-            "self-supervised",
-            "grounded vision"
-          ],
-          "score": 93
-        },
-        {
-          "title": "ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More",
-          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhou_ExACT_Language-guided_Conceptual_Reasoning_and_Uncertainty_Estimation_for_Event-based_Action_CVPR_2024_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_ExACT_Language-guided_Conceptual_Reasoning_and_Uncertainty_Estimation_for_Event-based_Action_CVPR_2024_paper.pdf",
-          "authors": [
-            "Jiazhou Zhou",
+            "Jiaqi Tan",
             "Xu Zheng",
-            "Yuanhuiyi Lyu",
-            "Lin Wang"
+            "Yang Liu"
           ],
-          "source": "CVPR 2024",
-          "published": "2024",
-          "summary": "Event cameras have recently been shown beneficial for practical vision tasks such as action recognition thanks to their high temporal resolution power efficiency and reduced privacy concerns. However current research is hindered by 1) the difficulty in processing events because of their prolonged duration and dynamic actions with complex and ambiguous semantics and 2) the redundant action depiction of the event frame representation with fixed stacks. We find language naturally conveys abundant semantic information rendering it stunningly superior in reducing semantic uncertainty. In light of this we propose ExACT a novel approach that for the first time tackles event-based action recognition from a cross-modal conceptualizing perspective. Our ExACT brings two technical contributions. Firstly we propose an adaptive fine-grained event (AFE) representation to adaptively filter out the repeated events for the stationary objects while preserving dynamic ones. This subtly enhances the performance of ExACT without extra computational cost. Then we propose a conceptual reasoning-based uncertainty estimation module which simulates the recognition process to enrich the semantic representation. In particular conceptual reasoning builds the temporal relation based on the action semantics and uncertainty estimation tackles the semantic uncertainty of actions based on the distributional representation. Experiments show that our ExACT achieves superior recognition accuracy of 94.83%(+2.23%) 90.10%(+37.47%) and 67.24% on PAF HARDVS and our SeAct datasets respectively.",
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "用类别原型跨模态传语义、用主导模态类内变化图传细节，再让缺模态学生反向校正教师的弱模态编码器。",
           "tags": [
-            "reasoning",
-            "video",
-            "uncertainty/calibration"
+            "multimodal semantic segmentation",
+            "missing modality",
+            "teacher-student",
+            "prototype distillation",
+            "sensor robustness"
           ],
-          "score": 56
+          "score": 95
+        },
+        {
+          "title": "GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_GroundingME_Exposing_the_Visual_Grounding_Gap_in_MLLMs_through_Multi-Dimensional_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_GroundingME_Exposing_the_Visual_Grounding_Gap_in_MLLMs_through_Multi-Dimensional_CVPR_2026_paper.pdf",
+          "authors": [
+            "Rang Li",
+            "Lei Li",
+            "Shuhuai Ren",
+            "Hao Tian",
+            "Shuhao Gu",
+            "Shicheng Li",
+            "Zihao Yue",
+            "Yudong Wang",
+            "Wenhan Ma",
+            "Zhe Yang",
+            "Jingyuan Ma",
+            "Zhifang Sui",
+            "Fuli Luo"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "GroundingME 用高分辨率、同类密集、长描述与四类零目标反事实，检验 MLLM 是否真正核对视觉证据并在描述不成立时拒答。",
+          "tags": [
+            "视觉落地",
+            "多模态大模型",
+            "拒答",
+            "高分辨率",
+            "安全关键感知"
+          ],
+          "score": 94
         }
       ],
       "quality": [

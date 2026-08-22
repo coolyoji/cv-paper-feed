@@ -12,7 +12,9 @@ import hashlib
 import json
 import re
 import os
+import socket
 import sys
+import threading
 import textwrap
 import tempfile
 import time
@@ -49,6 +51,7 @@ DAILY_NOTE_FIELDS = (
 DEEP_SOURCE_SCAN = os.environ.get("DEEP_SOURCE_SCAN", "").lower() in {"1", "true", "yes"}
 FEED_DATE_OVERRIDE = os.environ.get("FEED_DATE", "").strip()
 SOURCE_FAILURE_LIMIT = max(1, int(os.environ.get("SOURCE_FAILURE_LIMIT", "3")))
+NETWORK_TIMEOUT_CAP = max(1, int(os.environ.get("NETWORK_TIMEOUT_CAP", "25")))
 SOURCE_DEGRADED = False
 
 HIGHLIGHT_LIMIT = 5
@@ -715,27 +718,97 @@ class Paper:
     score: int = 0
 
 
+def _read_response_with_deadline(resp, timeout: int) -> bytes:
+    """Read a response in bounded chunks so a slow proxy cannot hang a run."""
+    deadline = time.monotonic() + max(1, timeout)
+    try:
+        sock = resp.fp.raw._sock
+        sock.settimeout(min(5.0, max(1.0, float(timeout))))
+    except (AttributeError, OSError):
+        pass
+    chunks: list[bytes] = []
+    while True:
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            raise TimeoutError(f"response read exceeded {timeout}s")
+        try:
+            chunk = resp.read(64 * 1024)
+        except socket.timeout as exc:
+            raise TimeoutError(f"response read exceeded {timeout}s") from exc
+        if not chunk:
+            return b"".join(chunks)
+        chunks.append(chunk)
+
+
+def _call_with_deadline(func, timeout: int):
+    """Bound a blocking network operation even when a proxy ignores timeouts."""
+    result: list[object] = []
+    error: list[BaseException] = []
+    timed_out = threading.Event()
+
+    def run() -> None:
+        try:
+            value = func()
+            if timed_out.is_set():
+                _close_response(value)
+                return
+            result.append(value)
+        except BaseException as exc:
+            if not timed_out.is_set():
+                error.append(exc)
+
+    worker = threading.Thread(target=run, daemon=True)
+    worker.start()
+    worker.join(max(1, timeout))
+    timed_out.set()
+    if worker.is_alive():
+        raise TimeoutError(f"network operation exceeded {timeout}s")
+    if error:
+        raise error[0]
+    return result[0]
+
+
+def _close_response(resp) -> None:
+    try:
+        resp.close()
+    except Exception:
+        pass
+
+
 def fetch_url(url: str, timeout: int = 45) -> str:
+    timeout = min(timeout, NETWORK_TIMEOUT_CAP)
     req = urllib.request.Request(
         url,
         headers={
             "User-Agent": "cv-paper-feed/1.0 (daily literature monitor; contact: none)"
         },
     )
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.read().decode("utf-8", errors="ignore")
+    resp = _call_with_deadline(lambda: urllib.request.urlopen(req, timeout=timeout), timeout)
+    try:
+        return _call_with_deadline(
+            lambda: _read_response_with_deadline(resp, timeout), timeout
+        ).decode("utf-8", errors="ignore")
+    finally:
+        _close_response(resp)
 
 
 def fetch_bytes(url: str, timeout: int = 90) -> tuple[bytes, str]:
+    timeout = min(timeout, NETWORK_TIMEOUT_CAP)
     req = urllib.request.Request(
         url,
         headers={
             "User-Agent": "cv-paper-feed/1.0 (daily literature monitor; contact: none)"
         },
     )
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
+    resp = _call_with_deadline(lambda: urllib.request.urlopen(req, timeout=timeout), timeout)
+    try:
         content_type = resp.headers.get("content-type", "")
-        return resp.read(), content_type
+        content = _call_with_deadline(
+            lambda: _read_response_with_deadline(resp, timeout), timeout
+        )
+        return content, content_type
+    finally:
+        _close_response(resp)
 
 
 def clean_text(text: str) -> str:
@@ -1422,6 +1495,7 @@ def crossref_authors(item: dict) -> list[str]:
 
 def fetch_crossref_journals(rows_per_query: int = 4) -> list[Paper]:
     papers: list[Paper] = []
+    consecutive_failures = 0
     broad_query = (
         "camouflaged OR concealed OR segmentation OR detection OR "
         "vision-language OR foundation model OR anomaly OR safety-critical OR "
@@ -1476,8 +1550,18 @@ def fetch_crossref_journals(rows_per_query: int = 4) -> list[Paper]:
                     f"[warn] Crossref query failed: {journal['short']} / {query}: {exc}",
                     file=sys.stderr,
                 )
+                consecutive_failures += 1
+                if consecutive_failures >= SOURCE_FAILURE_LIMIT:
+                    print(
+                        "[warn] Crossref unavailable after "
+                        f"{consecutive_failures} consecutive failures; continuing "
+                        "with cached and other sources",
+                        file=sys.stderr,
+                    )
+                    return papers
                 time.sleep(0.5)
                 continue
+            consecutive_failures = 0
             for item in data.get("message", {}).get("items", []):
                 titles = item.get("title") or []
                 title = clean_text(titles[0] if titles else "")
@@ -3503,10 +3587,11 @@ def apply_existing_daily_curation() -> None:
         replace_existing_snapshot_curation(history_source, date_text, curated)
     )
     latest = merge_curated_into_latest(latest_source, curated)
-    archive_md = render_markdown(history)
     target_snapshot = next(
         snapshot for snapshot in history if snapshot_date_text(snapshot) == date_text
     )
+    target_snapshot["total_selected"] = len(latest)
+    archive_md = render_markdown(history)
     daily_md = render_snapshot_markdown(target_snapshot)
     write_text_batch_atomic(
         {

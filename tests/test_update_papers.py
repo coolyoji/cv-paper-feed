@@ -1,7 +1,9 @@
 import importlib.util
 import json
+import socket
 import sys
 import tempfile
+import threading
 import unittest
 from datetime import date, datetime
 from pathlib import Path
@@ -33,6 +35,44 @@ class FeedDateOverrideTests(unittest.TestCase):
 
 
 class SourceFallbackTests(unittest.TestCase):
+    def test_crossref_stops_after_consecutive_source_failures(self):
+        journal = {"issn": "0000-0000", "short": "TEST"}
+        with (
+            patch.object(update_papers, "TOP_JOURNALS", [journal]),
+            patch.object(update_papers, "DEEP_SOURCE_SCAN", True),
+            patch.object(update_papers, "SOURCE_FAILURE_LIMIT", 2),
+            patch.object(update_papers, "fire_topic_enabled", return_value=False),
+            patch.object(update_papers, "fetch_url", side_effect=TimeoutError("offline")) as fetch,
+            patch.object(update_papers.time, "sleep"),
+        ):
+            self.assertEqual(update_papers.fetch_crossref_journals(), [])
+        self.assertEqual(fetch.call_count, 2)
+
+    def test_network_call_deadline_bounds_blocking_connector(self):
+        blocker = threading.Event()
+        closed = threading.Event()
+
+        class LateResponse:
+            def close(self):
+                closed.set()
+
+        def connect():
+            blocker.wait(30)
+            return LateResponse()
+
+        with self.assertRaisesRegex(TimeoutError, "network operation exceeded 1s"):
+            update_papers._call_with_deadline(connect, 1)
+        blocker.set()
+        self.assertTrue(closed.wait(1), "late response should be closed after timeout")
+
+    def test_response_reader_converts_socket_timeout_to_deadline_error(self):
+        class SlowResponse:
+            def read(self, _size):
+                raise socket.timeout("stalled")
+
+        with self.assertRaisesRegex(TimeoutError, "response read exceeded 7s"):
+            update_papers._read_response_with_deadline(SlowResponse(), 7)
+
     def test_degraded_source_forces_cached_merge_above_count_threshold(self):
         with patch.object(update_papers, "SOURCE_DEGRADED", True):
             self.assertTrue(
@@ -709,6 +749,8 @@ class CuratedNoteTests(unittest.TestCase):
             self.assertEqual(older_html.read_bytes(), b"older-html")
             self.assertTrue((daily_md / "2026-08-20.md").exists())
             self.assertTrue((daily_html / "2026-08-20.html").exists())
+            written_history = json.loads(history_path.read_text(encoding="utf-8"))
+            self.assertEqual(written_history[0]["total_selected"], 5)
 
     def test_specialized_transfer_papers_retain_their_actual_task_setting(self):
         cases = [

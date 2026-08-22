@@ -3872,5 +3872,175 @@
       ],
       "score": 94
     }
+  ],
+  "2026-08-22": [
+    {
+      "title": "GeoViS: Geospatially Rewarded Visual Search for Remote Sensing Visual Grounding",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_GeoViS_Geospatially_Rewarded_Visual_Search_for_Remote_Sensing_Visual_Grounding_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_GeoViS_Geospatially_Rewarded_Visual_Search_for_Remote_Sensing_Visual_Grounding_CVPR_2026_paper.pdf",
+      "authors": [
+        "Peirong Zhang",
+        "Yidan Zhang",
+        "Luxiao Xu",
+        "Jinliang Lin",
+        "Zonghao Guo",
+        "Fengxiang Wang",
+        "Xue Yang",
+        "Kaiwen Wei",
+        "Lei Wang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "把遥感指代定位改写为奖励驱动的区域树搜索，由同一 VisualRAG 模型评估候选、选择放大区域，并结合全图与最佳局部输出目标框。",
+      "tags": [
+        "remote-sensing visual grounding",
+        "UAV/aerial",
+        "visual search",
+        "vision-language grounding",
+        "tiny-object perception"
+      ],
+      "score": 98,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "title": "PAF: Perturbation-Aware Filtering for Open-Set Semi-Supervised Learning",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Han_PAF_Perturbation-Aware_Filtering_for_Open-Set_Semi-Supervised_Learning_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Han_PAF_Perturbation-Aware_Filtering_for_Open-Set_Semi-Supervised_Learning_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yinan Han",
+        "Qing-Yuan Jiang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "以语义保持扰动下的投影表示差过滤开放集未标数据，再用不稳定度连续调低可疑伪标签的训练权重。",
+      "tags": [
+        "open-set semi-supervised learning",
+        "OOD detection",
+        "selective learning",
+        "perturbation stability",
+        "weak-evidence perception"
+      ],
+      "score": 97,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "title": "Partial Weakly-Supervised Oriented Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liu_Partial_Weakly-Supervised_Oriented_Object_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liu_Partial_Weakly-Supervised_Oriented_Object_Detection_CVPR_2026_paper.pdf",
+      "authors": [
+        "Mingxin Liu",
+        "Peiyuan Zhang",
+        "Yuan Liu",
+        "Wei Zhang",
+        "Yue Zhou",
+        "Ning Liao",
+        "Ziyang Gong",
+        "Junwei Luo",
+        "Zhirui Wang",
+        "Yi Yu",
+        "Xue Yang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "把少量水平框或点标注先转成可估计方向与尺度的学生，再用动态高斯混合阈值筛选无标签图像的旋转伪框。",
+      "tags": [
+        "oriented object detection",
+        "partial weak supervision",
+        "UAV/aerial",
+        "teacher-student",
+        "pseudo-label filtering"
+      ],
+      "score": 96,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "title": "Towards Robust Multi-Modal Semantic Segmentation with Teacher-Student Framework and Hybrid Prototype Distillation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Tan_Towards_Robust_Multi-Modal_Semantic_Segmentation_with_Teacher-Student_Framework_and_Hybrid_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Tan_Towards_Robust_Multi-Modal_Semantic_Segmentation_with_Teacher-Student_Framework_and_Hybrid_CVPR_2026_paper.pdf",
+      "authors": [
+        "Jiaqi Tan",
+        "Xu Zheng",
+        "Yang Liu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "用类别原型跨模态传语义、用主导模态类内变化图传细节，再让缺模态学生反向校正教师的弱模态编码器。",
+      "tags": [
+        "multimodal semantic segmentation",
+        "missing modality",
+        "teacher-student",
+        "prototype distillation",
+        "sensor robustness"
+      ],
+      "score": 95,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    {
+      "title": "GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_GroundingME_Exposing_the_Visual_Grounding_Gap_in_MLLMs_through_Multi-Dimensional_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_GroundingME_Exposing_the_Visual_Grounding_Gap_in_MLLMs_through_Multi-Dimensional_CVPR_2026_paper.pdf",
+      "authors": [
+        "Rang Li",
+        "Lei Li",
+        "Shuhuai Ren",
+        "Hao Tian",
+        "Shuhao Gu",
+        "Shicheng Li",
+        "Zihao Yue",
+        "Yudong Wang",
+        "Wenhan Ma",
+        "Zhe Yang",
+        "Jingyuan Ma",
+        "Zhifang Sui",
+        "Fuli Luo"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "GroundingME 用高分辨率、同类密集、长描述与四类零目标反事实，检验 MLLM 是否真正核对视觉证据并在描述不成立时拒答。",
+      "tags": [
+        "视觉落地",
+        "多模态大模型",
+        "拒答",
+        "高分辨率",
+        "安全关键感知"
+      ],
+      "score": 94
+    }
   ]
 }
