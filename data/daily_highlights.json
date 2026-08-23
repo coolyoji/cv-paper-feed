@@ -4042,5 +4042,178 @@
       ],
       "score": 94
     }
+  ],
+  "2026-08-23": [
+    {
+      "title": "UAST: Unified Active Search and Tracking for Arbitrary Targets with UAVs",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Qin_UAST_Unified_Active_Search_and_Tracking_for_Arbitrary_Targets_with_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Qin_UAST_Unified_Active_Search_and_Tracking_for_Arbitrary_Targets_with_CVPR_2026_paper.pdf",
+      "authors": [
+        "Liang Qin",
+        "Min Wang",
+        "Xingyu Lu",
+        "Aowen Qiu",
+        "Wengang Zhou",
+        "Houqiang Li"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "将无人机任意目标的主动搜索与持续跟踪统一为无地图 RGB-D 控制：模板相关和深度几何双分支配合规则搜索状态机，在目标可见、短时遮挡和长期丢失之间切换，控制网络再从候选终状态生成平滑安全轨迹。",
+      "tags": [
+        "UAV/aerial",
+        "active search",
+        "tracking",
+        "RGB-D control",
+        "weak-evidence perception"
+      ],
+      "score": 98,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17"
+      ]
+    },
+    {
+      "title": "Rethinking Occlusion Modeling for UAV Tracking",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Rethinking_Occlusion_Modeling_for_UAV_Tracking_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Rethinking_Occlusion_Modeling_for_UAV_Tracking_CVPR_2026_paper.pdf",
+      "authors": [
+        "Jian Zhang",
+        "Xincheng Yu",
+        "Yi Lin"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "用 Clustered Occlusion Modeling 生成具有簇数、簇强度和空间扩散控制的成片遮挡，并用 Cost-Aware Depth Bias 按层间表征对齐和浅层计算偏好动态选择 ViT 深度，在遮挡鲁棒性与 UAV 实时跟踪速度间折中。",
+      "tags": [
+        "UAV/aerial",
+        "occlusion modeling",
+        "visual tracking",
+        "efficient inference",
+        "tiny objects"
+      ],
+      "score": 97,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "title": "RankOOD - Class Ranking-based Out-of-Distribution Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Denipitiyage_RankOOD_-_Class_Ranking-based_Out-of-Distribution_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Denipitiyage_RankOOD_-_Class_Ranking-based_Out-of-Distribution_Detection_CVPR_2026_paper.pdf",
+      "authors": [
+        "Dishanika Denipitiyage",
+        "Naveen Karunanayake",
+        "Suranga Seneviratne",
+        "Sanjay Chawla"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "RankOOD不再只看top-1置信度，而从正确ID样本统计每类的全类排序指纹，用ILP求canonical permutation、ListMLE训练稳定logit顺序，再以错序累计margin和类别阈值轨迹形成OOD分数。",
+      "tags": [
+        "OOD detection",
+        "selective prediction",
+        "ranking",
+        "calibration",
+        "weak-evidence perception"
+      ],
+      "score": 96,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "title": "Envision, Attend, Then Respond: Counterfactual Hallucination Mitigation in Large Vision-Language Models",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liang_Envision_Attend_Then_Respond_Counterfactual_Hallucination_Mitigation_in_Large_Vision-Language_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liang_Envision_Attend_Then_Respond_Counterfactual_Hallucination_Mitigation_in_Large_Vision-Language_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yuxuan Liang",
+        "Fan Shi",
+        "Rui Zhu",
+        "Xu Li",
+        "Xiaolei Chen",
+        "Zhe Liu",
+        "Bin Li",
+        "Xiangyang Xue"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "EnAR用扩散模型生成符合真实视觉先验的visual impression，以多次扰动方差和原图/印象注意力差定位反事实token，再对这些token做padding并执行对比解码，训练-free地抑制LVLM视觉幻觉。",
+      "tags": [
+        "vision-language",
+        "counterfactual",
+        "hallucination",
+        "uncertainty",
+        "grounded reasoning"
+      ],
+      "score": 95,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "title": "CaRS: A Causal Intervention Segmentation Framework and Benchmark Dataset for Autonomous Driving under Transitional Weather Conditions",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Madhavi_CaRS_A_Causal_Intervention_Segmentation_Framework_and_Benchmark_Dataset_for_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Madhavi_CaRS_A_Causal_Intervention_Segmentation_Framework_and_Benchmark_Dataset_for_WACV_2026_paper.pdf",
+      "authors": [
+        "Kondapally Madhavi",
+        "K Naveen Kumar",
+        "C Krishna Mohan",
+        "Sobhan Babu"
+      ],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "CaRS把离散天气图像在VAE latent中插值成16类过渡天气，再用互补注意力分离因果/混杂表征，结合NWGM、天气不变梯度损失和min/max对抗训练提升语义与实例分割鲁棒性。",
+      "tags": [
+        "causal perception",
+        "adverse weather",
+        "semantic segmentation",
+        "instance segmentation",
+        "fire transfer"
+      ],
+      "score": 94,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    }
   ]
 }
