@@ -138279,6 +138279,24 @@
     "score": 37
   },
   {
+    "title": "A human-in-the-loop label error detection framework applied to Arabic-script HTR datasets",
+    "url": "https://doi.org/10.1016/j.patcog.2026.114621",
+    "pdf": "",
+    "authors": [
+      "Sana Sabah Al-azzawi",
+      "Elisa Barney",
+      "György Kovács",
+      "Marcus Liwicki"
+    ],
+    "source": "Crossref / PR / CCF-B / 顶刊 / Pattern Recognition",
+    "published": "2027-01",
+    "summary": "PR article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "computer vision"
+    ],
+    "score": 37
+  },
+  {
     "title": "Extending CLIP's Image-Text Alignment to Referring Image Segmentation",
     "url": "http://arxiv.org/abs/2306.08498v2",
     "pdf": "http://arxiv.org/pdf/2306.08498v2",
@@ -182669,6 +182687,46 @@
     "score": 31
   },
   {
+    "title": "Learning to identify critical signal points for multimodal Magnetic Resonance Fingerprinting",
+    "url": "https://doi.org/10.1016/j.patcog.2026.114627",
+    "pdf": "",
+    "authors": [
+      "Jin Ruiqi",
+      "Yanwei Pang",
+      "Huihui Ye",
+      "Huafeng Liu",
+      "Pengfei Zhao",
+      "Zhenchang Wang"
+    ],
+    "source": "Crossref / PR / CCF-B / 顶刊 / Pattern Recognition",
+    "published": "2027-01",
+    "summary": "PR article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "computer vision"
+    ],
+    "score": 31
+  },
+  {
+    "title": "DTTrack: A twin-signal progressive feedback network for RGB-T tracking",
+    "url": "https://doi.org/10.1016/j.patcog.2026.114602",
+    "pdf": "",
+    "authors": [
+      "Zhijiang Dai",
+      "Jiatian Mei",
+      "Mengjin Xiao",
+      "Jianhou Gan",
+      "Wenqi Ren",
+      "Juxiang Zhou"
+    ],
+    "source": "Crossref / PR / CCF-B / 顶刊 / Pattern Recognition",
+    "published": "2027-01",
+    "summary": "PR article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "video"
+    ],
+    "score": 31
+  },
+  {
     "title": "Cover First, Disagree Softly: Rethinking Mismatch-First Active Learning for Frame-Level Audio Classification",
     "url": "http://arxiv.org/abs/2607.13571v1",
     "pdf": "http://arxiv.org/pdf/2607.13571v1",
@@ -218472,6 +218530,28 @@
     "summary": "MedIA article matched by title in a top journal; abstract unavailable from Crossref.",
     "tags": [
       "computer vision"
+    ],
+    "score": 29
+  },
+  {
+    "title": "Endo4DGSLAM: Multi-level deformable modeling with redundancy reduction for endoscopic non-rigid SLAM",
+    "url": "https://doi.org/10.1016/j.media.2026.104270",
+    "pdf": "",
+    "authors": [
+      "Rongqi Wang",
+      "Jingang Zhang",
+      "Zhiliang Yan",
+      "Yanpeng Zhao",
+      "Weixiong Liao",
+      "Zhijiang Li",
+      "Zhijian Hao",
+      "Yunfeng Nie"
+    ],
+    "source": "Crossref / MedIA / 医学影像顶刊 / Medical Image Analysis",
+    "published": "2026-11",
+    "summary": "MedIA article matched by title in a top journal; abstract unavailable from Crossref.",
+    "tags": [
+      "depth/geometry"
     ],
     "score": 29
   },
