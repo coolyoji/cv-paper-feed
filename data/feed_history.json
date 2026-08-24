@@ -1,9 +1,9 @@
 [
   {
     "date": "2026-08-24",
-    "generated_at": "2026-08-24 09:15",
+    "generated_at": "2026-08-24 10:40",
     "timezone": "Asia/Shanghai",
-    "total_selected": 11047,
+    "total_selected": 11069,
     "sections": {
       "highlights": [
         {
@@ -431,28 +431,6 @@
           "score": 81
         },
         {
-          "title": "MRCNet: Motion Reasoning Chain for Cross Modal Video Camouflaged Object Detection",
-          "url": "https://doi.org/10.1109/tpami.2026.3689767",
-          "pdf": "",
-          "authors": [
-            "Wenjun Hui",
-            "Zhenfeng Zhu",
-            "Shuai Zheng",
-            "Ming-Ming Cheng",
-            "Huchuan Lu",
-            "Yao Zhao"
-          ],
-          "source": "Crossref / TPAMI / CCF-A / 顶刊 / IEEE Transactions on Pattern Analysis and Machine Intelligence",
-          "published": "2026-09",
-          "summary": "TPAMI article matched by title in a top journal; abstract unavailable from Crossref.",
-          "tags": [
-            "COD",
-            "reasoning",
-            "video"
-          ],
-          "score": 79
-        },
-        {
           "title": "First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection",
           "url": "http://arxiv.org/abs/2508.15313v2",
           "pdf": "http://arxiv.org/pdf/2508.15313v2",
@@ -472,6 +450,28 @@
             "retrieval/prototype",
             "anomaly/OOD",
             "saliency/transparent"
+          ],
+          "score": 79
+        },
+        {
+          "title": "MRCNet: Motion Reasoning Chain for Cross Modal Video Camouflaged Object Detection",
+          "url": "https://doi.org/10.1109/tpami.2026.3689767",
+          "pdf": "",
+          "authors": [
+            "Wenjun Hui",
+            "Zhenfeng Zhu",
+            "Shuai Zheng",
+            "Ming-Ming Cheng",
+            "Huchuan Lu",
+            "Yao Zhao"
+          ],
+          "source": "Crossref / TPAMI / CCF-A / 顶刊 / IEEE Transactions on Pattern Analysis and Machine Intelligence",
+          "published": "2026-09",
+          "summary": "TPAMI article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "COD",
+            "reasoning",
+            "video"
           ],
           "score": 79
         },
@@ -1354,6 +1354,32 @@
           "score": 118
         },
         {
+          "title": "Grounded Visual Reasoning for Traffic Congestion Diagnosis: A Drone-Based Pipeline with Trajectory-Grounded VLM Analysis",
+          "url": "https://www.semanticscholar.org/paper/985f9e76d25959e2c8a604d52dee224d6104dbc9",
+          "pdf": "",
+          "authors": [
+            "Ayham Al-Hourani",
+            "Omar Darwish",
+            "Obada Talafha",
+            "Nasser Alsaedi",
+            "Yahya M. Tashtoush"
+          ],
+          "source": "Semantic Scholar / 2026 International Conference on Revolutionary Artificial Intelligence and Future Applications (Rev-AI)",
+          "published": "2026-06-01",
+          "summary": "Identifying the causes of traffic congestion through drone imagery remains a significant challenge in intelligent transportation systems. Vision-Language Models (VLMs) excel in scene comprehension; yet, they often generate inaccurate or incomplete diagnoses when applied to complex, high-density traffic scenes without structured contextual grounding. We present TrajVLM, a hybrid pipeline that integrates VLM reasoning with structured per-vehicle trajectory data extracted directly from drone video. The pipeline employs a pretrained YOLOv8s detector combined with BoT-SORT tracking to extract nine behavioral features per vehicle, including zone transitions, maneuver type, stop durations, and speed profiles. These features are serialized into a structured natural-language timeline and tabular CSV, and submitted alongside the annotated video to Gemini 2.5 Flash for congestion cause attribution across 14 predefined cause codes. We evaluate TrajVLM on a real-world signalized urban intersection from the Songdo Traffic dataset using a three-condition ablation study. The video-only condition detects downstream symptoms but misses the root cause entirely. The CSV-only condition correctly identifies the blocked exit lanes as the root cause but misattributes one vehicle due to the absence of visual context. Only the hybrid condition accurately reconstructs the full causal chain: downstream exit blockage causing spillback into the intersection center, forcing East-entry vehicles to block cross-traffic. These findings demonstrate that trajectory grounding substantially reduces VLM hallucination and enables precise root-cause diagnosis that neither modality achieves independently. To our knowledge, TrajVLM is the first system to combine drone-based trajectory extraction with grounded VLM reasoning for congestion cause attribution.",
+          "tags": [
+            "VLM/MLLM",
+            "reasoning",
+            "diffusion",
+            "boundary/frequency",
+            "video",
+            "UAV/small-object",
+            "causal/counterfactual",
+            "grounded vision"
+          ],
+          "score": 117
+        },
+        {
           "title": "GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields",
           "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Yasuki_GeoProg3D_Compositional_Visual_Reasoning_for_City-Scale_3D_Language_Fields_ICCV_2025_paper.html",
           "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Yasuki_GeoProg3D_Compositional_Visual_Reasoning_for_City-Scale_3D_Language_Fields_ICCV_2025_paper.pdf",
@@ -1496,33 +1522,6 @@
             "self-supervised"
           ],
           "score": 110
-        },
-        {
-          "title": "A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets",
-          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.html",
-          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.pdf",
-          "authors": [
-            "Zexi Jia",
-            "Chuanwei Huang",
-            "Hongyan Fei",
-            "Yeshuang Zhu",
-            "Zhiqiang Yuan",
-            "Ying Deng",
-            "Jiapei Zhang",
-            "Jinchao Zhang",
-            "Jie Zhou"
-          ],
-          "source": "ICCV 2025",
-          "published": "2025",
-          "summary": "Vision-language models (VLMs) often struggle with compositional reasoning due to insufficient high-quality image-text data. To tackle this challenge, we propose a novel block-based diffusion approach that automatically generates counterfactual datasets without manual annotation. Our method utilizes large language models to identify entities and their spatial relationships. It then independently generates image blocks as \"puzzle pieces\" coherently arranged according to specified compositional rules. This process creates diverse, high-fidelity counterfactual image-text pairs with precisely controlled variations. In addition, we introduce a specialized loss function that differentiates inter-set from intra-set samples, enhancing training efficiency and reducing the need for negative samples. Experiments demonstrate that fine-tuning VLMs with our counterfactual datasets significantly improves visual reasoning performance. Our approach achieves state-of-the-art results across multiple benchmarks while using substantially less training data than existing methods.",
-          "tags": [
-            "VLM/MLLM",
-            "reasoning",
-            "diffusion",
-            "causal/counterfactual",
-            "compositionality"
-          ],
-          "score": 108
         }
       ]
     }
