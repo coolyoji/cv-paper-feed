@@ -1651,7 +1651,7 @@ def why_read(paper: Paper) -> str:
 
 
 def short_summary(paper: Paper) -> str:
-    return sentence_intro(paper.summary, max_chars=210)
+    return sentence_intro(paper.summary, max_chars=140)
 
 
 def task_setting(paper: Paper) -> str:
@@ -1818,10 +1818,13 @@ def join_limited(sentences: list[str], max_chars: int = 650) -> str:
     result: list[str] = []
     length = 0
     for sentence in sentences:
-        if result and length + len(sentence) > max_chars:
+        separator = 1 if result else 0
+        if length + separator + len(sentence) > max_chars:
+            if not result:
+                return sentence_intro(sentence, max_chars=max_chars)
             break
         result.append(sentence)
-        length += len(sentence)
+        length += separator + len(sentence)
     return " ".join(result)
 
 
@@ -1832,7 +1835,7 @@ def generated_abstract_explanation(paper: Paper) -> str:
     sentences = abstract_sentences(paper.summary)
     if not sentences:
         return "摘要文本为空，暂时无法生成可靠详解。"
-    problem = join_limited(sentences[:2], max_chars=420)
+    problem = join_limited(sentences[:2], max_chars=260)
     method_markers = [
         "we propose",
         "we present",
@@ -1857,22 +1860,22 @@ def generated_abstract_explanation(paper: Paper) -> str:
         sentence
         for sentence in sentences[1:]
         if any(marker in sentence.lower() for marker in method_markers)
-    ][:4]
+    ][:2]
     if not method_sentences:
         method_sentences = sentences[2:5] or sentences[1:3]
     result_sentences = [
         sentence
         for sentence in sentences
         if any(marker in sentence.lower() for marker in result_markers)
-    ][:2]
-    method_text = join_limited(method_sentences, max_chars=760)
-    result_text = join_limited(result_sentences, max_chars=420)
+    ][:1]
+    method_text = join_limited(method_sentences, max_chars=360)
+    result_text = join_limited(result_sentences, max_chars=220)
     if not result_text:
         result_text = "摘要未给出具体数值，需要到实验部分核对数据集、指标和对比结果。"
     return (
         f"研究问题：{problem} "
-        f"方法与流程：{method_core(paper)} 摘要中的具体做法包括：{method_text} "
-        f"摘要结论：{result_text}"
+        f"方法主线：{method_text or method_core(paper)} "
+        f"实验证据：{result_text}"
     )
 
 
@@ -2065,7 +2068,7 @@ def borrow_points(paper: Paper) -> str:
         points.append("小目标特征保真、多尺度融合、密集遮挡处理、轻量化实时推理")
     if not points:
         points.append("任务建模、损失函数、消融组织方式")
-    return "；".join(points) + "。"
+    return "；".join(points[:2]) + "。"
 
 
 def improvement_ideas(paper: Paper) -> str:
@@ -2269,6 +2272,34 @@ def md_paper_item(idx: int, paper: Paper) -> str:
         ]
     )
     return "\n".join(parts)
+
+
+def md_compact_paper_item(idx: int, paper: Paper) -> str:
+    tag_text = ", ".join(paper.tags)
+    links = f"[paper]({paper.url})"
+    if paper.pdf:
+        links += f" / [pdf]({paper.pdf})"
+    parts = [
+        f"{idx}. **{paper.title}**",
+        f"   - Source: {paper.source}" + (f", {paper.published}" if paper.published else ""),
+    ]
+    if tag_text:
+        parts.append(f"   - Tags: {tag_text}")
+    parts.extend(
+        [
+            f"   - 核心机制：{method_core(paper)}",
+            f"   - 跟踪理由：{why_read(paper)}",
+            f"   - Links: {links}",
+        ]
+    )
+    return "\n".join(parts)
+
+
+def md_paper_reference(idx: int, paper: Paper, first_section: str) -> str:
+    return (
+        f"{idx}. **{paper.title}** - 已在“{first_section}”列出；"
+        f"此处仅保留方向归属。[paper]({paper.url})"
+    )
 
 
 def select_feed_sections(
@@ -2994,46 +3025,54 @@ def render_snapshot_markdown(snapshot: dict) -> str:
         "## 当日精读队列",
         "",
     ]
-    for i, paper in enumerate(highlights, 1):
-        lines.append(md_paper_item(i, paper))
-        lines.append("")
+    rendered_sections: dict[str, str] = {}
+
+    def append_papers(
+        section_name: str,
+        papers: list[Paper],
+        *,
+        detailed: bool = False,
+    ) -> None:
+        for i, paper in enumerate(papers, 1):
+            title_key = normalized_note_title_key(paper.title)
+            first_section = rendered_sections.get(title_key)
+            if first_section:
+                lines.append(md_paper_reference(i, paper, first_section))
+            else:
+                lines.append(
+                    md_paper_item(i, paper)
+                    if detailed
+                    else md_compact_paper_item(i, paper)
+                )
+                rendered_sections[title_key] = section_name
+            lines.append("")
+
+    append_papers("当日精读队列", highlights, detailed=True)
 
     lines.extend(["## 高质量来源优先读：CCF-A/B 与顶刊顶会", ""])
-    for i, paper in enumerate(quality, 1):
-        lines.append(md_paper_item(i, paper))
-        lines.append("")
+    append_papers("高质量来源优先读", quality)
 
     lines.extend(["## COD / 伪装目标检测相关", ""])
-    for i, paper in enumerate(cod, 1):
-        lines.append(md_paper_item(i, paper))
-        lines.append("")
+    append_papers("COD / 伪装目标检测相关", cod)
 
     lines.extend(["## 无人机 / 航拍小目标", ""])
-    for i, paper in enumerate(uav, 1):
-        lines.append(md_paper_item(i, paper))
-        lines.append("")
+    append_papers("无人机 / 航拍小目标", uav)
 
     if show_fire_topics:
         lines.extend(["## 火灾/烟雾与多光谱感知", ""])
         if fire_multispectral:
-            for i, paper in enumerate(fire_multispectral, 1):
-                lines.append(md_paper_item(i, paper))
-                lines.append("")
+            append_papers("火灾/烟雾与多光谱感知", fire_multispectral)
         else:
             lines.extend(["- 本日未筛到可核验且达到质量阈值的候选；不为凑数收录。", ""])
 
         lines.extend(["## 火灾监测大模型", ""])
         if fire_foundation:
-            for i, paper in enumerate(fire_foundation, 1):
-                lines.append(md_paper_item(i, paper))
-                lines.append("")
+            append_papers("火灾监测大模型", fire_foundation)
         else:
             lines.extend(["- 本日未筛到可核验且达到质量阈值的候选；不为凑数收录。", ""])
 
     lines.extend(["## 泛计算机视觉方法池", ""])
-    for i, paper in enumerate(broad, 1):
-        lines.append(md_paper_item(i, paper))
-        lines.append("")
+    append_papers("泛计算机视觉方法池", broad)
 
     lines.extend(
         [

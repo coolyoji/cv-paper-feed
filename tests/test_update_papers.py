@@ -503,6 +503,39 @@ class CuratedNoteTests(unittest.TestCase):
 
         self.assertIn(f"- 摘要详解：{note['摘要详解']}", rendered)
 
+    def test_compact_item_keeps_tracking_signal_without_full_note_schema(self):
+        paper = update_papers.Paper(
+            title="Compact Candidate",
+            url="https://example.com/compact",
+            pdf="https://example.com/compact.pdf",
+            source="CVPR 2026",
+            published="2026",
+            tags=["uncertainty/calibration"],
+        )
+
+        rendered = update_papers.md_compact_paper_item(1, paper)
+
+        self.assertIn("- 核心机制：", rendered)
+        self.assertIn("- 跟踪理由：", rendered)
+        self.assertIn("[pdf]", rendered)
+        self.assertNotIn("- 摘要详解：", rendered)
+        self.assertNotIn("- 可改进点：", rendered)
+
+    def test_generated_abstract_explanation_obeys_compact_budget(self):
+        sentence = "We propose " + "a" * 900 + "."
+        paper = update_papers.Paper(
+            title="Long Abstract",
+            url="https://example.com/long",
+            summary="Problem statement. " + sentence + " Results outperform baselines.",
+        )
+
+        explanation = update_papers.generated_abstract_explanation(paper)
+
+        self.assertLessEqual(len(explanation), 900)
+        self.assertIn("研究问题：", explanation)
+        self.assertIn("方法主线：", explanation)
+        self.assertIn("实验证据：", explanation)
+
     def test_verified_note_file_fails_closed_on_missing_field(self):
         with tempfile.TemporaryDirectory() as tmp:
             notes_path = Path(tmp) / "notes.json"
@@ -1058,6 +1091,35 @@ class FireTopicTests(unittest.TestCase):
         self.assertIn("0 篇火灾/烟雾与多光谱感知", markdown)
         self.assertIn("1 篇火灾监测大模型", markdown)
         self.assertIn("本日未筛到可核验且达到质量阈值的候选", markdown)
+
+    def test_repeated_paper_is_expanded_once_and_cross_referenced(self):
+        paper = update_papers.Paper(
+            title="Shared Candidate",
+            url="https://example.com/shared",
+            source="CVPR 2026",
+            tags=["COD", "UAV/small-object"],
+        )
+        item = update_papers.paper_to_dict(paper)
+        snapshot = {
+            "date": "2026-08-24",
+            "generated_at": "2026-08-24 09:00",
+            "total_selected": 1,
+            "sections": {
+                "highlights": [],
+                "quality": [item],
+                "cod": [item],
+                "uav": [item],
+                "fire_multispectral": [],
+                "fire_foundation": [],
+                "broad": [],
+            },
+        }
+
+        markdown = update_papers.render_snapshot_markdown(snapshot)
+
+        self.assertEqual(markdown.count("- 核心机制："), 1)
+        self.assertEqual(markdown.count("此处仅保留方向归属"), 2)
+        self.assertIn("已在“高质量来源优先读”列出", markdown)
 
     def test_fire_topics_start_on_july_14(self):
         self.assertFalse(update_papers.fire_topic_enabled(date(2026, 7, 13)))
