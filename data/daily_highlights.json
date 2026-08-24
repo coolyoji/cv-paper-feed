@@ -4215,5 +4215,163 @@
         "7"
       ]
     }
+  ],
+  "2026-08-24": [
+    {
+      "title": "Enhancing Accuracy of Uncertainty Estimation in Appearance-based Gaze Tracking with Probabilistic Evaluation and Calibration",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zheng_Enhancing_Accuracy_of_Uncertainty_Estimation_in_Appearance-based_Gaze_Tracking_with_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zheng_Enhancing_Accuracy_of_Uncertainty_Estimation_in_Appearance-based_Gaze_Tracking_with_CVPR_2026_paper.pdf",
+      "authors": [
+        "Qiaojie Zheng",
+        "Jiucai Zhang",
+        "Amy Zhang",
+        "Xiaoli Zhang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "用总体分位数覆盖而非误差相关性评估 gaze 不确定性，再以少量目标域样本拟合单调概率映射，在不重训视线网络的条件下修正域偏移下的过度自信。",
+      "tags": [
+        "uncertainty calibration",
+        "selective prediction",
+        "gaze estimation",
+        "domain shift",
+        "weak-evidence perception"
+      ],
+      "score": 98,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "title": "FLoMo-Net: A Novel Task-Adaptive Mixture of Experts Routing Framework with Frequency and Uncertainty Correction for Medical Image Segmentation",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Ahmed_FLoMo-Net_A_Novel_Task-Adaptive_Mixture_of_Experts_Routing_Framework_with_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Ahmed_FLoMo-Net_A_Novel_Task-Adaptive_Mixture_of_Experts_Routing_Framework_with_WACV_2026_paper.pdf",
+      "authors": [
+        "Md Rayhan Ahmed",
+        "Patricia Lasserre"
+      ],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "以局部—全局软路由、双轴注意、DCT频率重标定和熵/跨层分歧纠错串联医学分割U形网络，分别处理尺度差异、弱边界与假阳性/假阴性。",
+      "tags": [
+        "medical segmentation",
+        "mixture of experts",
+        "frequency modeling",
+        "uncertainty correction",
+        "weak boundaries"
+      ],
+      "score": 97,
+      "formula_tags": []
+    },
+    {
+      "title": "Probabilistic Prototype Calibration of Vision-language Models for Generalized Few-shot Semantic Segmentation",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Liu_Probabilistic_Prototype_Calibration_of_Vision-language_Models_for_Generalized_Few-shot_Semantic_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Probabilistic_Prototype_Calibration_of_Vision-language_Models_for_Generalized_Few-shot_Semantic_ICCV_2025_paper.pdf",
+      "authors": [
+        "Jie Liu",
+        "Jiayi Shen",
+        "Pan Zhou",
+        "Jan-Jakob Sonke",
+        "Efstratios Gavves"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "FewCLIP把CLIP文本原型校准成由少量像素支持条件化的Gaussian分布，以采样原型覆盖类内变化，并在广义与连续少样本分割中同时保护base和novel类别。",
+      "tags": [
+        "few-shot segmentation",
+        "vision-language",
+        "probabilistic prototypes",
+        "continual learning",
+        "open-world transfer"
+      ],
+      "score": 96,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ]
+    },
+    {
+      "title": "Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liao_Multi-Prototype_Compactness_and_Boundary-Aware_Synthesis_for_Unsupervised_Anomaly_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liao_Multi-Prototype_Compactness_and_Boundary-Aware_Synthesis_for_Unsupervised_Anomaly_Detection_CVPR_2026_paper.pdf",
+      "authors": [
+        "Kailun Liao",
+        "Jianfeng Yang",
+        "Tao Tao",
+        "Wenfei Wu",
+        "Jiaming Jiang",
+        "Jinsheng Xiao"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "PGBL用全局锚点和多簇原型保留正常多模态，再从簇内低密度边界生成并过滤伪异常，以判别器把训练期hard negatives压入固定成本的异常决策面。",
+      "tags": [
+        "unsupervised anomaly detection",
+        "multi-prototype",
+        "boundary synthesis",
+        "hard negatives",
+        "open-set perception"
+      ],
+      "score": 95,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ]
+    },
+    {
+      "title": "RAMEN: Resolution-Adjustable Multimodal Encoder for Earth Observation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Houdre_RAMEN_Resolution-Adjustable_Multimodal_Encoder_for_Earth_Observation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Houdre_RAMEN_Resolution-Adjustable_Multimodal_Encoder_for_Earth_Observation_CVPR_2026_paper.pdf",
+      "authors": [
+        "Nicolas Houdré",
+        "Diego Marcos",
+        "Hugo Riffaud de Turckheim",
+        "Dino Ienco",
+        "Laurent Wendling",
+        "Camille Kurtz",
+        "Sylvain Lobry"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "RAMEN用波长/类型条件投影、GSD比率驱动的卷积专家和时间注意，把异构地球观测模态映射到共享token，并允许下游按任务调节推理分辨率。",
+      "tags": [
+        "UAV/aerial",
+        "earth observation",
+        "multimodal foundation model",
+        "resolution adaptation",
+        "remote sensing"
+      ],
+      "score": 94,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    }
   ]
 }
