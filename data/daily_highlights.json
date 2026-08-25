@@ -4373,5 +4373,198 @@
         "7"
       ]
     }
+  ],
+  "2026-08-25": [
+    {
+      "title": "Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Sun_Uncertainty-Aware_Knowledge_Distillation_for_Multimodal_Large_Language_Models_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Sun_Uncertainty-Aware_Knowledge_Distillation_for_Multimodal_Large_Language_Models_CVPR_2026_paper.pdf",
+      "authors": [
+        "Jingchen Sun",
+        "Shaobo Han",
+        "Deep Patel",
+        "Wataru Kohno",
+        "Can Jin",
+        "Changyou Chen"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "Beta-KD把多项蒸馏损失的权重改写为可学习的Gibbs不确定性变量，使学生按任务或样本自适应决定该相信标签、教师分布还是中间特征。",
+      "tags": [
+        "multimodal knowledge distillation",
+        "uncertainty weighting",
+        "MLLM",
+        "selective supervision"
+      ],
+      "score": 98,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15"
+      ]
+    },
+    {
+      "title": "Knowledge Bridger: Towards Training-Free Missing Modality Completion",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Ke_Knowledge_Bridger_Towards_Training-Free_Missing_Modality_Completion_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Ke_Knowledge_Bridger_Towards_Training-Free_Missing_Modality_Completion_CVPR_2025_paper.pdf",
+      "authors": [
+        "Guanzhou Ke",
+        "Shengfeng He",
+        "Xiaoli Wang",
+        "Bo Wang",
+        "Guoqing Chao",
+        "Yuanyang Zhang",
+        "Yi Xie",
+        "Hexing Su"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "Knowledge Bridger先让大模型构建模态知识图，再生成多份缺失模态候选并按知识、CLIP与BLIP一致性排序，以零训练方式补全图像或文本。",
+      "tags": [
+        "missing modality",
+        "training-free completion",
+        "multimodal generation",
+        "reliability"
+      ],
+      "score": 97,
+      "formula_tags": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "title": "Rethinking Epistemic and Aleatoric Uncertainty for Active Open-Set Annotation: An Energy-Based Approach",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Zong_Rethinking_Epistemic_and_Aleatoric_Uncertainty_for_Active_Open-Set_Annotation_An_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Zong_Rethinking_Epistemic_and_Aleatoric_Uncertainty_for_Active_Open-Set_Annotation_An_CVPR_2025_paper.pdf",
+      "authors": [
+        "Chen-Chen Zong",
+        "Sheng-Jun Huang"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "EAOA先用低认知不确定性排除开放集未知类，再在候选中选择高数据不确定性样本，把标注预算集中到已知类的真实决策边界。",
+      "tags": [
+        "active learning",
+        "open-set annotation",
+        "epistemic uncertainty",
+        "aleatoric uncertainty"
+      ],
+      "score": 96,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ]
+    },
+    {
+      "title": "UNICL-SAM: Uncertainty-Driven In-Context Segmentation with Part Prototype Discovery",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Sheng_UNICL-SAM_Uncertainty-Driven_In-Context_Segmentation_with_Part_Prototype_Discovery_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Sheng_UNICL-SAM_Uncertainty-Driven_In-Context_Segmentation_with_Part_Prototype_Discovery_CVPR_2025_paper.pdf",
+      "authors": [
+        "Dianmo Sheng",
+        "Dongdong Chen",
+        "Zhentao Tan",
+        "Qiankun Liu",
+        "Qi Chu",
+        "Tao Gong",
+        "Bin Liu",
+        "Jing Han",
+        "Wenbin Tu",
+        "Shengwei Xu",
+        "Nenghai Yu"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "UNICL-SAM把支持图建成概率图，用节点不确定性指导图增强和特征修正，再聚类部件原型为SAM生成提示，从而提高跨类别少样本分割。",
+      "tags": [
+        "in-context segmentation",
+        "SAM",
+        "uncertainty graph",
+        "part prototypes"
+      ],
+      "score": 95,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ]
+    },
+    {
+      "title": "U-Know-DiffPAN: An Uncertainty-aware Knowledge Distillation Diffusion Framework with Details Enhancement for PAN-Sharpening",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Kim_U-Know-DiffPAN_An_Uncertainty-aware_Knowledge_Distillation_Diffusion_Framework_with_Details_Enhancement_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_U-Know-DiffPAN_An_Uncertainty-aware_Knowledge_Distillation_Diffusion_Framework_with_Details_Enhancement_CVPR_2025_paper.pdf",
+      "authors": [
+        "Sungpyo Kim",
+        "Jeonghyeok Do",
+        "Jaehyup Lee",
+        "Munchurl Kim"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "U-Know-DiffPAN以频域教师恢复全色锐化细节，再用预测不确定性给学生的硬标签、软输出和中间特征蒸馏分配空间权重。",
+      "tags": [
+        "PAN-sharpening",
+        "remote sensing",
+        "uncertainty distillation",
+        "frequency enhancement",
+        "UAV/aerial"
+      ],
+      "score": 94,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ]
+    }
   ]
 }

@@ -69,92 +69,92 @@
 </head>
 <body>
 <main>
-<h1>2026-08-24 CV Paper Feed</h1>
+<h1>2026-08-25 CV Paper Feed</h1>
 <p><a href="../index.html">返回首页</a></p>
-<p>Last updated: 2026-08-24 10:40 Asia/Shanghai</p>
-<p>Candidate pool: 11069 papers</p>
+<p>Last updated: 2026-08-25 10:41 Asia/Shanghai</p>
+<p>Candidate pool: 11223 papers</p>
 <p>慢读模式：本页只展示 5 篇当日精读、10 篇高质量来源、12 篇 COD 相关、10 篇无人机小目标、10 篇火灾/烟雾与多光谱感知、4 篇火灾监测大模型、12 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。</p>
 <p>精读队列优先选择能给 COD 带来新问题设定或新方法范式的论文，例如开放世界、目标发现、反事实/因果、不确定性、自监督稠密表征、对象中心建模和视觉推理；纯 COD 直系论文主要作为背景和对照。</p>
 <h2>当日精读队列</h2>
 <article class='paper'>
-<h3><strong>Enhancing Accuracy of Uncertainty Estimation in Appearance-based Gaze Tracking with Probabilistic Evaluation and Calibration</strong></h3>
+<h3><strong>Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models</strong></h3>
 <p class='meta'>Source: CVPR 2026, 2026</p>
-<p class='meta'>Authors: Qiaojie Zheng, Jiucai Zhang, Amy Zhang, Xiaoli Zhang</p>
-<p class='meta'>Tags: uncertainty calibration, selective prediction, gaze estimation, domain shift, weak-evidence perception</p>
-<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Zheng_Enhancing_Accuracy_of_Uncertainty_Estimation_in_Appearance-based_Gaze_Tracking_with_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Zheng_Enhancing_Accuracy_of_Uncertainty_Estimation_in_Appearance-based_Gaze_Tracking_with_CVPR_2026_paper.pdf">pdf</a></p>
-<p class='meta'>论文：Enhancing Accuracy of Uncertainty Estimation in Appearance-based Gaze Tracking with Probabilistic Evaluation and Calibration</p>
-<p class='meta'>一句话总结：用总体分位数覆盖而非误差相关性评估 gaze 不确定性，再以少量目标域样本拟合单调概率映射，在不重训视线网络的条件下修正域偏移下的过度自信。</p>
-<p class='meta'>任务设定：输入眼部图像，基础网络输出 yaw/pitch 的预测分布；系统用有标签目标域校准子集估计覆盖曲线，输出经后处理修正的分位数及 CPE。假设校准子集代表后续部署分布，不处理无标签漂移或联合二维置信域。</p>
-<p class='meta'>摘要详解：论文指出，误差—不确定性相关性只能说明困难样本是否排序靠前，不能检验模型声称的90%分位数是否真的覆盖90%真实角度。作者先在测试总体上统计每个名义概率的经验覆盖误差，再将整条概率网格的平方误差汇成CPE；随后用约50个目标域有标签样本拟合单调isotonic映射，把期望覆盖反查为原模型应查询的分位数，推理时无需重训gaze网络。校准对yaw与pitch分别拟合，单调约束避免较高名义概率反而映到较低覆盖，但没有表示两轴协方差。MPIIGaze/RTGene、ResNet18/50、跨受试者与跨数据集八个案例中，CPE由17.50–27.21降至4.63–5.26，作者称均改善超过70%；但校准后95%区间实际覆盖仍约86.5%–89.0%，且一例角误差13.76升至14.24度。论文的n=11、i从0到n及0.1间隔存在内部网格计数冲突，复现必须核对代码中的实际概率列表和分母。方法控制的是频率覆盖失配，不等于消除epistemic、OOD或分布漂移风险。</p>
-<p class='meta'>实验结论：八个模型/数据划分组合都降低 CPE，多数组合也降低角误差；覆盖率仍未达到名义 95%，说明单调后处理缓解而未消除失配。作者未提供持续漂移、极端头姿或不同校准样本量的完整风险曲线。</p>
-<p class='meta'>和我课题的关系：COD可按伪装强度校准mask覆盖，UAV可按目标尺度与模糊度校准检测/跟踪风险，火灾可按天气、昼夜和RGB-T可用性校准早烟报警；三者都需分组或时序校准，不能直接共享gaze的一维静态映射。</p>
-<p class='meta'>可借鉴点：把不确定性评估改成可解释的coverage声明；用小规模目标域标签做单调后处理；同时报告CPE、任务误差和risk-coverage，而不是把置信度相关性当成可靠性。</p>
-<p class='meta'>可改进点：公开实际概率网格与端点截断；比较温度缩放、isotonic、分组conformal和在线滑窗校准；按漂移强度报告覆盖缺口，并用固定风险预算测试拒判收益是否来自真实校准而非阈值收紧。</p>
-<p class='meta'>是否值得精读：值得。四个公式和两套算法把覆盖评估与后处理连接清楚，尤其适合建立弱证据感知的风险口径；目标域标签依赖、二维相关性和持续漂移仍是部署边界。</p>
+<p class='meta'>Authors: Jingchen Sun, Shaobo Han, Deep Patel, Wataru Kohno, Can Jin et al.</p>
+<p class='meta'>Tags: multimodal knowledge distillation, uncertainty weighting, MLLM, selective supervision</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Sun_Uncertainty-Aware_Knowledge_Distillation_for_Multimodal_Large_Language_Models_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Sun_Uncertainty-Aware_Knowledge_Distillation_for_Multimodal_Large_Language_Models_CVPR_2026_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models</p>
+<p class='meta'>一句话总结：Beta-KD把多项蒸馏损失的权重改写为可学习的Gibbs不确定性变量，使学生按任务或样本自适应决定该相信标签、教师分布还是中间特征。</p>
+<p class='meta'>任务设定：给定冻结的7B多模态教师、1.7B学生及有标签图文问答样本，训练学生输出答案；方法学习任务级或样本级损失尺度。它假设教师总体可靠，不做缺失模态、OOD拒答或部署期校准。</p>
+<p class='meta'>摘要详解：论文针对多模态大模型蒸馏中固定损失权重依赖人工调参、不同样本的教师可信度又不一致的问题。作者把每个蒸馏目标写成Gibbs能量项，以MAP推导得到“损失除以不确定性并加对数正则”的权衡；任务级版本直接学习全局变量，样本级版本由小型Beta网络读取图像和文本特征生成权重。对数项防止模型靠无限放大尺度逃避困难损失，因而尺度和拟合误差必须共同优化。训练仍联合交叉熵、分布匹配和特征蒸馏，推理只保留学生。ScienceQA上任务级和样本级最高分别提升4.0与4.7个准确率点，六基准平均最高提升2.0点。</p>
+<p class='meta'>实验结论：ScienceQA三次运行及六个多模态基准都支持自适应权重优于手调权重，样本级通常更强；但论文主要报告任务准确率，没有证明所学尺度经过概率校准或能识别错误教师。</p>
+<p class='meta'>和我课题的关系：可迁移的是按证据质量调节监督来源：COD调纹理与边界损失，UAV调高低分辨率分支，火灾调RGB、热红外与时序教师；区别是这些任务需要像素/时间局部权重，而非整样本问答权重。</p>
+<p class='meta'>可借鉴点：用概率推导替代手调多损失权重；把任务级尺度升级为输入条件尺度。</p>
+<p class='meta'>可改进点：最大风险是把错误教师的高置信输出继续放大。可注入可控教师错误并比较固定权重、Beta-KD与带拒绝门版本；若错误率升高时Beta权重不下降且选择风险不改善，就否定其“可信度自适应”解释。</p>
+<p class='meta'>是否值得精读：值得。式（1）至（15）完整连接Gibbs建模、MAP近似和训练目标；真正的新意是损失权重的概率化，可靠性含义仍待验证。</p>
 </article>
 <article class='paper'>
-<h3><strong>FLoMo-Net: A Novel Task-Adaptive Mixture of Experts Routing Framework with Frequency and Uncertainty Correction for Medical Image Segmentation</strong></h3>
-<p class='meta'>Source: WACV 2026, 2026</p>
-<p class='meta'>Authors: Md Rayhan Ahmed, Patricia Lasserre</p>
-<p class='meta'>Tags: medical segmentation, mixture of experts, frequency modeling, uncertainty correction, weak boundaries</p>
-<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/WACV2026/html/Ahmed_FLoMo-Net_A_Novel_Task-Adaptive_Mixture_of_Experts_Routing_Framework_with_WACV_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Ahmed_FLoMo-Net_A_Novel_Task-Adaptive_Mixture_of_Experts_Routing_Framework_with_WACV_2026_paper.pdf">pdf</a></p>
-<p class='meta'>论文：FLoMo-Net: A Novel Task-Adaptive Mixture of Experts Routing Framework with Frequency and Uncertainty Correction for Medical Image Segmentation</p>
-<p class='meta'>一句话总结：以局部—全局软路由、双轴注意、DCT频率重标定和熵/跨层分歧纠错串联医学分割U形网络，分别处理尺度差异、弱边界与假阳性/假阴性。</p>
-<p class='meta'>任务设定：输入单张2D医学图像，输出像素级器官、病灶或息肉掩码。模型在四个数据集分别训练评估，假设单模态图像和监督mask可用；没有体数据连续性、跨模态缺失或校准式风险输出。</p>
-<p class='meta'>摘要详解：FLoMo-Net针对医学结构尺度差异、边界模糊和解码误差累积，把四个模块嵌入U形网络。LoGo-MoE由GAP特征生成softmax路由，在七个局部专家间加权，再与global replicate通过差异门残差融合；DASA用全局通道与轴向空间注意补足长程上下文；FAMSR将特征做二维DCT，分离低高频，以三种膨胀分支、SE和空间门重标定后回到空间域；FPFN-CAM结合分割熵与encoder-decoder余弦分歧形成纠错mask，对假阳性/假阴性做残差修正。decoder逐层接收跳连并重复校正，训练以Focal Tversky和BCE-Dice组合约束不平衡区域与轮廓。软路由推理仍执行全部专家，不能把权重稀疏直接解释为条件计算。论文主方法没有显式编号公式，不能自造式号。B2在CVC/BUSI/MC/ACDC的mDSC为96.02/93.96/98.31/92.70；去掉LoGo-MoE后BUSI/ACDC/CVC降至88.84/89.48/91.13。二维DCT为31.42M参数、104.05GFLOPs；Octave仅在ACDC略高，MC反而略低。B0以2.06M参数、6.82GFLOPs和3.36ms提供轻量对照。熵与分歧只是启发式纠错信号，论文没有证明其经过不确定性校准或OOD验证。</p>
-<p class='meta'>实验结论：四个2D数据集和模块移除显示路由贡献最大，频率、注意与纠错继续带来增量；B0仅2.06M参数、6.82GFLOPs、3.36ms。结果支持组合有效，但累加消融未完全区分模块交互。</p>
-<p class='meta'>和我课题的关系：COD可借频率与跨层分歧恢复弱边缘，UAV可用尺度专家保护tiny-object高频，火灾可把FP/FN纠错扩展到RGB-T和时间增长；医学静态实体边界不等同伪装相似、下采样损失或半透明动态烟雾。</p>
-<p class='meta'>可借鉴点：将route-select-refine-correct分成可审计模块；用低/高频和多膨胀分支兼顾形状与边界；把解码熵与跨层不一致用作局部残差门，而非重做整张预测。</p>
-<p class='meta'>可改进点：以匹配参数/FLOPs的单专家和普通卷积做正交对照；报告路由熵、专家占用与真实延迟；把纠错分数做ECE/risk-coverage校准；在3D、跨模态与退化输入下验证边界。</p>
-<p class='meta'>是否值得精读：值得。无编号但完整的四模块数据流适合逐步复现，频域与纠错接口对弱证据任务有直接价值；效率口径和不确定性命名需保守解读。</p>
+<h3><strong>Knowledge Bridger: Towards Training-Free Missing Modality Completion</strong></h3>
+<p class='meta'>Source: CVPR 2025, 2025</p>
+<p class='meta'>Authors: Guanzhou Ke, Shengfeng He, Xiaoli Wang, Bo Wang, Guoqing Chao et al.</p>
+<p class='meta'>Tags: missing modality, training-free completion, multimodal generation, reliability</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Ke_Knowledge_Bridger_Towards_Training-Free_Missing_Modality_Completion_CVPR_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Ke_Knowledge_Bridger_Towards_Training-Free_Missing_Modality_Completion_CVPR_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Knowledge Bridger: Towards Training-Free Missing Modality Completion</p>
+<p class='meta'>一句话总结：Knowledge Bridger先让大模型构建模态知识图，再生成多份缺失模态候选并按知识、CLIP与BLIP一致性排序，以零训练方式补全图像或文本。</p>
+<p class='meta'>任务设定：输入图文多模态样本，其中一种模态随机缺失；输出合成图像或文本，再交给现成分类器。方法不更新生成器或下游模型，假设可调用LMM、扩散模型和跨模态相似度模型。</p>
+<p class='meta'>摘要详解：论文指出，缺失模态方法常需针对数据集训练，直接生成又容易语义漂移。Knowledge Bridger先用LMM抽取实体与关系形成模态知识图，再通过实体替换产生多条候选提示；文本由LMM生成，图像由SDXL或Cheff生成。知识图负责限定候选必须保留的实体关系，多候选机制则把生成随机性转成可筛选的假设。候选排序把知识图嵌入余弦、CLIP图文相似度和BLIP相似度相加，取最高分补全缺失模态，全程不训练参数。COCO、MM-IMDb和IU X-ray在缺失率0.3至0.7上验证；IU X-ray缺失率0.7时Qwen-VL-7B的F1/AP/SS为46.3/70.5/19.8，较此前方法高9.5/8.6/6.5点；去掉知识建模时三项最多下降17.5/29.2/13.7点。</p>
+<p class='meta'>实验结论：知识建模与五候选排序是关键：IU X-ray去掉知识建模最多下降29.2点，候选从5减到1最多下降16.4点；五候选需40秒，增至15个只小幅增益却需132秒。</p>
+<p class='meta'>和我课题的关系：可把缺失证据补全用于COD多模态、UAV遮挡/传感器掉线和火灾RGB-T缺失；但生成的“合理图像”不是现场观测，安全任务必须把补全与真实证据分开并允许拒判。</p>
+<p class='meta'>可借鉴点：先显式建知识约束再生成；用多种独立相似度筛选候选。</p>
+<p class='meta'>可改进点：核心风险是语义正确但事实虚构。应人为遮蔽已知模态，以真实模态作oracle，比较补全、零填充和拒判；若分类提升伴随像素/病灶一致性下降或校准风险升高，就否定“恢复证据”的解释。</p>
+<p class='meta'>是否值得精读：值得。方法只有式（1）与式（2），重点不在数学复杂度，而在知识图—生成—筛选链及其事实性边界。</p>
 </article>
 <article class='paper'>
-<h3><strong>Probabilistic Prototype Calibration of Vision-language Models for Generalized Few-shot Semantic Segmentation</strong></h3>
-<p class='meta'>Source: ICCV 2025, 2025</p>
-<p class='meta'>Authors: Jie Liu, Jiayi Shen, Pan Zhou, Jan-Jakob Sonke, Efstratios Gavves</p>
-<p class='meta'>Tags: few-shot segmentation, vision-language, probabilistic prototypes, continual learning, open-world transfer</p>
-<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Liu_Probabilistic_Prototype_Calibration_of_Vision-language_Models_for_Generalized_Few-shot_Semantic_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Probabilistic_Prototype_Calibration_of_Vision-language_Models_for_Generalized_Few-shot_Semantic_ICCV_2025_paper.pdf">pdf</a></p>
-<p class='meta'>论文：Probabilistic Prototype Calibration of Vision-language Models for Generalized Few-shot Semantic Segmentation</p>
-<p class='meta'>一句话总结：FewCLIP把CLIP文本原型校准成由少量像素支持条件化的Gaussian分布，以采样原型覆盖类内变化，并在广义与连续少样本分割中同时保护base和novel类别。</p>
-<p class='meta'>任务设定：给定冻结CLIP、base类训练数据和novel类少量像素标注，对查询图像同时分割base、novel与背景；连续设置还需跨session保留旧原型。方法假设类名和CLIP先验可用。</p>
-<p class='meta'>摘要详解：FewCLIP针对广义少样本分割中固定文本原型与少量视觉样本错位、单一确定性校准无法表达类内变化的问题。基线先由CLIP文本、图像和mask构造类原型；PPC以Hadamard残差融合文本与支持集视觉特征，并把背景原型一同投影。MHCA读取类条件支持特征，估计对角Gaussian的均值和论文称为variance的向量；各类分布组成跨类混合，重参数化采样多个校准原型，查询像素对这些样本求预测均值。训练以分割交叉熵和KL约束视觉后验不要无界偏离文本先验，连续session则拼接已保存原型，不必重训全部CLIP。式（8）版面只写各类Gaussian求和，没有显式mixture weight或归一化，不能替作者补上。PASCAL 1-shot从无PC的base/novel/hIoU 72.57/33.75/46.02，经确定性PC到75.35/51.36/60.79，概率PC达76.68/52.70/62.03；5-shot hIoU为66.44，CIFSS首session相对PKL也报告明显提升。增益证明该构造在基准上有效，但没有ECE、coverage或OOD证据证明采样方差就是可靠epistemic uncertainty。</p>
-<p class='meta'>实验结论：PASCAL-5i、COCO-20i及CIFSS都显示概率PC优于无PC和确定性PC，novel类提升最大。作者承认方法依赖CLIP权重和类名；推理采样次数带来的成本与校准质量尚未充分量化。</p>
-<p class='meta'>和我课题的关系：COD可用视觉支持修正前景/背景文本原型，UAV可做新类别少样本注册，火灾可建flame/smoke/云雾反光多原型；三者还需分别加入边界、尺度保真和RGB-T时序证据。</p>
-<p class='meta'>可借鉴点：用文本原型作可审计先验、视觉支持作条件残差；把单点prototype扩为分布并平均多次预测；在连续学习中只追加原型，减少全模型更新。</p>
-<p class='meta'>可改进点：补全式（8）的实现规范；比较等参数确定性ensemble和不同采样数；报告ECE、risk-coverage、OOD与类名扰动；对连续session测原型存储、旧类遗忘和背景漂移。</p>
-<p class='meta'>是否值得精读：值得。式（1）至（11）完整展示从CLIP基线到概率校准与连续原型的链条；概率解释、采样成本和域外类名依赖仍未被结果充分证明。</p>
+<h3><strong>Rethinking Epistemic and Aleatoric Uncertainty for Active Open-Set Annotation: An Energy-Based Approach</strong></h3>
+<p class='meta'>Source: CVPR 2025, 2025</p>
+<p class='meta'>Authors: Chen-Chen Zong, Sheng-Jun Huang</p>
+<p class='meta'>Tags: active learning, open-set annotation, epistemic uncertainty, aleatoric uncertainty</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Zong_Rethinking_Epistemic_and_Aleatoric_Uncertainty_for_Active_Open-Set_Annotation_An_CVPR_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Zong_Rethinking_Epistemic_and_Aleatoric_Uncertainty_for_Active_Open-Set_Annotation_An_CVPR_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Rethinking Epistemic and Aleatoric Uncertainty for Active Open-Set Annotation: An Energy-Based Approach</p>
+<p class='meta'>一句话总结：EAOA先用低认知不确定性排除开放集未知类，再在候选中选择高数据不确定性样本，把标注预算集中到已知类的真实决策边界。</p>
+<p class='meta'>任务设定：从含已知类与未知类的无标签池中，每轮选择固定预算交给oracle标注，目标是提高已知类分类准确率。系统维护一个C+1类开放集检测器和一个C类目标分类器。</p>
+<p class='meta'>摘要详解：论文指出，开放集主动学习若只追求高不确定性，会把预算浪费在未知类；而未知样本上的类别混淆也不能解释为有价值的数据不确定性。EAOA训练C+1类检测器，以已知/未知自由能和margin损失估计认知不确定性，并融合反向近邻与GMM得到数据驱动分数；先取低认知不确定性的候选，再由C类分类器以主类与次类自由能差挑选高数据不确定性样本，候选规模按目标类比例自适应。CIFAR-10/100与TinyImageNet、多个未知类比例和十轮标注实验中，作者报告准确率与查询精度均领先，且训练开销较低。</p>
+<p class='meta'>实验结论：多数据集曲线支持“两阶段而非直接相加”；单独用高数据不确定性会明显退化。主要结果以曲线呈现，精确读数受图像分辨率限制，论文也未给风险覆盖或标注成本敏感性区间。</p>
+<p class='meta'>和我课题的关系：COD可优先标注可信属于目标域但边界含混的样本，UAV可避免把全新类别当难小目标，火灾可把云雾等未知干扰与早烟歧义分开；前提是检测器能可靠区分未知与弱正例。</p>
+<p class='meta'>可借鉴点：先做开放集资格筛选再评估类别歧义；用目标类比例自适应候选池。</p>
+<p class='meta'>可改进点：最大威胁是低认知不确定性会丢掉罕见真阳性。按目标尺寸、伪装强度和烟龄分层比较EAOA、随机及单阶段采样；若少数困难层的召回下降且总体准确率优势消失，就否定其预算更有效的结论。</p>
+<p class='meta'>是否值得精读：值得。式（1）至（14）清楚区分两种不确定性的角色；真正贡献是查询顺序，能否覆盖罕见弱证据仍未证明。</p>
 </article>
 <article class='paper'>
-<h3><strong>Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection</strong></h3>
-<p class='meta'>Source: CVPR 2026, 2026</p>
-<p class='meta'>Authors: Kailun Liao, Jianfeng Yang, Tao Tao, Wenfei Wu, Jiaming Jiang et al.</p>
-<p class='meta'>Tags: unsupervised anomaly detection, multi-prototype, boundary synthesis, hard negatives, open-set perception</p>
-<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Liao_Multi-Prototype_Compactness_and_Boundary-Aware_Synthesis_for_Unsupervised_Anomaly_Detection_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Liao_Multi-Prototype_Compactness_and_Boundary-Aware_Synthesis_for_Unsupervised_Anomaly_Detection_CVPR_2026_paper.pdf">pdf</a></p>
-<p class='meta'>论文：Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection</p>
-<p class='meta'>一句话总结：PGBL用全局锚点和多簇原型保留正常多模态，再从簇内低密度边界生成并过滤伪异常，以判别器把训练期hard negatives压入固定成本的异常决策面。</p>
-<p class='meta'>任务设定：单个工业产品类别训练时只见正常图像，测试输出像素异常图与image score。冻结ImageNet特征，训练projector和判别器；默认single-class、离线训练，不观察真实缺陷分布。</p>
-<p class='meta'>摘要详解：PGBL认为单一hypersphere会把光照、姿态和纹理等正常子模态之间的空隙也包进正常区，而固定Gaussian伪异常又可能太容易或落回正常簇。MPCC先把projected patch分给最近cluster prototype，用EMA更新全局anchor和局部中心；anchor compactness限制整体范围，cluster compactness收紧局部模式，diversity拆开坍缩中心。BAAS在每个簇内以第k近邻距离找top稀疏边界点，加各向同性Gaussian扰动，再只保留比原边界点更远离所有prototype的候选。Algorithm1按簇计算稀疏度、合并边界、逐点采样和拒绝；DBR用normal/pseudo anomaly的BCE联合更新projector和四层MLP，推理只运行backbone、projector、DBR，不再做KNN或合成，因而把训练期开销压入固定判别器。MVTec的I-AUROC/P-AUROC/P-AUPRO从baseline 96.3/95.1/90.3，经MPCC 97.0/97.4/93.1、DBR 99.2/98.0/94.3，到完整99.8/98.1/95.0；VisA I-AUROC 98.0，Real-IAD 91.5。四个seed的最终分数接近，却未检验prototype对应关系和边界集合稳定性。累加消融不能排除收益来自额外负样本数量、分类容量或负例距离更远，Gaussian扰动也未覆盖结构性真实缺陷。</p>
-<p class='meta'>实验结论：MVTec、VisA、Real-IAD和四随机种子支持多原型、DBR与BAAS的累加收益，$M=10$附近最好，推理7.77ms。接近饱和AUROC、缺少正交机制对照和single-class设置限制外推。</p>
-<p class='meta'>和我课题的关系：COD可把多种相似背景建成原型并合成hard negatives，UAV可在密集背景边界保护tiny targets，火灾可覆盖云雾/日落/反光假警；静态特征异常不等于伪装前景、像素丢失或动态半透明烟雾。</p>
-<p class='meta'>可借鉴点：用全局锚点约束多原型不失控；以簇内kNN稀疏度选择边界起点；先生成再prototype-aware过滤；训练期做重边界搜索、推理压缩到MLP。</p>
-<p class='meta'>可改进点：做prototype×采样×score全因子对照并匹配负样本难度/数量；用局部切—法方向代替各向同性噪声；报告rare-normal FPR、边界集合稳定性与online normal更新污染。</p>
-<p class='meta'>是否值得精读：值得。式（1）至（11）和算法1构成可复现的normal geometry—边界采样—判别链，适合研究难负例；其拓扑解释仍需匹配难度的反事实实验。</p>
+<h3><strong>UNICL-SAM: Uncertainty-Driven In-Context Segmentation with Part Prototype Discovery</strong></h3>
+<p class='meta'>Source: CVPR 2025, 2025</p>
+<p class='meta'>Authors: Dianmo Sheng, Dongdong Chen, Zhentao Tan, Qiankun Liu, Qi Chu et al.</p>
+<p class='meta'>Tags: in-context segmentation, SAM, uncertainty graph, part prototypes</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Sheng_UNICL-SAM_Uncertainty-Driven_In-Context_Segmentation_with_Part_Prototype_Discovery_CVPR_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Sheng_UNICL-SAM_Uncertainty-Driven_In-Context_Segmentation_with_Part_Prototype_Discovery_CVPR_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：UNICL-SAM: Uncertainty-Driven In-Context Segmentation with Part Prototype Discovery</p>
+<p class='meta'>一句话总结：UNICL-SAM把支持图建成概率图，用节点不确定性指导图增强和特征修正，再聚类部件原型为SAM生成提示，从而提高跨类别少样本分割。</p>
+<p class='meta'>任务设定：输入一张或少量带mask支持图和一张查询图，输出查询目标mask；测试类别可未在训练中出现。模型借助预训练视觉编码器与SAM解码器，训练图模块、适配器和提示生成器。</p>
+<p class='meta'>摘要详解：论文针对现有in-context分割把支持特征当确定值、单一类别原型又抹掉部件差异的问题。UGGN把支持区域节点表示成Gaussian并传播均值与方差；重参数采样给出节点表示，方差汇成不确定性图。不确定性图一方面控制图结构增强，另一方面通过可学习门修正高风险节点。经修正的前景特征再做K-means，得到多个部件原型；提示生成器让这些原型与查询特征交互，输出给SAM mask decoder。训练联合图重建、KL/不确定性约束与分割损失。COCO-20i达到77.8的一次样本mIoU和78.7的少样本mIoU，LVIS-92i为34.1；退化测试平均只降3.1 mIoU。</p>
+<p class='meta'>实验结论：完整模型消融为74.64 mIoU/0.034 MAE；UGGN较GCN高0.29，图增强再增1.41，十个部件簇最佳。结果支持组件协同，但没有校准指标证明Gaussian方差等于真实错误概率。</p>
+<p class='meta'>和我课题的关系：COD可用部件原型保留弱边界与局部纹理，UAV可为tiny target保留少量高置信部件，火灾可分火焰核心、烟羽和边缘；动态透明烟雾还需时间原型，不能照搬静态对象聚类。</p>
+<p class='meta'>可借鉴点：让不确定性同时控制结构和特征；用多部件原型替代单一全局原型。</p>
+<p class='meta'>可改进点：核心替代解释是增益来自更多原型和额外容量，而非不确定性。应匹配参数与簇数，比较随机方差、熵门和校准方差；若三者mIoU与risk-coverage无显著差异，就否定UGGN机制解释。</p>
+<p class='meta'>是否值得精读：值得。式（1）至（14）串起概率图、增强、聚类与SAM提示；泛化增益明确，但不确定性的概率语义仍未闭环。</p>
 </article>
 <article class='paper'>
-<h3><strong>RAMEN: Resolution-Adjustable Multimodal Encoder for Earth Observation</strong></h3>
-<p class='meta'>Source: CVPR 2026, 2026</p>
-<p class='meta'>Authors: Nicolas Houdré, Diego Marcos, Hugo Riffaud de Turckheim, Dino Ienco, Laurent Wendling et al.</p>
-<p class='meta'>Tags: UAV/aerial, earth observation, multimodal foundation model, resolution adaptation, remote sensing</p>
-<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Houdre_RAMEN_Resolution-Adjustable_Multimodal_Encoder_for_Earth_Observation_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Houdre_RAMEN_Resolution-Adjustable_Multimodal_Encoder_for_Earth_Observation_CVPR_2026_paper.pdf">pdf</a></p>
-<p class='meta'>论文：RAMEN: Resolution-Adjustable Multimodal Encoder for Earth Observation</p>
-<p class='meta'>一句话总结：RAMEN用波长/类型条件投影、GSD比率驱动的卷积专家和时间注意，把异构地球观测模态映射到共享token，并允许下游按任务调节推理分辨率。</p>
-<p class='meta'>任务设定：输入地理配准但通道、GSD和时间长度不同的光学、SAR、高程数据，输出用户指定目标GSD下的共享特征；预训练无标签，下游冻结encoder训练UPerNet。要求通道物理元数据与配准可用。</p>
-<p class='meta'>摘要详解：RAMEN针对地球观测在光谱、空间与时间三轴异构、固定传感器和固定分辨率编码器难以复用的问题。光学通道先以中心波长正弦编码，SAR/高程用类型embedding，MLP动态生成通道投影矩阵；空间模块计算原生与目标GSD的对数比，在双线性插值后以softmax混合四个1×1卷积专家；LTAE按采集日期聚合时间序列，各模态token再进入共享ViT。预训练每轮随机数据集、模态子集和目标GSD，遮挡75% token，镜像decoder恢复原生时间、空间与通道，以masked MSE监督。PANGAEA八任务冻结编码器后平均mIoU/排名为60.03/2.63，TerraMind-L为59.10/3.75；真实波长编码使Sen1Floods11从79.14升至83.74，S2+S1三任务均值64.27高于S2的62.72。MADOS从80m到10m由57.09升至78.07，BurnScars却在300m达88.44，说明最佳尺度依任务，部署仍需验证集或预算控制器选点。表4(c)的原生时间模型平均值表中为38.08、正文写38.14，late fusion达45.14；该内部差异和额外LTAE收益表明时间聚合仍有缺口。</p>
-<p class='meta'>实验结论：真实波长编码使Sen1Floods11从79.14到83.74，S2+S1三任务均值64.27高于S2的62.72；BurnScars 85.02@817GFLOPs。最佳GSD经验证集选择，细分辨率仍有二次token成本。</p>
-<p class='meta'>和我课题的关系：COD可借尺度条件重采样但外观相似不等于分辨率不足；UAV可直接利用高度/GSD与RGB-NIR-thermal统一；火灾可做多源烧毁区与监测，但BurnScars不是早烟/火焰预警，需时序和假警控制。</p>
-<p class='meta'>可借鉴点：用物理波长生成动态输入投影；以log GSD比率连续路由尺度专家；把目标分辨率纳入预训练随机变量；用镜像decoder约束跨模态、跨尺度一致性。</p>
-<p class='meta'>可改进点：加入未知传感器响应、缺失/退化/错配模态压力测试；在固定GFLOPs下学习局部GSD选择；保留变化token后再跨模态时间聚合；报告small-region IoU、risk-coverage与部署调参成本。</p>
-<p class='meta'>是否值得精读：值得。式（1）至（7）把光谱、空间、时间和MAE重建连成完整物理条件链，是UAV/遥感锚点；未知传感器、自动尺度选择和动态危险感知仍未证实。</p>
+<h3><strong>U-Know-DiffPAN: An Uncertainty-aware Knowledge Distillation Diffusion Framework with Details Enhancement for PAN-Sharpening</strong></h3>
+<p class='meta'>Source: CVPR 2025, 2025</p>
+<p class='meta'>Authors: Sungpyo Kim, Jeonghyeok Do, Jaehyup Lee, Munchurl Kim</p>
+<p class='meta'>Tags: PAN-sharpening, remote sensing, uncertainty distillation, frequency enhancement, UAV/aerial</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Kim_U-Know-DiffPAN_An_Uncertainty-aware_Knowledge_Distillation_Diffusion_Framework_with_Details_Enhancement_CVPR_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_U-Know-DiffPAN_An_Uncertainty-aware_Knowledge_Distillation_Diffusion_Framework_with_Details_Enhancement_CVPR_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：U-Know-DiffPAN: An Uncertainty-aware Knowledge Distillation Diffusion Framework with Details Enhancement for PAN-Sharpening</p>
+<p class='meta'>一句话总结：U-Know-DiffPAN以频域教师恢复全色锐化细节，再用预测不确定性给学生的硬标签、软输出和中间特征蒸馏分配空间权重。</p>
+<p class='meta'>任务设定：输入高分辨率单波段PAN与低分辨率多光谱图像，输出兼具空间细节和光谱一致性的高分辨率多光谱图；教师为条件扩散模型，学生用25步DDIM推理。</p>
+<p class='meta'>摘要详解：论文针对PAN-sharpening扩散模型计算昂贵、轻量学生又容易丢高频细节的问题。教师FSA-T先预测高分辨率残差：FFA用傅里叶幅度/相位注意把PAN空间纹理注入多光谱条件，HQFE以平稳小波拆分低频与三个高频子带，再经窗口交叉注意恢复边缘。教师同时输出像素不确定性。学生FSA-S沿用较小扩散网络，U-Know损失让高不确定区域更依赖真实图像硬监督，低不确定区域更多吸收教师软输出，并匹配层间特征；训练后学生独立生成。GF2上学生PSNR为44.585、教师44.757；学生仅9.115M参数、0.346T FLOPs、12.287秒，U-Know使全分辨率HQNR由L1的0.935升至0.944。</p>
+<p class='meta'>实验结论：WV3、QuickBird、GF2上学生接近或局部超过教师；GF2消融显示FFA与HQFE联合最好，U-Know优于L1和普通KD。12.287秒仍远慢于实时，且指标未覆盖小目标检测保真。</p>
+<p class='meta'>和我课题的关系：UAV可直接借频域/小波保住tiny target像素；COD可用高低频分离但前景背景相似不等于缺锐度；火灾可增强远距离烟火细节，却必须防止锐化云雾、反光并加入时序与RGB-T一致性。</p>
+<p class='meta'>可借鉴点：频域注入与小波细节恢复分工；让教师不确定性控制逐像素蒸馏来源。</p>
+<p class='meta'>可改进点：式（18）的软蒸馏权重含不确定性减项，但论文未清楚证明其始终非负。应记录权重分布并比较截断、sigmoid归一和无权重KD；若负权重频繁出现且截断后更稳，就否定当前概率解释。</p>
+<p class='meta'>是否值得精读：值得。式（1）至（19）覆盖扩散、FFT、小波和三类蒸馏；对UAV最直接，但效率和不确定性权重约束是明确短板。</p>
 </article>
 <h2>高质量来源优先读：CCF-A/B 与顶刊顶会</h2>
 <article class='paper'>
@@ -306,6 +306,14 @@
 <p class='meta'>Links: <a href="http://arxiv.org/abs/2504.14481v2">paper</a> / <a href="http://arxiv.org/pdf/2504.14481v2">pdf</a></p>
 </article>
 <article class='paper'>
+<h3><strong>Depth-Assisted Camouflaged Object Segmentation via Frequency-Domain Fusion and High-Order Interaction</strong></h3>
+<p class='meta'>Source: Crossref / TMM / CCF-B / 顶刊 / IEEE Transactions on Multimedia, 2026</p>
+<p class='meta'>Tags: COD, boundary/frequency, depth/geometry</p>
+<p class='meta'>核心机制：频域/纹理特征增强，适合处理伪装背景与目标细粒度差异。</p>
+<p class='meta'>跟踪理由：直接关联伪装目标检测/分割，主要作为背景、对照和失败案例参考。</p>
+<p class='meta'>Links: <a href="https://doi.org/10.1109/tmm.2026.3668692">paper</a></p>
+</article>
+<article class='paper'>
 <h3><strong>BED-SAM2: Boundary-Enhanced-Depth SAM2 via Monocular Geometric Priors</strong></h3>
 <p class='meta'>Source: arXiv, 2026-05-24</p>
 <p class='meta'>Tags: COD, boundary/frequency, depth/geometry, saliency/transparent</p>
@@ -320,14 +328,6 @@
 <p class='meta'>核心机制：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
 <p class='meta'>跟踪理由：直接关联伪装目标检测/分割，主要作为背景、对照和失败案例参考。</p>
 <p class='meta'>Links: <a href="http://arxiv.org/abs/2311.11241v3">paper</a> / <a href="http://arxiv.org/pdf/2311.11241v3">pdf</a></p>
-</article>
-<article class='paper'>
-<h3><strong>Inspiring the Next Generation of Segment Anything Models: Comprehensively Evaluate SAM and SAM 2 with Diverse Prompts Towards Context-Dependent Concepts under Different Scenes</strong></h3>
-<p class='meta'>Source: arXiv, 2024-12-02</p>
-<p class='meta'>Tags: COD, SAM, depth/geometry, video, open-world, saliency/transparent</p>
-<p class='meta'>核心机制：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
-<p class='meta'>跟踪理由：不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。</p>
-<p class='meta'>Links: <a href="http://arxiv.org/abs/2412.01240v3">paper</a> / <a href="http://arxiv.org/pdf/2412.01240v3">pdf</a></p>
 </article>
 <h2>无人机 / 航拍小目标</h2>
 <article class='paper'>
@@ -428,6 +428,14 @@
 <p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/WACV2026/html/Li_AusSmoke_meets_MultiNatSmoke_a_fully-labelled_diverse_smoke_segmentation_dataset_WACV_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Li_AusSmoke_meets_MultiNatSmoke_a_fully-labelled_diverse_smoke_segmentation_dataset_WACV_2026_paper.pdf">pdf</a></p>
 </article>
 <article class='paper'>
+<h3><strong>BAM: A physics-informed self-supervised framework for near-real-time wildfire burned area mapping from multi-source earth observation</strong></h3>
+<p class='meta'>Source: Crossref / JAG / 遥感高水平期刊 / International Journal of Applied Earth Observation and Geoinformation, 2026-09</p>
+<p class='meta'>Tags: fire perception, remote sensing, self-supervised</p>
+<p class='meta'>核心机制：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
+<p class='meta'>跟踪理由：直接覆盖火灾或烟雾感知，可重点看早期弱证据、时序增长、硬负样本误报和跨区域泛化。</p>
+<p class='meta'>Links: <a href="https://doi.org/10.1016/j.jag.2026.105517">paper</a></p>
+</article>
+<article class='paper'>
 <h3><strong>Integrating UAV image time-series with multi-source environmental features for sequential wildfire spread prediction</strong></h3>
 <p class='meta'>Source: Crossref / JAG / 遥感高水平期刊 / International Journal of Applied Earth Observation and Geoinformation, 2026-08</p>
 <p class='meta'>Tags: fire perception, UAV/small-object</p>
@@ -468,7 +476,19 @@
 <p class='meta'>Links: <a href="https://doi.org/10.1109/tgrs.2026.3652453">paper</a></p>
 </article>
 <article class='paper'>
+<h3><strong>Synergizing Smoke and Hotspot: A Visible–Infrared Colearning Framework With Dataset for Large-Scale Wildfire Detection</strong></h3>
+<p class='meta'>Source: Crossref / TGRS / 遥感顶刊 / IEEE Transactions on Geoscience and Remote Sensing, 2026</p>
+<p class='meta'>Tags: fire perception, multispectral fire</p>
+<p class='meta'>核心机制：融合可见光、红外/热红外、高光谱或卫星多波段信息，增强微弱火焰、烟雾和热点的可分辨性。</p>
+<p class='meta'>跟踪理由：直接覆盖多光谱火灾探测，可重点看可见光、红外/热红外与遥感波段如何互补。</p>
+<p class='meta'>Links: <a href="https://doi.org/10.1109/tgrs.2026.3675975">paper</a></p>
+</article>
+<article class='paper'>
 <h3><strong>Wildfire Fire-Smoke Detection in UAV Imagery via Scale-Guided Feature Routing and Uncertainty-Aware Localization</strong> - 已在“无人机 / 航拍小目标”列出；此处仅保留方向归属。<a href="https://doi.org/10.1109/ACCESS.2026.3706370">paper</a></h3>
+</article>
+<h2>火灾监测大模型</h2>
+<article class='paper'>
+<h3><strong>Adapting Video Foundation Models for Spatiotemporal Wildfire Forecasting via Cross-Modal Progressive Fine-Tuning</strong> - 已在“火灾/烟雾与多光谱感知”列出；此处仅保留方向归属。<a href="https://doi.org/10.1109/tgrs.2026.3652453">paper</a></h3>
 </article>
 <article class='paper'>
 <h3><strong>Seeing Heat with Color -- RGB-Only Wildfire Temperature Inference from SAM-Guided Multimodal Distillation using Radiometric Ground Truth</strong></h3>
@@ -485,16 +505,6 @@
 <p class='meta'>核心机制：利用视觉基础模型、视觉语言模型或多模态大模型进行火情识别、区域定位、时序理解或告警解释。</p>
 <p class='meta'>跟踪理由：直接覆盖火灾监测大模型，可重点看基础模型适配、开放场景泛化和可解释告警。</p>
 <p class='meta'>Links: <a href="http://arxiv.org/abs/2408.10843v3">paper</a> / <a href="http://arxiv.org/pdf/2408.10843v3">pdf</a></p>
-</article>
-<h2>火灾监测大模型</h2>
-<article class='paper'>
-<h3><strong>Adapting Video Foundation Models for Spatiotemporal Wildfire Forecasting via Cross-Modal Progressive Fine-Tuning</strong> - 已在“火灾/烟雾与多光谱感知”列出；此处仅保留方向归属。<a href="https://doi.org/10.1109/tgrs.2026.3652453">paper</a></h3>
-</article>
-<article class='paper'>
-<h3><strong>Seeing Heat with Color -- RGB-Only Wildfire Temperature Inference from SAM-Guided Multimodal Distillation using Radiometric Ground Truth</strong> - 已在“火灾/烟雾与多光谱感知”列出；此处仅保留方向归属。<a href="http://arxiv.org/abs/2505.01638v1">paper</a></h3>
-</article>
-<article class='paper'>
-<h3><strong>Detecting Wildfires on UAVs with Real-time Segmentation Trained by Larger Teacher Models</strong> - 已在“火灾/烟雾与多光谱感知”列出；此处仅保留方向归属。<a href="http://arxiv.org/abs/2408.10843v3">paper</a></h3>
 </article>
 <article class='paper'>
 <h3><strong>Generating Satellite Imagery Data for Wildfire Detection through Mask-Conditioned Generative AI</strong></h3>
