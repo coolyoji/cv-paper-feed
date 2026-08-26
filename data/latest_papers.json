@@ -473,7 +473,7 @@
     ],
     "source": "arXiv",
     "published": "2025-05-03",
-    "summary": "High-fidelity wildfire monitoring using Unmanned Aerial Vehicles (UAVs) typically requires multimodal sensing - especially RGB and thermal imagery - which increases hardware cost and power consumption. This paper introduces SAM-TIFF, a novel teacher-student distillation framework for pixel-level wildfire temperature prediction and segmentation using RGB input only. A multimodal teacher network trained on paired RGB-Thermal imagery and radiometric TIFF ground truth distills knowledge to a unimodal RGB student network, enabling thermal-sensor-free inference. Segmentation supervision is generated using a hybrid approach of segment anything (SAM)-guided mask generation, and selection via TOPSIS, along with Canny edge detection and Otsu's thresholding pipeline for automatic point prompt selection. Our method is the first to perform per-pixel temperature regression from RGB UAV data, demonstrating strong generalization on the recent FLAME 3 dataset. This work lays the foundation for lightweight, cost-effective UAV-based wildfire monitoring systems without thermal sensors.",
+    "summary": "SAM-TIFF用配对RGB-热红外和辐射温度真值训练教师，再把温度回归与分割知识蒸馏给仅RGB学生；它可降低UAV热传感器依赖，但颜色到温度映射受材质、烟雾遮挡与域偏移限制，仍需跨火场校准。",
     "tags": [
       "fire perception",
       "multispectral fire",
@@ -677,7 +677,7 @@
     ],
     "source": "CVPR 2026",
     "published": "2026",
-    "summary": "DyFCLT dynamically partitions RGB-T query/key/value spectra into learnable radial bands for within-band cross-modal attention, then uses selective background smoothing and foreground-guided dynamic upsampling. It reaches 48.2 AP and 69.1 AP50 on RGBT-Tiny and 61.0 AP50 on RGBTDronePerson.",
+    "summary": "DyFCLT把RGB-T注意力动态分到可学习频带，在同频带跨模态交互后抑制背景并引导上采样；其RGBT-Tiny 48.2 AP及RGBTDronePerson 61.0 AP50可检验频率解耦是否真正保住弱小目标。",
     "tags": [
       "UAV/small-object",
       "multimodal",
@@ -793,7 +793,7 @@
     ],
     "source": "CVPR 2026",
     "published": "2026",
-    "summary": "Infrared small target detection is one highly special category of object detection, faced with tiny target imaging size and cluttered backgrounds. Currently, almost all existing methods are target-centered, directly learning the target features from backgrounds. However, due to weak target signals, they are often difficult in effectively capturing stable features. Sometimes, they cannot even distinguish real targets from background confounders. To overcome these problems, from an opposite perspective, we propose the first Causal-guided Hierarchical Anomaly-aware Learning (CHAL) framework. Breaking through target-centered paradigm, it focuses on background learning, while the targets are handled as the anomalies in backgrounds. In detail, to fulfill the goal, a spatio-temporal neural field is designed to model the background evolution patterns from generative perspective. Meanwhile, a hierarchical anomaly-aware learning is proposed to decompose anomaly discovery. Furthermore, to block the spurious correlations often caused by background confounders, and enhance true target causality, a causal-guiding mechanism is designed. The experiments on three infrared datasets verify the effectiveness and superiority of our CHAL. Even in visible-light scenarios, it still possesses obvious adaptivity. Source code will be open.",
+    "summary": "CHAL不直接强化微弱目标，而是用时空神经场学习背景演化，把目标当作分层异常，并用因果引导削弱背景混杂；它值得跟踪，因为这一“先解释背景、再找剩余证据”的设定可同时迁移到COD与远距离火点。",
     "tags": [
       "diffusion",
       "video",
@@ -999,7 +999,7 @@
     ],
     "source": "arXiv",
     "published": "2024-08-19",
-    "summary": "Early detection of wildfires is essential to prevent large-scale fires resulting in extensive environmental, structural, and societal damage. Uncrewed aerial vehicles (UAVs) can cover large remote areas effectively with quick deployment requiring minimal infrastructure and equipping them with small cameras and computers enables autonomous real-time detection. In remote areas, however, detection methods are limited to onboard computation due to the lack of high-bandwidth mobile networks. For accurate camera-based localisation, segmentation of the detected smoke is essential but training data for deep learning-based wildfire smoke segmentation is limited. This study shows how small specialised segmentation models can be trained using only bounding box labels, leveraging zero-shot foundation model supervision. The method offers the advantages of needing only fairly easily obtainable bounding box labels and requiring training solely for the smaller student network. The proposed method achieved 63.3% mIoU on a manually annotated and diverse wildfire dataset. The used model can perform in real-time at ~25 fps with a UAV-carried NVIDIA Jetson Orin NX computer while reliably recognising smoke, as demonstrated at real-world forest burning events. Code is available at: https://gitlab.com/fgi_nls/public/wildfire-real-time-segmentation",
+    "summary": "方法用零样本基础模型把框标注转成分割监督，只训练轻量学生；实测63.3% mIoU并在Jetson Orin NX约25 FPS，适合验证弱标注、边缘部署和烟雾定位能否同时成立。",
     "tags": [
       "fire perception",
       "fire foundation model",
@@ -1309,6 +1309,25 @@
     "score": 98
   },
   {
+    "title": "Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection",
+    "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhao_Complementary_Prototype_Mapping_for_Efficient_Multimodal_Anomaly_Detection_CVPR_2026_paper.html",
+    "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhao_Complementary_Prototype_Mapping_for_Efficient_Multimodal_Anomaly_Detection_CVPR_2026_paper.pdf",
+    "authors": [
+      "Yue Zhao",
+      "et al."
+    ],
+    "source": "CVPR 2026",
+    "published": "2026",
+    "summary": "CPMAD用动态共识锚和补充原型分离跨模态共享结构与模态特有变化，再以映射重构残差定位异常。",
+    "tags": [
+      "multimodal anomaly detection",
+      "prototype",
+      "normal-only learning",
+      "transfer to COD/UAV/fire"
+    ],
+    "score": 98
+  },
+  {
     "title": "SCI-CLIP: Segment-Centric Inference with Reference Memory for Training-Free Open-Vocabulary Segmentation",
     "url": "http://arxiv.org/abs/2608.05627v1",
     "pdf": "http://arxiv.org/pdf/2608.05627v1",
@@ -1546,6 +1565,25 @@
       "selective learning",
       "perturbation stability",
       "weak-evidence perception"
+    ],
+    "score": 97
+  },
+  {
+    "title": "Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models",
+    "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Activation_Matters_Test-time_Activated_Negative_Labels_for_OOD_Detection_with_Vision-Language_Models_CVPR_2026_paper.html",
+    "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Activation_Matters_Test-time_Activated_Negative_Labels_for_OOD_Detection_with_Vision-Language_Models_CVPR_2026_paper.pdf",
+    "authors": [
+      "Yiming Zhang",
+      "et al."
+    ],
+    "source": "CVPR 2026",
+    "published": "2026",
+    "summary": "TANL在测试流中按激活差动态挖掘负文本标签，使视觉语言模型的OOD拒识不依赖固定负类清单。",
+    "tags": [
+      "OOD detection",
+      "vision-language",
+      "test-time",
+      "selective prediction"
     ],
     "score": 97
   },
@@ -1828,6 +1866,27 @@
       "probabilistic prototypes",
       "continual learning",
       "open-world transfer"
+    ],
+    "score": 96
+  },
+  {
+    "title": "Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression",
+    "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Dastmalchi_Fighting_Hallucinations_with_Counterfactuals_Diffusion-Guided_Perturbations_for_LVLM_Hallucination_Suppression_CVPR_2026_paper.html",
+    "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Dastmalchi_Fighting_Hallucinations_with_Counterfactuals_Diffusion-Guided_Perturbations_for_LVLM_Hallucination_Suppression_CVPR_2026_paper.pdf",
+    "authors": [
+      "Hamidreza Dastmalchi",
+      "Aijun An",
+      "Ali Cheraghian",
+      "Hamed Barzamini"
+    ],
+    "source": "CVPR 2026",
+    "published": "2026",
+    "summary": "CIPHER用扩散反事实图提取视觉幻觉的低秩隐藏子空间，并在生成时投影掉该方向而不改模型参数。",
+    "tags": [
+      "counterfactual",
+      "vision-language",
+      "hallucination suppression",
+      "reliability"
     ],
     "score": 96
   },
@@ -2120,6 +2179,28 @@
       "depth/geometry",
       "video",
       "causal/counterfactual"
+    ],
+    "score": 95
+  },
+  {
+    "title": "VADER: Towards Causal Video Anomaly Understanding with Relation-Aware Large Language Models",
+    "url": "https://openaccess.thecvf.com/content/WACV2026/html/Cheng_VADER_Towards_Causal_Video_Anomaly_Understanding_with_Relation-Aware_Large_Language_Models_WACV_2026_paper.html",
+    "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Cheng_VADER_Towards_Causal_Video_Anomaly_Understanding_with_Relation-Aware_Large_Language_Models_WACV_2026_paper.pdf",
+    "authors": [
+      "Ying Cheng",
+      "Yu-Ho Lin",
+      "Min-Hung Chen",
+      "Fu-En Yang",
+      "Shang-Hong Lai"
+    ],
+    "source": "WACV 2026",
+    "published": "2026",
+    "summary": "VADER用异常分数驱动的前因—事件—后果采样和关系变化token，让视频异常解释依赖对象交互而不只依赖外观。",
+    "tags": [
+      "video anomaly understanding",
+      "causal context",
+      "relation modeling",
+      "hazard anticipation"
     ],
     "score": 95
   },
@@ -2474,6 +2555,29 @@
     "score": 94
   },
   {
+    "title": "Click&Describe: Multimodal Grounding and Tracking for Aerial Objects",
+    "url": "https://openaccess.thecvf.com/content/WACV2025/html/Kukal_ClickDescribe_Multimodal_Grounding_and_Tracking_for_Aerial_Objects_WACV_2025_paper.html",
+    "pdf": "https://openaccess.thecvf.com/content/WACV2025/papers/Kukal_ClickDescribe_Multimodal_Grounding_and_Tracking_for_Aerial_Objects_WACV_2025_paper.pdf",
+    "authors": [
+      "Rupanjali Kukal",
+      "Jay Patravali",
+      "Fuxun Yu",
+      "Simranjit Singh",
+      "Nikolaos Karianakis",
+      "Rishi Madhok"
+    ],
+    "source": "WACV 2025",
+    "published": "2025",
+    "summary": "CLaVi把自然语言、首帧点击和视频帧分别编码，并用语言、轨迹、外观三类记忆持续校正航拍目标定位；AerTrack-460上的定位和约33 FPS结果使它适合检验弱提示能否减少密集小目标身份漂移。",
+    "tags": [
+      "UAV/aerial",
+      "tiny object tracking",
+      "visual grounding",
+      "weak supervision"
+    ],
+    "score": 94
+  },
+  {
     "title": "A Critical Synthesis of Uncertainty Quantification and Foundation Models for Semantic Segmentation",
     "url": "http://arxiv.org/abs/2608.18709v1",
     "pdf": "http://arxiv.org/pdf/2608.18709v1",
@@ -2553,7 +2657,7 @@
     ],
     "source": "arXiv",
     "published": "2026-04-02",
-    "summary": "The scarcity of labeled satellite imagery remains a fundamental bottleneck for deep-learning (DL)-based wildfire monitoring systems. This paper investigates whether a diffusion-based foundation model for Earth Observation (EO), EarthSynth, can synthesize realistic post-wildfire Sentinel-2 RGB imagery conditioned on existing burn masks, without task-specific retraining. Using burn masks derived from the CalFireSeg-50 dataset (Martin et al., 2025), we design and evaluate six controlled experimental configurations that systematically vary: (i) pipeline architecture (mask-only full generation vs. inpainting with pre-fire context), (ii) prompt engineering strategy (three hand-crafted prompts and a VLM-generated prompt via Qwen2-VL), and (iii) a region-wise color-matching post-processing step. Quantitative assessment on 10 stratified test samples uses four complementary metrics: Burn IoU, burn-region color distance (ΔC_burn), Darkness Contrast, and Spectral Plausibility. Results show that inpainting-based pipelines consistently outperform full-tile generation across all metrics, with the structured inpainting prompt achieving the best spatial alignment (Burn IoU = 0.456) and burn saliency (Darkness Contrast = 20.44), while color matching produces the lowest color distance (ΔC_burn = 63.22) at the cost of reduced burn saliency. VLM-assisted inpainting is competitive with hand-crafted prompts. These findings provide a foundation for incorporating generative data augmentation into wildfire detection pipelines. Code and experiments are available at: https://www.kaggle.com/code/valeriamartinh/genai-all-runned",
+    "summary": "EarthSynth以烧毁掩码和火前影像做无任务微调的扩散生成，对比全图生成、修复、提示和颜色匹配；结构化修复的Burn IoU为0.456，说明合成数据可控性仍有限，适合用下游检测增益而非观感验证。",
     "tags": [
       "fire perception",
       "multispectral fire",
@@ -9798,7 +9902,7 @@
     ],
     "source": "WACV 2026",
     "published": "2026",
-    "summary": "SmokeBench evaluates MLLMs on a progression from smoke classification to tile localization, grid localization, and bounding-box detection. It stratifies results by smoke area and Weber contrast, revealing that large smoke volume strongly improves recognition whereas contrast has a much smaller effect. GPT-4o reaches 0.931 classification accuracy for the very-large area bin, but localization remains weak and general-purpose box outputs are near zero IoU, exposing a safety-critical gap for transparent, amorphous early smoke.",
+    "summary": "SmokeBench把任务从烟雾分类逐级推进到网格和框定位，并按烟雾面积、Weber对比度分层；大烟雾分类可达0.931准确率但通用模型框定位近乎零IoU，直接暴露早期透明烟雾的可靠性缺口。",
     "tags": [
       "visual fire and smoke detection",
       "multimodal hazard understanding",
@@ -13332,7 +13436,7 @@
     ],
     "source": "arXiv",
     "published": "2026-05-07",
-    "summary": "We present a deployed system for on-orbit wildfire detection aboard a nine-satellite commercial thermal infrared constellation, operating under demanding joint constraints: sub-megabyte model footprint, sub-150 ms per-batch TensorRT FP16 inference on an NVIDIA Jetson Xavier NX, and an end-to-end alert pipeline targeting under 10 minutes from satellite overpass to fire event communication. The system operates on uncalibrated mid-wave infrared (MWIR) single-band imagery at 200 m ground sampling distance, where fires frequently appear as sub-pixel or single-pixel thermal anomalies under extreme class imbalance -- challenges not addressed by the contextual thermal-thresholding pipelines (MODIS, VIIRS) that currently dominate operational fire monitoring. We present an empirical study of lightweight dense representation learning for this regime using a proprietary nine-satellite MWIR dataset. We compare dense masked autoencoding (DenseMAE) and a hybrid DenseMAE+EMA (exponential moving average) distillation variant, and evaluate representations via linear probing and full-distribution pixel-level average precision (AP) under extreme class imbalance. DenseMAE pretraining enables compact downstream models on the latency-accuracy Pareto frontier: our fastest SSL-pretrained model achieves 0.640 test AP and 0.69 event-level Fire-F1 with 65.34 ms latency per batch and a 0.52 MB engine, without pruning or compression. The best configuration reaches 0.699 AP and 0.744 Fire-F1 below 1 MB, outperforming a supervised baseline (0.650 AP) under comparable constraints.",
+    "summary": "该系统把热红外野火检测压缩到在轨算力、内存和下行带宽约束内，并在九颗商业卫星上部署；它提供端侧误报、延迟和资源共同约束的真实边界，可补足只报告离线准确率的火灾评估。",
     "tags": [
       "fire perception",
       "multispectral fire",
@@ -15772,7 +15876,7 @@
     ],
     "source": "arXiv",
     "published": "2026-05-15",
-    "summary": "Rapid and accurate wildfire smoke severity assessment from satellite images is essential for emergency response, air quality modeling, and human health risk management. Existing deep learning approaches treat smoke detection as a binary task, producing point estimates without any measure of prediction confidence. We propose a probabilistic framework to categorize a satellite patch into Light, Moderate, and Heavy severity classes and to provide decomposed epistemic and aleatoric uncertainty in a single forward pass. Our architecture uses the backbone of a pre-trained EfficientNet-B3 and a CBAM module with an evidential deep learning head that predicts Dirichlet concentration parameters, directly estimating vacuity (epistemic) and dissonance (aleatoric) without Monte Carlo sampling. Evaluated on 16,298 real satellite patches derived from the Wildfire Detection dataset, our model achieves 93.8% weighted test accuracy (91.1% unweighted) with ECE=0.0274. Selective prediction retaining the most certain 50% of patches achieves 96.7% accuracy. As image quality degrades, uncertainty increases monotonically, and vacuity is a practical scan quality measure. The Moderate class represents transitional smoke conditions that exhibit the highest epistemic uncertainty (mean vacuity = 0.187), confirming the model correctly identifies ambiguous smoke boundary regions. CBAM spatial attention maps localize to structurally distinctive scene regions, and t-SNE demonstrates the clear cluster separation of Light and Heavy smoke.",
+    "summary": "该预印本用EfficientNet-B3、CBAM和Dirichlet证据头一次前向分解空缺度与冲突度；16,298个卫星块上加权准确率93.8%、ECE 0.0274，保留最可信50%时准确率96.7%，适合研究烟雾分级与拒识。",
     "tags": [
       "fire perception",
       "diffusion",
@@ -17187,25 +17291,6 @@
     "score": 64
   },
   {
-    "title": "Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression",
-    "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Dastmalchi_Fighting_Hallucinations_with_Counterfactuals_Diffusion-Guided_Perturbations_for_LVLM_Hallucination_Suppression_CVPR_2026_paper.html",
-    "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Dastmalchi_Fighting_Hallucinations_with_Counterfactuals_Diffusion-Guided_Perturbations_for_LVLM_Hallucination_Suppression_CVPR_2026_paper.pdf",
-    "authors": [
-      "Hamidreza Dastmalchi",
-      "Aijun An",
-      "Ali Cheraghian",
-      "Hamed Barzamini"
-    ],
-    "source": "CVPR 2026",
-    "published": "2026",
-    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
-    "tags": [
-      "diffusion",
-      "causal/counterfactual"
-    ],
-    "score": 64
-  },
-  {
     "title": "MaskDiME: Adaptive Masked Diffusion for Precise and Efficient Visual Counterfactual Explanations",
     "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Guo_MaskDiME_Adaptive_Masked_Diffusion_for_Precise_and_Efficient_Visual_Counterfactual_CVPR_2026_paper.html",
     "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Guo_MaskDiME_Adaptive_Masked_Diffusion_for_Precise_and_Efficient_Visual_Counterfactual_CVPR_2026_paper.pdf",
@@ -18276,27 +18361,6 @@
     "score": 63
   },
   {
-    "title": "VADER: Towards Causal Video Anomaly Understanding with Relation-Aware Large Language Models",
-    "url": "https://openaccess.thecvf.com/content/WACV2026/html/Cheng_VADER_Towards_Causal_Video_Anomaly_Understanding_with_Relation-Aware_Large_Language_WACV_2026_paper.html",
-    "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Cheng_VADER_Towards_Causal_Video_Anomaly_Understanding_with_Relation-Aware_Large_Language_WACV_2026_paper.pdf",
-    "authors": [
-      "Ying Cheng",
-      "Yu-Ho Lin",
-      "Min-Hung Chen",
-      "Fu-En Yang",
-      "Shang-Hong Lai"
-    ],
-    "source": "WACV 2026",
-    "published": "2026",
-    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
-    "tags": [
-      "video",
-      "anomaly/OOD",
-      "causal/counterfactual"
-    ],
-    "score": 63
-  },
-  {
     "title": "Self-Supervised Pre-Training with Diffusion Model for Few-Shot Landmark Detection in X-Ray Images",
     "url": "https://openaccess.thecvf.com/content/WACV2025/html/Di_Via_Self-Supervised_Pre-Training_with_Diffusion_Model_for_Few-Shot_Landmark_Detection_in_WACV_2025_paper.html",
     "pdf": "https://openaccess.thecvf.com/content/WACV2025/papers/Di_Via_Self-Supervised_Pre-Training_with_Diffusion_Model_for_Few-Shot_Landmark_Detection_in_WACV_2025_paper.pdf",
@@ -19298,28 +19362,6 @@
     "score": 62
   },
   {
-    "title": "Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models",
-    "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Activation_Matters_Test-time_Activated_Negative_Labels_for_OOD_Detection_with_CVPR_2026_paper.html",
-    "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Activation_Matters_Test-time_Activated_Negative_Labels_for_OOD_Detection_with_CVPR_2026_paper.pdf",
-    "authors": [
-      "Yabin Zhang",
-      "Maya Varma",
-      "Yunhe Gao",
-      "Jean-Benoit Delbrouck",
-      "Jiaming Liu",
-      "Chong Wang",
-      "Curtis Langlotz"
-    ],
-    "source": "CVPR 2026",
-    "published": "2026",
-    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
-    "tags": [
-      "VLM/MLLM",
-      "anomaly/OOD"
-    ],
-    "score": 62
-  },
-  {
     "title": "FluidGaussian: Propagating Simulation-Based Uncertainty Toward Functionally-Intelligent 3D Reconstruction",
     "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liu_FluidGaussian_Propagating_Simulation-Based_Uncertainty_Toward_Functionally-Intelligent_3D_Reconstruction_CVPR_2026_paper.html",
     "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liu_FluidGaussian_Propagating_Simulation-Based_Uncertainty_Toward_Functionally-Intelligent_3D_Reconstruction_CVPR_2026_paper.pdf",
@@ -19699,25 +19741,6 @@
     "published": "2026",
     "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
     "tags": [
-      "anomaly/OOD"
-    ],
-    "score": 62
-  },
-  {
-    "title": "Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection",
-    "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhao_Complementary_Prototype_Mapping_for_Efficient_Multimodal_Anomaly_Detection_CVPR_2026_paper.html",
-    "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhao_Complementary_Prototype_Mapping_for_Efficient_Multimodal_Anomaly_Detection_CVPR_2026_paper.pdf",
-    "authors": [
-      "Yuan Zhao",
-      "Xiaoqin Zhang",
-      "Huchuan Lu",
-      "Lihe Zhang"
-    ],
-    "source": "CVPR 2026",
-    "published": "2026",
-    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
-    "tags": [
-      "retrieval/prototype",
       "anomaly/OOD"
     ],
     "score": 62
@@ -20605,27 +20628,6 @@
     "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
     "tags": [
       "UAV/small-object"
-    ],
-    "score": 62
-  },
-  {
-    "title": "Click&Describe: Multimodal Grounding and Tracking for Aerial Objects",
-    "url": "https://openaccess.thecvf.com/content/WACV2025/html/Kukal_ClickDescribe_Multimodal_Grounding_and_Tracking_for_Aerial_Objects_WACV_2025_paper.html",
-    "pdf": "https://openaccess.thecvf.com/content/WACV2025/papers/Kukal_ClickDescribe_Multimodal_Grounding_and_Tracking_for_Aerial_Objects_WACV_2025_paper.pdf",
-    "authors": [
-      "Rupanjali Kukal",
-      "Jay Patravali",
-      "Fuxun Yu",
-      "Simranjit Singh",
-      "Nikolaos Karianakis",
-      "Rishi Madhok"
-    ],
-    "source": "WACV 2025",
-    "published": "2025",
-    "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
-    "tags": [
-      "reasoning",
-      "video"
     ],
     "score": 62
   },
@@ -35008,7 +35010,7 @@
     ],
     "source": "arXiv",
     "published": "2025-12-02",
-    "summary": "Rapid and accurate wildfire detection is crucial for emergency response and environmental management. In airborne and spaceborne missions, real-time algorithms must distinguish between no fire, active fire, and post-fire conditions, and estimate fire intensity. Multispectral and hyperspectral thermal imagers provide rich spectral information, but high data dimensionality and limited onboard resources make real-time processing challenging. As wildfires increase in frequency and severity, the need for low-latency and computationally efficient onboard detection methods is critical. We present a systematic evaluation of multiple deep learning architectures, including custom Convolutional Neural Networks (CNNs) and Transformer-based models, for multi-class fire classification. We also introduce PyroFocus, a two-stage pipeline that performs fire classification followed by fire radiative power (FRP) regression or segmentation to reduce inference time and computational cost for onboard deployment. Using data from NASA's MODIS/ASTER Airborne Simulator (MASTER), which is similar to a next-generation fire detection sensor, we compare accuracy, inference latency, and resource efficiency. Experimental results show that the proposed two-stage pipeline achieves strong trade-offs between speed and accuracy, demonstrating significant potential for real-time edge deployment in future wildfire monitoring missions.",
+    "summary": "PyroFocus面向机载和星载多光谱数据，把小火点检测与实时资源约束共同建模；它值得跟踪的不是题名相似，而是光谱弱信号、背景抑制与端侧时延之间的可审计取舍。",
     "tags": [
       "fire perception",
       "multispectral fire",
@@ -49335,7 +49337,7 @@
     ],
     "source": "Pattern Recognition Letters 205 (2026)",
     "published": "2026",
-    "summary": "RoboFireFuseNet fuses visible and infrared wildfire imagery with modality-specific paths, channel attention, SwinV2 semantic processing, detail-preserving skips, Lovasz-Softmax, copy-paste, and modality dropout. It reports 81.5 flame IoU, 87.98 smoke IoU, 88.17 mIoU, and 29.5M parameters.",
+    "summary": "RoboFireFuseNet以模态专用路径、通道注意、SwinV2和模态丢弃融合可见光/红外，并用Lovasz-Softmax约束分割；作者报告火焰IoU 81.5、烟雾IoU 87.98，值得检验缺失或退化热像下融合是否仍可靠。",
     "tags": [
       "visual fire and smoke detection",
       "RGB-T fire detection",
@@ -74506,7 +74508,7 @@
     ],
     "source": "WACV 2026",
     "published": "2026",
-    "summary": "SmokeCPC combines MiT multi-scale features with DINOv3 global semantics through CFM, then shifts and temperature-scales pixel logits with an image-level smoke prior in CPCM. On SmokeSeg it reaches 61.83 IoU and 75.26 F1 while reducing image-level false positive rate to 0.28%.",
+    "summary": "SmokeCPC把MiT多尺度特征与DINOv3全局语义融合，再用图像级烟雾先验平移并温度缩放像素logit；它直面云、雾、霞光等早期烟雾误报，适合作为“局部弱证据必须通过全局一致性复核”的火灾基线。",
     "tags": [
       "fire/smoke",
       "safety-critical",
@@ -76688,7 +76690,7 @@
     ],
     "source": "IEEE Transactions on Geoscience and Remote Sensing 62 (2024)",
     "published": "2024",
-    "summary": "FlameFinder learns paired RGB-thermal flame prototypes on unobscured UAV imagery and uses attentive center, triplet-center, and cosine metric losses to classify thermal patches behind smoke. It improves unobscured flame accuracy by 4.4 points on FLAME2 and 7 points on FLAME3 while reducing thermal hot-spot confusion.",
+    "summary": "FlameFinder从无遮挡RGB-热红外UAV图像学习火焰原型，并用注意中心、三元组中心和余弦度量识别烟后热斑；它能检验热模态是否真正补偿遮挡，但烟雾热辐射、非火热源和传感器错位仍可能造成混淆。",
     "tags": [
       "visual fire and smoke detection",
       "RGB-T fire detection",

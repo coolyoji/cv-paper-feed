@@ -4566,5 +4566,158 @@
         "19"
       ]
     }
+  ],
+  "2026-08-26": [
+    {
+      "title": "Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhao_Complementary_Prototype_Mapping_for_Efficient_Multimodal_Anomaly_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhao_Complementary_Prototype_Mapping_for_Efficient_Multimodal_Anomaly_Detection_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yue Zhao",
+        "et al."
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "CPMAD用动态共识锚和补充原型分离跨模态共享结构与模态特有变化，再以映射重构残差定位异常。",
+      "tags": [
+        "multimodal anomaly detection",
+        "prototype",
+        "normal-only learning",
+        "transfer to COD/UAV/fire"
+      ],
+      "score": 98,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "title": "Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Activation_Matters_Test-time_Activated_Negative_Labels_for_OOD_Detection_with_Vision-Language_Models_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Activation_Matters_Test-time_Activated_Negative_Labels_for_OOD_Detection_with_Vision-Language_Models_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yiming Zhang",
+        "et al."
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "TANL在测试流中按激活差动态挖掘负文本标签，使视觉语言模型的OOD拒识不依赖固定负类清单。",
+      "tags": [
+        "OOD detection",
+        "vision-language",
+        "test-time",
+        "selective prediction"
+      ],
+      "score": 97,
+      "formula_tags": [
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "title": "Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Dastmalchi_Fighting_Hallucinations_with_Counterfactuals_Diffusion-Guided_Perturbations_for_LVLM_Hallucination_Suppression_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Dastmalchi_Fighting_Hallucinations_with_Counterfactuals_Diffusion-Guided_Perturbations_for_LVLM_Hallucination_Suppression_CVPR_2026_paper.pdf",
+      "authors": [
+        "Hamidreza Dastmalchi",
+        "Aijun An",
+        "Ali Cheraghian",
+        "Hamed Barzamini"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "CIPHER用扩散反事实图提取视觉幻觉的低秩隐藏子空间，并在生成时投影掉该方向而不改模型参数。",
+      "tags": [
+        "counterfactual",
+        "vision-language",
+        "hallucination suppression",
+        "reliability"
+      ],
+      "score": 96,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ]
+    },
+    {
+      "title": "VADER: Towards Causal Video Anomaly Understanding with Relation-Aware Large Language Models",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Cheng_VADER_Towards_Causal_Video_Anomaly_Understanding_with_Relation-Aware_Large_Language_Models_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Cheng_VADER_Towards_Causal_Video_Anomaly_Understanding_with_Relation-Aware_Large_Language_Models_WACV_2026_paper.pdf",
+      "authors": [
+        "Ying Cheng",
+        "Yu-Ho Lin",
+        "Min-Hung Chen",
+        "Fu-En Yang",
+        "Shang-Hong Lai"
+      ],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "VADER用异常分数驱动的前因—事件—后果采样和关系变化token，让视频异常解释依赖对象交互而不只依赖外观。",
+      "tags": [
+        "video anomaly understanding",
+        "causal context",
+        "relation modeling",
+        "hazard anticipation"
+      ],
+      "score": 95,
+      "formula_tags": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "title": "Click&Describe: Multimodal Grounding and Tracking for Aerial Objects",
+      "url": "https://openaccess.thecvf.com/content/WACV2025/html/Kukal_ClickDescribe_Multimodal_Grounding_and_Tracking_for_Aerial_Objects_WACV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2025/papers/Kukal_ClickDescribe_Multimodal_Grounding_and_Tracking_for_Aerial_Objects_WACV_2025_paper.pdf",
+      "authors": [
+        "Rupanjali Kukal",
+        "Jay Patravali",
+        "Fuxun Yu",
+        "Simranjit Singh",
+        "Nikolaos Karianakis",
+        "Rishi Madhok"
+      ],
+      "source": "WACV 2025",
+      "published": "2025",
+      "summary": "Click&Describe把自然语言的全局语义与点击点的局部位置、轨迹记忆结合，降低航空小目标跟踪对精确框标注的依赖。",
+      "tags": [
+        "UAV/aerial",
+        "tiny object tracking",
+        "visual grounding",
+        "weak supervision"
+      ],
+      "score": 94,
+      "formula_tags": [
+        "1",
+        "2"
+      ]
+    }
   ]
 }

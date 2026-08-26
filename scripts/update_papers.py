@@ -1614,6 +1614,10 @@ def format_authors(authors: list[str], limit: int = 5) -> str:
 
 def why_read(paper: Paper) -> str:
     tags = set(paper.tags)
+    if "verified compact summary" in tags:
+        parts = [part.strip(" 。") for part in paper.summary.split("；", 1)]
+        if len(parts) == 2 and parts[1]:
+            return parts[1] + "。"
     if {"multispectral fire", "fire foundation model"} <= tags:
         return "同时覆盖多光谱感知和大模型推理，可重点看跨模态对齐、时空监测与告警可靠性。"
     if "multispectral fire" in tags:
@@ -1748,6 +1752,10 @@ def task_setting(paper: Paper) -> str:
 def method_core(paper: Paper) -> str:
     text = f"{paper.title} {paper.summary}".lower()
     tags = set(paper.tags)
+    if "verified compact summary" in tags:
+        mechanism = paper.summary.split("；", 1)[0].strip(" 。")
+        if mechanism:
+            return mechanism + "。"
     if {"multispectral fire", "fire foundation model"} <= tags:
         return "融合多光谱/多传感器观测与基础模型语义推理，用于火情定位、演化理解和可靠告警。"
     if "multispectral fire" in tags:
