@@ -4719,5 +4719,119 @@
         "2"
       ]
     }
+  ],
+  "2026-08-27": [
+    {
+      "title": "Repurposing Stable Diffusion Attention for Training-Free Unsupervised Interactive Segmentation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Karmann_Repurposing_Stable_Diffusion_Attention_for_Training-Free_Unsupervised_Interactive_Segmentation_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Karmann_Repurposing_Stable_Diffusion_Attention_for_Training-Free_Unsupervised_Interactive_Segmentation_CVPR_2025_paper.pdf",
+      "authors": [
+        "Markus Karmann",
+        "Onay Urfalioglu"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "M2N2把Stable Diffusion自注意改写成马尔可夫到达步数图，再用点击引导的截断最近邻完成无训练交互分割。",
+      "tags": [
+        "interactive segmentation",
+        "training-free",
+        "Stable Diffusion attention",
+        "Markov map"
+      ],
+      "score": 98
+    },
+    {
+      "title": "CDICS: Delving Into Fine-Grained Attribute for In-Context Segmentation via Compositional Prompts and Phased Decoupling",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_CDICS_Delving_Into_Fine-Grained_Attribute_for_In-Context_Segmentation_via_Compositional_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_CDICS_Delving_Into_Fine-Grained_Attribute_for_In-Context_Segmentation_via_Compositional_CVPR_2026_paper.pdf",
+      "authors": [
+        "Zhiyu Li",
+        "Dianmo Sheng",
+        "Qi Chu",
+        "Shilong Chen",
+        "Tao Gong",
+        "Zhou Wei",
+        "Nenghai Yu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "CDICS先按语义找出候选实例，再用部件与颜色组合提示精化外观，以降低一次融合造成的属性干扰。",
+      "tags": [
+        "in-context segmentation",
+        "compositional prompt",
+        "part and color",
+        "fine-grained segmentation"
+      ],
+      "score": 97
+    },
+    {
+      "title": "Uncertainty-Aware Vision-Language Segmentation for Medical Imaging",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Das_Uncertainty-Aware_Vision-Language_Segmentation_for_Medical_Imaging_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Das_Uncertainty-Aware_Vision-Language_Segmentation_for_Medical_Imaging_WACV_2026_paper.pdf",
+      "authors": [
+        "Aryan Das",
+        "Tanishq Rachamalla",
+        "Koushik Biswas",
+        "Swalpa Kumar Roy",
+        "Vinay Kumar Verma"
+      ],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "该方法先做视觉自注意，再以状态空间混合后的文本做交叉注意；卷积式多尺度解码后，用Dice、频谱差和低熵正则共同训练。",
+      "tags": [
+        "vision-language segmentation",
+        "uncertainty",
+        "medical imaging",
+        "state-space model"
+      ],
+      "score": 96
+    },
+    {
+      "title": "Active Learning Meets Foundation Models: Fast Remote Sensing Data Annotation for Object Detection",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Burges_Active_Learning_Meets_Foundation_Models_Fast_Remote_Sensing_Data_Annotation_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Burges_Active_Learning_Meets_Foundation_Models_Fast_Remote_Sensing_Data_Annotation_ICCV_2025_paper.pdf",
+      "authors": [
+        "Marvin Burges",
+        "Philipe Ambrozio Dias",
+        "Carson Woody",
+        "Sarah Walters",
+        "Dalton Lunga"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "AL4FM-OD用SAM掩码与检测框的不一致挑困难图，再按掩码特征去冗余，并在冷启动时以SAM框替换差定位。",
+      "tags": [
+        "remote sensing",
+        "active learning",
+        "SAM",
+        "object detection",
+        "annotation efficiency"
+      ],
+      "score": 95
+    },
+    {
+      "title": "Finding Dino: A Plug-and-Play Framework for Zero-Shot Detection of Out-of-Distribution Objects Using Prototypes",
+      "url": "https://openaccess.thecvf.com/content/WACV2025/html/Sinhamahapatra_Finding_Dino_A_Plug-and-Play_Framework_for_Zero-Shot_Detection_of_Out-of-Distribution_WACV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2025/papers/Sinhamahapatra_Finding_Dino_A_Plug-and-Play_Framework_for_Zero-Shot_Detection_of_Out-of-Distribution_WACV_2025_paper.pdf",
+      "authors": [
+        "Poulami Sinhamahapatra",
+        "Franziska Schwaiger",
+        "Shirsha Bose",
+        "Huiyu Wang",
+        "Karsten Roscher",
+        "Stephan Günnemann"
+      ],
+      "source": "WACV 2025",
+      "published": "2025",
+      "summary": "PROWL用少量已知类样例构建冻结DINOv2原型库，以像素相似度找未知区域，再用无监督前景掩码抑制背景误报。",
+      "tags": [
+        "zero-shot OOD",
+        "prototype",
+        "DINOv2",
+        "open-world detection",
+        "anomaly segmentation"
+      ],
+      "score": 94
+    }
   ]
 }

@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily CV Paper Feed</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1f2933;
+      --muted: #52606d;
+      --line: #d9e2ec;
+      --accent: #1d4ed8;
+      --bg: #f8fafc;
+      --card: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    h1 { font-size: 32px; margin: 0 0 8px; }
+    h2 { margin-top: 40px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+    h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.4; }
+    h4 { margin: 22px 0 10px; font-size: 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .paper {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+    .meta { margin: 6px 0; color: var(--muted); }
+    .archive-day {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin: 14px 0;
+      padding: 8px 12px;
+    }
+    .archive-day > summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--ink);
+      padding: 6px 0;
+    }
+    .archive-day .paper {
+      box-shadow: none;
+      background: #fbfdff;
+    }
+    pre {
+      background: #111827;
+      color: #f9fafb;
+      padding: 14px;
+      border-radius: 8px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+<main>
+<h1>2026-08-27 CV Paper Feed</h1>
+<p><a href="../index.html">返回首页</a></p>
+<p>Last updated: 2026-08-27 17:15 Asia/Shanghai</p>
+<p>Candidate pool: 11279 papers</p>
+<p>慢读模式：本页只展示 5 篇当日精读、10 篇高质量来源、12 篇 COD 相关、10 篇无人机小目标、10 篇火灾/烟雾与多光谱感知、4 篇火灾监测大模型、12 篇泛视觉候选。完整候选池保存在 data/latest_papers.json。</p>
+<p>精读队列优先选择能给 COD 带来新问题设定或新方法范式的论文，例如开放世界、目标发现、反事实/因果、不确定性、自监督稠密表征、对象中心建模和视觉推理；纯 COD 直系论文主要作为背景和对照。</p>
+<h2>当日精读队列</h2>
+<article class='paper'>
+<h3><strong>Repurposing Stable Diffusion Attention for Training-Free Unsupervised Interactive Segmentation</strong></h3>
+<p class='meta'>Source: CVPR 2025, 2025</p>
+<p class='meta'>Authors: Markus Karmann, Onay Urfalioglu</p>
+<p class='meta'>Tags: interactive segmentation, training-free, Stable Diffusion attention, Markov map</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Karmann_Repurposing_Stable_Diffusion_Attention_for_Training-Free_Unsupervised_Interactive_Segmentation_CVPR_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Karmann_Repurposing_Stable_Diffusion_Attention_for_Training-Free_Unsupervised_Interactive_Segmentation_CVPR_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Repurposing Stable Diffusion Attention for Training-Free Unsupervised Interactive Segmentation</p>
+<p class='meta'>一句话总结：M2N2把Stable Diffusion自注意改写成马尔可夫到达步数图，再用点击引导的截断最近邻完成无训练交互分割。</p>
+<p class='meta'>任务设定：输入自然图像及用户逐次给出的前景/背景点击，输出二值实例掩码；不使用分割标签、不训练新网络，依赖冻结SD2自注意提供语义距离。</p>
+<p class='meta'>摘要详解：论文针对无监督交互分割仍需伪标签训练、原始注意图噪声大且难分实例的问题。M2N2以空文本提示对无噪编码潜变量做一次去噪前向，聚合SD2高分辨率自注意并视为马尔可夫转移矩阵；从每个点击出发迭代概率状态，以达到相对阈值所需步数形成Markov-map，再用改造的flood fill压制局部极小值。各点击图经先验、边缘和正负点击一致性选择截断阈值，最近邻给出前景或背景。GrabCut的NoC85/90为1.62/1.90，DAVIS为4.60/6.72，较MIS少1.73/1.72次点击；去掉flood fill则为5.50/7.42，支持该模块的整体贡献，但不能单独证明实例分离机制。BraTS在10次点击时IoU仅70%，显示SD2的自然图像域偏差。</p>
+<p class='meta'>实验结论：四个自然图像数据集上，M2N2在三组无监督比较中最佳；去掉flood fill或只用原始注意都会增加点击数，但医学域结果明显落后监督模型。</p>
+<p class='meta'>和我课题的关系：COD可检验Markov-map能否把弱纹理差积累成边界；UAV小目标可能在低分辨率注意中消失；火烟的形状随时间变化，静态点击距离不能直接表示火情。</p>
+<p class='meta'>可借鉴点：把注意转成可达性而非直接阈值；用前景/背景点击一致性自适应截断语义距离。</p>
+<p class='meta'>可改进点：在COD、UAV与早烟数据上按目标面积分层比较原始注意、Markov-map及高分辨率特征；若小目标或透明烟雾无增益，应否定“迭代必然增强弱证据”。</p>
+<p class='meta'>是否值得精读：值得，式（1）至（11）把点击、马尔可夫迭代、阈值选择和最终分割连成完整可检验链条。</p>
+</article>
+<article class='paper'>
+<h3><strong>CDICS: Delving Into Fine-Grained Attribute for In-Context Segmentation via Compositional Prompts and Phased Decoupling</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Authors: Zhiyu Li, Dianmo Sheng, Qi Chu, Shilong Chen, Tao Gong et al.</p>
+<p class='meta'>Tags: in-context segmentation, compositional prompt, part and color, fine-grained segmentation</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Li_CDICS_Delving_Into_Fine-Grained_Attribute_for_In-Context_Segmentation_via_Compositional_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Li_CDICS_Delving_Into_Fine-Grained_Attribute_for_In-Context_Segmentation_via_Compositional_CVPR_2026_paper.pdf">pdf</a></p>
+<p class='meta'>论文：CDICS: Delving Into Fine-Grained Attribute for In-Context Segmentation via Compositional Prompts and Phased Decoupling</p>
+<p class='meta'>一句话总结：CDICS先按语义找出候选实例，再用部件与颜色组合提示精化外观，以降低一次融合造成的属性干扰。</p>
+<p class='meta'>任务设定：输入目标图像及可拆分的语义参考、部件参考和颜色值，输出满足组合属性的语义/实例掩码；训练依赖组合任务监督，推理按给定视觉提示指定属性。</p>
+<p class='meta'>摘要详解：论文指出单个参考图难覆盖稀有属性组合，已有视觉上下文分割又多停留在类别或实例层面。CDICS用DINOv2编码目标、语义参考和部件参考，以目标图像像素和参考色的CIEDE2000色差生成相似图，再经FiLM调制目标特征。第一阶段仅用语义原型和实例查询粗定位；第二阶段以候选区域加权目标特征，由Appearance Fusion依次结合颜色、部件和语义信息，输出满足组合约束的掩码。训练数据正负样本约为3:1，负样本要求输出空掩码。ColorPACO的IoU/FPR为57.6%/3.9%，ColorPartImageNet为84.4%/12.5%，COCO-20i IoU为65.2%。消融中完整模型的IoU/AP50由基线50.3%/27.7%升至58.9%/42.4%；主比较中的ColorPACO AP50为34.9%，两套数值不可混用。</p>
+<p class='meta'>实验结论：组合提示在ColorPACO显著降低错误激活，且COCO-20i性能未明显牺牲；不过两个重构数据集、精确颜色标注和单一训练配方限制外部有效性。</p>
+<p class='meta'>和我课题的关系：COD可把类别、边界部件和局部色差分阶段处理；UAV目标过小时部件提示可能失效；火烟没有稳定部件和颜色，需把外观提示改成时序增长与热信号。</p>
+<p class='meta'>可借鉴点：先解决目标存在与粗定位，再施加细属性约束；用无匹配提示的FPR检验模型是否服从条件。</p>
+<p class='meta'>可改进点：构造同类别近色、错部件及空目标对照，比较一次融合与两阶段的IoU、FPR和校准；若优势只在人工颜色值下成立，组合解释不能泛化。</p>
+<p class='meta'>是否值得精读：值得，方法式（1）至（8）连接颜色相似、两阶段加权、外观融合和损失；式（9）仅定义评测FPR。</p>
+</article>
+<article class='paper'>
+<h3><strong>Uncertainty-Aware Vision-Language Segmentation for Medical Imaging</strong></h3>
+<p class='meta'>Source: WACV 2026, 2026</p>
+<p class='meta'>Authors: Aryan Das, Tanishq Rachamalla, Koushik Biswas, Swalpa Kumar Roy, Vinay Kumar Verma</p>
+<p class='meta'>Tags: vision-language segmentation, uncertainty, medical imaging, state-space model</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/WACV2026/html/Das_Uncertainty-Aware_Vision-Language_Segmentation_for_Medical_Imaging_WACV_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Das_Uncertainty-Aware_Vision-Language_Segmentation_for_Medical_Imaging_WACV_2026_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Uncertainty-Aware Vision-Language Segmentation for Medical Imaging</p>
+<p class='meta'>一句话总结：该方法先做视觉自注意，再以状态空间混合后的文本做交叉注意；卷积式多尺度解码后，用Dice、频谱差和低熵正则共同训练。</p>
+<p class='meta'>任务设定：输入放射或内镜图像及对应临床文本，输出像素级病灶掩码；训练有掩码与文本，推理默认文本可用。单次预测熵只作低熵正则，模型不输出后验方差。</p>
+<p class='meta'>摘要详解：论文针对医学分割在低质量影像下易失真、视觉语言方法又少验证预测歧义的问题。ConvNeXt-Tiny提取四级视觉特征，冻结BioViL CXR-BERT编码文本；每级MoDAB先做视觉自注意，再以视觉查询对SSMix混合后的文本做交叉注意。融合特征经转置卷积、跳连CRB和SUN逐级恢复掩码，SEU目标相加Dice、傅里叶幅度差与单次预测熵。作者报告QATA-COVID19 Dice/mIoU为92.24%/84.90%，MosMed++为79.67%/66.38%，Kvasir-SEG为93.83%/87.62%；推理去文本时Kvasir Dice降至87.28%，去MoDAB降至85.15%。替换SSMix和交叉注意也会下降，但论文没有分别去掉频谱项与熵项，也没有报告ECE、Brier或风险覆盖曲线，不能把增益归因于校准，跨域可靠性尚未证明。</p>
+<p class='meta'>实验结论：三个数据集支持文本融合与完整组合的贡献，Kvasir去掉MoDAB降到85.15 Dice；但熵变小只表示输出更尖锐，并不能单独证明概率已校准或风险可控。</p>
+<p class='meta'>和我课题的关系：COD可把预测熵作为前景背景混淆的复核信号，UAV可标记小目标弱证据，火烟可触发复核；三者都需校准，不能把低熵等同正确。</p>
+<p class='meta'>可借鉴点：把单次预测熵作为可消融的训练正则；在多尺度视觉解码时用文本提供语义条件。</p>
+<p class='meta'>可改进点：加入ECE、Brier、risk-coverage及跨域缺文本/错文本测试，并与纯熵最小化等参数模型对照；若低熵却误检增加，应否定可靠性主张。</p>
+<p class='meta'>是否值得精读：值得，式（1）至（29）覆盖编码、注意、状态空间混合、卷积解码、谱正则和熵正则，适合核查不确定性是否被真正建模。</p>
+</article>
+<article class='paper'>
+<h3><strong>Active Learning Meets Foundation Models: Fast Remote Sensing Data Annotation for Object Detection</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Authors: Marvin Burges, Philipe Ambrozio Dias, Carson Woody, Sarah Walters, Dalton Lunga</p>
+<p class='meta'>Tags: remote sensing, active learning, SAM, object detection, annotation efficiency</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Burges_Active_Learning_Meets_Foundation_Models_Fast_Remote_Sensing_Data_Annotation_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Burges_Active_Learning_Meets_Foundation_Models_Fast_Remote_Sensing_Data_Annotation_ICCV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Active Learning Meets Foundation Models: Fast Remote Sensing Data Annotation for Object Detection</p>
+<p class='meta'>一句话总结：AL4FM-OD用SAM掩码与检测框的不一致挑困难图，再按掩码特征去冗余，并在冷启动时以SAM框替换差定位。</p>
+<p class='meta'>任务设定：输入少量已标注与大量未标注遥感图像，在固定查询预算下循环选择、半自动标注并微调检测器；假设SAM能给多数目标提供可用候选掩码。</p>
+<p class='meta'>摘要详解：论文针对遥感目标检测主动学习中分类与定位可靠性不能由单一置信度刻画、冷启动框偏差又大的问题。AL4FM-OD先离线缓存SAM密集掩码和框；每轮将其与RT-DETRv2框做忽略类别的匈牙利匹配，以匹配质量和检测置信度的调和均值补量作为对象不确定性。对象分数在图内取均值后，选出六倍预算的候选。MDE再用掩码内基础模型特征建立每类五个原型，对候选做对象级多样性重排；DBS保留类别、以重叠最大的SAM框辅助人工。DIOR最后一轮为10.68，对PPAL 4.89；DOTAv2为7.93，低于PPAL 9.24，说明小目标SAM漏检会限制收益。</p>
+<p class='meta'>实验结论：DIOR、HRSC2016和WaffleHomes支持采样收益，DOTAv2与FAIR1M并非最佳。八人一小时研究的表6给出AP50 0.34对0.28、AP75 0.17对0.11、AR100 0.43对0.35；正文所写14%、3%、8%与表值不一致，故只保留表值，不替作者重算。</p>
+<p class='meta'>和我课题的关系：UAV/遥感可直接采用预算式标注；COD中SAM可能漏掉伪装目标；早期烟雾无清晰边界，必须允许无框候选和时序查询，不能照搬框切换。</p>
+<p class='meta'>可借鉴点：把基础模型与任务模型的不一致作为查询信号；先筛困难图，再用掩码内对象原型去冗余。</p>
+<p class='meta'>可改进点：让所有采样基线共享同一骨干与SAM预标，按尺寸统计未匹配框和每预算AP；若采样优势在控制SAM资源后消失，或随SAM漏检同步下降，就不能归因于主动策略。</p>
+<p class='meta'>是否值得精读：值得，但主方法只有式（1）是编号公式；匹配质量变换未编号，MDE与DBS仅有流程图和文字规则，需结合代码核对，不能宣称存在六个连续编号式。</p>
+</article>
+<article class='paper'>
+<h3><strong>Finding Dino: A Plug-and-Play Framework for Zero-Shot Detection of Out-of-Distribution Objects Using Prototypes</strong></h3>
+<p class='meta'>Source: WACV 2025, 2025</p>
+<p class='meta'>Authors: Poulami Sinhamahapatra, Franziska Schwaiger, Shirsha Bose, Huiyu Wang, Karsten Roscher et al.</p>
+<p class='meta'>Tags: zero-shot OOD, prototype, DINOv2, open-world detection, anomaly segmentation</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/WACV2025/html/Sinhamahapatra_Finding_Dino_A_Plug-and-Play_Framework_for_Zero-Shot_Detection_of_Out-of-Distribution_WACV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Sinhamahapatra_Finding_Dino_A_Plug-and-Play_Framework_for_Zero-Shot_Detection_of_Out-of-Distribution_WACV_2025_paper.pdf">pdf</a></p>
+<p class='meta'>论文：Finding Dino: A Plug-and-Play Framework for Zero-Shot Detection of Out-of-Distribution Objects Using Prototypes</p>
+<p class='meta'>一句话总结：PROWL用少量已知类样例构建冻结DINOv2原型库，以像素相似度找未知区域，再用无监督前景掩码抑制背景误报。</p>
+<p class='meta'>任务设定：给定运行域内的已知类别清单和每类少量分割样例，测试任意场景时定位不属于已知类的对象；不在目标域训练或微调模型。</p>
+<p class='meta'>摘要详解：论文针对开放世界中未知对象与普通背景难区分、监督异常分割又依赖目标域训练的问题。PROWL离线用冻结DINOv2提取已知类实例的掩码内特征，经空间平均后把每个实例保留为独立原型；测试时取每个像素与所有已知原型的最大余弦相似度，反相分数超过阈值即视为OOD。为减少背景像素误报，方法再接STEGO或CutLER前景掩码，以掩码内多数投票判定完整实例。PROWL+CutLER在RoadAnomaly的AUPR/FPR95为75.25%/1.75%，RoadObstacle为73.53%/5.58%；铁路与海事二值IoU为83.29%和73.30%。vanilla PROWL在铁路IoU仅8.01，显示前景掩码主导该域结果；约十五个原型后趋于饱和，但远距小障碍仍困难。</p>
+<p class='meta'>实验结论：道路、铁路和海事结果支持无需梯度更新的跨域可用性，且前景掩码显著降低背景误报；不过建库仍需实例掩码，阈值靠验证集，跨域基准也不统一。</p>
+<p class='meta'>和我课题的关系：COD可把正常背景模式当已知原型，UAV可检测未知小目标；火烟与背景连续混合且形态变化，单原型阈值易把云雾或霞光误判。</p>
+<p class='meta'>可借鉴点：先做类别原型距离，再用对象性掩码约束空间连续性；把未知检测与背景抑制分成两个可消融环节。</p>
+<p class='meta'>可改进点：比较类别均值、实例多原型和尺度条件原型，并固定阈值跨数据集测试；若优势依赖逐域调阈或CutLER召回，就不能声称无需适配。</p>
+<p class='meta'>是否值得精读：值得，式（1）至（5）清楚定义原型构造、像素匹配和逆相似度，实验也直接暴露小目标与背景混淆边界。</p>
+</article>
+<h2>高质量来源优先读：CCF-A/B 与顶刊顶会</h2>
+<article class='paper'>
+<h3><strong>A Causal Marriage between VLM and IRM from Understanding to Reasoning</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, anomaly/OOD, causal/counterfactual, representation learning</p>
+<p class='meta'>核心机制：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
+<p class='meta'>跟踪理由：不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Chen_A_Causal_Marriage_between_VLM_and_IRM_from_Understanding_to_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_A_Causal_Marriage_between_VLM_and_IRM_from_Understanding_to_CVPR_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Finding Distributed Object-Centric Properties in Self-Supervised Transformers</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Tags: training-free, unsupervised, VLM/MLLM, reasoning, diffusion, object discovery, object-centric, self-supervised</p>
+<p class='meta'>核心机制：类别无关目标发现，适合把 COD 从固定类别分割改写成复杂背景中的潜在目标发现问题。</p>
+<p class='meta'>跟踪理由：不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Rawlekar_Finding_Distributed_Object-Centric_Properties_in_Self-Supervised_Transformers_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Rawlekar_Finding_Distributed_Object-Centric_Properties_in_Self-Supervised_Transformers_CVPR_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Clinically-Grounded Counterfactual Reasoning for Medical Video Diagnosis</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, diffusion, video, causal/counterfactual, representation learning, saliency/transparent</p>
+<p class='meta'>核心机制：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
+<p class='meta'>跟踪理由：不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Gao_Clinically-Grounded_Counterfactual_Reasoning_for_Medical_Video_Diagnosis_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Gao_Clinically-Grounded_Counterfactual_Reasoning_for_Medical_Video_Diagnosis_CVPR_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Shift the Lens: Environment-Aware Unsupervised Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: Semantic Scholar / Computer Vision and Pattern Recognition / citations 13, 2025-06-10</p>
+<p class='meta'>Tags: COD, unsupervised, SAM, diffusion, retrieval/prototype, saliency/transparent</p>
+<p class='meta'>核心机制：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>跟踪理由：直接关联伪装目标检测/分割，主要作为背景、对照和失败案例参考。</p>
+<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/9ffe2dac38933b2edc81c584ed5588574960e82c">paper</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Tags: VLM/MLLM, causal/counterfactual, representation learning, domain adaptation, medical imaging</p>
+<p class='meta'>核心机制：自监督/稠密表征学习，重点看无需 COD 标注时如何获得可迁移的局部结构与语义特征。</p>
+<p class='meta'>跟踪理由：不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Liang_Multimodal_Causality-Driven_Representation_Learning_for_Generalizable_Medical_Image_Segmentation_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Liang_Multimodal_Causality-Driven_Representation_Learning_for_Generalizable_Medical_Image_Segmentation_CVPR_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, boundary/frequency, depth/geometry, remote sensing, compositionality</p>
+<p class='meta'>核心机制：组合式或概念瓶颈建模，可把 COD 拆成颜色、纹理、边界、环境关系等可解释概念。</p>
+<p class='meta'>跟踪理由：不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Yasuki_GeoProg3D_Compositional_Visual_Reasoning_for_City-Scale_3D_Language_Fields_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Yasuki_GeoProg3D_Compositional_Visual_Reasoning_for_City-Scale_3D_Language_Fields_ICCV_2025_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, video, causal/counterfactual, domain adaptation</p>
+<p class='meta'>核心机制：反事实建模/拒识机制，用来降低误检或判断目标是否存在。</p>
+<p class='meta'>跟踪理由：不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Kim_Cross-Domain_Demo-to-Code_via_Neurosymbolic_Counterfactual_Reasoning_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Kim_Cross-Domain_Demo-to-Code_via_Neurosymbolic_Counterfactual_Reasoning_CVPR_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, diffusion, depth/geometry, open-world</p>
+<p class='meta'>核心机制：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
+<p class='meta'>跟踪理由：不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Shi_REALM_An_MLLM-Agent_Framework_for_Open_World_3D_Reasoning_Segmentation_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Shi_REALM_An_MLLM-Agent_Framework_for_Open_World_3D_Reasoning_Segmentation_CVPR_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Tags: unsupervised, video, causal/counterfactual, uncertainty/calibration, domain adaptation</p>
+<p class='meta'>核心机制：不确定性/置信度校准建模，可用于判断伪装区域是否可靠、是否需要拒识或二次推理。</p>
+<p class='meta'>跟踪理由：不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets</strong></h3>
+<p class='meta'>Source: ICCV 2025, 2025</p>
+<p class='meta'>Tags: VLM/MLLM, reasoning, diffusion, causal/counterfactual, compositionality</p>
+<p class='meta'>核心机制：组合式或概念瓶颈建模，可把 COD 拆成颜色、纹理、边界、环境关系等可解释概念。</p>
+<p class='meta'>跟踪理由：不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.pdf">pdf</a></p>
+</article>
+<h2>COD / 伪装目标检测相关</h2>
+<article class='paper'>
+<h3><strong>Shift the Lens: Environment-Aware Unsupervised Camouflaged Object Detection</strong> - 已在“高质量来源优先读”列出；此处仅保留方向归属。<a href="https://www.semanticscholar.org/paper/9ffe2dac38933b2edc81c584ed5588574960e82c">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>Multi-scale attention and boundary-aware network for military camouflaged object detection using unmanned aerial vehicles</strong></h3>
+<p class='meta'>Source: Semantic Scholar / Signal, Image and Video Processing / citations 13, 2025-01-01</p>
+<p class='meta'>Tags: COD, boundary/frequency, UAV/small-object</p>
+<p class='meta'>核心机制：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
+<p class='meta'>跟踪理由：直接关联伪装目标检测/分割，主要作为背景、对照和失败案例参考。</p>
+<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/b760c224ca6598679843d5d2c35b7a0e3a41a005">paper</a> / <a href="https://www.researchsquare.com/article/rs-5165176/latest.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2025-08-21</p>
+<p class='meta'>Tags: COD, training-free, unsupervised, SAM, retrieval/prototype, anomaly/OOD, saliency/transparent</p>
+<p class='meta'>核心机制：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>跟踪理由：直接关联伪装目标检测/分割，主要作为背景、对照和失败案例参考。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2508.15313v2">paper</a> / <a href="http://arxiv.org/pdf/2508.15313v2">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>MRCNet: Motion Reasoning Chain for Cross Modal Video Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: Crossref / TPAMI / CCF-A / 顶刊 / IEEE Transactions on Pattern Analysis and Machine Intelligence, 2026-09</p>
+<p class='meta'>Tags: COD, reasoning, video</p>
+<p class='meta'>核心机制：多模态大模型推理，可能用于目标描述、区域判断或链式推理。</p>
+<p class='meta'>跟踪理由：直接关联伪装目标检测/分割，主要作为背景、对照和失败案例参考。</p>
+<p class='meta'>Links: <a href="https://doi.org/10.1109/tpami.2026.3689767">paper</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Source-free Depth for Object Pop-out</strong></h3>
+<p class='meta'>Source: arXiv, 2022-12-10</p>
+<p class='meta'>Tags: COD, reasoning, boundary/frequency, depth/geometry, compositionality, saliency/transparent</p>
+<p class='meta'>核心机制：组合式或概念瓶颈建模，可把 COD 拆成颜色、纹理、边界、环境关系等可解释概念。</p>
+<p class='meta'>跟踪理由：不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2212.05370v3">paper</a> / <a href="http://arxiv.org/pdf/2212.05370v3">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Is There Really a Camouflaged Object? Towards Realistic Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2026-08-11</p>
+<p class='meta'>Tags: COD, reasoning, open-world</p>
+<p class='meta'>核心机制：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
+<p class='meta'>跟踪理由：不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2608.11135v1">paper</a> / <a href="http://arxiv.org/pdf/2608.11135v1">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Tags: COD, open-vocabulary, training-free</p>
+<p class='meta'>核心机制：提示学习或提示生成，重点看文本/视觉 prompt 如何约束定位。</p>
+<p class='meta'>跟踪理由：直接关联伪装目标检测/分割，主要作为背景、对照和失败案例参考。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Ren_Training-Free_Open-Vocabulary_Camouflaged_Object_Segmentation_via_Fine-Grained_Object_Binding_and_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Ren_Training-Free_Open-Vocabulary_Camouflaged_Object_Segmentation_via_Fine-Grained_Object_Binding_and_CVPR_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Progressive Region-to-Boundary Exploration Network for Camouflaged Object Detection</strong></h3>
+<p class='meta'>Source: Semantic Scholar / IEEE transactions on multimedia / citations 25, 2025</p>
+<p class='meta'>Tags: COD, diffusion, boundary/frequency, anomaly/OOD, low-level</p>
+<p class='meta'>核心机制：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
+<p class='meta'>跟踪理由：直接关联伪装目标检测/分割，主要作为背景、对照和失败案例参考。</p>
+<p class='meta'>Links: <a href="https://www.semanticscholar.org/paper/0da0d40fa8a9d000b2fdd84a1e9a931d537e279d">paper</a></p>
+</article>
+<article class='paper'>
+<h3><strong>LSP-ST: Ladder Shape-Biased Side-Tuning for Robust Infrared Small Target Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2025-04-20</p>
+<p class='meta'>Tags: COD, SAM, reasoning, boundary/frequency, UAV/small-object, saliency/transparent</p>
+<p class='meta'>核心机制：借助 SAM/基础分割模型产生候选 mask，再做筛选或适配。</p>
+<p class='meta'>跟踪理由：直接关联伪装目标检测/分割，主要作为背景、对照和失败案例参考。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2504.14481v2">paper</a> / <a href="http://arxiv.org/pdf/2504.14481v2">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Depth-Assisted Camouflaged Object Segmentation via Frequency-Domain Fusion and High-Order Interaction</strong></h3>
+<p class='meta'>Source: Crossref / TMM / CCF-B / 顶刊 / IEEE Transactions on Multimedia, 2026</p>
+<p class='meta'>Tags: COD, boundary/frequency, depth/geometry</p>
+<p class='meta'>核心机制：频域/纹理特征增强，适合处理伪装背景与目标细粒度差异。</p>
+<p class='meta'>跟踪理由：直接关联伪装目标检测/分割，主要作为背景、对照和失败案例参考。</p>
+<p class='meta'>Links: <a href="https://doi.org/10.1109/tmm.2026.3668692">paper</a></p>
+</article>
+<article class='paper'>
+<h3><strong>BED-SAM2: Boundary-Enhanced-Depth SAM2 via Monocular Geometric Priors</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-24</p>
+<p class='meta'>Tags: COD, boundary/frequency, depth/geometry, saliency/transparent</p>
+<p class='meta'>核心机制：边界感知建模，适合改善伪装目标轮廓不清的问题。</p>
+<p class='meta'>跟踪理由：直接关联伪装目标检测/分割，主要作为背景、对照和失败案例参考。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.24893v1">paper</a> / <a href="http://arxiv.org/pdf/2605.24893v1">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Open-Vocabulary Camouflaged Object Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2023-11-19</p>
+<p class='meta'>Tags: COD, open-vocabulary, VLM/MLLM, boundary/frequency, depth/geometry, low-level</p>
+<p class='meta'>核心机制：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
+<p class='meta'>跟踪理由：直接关联伪装目标检测/分割，主要作为背景、对照和失败案例参考。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2311.11241v3">paper</a> / <a href="http://arxiv.org/pdf/2311.11241v3">pdf</a></p>
+</article>
+<h2>无人机 / 航拍小目标</h2>
+<article class='paper'>
+<h3><strong>Active Learning Meets Foundation Models: Fast Remote Sensing Data Annotation for Object Detection</strong> - 已在“当日精读队列”列出；此处仅保留方向归属。<a href="https://openaccess.thecvf.com/content/ICCV2025/html/Burges_Active_Learning_Meets_Foundation_Models_Fast_Remote_Sensing_Data_Annotation_ICCV_2025_paper.html">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>CLSC DETR: Reliable Candidate Ranking via Cross Layer Geometric Support for UAV Small Object Detection</strong></h3>
+<p class='meta'>Source: arXiv, 2026-08-20</p>
+<p class='meta'>Tags: boundary/frequency, depth/geometry, UAV/small-object, uncertainty/calibration, verified compact summary, 未同行评审预印本</p>
+<p class='meta'>核心机制：CLSC DETR把末层query与中间层候选对齐并聚合几何支持，再按分类—定位一致性校准排序。</p>
+<p class='meta'>跟踪理由：作者在VisDrone报告AP/AP75提升1.5/2.0点，但该工作是5页未同行评审预印本，需核查拥挤和尺度分层。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2608.21457v1">paper</a> / <a href="http://arxiv.org/pdf/2608.21457v1">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>UAV-OVVIS: Unmanned Aerial Vehicles Also Need Open-Vocabulary Video Instance Segmentation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-07-09</p>
+<p class='meta'>Tags: open-vocabulary, training-free, video, UAV/small-object, anomaly/OOD, verified compact summary, 未同行评审预印本</p>
+<p class='meta'>核心机制：AeroTrack周期执行开放词汇检测、片段内传播mask，并用生命周期感知关联恢复全局ID。</p>
+<p class='meta'>跟踪理由：它把UAV从闭集框跟踪推进到开放词汇视频实例分割，但预印本的代码与AeroVIS尚待公开。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2607.08075v2">paper</a> / <a href="http://arxiv.org/pdf/2607.08075v2">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Uncertainty-Aware World Model for Aerial Image-Goal Navigation</strong></h3>
+<p class='meta'>Source: arXiv, 2026-08-06</p>
+<p class='meta'>Tags: diffusion, UAV/small-object, anomaly/OOD, uncertainty/calibration, verified compact summary, 未同行评审预印本</p>
+<p class='meta'>核心机制：UA-NWM用不确定性子空间解释合理未来变化，只以无法解释的预测—目标残差给候选轨迹排序。</p>
+<p class='meta'>跟踪理由：这一条件OOD视角避免多次采样，值得检查真实UAV中的安全约束、恢复策略和跨地域阈值。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2608.05597v1">paper</a> / <a href="http://arxiv.org/pdf/2608.05597v1">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Oh Deer, How Should I Handle This? Seasonal Priors for Selective Wildlife Annotation and Classification</strong></h3>
+<p class='meta'>Source: arXiv, 2026-08-03</p>
+<p class='meta'>Tags: UAV/small-object, uncertainty/calibration, selective/risk control, verified compact summary, 未同行评审预印本</p>
+<p class='meta'>核心机制：该预印本在7295组低空UAV RGB/热红外裁块上用季节先验联合指导标注复核、模态加权和拒答。</p>
+<p class='meta'>跟踪理由：保留样本准确率达98.9%却不成比例地拒答雄性，提示总体风险下降可能掩盖关键亚群失效。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2608.02762v3">paper</a> / <a href="http://arxiv.org/pdf/2608.02762v3">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Tags: diffusion, video, UAV/small-object, anomaly/OOD, causal/counterfactual, verified compact summary</p>
+<p class='meta'>核心机制：CHAL用时空神经场解释背景演化，把运动红外小目标建成分层异常，并以因果引导削弱背景混杂。</p>
+<p class='meta'>跟踪理由：其先解释背景再找剩余弱证据的设定可同时迁移到COD与远距离小火点。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Tags: UAV/small-object, multimodal, RGB-T, boundary/frequency, remote sensing, verified compact summary</p>
+<p class='meta'>核心机制：DyFCLT把RGB-T注意力动态分配到可学习频带，在同频带跨模态交互后抑制背景并引导上采样。</p>
+<p class='meta'>跟踪理由：RGBT-Tiny 48.2 AP与RGBTDronePerson 61.0 AP50可检验频率解耦是否真正保住弱小目标。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Li_DyFCLT_Dynamic_Frequency-Decoupled_Cross-Modal_Learning_Transformer_for_Multimodal_Tiny_Object_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Li_DyFCLT_Dynamic_Frequency-Decoupled_Cross-Modal_Learning_Transformer_for_Multimodal_Tiny_Object_CVPR_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Tags: unknown label generation, remote sensing, open-world, UAV/small-object, open-vocabulary, visual grounding, verified compact summary</p>
+<p class='meta'>核心机制：方法在遥感开放世界检测中不依赖人工未知类prompt，从候选区域生成并筛选未知标签。</p>
+<p class='meta'>跟踪理由：CVPR 2026正式论文值得检查其未知候选召回是否随微小目标、密集遮挡和背景纹理而下降。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Azeem_Prompt-Free_Unknown_Label_Generation_for_Open_World_Detection_in_Remote_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Azeem_Prompt-Free_Unknown_Label_Generation_for_Open_World_Detection_in_Remote_CVPR_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>UniGeoSeg: Towards Unified Open-World Segmentation for Geospatial Scenes</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Tags: remote sensing, open-world, reasoning, visual grounding, UAV/small-object, verified compact summary</p>
+<p class='meta'>核心机制：UniGeoSeg统一处理地理场景中的已知类、未知类与开放词汇mask，而非为每种设定训练独立头。</p>
+<p class='meta'>跟踪理由：CVPR 2026正式论文适合检验开放世界指标能否区分未知目标发现和普通背景误报。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Ni_UniGeoSeg_Towards_Unified_Open-World_Segmentation_for_Geospatial_Scenes_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Ni_UniGeoSeg_Towards_Unified_Open-World_Segmentation_for_Geospatial_Scenes_CVPR_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection</strong></h3>
+<p class='meta'>Source: CVPR 2026, 2026</p>
+<p class='meta'>Tags: UAV/small-object, diffusion, synthetic data, layout conditioning, dense targets, remote sensing, verified compact summary</p>
+<p class='meta'>核心机制：方法以视觉原型约束扩散模型生成UAV焦点区域，面向稀少目标和局部密集布局补充训练数据。</p>
+<p class='meta'>跟踪理由：CVPR 2026正式论文应以真实检测增益、布局保持和小目标伪影分层判断，而非只看生成观感。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Li_Visual_Prototype_Conditioned_Focal_Region_Generation_for_UAV-Based_Object_Detection_CVPR_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Li_Visual_Prototype_Conditioned_Focal_Region_Generation_for_UAV-Based_Object_Detection_CVPR_2026_paper.pdf">pdf</a></p>
+</article>
+<h2>火灾/烟雾与多光谱感知</h2>
+<article class='paper'>
+<h3><strong>Generative Algorithms for Wildfire Progression Reconstruction from Multi-Modal Satellite Active Fire Measurements and Terrain Height</strong></h3>
+<p class='meta'>Source: arXiv, 2025-06-12</p>
+<p class='meta'>Tags: fire perception, multispectral fire, diffusion, remote sensing, verified compact summary, 未同行评审预印本</p>
+<p class='meta'>核心机制：条件GAN用WRF-SFIRE模拟学习由VIIRS火点、GOES点火时刻和地形重建火到达时间场。</p>
+<p class='meta'>跟踪理由：五场美国西部野火平均Dice为0.81，但预印本仍需验证模拟到真实偏移和稀疏观测不确定性。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2506.10404v1">paper</a> / <a href="http://arxiv.org/pdf/2506.10404v1">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Wildfire Fire-Smoke Detection in UAV Imagery via Scale-Guided Feature Routing and Uncertainty-Aware Localization</strong></h3>
+<p class='meta'>Source: Crossref / IEEE Access 2026, 2026-06-23</p>
+<p class='meta'>Tags: wildfire UAV scale detection, fire perception, UAV/small-object, uncertainty/calibration, safety-critical/hazard, real-time edge inference, boundary/frequency, verified compact summary</p>
+<p class='meta'>核心机制：WFSDet按火点与烟区尺度在P3/P4/P5间路由特征，并以异方差尺度损失降低歧义框的训练权重。</p>
+<p class='meta'>跟踪理由：三数据集mAP50为0.642/0.943/0.775，但该不确定性只调制训练损失，不提供推理期校准或拒答。</p>
+<p class='meta'>Links: <a href="https://doi.org/10.1109/ACCESS.2026.3706370">paper</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Oh Deer, How Should I Handle This? Seasonal Priors for Selective Wildlife Annotation and Classification</strong> - 已在“无人机 / 航拍小目标”列出；此处仅保留方向归属。<a href="http://arxiv.org/abs/2608.02762v3">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>Beyond Accuracy: Assessing Calibration of Geospatial Foundation Models and Their Sensitivity to Distribution Shifts</strong></h3>
+<p class='meta'>Source: arXiv, 2026-08-17</p>
+<p class='meta'>Tags: diffusion, uncertainty/calibration, selective/risk control, verified compact summary, 未同行评审预印本</p>
+<p class='meta'>核心机制：该预印本在16个冻结编码器和9个数据集上联合审计准确率、校准与选择性预测。</p>
+<p class='meta'>跟踪理由：GeoFM在移位下更过置信，常见校准器也挡不住退化，适合作为云、模糊和火烟背景的可靠性压力测试。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2608.16614v1">paper</a> / <a href="http://arxiv.org/pdf/2608.16614v1">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>SmokeBench: Evaluating Multimodal Large Language Models for Wildfire Smoke Detection</strong></h3>
+<p class='meta'>Source: WACV 2026, 2026</p>
+<p class='meta'>Tags: visual fire and smoke detection, multimodal hazard understanding, foundation model evaluation, early wildfire warning, safety-critical perception, verified compact summary</p>
+<p class='meta'>核心机制：SmokeBench把任务从烟雾分类推进到网格和框定位，并按烟雾面积与Weber对比度分层。</p>
+<p class='meta'>跟踪理由：大烟分类可达0.931准确率而通用模型框定位近乎零IoU，直接暴露早期透明烟雾的定位缺口。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/WACV2026/html/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>RoboFireFuseNet: Robust Fusion of Visible and Infrared Wildfire Imaging for Real-Time Flame and Smoke Segmentation</strong></h3>
+<p class='meta'>Source: Pattern Recognition Letters 205 (2026), 2026</p>
+<p class='meta'>Tags: visual fire and smoke detection, RGB-T fire detection, wildfire segmentation, degraded multimodal perception, real-time edge inference, safety-critical perception, verified compact summary</p>
+<p class='meta'>核心机制：RoboFireFuseNet用模态专用路径、通道注意、SwinV2与模态丢弃融合可见光和红外。</p>
+<p class='meta'>跟踪理由：作者报告火焰/烟雾IoU为81.5/87.98，关键是核查缺失或退化热像时融合是否仍可靠。</p>
+<p class='meta'>Links: <a href="https://doi.org/10.1016/j.patrec.2026.04.024">paper</a> / <a href="https://zenodo.org/records/18199667/files/RFFNet%20%281%29.pdf?download=1">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>False Alarm Rectification for Early Smoke Segmentation</strong></h3>
+<p class='meta'>Source: WACV 2026, 2026</p>
+<p class='meta'>Tags: fire/smoke, safety-critical, segmentation, false-positive control, foundation model, verified compact summary</p>
+<p class='meta'>核心机制：SmokeCPC融合MiT多尺度特征与DINOv3全局语义，再用图像级烟雾先验平移并温度缩放像素logit。</p>
+<p class='meta'>跟踪理由：它直面云、雾、霞光等早烟误报，适合作为局部弱证据必须经全局一致性复核的基线。</p>
+<p class='meta'>Links: <a href="https://openaccess.thecvf.com/content/WACV2026/html/Zhao_False_Alarm_Rectification_for_Early_Smoke_Segmentation_WACV_2026_paper.html">paper</a> / <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Zhao_False_Alarm_Rectification_for_Early_Smoke_Segmentation_WACV_2026_paper.pdf">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Seeing Heat with Color -- RGB-Only Wildfire Temperature Inference from SAM-Guided Multimodal Distillation using Radiometric Ground Truth</strong></h3>
+<p class='meta'>Source: arXiv, 2025-05-03</p>
+<p class='meta'>Tags: fire perception, multispectral fire, fire foundation model, SAM, boundary/frequency, UAV/small-object, verified compact summary, 未同行评审预印本</p>
+<p class='meta'>核心机制：SAM-TIFF用配对RGB—热红外和辐射温度真值训练教师，再把温度回归与分割知识蒸馏给RGB学生。</p>
+<p class='meta'>跟踪理由：它降低热传感器依赖，但颜色到温度受材质、烟遮挡和域偏移影响，必须跨火场校准。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2505.01638v1">paper</a> / <a href="http://arxiv.org/pdf/2505.01638v1">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>On-Orbit Real-Time Wildfire Detection Under On-Board Constraints</strong></h3>
+<p class='meta'>Source: arXiv, 2026-05-07</p>
+<p class='meta'>Tags: fire perception, multispectral fire, representation learning, verified compact summary, 未同行评审预印本</p>
+<p class='meta'>核心机制：该系统把热红外野火检测压缩到在轨算力、内存和下行带宽约束内，并在九颗商业卫星部署。</p>
+<p class='meta'>跟踪理由：其价值是提供端侧误报、延迟与资源共同约束的真实边界，而非只报告离线准确率。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2605.06273v1">paper</a> / <a href="http://arxiv.org/pdf/2605.06273v1">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Detecting Wildfires on UAVs with Real-time Segmentation Trained by Larger Teacher Models</strong></h3>
+<p class='meta'>Source: arXiv, 2024-08-19</p>
+<p class='meta'>Tags: fire perception, fire foundation model, UAV/small-object, verified compact summary, 未同行评审预印本</p>
+<p class='meta'>核心机制：方法用零样本基础模型把框标注转成分割监督，只训练轻量学生。</p>
+<p class='meta'>跟踪理由：作者报告63.3% mIoU和Jetson Orin NX约25 FPS，可检验弱标注、端侧速度和烟雾定位能否同时成立。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2408.10843v3">paper</a> / <a href="http://arxiv.org/pdf/2408.10843v3">pdf</a></p>
+</article>
+<h2>火灾监测大模型</h2>
+<article class='paper'>
+<h3><strong>SmokeBench: Evaluating Multimodal Large Language Models for Wildfire Smoke Detection</strong> - 已在“火灾/烟雾与多光谱感知”列出；此处仅保留方向归属。<a href="https://openaccess.thecvf.com/content/WACV2026/html/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.html">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>Seeing Heat with Color -- RGB-Only Wildfire Temperature Inference from SAM-Guided Multimodal Distillation using Radiometric Ground Truth</strong> - 已在“火灾/烟雾与多光谱感知”列出；此处仅保留方向归属。<a href="http://arxiv.org/abs/2505.01638v1">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>Detecting Wildfires on UAVs with Real-time Segmentation Trained by Larger Teacher Models</strong> - 已在“火灾/烟雾与多光谱感知”列出；此处仅保留方向归属。<a href="http://arxiv.org/abs/2408.10843v3">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>Generating Satellite Imagery Data for Wildfire Detection through Mask-Conditioned Generative AI</strong></h3>
+<p class='meta'>Source: arXiv, 2026-04-02</p>
+<p class='meta'>Tags: fire perception, multispectral fire, fire foundation model, diffusion, remote sensing, saliency/transparent, verified compact summary, 未同行评审预印本</p>
+<p class='meta'>核心机制：EarthSynth用烧毁掩码与火前影像做无任务微调扩散生成，并比较全图生成、修复与颜色匹配。</p>
+<p class='meta'>跟踪理由：结构化修复Burn IoU仅0.456，合成价值应由真实下游检测增益而非观感判定。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2604.02479v1">paper</a> / <a href="http://arxiv.org/pdf/2604.02479v1">pdf</a></p>
+</article>
+<h2>泛计算机视觉方法池</h2>
+<article class='paper'>
+<h3><strong>A Causal Marriage between VLM and IRM from Understanding to Reasoning</strong> - 已在“高质量来源优先读”列出；此处仅保留方向归属。<a href="https://openaccess.thecvf.com/content/CVPR2026/html/Chen_A_Causal_Marriage_between_VLM_and_IRM_from_Understanding_to_CVPR_2026_paper.html">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>Finding Distributed Object-Centric Properties in Self-Supervised Transformers</strong> - 已在“高质量来源优先读”列出；此处仅保留方向归属。<a href="https://openaccess.thecvf.com/content/CVPR2026/html/Rawlekar_Finding_Distributed_Object-Centric_Properties_in_Self-Supervised_Transformers_CVPR_2026_paper.html">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>Clinically-Grounded Counterfactual Reasoning for Medical Video Diagnosis</strong> - 已在“高质量来源优先读”列出；此处仅保留方向归属。<a href="https://openaccess.thecvf.com/content/CVPR2026/html/Gao_Clinically-Grounded_Counterfactual_Reasoning_for_Medical_Video_Diagnosis_CVPR_2026_paper.html">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images</strong></h3>
+<p class='meta'>Source: arXiv, 2025-09-23</p>
+<p class='meta'>Tags: open-vocabulary, training-free, unsupervised, VLM/MLLM, reasoning, diffusion, remote sensing, open-world, grounded vision</p>
+<p class='meta'>核心机制：开放世界/开放集设定，适合思考 COD 中未知目标、目标缺失和非目标干扰的判别边界。</p>
+<p class='meta'>跟踪理由：不是只看任务相似度，而是看它能否给 COD 带来新的建模角度、假设或实验问题。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2509.18711v2">paper</a> / <a href="http://arxiv.org/pdf/2509.18711v2">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation</strong> - 已在“高质量来源优先读”列出；此处仅保留方向归属。<a href="https://openaccess.thecvf.com/content/CVPR2026/html/Liang_Multimodal_Causality-Driven_Representation_Learning_for_Generalizable_Medical_Image_Segmentation_CVPR_2026_paper.html">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields</strong> - 已在“高质量来源优先读”列出；此处仅保留方向归属。<a href="https://openaccess.thecvf.com/content/ICCV2025/html/Yasuki_GeoProg3D_Compositional_Visual_Reasoning_for_City-Scale_3D_Language_Fields_ICCV_2025_paper.html">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport</strong> - 已在“高质量来源优先读”列出；此处仅保留方向归属。<a href="https://openaccess.thecvf.com/content/CVPR2026/html/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.html">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets</strong> - 已在“高质量来源优先读”列出；此处仅保留方向归属。<a href="https://openaccess.thecvf.com/content/ICCV2025/html/Jia_A_Visual_Leap_in_CLIP_Compositionality_Reasoning_through_Generation_of_ICCV_2025_paper.html">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>Beyond Accuracy: Assessing Calibration of Geospatial Foundation Models and Their Sensitivity to Distribution Shifts</strong> - 已在“火灾/烟雾与多光谱感知”列出；此处仅保留方向归属。<a href="http://arxiv.org/abs/2608.16614v1">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>RSC-GestureNet: Reliability-Aware Selective Causal Recognition of Chinese Traffic Police Gestures</strong></h3>
+<p class='meta'>Source: arXiv, 2026-08-03</p>
+<p class='meta'>Tags: reasoning, video, causal/counterfactual, uncertainty/calibration, safety-critical/hazard, verified compact summary, 未同行评审预印本</p>
+<p class='meta'>核心机制：RSC-GestureNet按关节点置信度抑制不可靠骨架，因果聚合历史帧并按可靠性选择性输出。</p>
+<p class='meta'>跟踪理由：预印本同时报告早识别、校准、拒答与上游重提取，可作为视频危险预警的评测模板。</p>
+<p class='meta'>Links: <a href="http://arxiv.org/abs/2608.02200v1">paper</a> / <a href="http://arxiv.org/pdf/2608.02200v1">pdf</a></p>
+</article>
+<article class='paper'>
+<h3><strong>Oh Deer, How Should I Handle This? Seasonal Priors for Selective Wildlife Annotation and Classification</strong> - 已在“无人机 / 航拍小目标”列出；此处仅保留方向归属。<a href="http://arxiv.org/abs/2608.02762v3">paper</a></h3>
+</article>
+<article class='paper'>
+<h3><strong>Uncertainty-Aware World Model for Aerial Image-Goal Navigation</strong> - 已在“无人机 / 航拍小目标”列出；此处仅保留方向归属。<a href="http://arxiv.org/abs/2608.05597v1">paper</a></h3>
+</article>
+<h2>阅读记录模板</h2>
+<pre><code>
+论文：
+任务设定：
+核心假设：
+方法模块：
+对 COD / 我的课题的可迁移点：
+我能改进的地方：
+</code></pre>
+<h2>数据源</h2>
+<p>- arXiv API: recent preprints from COD, UAV small objects, multispectral fire detection, fire-monitoring foundation models, VLM, segmentation, diffusion, adaptation, medical and remote-sensing queries, plus transferable-method queries such as object discovery, open-world segmentation, uncertainty, counterfactual/causal vision, self-supervised dense prediction, object-centric learning, compositional reasoning, interactive segmentation, continual learning, world models, and concept bottlenecks.</p>
+<p>- CVF OpenAccess: CVPR/ECCV/ICCV/WACV title-level scan.</p>
+<p>- Semantic Scholar Graph API: broad high-quality venue and topic search when rate limits allow.</p>
+<p>- Crossref API: TPAMI, IJCV, TIP, TMM, TCSVT, Pattern Recognition, CVIU, TGRS, ISPRS JPRS, RSE, JAG, Medical Image Analysis.</p>
+<p>- Selection policy: the daily deep-reading queue prioritizes idea transfer into COD, not direct COD similarity. The two fire sections rank formally published top-conference/top-journal results before preprints, then use relevance and recency.</p>
+<p>说明：自动简介是基于题名、摘要和来源的初筛笔记，不等同于阅读全文后的结论；精读时建议再核对 method、experiment 和 limitation。</p>
+</main>
+</body>
+</html>
