@@ -34,7 +34,7 @@ docs/index.html
 
 ## GitHub 自动更新
 
-`.github/workflows/update-literature.yml` 会每天运行一次，更新 `docs/literature.md`、`docs/index.html` 和 `data/latest_papers.json`。
+`.github/workflows/update-literature.yml` 会在每周一至周六运行，更新 `docs/literature.md`、`docs/index.html` 和 `data/latest_papers.json`。周日不更新。
 
 如果启用 GitHub Pages，建议发布目录选择：
 
@@ -42,3 +42,13 @@ docs/index.html
 Branch: main
 Folder: /docs
 ```
+
+## 人工论文卡片
+
+自动 Feed 负责扩大候选池，不代替阅读。周一至周五每天只选择一篇论文，使用
+[`paper-cards/TEMPLATE.md`](paper-cards/TEMPLATE.md) 建立个人卡片；周六不增加新论文，使用
+[`paper-cards/WEEKLY_TEMPLATE.md`](paper-cards/WEEKLY_TEMPLATE.md) 汇总本周五张卡片。
+
+卡片中“AI 预读”只允许预填可核验的元数据和事实。“我的理解”部分必须由阅读者本人完成，
+并在 24 小时内转化为一个代码检查、实验设计、基线决定或明确的否定结论。详细规则见
+[`paper-cards/README.md`](paper-cards/README.md)。
