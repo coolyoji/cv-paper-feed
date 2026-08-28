@@ -4833,5 +4833,113 @@
       ],
       "score": 94
     }
+  ],
+  "2026-08-28": [
+    {
+      "title": "GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_GPFlow_Gaussian_Prototype_Probability_Flow_for_Unsupervised_Multi-Modal_Anomaly_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_GPFlow_Gaussian_Prototype_Probability_Flow_for_Unsupervised_Multi-Modal_Anomaly_Detection_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yiting Li",
+        "Xulei Yang",
+        "Jingyi Liao",
+        "Jing Zhang",
+        "Fayao Liu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "GPFlow用带协方差的高斯原型和解析后验均值路由替代离散最近原型，使正常高方差变化被保留、异常低方差偏移被压制后形成更清晰的重构残差。",
+      "tags": [
+        "unsupervised",
+        "retrieval/prototype",
+        "anomaly/OOD",
+        "verified full-text deep read"
+      ],
+      "score": 98
+    },
+    {
+      "title": "The Invisible Gorilla Effect in Out-of-distribution Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Anthony_The_Invisible_Gorilla_Effect_in_Out-of-distribution_Detection_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Anthony_The_Invisible_Gorilla_Effect_in_Out-of-distribution_Detection_CVPR_2026_paper.pdf",
+      "authors": [
+        "Harry Anthony",
+        "Ziyun Liang",
+        "Hermione Warr",
+        "Konstantinos Kamnitsas"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "多数OOD检测器更容易发现与主模型关注区颜色相似的伪影，而高方差颜色方向会掩盖不相似伪影，PCA干扰子空间投影可缩小这一差距。",
+      "tags": [
+        "anomaly/OOD",
+        "verified full-text deep read"
+      ],
+      "score": 97
+    },
+    {
+      "title": "VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yu_VirtueBench_Evaluating_Trustworthiness_under_Uncertainty_in_Long_Video_Understanding_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yu_VirtueBench_Evaluating_Trustworthiness_under_Uncertainty_in_Long_Video_Understanding_CVPR_2026_paper.pdf",
+      "authors": [
+        "Xueqing Yu",
+        "Bohan Li",
+        "Yan Li",
+        "Zhenheng Yang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "它把长视频采样造成的证据缺失显式标成不可答，并用逐帧级答案与两阶段裁判区分诚实拒答和无依据猜测。",
+      "tags": [
+        "video",
+        "uncertainty/calibration",
+        "verified full-text deep read"
+      ],
+      "score": 96
+    },
+    {
+      "title": "Tracking Tiny Drones against Clutter: Large-Scale Infrared Benchmark with Motion-Centric Adaptive Algorithm",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_Tracking_Tiny_Drones_against_Clutter_Large-Scale_Infrared_Benchmark_with_Motion-Centric_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_Tracking_Tiny_Drones_against_Clutter_Large-Scale_Infrared_Benchmark_with_Motion-Centric_ICCV_2025_paper.pdf",
+      "authors": [
+        "Jiahao Zhang",
+        "Zongli Jiang",
+        "Jinli Zhang",
+        "Yixin Wei",
+        "Liang Li",
+        "Yizheng Wang",
+        "Gang Wang"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "MCATrack先用配准后的时间高通增强红外微小目标运动，再用初始与动态模板两级引导候选生成和重评分。",
+      "tags": [
+        "video",
+        "UAV/small-object",
+        "verified full-text deep read"
+      ],
+      "score": 95
+    },
+    {
+      "title": "Compositional Caching for Training-free Open-vocabulary Attribute Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Garosi_Compositional_Caching_for_Training-free_Open-vocabulary_Attribute_Detection_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Garosi_Compositional_Caching_for_Training-free_Open-vocabulary_Attribute_Detection_CVPR_2025_paper.pdf",
+      "authors": [
+        "Marco Garosi",
+        "Alessandro Conti",
+        "Gaowen Liu",
+        "Elisa Ricci",
+        "Massimiliano Mancini"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "COMCA 不微调 VLM，而以属性-对象兼容性选择视觉缓存，再用多属性软标签把缓存证据融合进零样本预测。",
+      "tags": [
+        "open-vocabulary",
+        "training-free",
+        "compositionality",
+        "verified full-text deep read"
+      ],
+      "score": 94
+    }
   ]
 }

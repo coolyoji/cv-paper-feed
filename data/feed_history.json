@@ -1,5 +1,1533 @@
 [
   {
+    "date": "2026-08-28",
+    "generated_at": "2026-08-28 10:12",
+    "timezone": "Asia/Shanghai",
+    "total_selected": 11307,
+    "sections": {
+      "highlights": [
+        {
+          "title": "GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_GPFlow_Gaussian_Prototype_Probability_Flow_for_Unsupervised_Multi-Modal_Anomaly_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_GPFlow_Gaussian_Prototype_Probability_Flow_for_Unsupervised_Multi-Modal_Anomaly_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Yiting Li",
+            "Xulei Yang",
+            "Jingyi Liao",
+            "Jing Zhang",
+            "Fayao Liu"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "GPFlow用带协方差的高斯原型和解析后验均值路由替代离散最近原型，使正常高方差变化被保留、异常低方差偏移被压制后形成更清晰的重构残差。",
+          "tags": [
+            "unsupervised",
+            "retrieval/prototype",
+            "anomaly/OOD",
+            "verified full-text deep read"
+          ],
+          "score": 98
+        },
+        {
+          "title": "The Invisible Gorilla Effect in Out-of-distribution Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Anthony_The_Invisible_Gorilla_Effect_in_Out-of-distribution_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Anthony_The_Invisible_Gorilla_Effect_in_Out-of-distribution_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Harry Anthony",
+            "Ziyun Liang",
+            "Hermione Warr",
+            "Konstantinos Kamnitsas"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "多数OOD检测器更容易发现与主模型关注区颜色相似的伪影，而高方差颜色方向会掩盖不相似伪影，PCA干扰子空间投影可缩小这一差距。",
+          "tags": [
+            "anomaly/OOD",
+            "verified full-text deep read"
+          ],
+          "score": 97
+        },
+        {
+          "title": "VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yu_VirtueBench_Evaluating_Trustworthiness_under_Uncertainty_in_Long_Video_Understanding_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yu_VirtueBench_Evaluating_Trustworthiness_under_Uncertainty_in_Long_Video_Understanding_CVPR_2026_paper.pdf",
+          "authors": [
+            "Xueqing Yu",
+            "Bohan Li",
+            "Yan Li",
+            "Zhenheng Yang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "它把长视频采样造成的证据缺失显式标成不可答，并用逐帧级答案与两阶段裁判区分诚实拒答和无依据猜测。",
+          "tags": [
+            "video",
+            "uncertainty/calibration",
+            "verified full-text deep read"
+          ],
+          "score": 96
+        },
+        {
+          "title": "Tracking Tiny Drones against Clutter: Large-Scale Infrared Benchmark with Motion-Centric Adaptive Algorithm",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_Tracking_Tiny_Drones_against_Clutter_Large-Scale_Infrared_Benchmark_with_Motion-Centric_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_Tracking_Tiny_Drones_against_Clutter_Large-Scale_Infrared_Benchmark_with_Motion-Centric_ICCV_2025_paper.pdf",
+          "authors": [
+            "Jiahao Zhang",
+            "Zongli Jiang",
+            "Jinli Zhang",
+            "Yixin Wei",
+            "Liang Li",
+            "Yizheng Wang",
+            "Gang Wang"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "MCATrack先用配准后的时间高通增强红外微小目标运动，再用初始与动态模板两级引导候选生成和重评分。",
+          "tags": [
+            "video",
+            "UAV/small-object",
+            "verified full-text deep read"
+          ],
+          "score": 95
+        },
+        {
+          "title": "Compositional Caching for Training-free Open-vocabulary Attribute Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Garosi_Compositional_Caching_for_Training-free_Open-vocabulary_Attribute_Detection_CVPR_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Garosi_Compositional_Caching_for_Training-free_Open-vocabulary_Attribute_Detection_CVPR_2025_paper.pdf",
+          "authors": [
+            "Marco Garosi",
+            "Alessandro Conti",
+            "Gaowen Liu",
+            "Elisa Ricci",
+            "Massimiliano Mancini"
+          ],
+          "source": "CVPR 2025",
+          "published": "2025",
+          "summary": "COMCA 不微调 VLM，而以属性-对象兼容性选择视觉缓存，再用多属性软标签把缓存证据融合进零样本预测。",
+          "tags": [
+            "open-vocabulary",
+            "training-free",
+            "compositionality",
+            "verified full-text deep read"
+          ],
+          "score": 94
+        }
+      ],
+      "quality": [
+        {
+          "title": "GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_GPFlow_Gaussian_Prototype_Probability_Flow_for_Unsupervised_Multi-Modal_Anomaly_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_GPFlow_Gaussian_Prototype_Probability_Flow_for_Unsupervised_Multi-Modal_Anomaly_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Yiting Li",
+            "Xulei Yang",
+            "Jingyi Liao",
+            "Jing Zhang",
+            "Fayao Liu"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "GPFlow用带协方差的高斯原型和解析后验均值路由替代离散最近原型，使正常高方差变化被保留、异常低方差偏移被压制后形成更清晰的重构残差。",
+          "tags": [
+            "unsupervised",
+            "retrieval/prototype",
+            "anomaly/OOD",
+            "verified full-text deep read"
+          ],
+          "score": 98
+        },
+        {
+          "title": "The Invisible Gorilla Effect in Out-of-distribution Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Anthony_The_Invisible_Gorilla_Effect_in_Out-of-distribution_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Anthony_The_Invisible_Gorilla_Effect_in_Out-of-distribution_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Harry Anthony",
+            "Ziyun Liang",
+            "Hermione Warr",
+            "Konstantinos Kamnitsas"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "多数OOD检测器更容易发现与主模型关注区颜色相似的伪影，而高方差颜色方向会掩盖不相似伪影，PCA干扰子空间投影可缩小这一差距。",
+          "tags": [
+            "anomaly/OOD",
+            "verified full-text deep read"
+          ],
+          "score": 97
+        },
+        {
+          "title": "VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yu_VirtueBench_Evaluating_Trustworthiness_under_Uncertainty_in_Long_Video_Understanding_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yu_VirtueBench_Evaluating_Trustworthiness_under_Uncertainty_in_Long_Video_Understanding_CVPR_2026_paper.pdf",
+          "authors": [
+            "Xueqing Yu",
+            "Bohan Li",
+            "Yan Li",
+            "Zhenheng Yang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "它把长视频采样造成的证据缺失显式标成不可答，并用逐帧级答案与两阶段裁判区分诚实拒答和无依据猜测。",
+          "tags": [
+            "video",
+            "uncertainty/calibration",
+            "verified full-text deep read"
+          ],
+          "score": 96
+        },
+        {
+          "title": "Tracking Tiny Drones against Clutter: Large-Scale Infrared Benchmark with Motion-Centric Adaptive Algorithm",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_Tracking_Tiny_Drones_against_Clutter_Large-Scale_Infrared_Benchmark_with_Motion-Centric_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_Tracking_Tiny_Drones_against_Clutter_Large-Scale_Infrared_Benchmark_with_Motion-Centric_ICCV_2025_paper.pdf",
+          "authors": [
+            "Jiahao Zhang",
+            "Zongli Jiang",
+            "Jinli Zhang",
+            "Yixin Wei",
+            "Liang Li",
+            "Yizheng Wang",
+            "Gang Wang"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "MCATrack先用配准后的时间高通增强红外微小目标运动，再用初始与动态模板两级引导候选生成和重评分。",
+          "tags": [
+            "video",
+            "UAV/small-object",
+            "verified full-text deep read"
+          ],
+          "score": 95
+        },
+        {
+          "title": "Compositional Caching for Training-free Open-vocabulary Attribute Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Garosi_Compositional_Caching_for_Training-free_Open-vocabulary_Attribute_Detection_CVPR_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Garosi_Compositional_Caching_for_Training-free_Open-vocabulary_Attribute_Detection_CVPR_2025_paper.pdf",
+          "authors": [
+            "Marco Garosi",
+            "Alessandro Conti",
+            "Gaowen Liu",
+            "Elisa Ricci",
+            "Massimiliano Mancini"
+          ],
+          "source": "CVPR 2025",
+          "published": "2025",
+          "summary": "COMCA 不微调 VLM，而以属性-对象兼容性选择视觉缓存，再用多属性软标签把缓存证据融合进零样本预测。",
+          "tags": [
+            "open-vocabulary",
+            "training-free",
+            "compositionality",
+            "verified full-text deep read"
+          ],
+          "score": 94
+        },
+        {
+          "title": "Repurposing Stable Diffusion Attention for Training-Free Unsupervised Interactive Segmentation",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Karmann_Repurposing_Stable_Diffusion_Attention_for_Training-Free_Unsupervised_Interactive_Segmentation_CVPR_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Karmann_Repurposing_Stable_Diffusion_Attention_for_Training-Free_Unsupervised_Interactive_Segmentation_CVPR_2025_paper.pdf",
+          "authors": [
+            "Markus Karmann",
+            "Onay Urfalioglu"
+          ],
+          "source": "CVPR 2025",
+          "published": "2025",
+          "summary": "M2N2把Stable Diffusion自注意改写成马尔可夫到达步数图，再用点击引导的截断最近邻完成无训练交互分割。",
+          "tags": [
+            "interactive segmentation",
+            "training-free",
+            "Stable Diffusion attention",
+            "Markov map",
+            "verified full-text summary",
+            "verified compact summary"
+          ],
+          "score": 98
+        },
+        {
+          "title": "CDICS: Delving Into Fine-Grained Attribute for In-Context Segmentation via Compositional Prompts and Phased Decoupling",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_CDICS_Delving_Into_Fine-Grained_Attribute_for_In-Context_Segmentation_via_Compositional_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_CDICS_Delving_Into_Fine-Grained_Attribute_for_In-Context_Segmentation_via_Compositional_CVPR_2026_paper.pdf",
+          "authors": [
+            "Zhiyu Li",
+            "Dianmo Sheng",
+            "Qi Chu",
+            "Shilong Chen",
+            "Tao Gong",
+            "Zhou Wei",
+            "Nenghai Yu"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CDICS先按语义找候选实例，再用部件与颜色组合提示分阶段精化外观；值得检验两阶段解耦是否真正降低相似背景中的属性干扰，而不是依赖人工颜色值。",
+          "tags": [
+            "in-context segmentation",
+            "compositional prompt",
+            "part and color",
+            "fine-grained segmentation",
+            "verified full-text summary",
+            "verified compact summary"
+          ],
+          "score": 97
+        },
+        {
+          "title": "Uncertainty-Aware Vision-Language Segmentation for Medical Imaging",
+          "url": "https://openaccess.thecvf.com/content/WACV2026/html/Das_Uncertainty-Aware_Vision-Language_Segmentation_for_Medical_Imaging_WACV_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Das_Uncertainty-Aware_Vision-Language_Segmentation_for_Medical_Imaging_WACV_2026_paper.pdf",
+          "authors": [
+            "Aryan Das",
+            "Tanishq Rachamalla",
+            "Koushik Biswas",
+            "Swalpa Kumar Roy",
+            "Vinay Kumar Verma"
+          ],
+          "source": "WACV 2026",
+          "published": "2026",
+          "summary": "方法用状态空间文本混合、跨注意和多尺度解码联合分割，并以Dice、频谱差和低熵正则训练；低熵不等于校准，迁移前必须补充ECE、Brier和风险覆盖测试。",
+          "tags": [
+            "vision-language segmentation",
+            "uncertainty",
+            "medical imaging",
+            "state-space model",
+            "verified full-text summary",
+            "verified compact summary"
+          ],
+          "score": 96
+        },
+        {
+          "title": "Active Learning Meets Foundation Models: Fast Remote Sensing Data Annotation for Object Detection",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Burges_Active_Learning_Meets_Foundation_Models_Fast_Remote_Sensing_Data_Annotation_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Burges_Active_Learning_Meets_Foundation_Models_Fast_Remote_Sensing_Data_Annotation_ICCV_2025_paper.pdf",
+          "authors": [
+            "Marvin Burges",
+            "Philipe Ambrozio Dias",
+            "Carson Woody",
+            "Sarah Walters",
+            "Dalton Lunga"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "AL4FM-OD用SAM掩码与检测框的不一致挑困难图，再按掩码特征去冗余，并在冷启动时以SAM框替换差定位。",
+          "tags": [
+            "remote sensing",
+            "active learning",
+            "SAM",
+            "object detection",
+            "annotation efficiency",
+            "verified full-text summary",
+            "verified compact summary"
+          ],
+          "score": 95
+        },
+        {
+          "title": "Finding Dino: A Plug-and-Play Framework for Zero-Shot Detection of Out-of-Distribution Objects Using Prototypes",
+          "url": "https://openaccess.thecvf.com/content/WACV2025/html/Sinhamahapatra_Finding_Dino_A_Plug-and-Play_Framework_for_Zero-Shot_Detection_of_Out-of-Distribution_WACV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/WACV2025/papers/Sinhamahapatra_Finding_Dino_A_Plug-and-Play_Framework_for_Zero-Shot_Detection_of_Out-of-Distribution_WACV_2025_paper.pdf",
+          "authors": [
+            "Poulami Sinhamahapatra",
+            "Franziska Schwaiger",
+            "Shirsha Bose",
+            "Huiyu Wang",
+            "Karsten Roscher",
+            "Stephan Günnemann"
+          ],
+          "source": "WACV 2025",
+          "published": "2025",
+          "summary": "PROWL用少量已知类样例构建冻结DINOv2原型库，以像素相似度找未知区域并用前景掩码抑制背景；它适合作为COD目标缺失与未知干扰的开放世界对照，但原型距离不能直接代表边界可靠性。",
+          "tags": [
+            "zero-shot OOD",
+            "prototype",
+            "DINOv2",
+            "open-world detection",
+            "anomaly segmentation",
+            "verified full-text summary",
+            "verified compact summary"
+          ],
+          "score": 94
+        }
+      ],
+      "cod": [
+        {
+          "title": "Shift the Lens: Environment-Aware Unsupervised Camouflaged Object Detection",
+          "url": "https://www.semanticscholar.org/paper/9ffe2dac38933b2edc81c584ed5588574960e82c",
+          "pdf": "",
+          "authors": [
+            "Ji Du",
+            "Fangwei Hao",
+            "Mingyang Yu",
+            "Desheng Kong",
+            "Jiesheng Wu",
+            "Bin Wang",
+            "Jing Xu",
+            "Ping Li"
+          ],
+          "source": "Semantic Scholar / Computer Vision and Pattern Recognition / citations 13",
+          "published": "2025-06-10",
+          "summary": "Camouflaged Object Detection (COD) seeks to distinguish objects from their highly similar backgrounds. Existing work has essentially focused on isolating camouflaged objects from the environment, demonstrating ever-improving performance but at the cost of extensive annotations and complex optimizations. In this paper, we diverge from this paradigm and shift the lens to isolating the salient environment from the camouflaged object. We introduce EASE, an Environment-Aware unSupErvised COD framework that identifies the environment by referencing an environment prototype library and detects camouflaged objects by inverting the retrieved environmental features. Specifically, our approach (DiffPro) uses large multimodal models, diffusion models, and vision-foundation models to construct the environment prototype library. To retrieve environments from the library and refrain from confusing foreground and background, we incorporate three retrieval schemes: Kernel Density Estimation-based Adaptive Threshold (KDE-AT), Global-to-Local pixel-level retrieval (G2L), and Self-Retrieval (SR). Our experiments demonstrate significant improvements over current unsupervised methods, with EASE achieving an average gain of over 10% on the COD10K dataset. When integrated with SAM, EASE surpasses prompt-based segmentation approaches and performs competitively with state-of-the-art fully-supervised methods. Code is available at https://github.com/xiaohainku/EASE.",
+          "tags": [
+            "COD",
+            "unsupervised",
+            "SAM",
+            "diffusion",
+            "retrieval/prototype",
+            "saliency/transparent"
+          ],
+          "score": 122
+        },
+        {
+          "title": "Multi-scale attention and boundary-aware network for military camouflaged object detection using unmanned aerial vehicles",
+          "url": "https://www.semanticscholar.org/paper/b760c224ca6598679843d5d2c35b7a0e3a41a005",
+          "pdf": "https://www.researchsquare.com/article/rs-5165176/latest.pdf",
+          "authors": [
+            "Keshun Liu",
+            "Aihua Li",
+            "Sen Yang",
+            "Changlong Wang",
+            "Yuhua Zhang"
+          ],
+          "source": "Semantic Scholar / Signal, Image and Video Processing / citations 13",
+          "published": "2025-01-01",
+          "summary": "Military camouflaged object detection using unmanned aerial vehicles (UAVs) is a crucial yet challenging task, which can significantly support the intelligence interpretation and accurate strike on the battlefield. However, existing methods primarily focus on the semantic segmentation of the camouflaged object, and neglect the specific needs of military reconnaissance and UAV imagery. To address these limitations, we propose a multi-scale attention and boundary-aware network tailored for military camouflaged object detection from UAV imagery. First, we adopt a pyramid vision transformer as the backbone to extract multi-scale features and produce high-resolution feature maps. Then, we design a feature fusion module to fuse multi-scale features to efficiently transmit feature information. Further, we develop three interdependent modules: boundary extraction module, boundary guidance module, and context fusion module to excavate the boundary and context semantic information, which enhances the feature representation of the military camouflaged object. We also create a new dataset called MCODUAV for military camouflaged object detection from UAV imagery. Extensive experiments on MCODUAV dataset demonstrate that our network has significant advantages in detecting the military camouflaged object from UAV imagery. Our network achieves the highest mean average precision (mAP) by 48.92%, and paves the way for more accurate and preemptive strikes in real-world military operations.",
+          "tags": [
+            "COD",
+            "boundary/frequency",
+            "UAV/small-object"
+          ],
+          "score": 81
+        },
+        {
+          "title": "First RAG, Second SEG: A Training-Free Paradigm for Camouflaged Object Detection",
+          "url": "http://arxiv.org/abs/2508.15313v2",
+          "pdf": "http://arxiv.org/pdf/2508.15313v2",
+          "authors": [
+            "Wutao Liu",
+            "YiDan Wang",
+            "Pan Gao"
+          ],
+          "source": "arXiv",
+          "published": "2025-08-21",
+          "summary": "Camouflaged object detection (COD) poses a significant challenge in computer vision due to the high similarity between objects and their backgrounds. Existing approaches often rely on heavy training and large computational resources. While foundation models such as the Segment Anything Model (SAM) offer strong generalization, they still struggle to handle COD tasks without fine-tuning and require high-quality prompts to yield good performance. However, generating such prompts manually is costly and inefficient. To address these challenges, we propose \\textbf{First RAG, Second SEG (RAG-SEG)}, a training-free paradigm that decouples COD into two stages: Retrieval-Augmented Generation (RAG) for generating coarse masks as prompts, followed by SAM-based segmentation (SEG) for refinement. RAG-SEG constructs a compact retrieval database via unsupervised clustering, enabling fast and effective feature retrieval. During inference, the retrieved features produce pseudo-labels that guide precise mask generation using SAM2. Our method eliminates the need for conventional training while maintaining competitive performance. Extensive experiments on benchmark COD datasets demonstrate that RAG-SEG performs on par with or surpasses state-of-the-art methods. Notably, all experiments are conducted on a \\textbf{personal laptop}, highlighting the computational efficiency and practicality of our approach. We present further analysis in the Appendix, covering limitations, salient object detection extension, and possible improvements. \\textcolor{blue} {Code: https://github.com/Lwt-diamond/RAG-SEG.}",
+          "tags": [
+            "COD",
+            "training-free",
+            "unsupervised",
+            "SAM",
+            "retrieval/prototype",
+            "anomaly/OOD",
+            "saliency/transparent"
+          ],
+          "score": 79
+        },
+        {
+          "title": "MRCNet: Motion Reasoning Chain for Cross Modal Video Camouflaged Object Detection",
+          "url": "https://doi.org/10.1109/tpami.2026.3689767",
+          "pdf": "",
+          "authors": [
+            "Wenjun Hui",
+            "Zhenfeng Zhu",
+            "Shuai Zheng",
+            "Ming-Ming Cheng",
+            "Huchuan Lu",
+            "Yao Zhao"
+          ],
+          "source": "Crossref / TPAMI / CCF-A / 顶刊 / IEEE Transactions on Pattern Analysis and Machine Intelligence",
+          "published": "2026-09",
+          "summary": "TPAMI article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "COD",
+            "reasoning",
+            "video"
+          ],
+          "score": 79
+        },
+        {
+          "title": "Source-free Depth for Object Pop-out",
+          "url": "http://arxiv.org/abs/2212.05370v3",
+          "pdf": "http://arxiv.org/pdf/2212.05370v3",
+          "authors": [
+            "Zongwei Wu",
+            "Danda Pani Paudel",
+            "Deng-Ping Fan",
+            "Jingjing Wang",
+            "Shuo Wang",
+            "Cédric Demonceaux",
+            "Radu Timofte",
+            "Luc Van Gool"
+          ],
+          "source": "arXiv",
+          "published": "2022-12-10",
+          "summary": "Depth cues are known to be useful for visual perception. However, direct measurement of depth is often impracticable. Fortunately, though, modern learning-based methods offer promising depth maps by inference in the wild. In this work, we adapt such depth inference models for object segmentation using the objects' \"pop-out\" prior in 3D. The \"pop-out\" is a simple composition prior that assumes objects reside on the background surface. Such compositional prior allows us to reason about objects in the 3D space. More specifically, we adapt the inferred depth maps such that objects can be localized using only 3D information. Such separation, however, requires knowledge about contact surface which we learn using the weak supervision of the segmentation mask. Our intermediate representation of contact surface, and thereby reasoning about objects purely in 3D, allows us to better transfer the depth knowledge into semantics. The proposed adaptation method uses only the depth model without needing the source data used for training, making the learning process efficient and practical. Our experiments on eight datasets of two challenging tasks, namely camouflaged object detection and salient object detection, consistently demonstrate the benefit of our method in terms of both performance and generalizability.",
+          "tags": [
+            "COD",
+            "reasoning",
+            "boundary/frequency",
+            "depth/geometry",
+            "compositionality",
+            "saliency/transparent"
+          ],
+          "score": 78
+        },
+        {
+          "title": "Is There Really a Camouflaged Object? Towards Realistic Camouflaged Object Detection",
+          "url": "http://arxiv.org/abs/2608.11135v1",
+          "pdf": "http://arxiv.org/pdf/2608.11135v1",
+          "authors": [
+            "Huafeng Chen",
+            "Yueming Lyu",
+            "Chenyang Si",
+            "Wende Tan",
+            "Liucheng Guo",
+            "Caifeng Shan"
+          ],
+          "source": "arXiv",
+          "published": "2026-08-11",
+          "summary": "Camouflaged object detection (COD) aims to segment objects that are visually concealed in their surroundings and has attracted increasing attention in recent years. However, most existing COD methods are developed under a closed-world assumption, where each input image is assumed to contain a camouflaged object. This assumption ignores realistic scenarios with pure backgrounds or non-camouflaged objects, causing existing models to produce severe false positives when deployed in open-world environments. To address this limitation, we propose OPC16K, a large-scale benchmark for realistic COD. OPC16K contains 16,245 images from 14 sources and is carefully organized into camouflaged-object images, pure background images, and non-camouflaged-object images, enabling comprehensive evaluation of both segmentation quality and negative-sample rejection. Based on this benchmark, we further propose OPCNet, a presence-aware camouflage network that reformulates COD from a pure segmentation task into a joint problem of object localization and camouflage existence reasoning. Specifically, OPCNet introduces hierarchical existence reasoning to distinguish CO, BG, and NOCOD scenarios, similarity-aware camouflage relation modeling to capture foreground-background camouflage cues, and existence-aware feature refinement to regulate segmentation features with existence predictions. Extensive experiments on OPC16K demonstrate that OPCNet achieves superior performance under the proposed realistic COD evaluation protocol, significantly reducing false positives on negative samples while maintaining accurate camouflaged-object segmentation. Code and dataset will be released at https://github.com/2231122/OPCOD.",
+          "tags": [
+            "COD",
+            "reasoning",
+            "open-world"
+          ],
+          "score": 75
+        },
+        {
+          "title": "Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ren_Training-Free_Open-Vocabulary_Camouflaged_Object_Segmentation_via_Fine-Grained_Object_Binding_and_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ren_Training-Free_Open-Vocabulary_Camouflaged_Object_Segmentation_via_Fine-Grained_Object_Binding_and_CVPR_2026_paper.pdf",
+          "authors": [
+            "Peng Ren",
+            "Cheng Jiang",
+            "Chuande Yang",
+            "Fuming Sun",
+            "Tian Bai"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CVF OpenAccess paper. Open the paper page for full abstract and method details.",
+          "tags": [
+            "COD",
+            "open-vocabulary",
+            "training-free"
+          ],
+          "score": 74
+        },
+        {
+          "title": "Progressive Region-to-Boundary Exploration Network for Camouflaged Object Detection",
+          "url": "https://www.semanticscholar.org/paper/0da0d40fa8a9d000b2fdd84a1e9a931d537e279d",
+          "pdf": "",
+          "authors": [
+            "Guanghui Yue",
+            "Shangjie Wu",
+            "Tianwei Zhou",
+            "Gang Li",
+            "Jie Du",
+            "Yu Luo",
+            "Qiuping Jiang"
+          ],
+          "source": "Semantic Scholar / IEEE transactions on multimedia / citations 25",
+          "published": "2025",
+          "summary": "Camouflaged object detection (COD) aims to segment targeted objects that have similar colors, textures, or shapes to their background environment. Due to the limited ability in distinguishing highly similar patterns, existing COD methods usually produce inaccurate predictions, especially around the boundary areas, when coping with complex scenes. This paper proposes a Progressive Region-to-Boundary Exploration Network (PRBE-Net) to accurately detect camouflaged objects. PRBE-Net follows an encoder-decoder framework and includes three key modules. Specifically, firstly, both high-level and low-level features of the encoder are integrated by a region and boundary exploration module to explore their complementary information for extracting the object's coarse region and fine boundary cues simultaneously. Secondly, taking the region cues as the guidance information, a Region Enhancement (RE) module is used to adaptively localize and enhance the region information at each layer of the encoder. Subsequently, considering that camouflaged objects usually have blurry boundaries, a Boundary Refinement (BR) decoder is used after the RE module to better detect the boundary areas with the assistance of boundary cues. Through top-down deep supervision, PRBE-Net can progressively refine the prediction. Extensive experiments on four datasets indicate that our PRBE-Net achieves superior results over 21 state-of-the-art COD methods. Additionally, it also shows good results on polyp segmentation, a COD-related task in the medical field.",
+          "tags": [
+            "COD",
+            "diffusion",
+            "boundary/frequency",
+            "anomaly/OOD",
+            "low-level"
+          ],
+          "score": 74
+        },
+        {
+          "title": "LSP-ST: Ladder Shape-Biased Side-Tuning for Robust Infrared Small Target Detection",
+          "url": "http://arxiv.org/abs/2504.14481v2",
+          "pdf": "http://arxiv.org/pdf/2504.14481v2",
+          "authors": [
+            "Guoyi Zhang",
+            "Siyang Chen",
+            "Guangsheng Xu",
+            "Han Wang",
+            "Donghe Wang",
+            "Xiaohu Zhang"
+          ],
+          "source": "arXiv",
+          "published": "2025-04-20",
+          "summary": "Fine-tuning the Segment Anything Model (SAM) for infrared small target detection poses significant challenges due to severe domain shifts. Existing adaptation methods often incorporate handcrafted priors to bridge this gap, yet such designs limit generalization and scalability. We identify a fundamental texture bias in foundation models, which overly depend on local texture cues for target localization. To address this, we propose Ladder Shape-Biased Side-Tuning (LSP-ST), a novel approach that introduces a shape-aware inductive bias to facilitate effective adaptation beyond texture cues. In contrast to prior work that injects explicit edge or contour features, LSP-ST models shape as a global structural prior, integrating both boundaries and internal layouts. We design a Shape-Enhanced Large-Kernel Attention Module to hierarchically and implicitly capture structural information in a fully differentiable manner, without task-specific handcrafted guidance. A theoretical analysis grounded in matched filtering and backpropagation reveals the mechanism by which the proposed attention improves structure-aware learning. With only 4.72M learnable parameters, LSP-ST achieves state-of-the-art performance on multiple infrared small target detection benchmarks. Furthermore, its strong generalization is validated across tasks such as mirror detection, shadow detection, and camouflaged object detection, while maintaining stable performance on texture-driven tasks like salient object detection, demonstrating that the introduced shape bias complements rather than competes with texture-based reasoning.",
+          "tags": [
+            "COD",
+            "SAM",
+            "reasoning",
+            "boundary/frequency",
+            "UAV/small-object",
+            "saliency/transparent"
+          ],
+          "score": 73
+        },
+        {
+          "title": "Depth-Assisted Camouflaged Object Segmentation via Frequency-Domain Fusion and High-Order Interaction",
+          "url": "https://doi.org/10.1109/tmm.2026.3668692",
+          "pdf": "",
+          "authors": [
+            "Peng Ren",
+            "Cheng Jiang",
+            "Fuming Sun",
+            "Tian Bai"
+          ],
+          "source": "Crossref / TMM / CCF-B / 顶刊 / IEEE Transactions on Multimedia",
+          "published": "2026",
+          "summary": "TMM article matched by title in a top journal; abstract unavailable from Crossref.",
+          "tags": [
+            "COD",
+            "boundary/frequency",
+            "depth/geometry"
+          ],
+          "score": 73
+        },
+        {
+          "title": "BED-SAM2: Boundary-Enhanced-Depth SAM2 via Monocular Geometric Priors",
+          "url": "http://arxiv.org/abs/2605.24893v1",
+          "pdf": "http://arxiv.org/pdf/2605.24893v1",
+          "authors": [
+            "Tyler Rust",
+            "Dara McNally",
+            "Kyle O'Donnell",
+            "Colin Kelly",
+            "Chandra Kambhamettu"
+          ],
+          "source": "arXiv",
+          "published": "2026-05-24",
+          "summary": "Building upon the SAM2 vision foundation model for downstream segmentation, this study introduces Boundary Enhanced Depth (BED)-SAM2. The SAM2 Hiera encoder architecture is modified to directly encode monocular depth information from RGB images, thereby providing geometric cues that enhance object boundary delineation and facilitate the extraction of camouflaged object shapes. BED-SAM2 demonstrates competitive state-of-the-art performance across multiple salient and camouflaged object detection tasks with as few as five training epochs.",
+          "tags": [
+            "COD",
+            "boundary/frequency",
+            "depth/geometry",
+            "saliency/transparent"
+          ],
+          "score": 71
+        },
+        {
+          "title": "Open-Vocabulary Camouflaged Object Segmentation",
+          "url": "http://arxiv.org/abs/2311.11241v3",
+          "pdf": "http://arxiv.org/pdf/2311.11241v3",
+          "authors": [
+            "Youwei Pang",
+            "Xiaoqi Zhao",
+            "Jiaming Zuo",
+            "Lihe Zhang",
+            "Huchuan Lu"
+          ],
+          "source": "arXiv",
+          "published": "2023-11-19",
+          "summary": "Recently, the emergence of the large-scale vision-language model (VLM), such as CLIP, has opened the way towards open-world object perception. Many works have explored the utilization of pre-trained VLM for the challenging open-vocabulary dense prediction task that requires perceiving diverse objects with novel classes at inference time. Existing methods construct experiments based on the public datasets of related tasks, which are not tailored for open vocabulary and rarely involve imperceptible objects camouflaged in complex scenes due to data collection bias and annotation costs. To fill in the gaps, we introduce a new task, open-vocabulary camouflaged object segmentation (OVCOS), and construct a large-scale complex scene dataset (\\textbf{OVCamo}) containing 11,483 hand-selected images with fine annotations and corresponding object classes. Further, we build a strong single-stage open-vocabulary \\underline{c}amouflaged \\underline{o}bject \\underline{s}egmentation transform\\underline{er} baseline \\textbf{OVCoser} attached to the parameter-fixed CLIP with iterative semantic guidance and structure enhancement. By integrating the guidance of class semantic knowledge and the supplement of visual structure cues from the edge and depth information, the proposed method can efficiently capture camouflaged objects. Moreover, this effective framework also surpasses previous state-of-the-arts of open-vocabulary semantic image segmentation by a large margin on our OVCamo dataset. With the proposed dataset and baseline, we hope that this new task with more practical value can further expand the research on open-vocabulary dense prediction tasks. Our code and data can be found in the \\href{https://github.com/lartpang/OVCamo}{link}.",
+          "tags": [
+            "COD",
+            "open-vocabulary",
+            "VLM/MLLM",
+            "boundary/frequency",
+            "depth/geometry",
+            "low-level"
+          ],
+          "score": 71
+        }
+      ],
+      "uav": [
+        {
+          "title": "Tracking Tiny Drones against Clutter: Large-Scale Infrared Benchmark with Motion-Centric Adaptive Algorithm",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_Tracking_Tiny_Drones_against_Clutter_Large-Scale_Infrared_Benchmark_with_Motion-Centric_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_Tracking_Tiny_Drones_against_Clutter_Large-Scale_Infrared_Benchmark_with_Motion-Centric_ICCV_2025_paper.pdf",
+          "authors": [
+            "Jiahao Zhang",
+            "Zongli Jiang",
+            "Jinli Zhang",
+            "Yixin Wei",
+            "Liang Li",
+            "Yizheng Wang",
+            "Gang Wang"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "MCATrack先用配准后的时间高通增强红外微小目标运动，再用初始与动态模板两级引导候选生成和重评分。",
+          "tags": [
+            "video",
+            "UAV/small-object",
+            "verified full-text deep read"
+          ],
+          "score": 95
+        },
+        {
+          "title": "Active Learning Meets Foundation Models: Fast Remote Sensing Data Annotation for Object Detection",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Burges_Active_Learning_Meets_Foundation_Models_Fast_Remote_Sensing_Data_Annotation_ICCV_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Burges_Active_Learning_Meets_Foundation_Models_Fast_Remote_Sensing_Data_Annotation_ICCV_2025_paper.pdf",
+          "authors": [
+            "Marvin Burges",
+            "Philipe Ambrozio Dias",
+            "Carson Woody",
+            "Sarah Walters",
+            "Dalton Lunga"
+          ],
+          "source": "ICCV 2025",
+          "published": "2025",
+          "summary": "AL4FM-OD用SAM掩码与检测框的不一致挑困难图，再按掩码特征去冗余，并在冷启动时以SAM框替换差定位。",
+          "tags": [
+            "remote sensing",
+            "active learning",
+            "SAM",
+            "object detection",
+            "annotation efficiency",
+            "verified full-text summary",
+            "verified compact summary"
+          ],
+          "score": 95
+        },
+        {
+          "title": "CLSC DETR: Reliable Candidate Ranking via Cross Layer Geometric Support for UAV Small Object Detection",
+          "url": "http://arxiv.org/abs/2608.21457v1",
+          "pdf": "http://arxiv.org/pdf/2608.21457v1",
+          "authors": [
+            "Junyan Lin"
+          ],
+          "source": "arXiv",
+          "published": "2026-08-20",
+          "summary": "CLSC DETR把末层query与中间层候选对齐并聚合几何支持，再按分类—定位一致性校准排序；作者在VisDrone报告AP/AP75提升1.5/2.0点，但该工作是5页未同行评审预印本，需核查拥挤和尺度分层。",
+          "tags": [
+            "boundary/frequency",
+            "depth/geometry",
+            "UAV/small-object",
+            "uncertainty/calibration",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 59
+        },
+        {
+          "title": "UAV-OVVIS: Unmanned Aerial Vehicles Also Need Open-Vocabulary Video Instance Segmentation",
+          "url": "http://arxiv.org/abs/2607.08075v2",
+          "pdf": "http://arxiv.org/pdf/2607.08075v2",
+          "authors": [
+            "Mingyu Dou",
+            "Shi Qiu",
+            "Ming Hu",
+            "Yifan Chen",
+            "Zhe Sun"
+          ],
+          "source": "arXiv",
+          "published": "2026-07-09",
+          "summary": "AeroTrack周期执行开放词汇检测、片段内传播mask，并用生命周期感知关联恢复全局ID；它把UAV从闭集框跟踪推进到开放词汇视频实例分割，但预印本的代码与AeroVIS尚待公开。",
+          "tags": [
+            "open-vocabulary",
+            "training-free",
+            "video",
+            "UAV/small-object",
+            "anomaly/OOD",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 96
+        },
+        {
+          "title": "Uncertainty-Aware World Model for Aerial Image-Goal Navigation",
+          "url": "http://arxiv.org/abs/2608.05597v1",
+          "pdf": "http://arxiv.org/pdf/2608.05597v1",
+          "authors": [
+            "Deyi Zhu",
+            "Haoyu Fan",
+            "Yinan Zhu",
+            "Weichen Zhang",
+            "Shilin Ma",
+            "Xinlei Chen",
+            "Yansong Tang"
+          ],
+          "source": "arXiv",
+          "published": "2026-08-06",
+          "summary": "UA-NWM用不确定性子空间解释合理未来变化，只以无法解释的预测—目标残差给候选轨迹排序；这一条件OOD视角避免多次采样，值得检查真实UAV中的安全约束、恢复策略和跨地域阈值。",
+          "tags": [
+            "diffusion",
+            "UAV/small-object",
+            "anomaly/OOD",
+            "uncertainty/calibration",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 76
+        },
+        {
+          "title": "Oh Deer, How Should I Handle This? Seasonal Priors for Selective Wildlife Annotation and Classification",
+          "url": "http://arxiv.org/abs/2608.02762v3",
+          "pdf": "http://arxiv.org/pdf/2608.02762v3",
+          "authors": [
+            "Hugo Markoff",
+            "Christoph Praschl",
+            "Anton Hjalte Jørgensen",
+            "Christian Emil Mogensen",
+            "Mathias Bech Skadhauge",
+            "Sara Beery",
+            "Michael Ørsted",
+            "David C. Schedl"
+          ],
+          "source": "arXiv",
+          "published": "2026-08-03",
+          "summary": "该预印本在7295组低空UAV RGB/热红外裁块上用季节先验联合指导标注复核、模态加权和拒答；保留样本准确率达98.9%却不成比例地拒答雄性，提示总体风险下降可能掩盖关键亚群失效。",
+          "tags": [
+            "UAV/small-object",
+            "uncertainty/calibration",
+            "selective/risk control",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 86
+        },
+        {
+          "title": "CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Duan_CHAL_Causal-guided_Hierarchical_Anomaly-aware_Learning_for_Moving_Infrared_Small_Target_CVPR_2026_paper.pdf",
+          "authors": [
+            "Weiwei Duan",
+            "Luping Ji",
+            "Shipeng Lei",
+            "Sicheng Zhu",
+            "Jianghong Huang",
+            "Mao Ye"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "CHAL用时空神经场解释背景演化，把运动红外小目标建成分层异常，并以因果引导削弱背景混杂；其先解释背景再找剩余弱证据的设定可同时迁移到COD与远距离小火点。",
+          "tags": [
+            "diffusion",
+            "video",
+            "UAV/small-object",
+            "anomaly/OOD",
+            "causal/counterfactual",
+            "verified compact summary"
+          ],
+          "score": 100
+        },
+        {
+          "title": "DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_DyFCLT_Dynamic_Frequency-Decoupled_Cross-Modal_Learning_Transformer_for_Multimodal_Tiny_Object_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_DyFCLT_Dynamic_Frequency-Decoupled_Cross-Modal_Learning_Transformer_for_Multimodal_Tiny_Object_CVPR_2026_paper.pdf",
+          "authors": [
+            "Chaolang Li",
+            "Pengwen Dai",
+            "Jingyu Li",
+            "Siyuan Yao",
+            "Yuchen Jiang",
+            "Zhuoran Zheng"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "DyFCLT把RGB-T注意力动态分配到可学习频带，在同频带跨模态交互后抑制背景并引导上采样；RGBT-Tiny 48.2 AP与RGBTDronePerson 61.0 AP50可检验频率解耦是否真正保住弱小目标。",
+          "tags": [
+            "UAV/small-object",
+            "multimodal",
+            "RGB-T",
+            "boundary/frequency",
+            "remote sensing",
+            "verified compact summary"
+          ],
+          "score": 95
+        },
+        {
+          "title": "Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Azeem_Prompt-Free_Unknown_Label_Generation_for_Open_World_Detection_in_Remote_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Azeem_Prompt-Free_Unknown_Label_Generation_for_Open_World_Detection_in_Remote_CVPR_2026_paper.pdf",
+          "authors": [
+            "Abdullah Azeem",
+            "Ruisheng Wang",
+            "Qingquan Li",
+            "Abubakar Siddique"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "方法在遥感开放世界检测中不依赖人工未知类prompt，从候选区域生成并筛选未知标签；CVPR 2026正式论文值得检查其未知候选召回是否随微小目标、密集遮挡和背景纹理而下降。",
+          "tags": [
+            "unknown label generation",
+            "remote sensing",
+            "open-world",
+            "UAV/small-object",
+            "open-vocabulary",
+            "visual grounding",
+            "verified compact summary"
+          ],
+          "score": 68
+        },
+        {
+          "title": "UniGeoSeg: Towards Unified Open-World Segmentation for Geospatial Scenes",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ni_UniGeoSeg_Towards_Unified_Open-World_Segmentation_for_Geospatial_Scenes_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ni_UniGeoSeg_Towards_Unified_Open-World_Segmentation_for_Geospatial_Scenes_CVPR_2026_paper.pdf",
+          "authors": [
+            "Shuo Ni",
+            "Di Wang",
+            "He Chen",
+            "Haonan Guo",
+            "Ning Zhang",
+            "Jing Zhang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "UniGeoSeg统一处理地理场景中的已知类、未知类与开放词汇mask，而非为每种设定训练独立头；CVPR 2026正式论文适合检验开放世界指标能否区分未知目标发现和普通背景误报。",
+          "tags": [
+            "remote sensing",
+            "open-world",
+            "reasoning",
+            "visual grounding",
+            "UAV/small-object",
+            "verified compact summary"
+          ],
+          "score": 94
+        },
+        {
+          "title": "Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_Visual_Prototype_Conditioned_Focal_Region_Generation_for_UAV-Based_Object_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_Visual_Prototype_Conditioned_Focal_Region_Generation_for_UAV-Based_Object_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Wenhao Li",
+            "Zimeng Wu",
+            "Yu Wu",
+            "Zehua Fu",
+            "Jiaxin Chen"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "方法以视觉原型约束扩散模型生成UAV焦点区域，面向稀少目标和局部密集布局补充训练数据；CVPR 2026正式论文应以真实检测增益、布局保持和小目标伪影分层判断，而非只看生成观感。",
+          "tags": [
+            "UAV/small-object",
+            "diffusion",
+            "synthetic data",
+            "layout conditioning",
+            "dense targets",
+            "remote sensing",
+            "verified compact summary"
+          ],
+          "score": 94
+        }
+      ],
+      "fire_multispectral": [
+        {
+          "title": "Generative Algorithms for Wildfire Progression Reconstruction from Multi-Modal Satellite Active Fire Measurements and Terrain Height",
+          "url": "http://arxiv.org/abs/2506.10404v1",
+          "pdf": "http://arxiv.org/pdf/2506.10404v1",
+          "authors": [
+            "Bryan Shaddy",
+            "Brianna Binder",
+            "Agnimitra Dasgupta",
+            "Haitong Qin",
+            "James Haley",
+            "Angel Farguell",
+            "Kyle Hilburn",
+            "Derek V. Mallia",
+            "Adam Kochanski",
+            "Jan Mandel",
+            "Assad Oberai"
+          ],
+          "source": "arXiv",
+          "published": "2025-06-12",
+          "summary": "条件GAN用WRF-SFIRE模拟学习由VIIRS火点、GOES点火时刻和地形重建火到达时间场；五场美国西部野火平均Dice为0.81，但预印本仍需验证模拟到真实偏移和稀疏观测不确定性。",
+          "tags": [
+            "fire perception",
+            "multispectral fire",
+            "diffusion",
+            "remote sensing",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 25
+        },
+        {
+          "title": "Wildfire Fire-Smoke Detection in UAV Imagery via Scale-Guided Feature Routing and Uncertainty-Aware Localization",
+          "url": "https://doi.org/10.1109/ACCESS.2026.3706370",
+          "pdf": "",
+          "authors": [
+            "Linyu Wu"
+          ],
+          "source": "Crossref / IEEE Access 2026",
+          "published": "2026-06-23",
+          "summary": "WFSDet按火点与烟区尺度在P3/P4/P5间路由特征，并以异方差尺度损失降低歧义框的训练权重；三数据集mAP50为0.642/0.943/0.775，但该不确定性只调制训练损失，不提供推理期校准或拒答。",
+          "tags": [
+            "wildfire UAV scale detection",
+            "fire perception",
+            "UAV/small-object",
+            "uncertainty/calibration",
+            "safety-critical/hazard",
+            "real-time edge inference",
+            "boundary/frequency",
+            "verified compact summary"
+          ],
+          "score": 68
+        },
+        {
+          "title": "Oh Deer, How Should I Handle This? Seasonal Priors for Selective Wildlife Annotation and Classification",
+          "url": "http://arxiv.org/abs/2608.02762v3",
+          "pdf": "http://arxiv.org/pdf/2608.02762v3",
+          "authors": [
+            "Hugo Markoff",
+            "Christoph Praschl",
+            "Anton Hjalte Jørgensen",
+            "Christian Emil Mogensen",
+            "Mathias Bech Skadhauge",
+            "Sara Beery",
+            "Michael Ørsted",
+            "David C. Schedl"
+          ],
+          "source": "arXiv",
+          "published": "2026-08-03",
+          "summary": "该预印本在7295组低空UAV RGB/热红外裁块上用季节先验联合指导标注复核、模态加权和拒答；保留样本准确率达98.9%却不成比例地拒答雄性，提示总体风险下降可能掩盖关键亚群失效。",
+          "tags": [
+            "UAV/small-object",
+            "uncertainty/calibration",
+            "selective/risk control",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 86
+        },
+        {
+          "title": "Beyond Accuracy: Assessing Calibration of Geospatial Foundation Models and Their Sensitivity to Distribution Shifts",
+          "url": "http://arxiv.org/abs/2608.16614v1",
+          "pdf": "http://arxiv.org/pdf/2608.16614v1",
+          "authors": [
+            "Nils Lehmann",
+            "Jakob Gawlikowski",
+            "Burak Ekim",
+            "Isaac Corley",
+            "Xiao Xiang Zhu"
+          ],
+          "source": "arXiv",
+          "published": "2026-08-17",
+          "summary": "该预印本在16个冻结编码器和9个数据集上联合审计准确率、校准与选择性预测；GeoFM在移位下更过置信，常见校准器也挡不住退化，适合作为云、模糊和火烟背景的可靠性压力测试。",
+          "tags": [
+            "diffusion",
+            "uncertainty/calibration",
+            "selective/risk control",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 93
+        },
+        {
+          "title": "SmokeBench: Evaluating Multimodal Large Language Models for Wildfire Smoke Detection",
+          "url": "https://openaccess.thecvf.com/content/WACV2026/html/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.pdf",
+          "authors": [
+            "Tianye Qi",
+            "Weihao Li",
+            "Nick Barnes"
+          ],
+          "source": "WACV 2026",
+          "published": "2026",
+          "summary": "SmokeBench把任务从烟雾分类推进到网格和框定位，并按烟雾面积与Weber对比度分层；大烟分类可达0.931准确率而通用模型框定位近乎零IoU，直接暴露早期透明烟雾的定位缺口。",
+          "tags": [
+            "visual fire and smoke detection",
+            "multimodal hazard understanding",
+            "foundation model evaluation",
+            "early wildfire warning",
+            "safety-critical perception",
+            "verified compact summary"
+          ],
+          "score": 71
+        },
+        {
+          "title": "RoboFireFuseNet: Robust Fusion of Visible and Infrared Wildfire Imaging for Real-Time Flame and Smoke Segmentation",
+          "url": "https://doi.org/10.1016/j.patrec.2026.04.024",
+          "pdf": "https://zenodo.org/records/18199667/files/RFFNet%20%281%29.pdf?download=1",
+          "authors": [
+            "Dimitrios Fotiou",
+            "Vasileios Mygdalis",
+            "Ioannis Pitas"
+          ],
+          "source": "Pattern Recognition Letters 205 (2026)",
+          "published": "2026",
+          "summary": "RoboFireFuseNet用模态专用路径、通道注意、SwinV2与模态丢弃融合可见光和红外；作者报告火焰/烟雾IoU为81.5/87.98，关键是核查缺失或退化热像时融合是否仍可靠。",
+          "tags": [
+            "visual fire and smoke detection",
+            "RGB-T fire detection",
+            "wildfire segmentation",
+            "degraded multimodal perception",
+            "real-time edge inference",
+            "safety-critical perception",
+            "verified compact summary"
+          ],
+          "score": 52
+        },
+        {
+          "title": "False Alarm Rectification for Early Smoke Segmentation",
+          "url": "https://openaccess.thecvf.com/content/WACV2026/html/Zhao_False_Alarm_Rectification_for_Early_Smoke_Segmentation_WACV_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Zhao_False_Alarm_Rectification_for_Early_Smoke_Segmentation_WACV_2026_paper.pdf",
+          "authors": [
+            "Hongjin Zhao",
+            "Weihao Li",
+            "Ge-Peng Ji",
+            "Nick Barnes"
+          ],
+          "source": "WACV 2026",
+          "published": "2026",
+          "summary": "SmokeCPC融合MiT多尺度特征与DINOv3全局语义，再用图像级烟雾先验平移并温度缩放像素logit；它直面云、雾、霞光等早烟误报，适合作为局部弱证据必须经全局一致性复核的基线。",
+          "tags": [
+            "fire/smoke",
+            "safety-critical",
+            "segmentation",
+            "false-positive control",
+            "foundation model",
+            "verified compact summary"
+          ],
+          "score": 45
+        },
+        {
+          "title": "Seeing Heat with Color -- RGB-Only Wildfire Temperature Inference from SAM-Guided Multimodal Distillation using Radiometric Ground Truth",
+          "url": "http://arxiv.org/abs/2505.01638v1",
+          "pdf": "http://arxiv.org/pdf/2505.01638v1",
+          "authors": [
+            "Michael Marinaccio",
+            "Fatemeh Afghah"
+          ],
+          "source": "arXiv",
+          "published": "2025-05-03",
+          "summary": "SAM-TIFF用配对RGB—热红外和辐射温度真值训练教师，再把温度回归与分割知识蒸馏给RGB学生；它降低热传感器依赖，但颜色到温度受材质、烟遮挡和域偏移影响，必须跨火场校准。",
+          "tags": [
+            "fire perception",
+            "multispectral fire",
+            "fire foundation model",
+            "SAM",
+            "boundary/frequency",
+            "UAV/small-object",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 106
+        },
+        {
+          "title": "On-Orbit Real-Time Wildfire Detection Under On-Board Constraints",
+          "url": "http://arxiv.org/abs/2605.06273v1",
+          "pdf": "http://arxiv.org/pdf/2605.06273v1",
+          "authors": [
+            "Matthias Rötzer",
+            "Veronika Pörtge",
+            "Martin Ickerott",
+            "Jayendra Praveen Kumar Chorapalli",
+            "Dimitri Scheftelowitsch",
+            "Max Bereczky",
+            "Dmitry Rashkovetsky",
+            "Sai Manoj Appalla",
+            "Julia Gottfriedsen"
+          ],
+          "source": "arXiv",
+          "published": "2026-05-07",
+          "summary": "该系统把热红外野火检测压缩到在轨算力、内存和下行带宽约束内，并在九颗商业卫星部署；其价值是提供端侧误报、延迟与资源共同约束的真实边界，而非只报告离线准确率。",
+          "tags": [
+            "fire perception",
+            "multispectral fire",
+            "representation learning",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 67
+        },
+        {
+          "title": "Detecting Wildfires on UAVs with Real-time Segmentation Trained by Larger Teacher Models",
+          "url": "http://arxiv.org/abs/2408.10843v3",
+          "pdf": "http://arxiv.org/pdf/2408.10843v3",
+          "authors": [
+            "Julius Pesonen",
+            "Teemu Hakala",
+            "Väinö Karjalainen",
+            "Niko Koivumäki",
+            "Lauri Markelin",
+            "Anna-Maria Raita-Hakola",
+            "Juha Suomalainen",
+            "Ilkka Pölönen",
+            "Eija Honkavaara"
+          ],
+          "source": "arXiv",
+          "published": "2024-08-19",
+          "summary": "方法用零样本基础模型把框标注转成分割监督，只训练轻量学生；作者报告63.3% mIoU和Jetson Orin NX约25 FPS，可检验弱标注、端侧速度和烟雾定位能否同时成立。",
+          "tags": [
+            "fire perception",
+            "fire foundation model",
+            "UAV/small-object",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 98
+        }
+      ],
+      "fire_foundation": [
+        {
+          "title": "SmokeBench: Evaluating Multimodal Large Language Models for Wildfire Smoke Detection",
+          "url": "https://openaccess.thecvf.com/content/WACV2026/html/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.pdf",
+          "authors": [
+            "Tianye Qi",
+            "Weihao Li",
+            "Nick Barnes"
+          ],
+          "source": "WACV 2026",
+          "published": "2026",
+          "summary": "SmokeBench把任务从烟雾分类推进到网格和框定位，并按烟雾面积与Weber对比度分层；大烟分类可达0.931准确率而通用模型框定位近乎零IoU，直接暴露早期透明烟雾的定位缺口。",
+          "tags": [
+            "visual fire and smoke detection",
+            "multimodal hazard understanding",
+            "foundation model evaluation",
+            "early wildfire warning",
+            "safety-critical perception",
+            "verified compact summary"
+          ],
+          "score": 71
+        },
+        {
+          "title": "Seeing Heat with Color -- RGB-Only Wildfire Temperature Inference from SAM-Guided Multimodal Distillation using Radiometric Ground Truth",
+          "url": "http://arxiv.org/abs/2505.01638v1",
+          "pdf": "http://arxiv.org/pdf/2505.01638v1",
+          "authors": [
+            "Michael Marinaccio",
+            "Fatemeh Afghah"
+          ],
+          "source": "arXiv",
+          "published": "2025-05-03",
+          "summary": "SAM-TIFF用配对RGB—热红外和辐射温度真值训练教师，再把温度回归与分割知识蒸馏给RGB学生；它降低热传感器依赖，但颜色到温度受材质、烟遮挡和域偏移影响，必须跨火场校准。",
+          "tags": [
+            "fire perception",
+            "multispectral fire",
+            "fire foundation model",
+            "SAM",
+            "boundary/frequency",
+            "UAV/small-object",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 106
+        },
+        {
+          "title": "Detecting Wildfires on UAVs with Real-time Segmentation Trained by Larger Teacher Models",
+          "url": "http://arxiv.org/abs/2408.10843v3",
+          "pdf": "http://arxiv.org/pdf/2408.10843v3",
+          "authors": [
+            "Julius Pesonen",
+            "Teemu Hakala",
+            "Väinö Karjalainen",
+            "Niko Koivumäki",
+            "Lauri Markelin",
+            "Anna-Maria Raita-Hakola",
+            "Juha Suomalainen",
+            "Ilkka Pölönen",
+            "Eija Honkavaara"
+          ],
+          "source": "arXiv",
+          "published": "2024-08-19",
+          "summary": "方法用零样本基础模型把框标注转成分割监督，只训练轻量学生；作者报告63.3% mIoU和Jetson Orin NX约25 FPS，可检验弱标注、端侧速度和烟雾定位能否同时成立。",
+          "tags": [
+            "fire perception",
+            "fire foundation model",
+            "UAV/small-object",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 98
+        },
+        {
+          "title": "Generating Satellite Imagery Data for Wildfire Detection through Mask-Conditioned Generative AI",
+          "url": "http://arxiv.org/abs/2604.02479v1",
+          "pdf": "http://arxiv.org/pdf/2604.02479v1",
+          "authors": [
+            "Valeria Martin",
+            "K. Brent Venable",
+            "Derek Morgan"
+          ],
+          "source": "arXiv",
+          "published": "2026-04-02",
+          "summary": "EarthSynth用烧毁掩码与火前影像做无任务微调扩散生成，并比较全图生成、修复与颜色匹配；结构化修复Burn IoU仅0.456，合成价值应由真实下游检测增益而非观感判定。",
+          "tags": [
+            "fire perception",
+            "multispectral fire",
+            "fire foundation model",
+            "diffusion",
+            "remote sensing",
+            "saliency/transparent",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 93
+        }
+      ],
+      "broad": [
+        {
+          "title": "GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_GPFlow_Gaussian_Prototype_Probability_Flow_for_Unsupervised_Multi-Modal_Anomaly_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_GPFlow_Gaussian_Prototype_Probability_Flow_for_Unsupervised_Multi-Modal_Anomaly_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Yiting Li",
+            "Xulei Yang",
+            "Jingyi Liao",
+            "Jing Zhang",
+            "Fayao Liu"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "GPFlow用带协方差的高斯原型和解析后验均值路由替代离散最近原型，使正常高方差变化被保留、异常低方差偏移被压制后形成更清晰的重构残差。",
+          "tags": [
+            "unsupervised",
+            "retrieval/prototype",
+            "anomaly/OOD",
+            "verified full-text deep read"
+          ],
+          "score": 98
+        },
+        {
+          "title": "The Invisible Gorilla Effect in Out-of-distribution Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Anthony_The_Invisible_Gorilla_Effect_in_Out-of-distribution_Detection_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Anthony_The_Invisible_Gorilla_Effect_in_Out-of-distribution_Detection_CVPR_2026_paper.pdf",
+          "authors": [
+            "Harry Anthony",
+            "Ziyun Liang",
+            "Hermione Warr",
+            "Konstantinos Kamnitsas"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "多数OOD检测器更容易发现与主模型关注区颜色相似的伪影，而高方差颜色方向会掩盖不相似伪影，PCA干扰子空间投影可缩小这一差距。",
+          "tags": [
+            "anomaly/OOD",
+            "verified full-text deep read"
+          ],
+          "score": 97
+        },
+        {
+          "title": "VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yu_VirtueBench_Evaluating_Trustworthiness_under_Uncertainty_in_Long_Video_Understanding_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yu_VirtueBench_Evaluating_Trustworthiness_under_Uncertainty_in_Long_Video_Understanding_CVPR_2026_paper.pdf",
+          "authors": [
+            "Xueqing Yu",
+            "Bohan Li",
+            "Yan Li",
+            "Zhenheng Yang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "它把长视频采样造成的证据缺失显式标成不可答，并用逐帧级答案与两阶段裁判区分诚实拒答和无依据猜测。",
+          "tags": [
+            "video",
+            "uncertainty/calibration",
+            "verified full-text deep read"
+          ],
+          "score": 96
+        },
+        {
+          "title": "Compositional Caching for Training-free Open-vocabulary Attribute Detection",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Garosi_Compositional_Caching_for_Training-free_Open-vocabulary_Attribute_Detection_CVPR_2025_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Garosi_Compositional_Caching_for_Training-free_Open-vocabulary_Attribute_Detection_CVPR_2025_paper.pdf",
+          "authors": [
+            "Marco Garosi",
+            "Alessandro Conti",
+            "Gaowen Liu",
+            "Elisa Ricci",
+            "Massimiliano Mancini"
+          ],
+          "source": "CVPR 2025",
+          "published": "2025",
+          "summary": "COMCA 不微调 VLM，而以属性-对象兼容性选择视觉缓存，再用多属性软标签把缓存证据融合进零样本预测。",
+          "tags": [
+            "open-vocabulary",
+            "training-free",
+            "compositionality",
+            "verified full-text deep read"
+          ],
+          "score": 94
+        },
+        {
+          "title": "A Causal Marriage between VLM and IRM from Understanding to Reasoning",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_A_Causal_Marriage_between_VLM_and_IRM_from_Understanding_to_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_A_Causal_Marriage_between_VLM_and_IRM_from_Understanding_to_CVPR_2026_paper.pdf",
+          "authors": [
+            "Ziliang Chen",
+            "Tianang Xiao",
+            "Jusheng Zhang",
+            "Yongsen Zheng",
+            "Yang Liu",
+            "Zhao-rong Lai",
+            "Liang Lin"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Vision-Language Models (VLMs) like CLIP exhibit extraordinary out-of-distribution (OOD) generalization, while the theoretical foundations underlying this robustness remain largely unexplored. This work establishes a connection between CLIP and Invariant Risk Minimization (IRM), the principled paradigm to overcome OOD problems, through token-level causal representation learning. Our key insight is that CLIP's contrastive objective, when optimally trained, recovers modality-invariant causal factors at the word-and-phrase granularity. By decomposing text prompts into class-specific tokens (causal factors) and class-agnostic context tokens (environmental factors), we prove that a vocabulary-constrained InfoNCE objective becomes formally equivalent to IRM's invariance criterion. Grounded in this equivalence, we propose a mid-training paradigm aiming to inject invariant learning signals into pre-trained CLIP without architectural modification, yielding CLIP-IRM with superior OOD performance. We further extend this causal alignment to multimodal reasoning via using CLIP-IRM's invariant alignment scores as process-level rewards in reinforcement learning, effectively transplanting IRM's guarantees to robust sequential decision-making in Multimodal Large Language Models. Extensive experiments validate our theoretical framework and present substantial improvements in both multimodal OOD understanding and reasoning tasks.",
+          "tags": [
+            "VLM/MLLM",
+            "reasoning",
+            "anomaly/OOD",
+            "causal/counterfactual",
+            "representation learning"
+          ],
+          "score": 142
+        },
+        {
+          "title": "Finding Distributed Object-Centric Properties in Self-Supervised Transformers",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Rawlekar_Finding_Distributed_Object-Centric_Properties_in_Self-Supervised_Transformers_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Rawlekar_Finding_Distributed_Object-Centric_Properties_in_Self-Supervised_Transformers_CVPR_2026_paper.pdf",
+          "authors": [
+            "Samyak Rawlekar",
+            "Amitabh Swain",
+            "Yujun Cai",
+            "Yiwei Wang",
+            "Ming-Hsuan Yang",
+            "Narendra Ahuja"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Self-supervised Vision Transformers (ViTs) like DINO show an emergent ability to discover objects, typically observed in \\texttt [CLS] token attention maps of the final layer. However, these maps often contain spurious activations resulting in poor localization of objects. This is because the \\texttt [CLS] token, trained on an image-level objective, summarizes the entire image instead of focusing on objects. This aggregation dilutes the object-centric information existing in the local, patch-level interactions. We analyze this by computing inter-patch similarity using patch-level attention components (query, key, and value) across all layers. We find that: (1) Object-centric properties are encoded in the similarity maps derived from all three components (q, k, v), unlike prior work that uses only key features or the \\texttt [CLS] token. (2) This object-centric information is distributed across the network, not just confined to the final layer. Based on these insights, we introduce Object-DINO, a training-free method that extracts this distributed object-centric information. Object-DINO clusters attention heads across all layers based on the similarities of their patches and automatically identifies the object-centric cluster corresponding to all objects. We demonstrate Object-DINO's effectiveness on two applications: enhancing unsupervised object discovery (+3.6 to +12.4 CorLoc gains) and mitigating object hallucination in Multimodal Large Language Models by providing visual grounding. Our results demonstrate that using this distributed object-centric information improves downstream tasks without additional training.",
+          "tags": [
+            "training-free",
+            "unsupervised",
+            "VLM/MLLM",
+            "reasoning",
+            "diffusion",
+            "object discovery",
+            "object-centric",
+            "self-supervised"
+          ],
+          "score": 135
+        },
+        {
+          "title": "Clinically-Grounded Counterfactual Reasoning for Medical Video Diagnosis",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Gao_Clinically-Grounded_Counterfactual_Reasoning_for_Medical_Video_Diagnosis_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Gao_Clinically-Grounded_Counterfactual_Reasoning_for_Medical_Video_Diagnosis_CVPR_2026_paper.pdf",
+          "authors": [
+            "Jianzhe Gao",
+            "Churan Wang",
+            "Weiyi Zhang",
+            "Jianghua Li",
+            "Li-An Li",
+            "Wenguan Wang",
+            "Yixin Zhu",
+            "Yizhou Wang"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Clinical video diagnosis, in which physicians assess dynamic tissue responses across procedural stages, is critical for detecting diseases such as cervical and colorectal cancers. Recent spatiotemporal models map visual progressions directly to diagnostic outputs, yet overlook two hallmarks of expert reasoning: clinically grounded diagnostic principles and hypothesis-driven counterfactual thinking. This gap leads existing methods to conflate causal pathological cues with non-pathological variations, thereby limiting their reliability in data-scarce settings. Here we show that explicitly modeling counterfactual tissue evolution, guided by clinical rules that encode expert diagnostic principles, substantially improves diagnostic robustness-emulating the hypothesis-driven reasoning clinicians employ in practice. We introduce MEDVCR, comprising a Counterfactual Generator (CG) that synthesizes hypothetical tissue transitions via diffusion modeling, a Counterfactual Representation Learning (CRL) module that enforces temporal consistency, pathological separability, and counterfactual alignment, and a Dual Diagnostic Prediction (DDP) strategy that combines video-level context with frame-level counterfactual contrast. On two representative tasks, MEDVCR achieves 93.0% Recall@1 on colposcopy (+10.2%) and 94.8% Average Precision (AP) on colonoscopy (+2.6%), outperforming all state-of-the-art (SOTA) baselines. We anticipate that this counterfactual reasoning paradigm will open new avenues for vision-based clinical diagnostic tasks toward more transparent and interpretable decision support.",
+          "tags": [
+            "VLM/MLLM",
+            "reasoning",
+            "diffusion",
+            "video",
+            "causal/counterfactual",
+            "representation learning",
+            "saliency/transparent"
+          ],
+          "score": 130
+        },
+        {
+          "title": "Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.html",
+          "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Mishra_Towards_Uncertainty-aware_Unsupervised_Domain_Adaptation_for_Videos_and_Time-Series_with_CVPR_2026_paper.pdf",
+          "authors": [
+            "Khushboo Mishra",
+            "Varun Trivedi",
+            "Tanima Dutta"
+          ],
+          "source": "CVPR 2026",
+          "published": "2026",
+          "summary": "Unsupervised domain adaptation (UDA) for videos and 1D time-series data faces significant challenges due to domain shifts in terms of both temporal dynamics and feature distributions. Existing UDA approaches for time-series data often address temporal alignment and uncertainty mitigation as separate objectives, leading to unstable training, noisy pseudo-labels, and incomplete feature transfer. This disjoint treatment fails to capture inter-channel causal dependencies and also overlooks the impact of prediction uncertainty on adaptation quality. This limits the transferability of learned representations and results in suboptimal adaptation. To address the aforementioned limitations, we propose a novel UDA framework, named Causally-Regularized Optimal Transport (in short Causal-OT), that preserves domain-invariant causal mechanisms by embedding causal graph regularization into robust OT alignment process. First we estimate inter-channel causal graphs in both source and target domains and learn a transport plan that not only aligns feature distributions but also improves interpretability and minimizes the discrepancy between causal structures of the Granger graphs. However, pseudo-labeling may still prone to error propagation allowing incorrect target predictions during self-training, degrading the model stability and transfer quality across domains. To mitigate this, we further introduce a causality-aware pseudo-labeling strategy that selects high-confidence target samples based on both entropy and structural consistency with the causal graph of the source domain. This enhances robustness against pseudo-label noise.Extensive experiments on six time-series benchmarks achieving 4.5% gain in accuracy and a 3.8% improvement in F1-score. We conduct experiments on four benchmark video datasets that achieve a 2.5% gain in accuracy.",
+          "tags": [
+            "unsupervised",
+            "video",
+            "causal/counterfactual",
+            "uncertainty/calibration",
+            "domain adaptation"
+          ],
+          "score": 110
+        },
+        {
+          "title": "Beyond Accuracy: Assessing Calibration of Geospatial Foundation Models and Their Sensitivity to Distribution Shifts",
+          "url": "http://arxiv.org/abs/2608.16614v1",
+          "pdf": "http://arxiv.org/pdf/2608.16614v1",
+          "authors": [
+            "Nils Lehmann",
+            "Jakob Gawlikowski",
+            "Burak Ekim",
+            "Isaac Corley",
+            "Xiao Xiang Zhu"
+          ],
+          "source": "arXiv",
+          "published": "2026-08-17",
+          "summary": "该预印本在16个冻结编码器和9个数据集上联合审计准确率、校准与选择性预测；GeoFM在移位下更过置信，常见校准器也挡不住退化，适合作为云、模糊和火烟背景的可靠性压力测试。",
+          "tags": [
+            "diffusion",
+            "uncertainty/calibration",
+            "selective/risk control",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 93
+        },
+        {
+          "title": "RSC-GestureNet: Reliability-Aware Selective Causal Recognition of Chinese Traffic Police Gestures",
+          "url": "http://arxiv.org/abs/2608.02200v1",
+          "pdf": "http://arxiv.org/pdf/2608.02200v1",
+          "authors": [
+            "Cheng Li",
+            "Renjun Gao",
+            "Boyi Fu"
+          ],
+          "source": "arXiv",
+          "published": "2026-08-03",
+          "summary": "RSC-GestureNet按关节点置信度抑制不可靠骨架，因果聚合历史帧并按可靠性选择性输出；预印本同时报告早识别、校准、拒答与上游重提取，可作为视频危险预警的评测模板。",
+          "tags": [
+            "reasoning",
+            "video",
+            "causal/counterfactual",
+            "uncertainty/calibration",
+            "safety-critical/hazard",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 79
+        },
+        {
+          "title": "Oh Deer, How Should I Handle This? Seasonal Priors for Selective Wildlife Annotation and Classification",
+          "url": "http://arxiv.org/abs/2608.02762v3",
+          "pdf": "http://arxiv.org/pdf/2608.02762v3",
+          "authors": [
+            "Hugo Markoff",
+            "Christoph Praschl",
+            "Anton Hjalte Jørgensen",
+            "Christian Emil Mogensen",
+            "Mathias Bech Skadhauge",
+            "Sara Beery",
+            "Michael Ørsted",
+            "David C. Schedl"
+          ],
+          "source": "arXiv",
+          "published": "2026-08-03",
+          "summary": "该预印本在7295组低空UAV RGB/热红外裁块上用季节先验联合指导标注复核、模态加权和拒答；保留样本准确率达98.9%却不成比例地拒答雄性，提示总体风险下降可能掩盖关键亚群失效。",
+          "tags": [
+            "UAV/small-object",
+            "uncertainty/calibration",
+            "selective/risk control",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 86
+        },
+        {
+          "title": "Uncertainty-Aware World Model for Aerial Image-Goal Navigation",
+          "url": "http://arxiv.org/abs/2608.05597v1",
+          "pdf": "http://arxiv.org/pdf/2608.05597v1",
+          "authors": [
+            "Deyi Zhu",
+            "Haoyu Fan",
+            "Yinan Zhu",
+            "Weichen Zhang",
+            "Shilin Ma",
+            "Xinlei Chen",
+            "Yansong Tang"
+          ],
+          "source": "arXiv",
+          "published": "2026-08-06",
+          "summary": "UA-NWM用不确定性子空间解释合理未来变化，只以无法解释的预测—目标残差给候选轨迹排序；这一条件OOD视角避免多次采样，值得检查真实UAV中的安全约束、恢复策略和跨地域阈值。",
+          "tags": [
+            "diffusion",
+            "UAV/small-object",
+            "anomaly/OOD",
+            "uncertainty/calibration",
+            "verified compact summary",
+            "未同行评审预印本"
+          ],
+          "score": 76
+        }
+      ]
+    }
+  },
+  {
     "date": "2026-08-27",
     "generated_at": "2026-08-27 17:15",
     "timezone": "Asia/Shanghai",
