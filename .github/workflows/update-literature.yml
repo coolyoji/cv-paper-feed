@@ -3,9 +3,8 @@ name: Update literature feed
 on:
   workflow_dispatch:
   schedule:
-    # Monday-Saturday, 08:00 Asia/Shanghai == 00:00 UTC.
-    # The Codex reading-card task runs later, after this feed is available.
-    - cron: "0 0 * * 1-6"
+    # Monday-Saturday, 09:10 Asia/Shanghai == 01:10 UTC
+    - cron: "10 1 * * 1-6"
 
 permissions:
   contents: write
