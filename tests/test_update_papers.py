@@ -521,6 +521,35 @@ class CuratedNoteTests(unittest.TestCase):
         self.assertNotIn("- 摘要详解：", rendered)
         self.assertNotIn("- 可改进点：", rendered)
 
+    def test_compact_item_marks_unreviewed_arxiv_preprint(self):
+        paper = update_papers.Paper(
+            title="Arxiv Candidate",
+            url="https://arxiv.org/abs/2601.12345",
+            source="arXiv",
+            published="2026",
+            summary="A tracked preprint proposes a calibrated detector.",
+            tags=["uncertainty/calibration"],
+        )
+
+        rendered = update_papers.md_compact_paper_item(1, paper)
+
+        self.assertIn("arXiv（未同行评审预印本）", rendered)
+
+    def test_compact_item_does_not_mark_formal_source_as_preprint(self):
+        paper = update_papers.Paper(
+            title="Formal Candidate",
+            url="https://example.com/formal",
+            source="CVPR 2026",
+            published="2026",
+            summary="A formally published tracked detector.",
+            tags=["open-world"],
+        )
+
+        rendered = update_papers.md_compact_paper_item(1, paper)
+
+        self.assertIn("- Source: CVPR 2026, 2026", rendered)
+        self.assertNotIn("未同行评审预印本", rendered)
+
     def test_generated_abstract_explanation_obeys_compact_budget(self):
         sentence = "We propose " + "a" * 900 + "."
         paper = update_papers.Paper(

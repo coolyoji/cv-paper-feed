@@ -1789,7 +1789,7 @@ def method_core(paper: Paper) -> str:
     for words, description in cues:
         if any(word in text for word in words):
             return description
-    return "摘要层面未显示明确模块，建议先看方法图确认 backbone、监督信号和损失设计。"
+    return "来源摘要信息不足，先查看正式论文的方法图和监督目标，再决定是否纳入精读。"
 
 
 def load_abstract_details() -> dict[str, str]:
@@ -2287,9 +2287,12 @@ def md_compact_paper_item(idx: int, paper: Paper) -> str:
     links = f"[paper]({paper.url})"
     if paper.pdf:
         links += f" / [pdf]({paper.pdf})"
+    source_label = paper.source
+    if is_arxiv(paper) and "未同行评审预印本" not in source_label:
+        source_label += "（未同行评审预印本）"
     parts = [
         f"{idx}. **{paper.title}**",
-        f"   - Source: {paper.source}" + (f", {paper.published}" if paper.published else ""),
+        f"   - Source: {source_label}" + (f", {paper.published}" if paper.published else ""),
     ]
     if tag_text:
         parts.append(f"   - Tags: {tag_text}")

@@ -4941,5 +4941,115 @@
       ],
       "score": 94
     }
+  ],
+  "2026-08-29": [
+    {
+      "title": "Toward Low-Cost yet Effective Temporal Learning for UAV Tracking",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xue_Toward_Low-Cost_yet_Effective_Temporal_Learning_for_UAV_Tracking_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Xue_Toward_Low-Cost_yet_Effective_Temporal_Learning_for_UAV_Tracking_CVPR_2026_paper.pdf",
+      "authors": [
+        "Chaocan Xue",
+        "Qihua Liang",
+        "Bineng Zhong",
+        "Yanting Zu",
+        "Yuanliang Xue",
+        "Haiying Xia",
+        "Shuxiang Song"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "论文用少量历史 token 的选择与合并获得时间信息，并以每增加一单位 FLOP 带来的精度提升衡量时序模块是否值得。",
+      "tags": [
+        "video",
+        "UAV/small-object",
+        "verified full-text deep read"
+      ],
+      "score": 98
+    },
+    {
+      "title": "NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/San_Cheng_NeuroSeg_Meets_DINOv3_Transferring_2D_Self-Supervised_Visual_Priors_to_3D_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/San_Cheng_NeuroSeg_Meets_DINOv3_Transferring_2D_Self-Supervised_Visual_Priors_to_3D_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yik San Cheng",
+        "Runkai Zhao",
+        "Weidong Cai"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "NeuroSeg 将 DINOv3 的二维视觉先验膨胀到三维编码器，再用骨架拓扑损失约束神经元分支的连通性。",
+      "tags": [
+        "depth/geometry",
+        "self-supervised",
+        "verified full-text deep read"
+      ],
+      "score": 97
+    },
+    {
+      "title": "RoSAMDepth: Robust Self-supervised Depth Estimation Leveraging Segment Anything Model",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Gao_RoSAMDepth_Robust_Self-supervised_Depth_Estimation_Leveraging_Segment_Anything_Model_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Gao_RoSAMDepth_Robust_Self-supervised_Depth_Estimation_Leveraging_Segment_Anything_Model_CVPR_2026_paper.pdf",
+      "authors": [
+        "Xuanang Gao",
+        "Zhiwei Ning",
+        "Gengming Zhang",
+        "Jiaxi Cao",
+        "Runze Yang",
+        "Zhonglong Zheng",
+        "Jie Yang",
+        "Rong Xiao",
+        "Wei Liu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "RoSAMDepth 用 SAM 区域把恶劣条件下的自监督深度学习从像素误差判断提升为对象级表示、离群修正与可靠性控制。",
+      "tags": [
+        "SAM",
+        "depth/geometry",
+        "self-supervised",
+        "verified full-text deep read"
+      ],
+      "score": 96
+    },
+    {
+      "title": "PanDA: Unsupervised Domain Adaptation for Multimodal 3D Panoptic Segmentation in Autonomous Driving",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Pan_PanDA_Unsupervised_Domain_Adaptation_for_Multimodal_3D_Panoptic_Segmentation_in_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Pan_PanDA_Unsupervised_Domain_Adaptation_for_Multimodal_3D_Panoptic_Segmentation_in_CVPR_2026_paper.pdf",
+      "authors": [
+        "Yining Pan",
+        "Shijie Li",
+        "Yuchen Wu",
+        "Xulei Yang",
+        "Na Zhao"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "PanDA 用结构化模态缺失增强和几何—视觉双专家修补伪标签，解决跨天气、地点和传感器域迁移中的实例断裂。",
+      "tags": [
+        "unsupervised",
+        "depth/geometry",
+        "domain adaptation",
+        "verified full-text deep read"
+      ],
+      "score": 95
+    },
+    {
+      "title": "Detecting Unknown Objects via Energy-based Separation for Open World Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Heo_Detecting_Unknown_Objects_via_Energy-based_Separation_for_Open_World_Object_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Heo_Detecting_Unknown_Objects_via_Energy-based_Separation_for_Open_World_Object_CVPR_2026_paper.pdf",
+      "authors": [
+        "Jun-Woo Heo",
+        "Keonhee Park",
+        "Gyeong-Moon Park"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "DEUS 用固定 Simplex ETF 把已知与未知 proposal 放进两块子空间，以能量间隔发现未知、以旧新头能量排序缓解增量遗忘。",
+      "tags": [
+        "open-world",
+        "verified full-text deep read"
+      ],
+      "score": 94
+    }
   ]
 }
