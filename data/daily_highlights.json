@@ -5051,5 +5051,116 @@
       ],
       "score": 94
     }
+  ],
+  "2026-08-31": [
+    {
+      "title": "SPAR-Det: Segmentation-guided and Prior-Aided Routing for Small Object Detection",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/html/Kwon_SPAR-Det_Segmentation-guided_and_Prior-Aided_Routing_for_Small_Object_Detection_WACV_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/WACV2026/papers/Kwon_SPAR-Det_Segmentation-guided_and_Prior-Aided_Routing_for_Small_Object_Detection_WACV_2026_paper.pdf",
+      "authors": [
+        "Seungchan Kwon",
+        "Gyuil Lim",
+        "Youngjoon Han"
+      ],
+      "source": "WACV 2026",
+      "published": "2026",
+      "summary": "小目标检测既缺少边界细节又容易被背景淹没，SPAR-Det用分割引导特征、几何先验和稀疏专家路由分配更合适的检测尺度。",
+      "tags": [
+        "UAV/small-object",
+        "verified full-text deep read"
+      ],
+      "score": 98
+    },
+    {
+      "title": "F2Net: A Frequency-Fused Network for Ultra-High Resolution Remote Sensing Segmentation",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf",
+      "authors": [
+        "Hengzhi Chen",
+        "Liqian Feng",
+        "Wenhua Wu",
+        "Xiaogang Zhu",
+        "Qiuxia Wu",
+        "Lianlei Shan",
+        "Kun Hu"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "超高分辨率分割要同时保留细边界和远程语义，F2Net按高低频分工计算并用融合与梯度约束协调三条分支。",
+      "tags": [
+        "boundary/frequency",
+        "remote sensing",
+        "verified full-text deep read"
+      ],
+      "score": 97
+    },
+    {
+      "title": "Distribution Prototype Diffusion Learning for Open-set Supervised Anomaly Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Distribution_Prototype_Diffusion_Learning_for_Open-set_Supervised_Anomaly_Detection_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_Distribution_Prototype_Diffusion_Learning_for_Open-set_Supervised_Anomaly_Detection_CVPR_2025_paper.pdf",
+      "authors": [
+        "Fuyun Wang",
+        "Tong Zhang",
+        "Yuanzhi Wang",
+        "Yide Qiu",
+        "Xin Liu",
+        "Xu Guo",
+        "Zhen Cui"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "开放集异常检测不能把已见异常当作全部异常，DPDL用多高斯原型的Schrödinger桥扩散正常分布，再以分散特征和多头MIL拒识未知样本。",
+      "tags": [
+        "diffusion",
+        "retrieval/prototype",
+        "anomaly/OOD",
+        "open-world",
+        "verified full-text deep read"
+      ],
+      "score": 96
+    },
+    {
+      "title": "Beyond Single-Modal Boundary: Cross-Modal Anomaly Detection through Visual Prototype and Harmonization",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Mao_Beyond_Single-Modal_Boundary_Cross-Modal_Anomaly_Detection_through_Visual_Prototype_and_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Mao_Beyond_Single-Modal_Boundary_Cross-Modal_Anomaly_Detection_through_Visual_Prototype_and_CVPR_2025_paper.pdf",
+      "authors": [
+        "Kai Mao",
+        "Ping Wei",
+        "Yiyang Lian",
+        "Yangyang Wang",
+        "Nanning Zheng"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "CMAD 在视觉空间为每个辅助数据集学习全局/局部正常与异常原型，用查询自适应的 Prototype Harmonization 融合跨模态证据，并以少量目标模态正常图的 Visual Discrepancy Inference 做局部校准。",
+      "tags": [
+        "retrieval/prototype",
+        "boundary/frequency",
+        "anomaly/OOD",
+        "verified full-text deep read"
+      ],
+      "score": 95
+    },
+    {
+      "title": "SAIST: Segment Any Infrared Small Target Model Guided by Contrastive Language-Image Pretraining",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_SAIST_Segment_Any_Infrared_Small_Target_Model_Guided_by_Contrastive_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Zhang_SAIST_Segment_Any_Infrared_Small_Target_Model_Guided_by_Contrastive_CVPR_2025_paper.pdf",
+      "authors": [
+        "Mingjin Zhang",
+        "Xiaolong Li",
+        "Fei Gao",
+        "Jie Guo",
+        "Xinbo Gao",
+        "Jing Zhang"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "红外小目标常被复杂背景淹没，SAIST用图文互蒸馏提示和红外成像方程改造SAM，从语义与物理两端降低漏检和误报。",
+      "tags": [
+        "UAV/small-object",
+        "verified full-text deep read"
+      ],
+      "score": 94
+    }
   ]
 }
