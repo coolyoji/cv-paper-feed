@@ -5162,5 +5162,119 @@
       ],
       "score": 94
     }
+  ],
+  "2026-09-01": [
+    {
+      "title": "Towards Zero-Shot Anomaly Detection and Reasoning with Multimodal Large Language Models",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.pdf",
+      "authors": [
+        "Jiacong Xu",
+        "Shao-Yuan Lo",
+        "Bardia Safaei",
+        "Vishal M. Patel",
+        "Isht Dwivedi"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "通用多模态模型会忽略细粒度缺陷，论文用异常专家先筛选可疑视觉词元，再让语言模型围绕这些证据完成零样本检测与解释。",
+      "tags": [
+        "VLM/MLLM",
+        "reasoning",
+        "anomaly/OOD",
+        "verified full-text deep read"
+      ],
+      "score": 98
+    },
+    {
+      "title": "SARMAE: Masked Autoencoder for SAR Representation Learning",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liu_SARMAE_Masked_Autoencoder_for_SAR_Representation_Learning_CVPR_2026_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liu_SARMAE_Masked_Autoencoder_for_SAR_Representation_Learning_CVPR_2026_paper.pdf",
+      "authors": [
+        "Danxu Liu",
+        "Di Wang",
+        "Hebaixu Wang",
+        "Haoyang Chen",
+        "Wentao Jiang",
+        "Yilin Cheng",
+        "Haonan Guo",
+        "Wei Cui",
+        "Jing Zhang"
+      ],
+      "source": "CVPR 2026",
+      "published": "2026",
+      "summary": "SAR 的数据稀缺、斑点噪声和语义不足互相叠加，论文用物理噪声去噪重构与配对光学语义锚共同预训练 ViT。",
+      "tags": [
+        "remote sensing",
+        "representation learning",
+        "verified full-text deep read"
+      ],
+      "score": 97
+    },
+    {
+      "title": "SPA: Efficient User-Preference Alignment against Uncertainty in Medical Image Segmentation",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhu_SPA_Efficient_User-Preference_Alignment_against_Uncertainty_in_Medical_Image_Segmentation_ICCV_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhu_SPA_Efficient_User-Preference_Alignment_against_Uncertainty_in_Medical_Image_Segmentation_ICCV_2025_paper.pdf",
+      "authors": [
+        "Jiayuan Zhu",
+        "Junde Wu",
+        "Cheng Ouyang",
+        "Konstantinos Kamnitsas",
+        "J. Alison Noble"
+      ],
+      "source": "ICCV 2025",
+      "published": "2025",
+      "summary": "SPA 将多标注者边界歧义表示为可更新的混合高斯，用四个代表性掩码把高交互成本改成少轮多选偏好对齐。",
+      "tags": [
+        "uncertainty/calibration",
+        "medical imaging",
+        "verified full-text deep read"
+      ],
+      "score": 96
+    },
+    {
+      "title": "Feature Information Driven Position Gaussian Distribution Estimation for Tiny Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Bian_Feature_Information_Driven_Position_Gaussian_Distribution_Estimation_for_Tiny_Object_Detection_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Bian_Feature_Information_Driven_Position_Gaussian_Distribution_Estimation_for_Tiny_Object_CVPR_2025_paper.pdf",
+      "authors": [
+        "Jinghao Bian",
+        "Mingtao Feng",
+        "Weisheng Dong",
+        "Fangfang Wu",
+        "Jianqiao Luo",
+        "Yaonan Wang",
+        "Guangming Shi"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "下采样让极小目标的像素证据消失，本文用概率编码代价找出信息损失区域，再用尺度感知的位置高斯图校准 P2 特征。",
+      "tags": [
+        "UAV/small-object",
+        "verified full-text deep read"
+      ],
+      "score": 95
+    },
+    {
+      "title": "Pseudo Visible Feature Fine-Grained Fusion for Thermal Object Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_Pseudo_Visible_Feature_Fine-Grained_Fusion_for_Thermal_Object_Detection_CVPR_2025_paper.html",
+      "pdf": "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_Pseudo_Visible_Feature_Fine-Grained_Fusion_for_Thermal_Object_Detection_CVPR_2025_paper.pdf",
+      "authors": [
+        "Ting Li",
+        "Mao Ye",
+        "Tianwen Wu",
+        "Nianxin Li",
+        "Shuaifeng Li",
+        "Song Tang",
+        "Luping Ji"
+      ],
+      "source": "CVPR 2025",
+      "published": "2025",
+      "summary": "PFGF 不盲信热到可见生成图，而是用图节点、Inter-Mamba 和级联 leader node 在多尺度上筛选并传播有用的伪可见关系。",
+      "tags": [
+        "computer vision",
+        "verified full-text deep read"
+      ],
+      "score": 94
+    }
   ]
 }
