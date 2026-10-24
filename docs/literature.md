@@ -1,7 +1,7 @@
 # Daily CV Paper Feed
 
-Last updated: 2026-10-23 14:06 Asia/Shanghai
-Archive days kept: 101
+Last updated: 2026-10-24 13:51 Asia/Shanghai
+Archive days kept: 102
 
 这是文献日报目录页。每天更新会生成一个独立 Markdown 文件，文件名就是日期；想看哪一天，直接点对应日期即可。HTML 文件单独放在 html/ 目录，仅作为网页预览备用。
 从 2026-07-09 开始，精读队列不再只追 COD 直系论文，而是优先寻找 COD 尚未充分使用、但可能迁移出新 idea 的计算机视觉方法。
@@ -9,10 +9,11 @@ Archive days kept: 101
 
 ## 最新日报
 
-- [2026-10-23 Markdown](md/2026-10-23.md) / [HTML 预览](html/2026-10-23.html)
+- [2026-10-24 Markdown](md/2026-10-24.md) / [HTML 预览](html/2026-10-24.html)
 
 ## 每日 Markdown 文件
 
+- [2026-10-24](md/2026-10-24.md) / [html](html/2026-10-24.html) - 2026-10-24 13:51，候选池 12691 篇
 - [2026-10-23](md/2026-10-23.md) / [html](html/2026-10-23.html) - 2026-10-23 14:06，候选池 12685 篇
 - [2026-10-22](md/2026-10-22.md) / [html](html/2026-10-22.html) - 2026-10-22 14:09，候选池 12650 篇
 - [2026-10-21](md/2026-10-21.md) / [html](html/2026-10-21.html) - 2026-10-21 14:04，候选池 12600 篇
